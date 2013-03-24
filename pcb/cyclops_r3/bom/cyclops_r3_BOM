@@ -1,0 +1,91 @@
+Jonathan P Newman
+jnewman6 snail gatech dot edu
+
+Revisions:
+2012 07 21
+2012 07 24
+2012 08 01
+2012 08 18 (finished updates for r2)
+2013 01 12 (added components for current limit circuit in r3)
+
+********************************************************************************
+                C Y C L O P S   D R I V E R   B. O. M.
+********************************************************************************
+
+Part No.            Description                 Manufac.      Digikey No.       Quantity      
+
+INTEGRATED CIRCUITS
+--
+LM324N              quad opamp                  TI            296-1391-5-ND     1             
+LM317AHVT           positive voltage reg        Fairchild     LM317AHVT-ND	    1             
+FQP30N06L           n-channel power FET         Fairchild     FQP30N06L-ND      1
+(or)
+IRF510PBF           n-channel power FET         Vishay        IRF510PBF-ND      1           
+507002B00000G       TO-220 heat sink            Aavid         HS112-ND          2             
+REF02CPZ            prec. voltage ref           Analog Dev.   REF02CPZ-ND       1             
+IRF9Z34PBF          p-channel power FET         Vishay        IRF9Z34PBF-ND  1
+2SB07740RA          p-channel BJT               Panasonic     2SB07740RACT-ND   1
+(or)
+2N3906TFR 					p-channel BJT								Fairchild			2N3906D26ZCT-ND		1
+
+PASSIVE COMPONENTS
+--
+PV36P502C01B00      5K Trimmer                  Murata        490-2869-ND       1
+PV36P103C01B00      10K Trimmer                 Murata        490-2856-ND       3
+AC07000001507JAC00  resistor, 0.15 ohm, 5%      Vishay        PPC7W.15CT-ND     1
+PAC500002007FAC000  resistor, 0.2 ohm, 1%       Vishay        PPC5D.20CT-ND     1
+AC07000003307JAC00  resistor, 0.33 ohm, 5%      Vishay        PPC7W.33CT-ND     1
+NFR2500004707JR500  resistor, 0.47 ohm          Vishay        PPC.47ACT-ND      1
+AC05000007507JAC00	resistor, 0.75 ohm					Vishay				PPC5W.75CT-ND			1
+PR01000101200JR500  resistor, 120 ohm           Vishay        PPC120W-1CT-ND    1
+PR01000102400JR500  resistor, 240 ohm           Vishay        PPC240W-1CT-ND    1
+PR01000104700JR500  resistor, 470 ohm           Vishay        PPC470W-1CT-ND    1
+PR01000101001JR500  resistor, 1 kohm            Vishay        PPC1.0KW-1CT-ND   1
+PR01000101501JR500  resistor, 1.5 kohm          Vishay        PPC1.5KW-1CT-ND   1
+PR01000105101JR500  resistor, 5.1 kohm          Vishay        PPC5.1KW-1CT-ND   2
+PR01000101002JR500  resistor, 10 kohm           Vishay        PPC10KW-1CT-ND    2 
+PR01000101004JR500  resistor, 1 Mohm            Vishay        PPC1.0MW-1CT-ND   1
+RPE5C1H220J2K1Z03B  capacitor, 20 pf            Murata        490-3709-ND       1
+RDEF51H104Z0K1C03B  capacitor, 100nf            Murata        490-5401-ND       4
+ECA-1HM010          capacitor, 1 uF             Panasonic     P5174-ND          1  
+ECA-1CM100          capacitor, 10 uF            Panasonic     P5134-ND          1
+LTL1CHTBK4          On LED, 20 mA               lite-on       160-1602-ND       1
+
+ELECTROMECHANICAL
+--
+A27AV               ST3P through hole           NKK           A27AW-ND          1
+A12AH               SPDT right angle            NKK           A12AH-ND          1
+87224-2             2 pos. jumper header        TE            A26543-ND         2 
+87227-3             2X3 pos. jumper header      TE            A26569-ND         7
+105-0752-001        red banana tip jack         Emerson       J109-ND           1
+105-0302-001        red banana tip plug         Emerson       J103-ND           1
+105-0757-001        yellow banana tip jack      Emerson       J113-ND           1
+105-0307-001        yellow banana tip plug      Emerson       *530-105-0307-1(mouser)  1
+105-0751-001        white banana tip jack       Emerson       J108-ND           1
+105-0301-001        white banana tip plug       Emerson       J300-ND           1
+105-0753-001        black banana tip jack       Emerson       J110-ND           3
+105-0303-001        black banana tip plug       Emerson       J104-ND           3
+282834-2            2 pos. screw term (pow)     TE            A98333-ND         1
+282834-3            3 pos. screw term (pot)     TE            A98334-ND         1
+282834-4            4 pos. screw term (out)     TE            A98335-ND         1
+282834-5            5 pos. screw term (in)      TE            A98336-ND         1
+1-1634613-0         BNC connector 50 Ohm        TE            A97554-ND         4
+8799                20 mm standoff, 4-40        Keystone      8799K-ND          4
+1-390261-2          2X4 DIP socket              TE            A100204-ND        1
+382437-1            1X3 socket                  TE            A26245-ND         1
+1-390261-3          2X7 DIP socket              TE            A100205-ND        1
+ESQ-102-24-G-D      4 pos. power feedthough     Samtec        *N.A. (samtec)    4
+
+CIRCUIT PROTECTION
+--
+3557-2              fuse holder                 Keystone      3557-2K-ND        1
+0891005.NXT         5A fuse, blade              Littlefuse    F3269-ND          1
+(or)
+0891002.NXT         2A fuse, blade              Littlefuse    F3675-ND          1
+
+
+POWER SUPPLY
+--
+HD48-3-AG           48 volt, 3 amp, linear      Power one     179-2335-ND       1
+(or)
+LS150-36            36 volt, 5 amp, switching   TDK-Lambda    285-1815-ND       1

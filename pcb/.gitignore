@@ -1,0 +1,4 @@
+# Ignore the backup files created by EAGLE
+*.s\#*
+*.b\#*
+*.l\#*
