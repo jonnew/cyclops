@@ -1,7 +1,6 @@
 -------------------------------------------------------------------------
 
-This file is part of the Cyclops Precision LED Driver Project
-Copyright (C) 2013 Cyclops-LED-Driver
+This file is part of the Cyclops Precision LED Driver Project. Copyright (C) 2013 Cyclops-LED-Driver
 
 -------------------------------------------------------------------------
 
