@@ -992,8 +992,8 @@ design rules under a new name.</description>
 <attribute name="NAME" x="97.663" y="73.3425" size="1.27" layer="25" rot="R270"/>
 </element>
 <element name="IC3" library="linear" package="DIL08" value="REF02Z" x="38.4175" y="28.575"/>
-<element name="R3" library="HOSS" package="0207/7" value="10k" x="28.2575" y="28.575" rot="R90"/>
-<element name="R4" library="HOSS" package="0207/7" value="10k" x="23.1775" y="28.575" rot="R90"/>
+<element name="R3" library="HOSS" package="0207/7" value="0R" x="28.2575" y="28.575" rot="R90"/>
+<element name="R4" library="HOSS" package="0207/7" value="0R" x="23.1775" y="28.575" rot="R90"/>
 <element name="JP3" library="jumper" package="JP1" value="" x="58.42" y="37.1475" smashed="yes" rot="R270">
 <attribute name="NAME" x="58.1025" y="34.3535" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="55.88" y="34.2265" size="1.27" layer="27" ratio="10"/>

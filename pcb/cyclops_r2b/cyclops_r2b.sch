@@ -9867,8 +9867,8 @@ Source: www.kingbright.com</description>
 <part name="V_REF" library="con-coax" deviceset="?227161*" device="1-" technology="-0"/>
 <part name="V_AUX" library="con-coax" deviceset="?227161*" device="1-" technology="-0"/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
-<part name="R3" library="HOSS" deviceset="R-US_" device="0207/7" value="10k"/>
-<part name="R4" library="HOSS" deviceset="R-US_" device="0207/7" value="10k"/>
+<part name="R3" library="HOSS" deviceset="R-US_" device="0207/7" value="0R"/>
+<part name="R4" library="HOSS" deviceset="R-US_" device="0207/7" value="0R"/>
 <part name="JP3" library="jumper" deviceset="JP1E" device=""/>
 <part name="JP2" library="jumper" deviceset="JP3Q" device=""/>
 <part name="TEST" library="HOSS" deviceset="SP3T_SWITCH" device=""/>
