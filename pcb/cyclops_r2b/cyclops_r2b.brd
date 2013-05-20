@@ -253,31 +253,6 @@
 </package>
 </packages>
 </library>
-<library name="con-coax">
-<packages>
-<package name="AMP_227161">
-<description>&lt;b&gt;JACK,  RIGHT ANGLE, 50 OHM, PCB, BNC&lt;/b&gt;&lt;p&gt;
-Source: amp_227161.pdf</description>
-<wire x1="-7.275" y1="-6.875" x2="7.275" y2="-6.875" width="0.2032" layer="21"/>
-<wire x1="7.275" y1="-6.875" x2="7.275" y2="7.275" width="0.2032" layer="21"/>
-<wire x1="7.275" y1="7.275" x2="-7.275" y2="7.275" width="0.2032" layer="21"/>
-<wire x1="-7.275" y1="7.275" x2="-7.275" y2="-6.875" width="0.2032" layer="21"/>
-<wire x1="-6.4" y1="7.375" x2="-6.4" y2="16.025" width="0.2032" layer="21"/>
-<wire x1="-6.4" y1="16.025" x2="6.4" y2="16.025" width="0.2032" layer="21"/>
-<wire x1="6.4" y1="16.025" x2="6.4" y2="7.35" width="0.2032" layer="21"/>
-<wire x1="-4.9" y1="16.15" x2="-4.9" y2="28.475" width="0.2032" layer="21"/>
-<wire x1="-4.9" y1="28.475" x2="4.9" y2="28.475" width="0.2032" layer="21"/>
-<wire x1="4.9" y1="28.475" x2="4.9" y2="16.125" width="0.2032" layer="21"/>
-<circle x="0" y="23.94" radius="1.26" width="0" layer="21"/>
-<pad name="1" x="0" y="-5.08" drill="0.9" diameter="1.27"/>
-<pad name="2" x="-2.54" y="-5.08" drill="0.9" diameter="1.27"/>
-<text x="-6.985" y="-8.89" size="1.27" layer="25">&gt;NAME</text>
-<text x="-0.635" y="-8.89" size="1.27" layer="27">&gt;VALUE</text>
-<hole x="-5.08" y="0" drill="2"/>
-<hole x="5.08" y="0" drill="2"/>
-</package>
-</packages>
-</library>
 <library name="HOSS">
 <packages>
 <package name="0207/7">
@@ -796,6 +771,20 @@ grid 2.54 mm</description>
 <rectangle x1="0" y1="-1.905" x2="10.16" y2="1.905" layer="39"/>
 <rectangle x1="0" y1="-1.905" x2="10.16" y2="1.905" layer="39"/>
 </package>
+<package name="AMP_227161">
+<description>&lt;b&gt;JACK,  RIGHT ANGLE, 50 OHM, PCB, BNC&lt;/b&gt;&lt;p&gt;
+Source: amp_227161.pdf</description>
+<wire x1="-7.275" y1="-6.875" x2="7.275" y2="-6.875" width="0.2032" layer="21"/>
+<wire x1="7.275" y1="-6.875" x2="7.275" y2="7.275" width="0.2032" layer="21"/>
+<wire x1="7.275" y1="7.275" x2="-7.275" y2="7.275" width="0.2032" layer="21"/>
+<wire x1="-7.275" y1="7.275" x2="-7.275" y2="-6.875" width="0.2032" layer="21"/>
+<pad name="1" x="0" y="-5.08" drill="0.9" diameter="1.27"/>
+<pad name="2" x="-2.54" y="-5.08" drill="0.9" diameter="1.27"/>
+<text x="-6.985" y="-8.89" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.635" y="-8.89" size="1.27" layer="27">&gt;VALUE</text>
+<hole x="-5.08" y="0" drill="2"/>
+<hole x="5.08" y="0" drill="2"/>
+</package>
 </packages>
 </library>
 </libraries>
@@ -996,37 +985,21 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="36.3855" y="36.068" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="36.3855" y="40.132" size="1.27" layer="27" font="vector" ratio="10" rot="R180"/>
 </element>
-<element name="V_CURR" library="con-coax" package="AMP_227161" value="1-227161-0" x="61.2775" y="14.2875" smashed="yes" rot="R180">
+<element name="V_CURR" library="cyclops" package="AMP_227161" value="1-227161-0" x="61.2775" y="14.2875" smashed="yes" rot="R180">
 <attribute name="NAME" x="68.8975" y="14.2875" size="1.27" layer="25" font="vector" rot="R270"/>
-<attribute name="OC_NEWARK" value="33B3200" x="61.2775" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="1-227161" x="61.2775" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MF" value="TYCO ELECTRONICS" x="61.2775" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="61.2775" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="V_CTL" library="con-coax" package="AMP_227161" value="1-227161-0" x="25.7175" y="14.2875" smashed="yes" rot="R180">
+<element name="V_CTL" library="cyclops" package="AMP_227161" value="1-227161-0" x="25.7175" y="14.2875" smashed="yes" rot="R180">
 <attribute name="NAME" x="33.3375" y="13.0175" size="1.27" layer="25" font="vector" rot="R270"/>
-<attribute name="OC_NEWARK" value="33B3200" x="25.7175" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="1-227161" x="25.7175" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MF" value="TYCO ELECTRONICS" x="25.7175" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="25.7175" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="IC1" library="linear" package="DIL14" value="LM324N" x="39.6875" y="51.435" smashed="yes">
 <attribute name="NAME" x="30.4165" y="48.387" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="32.9565" y="50.8" size="1.27" layer="27" font="vector" ratio="10"/>
 </element>
-<element name="V_REF" library="con-coax" package="AMP_227161" value="1-227161-0" x="43.4975" y="14.2875" smashed="yes" rot="R180">
+<element name="V_REF" library="cyclops" package="AMP_227161" value="1-227161-0" x="43.4975" y="14.2875" smashed="yes" rot="R180">
 <attribute name="NAME" x="51.1175" y="13.0175" size="1.27" layer="25" font="vector" rot="R270"/>
-<attribute name="OC_NEWARK" value="33B3200" x="43.4975" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="1-227161" x="43.4975" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MF" value="TYCO ELECTRONICS" x="43.4975" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="43.4975" y="14.2875" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="V_AUX" library="con-coax" package="AMP_227161" value="1-227161-0" x="106.3625" y="67.818" smashed="yes">
+<element name="V_AUX" library="cyclops" package="AMP_227161" value="1-227161-0" x="106.3625" y="67.818" smashed="yes">
 <attribute name="NAME" x="97.663" y="73.3425" size="1.27" layer="25" font="vector" rot="R270"/>
-<attribute name="OC_NEWARK" value="33B3200" x="106.3625" y="67.818" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="1-227161" x="106.3625" y="67.818" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="TYCO ELECTRONICS" x="106.3625" y="67.818" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="106.3625" y="67.818" size="1.778" layer="27" display="off"/>
 </element>
 <element name="IC3" library="linear" package="DIL08-OVAL" value="REF02" x="38.4175" y="28.575" smashed="yes">
 <attribute name="NAME" x="33.0835" y="25.654" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>

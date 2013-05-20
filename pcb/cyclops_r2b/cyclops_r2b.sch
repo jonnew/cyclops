@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -391,103 +391,6 @@ NS Package M08A</description>
 <device name="">
 <technologies>
 <technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="con-coax">
-<packages>
-<package name="AMP_227161">
-<description>&lt;b&gt;JACK,  RIGHT ANGLE, 50 OHM, PCB, BNC&lt;/b&gt;&lt;p&gt;
-Source: amp_227161.pdf</description>
-<wire x1="-7.275" y1="-6.875" x2="7.275" y2="-6.875" width="0.2032" layer="21"/>
-<wire x1="7.275" y1="-6.875" x2="7.275" y2="7.275" width="0.2032" layer="21"/>
-<wire x1="7.275" y1="7.275" x2="-7.275" y2="7.275" width="0.2032" layer="21"/>
-<wire x1="-7.275" y1="7.275" x2="-7.275" y2="-6.875" width="0.2032" layer="21"/>
-<wire x1="-6.4" y1="7.375" x2="-6.4" y2="16.025" width="0.2032" layer="21"/>
-<wire x1="-6.4" y1="16.025" x2="6.4" y2="16.025" width="0.2032" layer="21"/>
-<wire x1="6.4" y1="16.025" x2="6.4" y2="7.35" width="0.2032" layer="21"/>
-<wire x1="-4.9" y1="16.15" x2="-4.9" y2="28.475" width="0.2032" layer="21"/>
-<wire x1="-4.9" y1="28.475" x2="4.9" y2="28.475" width="0.2032" layer="21"/>
-<wire x1="4.9" y1="28.475" x2="4.9" y2="16.125" width="0.2032" layer="21"/>
-<circle x="0" y="23.94" radius="1.26" width="0" layer="21"/>
-<pad name="1" x="0" y="-5.08" drill="0.9" diameter="1.27"/>
-<pad name="2" x="-2.54" y="-5.08" drill="0.9" diameter="1.27"/>
-<text x="-6.985" y="-8.89" size="1.27" layer="25">&gt;NAME</text>
-<text x="-0.635" y="-8.89" size="1.27" layer="27">&gt;VALUE</text>
-<hole x="-5.08" y="0" drill="2"/>
-<hole x="5.08" y="0" drill="2"/>
-</package>
-</packages>
-<symbols>
-<symbol name="BU-BNC">
-<wire x1="-2.54" y1="2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94" curve="-180" cap="flat"/>
-<wire x1="0" y1="-2.54" x2="-0.762" y2="-1.778" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="-0.508" y2="0" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="0.254" x2="-0.762" y2="0.254" width="0.254" layer="94"/>
-<wire x1="-0.762" y1="0.254" x2="-0.508" y2="0" width="0.254" layer="94"/>
-<wire x1="-0.508" y1="0" x2="-0.762" y2="-0.254" width="0.254" layer="94"/>
-<wire x1="-0.762" y1="-0.254" x2="-2.54" y2="-0.254" width="0.254" layer="94"/>
-<text x="-2.54" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<text x="-2.54" y="3.302" size="1.778" layer="95">&gt;NAME</text>
-<pin name="1" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
-<pin name="2" x="2.54" y="-2.54" visible="off" length="short" direction="pas" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="?227161*" prefix="X">
-<description>&lt;b&gt;JACK,  RIGHT ANGLE, 50 OHM, PCB, BNC&lt;/b&gt;&lt;p&gt;
-Source: amp_227161.pdf</description>
-<gates>
-<gate name="G$1" symbol="BU-BNC" x="0" y="0"/>
-</gates>
-<devices>
-<device name="1-" package="AMP_227161">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="-0">
-<attribute name="MF" value="TYCO ELECTRONICS" constant="no"/>
-<attribute name="MPN" value="1-227161" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="33B3200" constant="no"/>
-</technology>
-<technology name="-2">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
-<technology name="-6">
-<attribute name="MF" value="TYCO ELECTRONICS" constant="no"/>
-<attribute name="MPN" value="1-227161-6" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="09H7854" constant="no"/>
-</technology>
-<technology name="-7">
-<attribute name="MF" value="TYCO ELECTRONICS" constant="no"/>
-<attribute name="MPN" value="1-227161-7" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="09H7855" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="" package="AMP_227161">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="-8">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
 </technologies>
 </device>
 </devices>
@@ -10034,11 +9937,38 @@ Source: www.kingbright.com</description>
 <rectangle x1="0" y1="-1.905" x2="10.16" y2="1.905" layer="39"/>
 <rectangle x1="0" y1="-1.905" x2="10.16" y2="1.905" layer="39"/>
 </package>
+<package name="AMP_227161">
+<description>&lt;b&gt;JACK,  RIGHT ANGLE, 50 OHM, PCB, BNC&lt;/b&gt;&lt;p&gt;
+Source: amp_227161.pdf</description>
+<wire x1="-7.275" y1="-6.875" x2="7.275" y2="-6.875" width="0.2032" layer="21"/>
+<wire x1="7.275" y1="-6.875" x2="7.275" y2="7.275" width="0.2032" layer="21"/>
+<wire x1="7.275" y1="7.275" x2="-7.275" y2="7.275" width="0.2032" layer="21"/>
+<wire x1="-7.275" y1="7.275" x2="-7.275" y2="-6.875" width="0.2032" layer="21"/>
+<pad name="1" x="0" y="-5.08" drill="0.9" diameter="1.27"/>
+<pad name="2" x="-2.54" y="-5.08" drill="0.9" diameter="1.27"/>
+<text x="-6.985" y="-8.89" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.635" y="-8.89" size="1.27" layer="27">&gt;VALUE</text>
+<hole x="-5.08" y="0" drill="2"/>
+<hole x="5.08" y="0" drill="2"/>
+</package>
 </packages>
 <symbols>
 <symbol name="BANANA_TO_BOARD">
 <text x="0" y="2.54" size="1.778" layer="95">&gt;NAME</text>
 <pin name="P$1" x="0" y="0" length="middle"/>
+</symbol>
+<symbol name="BU-BNC">
+<wire x1="-2.54" y1="2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94" curve="-180" cap="flat"/>
+<wire x1="0" y1="-2.54" x2="-0.762" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-0.508" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0.254" x2="-0.762" y2="0.254" width="0.254" layer="94"/>
+<wire x1="-0.762" y1="0.254" x2="-0.508" y2="0" width="0.254" layer="94"/>
+<wire x1="-0.508" y1="0" x2="-0.762" y2="-0.254" width="0.254" layer="94"/>
+<wire x1="-0.762" y1="-0.254" x2="-2.54" y2="-0.254" width="0.254" layer="94"/>
+<text x="-2.54" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-2.54" y="3.302" size="1.778" layer="95">&gt;NAME</text>
+<pin name="1" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+<pin name="GND" x="2.54" y="-2.54" visible="off" length="short" direction="pwr" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -10056,6 +9986,36 @@ Digikey part: J111-ND (or similar).</description>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="?227161*" prefix="X">
+<description>&lt;b&gt;JACK,  RIGHT ANGLE, 50 OHM, PCB, BNC&lt;/b&gt;&lt;p&gt;
+Source: amp_227161.pdf</description>
+<gates>
+<gate name="G$1" symbol="BU-BNC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="1-" package="AMP_227161">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+</connects>
+<technologies>
+<technology name="-0"/>
+<technology name="-2"/>
+<technology name="-6"/>
+<technology name="-7"/>
+</technologies>
+</device>
+<device name="" package="AMP_227161">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+</connects>
+<technologies>
+<technology name="-8"/>
 </technologies>
 </device>
 </devices>
@@ -10078,11 +10038,11 @@ Digikey part: J111-ND (or similar).</description>
 <part name="C3" library="rcl" deviceset="C-EU" device="050-024X044" value="0.1uF"/>
 <part name="R3" library="HOSS" deviceset="R-US_" device="0207/7" value="120"/>
 <part name="C2" library="rcl" deviceset="C-EU" device="025-024X044" value="1.0uF"/>
-<part name="V_CURR" library="con-coax" deviceset="?227161*" device="1-" technology="-0"/>
-<part name="V_CTL" library="con-coax" deviceset="?227161*" device="1-" technology="-0"/>
+<part name="V_CURR" library="cyclops" deviceset="?227161*" device="1-" technology="-0"/>
+<part name="V_CTL" library="cyclops" deviceset="?227161*" device="1-" technology="-0"/>
 <part name="IC1" library="linear" deviceset="LM324" device="N"/>
-<part name="V_REF" library="con-coax" deviceset="?227161*" device="1-" technology="-0"/>
-<part name="V_AUX" library="con-coax" deviceset="?227161*" device="1-" technology="-0"/>
+<part name="V_REF" library="cyclops" deviceset="?227161*" device="1-" technology="-0"/>
+<part name="V_AUX" library="cyclops" deviceset="?227161*" device="1-" technology="-0"/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
 <part name="R2" library="HOSS" deviceset="R-US_" device="0207/7" value="0R"/>
 <part name="R1" library="HOSS" deviceset="R-US_" device="0207/7" value="0R"/>
@@ -10513,10 +10473,10 @@ Digikey part: J111-ND (or similar).</description>
 <junction x="-66.04" y="43.18"/>
 <junction x="-66.04" y="73.66"/>
 <pinref part="SUPPLY3" gate="GND" pin="GND"/>
-<pinref part="V_CTL" gate="G$1" pin="2"/>
-<pinref part="V_REF" gate="G$1" pin="2"/>
-<pinref part="V_AUX" gate="G$1" pin="2"/>
-<pinref part="V_CURR" gate="G$1" pin="2"/>
+<pinref part="V_CTL" gate="G$1" pin="GND"/>
+<pinref part="V_REF" gate="G$1" pin="GND"/>
+<pinref part="V_AUX" gate="G$1" pin="GND"/>
+<pinref part="V_CURR" gate="G$1" pin="GND"/>
 <pinref part="I/O_BLOCK" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
