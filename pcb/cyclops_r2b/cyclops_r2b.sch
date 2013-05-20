@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -3538,18 +3538,6 @@ grid 2.54 mm</description>
 <text x="-1.27" y="3.81" size="1.27" layer="25">&gt;NAME</text>
 <rectangle x1="-1.905" y1="-3.302" x2="9.525" y2="3.302" layer="39"/>
 </package>
-<package name="BANANA_TO_BOARD">
-<description>Right angle female banana socket to board (Emerson Network Solutions)</description>
-<wire x1="-0.3175" y1="2.2225" x2="10.4775" y2="2.2225" width="0.127" layer="21"/>
-<wire x1="10.4775" y1="2.2225" x2="10.4775" y2="-2.2225" width="0.127" layer="21"/>
-<wire x1="10.4775" y1="-2.2225" x2="-0.3175" y2="-2.2225" width="0.127" layer="21"/>
-<wire x1="-0.3175" y1="-2.2225" x2="-0.3175" y2="2.2225" width="0.127" layer="21"/>
-<pad name="P$1" x="0" y="0" drill="1.3208" shape="octagon"/>
-<pad name="P$2" x="10.16" y="0" drill="1.3208" shape="octagon"/>
-<text x="1.27" y="0" size="1.27" layer="25">&gt;NAME</text>
-<rectangle x1="0" y1="-1.905" x2="10.16" y2="1.905" layer="39"/>
-<rectangle x1="0" y1="-1.905" x2="10.16" y2="1.905" layer="39"/>
-</package>
 <package name="SCREW2">
 <wire x1="-1.905" y1="3.175" x2="-1.905" y2="-3.175" width="0.127" layer="21"/>
 <wire x1="-1.905" y1="-3.175" x2="4.445" y2="-3.175" width="0.127" layer="21"/>
@@ -3769,10 +3757,6 @@ type 0617, grid 22.5 mm</description>
 <pin name="E" x="0" y="7.62" visible="off" length="short" direction="pas" rot="R270"/>
 <pin name="S" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
 </symbol>
-<symbol name="BANANA_TO_BOARD">
-<text x="0" y="2.54" size="1.778" layer="95">&gt;NAME</text>
-<pin name="P$1" x="0" y="0" length="middle"/>
-</symbol>
 <symbol name="317">
 <wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.4064" layer="94"/>
 <wire x1="7.62" y1="-2.54" x2="7.62" y2="5.08" width="0.4064" layer="94"/>
@@ -3948,24 +3932,6 @@ distributor RS Components</description>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
 <connect gate="G$1" pin="P$3" pad="P$3"/>
 <connect gate="G$1" pin="P$4" pad="P$4"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="BANANA_TO_BOARD">
-<description>Female banana socket to board, right angle.
-
-Digikey part: J111-ND (or similar).</description>
-<gates>
-<gate name="G$1" symbol="BANANA_TO_BOARD" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="BANANA_TO_BOARD">
-<connects>
-<connect gate="G$1" pin="P$1" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -10054,6 +10020,48 @@ Source: www.kingbright.com</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="cyclops">
+<packages>
+<package name="BANANA_TO_BOARD">
+<description>Right angle female banana socket to board (Emerson Network Solutions)</description>
+<wire x1="-0.3175" y1="2.2225" x2="10.4775" y2="2.2225" width="0.127" layer="21"/>
+<wire x1="10.4775" y1="2.2225" x2="10.4775" y2="-2.2225" width="0.127" layer="21"/>
+<wire x1="10.4775" y1="-2.2225" x2="-0.3175" y2="-2.2225" width="0.127" layer="21"/>
+<wire x1="-0.3175" y1="-2.2225" x2="-0.3175" y2="2.2225" width="0.127" layer="21"/>
+<pad name="P$1" x="0" y="0" drill="1.3208" shape="octagon"/>
+<pad name="P$2" x="10.16" y="0" drill="1.3208" shape="octagon"/>
+<text x="1.27" y="0" size="1.27" layer="25">&gt;NAME</text>
+<rectangle x1="0" y1="-1.905" x2="10.16" y2="1.905" layer="39"/>
+<rectangle x1="0" y1="-1.905" x2="10.16" y2="1.905" layer="39"/>
+</package>
+</packages>
+<symbols>
+<symbol name="BANANA_TO_BOARD">
+<text x="0" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<pin name="P$1" x="0" y="0" length="middle"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BANANA_TO_BOARD">
+<description>Female banana socket to board, right angle.
+
+Digikey part: J111-ND (or similar).</description>
+<gates>
+<gate name="G$1" symbol="BANANA_TO_BOARD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="BANANA_TO_BOARD">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1 P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -10084,8 +10092,8 @@ Source: www.kingbright.com</description>
 <part name="CURR/OPT" library="HOSS" deviceset="SPST_SWITCH" device=""/>
 <part name="IMEAS_K" library="HOSS" deviceset="TRIM_US-" device="RJ6S" value="10k"/>
 <part name="CTL_K" library="HOSS" deviceset="TRIM_US-" device="RJ6S" value="10k"/>
-<part name="LED+" library="HOSS" deviceset="BANANA_TO_BOARD" device=""/>
-<part name="LED-" library="HOSS" deviceset="BANANA_TO_BOARD" device=""/>
+<part name="LED+" library="cyclops" deviceset="BANANA_TO_BOARD" device=""/>
+<part name="LED-" library="cyclops" deviceset="BANANA_TO_BOARD" device=""/>
 <part name="JP1" library="jumper" deviceset="JP3Q" device=""/>
 <part name="C1" library="rcl" deviceset="C-EU" device="050-024X044" value="0.1uF"/>
 <part name="EXT_CTL_K" library="HOSS" deviceset="SCREW3" device=""/>
@@ -10107,8 +10115,8 @@ Source: www.kingbright.com</description>
 <part name="C6" library="rcl" deviceset="C-EU" device="050-024X044" value="0.1uF"/>
 <part name="R7" library="HOSS" deviceset="R-US_" device="0207/7" value="470"/>
 <part name="SUPPLY6" library="supply2" deviceset="GND" device=""/>
-<part name="+12V" library="HOSS" deviceset="BANANA_TO_BOARD" device=""/>
-<part name="GND1" library="HOSS" deviceset="BANANA_TO_BOARD" device=""/>
+<part name="+12V" library="cyclops" deviceset="BANANA_TO_BOARD" device=""/>
+<part name="GND1" library="cyclops" deviceset="BANANA_TO_BOARD" device=""/>
 <part name="IC2" library="HOSS" deviceset="*317" device=""/>
 <part name="R6" library="HOSS" deviceset="R-US_" device="0207/7" value="1.5k"/>
 <part name="ON" library="led" deviceset="LED" device="3MM"/>
@@ -10117,8 +10125,8 @@ Source: www.kingbright.com</description>
 <part name="MECH1" library="jumper" deviceset="JP2Q" device=""/>
 <part name="MECH2" library="jumper" deviceset="JP2Q" device=""/>
 <part name="SUPPLY7" library="supply2" deviceset="GND" device=""/>
-<part name="V_IN1" library="HOSS" deviceset="BANANA_TO_BOARD" device=""/>
-<part name="GND2" library="HOSS" deviceset="BANANA_TO_BOARD" device=""/>
+<part name="V_IN1" library="cyclops" deviceset="BANANA_TO_BOARD" device=""/>
+<part name="GND2" library="cyclops" deviceset="BANANA_TO_BOARD" device=""/>
 <part name="POW1" library="HOSS" deviceset="SCREW2" device=""/>
 <part name="C7" library="rcl" deviceset="C-EU" device="025-024X044" value="10u"/>
 <part name="U$1" library="HOSS" deviceset="NXT-FUSE" device="" value="FUSE &gt;2A"/>
@@ -10438,15 +10446,21 @@ Source: www.kingbright.com</description>
 <segment>
 <wire x1="83.82" y1="81.28" x2="83.82" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="81.28" x2="83.82" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="95.25" y1="83.82" x2="95.25" y2="80.01" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="83.82" x2="95.25" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="95.25" y1="83.82" x2="95.25" y2="87.63" width="0.1524" layer="91"/>
 <junction x="83.82" y="83.82"/>
-<junction x="95.25" y="83.82"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <pinref part="JP3" gate="A" pin="1"/>
-<pinref part="JP6" gate="A" pin="1"/>
+<wire x1="95.25" y1="83.82" x2="101.6" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="81.28" x2="101.6" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="81.28" x2="101.6" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="JP7" gate="A" pin="2"/>
+<junction x="101.6" y="83.82"/>
 <pinref part="JP5" gate="A" pin="2"/>
+<wire x1="95.25" y1="80.01" x2="95.25" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="JP6" gate="A" pin="1"/>
+<junction x="95.25" y="83.82"/>
+<wire x1="95.25" y1="83.82" x2="95.25" y2="87.63" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$69" class="0">
@@ -10544,16 +10558,6 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="C3" gate="G$1" pin="2"/>
 <pinref part="R3" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$16" class="0">
-<segment>
-<wire x1="93.98" y1="83.82" x2="101.6" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="81.28" x2="101.6" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="81.28" x2="101.6" y2="83.82" width="0.1524" layer="91"/>
-<junction x="101.6" y="83.82"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<pinref part="JP7" gate="A" pin="2"/>
 </segment>
 </net>
 <net name="N$30" class="0">
