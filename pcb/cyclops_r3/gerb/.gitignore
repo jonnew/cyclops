@@ -1,0 +1,3 @@
+# Ignore the processing files produced by the EAGLE CAM tool
+*.gpi
+*.dri
