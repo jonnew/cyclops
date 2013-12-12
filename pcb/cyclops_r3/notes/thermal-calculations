@@ -1,0 +1,27 @@
+1. DLD101
+
++ Assume 35 mm^2 of copper area (from coopper pours under pins 1 and 4)
++ Assume Vcc = 15V
++ Assume single blue LED @ 1.0A DC drive --> 3.5 Vdiode
++ Assume Rs = 0.2 ohms --> Vrs = 0.2 V
+
+
+P_q1 ~ (Vcc - Vdiode - Vrs) * 1.0 A
+     ~ 10 - 3.5 - 0.2
+     ~ 11.3 W
+
++ Max junction temperature = 150 deg C
++ Ambient air temp = 25 deg C
++ R_jc = The thermal resistance from junction to case: 17 deg C/W
++ R_ch = The thermal resistance from case to heat sink (via mica): 2 deg C/W
++ R_ha = The thermal resistance from heat sink to air
+
+rha < [150 - (P_dis * R_jc + P_dis * R_ch)]/P_dis
+
++ P_dis = 5W
+    r_ha < 11 deg C/W
++ P_dis = 10W
+    r_ha < -4 dec C/W (oops)
+
++ So, the device should not be operated while dissipating more than 5 W. This means that Vcc <= 10V
+    

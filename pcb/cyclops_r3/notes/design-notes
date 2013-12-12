@@ -1,0 +1,9 @@
+1. Power for the DLD101 should come from an LM317 that recieved a 12V input and regulates that down to Vcc = 10 v
+
++ The LM317 has built in current protection and allows you to remove the current limit network from the design
+
+
+2. The onboard DAC needs to have pretty fast max sample and voltage slew rates to keep up with the LED. I want something with 1-3 usec rise times.
+
+
+    
