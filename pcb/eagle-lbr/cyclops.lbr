@@ -334,7 +334,6 @@ NS Package M08A</description>
 <wire x1="-2.4" y1="-1.9" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
 <wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.9" width="0.2032" layer="51"/>
 <wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
 <smd name="2" x="-0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
 <smd name="7" x="-0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
 <smd name="1" x="-1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
@@ -353,6 +352,7 @@ NS Package M08A</description>
 <rectangle x1="0.39" y1="2" x2="0.88" y2="3.1" layer="51"/>
 <rectangle x1="-0.88" y1="2" x2="-0.39" y2="3.1" layer="51"/>
 <rectangle x1="-2.15" y1="2" x2="-1.66" y2="3.1" layer="51"/>
+<circle x="-1.778" y="-0.762" radius="0.359209375" width="0.127" layer="21"/>
 </package>
 <package name="DIL08">
 <description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
@@ -362,14 +362,14 @@ NS Package M08A</description>
 <wire x1="-5.08" y1="2.921" x2="-5.08" y2="1.016" width="0.1524" layer="21"/>
 <wire x1="-5.08" y1="-2.921" x2="-5.08" y2="-1.016" width="0.1524" layer="21"/>
 <wire x1="-5.08" y1="1.016" x2="-5.08" y2="-1.016" width="0.1524" layer="21" curve="-180"/>
-<pad name="1" x="-3.81" y="-3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="2" x="-1.27" y="-3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="7" x="-1.27" y="3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="8" x="-3.81" y="3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="3" x="1.27" y="-3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="4" x="3.81" y="-3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="6" x="1.27" y="3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="5" x="3.81" y="3.81" drill="0.8128" diameter="1.27" rot="R90"/>
+<pad name="1" x="-3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="2" x="-1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="7" x="-1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="8" x="-3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="4" x="3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="6" x="1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="5" x="3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
 <text x="-5.334" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
 <text x="-3.556" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
@@ -3736,6 +3736,71 @@ grid 2.54 mm</description>
 <text x="-3" y="3.5" size="1.27" layer="25">&gt;NAME</text>
 <text x="-3.2" y="-4.8" size="1.27" layer="27">&gt;VALUE</text>
 </package>
+<package name="DPACK">
+<description>&lt;b&gt;DPAK&lt;/b&gt;&lt;p&gt;
+PLASTIC PACKAGE CASE 369C-01&lt;br&gt;
+Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
+<wire x1="3.2766" y1="3.8354" x2="3.277" y2="-2.159" width="0.2032" layer="21"/>
+<wire x1="3.277" y1="-2.159" x2="-3.277" y2="-2.159" width="0.2032" layer="21"/>
+<wire x1="-3.277" y1="-2.159" x2="-3.2766" y2="3.8354" width="0.2032" layer="21"/>
+<wire x1="-3.277" y1="3.835" x2="3.2774" y2="3.8346" width="0.2032" layer="51"/>
+<wire x1="-2.5654" y1="3.937" x2="-2.5654" y2="4.6482" width="0.2032" layer="51"/>
+<wire x1="-2.5654" y1="4.6482" x2="-2.1082" y2="5.1054" width="0.2032" layer="51"/>
+<wire x1="-2.1082" y1="5.1054" x2="2.1082" y2="5.1054" width="0.2032" layer="51"/>
+<wire x1="2.1082" y1="5.1054" x2="2.5654" y2="4.6482" width="0.2032" layer="51"/>
+<wire x1="2.5654" y1="4.6482" x2="2.5654" y2="3.937" width="0.2032" layer="51"/>
+<wire x1="2.5654" y1="3.937" x2="-2.5654" y2="3.937" width="0.2032" layer="51"/>
+<smd name="4" x="0" y="2.38" dx="5.8" dy="6.2" layer="1"/>
+<smd name="1" x="-2.28" y="-4.8" dx="1.6" dy="3" layer="1"/>
+<smd name="3" x="2.28" y="-4.8" dx="1.6" dy="3" layer="1"/>
+<text x="-3.81" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="5.08" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-2.7178" y1="-5.1562" x2="-1.8542" y2="-2.2606" layer="51"/>
+<rectangle x1="1.8542" y1="-5.1562" x2="2.7178" y2="-2.2606" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.0226" x2="0.4318" y2="-2.2606" layer="21"/>
+<polygon width="0.1998" layer="51">
+<vertex x="-2.5654" y="3.937"/>
+<vertex x="-2.5654" y="4.6482"/>
+<vertex x="-2.1082" y="5.1054"/>
+<vertex x="2.1082" y="5.1054"/>
+<vertex x="2.5654" y="4.6482"/>
+<vertex x="2.5654" y="3.937"/>
+</polygon>
+</package>
+<package name="TO-263">
+<smd name="1" x="-2.54" y="-7.1882" dx="1.0668" dy="2.159" layer="1"/>
+<text x="-5.715" y="-0.9525" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="6.6675" y="-0.9525" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="2.1082" y1="-7.62" x2="2.9718" y2="-1.6256" layer="21"/>
+<smd name="2" x="0" y="-7.1882" dx="1.0668" dy="2.159" layer="1"/>
+<smd name="3" x="2.54" y="-7.1882" dx="1.0668" dy="2.159" layer="1"/>
+<rectangle x1="-0.4318" y1="-7.62" x2="0.4318" y2="-1.6256" layer="21"/>
+<rectangle x1="-2.9718" y1="-7.62" x2="-2.1082" y2="-1.6256" layer="21"/>
+<polygon width="0.127" layer="1">
+<vertex x="-4.1275" y="-0.9525"/>
+<vertex x="-4.1275" y="5.08"/>
+<vertex x="-5.3975" y="5.08"/>
+<vertex x="-5.3975" y="6.985"/>
+<vertex x="5.3975" y="6.985"/>
+<vertex x="5.3975" y="5.08"/>
+<vertex x="4.1275" y="5.08"/>
+<vertex x="4.1275" y="-0.9525"/>
+</polygon>
+<wire x1="-5.08" y1="6.985" x2="5.08" y2="6.985" width="0.127" layer="21"/>
+<wire x1="5.08" y1="6.985" x2="5.08" y2="-1.5875" width="0.127" layer="21"/>
+<wire x1="5.08" y1="-1.5875" x2="-5.08" y2="-1.5875" width="0.127" layer="21"/>
+<wire x1="-5.08" y1="-1.5875" x2="-5.08" y2="6.985" width="0.127" layer="21"/>
+<polygon width="0.127" layer="21">
+<vertex x="-5.08" y="6.985"/>
+<vertex x="-5.08" y="7.62"/>
+<vertex x="-3.81" y="7.9375"/>
+<vertex x="4.1275" y="7.9375"/>
+<vertex x="5.08" y="7.62"/>
+<vertex x="5.08" y="6.985"/>
+</polygon>
+<circle x="-3.4925" y="-2.2225" radius="0.4490125" width="0.127" layer="21"/>
+<smd name="4" x="0" y="2.54" dx="6.4516" dy="3.2512" layer="1" rot="R90"/>
+</package>
 </packages>
 <symbols>
 <symbol name="BANANA_TO_BOARD">
@@ -4164,6 +4229,22 @@ grid 2.54 mm</description>
 <pin name="S1" x="2.54" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1" rot="R270"/>
 <pin name="P1" x="2.54" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="2" rot="R90"/>
 </symbol>
+<symbol name="MCP4921">
+<wire x1="-10.16" y1="17.78" x2="10.16" y2="17.78" width="0.254" layer="94"/>
+<wire x1="10.16" y1="17.78" x2="10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-7.62" x2="-10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-7.62" x2="-10.16" y2="17.78" width="0.254" layer="94"/>
+<text x="-12.7" y="-10.16" size="1.6764" layer="96">MCP4921</text>
+<text x="-2.54" y="20.32" size="1.6764" layer="95" rot="R180">&gt;NAME</text>
+<pin name="VDD" x="0" y="22.86" length="middle" direction="sup" rot="R270"/>
+<pin name="#CS" x="-15.24" y="7.62" length="middle" direction="in" function="dot"/>
+<pin name="SCK" x="-15.24" y="5.08" length="middle" direction="in"/>
+<pin name="SDI" x="-15.24" y="2.54" length="middle" direction="in"/>
+<pin name="LDAC" x="-15.24" y="0" length="middle" direction="in" function="dot"/>
+<pin name="DACA" x="15.24" y="5.08" length="middle" direction="out" rot="R180"/>
+<pin name="REFA" x="15.24" y="7.62" length="middle" direction="in" rot="R180"/>
+<pin name="AVSS" x="0" y="-12.7" length="middle" direction="sup" rot="R90"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="BANANA_TO_BOARD">
@@ -4327,6 +4408,16 @@ Source: amp_227161.pdf</description>
 <connect gate="A1" pin="ADJ" pad="G"/>
 <connect gate="A1" pin="VI" pad="S"/>
 <connect gate="A1" pin="VO" pad="D"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="TO263" package="TO-263">
+<connects>
+<connect gate="A1" pin="ADJ" pad="1"/>
+<connect gate="A1" pin="VI" pad="3"/>
+<connect gate="A1" pin="VO" pad="2 4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -6406,6 +6497,43 @@ distributor RS Components</description>
 <connect gate="G$1" pin="P1" pad="A'"/>
 <connect gate="G$1" pin="S" pad="B"/>
 <connect gate="G$1" pin="S1" pad="B'"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MCP4921">
+<gates>
+<gate name="G$1" symbol="MCP4921" x="2.54" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="DIL08">
+<connects>
+<connect gate="G$1" pin="#CS" pad="2"/>
+<connect gate="G$1" pin="AVSS" pad="7"/>
+<connect gate="G$1" pin="DACA" pad="8"/>
+<connect gate="G$1" pin="LDAC" pad="5"/>
+<connect gate="G$1" pin="REFA" pad="6"/>
+<connect gate="G$1" pin="SCK" pad="3"/>
+<connect gate="G$1" pin="SDI" pad="4"/>
+<connect gate="G$1" pin="VDD" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SOIC" package="SO08">
+<connects>
+<connect gate="G$1" pin="#CS" pad="2"/>
+<connect gate="G$1" pin="AVSS" pad="7"/>
+<connect gate="G$1" pin="DACA" pad="8"/>
+<connect gate="G$1" pin="LDAC" pad="5"/>
+<connect gate="G$1" pin="REFA" pad="6"/>
+<connect gate="G$1" pin="SCK" pad="3"/>
+<connect gate="G$1" pin="SDI" pad="4"/>
+<connect gate="G$1" pin="VDD" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
