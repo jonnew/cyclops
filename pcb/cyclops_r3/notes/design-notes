@@ -2,8 +2,9 @@
 
 + The LM317 has built in current protection and allows you to remove the current limit network from the design
 
-
 2. The onboard DAC needs to have pretty fast max sample and voltage slew rates to keep up with the LED. I want something with 1-3 usec rise times.
+
+3. I'm not quite sure how to deal with reverse polarity at the V_REF input. Can I just put a buffer stage using one of the LM324's opamps that will null any negative inputs, or does this chip behave badly when its pins are taken below Vss?
 
 
     
