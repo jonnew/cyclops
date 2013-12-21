@@ -6,5 +6,7 @@
 
 3. I'm not quite sure how to deal with reverse polarity at the V_REF input. Can I just put a buffer stage using one of the LM324's opamps that will null any negative inputs, or does this chip behave badly when its pins are taken below Vss?
 
+4. The OP1177 package on the schematic should be an SOIC. Right now its MSOP.
+
 
     
