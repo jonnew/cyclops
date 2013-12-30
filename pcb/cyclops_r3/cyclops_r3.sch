@@ -4579,7 +4579,7 @@ Sourc: www.ctscorp.com</description>
 <part name="I/O_BLOCK" library="cyclops" deviceset="SCREW10" device="_0.1-THRU"/>
 <part name="SUPPLY32" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY33" library="cyclops" deviceset="AGND" device=""/>
-<part name="S1" library="cyclops" deviceset="SPDT" device="_PCM12" value="TEST"/>
+<part name="S1" library="cyclops" deviceset="SPDT" device="_PCM12" value="INPUT SRC"/>
 <part name="R11" library="cyclops" deviceset="R" device="_0603" value="220k"/>
 <part name="SUPPLY1" library="cyclops" deviceset="AGND" device=""/>
 <part name="U6" library="cyclops" deviceset="DLD101" device=""/>
@@ -4591,7 +4591,7 @@ Sourc: www.ctscorp.com</description>
 <part name="SUPPLY12" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY17" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY34" library="cyclops" deviceset="GND" device=""/>
-<part name="S3" library="cyclops" deviceset="SPDT" device="_CFPA" value="INPUT SOURCE"/>
+<part name="S3" library="cyclops" deviceset="SPDT" device="_CFPA" value="TEST"/>
 </parts>
 <sheets>
 <sheet>
