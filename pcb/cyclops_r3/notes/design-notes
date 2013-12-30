@@ -9,7 +9,8 @@ EDIT: 	> The LM317 has built in current protection and allows you to remove the 
 
 X2. The onboard DAC needs to have pretty fast max sample and voltage slew rates to keep up with the LED. I want something with 1-3 usec rise times.
 
-EDIT: 	> Alternatives with this speed were many times more expensive. Not worth it. If the user wants mega fast rising edges, they can pipe that in through the VINPUT pin.
+EDIT: 	> Alternatives with this speed were many times more expensive. Not worth it. 
+		> If the user wants mega fast rising edges, they can pipe that in through the VINPUT pin.
 
 X3. I'm not quite sure how to deal with reverse polarity at the V_REF input. Can I just put a buffer stage using one of the LM324's opamps that will null any negative inputs, or does this chip behave badly when its pins are taken below Vss?
 
@@ -17,9 +18,11 @@ EDIT: 	> Fixed using a two schottky diodes.
 		> One with anode to input, cathode to +12V: This means that when the input exceeds 12.3V, the diode will clamp the input signal. 
 		> One with cathode to input, anode to GND: This means that when the input goes below -0.3V, the diode will clamp the input signal.
 
-4. The OP1177 package on the schematic should be an SOIC. Right now its MSOP.
+X4. The OP1177 package on the schematic should be an SOIC. Right now its MSOP.
 
-5. 
+EDIT: 	> Why?
+
+5. I need to run/fix an ERC on the schematic before doing anything else to the layout.
 
 
     
