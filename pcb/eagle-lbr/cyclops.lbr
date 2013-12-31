@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -4565,42 +4565,6 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 <wire x1="-1.778" y1="-0.381" x2="-1.778" y2="0.381" width="0.127" layer="21"/>
 <wire x1="-1.778" y1="0.381" x2="-1.778" y2="1.778" width="0.127" layer="21"/>
 <wire x1="-1.778" y1="0.381" x2="-1.778" y2="-0.381" width="0.127" layer="21" curve="-143.130102"/>
-</package>
-<package name="CYCLOPS-SILKA">
-<text x="0" y="-8.382" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">TEST</text>
-<text x="0" y="-2.286" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">INT EXT</text>
-<text x="0" y="-13.208" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">CUR AUX</text>
-<text x="0" y="-22.098" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">GAIN</text>
-<text x="0" y="-27.178" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">GND</text>
-<text x="0" y="-29.718" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">AUX</text>
-<text x="0" y="-32.258" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">CUR</text>
-<text x="0" y="-35.306" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">IN</text>
-<text x="0" y="-37.338" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">REF</text>
-<text x="0" y="-39.878" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">TMP</text>
-<text x="0" y="-42.926" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">O-</text>
-<text x="0" y="-45.466" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">O+</text>
-<text x="0" y="-47.498" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">GND</text>
-<text x="0" y="-50.038" size="0.8128" layer="41" font="vector" ratio="15" rot="SR270">15V</text>
-<text x="1.016" y="-30.734" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-28.194" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-33.274" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-35.814" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-38.354" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-40.894" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-43.434" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-45.974" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-48.514" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-51.054" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-14.224" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-17.272" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-3.048" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<text x="1.016" y="-6.096" size="0.6096" layer="41" font="vector" ratio="15" rot="SR270">|</text>
-<polygon width="0.0254" layer="1">
-<vertex x="0" y="0"/>
-<vertex x="1.778" y="0"/>
-<vertex x="1.778" y="-53.34"/>
-<vertex x="0" y="-53.34"/>
-</polygon>
 </package>
 </packages>
 <symbols>
