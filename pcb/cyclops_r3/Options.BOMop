@@ -1,7 +1,7 @@
 ScreenWidth=700
 ScreenHeight=600
-AutoOpen=Y
-AutoDatabase=C:/Users/jon/Documents/GitHub/Cyclops-LED-Driver/pcb/cyclops_r3/bom/cyclops_r3.BOMdb
+AutoOpen=N
+AutoDatabase=
 Database=C:/Users/jon/Documents/GitHub/Cyclops-LED-Driver/pcb/cyclops_r3/bom/cyclops_r3.BOMdb
 Database=/home/jon/github/Cyclops-LED-Driver/pcb/cyclops_r3/bom/cyclops_r3.BOMdb
 AutoOpenSetup=N

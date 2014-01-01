@@ -4444,8 +4444,8 @@ Sourc: www.ctscorp.com</description>
 </libraries>
 <attributes>
 <attribute name="DESIGNER" value="JONATHAN P. NEWMAN"/>
-<attribute name="DOC_NUMBER" value="1.0"/>
-<attribute name="REVISION" value="3.0"/>
+<attribute name="DOC_NUMBER" value="1.1"/>
+<attribute name="REVISION" value="3.1"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -4489,7 +4489,7 @@ Sourc: www.ctscorp.com</description>
 <part name="SUPPLY16" library="cyclops" deviceset="AGND" device=""/>
 <part name="R9" library="cyclops" deviceset="R" device="_0603" value="9k 0.1%"/>
 <part name="R8" library="cyclops" deviceset="R" device="_0603" value="1k 0.1%"/>
-<part name="RSENSE" library="cyclops" deviceset="R" device="_2512" value="0.1"/>
+<part name="RSENSE" library="cyclops" deviceset="R" device="_2512" value="0.1, 1W"/>
 <part name="U3" library="cyclops" deviceset="ADR03AKSZ-REEL7" device="" value="ADR03"/>
 <part name="C10" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="C12" library="cyclops" deviceset="C" device="_0603" value="0.1uF"/>
@@ -4544,12 +4544,12 @@ Sourc: www.ctscorp.com</description>
 <part name="SUPPLY17" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY34" library="cyclops" deviceset="GND" device=""/>
 <part name="S3" library="cyclops" deviceset="SPDT" device="_CFPA" value="TEST"/>
-<part name="R12" library="cyclops" deviceset="R" device="_0603" value="0"/>
-<part name="U$2" library="cyclops" deviceset="ZXTD4591E6" device=""/>
+<part name="R12" library="cyclops" deviceset="R" device="_0603" value="0R"/>
+<part name="U6" library="cyclops" deviceset="ZXTD4591E6" device=""/>
 <part name="SUPPLY35" library="cyclops" deviceset="AGND" device=""/>
-<part name="R13" library="cyclops" deviceset="R" device="_0603" value="12"/>
-<part name="Q2" library="cyclops" deviceset="N-MOSFET" device="TO-262"/>
-<part name="R14" library="cyclops" deviceset="R" device="_0603" value="1"/>
+<part name="R13" library="cyclops" deviceset="R" device="_0603" value="12R, 1W"/>
+<part name="Q2" library="cyclops" deviceset="N-MOSFET" device="TO-262" value="IRF510"/>
+<part name="R14" library="cyclops" deviceset="R" device="_0603" value="1R, 1W"/>
 </parts>
 <sheets>
 <sheet>
@@ -5240,7 +5240,7 @@ Sourc: www.ctscorp.com</description>
 <instance part="R11" gate="R" x="81.28" y="58.42" rot="R90"/>
 <instance part="SUPPLY1" gate="G$1" x="81.28" y="40.64"/>
 <instance part="R12" gate="R" x="91.44" y="83.82" rot="R180"/>
-<instance part="U$2" gate="G$1" x="129.54" y="83.82"/>
+<instance part="U6" gate="G$1" x="129.54" y="83.82"/>
 <instance part="SUPPLY35" gate="G$1" x="109.22" y="63.5"/>
 <instance part="R13" gate="R" x="101.6" y="106.68" rot="R270"/>
 <instance part="Q2" gate="G$1" x="172.72" y="86.36"/>
@@ -5395,6 +5395,12 @@ Sourc: www.ctscorp.com</description>
 <pinref part="SUPPLY1" gate="G$1" pin="AGND"/>
 <wire x1="81.28" y1="53.34" x2="81.28" y2="43.18" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="SUPPLY35" gate="G$1" pin="AGND"/>
+<wire x1="109.22" y1="66.04" x2="109.22" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="U6" gate="G$1" pin="C2"/>
+<wire x1="109.22" y1="76.2" x2="111.76" y2="76.2" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+12V" class="1">
 <segment>
@@ -5416,10 +5422,9 @@ Sourc: www.ctscorp.com</description>
 <junction x="58.42" y="121.92"/>
 <pinref part="R13" gate="R" pin="1"/>
 <wire x1="101.6" y1="111.76" x2="101.6" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="Q2" gate="G$1" pin="D"/>
 <wire x1="101.6" y1="121.92" x2="175.26" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="175.26" y1="121.92" x2="175.26" y2="91.44" width="0.1524" layer="91"/>
 <junction x="101.6" y="121.92"/>
+<label x="154.94" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -5464,30 +5469,22 @@ Sourc: www.ctscorp.com</description>
 <net name="N$9" class="0">
 <segment>
 <pinref part="R12" gate="R" pin="1"/>
-<pinref part="U$2" gate="G$1" pin="B1"/>
+<pinref part="U6" gate="G$1" pin="B1"/>
 <wire x1="96.52" y1="83.82" x2="101.6" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="83.82" x2="111.76" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="83.82" x2="101.6" y2="58.42" width="0.1524" layer="91"/>
 <junction x="101.6" y="83.82"/>
 <wire x1="101.6" y1="58.42" x2="149.86" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="58.42" x2="149.86" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="B2"/>
+<pinref part="U6" gate="G$1" pin="B2"/>
 <wire x1="149.86" y1="83.82" x2="147.32" y2="83.82" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="AGND" class="0">
-<segment>
-<pinref part="SUPPLY35" gate="G$1" pin="AGND"/>
-<wire x1="109.22" y1="66.04" x2="109.22" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="C2"/>
-<wire x1="109.22" y1="76.2" x2="111.76" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="E1"/>
+<pinref part="U6" gate="G$1" pin="E1"/>
 <wire x1="147.32" y1="91.44" x2="152.4" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="E2"/>
+<pinref part="U6" gate="G$1" pin="E2"/>
 <wire x1="152.4" y1="91.44" x2="152.4" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="83.82" x2="152.4" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="76.2" x2="147.32" y2="76.2" width="0.1524" layer="91"/>
@@ -5498,7 +5495,7 @@ Sourc: www.ctscorp.com</description>
 </net>
 <net name="N$12" class="1">
 <segment>
-<pinref part="U$2" gate="G$1" pin="C1"/>
+<pinref part="U6" gate="G$1" pin="C1"/>
 <wire x1="101.6" y1="91.44" x2="111.76" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="R13" gate="R" pin="2"/>
 <wire x1="101.6" y1="101.6" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
@@ -5509,6 +5506,14 @@ Sourc: www.ctscorp.com</description>
 <pinref part="Q2" gate="G$1" pin="G"/>
 <pinref part="R14" gate="R" pin="2"/>
 <wire x1="170.18" y1="83.82" x2="167.64" y2="83.82" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="LED-" class="0">
+<segment>
+<pinref part="Q2" gate="G$1" pin="D"/>
+<wire x1="175.26" y1="91.44" x2="175.26" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="109.22" x2="154.94" y2="109.22" width="0.1524" layer="91"/>
+<label x="154.94" y="109.22" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
