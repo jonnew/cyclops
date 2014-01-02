@@ -24,5 +24,7 @@ EDIT: 	> Why?
 
 5. I need to run/fix an ERC on the schematic before doing anything else to the layout.
 
+6. The values of the gate and bias-network resistors following the gate driver will need to be tuned in order to get the bias voltage close, but not over, the NMOS voltage threshold.
+
 
     
