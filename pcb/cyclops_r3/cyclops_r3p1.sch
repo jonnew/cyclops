@@ -331,9 +331,9 @@ grid 2.54 mm</description>
 <vertex x="4.1275" y="-0.9525"/>
 </polygon>
 </package>
-<package name="SMA-DO214AC@1">
+<package name="SMA-DO214AC">
 <description>&lt;B&gt;DIODE&lt;/B&gt;</description>
-<wire x1="-3.4925" y1="1.5875" x2="2.2225" y2="1.5875" width="0.127" layer="51"/>
+<wire x1="-3.4925" y1="1.5875" x2="2.2225" y2="1.5875" width="0.127" layer="21"/>
 <wire x1="0" y1="0" x2="-0.635" y2="0.4763" width="0.127" layer="21"/>
 <wire x1="-0.635" y1="0.4763" x2="-0.635" y2="-0.4763" width="0.127" layer="21"/>
 <wire x1="-0.635" y1="-0.4763" x2="0" y2="0" width="0.127" layer="21"/>
@@ -2679,6 +2679,22 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <smd name="6" x="-0.95" y="1.1" dx="0.65" dy="1.06" layer="1"/>
 <circle x="-1.1" y="-0.3" radius="0.14141875" width="0.127" layer="21"/>
 </package>
+<package name="SOD-323F">
+<wire x1="-2.794" y1="0.762" x2="2.794" y2="0.762" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="-0.635" y2="0.4763" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="0.4763" x2="-0.635" y2="-0.4763" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="-0.4763" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="0" y2="0.4763" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="0" y2="-0.4763" width="0.127" layer="21"/>
+<smd name="A" x="-1.9" y="0" dx="1.05" dy="0.55" layer="1"/>
+<smd name="C" x="1.9" y="0" dx="1.05" dy="0.55" layer="1"/>
+<text x="-3.81" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.81" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-2.794" y1="0.762" x2="-2.794" y2="-0.762" width="0.127" layer="21"/>
+<wire x1="-2.794" y1="-0.762" x2="2.794" y2="-0.762" width="0.127" layer="21"/>
+<wire x1="2.794" y1="-0.762" x2="2.794" y2="0.762" width="0.127" layer="21"/>
+<rectangle x1="0.8255" y1="-0.762" x2="1.143" y2="0.762" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="317">
@@ -3203,12 +3219,21 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="DIODE-RECT" uservalue="yes">
+<deviceset name="DIODE" prefix="D" uservalue="yes">
 <gates>
 <gate name="D" symbol="DIODE" x="0" y="0"/>
 </gates>
 <devices>
-<device name="S1B-13-F" package="SMA-DO214AC@1">
+<device name="S1B-13-F" package="SMA-DO214AC">
+<connects>
+<connect gate="D" pin="A" pad="A"/>
+<connect gate="D" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SOD-323" package="SOD-323F">
 <connects>
 <connect gate="D" pin="A" pad="A"/>
 <connect gate="D" pin="C" pad="C"/>
@@ -4461,7 +4486,7 @@ Sourc: www.ctscorp.com</description>
 <part name="REF_ADJ" library="cyclops" deviceset="TRIM_US-" device="SM-42/43W" value="10k"/>
 <part name="U$1" library="cyclops" deviceset="ARDUINO_R3_ICSP" device=""/>
 <part name="U2" library="cyclops" deviceset="*317" device="_TO263" value="317-N"/>
-<part name="D2" library="cyclops" deviceset="DIODE-RECT" device="S1B-13-F" value="S1B-13-F"/>
+<part name="D2" library="cyclops" deviceset="DIODE" device="S1B-13-F" value="S1B-13-F"/>
 <part name="R3" library="cyclops" deviceset="R" device="_0603" value="1.8k"/>
 <part name="R4" library="cyclops" deviceset="R" device="_0603" value="240k"/>
 <part name="SUPPLY3" library="cyclops" deviceset="AGND" device=""/>
@@ -4807,6 +4832,18 @@ Sourc: www.ctscorp.com</description>
 <pinref part="U1" gate="G$1" pin="AVSS"/>
 <wire x1="165.1" y1="25.4" x2="165.1" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="SUPPLY12" gate="G$1" pin="AGND"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="GND$2"/>
+<wire x1="60.96" y1="17.78" x2="60.96" y2="12.7" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="GND$1"/>
+<wire x1="63.5" y1="17.78" x2="63.5" y2="12.7" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="GND"/>
+<wire x1="43.18" y1="78.74" x2="43.18" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VAUX" class="0">
