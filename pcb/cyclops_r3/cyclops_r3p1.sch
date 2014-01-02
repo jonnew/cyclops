@@ -5292,6 +5292,11 @@ Sourc: www.ctscorp.com</description>
 <pinref part="U6" gate="G$1" pin="C2"/>
 <wire x1="71.12" y1="76.2" x2="73.66" y2="76.2" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="SUPPLY1" gate="G$1" pin="AGND"/>
+<pinref part="R11" gate="R" pin="1"/>
+<wire x1="134.62" y1="48.26" x2="134.62" y2="66.04" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+12V" class="1">
 <segment>
@@ -5311,7 +5316,7 @@ Sourc: www.ctscorp.com</description>
 <wire x1="-10.16" y1="121.92" x2="27.94" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="121.92" x2="66.04" y2="121.92" width="0.1524" layer="91"/>
 <junction x="53.34" y="121.92"/>
-<wire x1="66.04" y1="101.6" x2="66.04" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="91.44" x2="66.04" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="121.92" x2="134.62" y2="121.92" width="0.1524" layer="91"/>
 <junction x="66.04" y="121.92"/>
 <label x="147.32" y="121.92" size="1.778" layer="95"/>
@@ -5319,6 +5324,8 @@ Sourc: www.ctscorp.com</description>
 <wire x1="134.62" y1="121.92" x2="167.64" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="101.6" x2="134.62" y2="121.92" width="0.1524" layer="91"/>
 <junction x="134.62" y="121.92"/>
+<pinref part="U6" gate="G$1" pin="C1"/>
+<wire x1="73.66" y1="91.44" x2="66.04" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -5366,13 +5373,6 @@ Sourc: www.ctscorp.com</description>
 <junction x="114.3" y="83.82"/>
 </segment>
 </net>
-<net name="N$12" class="1">
-<segment>
-<pinref part="U6" gate="G$1" pin="C1"/>
-<wire x1="66.04" y1="91.44" x2="73.66" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="101.6" x2="66.04" y2="91.44" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$13" class="0">
 <segment>
 <pinref part="Q2" gate="G$1" pin="G"/>
@@ -5392,13 +5392,6 @@ Sourc: www.ctscorp.com</description>
 <wire x1="167.64" y1="91.44" x2="167.64" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="109.22" x2="147.32" y2="109.22" width="0.1524" layer="91"/>
 <label x="147.32" y="109.22" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="AGND" class="0">
-<segment>
-<pinref part="SUPPLY1" gate="G$1" pin="AGND"/>
-<pinref part="R11" gate="R" pin="1"/>
-<wire x1="134.62" y1="48.26" x2="134.62" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
