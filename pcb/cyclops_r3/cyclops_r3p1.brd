@@ -7416,9 +7416,6 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="39.37" y1="26.7716" x2="39.37" y2="30.3" width="0.4064" layer="1"/>
 <wire x1="39.37" y1="30.3" x2="39.19" y2="30.48" width="0.4064" layer="1"/>
 </signal>
-<signal name="5V">
-<contactref element="U$1" pad="+5V"/>
-</signal>
 <signal name="3V">
 <contactref element="U$1" pad="3V"/>
 </signal>
@@ -7458,6 +7455,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="60.198" y1="31.242" x2="60.198" y2="30.48" width="0.6096" layer="1"/>
 <wire x1="60.198" y1="30.48" x2="60.7314" y2="29.9466" width="0.6096" layer="1"/>
 <wire x1="60.7314" y1="29.9466" x2="60.7314" y2="29.21" width="0.6096" layer="1"/>
+<contactref element="U$1" pad="+5V"/>
+<wire x1="61.528" y1="32.893" x2="66.167" y2="30.48" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCLK">
 <contactref element="U$1" pad="SCK"/>

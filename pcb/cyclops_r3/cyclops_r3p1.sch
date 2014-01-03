@@ -4528,6 +4528,10 @@ Sourc: www.ctscorp.com</description>
 <pinref part="C4" gate="C" pin="1"/>
 <wire x1="231.14" y1="71.12" x2="231.14" y2="45.72" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="5V"/>
+<wire x1="58.42" y1="17.78" x2="58.42" y2="12.7" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="SCLK" class="0">
 <segment>
@@ -4649,11 +4653,9 @@ Sourc: www.ctscorp.com</description>
 </net>
 <net name="+15V" class="1">
 <segment>
-<label x="50.8" y="-5.08" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="I/O_BLOCK" gate="G$1" pin="1"/>
 <wire x1="43.18" y1="-5.08" x2="68.58" y2="-5.08" width="0.1524" layer="91"/>
+<label x="50.8" y="-5.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+12V" class="1">
