@@ -575,12 +575,10 @@ http://www.bccomponents.com/</description>
 <package name="SO08">
 <description>&lt;b&gt;Small Outline Package 8&lt;/b&gt;&lt;br&gt;
 NS Package M08A</description>
-<wire x1="2.4" y1="1.9" x2="2.4" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.4" x2="2.4" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="-1.9" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.9" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="1.9" x2="2.4" y2="-1.9" width="0.1524" layer="21"/>
+<wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.1524" layer="51"/>
+<wire x1="-2.4" y1="-1.9" x2="-2.4" y2="1.9" width="0.1524" layer="21"/>
+<wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.1524" layer="51"/>
 <smd name="2" x="-0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
 <smd name="7" x="-0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
 <smd name="1" x="-1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
@@ -599,7 +597,7 @@ NS Package M08A</description>
 <rectangle x1="0.39" y1="2" x2="0.88" y2="3.1" layer="51"/>
 <rectangle x1="-0.88" y1="2" x2="-0.39" y2="3.1" layer="51"/>
 <rectangle x1="-2.15" y1="2" x2="-1.66" y2="3.1" layer="51"/>
-<circle x="-1.778" y="-0.762" radius="0.359209375" width="0.127" layer="21"/>
+<wire x1="-2.413" y1="0.508" x2="-2.413" y2="-0.508" width="0.1524" layer="21" curve="-180"/>
 </package>
 <package name="CTS-219-04">
 <description>&lt;b&gt;Surface Mount DIP Switch Series 219 SMT&lt;/b&gt;&lt;p&gt;
@@ -740,11 +738,11 @@ Sourc: www.ctscorp.com</description>
 <package name="SO14">
 <description>&lt;b&gt;Small Outline Package 14&lt;/b&gt;</description>
 <wire x1="4.305" y1="-1.9" x2="-4.305" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="-4.305" y1="-1.9" x2="-4.305" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="-4.305" y1="-1.4" x2="-4.305" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="-4.305" y1="-1.9" x2="-4.305" y2="-1.4" width="0.1524" layer="21"/>
+<wire x1="-4.305" y1="-1.4" x2="-4.305" y2="1.9" width="0.1524" layer="21"/>
 <wire x1="4.305" y1="-1.4" x2="-4.305" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="4.305" y1="1.9" x2="4.305" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="4.305" y1="-1.4" x2="4.305" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="4.305" y1="1.9" x2="4.305" y2="-1.4" width="0.1524" layer="21"/>
+<wire x1="4.305" y1="-1.4" x2="4.305" y2="-1.9" width="0.1524" layer="21"/>
 <wire x1="-4.305" y1="1.9" x2="4.305" y2="1.9" width="0.2032" layer="51"/>
 <smd name="2" x="-2.54" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
 <smd name="13" x="-2.54" y="2.6" dx="0.6" dy="2.2" layer="1"/>
@@ -776,6 +774,7 @@ Sourc: www.ctscorp.com</description>
 <rectangle x1="3.565" y1="2" x2="4.055" y2="3.1" layer="51"/>
 <rectangle x1="2.295" y1="2" x2="2.785" y2="3.1" layer="51"/>
 <rectangle x1="1.025" y1="2" x2="1.515" y2="3.1" layer="51"/>
+<wire x1="-4.318" y1="0.508" x2="-4.318" y2="-0.508" width="0.1524" layer="21" curve="-180"/>
 </package>
 <package name="DIL14">
 <description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
@@ -823,40 +822,40 @@ Sourc: www.ctscorp.com</description>
 <smd name="4" x="1.0414" y="-0.6604" dx="1.1684" dy="0.3556" layer="1"/>
 <smd name="5" x="1.0414" y="0.6604" dx="1.1684" dy="0.3556" layer="1"/>
 <wire x1="-0.2794" y1="-1.0922" x2="0.2794" y2="-1.0922" width="0.127" layer="21"/>
-<wire x1="0.6858" y1="-0.1524" x2="0.6858" y2="0.1524" width="0.127" layer="21"/>
+<wire x1="0.6858" y1="-0.1524" x2="0.6858" y2="0.1524" width="0.127" layer="51"/>
 <wire x1="0.2794" y1="1.0922" x2="-0.2794" y2="1.0922" width="0.127" layer="21"/>
 <wire x1="0.127" y1="0.8128" x2="-0.127" y2="0.8128" width="0.127" layer="21" curve="-49"/>
 <wire x1="-0.6858" y1="-1.0922" x2="0.6858" y2="-1.0922" width="0.127" layer="21"/>
-<wire x1="0.6858" y1="-1.0922" x2="0.6858" y2="-0.7874" width="0.127" layer="21"/>
-<wire x1="0.6858" y1="-0.7874" x2="0.6858" y2="-0.508" width="0.127" layer="21"/>
-<wire x1="0.6858" y1="-0.508" x2="0.6858" y2="0.508" width="0.127" layer="21"/>
-<wire x1="0.6858" y1="0.508" x2="0.6858" y2="0.7874" width="0.127" layer="21"/>
-<wire x1="0.6858" y1="0.7874" x2="0.6858" y2="1.0922" width="0.127" layer="21"/>
+<wire x1="0.6858" y1="-1.0922" x2="0.6858" y2="-0.7874" width="0.127" layer="51"/>
+<wire x1="0.6858" y1="-0.7874" x2="0.6858" y2="-0.508" width="0.127" layer="51"/>
+<wire x1="0.6858" y1="-0.508" x2="0.6858" y2="0.508" width="0.127" layer="51"/>
+<wire x1="0.6858" y1="0.508" x2="0.6858" y2="0.7874" width="0.127" layer="51"/>
+<wire x1="0.6858" y1="0.7874" x2="0.6858" y2="1.0922" width="0.127" layer="51"/>
 <wire x1="0.6858" y1="1.0922" x2="0.3048" y2="1.0922" width="0.127" layer="21"/>
 <wire x1="0.3048" y1="1.0922" x2="-0.3048" y2="1.0922" width="0.127" layer="21"/>
 <wire x1="-0.3048" y1="1.0922" x2="-0.6858" y2="1.0922" width="0.127" layer="21"/>
-<wire x1="-0.6858" y1="1.0922" x2="-0.6858" y2="0.7874" width="0.127" layer="21"/>
-<wire x1="-0.6858" y1="0.7874" x2="-0.6858" y2="0.508" width="0.127" layer="21"/>
-<wire x1="-0.6858" y1="0.508" x2="-0.6858" y2="0.1524" width="0.127" layer="21"/>
-<wire x1="-0.6858" y1="0.1524" x2="-0.6858" y2="-0.1524" width="0.127" layer="21"/>
-<wire x1="-0.6858" y1="-0.1524" x2="-0.6858" y2="-0.508" width="0.127" layer="21"/>
-<wire x1="-0.6858" y1="-0.508" x2="-0.6858" y2="-0.7874" width="0.127" layer="21"/>
-<wire x1="-0.6858" y1="-0.7874" x2="-0.6858" y2="-1.0922" width="0.127" layer="21"/>
-<wire x1="-0.6858" y1="0.7874" x2="-1.1938" y2="0.7874" width="0.127" layer="21"/>
-<wire x1="-1.1938" y1="0.7874" x2="-1.1938" y2="0.508" width="0.127" layer="21"/>
-<wire x1="-1.1938" y1="0.508" x2="-0.6858" y2="0.508" width="0.127" layer="21"/>
-<wire x1="-0.6858" y1="0.1524" x2="-1.1938" y2="0.1524" width="0.127" layer="21"/>
-<wire x1="-1.1938" y1="0.1524" x2="-1.1938" y2="-0.1524" width="0.127" layer="21"/>
-<wire x1="-1.1938" y1="-0.1524" x2="-0.6858" y2="-0.1524" width="0.127" layer="21"/>
-<wire x1="-0.6858" y1="-0.508" x2="-1.1938" y2="-0.508" width="0.127" layer="21"/>
-<wire x1="-1.1938" y1="-0.508" x2="-1.1938" y2="-0.7874" width="0.127" layer="21"/>
-<wire x1="-1.1938" y1="-0.7874" x2="-0.6858" y2="-0.7874" width="0.127" layer="21"/>
-<wire x1="0.6858" y1="-0.7874" x2="1.1938" y2="-0.7874" width="0.127" layer="21"/>
-<wire x1="1.1938" y1="-0.7874" x2="1.1938" y2="-0.508" width="0.127" layer="21"/>
-<wire x1="1.1938" y1="-0.508" x2="0.6858" y2="-0.508" width="0.127" layer="21"/>
-<wire x1="0.6858" y1="0.508" x2="1.1938" y2="0.508" width="0.127" layer="21"/>
-<wire x1="1.1938" y1="0.508" x2="1.1938" y2="0.7874" width="0.127" layer="21"/>
-<wire x1="1.1938" y1="0.7874" x2="0.6858" y2="0.7874" width="0.127" layer="21"/>
+<wire x1="-0.6858" y1="1.0922" x2="-0.6858" y2="0.7874" width="0.127" layer="51"/>
+<wire x1="-0.6858" y1="0.7874" x2="-0.6858" y2="0.508" width="0.127" layer="51"/>
+<wire x1="-0.6858" y1="0.508" x2="-0.6858" y2="0.1524" width="0.127" layer="51"/>
+<wire x1="-0.6858" y1="0.1524" x2="-0.6858" y2="-0.1524" width="0.127" layer="51"/>
+<wire x1="-0.6858" y1="-0.1524" x2="-0.6858" y2="-0.508" width="0.127" layer="51"/>
+<wire x1="-0.6858" y1="-0.508" x2="-0.6858" y2="-0.7874" width="0.127" layer="51"/>
+<wire x1="-0.6858" y1="-0.7874" x2="-0.6858" y2="-1.0922" width="0.127" layer="51"/>
+<wire x1="-0.6858" y1="0.7874" x2="-1.1938" y2="0.7874" width="0.127" layer="51"/>
+<wire x1="-1.1938" y1="0.7874" x2="-1.1938" y2="0.508" width="0.127" layer="51"/>
+<wire x1="-1.1938" y1="0.508" x2="-0.6858" y2="0.508" width="0.127" layer="51"/>
+<wire x1="-0.6858" y1="0.1524" x2="-1.1938" y2="0.1524" width="0.127" layer="51"/>
+<wire x1="-1.1938" y1="0.1524" x2="-1.1938" y2="-0.1524" width="0.127" layer="51"/>
+<wire x1="-1.1938" y1="-0.1524" x2="-0.6858" y2="-0.1524" width="0.127" layer="51"/>
+<wire x1="-0.6858" y1="-0.508" x2="-1.1938" y2="-0.508" width="0.127" layer="51"/>
+<wire x1="-1.1938" y1="-0.508" x2="-1.1938" y2="-0.7874" width="0.127" layer="51"/>
+<wire x1="-1.1938" y1="-0.7874" x2="-0.6858" y2="-0.7874" width="0.127" layer="51"/>
+<wire x1="0.6858" y1="-0.7874" x2="1.1938" y2="-0.7874" width="0.127" layer="51"/>
+<wire x1="1.1938" y1="-0.7874" x2="1.1938" y2="-0.508" width="0.127" layer="51"/>
+<wire x1="1.1938" y1="-0.508" x2="0.6858" y2="-0.508" width="0.127" layer="51"/>
+<wire x1="0.6858" y1="0.508" x2="1.1938" y2="0.508" width="0.127" layer="51"/>
+<wire x1="1.1938" y1="0.508" x2="1.1938" y2="0.7874" width="0.127" layer="51"/>
+<wire x1="1.1938" y1="0.7874" x2="0.6858" y2="0.7874" width="0.127" layer="51"/>
 <wire x1="0.3048" y1="1.0922" x2="-0.3048" y2="1.0922" width="0.127" layer="21" curve="-180"/>
 <text x="-3.4544" y="2.54" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
 <text x="-3.4544" y="-4.445" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
@@ -4383,7 +4382,7 @@ Sourc: www.ctscorp.com</description>
 <part name="REF_ADJ" library="cyclops" deviceset="TRIM_US-" device="SM-42/43W" value="10k"/>
 <part name="U$1" library="cyclops" deviceset="ARDUINO_R3_ICSP" device=""/>
 <part name="U2" library="cyclops" deviceset="*317" device="_TO263" value="317-N"/>
-<part name="D2" library="cyclops" deviceset="DIODE" device="S1B-13-F" value="S1B-13-F"/>
+<part name="D2" library="cyclops" deviceset="DIODE" device="S1B-13-F" value="S1B"/>
 <part name="R3" library="cyclops" deviceset="R" device="_0603" value="1.8k"/>
 <part name="R4" library="cyclops" deviceset="R" device="_0603" value="240k"/>
 <part name="SUPPLY3" library="cyclops" deviceset="AGND" device=""/>
@@ -4400,7 +4399,7 @@ Sourc: www.ctscorp.com</description>
 <part name="P+1" library="cyclops" deviceset="+5V" device=""/>
 <part name="P+2" library="cyclops" deviceset="+5V" device=""/>
 <part name="C2" library="cyclops" deviceset="C" device="_0805" value="10uF"/>
-<part name="C3" library="cyclops" deviceset="C" device="_0603" value="0.1uF"/>
+<part name="C3" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="C4" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="SUPPLY13" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY14" library="cyclops" deviceset="GND" device=""/>
@@ -4409,12 +4408,12 @@ Sourc: www.ctscorp.com</description>
 <part name="C1" library="cyclops" deviceset="C" device="_0603" value="??"/>
 <part name="R1" library="cyclops" deviceset="R" device="_0603" value="??"/>
 <part name="SUPPLY16" library="cyclops" deviceset="AGND" device=""/>
-<part name="R9" library="cyclops" deviceset="R" device="_0603" value="9k 0.1%"/>
-<part name="R8" library="cyclops" deviceset="R" device="_0603" value="1k 0.1%"/>
-<part name="RSENSE" library="cyclops" deviceset="R" device="_2512" value="0.1, 1W"/>
+<part name="R9" library="cyclops" deviceset="R" device="_0603" value="9k"/>
+<part name="R8" library="cyclops" deviceset="R" device="_0603" value="1k"/>
+<part name="RSENSE" library="cyclops" deviceset="R" device="_2512" value="0.1,1W"/>
 <part name="U3" library="cyclops" deviceset="ADR03AKSZ-REEL7" device="" value="ADR03"/>
 <part name="C10" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
-<part name="C12" library="cyclops" deviceset="C" device="_0603" value="0.1uF"/>
+<part name="C12" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="SUPPLY5" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY6" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY18" library="cyclops" deviceset="AGND" device=""/>
@@ -4422,7 +4421,7 @@ Sourc: www.ctscorp.com</description>
 <part name="Q1" library="cyclops" deviceset="SUM110P06" device="_TO-262" value="SUM11006"/>
 <part name="R2" library="cyclops" deviceset="R" device="_0603" value="10k"/>
 <part name="SUPPLY20" library="cyclops" deviceset="AGND" device=""/>
-<part name="D1" library="cyclops" deviceset="Z-DIODE" device="_MMSZ" value="MMSZ5240B"/>
+<part name="D1" library="cyclops" deviceset="Z-DIODE" device="_MMSZ" value="MMSZ"/>
 <part name="SUPPLY2" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY22" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY23" library="cyclops" deviceset="AGND" device=""/>
@@ -4436,7 +4435,7 @@ Sourc: www.ctscorp.com</description>
 <part name="R5" library="cyclops" deviceset="R" device="_0603" value="470"/>
 <part name="R6" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="C16" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
-<part name="C14" library="cyclops" deviceset="C" device="_0603" value="0.1uF"/>
+<part name="C14" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="SUPPLY30" library="cyclops" deviceset="AGND" device=""/>
 <part name="D4" library="cyclops" deviceset="S-DIODE" device="SOD-123" value="DS11015"/>
 <part name="R7" library="cyclops" deviceset="R" device="_0603" value="1k"/>
@@ -4450,7 +4449,7 @@ Sourc: www.ctscorp.com</description>
 <part name="SUPPLY32" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY33" library="cyclops" deviceset="AGND" device=""/>
 <part name="S1" library="cyclops" deviceset="SPDT" device="_PCM12" value="INPUT SRC"/>
-<part name="C13" library="cyclops" deviceset="C" device="_0603" value="0.1uF"/>
+<part name="C13" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="C11" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="C7" library="cyclops" deviceset="C-POL" device="_0807" value="47uF"/>
 <part name="SUPPLY31" library="cyclops" deviceset="AGND" device=""/>
@@ -4458,7 +4457,7 @@ Sourc: www.ctscorp.com</description>
 <part name="SUPPLY17" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY34" library="cyclops" deviceset="GND" device=""/>
 <part name="S3" library="cyclops" deviceset="SPDT" device="_CFPA" value="TEST"/>
-<part name="U6" library="cyclops" deviceset="ZXTD4591E6" device=""/>
+<part name="U6" library="cyclops" deviceset="ZXTD4591E6" device="" value="ZXTD45"/>
 <part name="SUPPLY35" library="cyclops" deviceset="AGND" device=""/>
 <part name="Q2" library="cyclops" deviceset="N-MOSFET" device="TO-262" value="IRF510"/>
 <part name="R14" library="cyclops" deviceset="R" device="_0603" value="560"/>
