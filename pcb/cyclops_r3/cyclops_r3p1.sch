@@ -2608,7 +2608,6 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <smd name="NC3" x="3.65" y="-1.1" dx="1" dy="0.8" layer="1"/>
 <wire x1="4.4" y1="-1.7" x2="4.4" y2="1.7" width="0.127" layer="21"/>
 <wire x1="4.4" y1="1.7" x2="-4.4" y2="1.7" width="0.127" layer="21"/>
-<wire x1="-4.4" y1="1.7" x2="-4.4" y2="-1.7" width="0.127" layer="21"/>
 <wire x1="-4.4" y1="-1.7" x2="4.4" y2="-1.7" width="0.127" layer="21"/>
 <polygon width="0.127" layer="51">
 <vertex x="0.1" y="-1.7"/>
@@ -2624,6 +2623,8 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <rectangle x1="4.318" y1="-1.778" x2="4.572" y2="2.032" layer="39"/>
 <rectangle x1="-4.572" y1="1.778" x2="4.572" y2="2.032" layer="39"/>
 <rectangle x1="-4.572" y1="1.524" x2="-4.318" y2="2.032" layer="39"/>
+<text x="-5.08" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="6.35" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
 </package>
 <package name="CFPA">
 <smd name="1" x="3.85" y="1.9" dx="1.7" dy="0.7" layer="1"/>
@@ -2655,6 +2656,8 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <vertex x="-5" y="0.75"/>
 </polygon>
 <rectangle x1="-3.5" y1="-5" x2="3.5" y2="5" layer="39"/>
+<text x="-3.81" y="6.35" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.81" y="-7.62" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="SOT23-6">
 <description>&lt;b&gt;Small Outline Transistor&lt;/b&gt; 6 lead</description>
