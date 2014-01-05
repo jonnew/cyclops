@@ -8468,6 +8468,8 @@ Source: smt-pots.pdf</description>
 </library>
 </libraries>
 <attributes>
+<attribute name="PCB" value="Cyclops r3.1"/>
+<attribute name="REVISION" value="3.1"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -8667,8 +8669,8 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="26.0985" y="33.528" size="0.889" layer="28" font="vector" ratio="18" rot="MR0"/>
 </element>
 <element name="D2" library="cyclops" package="SMA-DO214AC" value="S1B" x="44.196" y="9.144" smashed="yes" rot="R270">
-<attribute name="NAME" x="42.418" y="5.588" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
-<attribute name="VALUE" x="42.418" y="7.366" size="0.889" layer="27" font="vector" ratio="18" rot="R90"/>
+<attribute name="NAME" x="42.418" y="6.096" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="42.418" y="8.128" size="0.889" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="R3" library="cyclops" package="0603" value="1.8k" x="45.72" y="16.002" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="45.72" y="16.002" size="1.778" layer="27" rot="R90" display="off"/>
@@ -8685,12 +8687,12 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="46.99" y="17.78" size="0.889" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="C5" library="cyclops" package="1206-POL" value="1uF" x="40.132" y="8.128" smashed="yes" rot="R270">
-<attribute name="NAME" x="38.608" y="5.588" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
-<attribute name="VALUE" x="38.608" y="7.62" size="0.889" layer="27" font="vector" ratio="18" rot="R90"/>
+<attribute name="NAME" x="38.608" y="6.096" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="38.608" y="8.128" size="0.889" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="C6" library="cyclops" package="1206-POL" value="10uF" x="48.26" y="8.128" smashed="yes" rot="R270">
-<attribute name="NAME" x="46.736" y="5.588" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
-<attribute name="VALUE" x="46.736" y="7.62" size="0.889" layer="27" font="vector" ratio="18" rot="R90"/>
+<attribute name="NAME" x="46.736" y="6.096" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="46.736" y="8.128" size="0.889" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="C9" library="cyclops" package="1206-POL" value="1uF" x="54.356" y="25.908" smashed="yes">
 <attribute name="NAME" x="57.404" y="25.654" size="0.889" layer="25" font="vector" ratio="18"/>
@@ -9839,10 +9841,14 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="58.166" y1="9.144" x2="58.168" y2="9.146" width="1.27" layer="1"/>
 <wire x1="58.168" y1="9.146" x2="58.168" y2="9.906" width="1.27" layer="1"/>
 <via x="41.91" y="13.716" extent="1-16" drill="1" shape="octagon"/>
-<via x="40.132" y="4.826" extent="1-16" drill="1" shape="octagon"/>
-<via x="48.26" y="4.826" extent="1-16" drill="1" shape="octagon"/>
-<wire x1="40.132" y1="4.826" x2="40.132" y2="6.477" width="0.8128" layer="1"/>
-<wire x1="48.26" y1="4.826" x2="48.26" y2="6.477" width="0.8128" layer="1"/>
+<via x="41.91" y="5.334" extent="1-16" drill="1" shape="octagon"/>
+<via x="50.292" y="5.334" extent="1-16" drill="1" shape="octagon"/>
+<wire x1="41.91" y1="5.334" x2="40.699959375" y2="5.334" width="0.8128" layer="1"/>
+<wire x1="40.699959375" y1="5.334" x2="40.132" y2="5.901959375" width="0.8128" layer="1"/>
+<wire x1="40.132" y1="5.901959375" x2="40.132" y2="6.477" width="0.8128" layer="1"/>
+<wire x1="50.292" y1="5.334" x2="48.827959375" y2="5.334" width="0.8128" layer="1"/>
+<wire x1="48.827959375" y1="5.334" x2="48.26" y2="5.901959375" width="0.8128" layer="1"/>
+<wire x1="48.26" y1="5.901959375" x2="48.26" y2="6.477" width="0.8128" layer="1"/>
 <wire x1="45.72" y1="15.1384" x2="43.18" y2="15.1384" width="0.8128" layer="1"/>
 <wire x1="43.18" y1="15.1384" x2="42.56055625" y2="15.1384" width="0.8128" layer="1"/>
 <wire x1="42.56055625" y1="15.1384" x2="41.91" y2="14.48784375" width="0.8128" layer="1"/>
@@ -9998,10 +10004,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="15.748" y1="25.654" x2="15.494" y2="25.4" width="0.6096" layer="16"/>
 <wire x1="15.494" y1="25.4" x2="14.628" y2="25.4" width="0.6096" layer="16"/>
 <wire x1="14.628" y1="25.4" x2="14.562" y2="25.466" width="0.6096" layer="16"/>
-<wire x1="12.7" y1="23.2156" x2="12.7" y2="23.876" width="0.6096" layer="16"/>
-<wire x1="12.7" y1="23.876" x2="13.462" y2="24.638" width="0.6096" layer="16"/>
-<wire x1="13.462" y1="24.638" x2="13.734" y2="24.638" width="0.6096" layer="16"/>
-<wire x1="13.734" y1="24.638" x2="14.562" y2="25.466" width="0.6096" layer="16"/>
+<wire x1="14.562" y1="25.466" x2="12.7" y2="23.604" width="0.6096" layer="16"/>
+<wire x1="12.7" y1="23.604" x2="12.7" y2="23.2156" width="0.6096" layer="16"/>
 </signal>
 <signal name="N$13">
 <contactref element="Q2" pad="G"/>
