@@ -4828,18 +4828,10 @@ Sourc: www.ctscorp.com</description>
 <instance part="SUPPLY8" gate="G$1" x="55.88" y="-58.42"/>
 <instance part="SUPPLY9" gate="G$1" x="86.36" y="-58.42"/>
 <instance part="SUPPLY10" gate="G$1" x="104.14" y="-58.42"/>
-<instance part="C5" gate="C" x="12.7" y="-43.18" smashed="yes">
-<attribute name="NAME" x="14.224" y="-40.259" size="1.778" layer="95"/>
-</instance>
-<instance part="C6" gate="C" x="55.88" y="-43.18" smashed="yes">
-<attribute name="NAME" x="57.404" y="-40.259" size="1.778" layer="95"/>
-</instance>
-<instance part="C9" gate="C" x="104.14" y="-43.18" smashed="yes">
-<attribute name="NAME" x="105.664" y="-40.259" size="1.778" layer="95"/>
-</instance>
-<instance part="C8" gate="C" x="86.36" y="-43.18" smashed="yes">
-<attribute name="NAME" x="87.884" y="-40.259" size="1.778" layer="95"/>
-</instance>
+<instance part="C5" gate="C" x="12.7" y="-43.18"/>
+<instance part="C6" gate="C" x="55.88" y="-43.18"/>
+<instance part="C9" gate="C" x="104.14" y="-43.18"/>
+<instance part="C8" gate="C" x="86.36" y="-43.18"/>
 <instance part="SUPPLY11" gate="G$1" x="12.7" y="-58.42"/>
 <instance part="Q1" gate="G$1" x="-27.94" y="-7.62" smashed="yes" rot="R90">
 <attribute name="VALUE" x="-39.37" y="-12.7" size="1.778" layer="96"/>
@@ -4853,9 +4845,7 @@ Sourc: www.ctscorp.com</description>
 <instance part="D1" gate="G$1" x="-10.16" y="-17.78" rot="R90"/>
 <instance part="FRAME2" gate="G$1" x="-109.22" y="-147.32"/>
 <instance part="FRAME2" gate="G$2" x="63.5" y="-147.32"/>
-<instance part="C7" gate="C" x="73.66" y="-43.18" smashed="yes">
-<attribute name="NAME" x="75.184" y="-40.259" size="1.778" layer="95"/>
-</instance>
+<instance part="C7" gate="C" x="73.66" y="-43.18"/>
 <instance part="SUPPLY31" gate="G$1" x="73.66" y="-58.42"/>
 </instances>
 <busses>
