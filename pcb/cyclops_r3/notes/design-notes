@@ -24,5 +24,7 @@ EDIT: 	> Why?
 
 5. I need to run/fix an ERC on the schematic before doing anything else to the layout.
 
+6. Shoudl the pre-biasing of the output MOSFET be moved to in between the opamp the the NPN/PNP totem pole? This would make getting a defined bias voltage easier, but would not pre-charge the gate capacitance.
+
 
     

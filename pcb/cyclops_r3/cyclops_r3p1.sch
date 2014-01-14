@@ -4557,8 +4557,8 @@ distributor Farnell 149-452</description>
 <part name="U$1" library="cyclops" deviceset="ARDUINO_R3_ICSP" device=""/>
 <part name="U2" library="cyclops" deviceset="*317" device="_TO263" value="317-N"/>
 <part name="D2" library="cyclops" deviceset="DIODE" device="S1B-13-F" value="S1B"/>
-<part name="R3" library="cyclops" deviceset="R" device="_0603" value="1.8k"/>
-<part name="R4" library="cyclops" deviceset="R" device="_0603" value="240k"/>
+<part name="R3" library="cyclops" deviceset="R" device="_0603" value="2.1k"/>
+<part name="R4" library="cyclops" deviceset="R" device="_0603" value="240"/>
 <part name="SUPPLY3" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY8" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY9" library="cyclops" deviceset="AGND" device=""/>

@@ -8704,14 +8704,14 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="42.418" y="6.096" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="42.418" y="8.128" size="0.889" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="R3" library="cyclops" package="0603" value="1.8k" x="45.72" y="16.002" smashed="yes" rot="R90">
+<element name="R3" library="cyclops" package="0603" value="2.1k" x="45.72" y="16.002" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="45.72" y="16.002" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="45.72" y="16.002" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="45.72" y="16.002" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="45.466" y="13.462" size="0.889" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="44.196" y="17.78" size="0.889" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="R4" library="cyclops" package="0603" value="240k" x="48.26" y="16.002" smashed="yes" rot="R270">
+<element name="R4" library="cyclops" package="0603" value="240" x="48.26" y="16.002" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="48.26" y="16.002" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="48.26" y="16.002" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="48.26" y="16.002" size="1.778" layer="27" rot="R270" display="off"/>
