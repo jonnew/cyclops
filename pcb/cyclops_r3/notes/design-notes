@@ -24,7 +24,11 @@ EDIT: 	> Why?
 
 5. I need to run/fix an ERC on the schematic before doing anything else to the layout.
 
-6. Shoudl the pre-biasing of the output MOSFET be moved to in between the opamp the the NPN/PNP totem pole? This would make getting a defined bias voltage easier, but would not pre-charge the gate capacitance.
+6. Should the pre-biasing of the output MOSFET be moved to in between the opamp the the NPN/PNP totem pole? This would make getting a defined bias voltage easier.
 
+EDIT:	> Yes.
+		> Make sure their is resistive path from gate to ground though or the LED will never fully turn off.
+		>
 
+7. The LM324 is not a good choice for this applicaiton because it its outputs do not go rail-to-rail. This means that we have to wait for the base voltage drive to exceed 300 mV before the thing even starts driving the base. This causes the big ossiclation when starting from full off. Really, you need a RRIO amplifier so it knows what zero volts at the input is as well.
     
