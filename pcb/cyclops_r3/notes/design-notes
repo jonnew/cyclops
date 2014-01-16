@@ -31,4 +31,8 @@ EDIT:	> Yes.
 		>
 
 7. The LM324 is not a good choice for this applicaiton because it its outputs do not go rail-to-rail. This means that we have to wait for the base voltage drive to exceed 300 mV before the thing even starts driving the base. This causes the big ossiclation when starting from full off. Really, you need a RRIO amplifier so it knows what zero volts at the input is as well.
+
+8. At least with the LM324, I found that adding a small capacitor (200-500 pF) in parallel with the feedback resistor in the current measurment path, I could stablize the circuit which showed some ringing when the NPN was pre-biased. This indicates that a faster opamp might be good.
+
+
     
