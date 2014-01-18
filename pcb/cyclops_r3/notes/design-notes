@@ -34,5 +34,7 @@ EDIT:	> Yes.
 
 8. At least with the LM324, I found that adding a small capacitor (200-500 pF) in parallel with the feedback resistor in the current measurment path, I could stablize the circuit which showed some ringing when the NPN was pre-biased. This indicates that a faster opamp might be good.
 
+9. There should be a more rigorous over-current protection circuit. The whole thing should shut down if ~1.5A is drawn through the N-Channel MOSFET. The P-Channel input FET is a place to make this happen. An auxiliary voltage can be sent to its gate if the current threshold is exceeded. This will require some type of peak-detection comparitor circuit that is droopless, else the circuit will enter a crazy osscilation.
+
 
     
