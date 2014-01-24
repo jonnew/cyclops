@@ -5675,7 +5675,7 @@ at 30/07/2012 17:45:58</description>
 <part name="SUPPLY44" library="supply2" deviceset="AGND" device=""/>
 <part name="C19" library="cyclops" deviceset="C" device="_0603" value="10pF"/>
 <part name="SUPPLY45" library="cyclops" deviceset="AGND" device=""/>
-<part name="UNKILL" library="cyclops" deviceset="SPST_TACT" device="-EVQQ2"/>
+<part name="S5" library="cyclops" deviceset="SPST_TACT" device="-EVQQ2" value="UNKILL"/>
 <part name="SUPPLY46" library="supply2" deviceset="AGND" device=""/>
 </parts>
 <sheets>
@@ -6124,7 +6124,7 @@ at 30/07/2012 17:45:58</description>
 <instance part="SUPPLY44" gate="G$1" x="35.56" y="-119.38"/>
 <instance part="C19" gate="C" x="-58.42" y="-68.58"/>
 <instance part="SUPPLY45" gate="G$1" x="-58.42" y="-81.28"/>
-<instance part="UNKILL" gate="G$1" x="104.14" y="-81.28" rot="R270"/>
+<instance part="S5" gate="G$1" x="104.14" y="-81.28" rot="R270"/>
 <instance part="SUPPLY46" gate="G$1" x="124.46" y="-99.06"/>
 </instances>
 <busses>
@@ -6268,6 +6268,15 @@ at 30/07/2012 17:45:58</description>
 <pinref part="C19" gate="C" pin="2"/>
 <wire x1="-58.42" y1="-78.74" x2="-58.42" y2="-73.66" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="S5" gate="G$1" pin="S1"/>
+<pinref part="S5" gate="G$1" pin="S"/>
+<wire x1="109.22" y1="-83.82" x2="109.22" y2="-81.28" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-81.28" x2="124.46" y2="-81.28" width="0.1524" layer="91"/>
+<junction x="109.22" y="-81.28"/>
+<wire x1="124.46" y1="-81.28" x2="124.46" y2="-96.52" width="0.1524" layer="91"/>
+<pinref part="SUPPLY46" gate="G$1" pin="AGND"/>
+</segment>
 </net>
 <net name="N$18" class="0">
 <segment>
@@ -6367,9 +6376,9 @@ at 30/07/2012 17:45:58</description>
 </net>
 <net name="COMP+" class="0">
 <segment>
-<pinref part="UNKILL" gate="G$1" pin="P"/>
+<pinref part="S5" gate="G$1" pin="P"/>
 <wire x1="81.28" y1="-81.28" x2="99.06" y2="-81.28" width="0.1524" layer="91"/>
-<pinref part="UNKILL" gate="G$1" pin="P1"/>
+<pinref part="S5" gate="G$1" pin="P1"/>
 <wire x1="99.06" y1="-81.28" x2="99.06" y2="-83.82" width="0.1524" layer="91"/>
 <junction x="99.06" y="-81.28"/>
 </segment>
@@ -6386,17 +6395,6 @@ at 30/07/2012 17:45:58</description>
 <wire x1="-58.42" y1="-58.42" x2="-50.8" y2="-58.42" width="0.1524" layer="91"/>
 <wire x1="-58.42" y1="-66.04" x2="-58.42" y2="-58.42" width="0.1524" layer="91"/>
 <junction x="-58.42" y="-58.42"/>
-</segment>
-</net>
-<net name="AGND" class="0">
-<segment>
-<pinref part="UNKILL" gate="G$1" pin="S1"/>
-<pinref part="UNKILL" gate="G$1" pin="S"/>
-<wire x1="109.22" y1="-83.82" x2="109.22" y2="-81.28" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="-81.28" x2="124.46" y2="-81.28" width="0.1524" layer="91"/>
-<junction x="109.22" y="-81.28"/>
-<wire x1="124.46" y1="-81.28" x2="124.46" y2="-96.52" width="0.1524" layer="91"/>
-<pinref part="SUPPLY46" gate="G$1" pin="AGND"/>
 </segment>
 </net>
 </nets>
@@ -6740,6 +6738,16 @@ at 30/07/2012 17:45:58</description>
 <wire x1="-15.24" y1="-30.48" x2="-15.24" y2="-38.1" width="0.1524" layer="91"/>
 <pinref part="SUPPLY38" gate="G$1" pin="AGND"/>
 </segment>
+<segment>
+<pinref part="BIAS" gate="1" pin="E"/>
+<pinref part="SUPPLY39" gate="G$1" pin="AGND"/>
+<wire x1="50.8" y1="116.84" x2="50.8" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="C17" gate="C" pin="2"/>
+<wire x1="50.8" y1="114.3" x2="50.8" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="121.92" x2="66.04" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="114.3" x2="50.8" y2="114.3" width="0.1524" layer="91"/>
+<junction x="50.8" y="114.3"/>
+</segment>
 </net>
 <net name="+12V" class="1">
 <segment>
@@ -6896,18 +6904,6 @@ at 30/07/2012 17:45:58</description>
 <pinref part="VBIAS" gate="G$1" pin="TP"/>
 </segment>
 </net>
-<net name="AGND" class="0">
-<segment>
-<pinref part="BIAS" gate="1" pin="E"/>
-<pinref part="SUPPLY39" gate="G$1" pin="AGND"/>
-<wire x1="50.8" y1="116.84" x2="50.8" y2="114.3" width="0.1524" layer="91"/>
-<pinref part="C17" gate="C" pin="2"/>
-<wire x1="50.8" y1="114.3" x2="50.8" y2="109.22" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="121.92" x2="66.04" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="114.3" x2="50.8" y2="114.3" width="0.1524" layer="91"/>
-<junction x="50.8" y="114.3"/>
-</segment>
-</net>
 <net name="VREF" class="0">
 <segment>
 <wire x1="-38.1" y1="137.16" x2="-38.1" y2="129.54" width="0.1524" layer="91"/>
@@ -6932,13 +6928,6 @@ at 30/07/2012 17:45:58</description>
 <approved hash="102,1,76.2,-15.24,AGND,GND,,,,"/>
 <approved hash="102,1,76.2,-53.34,AGND,GND,,,,"/>
 <approved hash="102,1,165.1,25.4,AGND,GND,,,,"/>
-<approved hash="102,2,33.02,-55.88,AGND,GND,,,,"/>
-<approved hash="102,2,55.88,-55.88,AGND,GND,,,,"/>
-<approved hash="102,2,86.36,-55.88,AGND,GND,,,,"/>
-<approved hash="102,2,104.14,-55.88,AGND,GND,,,,"/>
-<approved hash="102,2,12.7,-55.88,AGND,GND,,,,"/>
-<approved hash="102,2,-25.4,-55.88,AGND,GND,,,,"/>
-<approved hash="102,2,73.66,-55.88,AGND,GND,,,,"/>
 <approved hash="102,3,35.56,-53.34,AGND,GND,,,,"/>
 <approved hash="102,3,-25.4,-15.24,AGND,GND,,,,"/>
 <approved hash="102,3,-58.42,-53.34,AGND,GND,,,,"/>
@@ -6950,13 +6939,8 @@ at 30/07/2012 17:45:58</description>
 <approved hash="102,4,15.24,-10.16,AGND,GND,,,,"/>
 <approved hash="102,4,-33.02,63.5,AGND,GND,,,,"/>
 <approved hash="102,4,167.64,-10.16,AGND,GND,,,,"/>
-<approved hash="102,4,40.64,96.52,AGND,GND,,,,"/>
-<approved hash="102,4,53.34,96.52,AGND,GND,,,,"/>
 <approved hash="102,4,-10.16,63.5,AGND,GND,,,,"/>
-<approved hash="102,4,71.12,66.04,AGND,GND,,,,"/>
 <approved hash="102,4,134.62,48.26,AGND,GND,,,,"/>
-<approved hash="116,4,28.3439,83.7565,U5,D,-IN,,,"/>
-<approved hash="116,4,28.3439,83.7565,U5,D,+IN,,,"/>
 <approved hash="104,4,27.94,91.44,U5P,V+,+12V,,,"/>
 <approved hash="104,4,27.94,76.2,U5P,V-,GND,,,"/>
 <approved hash="204,1,66.04,17.78,U$1,VIN,,,,"/>
