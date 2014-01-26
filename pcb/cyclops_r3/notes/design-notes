@@ -1,6 +1,5 @@
 Jon Newman
-2013-14
-Notes while designing the Cyclops R3.0 board.
+Notes while designing Cyclops R3.1 board.
 
 X1. Power for the DLD101 should come from an LM317 that recieved a 12V input and regulates that down to Vcc = 10 v
 
@@ -28,19 +27,22 @@ EDIT: 	> Why?
 
 EDIT:	> Yes.
 		> Make sure their is resistive path from gate to ground though or the LED will never fully turn off.
-		>
+		> Is the above statment true? Test.
 
 7. The LM324 is not a good choice for this applicaiton because it its outputs do not go rail-to-rail. This means that we have to wait for the base voltage drive to exceed 300 mV before the thing even starts driving the base. This causes the big ossiclation when starting from full off. Really, you need a RRIO amplifier so it knows what zero volts at the input is as well.
 
-X8. At least with the LM324, I found that adding a small capacitor (200-500 pF) in parallel with the feedback resistor in the current measurment path, I could stablize the circuit which showed some ringing when the NPN was pre-biased. This indicates that a faster opamp might be good.
+EDIT: 	> I found that using the the TLV2374 (3 MHz, 4 chan RRIO opamp) along with a small negative rail, which could be provided to the op-amp only using a low power linear regulator and a third input terminal, I could achieve 1 MHz sinusoidal current drive through the LED. I think this is the way to go. This required no biasing on the totem pole (i.e. note 6 above).
 
-EDIT: > This seemed to filter the current measurement without actually effecting the true amount of current flowing through the sense resistor. This was verified by simply probing the voltage at the sense resistor in comparison with the current measurement provided by the op amp.
+8. At least with the LM324, I found that adding a small capacitor (200-500 pF) in parallel with the feedback resistor in the current measurment path, I could stablize the circuit which showed some ringing when the NPN was pre-biased. This indicates that a faster opamp might be good.
+
+EDIT: 	> This stabilizes the _measurement_ of the current but if you place the probe right on Rsense, you see that the spike is still there. 
+		> That said, putting a small value cap from output to the negative pin is a common technique for cancelling the pole created by parasitic capacitance in the feedback path.
+		> Leave space for a small value cap for this reason, but don't populate unless nessesary.
 
 9. There should be a more rigorous over-current protection circuit. The whole thing should shut down if ~1.5A is drawn through the N-Channel MOSFET. The P-Channel input FET is a place to make this happen. An auxiliary voltage can be sent to its gate if the current threshold is exceeded. This will require some type of peak-detection comparitor circuit that is droopless, else the circuit will enter a crazy osscilation.
 
 10. All silkscreening related to the board ID, designer, license etc should go on the back within a negative text block. This will free up room on the front of the board for power and overcurrent LED indicators along with a reset switch.
 
-11. Look at the base drive of the push/pull NPN/PNP gate driver versus the gate drive signal. Compare to this http://www.allaboutcircuits.com/vol_6/chpt_6/10.html. Is there a dead zone in the base drive - i.e +/- 0.7 volts where the NPN/PNP are not biased enough to turn on. For that matter, does the PNP ever turn on? I suppose it would since the gate voltage, which is also the emitter voltage of the PNP, can be much higher than the base voltage. Anyway, if there is a dead zone, find a biasing scheme to get rid of it because it may be causing the dead zone and overshoot when going from full off to full on.
 
 
     
