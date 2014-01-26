@@ -257,11 +257,11 @@ grid 2.54 mm</description>
 <smd name="1" x="-2.54" y="-7.1882" dx="1.0668" dy="2.159" layer="1"/>
 <text x="-5.715" y="-0.9525" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="6.6675" y="-0.9525" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="2.1082" y1="-7.62" x2="2.9718" y2="-1.6256" layer="21"/>
+<rectangle x1="2.1082" y1="-7.62" x2="2.9718" y2="-1.6256" layer="51"/>
 <smd name="2" x="0" y="-7.1882" dx="1.0668" dy="2.159" layer="1"/>
 <smd name="3" x="2.54" y="-7.1882" dx="1.0668" dy="2.159" layer="1"/>
-<rectangle x1="-0.4318" y1="-7.62" x2="0.4318" y2="-1.6256" layer="21"/>
-<rectangle x1="-2.9718" y1="-7.62" x2="-2.1082" y2="-1.6256" layer="21"/>
+<rectangle x1="-0.4318" y1="-7.62" x2="0.4318" y2="-1.6256" layer="51"/>
+<rectangle x1="-2.9718" y1="-7.62" x2="-2.1082" y2="-1.6256" layer="51"/>
 <polygon width="0.254" layer="1">
 <vertex x="-4.1275" y="-0.9525"/>
 <vertex x="-4.1275" y="5.08"/>
@@ -2476,8 +2476,8 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <smd name="G" x="-2.54" y="-5.3467" dx="1.27" dy="3.429" layer="1"/>
 <text x="-6.35" y="1.27" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="7.62" y="1.27" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="2.1082" y1="-6.0325" x2="2.9718" y2="-0.0381" layer="21"/>
-<rectangle x1="-2.9718" y1="-6.0325" x2="-2.1082" y2="-0.0381" layer="21"/>
+<rectangle x1="2.1082" y1="-6.0325" x2="2.9718" y2="-0.0381" layer="51"/>
+<rectangle x1="-2.9718" y1="-6.0325" x2="-2.1082" y2="-0.0381" layer="51"/>
 <wire x1="-5.3975" y1="9.2075" x2="5.3975" y2="9.2075" width="0.127" layer="21"/>
 <wire x1="5.3975" y1="9.2075" x2="5.3975" y2="0" width="0.127" layer="21"/>
 <wire x1="5.3975" y1="0" x2="-5.3975" y2="0" width="0.127" layer="21"/>
