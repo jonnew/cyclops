@@ -43,6 +43,8 @@ EDIT: 	> This stabilizes the _measurement_ of the current but if you place the p
 
 10. All silkscreening related to the board ID, designer, license etc should go on the back within a negative text block. This will free up room on the front of the board for power and overcurrent LED indicators along with a reset switch.
 
+11. Before production, you must get rid of the drills on the Arudino component. They are too large and contact the outside of the board! The dimension layer of the arduino board should take care of the drills.
+
 
 
     
