@@ -316,6 +316,14 @@ UsedLibrary="/home/jon/github/Cyclops-LED-Driver/pcb/eagle-lbr/cyclops.lbr"
 UsedLibrary="/home/jon/github/PuggleBoard/lbr/ti-lbr/ti-extended.lbr"
 
 [Win_1]
+Type="CAM Processor"
+Loc="0 16 599 489"
+State=3
+Number=3
+File="cyclops_r3.brd"
+Job="/home/jon/github/Cyclops-LED-Driver/pcb/cam/gerb274x-4layer_OSH-Park_cyclops.cam"
+
+[Win_2]
 Type="Schematic Editor"
 Loc="0 0 599 399"
 State=0
@@ -362,7 +370,7 @@ PadsSameType=0
 Layer=91
 Sheet=1
 
-[Win_2]
+[Win_3]
 Type="Control Panel"
 Loc="26 107 625 506"
 State=1
@@ -372,3 +380,4 @@ Number=0
 Screen="1280 800"
 Window="Win_1"
 Window="Win_2"
+Window="Win_3"
