@@ -5678,7 +5678,7 @@ at 30/07/2012 17:45:58</description>
 <part name="VTEMP" library="cyclops" deviceset="TP" device="TP08R"/>
 <part name="VBIAS" library="cyclops" deviceset="TP" device="TP08R"/>
 <part name="VGATE" library="cyclops" deviceset="TP" device="TP08R"/>
-<part name="R12" library="cyclops" deviceset="R" device="_0603" value="2.4k"/>
+<part name="R12" library="cyclops" deviceset="R" device="_0603" value="3k"/>
 <part name="PWR" library="cyclops" deviceset="LED" device="_0805" technology="YELLOW"/>
 <part name="SUPPLY40" library="supply2" deviceset="AGND" device=""/>
 <part name="D1" library="cyclops" deviceset="DIODE" device="SOD-323"/>
@@ -5693,10 +5693,10 @@ at 30/07/2012 17:45:58</description>
 <part name="R7" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="C6" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="SUPPLY43" library="cyclops" deviceset="AGND" device=""/>
-<part name="R11" library="cyclops" deviceset="R" device="_0603" value="3.0k"/>
+<part name="R11" library="cyclops" deviceset="R" device="_0603" value="3k"/>
 <part name="KILL" library="cyclops" deviceset="LED" device="_0805" technology="YELLOW"/>
 <part name="SUPPLY44" library="supply2" deviceset="AGND" device=""/>
-<part name="C5" library="cyclops" deviceset="C" device="_0603" value="10pF"/>
+<part name="C5" library="cyclops" deviceset="C" device="_0603" value="10nF"/>
 <part name="SUPPLY45" library="cyclops" deviceset="AGND" device=""/>
 <part name="S4" library="cyclops" deviceset="SPST_TACT" device="-EVQQ2" value="UNKILL"/>
 <part name="SUPPLY46" library="supply2" deviceset="AGND" device=""/>

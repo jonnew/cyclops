@@ -45,6 +45,13 @@ EDIT: 	> This stabilizes the _measurement_ of the current but if you place the p
 
 11. Before production, you must get rid of the drills on the Arudino component. They are too large and contact the outside of the board! The dimension layer of the arduino board should take care of the drills.
 
+12. The P-Channel Power FET providing reverse polarity protection cannot be used as a shutdown switch for the overcurrent circuit in its current configuration. 
+
+    > The FET is intentionally put in backwards, with its drain facing the external power supply and source facing the input to the 12V regulator. The gate goes to the negative input terminal. If the user puts power in backwards, then VGS is positive biased, and the FET is off
+    > When the circuit is operating, VGS is negative biased with VGG~GND and VSS~15V, VGS~-15V, and the FET is on.
+    > In the case of an overcurrent even, the comparitor circuit activates and brings VGG to 15. However, this means that VGS~0V, which is not going to turn the FET off. 
+    > If the FET is not backwards, with source facing external power and drain facing the regulator, then the comparitor circuit will effectively turn it off during an overcurrent event, but there will be no reverse polarity protection. Or, there will be but with a diode drop. I'm not sure.
+
 
 
     
