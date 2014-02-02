@@ -21,37 +21,40 @@ X4. The OP1177 package on the schematic should be an SOIC. Right now its MSOP.
 
 EDIT: 	> Why?
 
-5. I need to run/fix an ERC on the schematic before doing anything else to the layout.
+X5. I need to run/fix an ERC on the schematic before doing anything else to the layout.
 
-6. Should the pre-biasing of the output MOSFET be moved to in between the opamp the the NPN/PNP totem pole? This would make getting a defined bias voltage easier.
+X6. Should the pre-biasing of the output MOSFET be moved to in between the opamp the the NPN/PNP totem pole? This would make getting a defined bias voltage easier.
 
 EDIT:	> Yes.
 		> Make sure their is resistive path from gate to ground though or the LED will never fully turn off.
 		> Is the above statment true? Test.
 
-7. The LM324 is not a good choice for this applicaiton because it its outputs do not go rail-to-rail. This means that we have to wait for the base voltage drive to exceed 300 mV before the thing even starts driving the base. This causes the big ossiclation when starting from full off. Really, you need a RRIO amplifier so it knows what zero volts at the input is as well.
+X7. The LM324 is not a good choice for this applicaiton because it its outputs do not go rail-to-rail. This means that we have to wait for the base voltage drive to exceed 300 mV before the thing even starts driving the base. This causes the big ossiclation when starting from full off. Really, you need a RRIO amplifier so it knows what zero volts at the input is as well.
 
 EDIT: 	> I found that using the the TLV2374 (3 MHz, 4 chan RRIO opamp) along with a small negative rail, which could be provided to the op-amp only using a low power linear regulator and a third input terminal, I could achieve 1 MHz sinusoidal current drive through the LED. I think this is the way to go. This required no biasing on the totem pole (i.e. note 6 above).
+	> I think that even though biasing did not really help performance, I will leave the circuit on the board since it is already implemented. In order to remove it, it simply is not populated. i.e. the biasing circuit operates in parallel to the main circuit which will be fully functional in its absence.
 
-8. At least with the LM324, I found that adding a small capacitor (200-500 pF) in parallel with the feedback resistor in the current measurment path, I could stablize the circuit which showed some ringing when the NPN was pre-biased. This indicates that a faster opamp might be good.
+X8. At least with the LM324, I found that adding a small capacitor (200-500 pF) in parallel with the feedback resistor in the current measurment path, I could stablize the circuit which showed some ringing when the NPN was pre-biased. This indicates that a faster opamp might be good.
 
 EDIT: 	> This stabilizes the _measurement_ of the current but if you place the probe right on Rsense, you see that the spike is still there. 
 		> That said, putting a small value cap from output to the negative pin is a common technique for cancelling the pole created by parasitic capacitance in the feedback path.
 		> Leave space for a small value cap for this reason, but don't populate unless nessesary.
 
-9. There should be a more rigorous over-current protection circuit. The whole thing should shut down if ~1.5A is drawn through the N-Channel MOSFET. The P-Channel input FET is a place to make this happen. An auxiliary voltage can be sent to its gate if the current threshold is exceeded. This will require some type of peak-detection comparitor circuit that is droopless, else the circuit will enter a crazy osscilation.
+X9. There should be a more rigorous over-current protection circuit. The whole thing should shut down if ~1.5A is drawn through the N-Channel MOSFET. The P-Channel input FET is a place to make this happen. An auxiliary voltage can be sent to its gate if the current threshold is exceeded. This will require some type of peak-detection comparitor circuit that is droopless, else the circuit will enter a crazy osscilation.
 
+EDIT:	> A comparitor circuit moitors the V_I signal and shuts the circuit down if it goes above 2V (2A) for more than 1 millisecond, which will not destroy LEDs rating for 1A since there is not adequate time for heat to integrate.
+	> If the overcurrent trigger is tripped, the user must reset the circuit using a tactile switch. If the current is still too high when the circuit powers on again, then it will immediately turn off.
 10. All silkscreening related to the board ID, designer, license etc should go on the back within a negative text block. This will free up room on the front of the board for power and overcurrent LED indicators along with a reset switch.
 
 11. Before production, you must get rid of the drills on the Arudino component. They are too large and contact the outside of the board! The dimension layer of the arduino board should take care of the drills.
 
-12. The P-Channel Power FET providing reverse polarity protection cannot be used as a shutdown switch for the overcurrent circuit in its current configuration. 
+X12. The P-Channel Power FET providing reverse polarity protection cannot be used as a shutdown switch for the overcurrent circuit in its current configuration. 
 
     > The FET is intentionally put in backwards, with its drain facing the external power supply and source facing the input to the 12V regulator. The gate goes to the negative input terminal. If the user puts power in backwards, then VGS is positive biased, and the FET is off
     > When the circuit is operating, VGS is negative biased with VGG~GND and VSS~15V, VGS~-15V, and the FET is on.
     > In the case of an overcurrent even, the comparitor circuit activates and brings VGG to 15. However, this means that VGS~0V, which is not going to turn the FET off. 
     > If the FET is not backwards, with source facing external power and drain facing the regulator, then the comparitor circuit will effectively turn it off during an overcurrent event, but there will be no reverse polarity protection. Or, there will be but with a diode drop. I'm not sure.
 
-
+EDIT:	> I ended up just using the PFET as traditional power switch, with the source terminal facing the external power supply. This way it could be used for overcurrent protection. This is more important for two reasons. 1. The polarity is clearly marked on the boards silkscreen. 2. The negative rail does never had reverse polarity protection anyway, so its not like this config was really protecting the circuit anyway.
 
     

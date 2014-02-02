@@ -3595,36 +3595,36 @@ grid 2.54 mm</description>
 <pad name="SCL" x="18.796" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
 <pad name="IOREF" x="30.48" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
 <pad name="RESERVED" x="27.94" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
-<text x="31.7399" y="0.254" size="1.016" layer="21" font="vector" ratio="15">RST</text>
-<text x="34.7523" y="0.254" size="1.016" layer="21" font="vector" ratio="15">3v</text>
-<text x="37.2923" y="0.254" size="1.016" layer="21" font="vector" ratio="15">5v</text>
-<text x="40.5231" y="0.254" size="1.016" layer="21" font="vector" ratio="15">Gnd</text>
-<text x="44.7853" y="0.254" size="1.016" layer="21" font="vector" ratio="15">Vin</text>
-<text x="49.911" y="0.254" size="1.016" layer="21" font="vector" ratio="15">A0</text>
-<text x="52.451" y="0.254" size="1.016" layer="21" font="vector" ratio="15">A1</text>
-<text x="54.991" y="0.254" size="1.016" layer="21" font="vector" ratio="15">A2</text>
-<text x="57.531" y="0.254" size="1.016" layer="21" font="vector" ratio="15">A3</text>
-<text x="60.071" y="0.254" size="1.016" layer="21" font="vector" ratio="15">A4</text>
-<text x="62.611" y="0.254" size="1.016" layer="21" font="vector" ratio="15">A5</text>
-<text x="22.225" y="51.308" size="1.016" layer="21" font="vector" ratio="15" rot="R25">ARef</text>
-<text x="25.146" y="51.308" size="1.016" layer="21" font="vector" ratio="15" rot="R25">Gnd</text>
-<text x="29.845" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">13</text>
-<text x="32.385" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">12</text>
-<text x="34.925" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">11</text>
-<text x="37.465" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">10</text>
-<text x="39.497" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">9</text>
-<text x="42.037" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">8</text>
-<text x="46.101" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">7</text>
-<text x="48.641" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">6</text>
-<text x="51.181" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">5</text>
-<text x="53.721" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">4</text>
-<text x="56.261" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">3</text>
-<text x="58.801" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">2</text>
-<text x="61.341" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">1</text>
-<text x="63.881" y="53.086" size="1.016" layer="21" font="vector" ratio="15" rot="R180">0</text>
-<text x="17.145" y="51.308" size="1.016" layer="21" font="vector" ratio="15" rot="R25">SCL</text>
-<text x="19.685" y="51.308" size="1.016" layer="21" font="vector" ratio="15" rot="R25">SDA</text>
-<text x="29.4539" y="0.254" size="1.016" layer="21" font="vector" ratio="15">IOr</text>
+<text x="31.7399" y="0.254" size="0.889" layer="21" font="vector" ratio="18">RST</text>
+<text x="34.7523" y="0.254" size="0.889" layer="21" font="vector" ratio="18">3v</text>
+<text x="37.2923" y="0.254" size="0.889" layer="21" font="vector" ratio="18">5v</text>
+<text x="40.5231" y="0.254" size="0.889" layer="21" font="vector" ratio="18">Gnd</text>
+<text x="44.7853" y="0.254" size="0.889" layer="21" font="vector" ratio="18">Vin</text>
+<text x="49.911" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A0</text>
+<text x="52.451" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A1</text>
+<text x="54.991" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A2</text>
+<text x="57.531" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A3</text>
+<text x="60.071" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A4</text>
+<text x="62.611" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A5</text>
+<text x="25.019" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">ARef</text>
+<text x="27.94" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">Gnd</text>
+<text x="29.845" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">13</text>
+<text x="32.385" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">12</text>
+<text x="34.925" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">11</text>
+<text x="37.465" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">10</text>
+<text x="39.497" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">9</text>
+<text x="42.037" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">8</text>
+<text x="46.101" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">7</text>
+<text x="48.641" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">6</text>
+<text x="51.181" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">5</text>
+<text x="53.721" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">4</text>
+<text x="56.261" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">3</text>
+<text x="58.801" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">2</text>
+<text x="61.341" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">1</text>
+<text x="63.881" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">0</text>
+<text x="19.177" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">SCL</text>
+<text x="21.717" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">SDA</text>
+<text x="29.4539" y="0.254" size="0.889" layer="21" font="vector" ratio="18">IOr</text>
 <pad name="MOSI" x="66.167" y="27.94" drill="1" diameter="1.778" shape="octagon"/>
 <polygon width="0.127" layer="40">
 <vertex x="0" y="44.45"/>
@@ -3637,9 +3637,10 @@ grid 2.54 mm</description>
 <pad name="+5V" x="66.167" y="30.48" drill="1" diameter="1.778" shape="octagon"/>
 <pad name="GND$1" x="66.167" y="25.4" drill="1" diameter="1.778" shape="octagon"/>
 <pad name="RESET$1" x="63.627" y="25.4" drill="1" diameter="1.778" shape="octagon"/>
-<hole x="15.24" y="50.8" drill="3.592"/>
-<hole x="66.04" y="35.56" drill="3.592"/>
-<hole x="66.04" y="7.62" drill="3.592"/>
+<hole x="15.24" y="50.8" drill="3.2"/>
+<hole x="66.04" y="35.56" drill="3.2"/>
+<hole x="66.04" y="7.62" drill="3.2"/>
+<circle x="12.7" y="2.54" radius="1.796" width="0.127" layer="51"/>
 </package>
 <package name="0201">
 <wire x1="-0.254" y1="0.1524" x2="0.254" y2="0.1524" width="0.1016" layer="51"/>
@@ -4966,6 +4967,89 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <wire x1="0" y1="0.254" x2="-0.381" y2="-0.254" width="0.127" layer="21"/>
 <wire x1="-0.381" y1="0.254" x2="0.381" y2="0.254" width="0.127" layer="21"/>
 </package>
+<package name="ARDUINO">
+<description>&lt;b&gt;Arduino Uno&lt;/b&gt;
+&lt;p&gt;
+Make a shield with ease, this package has all the named pins as well as the two mounting drill holes and an outline of the USB and DC power connector. The outline is on the DIMENSION layer, so if your board house uses it they will cut the outline to match.</description>
+<wire x1="0" y1="0" x2="66.04" y2="0" width="0" layer="20"/>
+<wire x1="66.04" y1="0" x2="66.04" y2="2.54" width="0" layer="20"/>
+<wire x1="66.04" y1="2.54" x2="68.58" y2="5.08" width="0" layer="20"/>
+<wire x1="68.58" y1="5.08" x2="68.58" y2="37.846" width="0" layer="20"/>
+<wire x1="68.58" y1="37.846" x2="66.04" y2="40.386" width="0" layer="20"/>
+<wire x1="66.04" y1="40.386" x2="66.04" y2="51.816" width="0" layer="20"/>
+<wire x1="66.04" y1="51.816" x2="64.516" y2="53.34" width="0" layer="20"/>
+<wire x1="64.516" y1="53.34" x2="0" y2="53.34" width="0" layer="20"/>
+<wire x1="9.144" y1="31.75" x2="9.144" y2="44.45" width="0" layer="52"/>
+<wire x1="9.144" y1="44.45" x2="-6.604" y2="44.45" width="0" layer="52"/>
+<wire x1="-6.604" y1="44.45" x2="-6.604" y2="31.75" width="0" layer="52"/>
+<wire x1="-6.604" y1="31.75" x2="9.144" y2="31.75" width="0" layer="52"/>
+<wire x1="0" y1="53.34" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="-1.778" y1="3.81" x2="12.192" y2="3.81" width="0" layer="52"/>
+<wire x1="12.192" y1="3.81" x2="12.192" y2="12.7" width="0" layer="52"/>
+<wire x1="12.192" y1="12.7" x2="-1.778" y2="12.7" width="0" layer="52"/>
+<wire x1="-1.778" y1="12.7" x2="-1.778" y2="3.81" width="0" layer="52"/>
+<pad name="D4" x="53.34" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A0" x="50.8" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D3" x="55.88" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D2" x="58.42" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D1" x="60.96" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D0" x="63.5" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D5" x="50.8" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D6" x="48.26" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D7" x="45.72" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D8" x="41.656" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D9" x="39.116" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D10" x="36.576" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D11" x="34.036" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D12" x="31.496" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D13" x="28.956" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="GND" x="26.416" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="AREF" x="23.876" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A1" x="53.34" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A2" x="55.88" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A3" x="58.42" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A4" x="60.96" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A5" x="63.5" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="VIN" x="45.72" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="GND1" x="43.18" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="GND2" x="40.64" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="5V" x="38.1" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="3V" x="35.56" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="RESET" x="33.02" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<text x="31.2319" y="3.81" size="1.016" layer="21" font="vector">RST</text>
+<text x="34.7523" y="3.81" size="1.016" layer="21" font="vector">3v</text>
+<text x="37.5463" y="3.81" size="1.016" layer="21" font="vector">5v</text>
+<text x="40.7771" y="3.81" size="1.016" layer="21" font="vector">Gnd</text>
+<text x="44.7853" y="3.81" size="1.016" layer="21" font="vector">Vin</text>
+<text x="54.1121" y="0.4623" size="1.016" layer="21" font="vector">Analog In</text>
+<text x="50.419" y="3.81" size="1.016" layer="21" font="vector">0</text>
+<text x="52.959" y="3.81" size="1.016" layer="21" font="vector">1</text>
+<text x="55.499" y="3.81" size="1.016" layer="21" font="vector">2</text>
+<text x="58.039" y="3.81" size="1.016" layer="21" font="vector">3</text>
+<text x="60.579" y="3.81" size="1.016" layer="21" font="vector">4</text>
+<text x="63.119" y="3.81" size="1.016" layer="21" font="vector">5</text>
+<text x="24.765" y="49.53" size="1.016" layer="21" font="vector" rot="R180">ARef</text>
+<text x="27.94" y="49.53" size="1.016" layer="21" font="vector" rot="R180">gnd</text>
+<text x="30.099" y="49.53" size="1.016" layer="21" font="vector" rot="R180">13</text>
+<text x="32.639" y="49.53" size="1.016" layer="21" font="vector" rot="R180">12</text>
+<text x="35.179" y="49.53" size="1.016" layer="21" font="vector" rot="R180">11</text>
+<text x="37.719" y="49.53" size="1.016" layer="21" font="vector" rot="R180">10</text>
+<text x="39.751" y="49.53" size="1.016" layer="21" font="vector" rot="R180">9</text>
+<text x="42.291" y="49.53" size="1.016" layer="21" font="vector" rot="R180">8</text>
+<text x="46.355" y="49.53" size="1.016" layer="21" font="vector" rot="R180">7</text>
+<text x="48.895" y="49.53" size="1.016" layer="21" font="vector" rot="R180">6</text>
+<text x="51.435" y="49.53" size="1.016" layer="21" font="vector" rot="R180">5</text>
+<text x="53.975" y="49.53" size="1.016" layer="21" font="vector" rot="R180">4</text>
+<text x="56.515" y="49.53" size="1.016" layer="21" font="vector" rot="R180">3</text>
+<text x="59.055" y="49.53" size="1.016" layer="21" font="vector" rot="R180">2</text>
+<text x="61.595" y="49.53" size="1.016" layer="21" font="vector" rot="R180">1</text>
+<text x="64.135" y="49.53" size="1.016" layer="21" font="vector" rot="R180">0</text>
+<text x="31.623" y="52.07" size="1.016" layer="21" font="vector">Digital I/O</text>
+<text x="50.927" y="52.07" size="1.016" layer="21" font="vector">Digital I/O</text>
+<hole x="15.24" y="50.8" drill="3.2"/>
+<hole x="66.04" y="35.56" drill="3.2"/>
+<hole x="13.97" y="2.54" drill="3.2"/>
+</package>
 </packages>
 <symbols>
 <symbol name="BANANA_TO_BOARD">
@@ -5992,7 +6076,7 @@ Source: amp_227161.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="LM324" prefix="IC">
+<deviceset name="QUAD-OPAMP_14PIN" prefix="IC" uservalue="yes">
 <description>&lt;b&gt;OP AMP&lt;/b&gt;</description>
 <gates>
 <gate name="A" symbol="OPAMP" x="15.24" y="10.16" swaplevel="1"/>
