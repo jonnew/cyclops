@@ -5744,10 +5744,10 @@ at 30/07/2012 17:45:58</description>
 </instance>
 <instance part="SUPPLY32" gate="G$1" x="76.2" y="-17.78"/>
 <instance part="SUPPLY33" gate="G$1" x="76.2" y="-55.88"/>
-<instance part="S1" gate="G$1" x="96.52" y="-33.02" rot="MR0"/>
+<instance part="S1" gate="G$1" x="96.52" y="-38.1" rot="MR0"/>
 <instance part="SUPPLY12" gate="G$1" x="165.1" y="22.86"/>
 <instance part="SUPPLY34" gate="PE" x="139.7" y="22.86"/>
-<instance part="S3" gate="G$1" x="127" y="-30.48" rot="R180"/>
+<instance part="S3" gate="G$1" x="127" y="-35.56" rot="R180"/>
 <instance part="SUPPLY4" gate="PE" x="60.96" y="10.16"/>
 <instance part="SUPPLY29" gate="PE" x="38.1" y="83.82"/>
 <instance part="VAUX" gate="G$1" x="104.14" y="-7.62"/>
@@ -5877,8 +5877,8 @@ at 30/07/2012 17:45:58</description>
 </segment>
 <segment>
 <pinref part="S1" gate="G$1" pin="1"/>
-<wire x1="76.2" y1="-30.48" x2="88.9" y2="-30.48" width="0.1524" layer="91"/>
-<label x="76.2" y="-30.48" size="1.778" layer="95"/>
+<wire x1="76.2" y1="-35.56" x2="88.9" y2="-35.56" width="0.1524" layer="91"/>
+<label x="76.2" y="-35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CS2" class="0">
@@ -5892,9 +5892,9 @@ at 30/07/2012 17:45:58</description>
 </net>
 <net name="LED-" class="0">
 <segment>
-<pinref part="I/O_BLOCK" gate="G$1" pin="4"/>
-<wire x1="43.18" y1="-20.32" x2="68.58" y2="-20.32" width="0.1524" layer="91"/>
-<label x="50.8" y="-20.32" size="1.778" layer="95"/>
+<pinref part="I/O_BLOCK" gate="G$1" pin="5"/>
+<wire x1="43.18" y1="-25.4" x2="68.58" y2="-25.4" width="0.1524" layer="91"/>
+<label x="50.8" y="-25.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -5937,13 +5937,6 @@ at 30/07/2012 17:45:58</description>
 <label x="50.8" y="-10.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="I/O_BLOCK" gate="G$1" pin="10"/>
-<wire x1="43.18" y1="-50.8" x2="76.2" y2="-50.8" width="0.1524" layer="91"/>
-<pinref part="SUPPLY33" gate="G$1" pin="AGND"/>
-<wire x1="76.2" y1="-50.8" x2="76.2" y2="-53.34" width="0.1524" layer="91"/>
-<label x="50.8" y="-50.8" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="C1" gate="C" pin="2"/>
 <pinref part="SUPPLY16" gate="G$1" pin="AGND"/>
 <wire x1="187.96" y1="27.94" x2="187.96" y2="25.4" width="0.1524" layer="91"/>
@@ -5973,29 +5966,31 @@ at 30/07/2012 17:45:58</description>
 </net>
 <net name="VAUX" class="0">
 <segment>
-<pinref part="I/O_BLOCK" gate="G$1" pin="9"/>
-<wire x1="43.18" y1="-45.72" x2="68.58" y2="-45.72" width="0.1524" layer="91"/>
-<label x="50.8" y="-45.72" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="VAUX" gate="G$1" pin="1"/>
 <wire x1="106.68" y1="-7.62" x2="129.54" y2="-7.62" width="0.1524" layer="91"/>
 <label x="111.76" y="-7.62" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="I/O_BLOCK" gate="G$1" pin="10"/>
+<wire x1="43.18" y1="-50.8" x2="76.2" y2="-50.8" width="0.1524" layer="91"/>
+<pinref part="SUPPLY33" gate="G$1" pin="AGND"/>
+<wire x1="76.2" y1="-50.8" x2="76.2" y2="-53.34" width="0.1524" layer="91"/>
+<label x="50.8" y="-50.8" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="VI" class="0">
 <segment>
-<pinref part="I/O_BLOCK" gate="G$1" pin="8"/>
-<wire x1="43.18" y1="-40.64" x2="68.58" y2="-40.64" width="0.1524" layer="91"/>
-<label x="50.8" y="-40.64" size="1.778" layer="95"/>
+<pinref part="I/O_BLOCK" gate="G$1" pin="9"/>
+<wire x1="43.18" y1="-45.72" x2="68.58" y2="-45.72" width="0.1524" layer="91"/>
+<label x="50.8" y="-45.72" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VINPUT" class="0">
 <segment>
-<pinref part="I/O_BLOCK" gate="G$1" pin="7"/>
-<label x="50.8" y="-35.56" size="1.778" layer="95"/>
+<pinref part="I/O_BLOCK" gate="G$1" pin="8"/>
+<wire x1="43.18" y1="-40.64" x2="88.9" y2="-40.64" width="0.1524" layer="91"/>
+<label x="50.8" y="-40.64" size="1.778" layer="95"/>
 <pinref part="S1" gate="G$1" pin="3"/>
-<wire x1="43.18" y1="-35.56" x2="88.9" y2="-35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="REFA" class="0">
@@ -6009,9 +6004,9 @@ at 30/07/2012 17:45:58</description>
 </net>
 <net name="VTEMP" class="0">
 <segment>
-<pinref part="I/O_BLOCK" gate="G$1" pin="5"/>
-<wire x1="43.18" y1="-25.4" x2="68.58" y2="-25.4" width="0.1524" layer="91"/>
-<label x="50.8" y="-25.4" size="1.778" layer="95"/>
+<pinref part="I/O_BLOCK" gate="G$1" pin="6"/>
+<wire x1="43.18" y1="-30.48" x2="68.58" y2="-30.48" width="0.1524" layer="91"/>
+<label x="50.8" y="-30.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -6023,31 +6018,31 @@ at 30/07/2012 17:45:58</description>
 </net>
 <net name="VCTL_PRE" class="0">
 <segment>
-<wire x1="99.06" y1="-33.02" x2="119.38" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-38.1" x2="119.38" y2="-38.1" width="0.1524" layer="91"/>
 <pinref part="S1" gate="G$1" pin="2"/>
-<label x="104.14" y="-33.02" size="1.778" layer="95"/>
+<label x="104.14" y="-38.1" size="1.778" layer="95"/>
 <pinref part="S3" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="VCTL" class="0">
 <segment>
 <pinref part="S3" gate="G$1" pin="2"/>
-<wire x1="129.54" y1="-30.48" x2="147.32" y2="-30.48" width="0.1524" layer="91"/>
-<label x="137.16" y="-30.48" size="1.778" layer="95"/>
+<wire x1="129.54" y1="-35.56" x2="147.32" y2="-35.56" width="0.1524" layer="91"/>
+<label x="137.16" y="-35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="REFA2X" class="0">
 <segment>
 <pinref part="S3" gate="G$1" pin="3"/>
-<wire x1="119.38" y1="-27.94" x2="104.14" y2="-27.94" width="0.1524" layer="91"/>
-<label x="104.14" y="-27.94" size="1.778" layer="95"/>
+<wire x1="119.38" y1="-33.02" x2="104.14" y2="-33.02" width="0.1524" layer="91"/>
+<label x="104.14" y="-33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VREF" class="0">
 <segment>
-<pinref part="I/O_BLOCK" gate="G$1" pin="6"/>
-<wire x1="43.18" y1="-30.48" x2="68.58" y2="-30.48" width="0.1524" layer="91"/>
-<label x="50.8" y="-30.48" size="1.778" layer="95"/>
+<wire x1="43.18" y1="-35.56" x2="68.58" y2="-35.56" width="0.1524" layer="91"/>
+<pinref part="I/O_BLOCK" gate="G$1" pin="7"/>
+<label x="50.8" y="-35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="-5V" class="0">
@@ -6062,6 +6057,13 @@ at 30/07/2012 17:45:58</description>
 <pinref part="I/O_BLOCK" gate="G$1" pin="1"/>
 <wire x1="43.18" y1="-5.08" x2="68.58" y2="-5.08" width="0.1524" layer="91"/>
 <label x="50.8" y="-5.08" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="+12V" class="1">
+<segment>
+<pinref part="I/O_BLOCK" gate="G$1" pin="4"/>
+<wire x1="43.18" y1="-20.32" x2="68.58" y2="-20.32" width="0.1524" layer="91"/>
+<label x="50.8" y="-20.32" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
