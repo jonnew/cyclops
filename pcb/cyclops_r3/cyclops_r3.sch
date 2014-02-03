@@ -5647,7 +5647,6 @@ at 30/07/2012 17:45:58</description>
 <part name="FRAME4" library="cyclops" deviceset="FRAME_A_L" device=""/>
 <part name="I/O_BLOCK" library="cyclops" deviceset="SCREW10" device="_0.1-THRU"/>
 <part name="SUPPLY32" library="cyclops" deviceset="AGND" device=""/>
-<part name="SUPPLY33" library="cyclops" deviceset="AGND" device=""/>
 <part name="S1" library="cyclops" deviceset="SPDT" device="_PCM12" value="INPUT SRC"/>
 <part name="C17" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="C15" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
@@ -5658,7 +5657,7 @@ at 30/07/2012 17:45:58</description>
 <part name="S3" library="cyclops" deviceset="SPDT" device="_CFPA" value="TEST"/>
 <part name="U8" library="cyclops" deviceset="ZXTD4591E6" device="" value="ZXTD45"/>
 <part name="SUPPLY35" library="cyclops" deviceset="AGND" device=""/>
-<part name="Q2" library="cyclops" deviceset="N-MOSFET" device="TO-262" value="IRF510"/>
+<part name="Q2" library="cyclops" deviceset="N-MOSFET" device="TO-262" value="IRF540"/>
 <part name="R23" library="cyclops" deviceset="R" device="_0603" value="10"/>
 <part name="R24" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="SUPPLY1" library="cyclops" deviceset="AGND" device=""/>
@@ -5698,7 +5697,7 @@ at 30/07/2012 17:45:58</description>
 <part name="SUPPLY44" library="supply2" deviceset="AGND" device=""/>
 <part name="C5" library="cyclops" deviceset="C" device="_0603" value="10nF"/>
 <part name="SUPPLY45" library="cyclops" deviceset="AGND" device=""/>
-<part name="S4" library="cyclops" deviceset="SPST_TACT" device="-EVQQ2" value="UNKILL"/>
+<part name="S4" library="cyclops" deviceset="SPST_TACT" device="-EVQQ2" value="REVIVE"/>
 <part name="SUPPLY46" library="supply2" deviceset="AGND" device=""/>
 <part name="U4" library="cyclops" deviceset="*337" device="IMP" value="337-N"/>
 <part name="C12" library="cyclops" deviceset="C-POL" device="_1206" value="1uF"/>
@@ -5743,7 +5742,6 @@ at 30/07/2012 17:45:58</description>
 <attribute name="NAME" x="39.37" y="-15.24" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="SUPPLY32" gate="G$1" x="76.2" y="-17.78"/>
-<instance part="SUPPLY33" gate="G$1" x="76.2" y="-55.88"/>
 <instance part="S1" gate="G$1" x="96.52" y="-38.1" rot="MR0"/>
 <instance part="SUPPLY12" gate="G$1" x="165.1" y="22.86"/>
 <instance part="SUPPLY34" gate="PE" x="139.7" y="22.86"/>
@@ -5972,9 +5970,7 @@ at 30/07/2012 17:45:58</description>
 </segment>
 <segment>
 <pinref part="I/O_BLOCK" gate="G$1" pin="10"/>
-<wire x1="43.18" y1="-50.8" x2="76.2" y2="-50.8" width="0.1524" layer="91"/>
-<pinref part="SUPPLY33" gate="G$1" pin="AGND"/>
-<wire x1="76.2" y1="-50.8" x2="76.2" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="-50.8" x2="68.58" y2="-50.8" width="0.1524" layer="91"/>
 <label x="50.8" y="-50.8" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -7013,7 +7009,6 @@ at 30/07/2012 17:45:58</description>
 <approved hash="102,1,205.74,25.4,AGND,GND,,,,"/>
 <approved hash="102,1,187.96,25.4,AGND,GND,,,,"/>
 <approved hash="102,1,76.2,-15.24,AGND,GND,,,,"/>
-<approved hash="102,1,76.2,-53.34,AGND,GND,,,,"/>
 <approved hash="102,1,165.1,25.4,AGND,GND,,,,"/>
 <approved hash="102,1,129.54,-12.7,AGND,GND,,,,"/>
 <approved hash="102,2,5.08,-17.78,AGND,GND,,,,"/>
@@ -7038,7 +7033,6 @@ at 30/07/2012 17:45:58</description>
 <approved hash="102,3,-25.4,-111.76,AGND,GND,,,,"/>
 <approved hash="102,3,-58.42,-124.46,AGND,GND,,,,"/>
 <approved hash="102,3,-73.66,-124.46,AGND,GND,,,,"/>
-<approved hash="102,4,15.24,-10.16,AGND,GND,,,,"/>
 <approved hash="102,4,-33.02,63.5,AGND,GND,,,,"/>
 <approved hash="102,4,167.64,-10.16,AGND,GND,,,,"/>
 <approved hash="102,4,-10.16,63.5,AGND,GND,,,,"/>
@@ -7052,15 +7046,9 @@ at 30/07/2012 17:45:58</description>
 <approved hash="102,4,0,119.38,-5V,-2.1V,,,,"/>
 <approved hash="104,4,27.94,91.44,U7P,V+,+12V,,,"/>
 <approved hash="104,4,27.94,76.2,U7P,V-,-2.1V,,,"/>
-<approved hash="204,1,66.04,17.78,U$1,VIN,,,,"/>
-<approved hash="104,1,63.5,17.78,U$1,GND$1,GND,,,"/>
-<approved hash="104,1,60.96,17.78,U$1,GND$2,GND,,,"/>
-<approved hash="104,1,58.42,17.78,U$1,5V,+5V,,,"/>
-<approved hash="204,1,55.88,17.78,U$1,3V,,,,"/>
 <approved hash="104,3,-17.78,2.54,U5,VIN,+12V,,,"/>
 <approved hash="104,3,-17.78,-83.82,U6,V+,+12V,,,"/>
 <approved hash="104,3,-17.78,-106.68,U6,V-,GND,,,"/>
-<approved hash="104,2,-25.4,-81.28,U2,VCC,+15V,,,"/>
 <approved hash="115,1,126.896,39.266,FRAME1,,,,,"/>
 <approved hash="115,2,30.376,-39.474,FRAME2,,,,,"/>
 <approved hash="115,3,-22.964,-72.494,FRAME3,,,,,"/>
