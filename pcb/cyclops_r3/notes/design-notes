@@ -46,8 +46,9 @@ EDIT:	> A comparitor circuit moitors the V_I signal and shuts the circuit down i
 	> If the overcurrent trigger is tripped, the user must reset the circuit using a tactile switch. If the current is still too high when the circuit powers on again, then it will immediately turn off.
 10. All silkscreening related to the board ID, designer, license etc should go on the back within a negative text block. This will free up room on the front of the board for power and overcurrent LED indicators along with a reset switch.
 
-11. Before production, you must get rid of the drills on the Arudino component. They are too large and contact the outside of the board! The dimension layer of the arduino board should take care of the drills.
+X11. Before production, you must get rid of the drills on the Arudino component. They are too large and contact the outside of the board! The dimension layer of the arduino board should take care of the drills.
 
+EDIT:	>Copied dimensions off an adafruit supplied arduino library component. Seems to be OK.
 X12. The P-Channel Power FET providing reverse polarity protection cannot be used as a shutdown switch for the overcurrent circuit in its current configuration. 
 
     > The FET is intentionally put in backwards, with its drain facing the external power supply and source facing the input to the 12V regulator. The gate goes to the negative input terminal. If the user puts power in backwards, then VGS is positive biased, and the FET is off
