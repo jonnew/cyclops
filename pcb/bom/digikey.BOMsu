@@ -1,0 +1,14 @@
+Version=BOM-AM-18
+GroupedBy=1
+ValuesToShow=0
+DisplayPackage=0
+SchematicName=cyclops_r3.sch
+Title=Bill of Materials from cyclops_r3.sch, 79 parts, grouped by values, as of 2/9/14 4:36 PM
+OutputColumn=9
+OutputColumn=5
+BlankLineIndex=-1
+OutputFormat=0
+SeparateValues=0
+SpacesOrTabs=1
+TabWidth=8
+SpreadsheetHeader=0

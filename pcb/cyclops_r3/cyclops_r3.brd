@@ -22,7 +22,7 @@
 <layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="yes"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -48,7 +48,7 @@
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
@@ -12388,20 +12388,6 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <wire x1="0" y1="0.254" x2="-0.381" y2="-0.254" width="0.127" layer="21"/>
 <wire x1="-0.381" y1="0.254" x2="0.381" y2="0.254" width="0.127" layer="21"/>
 </package>
-<package name="EVQ-Q2">
-<wire x1="-3.3" y1="3" x2="3.3" y2="3" width="0.127" layer="21"/>
-<wire x1="3.3" y1="3" x2="3.3" y2="-3" width="0.127" layer="21"/>
-<wire x1="3.3" y1="-3" x2="-3.3" y2="-3" width="0.127" layer="21"/>
-<wire x1="-3.3" y1="-3" x2="-3.3" y2="3" width="0.127" layer="21"/>
-<circle x="0" y="0" radius="1.5033" width="0.127" layer="21"/>
-<circle x="0" y="0" radius="1" width="0.127" layer="21"/>
-<smd name="B" x="-3.4" y="2" dx="3.2" dy="1.2" layer="1"/>
-<smd name="B'" x="3.4" y="2" dx="3.2" dy="1.2" layer="1"/>
-<smd name="A'" x="3.4" y="-2" dx="3.2" dy="1.2" layer="1"/>
-<smd name="A" x="-3.4" y="-2" dx="3.2" dy="1.2" layer="1"/>
-<text x="-3" y="3.5" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.2" y="-4.8" size="1.27" layer="27">&gt;VALUE</text>
-</package>
 <package name="SOT223">
 <description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
 <wire x1="3.2766" y1="1.778" x2="3.2766" y2="-1.778" width="0.2032" layer="21"/>
@@ -12476,6 +12462,52 @@ at 30/07/2012 17:45:58</description>
 <wire x1="0.3048" y1="1.524" x2="-0.3048" y2="1.524" width="0" layer="51" curve="-180"/>
 <text x="-3.4544" y="2.54" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
 <text x="-3.4544" y="-4.445" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
+</packages>
+</library>
+<library name="jonnew-eagle">
+<description>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Cyclops EAGLE Library&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3&gt;
+&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Cyclops R3.0&amp;nbsp;&lt;/span&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;High power LED driver&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Linear current control&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Optional linear optical power control&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Built-in DAC&amp;nbsp;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Wide bandwidth&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Appropriate for scientific applications: e.g. fluorescent imaging and optogenetics&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</description>
+<packages>
+<package name="B3F">
+<description>NO SPST. Arduino's reset switch.</description>
+<wire x1="-3" y1="3" x2="3" y2="3" width="0.127" layer="21"/>
+<wire x1="3" y1="-3" x2="-3" y2="-3" width="0.127" layer="21"/>
+<wire x1="-3" y1="-3" x2="-3" y2="3" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1.5033" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1" width="0.127" layer="21"/>
+<text x="-3" y="3.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.2" y="-4.8" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="3" x="3.25" y="2.25" drill="1"/>
+<pad name="1" x="3.25" y="-2.25" drill="1"/>
+<pad name="2" x="-3.25" y="-2.25" drill="1"/>
+<pad name="4" x="-3.25" y="2.25" drill="1"/>
+<wire x1="3" y1="-3" x2="3" y2="3" width="0.127" layer="21"/>
+<circle x="-2" y="2" radius="0.5" width="0.127" layer="21"/>
+<circle x="-2" y="-2" radius="0.5" width="0.127" layer="21"/>
+<circle x="2" y="-2" radius="0.5" width="0.127" layer="21"/>
+<circle x="2" y="2" radius="0.5" width="0.127" layer="21"/>
 </package>
 </packages>
 </library>
@@ -12713,7 +12745,7 @@ Please make sure your boards conform to these design rules.</description>
 </element>
 <element name="C10" library="cyclops" package="153CLV-0807" value="47uF" x="55.118" y="19.05" smashed="yes" rot="R180">
 <attribute name="NAME" x="54.102" y="21.59" size="0.889" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="54.102" y="20.32" size="0.889" layer="27" font="vector" ratio="18"/>
+<attribute name="VALUE" x="53.848" y="20.32" size="0.889" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="U1" library="cyclops" package="SO08" value="MCP4921" x="58.928" y="34.798" smashed="yes" rot="R90">
 <attribute name="NAME" x="59.309" y="34.417" size="0.889" layer="25" font="vector" ratio="18" rot="SR90"/>
@@ -12746,10 +12778,10 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="OC_FARNELL" value="unknown" x="59.69" y="43.434" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="53.721" y="42.672" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C1" library="cyclops" package="0603" value="??" x="12.192" y="45.847" smashed="yes" rot="R270">
+<element name="C1" library="cyclops" package="0603" value="" x="12.192" y="45.847" smashed="yes" rot="R270">
 <attribute name="NAME" x="11.43" y="47.625" size="0.889" layer="25" font="vector" ratio="18"/>
 </element>
-<element name="R1" library="cyclops" package="0603" value="??" x="14.605" y="45.847" smashed="yes" rot="R90">
+<element name="R1" library="cyclops" package="0603" value="" x="14.605" y="45.847" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="14.605" y="45.847" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="14.605" y="45.847" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="14.605" y="45.847" size="1.778" layer="27" rot="R90" display="off"/>
@@ -12879,9 +12911,9 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="37.846" y="19.177" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="39.624" y="18.288" size="0.889" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="C9" library="cyclops" package="153CLV-0807" value="47uF" x="55.118" y="9.906" smashed="yes" rot="R180">
+<element name="C9" library="cyclops" package="153CLV-0807" value="100uF" x="55.118" y="9.906" smashed="yes" rot="R180">
 <attribute name="NAME" x="54.102" y="12.446" size="0.889" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="54.102" y="11.176" size="0.889" layer="27" font="vector" ratio="18"/>
+<attribute name="VALUE" x="53.34" y="11.176" size="0.889" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="S3" library="cyclops" package="CFPA" value="TEST" x="3.81" y="47.244" smashed="yes">
 <attribute name="NAME" x="4.064" y="46.736" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
@@ -12969,12 +13001,11 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="62.484" y="22.479" size="0.889" layer="26" font="vector" ratio="18" rot="MR180" align="center-right"/>
 <attribute name="VALUE" x="55.499" y="22.479" size="0.889" layer="28" font="vector" ratio="18" rot="MR0" align="center-left"/>
 </element>
-<element name="PWR" library="cyclops" package="CHIP-LED0805" value="LED" x="63.246" y="22.987" smashed="yes" rot="R270">
+<element name="PWR" library="cyclops" package="CHIP-LED0805" value="LEDGRN" x="63.246" y="22.987" smashed="yes" rot="R270">
 <attribute name="MN" value="598-8170-107F" x="77.978" y="29.591" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
 <attribute name="DK" value="350-2044-1-ND" x="77.978" y="29.591" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
 <attribute name="MPN" value="Dialight" x="77.978" y="29.591" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
 <attribute name="NAME" x="65.405" y="22.606" size="0.889" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="61.214" y="20.828" size="0.889" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="R10" library="cyclops" package="0603" value="220k" x="39.116" y="12.7" smashed="yes" rot="MR0">
 <attribute name="MN" value="Panasonic" x="39.116" y="12.7" size="1.6764" layer="28" ratio="18" rot="MR0" display="off"/>
@@ -13035,22 +13066,22 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="MN" value="Panasonic" x="56.134" y="27.305" size="1.6764" layer="28" ratio="18" rot="MR0" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="56.134" y="27.305" size="1.6764" layer="28" ratio="18" rot="MR0" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="56.134" y="27.305" size="1.6764" layer="28" ratio="18" rot="MR0" display="off"/>
-<attribute name="NAME" x="62.484" y="20.701" size="0.889" layer="26" font="vector" ratio="18" rot="MR180" align="center-right"/>
+<attribute name="NAME" x="62.484" y="19.685" size="0.889" layer="26" font="vector" ratio="18" rot="MR180" align="center-right"/>
 <attribute name="VALUE" x="55.499" y="20.701" size="0.889" layer="28" font="vector" ratio="18" rot="MR0" align="center-left"/>
 </element>
-<element name="KILL" library="cyclops" package="CHIP-LED0805" value="LED" x="63.246" y="20.955" smashed="yes" rot="R270">
-<attribute name="MN" value="598-8110-107F" x="67.818" y="27.051" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
-<attribute name="DK" value="350-2038-1-ND" x="67.818" y="27.051" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
-<attribute name="MPN" value="Dialight" x="67.818" y="27.051" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
-<attribute name="NAME" x="65.405" y="20.701" size="0.889" layer="25" font="vector" ratio="18"/>
+<element name="KILL" library="cyclops" package="CHIP-LED0805" value="LEDRED" x="63.246" y="20.193" smashed="yes" rot="R270">
+<attribute name="MN" value="598-8110-107F" x="67.818" y="26.289" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
+<attribute name="DK" value="350-2038-1-ND" x="67.818" y="26.289" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
+<attribute name="MPN" value="Dialight" x="67.818" y="26.289" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
+<attribute name="NAME" x="65.405" y="19.939" size="0.889" layer="25" font="vector" ratio="18"/>
 </element>
 <element name="C5" library="cyclops" package="0603" value="10nF" x="39.116" y="6.604" smashed="yes" rot="MR180">
 <attribute name="NAME" x="44.704" y="6.604" size="0.889" layer="26" font="vector" ratio="18" rot="MR0" align="center-right"/>
 <attribute name="VALUE" x="41.148" y="6.604" size="0.889" layer="28" font="vector" ratio="18" rot="MR180" align="center-left"/>
 </element>
-<element name="S4" library="cyclops" package="EVQ-Q2" value="REVIVE" x="64.008" y="14.859" smashed="yes" rot="R270">
-<attribute name="NAME" x="61.412" y="15.573" size="0.889" layer="25" font="vector" ratio="18" rot="R270"/>
-<attribute name="VALUE" x="67.336" y="17.043" size="0.889" layer="27" font="vector" ratio="18" rot="R270"/>
+<element name="S4" library="jonnew-eagle" package="B3F" value="REVIVE" x="64.008" y="13.97" smashed="yes" rot="R270">
+<attribute name="NAME" x="61.412" y="14.684" size="0.889" layer="25" font="vector" ratio="18" rot="R270"/>
+<attribute name="VALUE" x="67.336" y="16.154" size="0.889" layer="27" font="vector" ratio="18" rot="R270"/>
 </element>
 <element name="U4" library="cyclops" package="SOT223" value="337-N" x="45.593" y="42.672" smashed="yes" rot="R180">
 <attribute name="NAME" x="44.958" y="48.8188" size="0.889" layer="25" font="vector" ratio="18"/>
@@ -13078,7 +13109,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="51.689" y="49.276" size="0.889" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="51.816" y="48.133" size="0.889" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="C21" library="cyclops" package="0603" value="??" x="21.844" y="45.847" smashed="yes" rot="R270">
+<element name="C21" library="cyclops" package="0603" value="" x="21.844" y="45.847" smashed="yes" rot="R270">
 <attribute name="NAME" x="22.86" y="47.625" size="0.889" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 </element>
 </elements>
@@ -13957,7 +13988,7 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="C4" pad="2"/>
 <contactref element="C3" pad="2"/>
 <via x="58.42" y="27.432" extent="1-16" drill="0.6"/>
-<polygon width="0.4064" layer="2" isolate="0.254" thermals="no">
+<polygon width="0.4064" layer="2" isolate="0.254" thermals="no" rank="2">
 <vertex x="69.85" y="0"/>
 <vertex x="26.67" y="0"/>
 <vertex x="26.67" y="3.006784375"/>
@@ -14133,18 +14164,19 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="C6" pad="2"/>
 <contactref element="KILL" pad="C"/>
 <contactref element="C5" pad="2"/>
-<wire x1="64.296" y1="20.955" x2="64.296" y2="21.971" width="0.4064" layer="1"/>
-<wire x1="64.296" y1="22.987" x2="64.296" y2="21.971" width="0.4064" layer="1"/>
-<wire x1="64.296" y1="21.971" x2="59.944" y2="21.971" width="0.4064" layer="1"/>
-<via x="59.944" y="21.971" extent="1-16" drill="0.5"/>
+<wire x1="64.296" y1="20.193" x2="64.296" y2="21.59" width="0.4064" layer="1"/>
+<wire x1="64.296" y1="22.987" x2="64.296" y2="21.59" width="0.4064" layer="1"/>
+<wire x1="64.296" y1="21.59" x2="60.071" y2="21.59" width="0.4064" layer="1"/>
+<wire x1="60.071" y1="21.59" x2="59.944" y2="21.717" width="0.4064" layer="1"/>
+<via x="59.944" y="21.717" extent="1-16" drill="0.5"/>
 <contactref element="BIAS" pad="3"/>
 <contactref element="C22" pad="2"/>
 <wire x1="15.875" y1="41.2496" x2="17.2974" y2="42.672" width="0.4064" layer="1"/>
 <wire x1="17.2974" y1="42.672" x2="20.701" y2="42.672" width="0.4064" layer="1"/>
 <wire x1="20.701" y1="42.672" x2="20.955" y2="42.418" width="0.4064" layer="1"/>
 <wire x1="20.955" y1="42.418" x2="21.262" y2="42.418" width="0.4064" layer="1"/>
-<contactref element="S4" pad="B'"/>
-<contactref element="S4" pad="B"/>
+<contactref element="S4" pad="4"/>
+<contactref element="S4" pad="3"/>
 <contactref element="C13" pad="+"/>
 <contactref element="R13" pad="2"/>
 <contactref element="C12" pad="+"/>
@@ -14158,11 +14190,7 @@ Please make sure your boards conform to these design rules.</description>
 <via x="40.64" y="43.688" extent="1-16" drill="0.9" shape="octagon"/>
 <wire x1="17.018" y1="43.942" x2="17.018" y2="43.053" width="0.4064" layer="1"/>
 <wire x1="17.018" y1="43.053" x2="17.399" y2="42.672" width="0.4064" layer="1"/>
-<wire x1="66.008" y1="11.459" x2="66.008" y2="11.144" width="0.4064" layer="1"/>
 <wire x1="58.547" y1="8.382" x2="58.166" y2="8.001" width="0.4064" layer="1"/>
-<wire x1="66.008" y1="18.259" x2="66.008" y2="19.243" width="0.4064" layer="1"/>
-<wire x1="66.008" y1="19.243" x2="64.296" y2="20.955" width="0.4064" layer="1"/>
-<wire x1="66.008" y1="11.459" x2="66.008" y2="18.259" width="0.4064" layer="1"/>
 <via x="35.56" y="5.969" extent="1-16" drill="0.5"/>
 <via x="31.115" y="5.461" extent="1-16" drill="0.5"/>
 <via x="36.83" y="7.874" extent="1-16" drill="0.5"/>
@@ -14180,6 +14208,11 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="39.9796" y1="6.604" x2="41.148" y2="6.604" width="0.4064" layer="16"/>
 <via x="38.989" y="30.226" extent="1-16" drill="0.9" shape="octagon"/>
 <wire x1="38.989" y1="28.575" x2="38.989" y2="30.226" width="0.8128" layer="1"/>
+<wire x1="66.258" y1="17.22" x2="66.258" y2="10.72" width="0.4064" layer="16"/>
+<wire x1="64.296" y1="20.193" x2="65.405" y2="19.939" width="0.4064" layer="1"/>
+<wire x1="65.405" y1="19.939" x2="66.294" y2="19.05" width="0.4064" layer="1"/>
+<wire x1="66.294" y1="19.05" x2="66.294" y2="17.256" width="0.4064" layer="1"/>
+<wire x1="66.294" y1="17.256" x2="66.258" y2="17.22" width="0.4064" layer="1"/>
 <wire x1="17.399" y1="42.672" x2="17.2974" y2="42.672" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VIN">
@@ -14384,15 +14417,16 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$11">
 <contactref element="R11" pad="1"/>
 <contactref element="KILL" pad="A"/>
-<wire x1="58.3946" y1="20.701" x2="59.436" y2="20.701" width="0.4064" layer="16"/>
-<via x="59.436" y="20.701" extent="1-16" drill="0.5"/>
-<wire x1="59.436" y1="20.701" x2="62.103" y2="20.701" width="0.4064" layer="1"/>
-<wire x1="62.103" y1="20.701" x2="62.069" y2="20.828" width="0.4064" layer="1"/>
-<wire x1="62.069" y1="20.828" x2="62.196" y2="20.955" width="0.4064" layer="1" curve="90"/>
+<wire x1="58.3946" y1="20.701" x2="58.42" y2="20.574" width="0.4064" layer="16"/>
+<wire x1="58.42" y1="20.574" x2="59.69" y2="20.574" width="0.4064" layer="16"/>
+<via x="59.69" y="20.574" extent="1-16" drill="0.5"/>
+<wire x1="62.196" y1="20.193" x2="61.087" y2="20.193" width="0.4064" layer="1"/>
+<wire x1="61.087" y1="20.193" x2="60.706" y2="20.574" width="0.4064" layer="1"/>
+<wire x1="60.706" y1="20.574" x2="59.69" y2="20.574" width="0.4064" layer="1"/>
 </signal>
 <signal name="COMP+">
-<contactref element="S4" pad="A"/>
-<contactref element="S4" pad="A'"/>
+<contactref element="S4" pad="1"/>
+<contactref element="S4" pad="2"/>
 <contactref element="U3" pad="3"/>
 <contactref element="R2" pad="1"/>
 <contactref element="R6" pad="2"/>
@@ -14410,11 +14444,9 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="53.086" y1="4.191" x2="55.118" y2="6.223" width="0.4064" layer="16"/>
 <wire x1="55.118" y1="6.223" x2="55.118" y2="10.795" width="0.4064" layer="16"/>
 <wire x1="55.118" y1="10.795" x2="56.261" y2="11.938" width="0.4064" layer="16"/>
-<wire x1="56.261" y1="11.938" x2="58.42" y2="11.938" width="0.4064" layer="16"/>
-<via x="58.42" y="11.938" extent="1-16" drill="0.5"/>
-<wire x1="58.42" y1="11.938" x2="61.529" y2="11.938" width="0.4064" layer="1"/>
-<wire x1="61.529" y1="11.938" x2="62.008" y2="11.459" width="0.4064" layer="1"/>
-<wire x1="62.008" y1="18.259" x2="62.008" y2="11.459" width="0.4064" layer="1"/>
+<wire x1="61.758" y1="10.72" x2="61.758" y2="11.938" width="0.4064" layer="16"/>
+<wire x1="61.758" y1="11.938" x2="61.758" y2="17.22" width="0.4064" layer="16"/>
+<wire x1="56.261" y1="11.938" x2="61.758" y2="11.938" width="0.4064" layer="16"/>
 </signal>
 <signal name="N$12">
 <contactref element="R14" pad="2"/>
@@ -14503,6 +14535,28 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="30.099" y1="4.572" x2="33.9344" y2="4.572" width="0.6096" layer="16"/>
 <wire x1="33.9344" y1="4.572" x2="33.9344" y2="5.8928" width="0.6096" layer="16"/>
 <wire x1="33.9344" y1="5.8928" x2="34.6202" y2="6.5786" width="0.6096" layer="16"/>
+</signal>
+<signal name="N$14">
+<polygon width="0.254" layer="2" pour="cutout">
+<vertex x="67.183" y="16.65760625"/>
+<vertex x="67.183" y="17.801790625" curve="90"/>
+<vertex x="66.823790625" y="18.161"/>
+<vertex x="65.561978125" y="18.161" curve="90"/>
+<vertex x="65.278" y="17.877021875"/>
+<vertex x="65.278" y="16.539978125" curve="90"/>
+<vertex x="65.561978125" y="16.256"/>
+<vertex x="66.78139375" y="16.256" curve="90"/>
+</polygon>
+<polygon width="0.254" layer="2" pour="cutout">
+<vertex x="67.183" y="10.18060625"/>
+<vertex x="67.183" y="11.324790625" curve="90"/>
+<vertex x="66.823790625" y="11.684"/>
+<vertex x="65.561978125" y="11.684" curve="90"/>
+<vertex x="65.278" y="11.400021875"/>
+<vertex x="65.278" y="10.062978125" curve="90"/>
+<vertex x="65.561978125" y="9.779"/>
+<vertex x="66.78139375" y="9.779" curve="90"/>
+</polygon>
 </signal>
 </signals>
 </board>

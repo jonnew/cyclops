@@ -316,18 +316,12 @@ UsedLibrary="/home/jon/github/Cyclops-LED-Driver/pcb/eagle-lbr/cyclops.lbr"
 UsedLibrary="/home/jon/github/PuggleBoard/lbr/ti-lbr/ti-extended.lbr"
 
 [Win_1]
-Type="Control Panel"
-Loc="0 25 1273 772"
-State=3
-Number=0
-
-[Win_2]
 Type="Schematic Editor"
 Loc="3 0 636 747"
 State=1
 Number=2
 File="cyclops_r3.sch"
-View="-111.074 -67.9204 180.342 157.456"
+View="-66.9093 -236.521 224.507 -11.1436"
 WireWidths=" 0 0.3048 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.4064 0.1524"
 PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
 PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
@@ -366,16 +360,62 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=91
-Views=" 1: 17.632 -72.8387 260.479 114.975 2: -315.703 -544.847 728.494 262.72 3: -163.793 -241.236 255.846 83.3059 4: -111.074 -67.9204 180.342 157.456"
-Sheet=4
+Views=" 1: 77.9333 -94.1356 320.78 93.6781 2: -66.9093 -236.521 224.507 -11.1436 3: -163.793 -241.236 255.846 83.3059 4: -199.083 -183.737 405.197 283.603"
+Sheet=2
 
-[Win_3]
+[Win_2]
 Type="Board Editor"
 Loc="0 0 599 399"
 State=1
 Number=1
 File="cyclops_r3.brd"
-View="-3.48031 25.6337 41.5423 58.5008"
+View="4.31241 2.29268 74.0043 53.1688"
+WireWidths=" 0 0.3048 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.254 0.4064"
+PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
+PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
+ViaDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
+ViaDrills=" 0.5 0.7 0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.6"
+HoleDrills=" 0.5 0.7 0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.6"
+TextSizes=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.9304 2.1844 2.54 3.81 5.08 6.4516 1.778"
+PolygonSpacings=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 5.08 6.4516 1.27"
+PolygonIsolates=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
+MiterRadiuss=" 0.254 0.3175 0.635 1.27 2.54 1 2 2.5 5 7.5 10 0"
+DimensionWidths=" 0 0.127 0.254 0.1 0.26 0.13"
+DimensionExtWidths=" 0.127 0.254 0.1 0.13 0.26 0"
+DimensionExtLengths=" 1.27 2.54 1 2 3 0"
+DimensionExtOffsets=" 1.27 2.54 1 2 3 0"
+SmdSizes=" 0.3048 0.1524 0.4064 0.2032 0.6096 0.3048 0.8128 0.4064 1.016 0.508 1.27 0.6604 1.4224 0.7112 1.6764 0.8128 1.778 0.9144 1.9304 0.9652 2.1844 1.0668 2.54 1.27 3.81 1.9304 5.08 2.54 6.4516 3.2512 1.27 0.635"
+WireBend=1
+WireBendSet=0
+WireCap=1
+MiterStyle=0
+PadShape=0
+ViaShape=0
+PolygonPour=0
+PolygonRank=1
+PolygonThermals=1
+PolygonOrphans=0
+TextRatio=8
+DimensionUnit=1
+DimensionPrecision=2
+DimensionShowUnit=0
+PinDirection=3
+PinFunction=0
+PinLength=2
+PinVisible=3
+SwapLevel=0
+ArcDirection=0
+AddLevel=2
+PadsSameType=0
+Layer=1
+
+[Win_3]
+Type="Library Editor"
+Loc="633 -8 1266 739"
+State=2
+Number=3
+File="/home/jon/github/Cyclops-LED-Driver/pcb/eagle-lbr/cyclops.lbr"
+View="-17.8003 -23.0226 22.8803 25.0546"
 WireWidths=" 0 0.254 0.3048 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.4064"
 PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
 PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
@@ -398,7 +438,7 @@ MiterStyle=0
 PadShape=0
 ViaShape=0
 PolygonPour=0
-PolygonRank=1
+PolygonRank=0
 PolygonThermals=1
 PolygonOrphans=0
 TextRatio=8
@@ -413,10 +453,18 @@ SwapLevel=0
 ArcDirection=0
 AddLevel=2
 PadsSameType=0
-Layer=16
+Layer=94
+Device="MCP4921"
+
+[Win_4]
+Type="Control Panel"
+Loc="0 25 1273 772"
+State=1
+Number=0
 
 [Desktop]
 Screen="1280 800"
 Window="Win_1"
 Window="Win_2"
 Window="Win_3"
+Window="Win_4"

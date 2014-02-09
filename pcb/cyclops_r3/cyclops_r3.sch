@@ -3053,52 +3053,6 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <wire x1="0" y1="0.254" x2="-0.381" y2="-0.254" width="0.127" layer="21"/>
 <wire x1="-0.381" y1="0.254" x2="0.381" y2="0.254" width="0.127" layer="21"/>
 </package>
-<package name="EVQ-Q2">
-<wire x1="-3.3" y1="3" x2="3.3" y2="3" width="0.127" layer="21"/>
-<wire x1="3.3" y1="3" x2="3.3" y2="-3" width="0.127" layer="21"/>
-<wire x1="3.3" y1="-3" x2="-3.3" y2="-3" width="0.127" layer="21"/>
-<wire x1="-3.3" y1="-3" x2="-3.3" y2="3" width="0.127" layer="21"/>
-<circle x="0" y="0" radius="1.5033" width="0.127" layer="21"/>
-<circle x="0" y="0" radius="1" width="0.127" layer="21"/>
-<smd name="B" x="-3.4" y="2" dx="3.2" dy="1.2" layer="1"/>
-<smd name="B'" x="3.4" y="2" dx="3.2" dy="1.2" layer="1"/>
-<smd name="A'" x="3.4" y="-2" dx="3.2" dy="1.2" layer="1"/>
-<smd name="A" x="-3.4" y="-2" dx="3.2" dy="1.2" layer="1"/>
-<text x="-3" y="3.5" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.2" y="-4.8" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-<package name="KMR2">
-<wire x1="-2.1" y1="1.4" x2="2.1" y2="1.4" width="0.127" layer="21"/>
-<wire x1="2.1" y1="1.4" x2="2.1" y2="-1.4" width="0.127" layer="21"/>
-<wire x1="2.1" y1="-1.4" x2="-2.1" y2="-1.4" width="0.127" layer="21"/>
-<wire x1="-2.1" y1="-1.4" x2="-2.1" y2="1.4" width="0.127" layer="21"/>
-<wire x1="-0.5" y1="-0.8" x2="-1.1" y2="-0.2" width="0.127" layer="21" curve="-90"/>
-<wire x1="-1.1" y1="-0.2" x2="-1.1" y2="0.2" width="0.127" layer="21"/>
-<wire x1="-1.1" y1="0.2" x2="-0.5" y2="0.8" width="0.127" layer="21" curve="-90"/>
-<wire x1="-0.5" y1="0.8" x2="0.5" y2="0.8" width="0.127" layer="21"/>
-<wire x1="0.5" y1="0.8" x2="1.1" y2="0.2" width="0.127" layer="21" curve="-90"/>
-<wire x1="1.1" y1="0.2" x2="1.1" y2="-0.2" width="0.127" layer="21"/>
-<wire x1="1.1" y1="-0.2" x2="0.5" y2="-0.8" width="0.127" layer="21" curve="-90"/>
-<wire x1="0.5" y1="-0.8" x2="-0.5" y2="-0.8" width="0.127" layer="21"/>
-<smd name="1" x="2" y="0.8" dx="1" dy="1" layer="1"/>
-<smd name="2" x="2" y="-0.8" dx="1" dy="1" layer="1"/>
-<smd name="4" x="-2" y="-0.8" dx="1" dy="1" layer="1"/>
-<smd name="3" x="-2" y="0.8" dx="1" dy="1" layer="1"/>
-</package>
-<package name="EVQ-Q2-A">
-<wire x1="-3.3" y1="3" x2="3.3" y2="3" width="0.127" layer="21"/>
-<wire x1="3.3" y1="3" x2="3.3" y2="-3" width="0.127" layer="21"/>
-<wire x1="3.3" y1="-3" x2="-3.3" y2="-3" width="0.127" layer="21"/>
-<wire x1="-3.3" y1="-3" x2="-3.3" y2="3" width="0.127" layer="21"/>
-<circle x="0" y="0" radius="1.5033" width="0.127" layer="21"/>
-<circle x="0" y="0" radius="1" width="0.127" layer="21"/>
-<smd name="B" x="-4.55" y="2.25" dx="2.1" dy="1.4" layer="1"/>
-<smd name="B'" x="4.55" y="2.25" dx="2.1" dy="1.4" layer="1"/>
-<smd name="A'" x="4.55" y="-2.25" dx="2.1" dy="1.4" layer="1"/>
-<smd name="A" x="-4.55" y="-2.25" dx="2.1" dy="1.4" layer="1"/>
-<text x="-3" y="3.5" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.2" y="-4.8" size="1.27" layer="27">&gt;VALUE</text>
-</package>
 <package name="SOT223">
 <description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
 <wire x1="3.2766" y1="1.778" x2="3.2766" y2="-1.778" width="0.2032" layer="21"/>
@@ -3630,27 +3584,6 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <vertex x="-2.921" y="-2.413"/>
 <vertex x="-2.413" y="-2.921"/>
 </polygon>
-</symbol>
-<symbol name="TS2">
-<wire x1="0" y1="1.905" x2="0" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-4.445" y1="1.905" x2="-3.175" y2="1.905" width="0.254" layer="94"/>
-<wire x1="-4.445" y1="-1.905" x2="-3.175" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="-4.445" y1="1.905" x2="-4.445" y2="0" width="0.254" layer="94"/>
-<wire x1="-4.445" y1="0" x2="-4.445" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="0" x2="-1.905" y2="0" width="0.1524" layer="94"/>
-<wire x1="-1.27" y1="0" x2="-0.635" y2="0" width="0.1524" layer="94"/>
-<wire x1="-4.445" y1="0" x2="-3.175" y2="0" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="-2.54" x2="0" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="0" y1="-2.54" x2="-1.27" y2="1.905" width="0.254" layer="94"/>
-<circle x="0" y="-2.54" radius="0.127" width="0.4064" layer="94"/>
-<circle x="0" y="2.54" radius="0.127" width="0.4064" layer="94"/>
-<text x="-6.35" y="-2.54" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<text x="-3.81" y="3.175" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
-<pin name="P" x="0" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="2" rot="R90"/>
-<pin name="S" x="0" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="S1" x="2.54" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="P1" x="2.54" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="2" rot="R90"/>
 </symbol>
 <symbol name="337">
 <wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.4064" layer="94"/>
@@ -5338,48 +5271,6 @@ distributor Farnell 149-452</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="SPST_TACT" prefix="SW">
-<description>SMT 6mm switch, EVQQ2 series
-&lt;p&gt;http://www.ladyada.net/library/eagle&lt;/p&gt;</description>
-<gates>
-<gate name="G$1" symbol="TS2" x="0" y="0"/>
-</gates>
-<devices>
-<device name="-EVQQ2" package="EVQ-Q2">
-<connects>
-<connect gate="G$1" pin="P" pad="A"/>
-<connect gate="G$1" pin="P1" pad="A'"/>
-<connect gate="G$1" pin="S" pad="B"/>
-<connect gate="G$1" pin="S1" pad="B'"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="-KMR2" package="KMR2">
-<connects>
-<connect gate="G$1" pin="P" pad="1"/>
-<connect gate="G$1" pin="P1" pad="3"/>
-<connect gate="G$1" pin="S" pad="2"/>
-<connect gate="G$1" pin="S1" pad="4"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="" package="EVQ-Q2-A">
-<connects>
-<connect gate="G$1" pin="P" pad="A"/>
-<connect gate="G$1" pin="P1" pad="A'"/>
-<connect gate="G$1" pin="S" pad="B"/>
-<connect gate="G$1" pin="S1" pad="B'"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="*337" prefix="IC">
 <description>Negative &lt;b&gt;VOLTAGE REGULATOR&lt;/b&gt;</description>
 <gates>
@@ -5565,6 +5456,176 @@ at 30/07/2012 17:45:58</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="jonnew-eagle">
+<description>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Cyclops EAGLE Library&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3&gt;
+&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Cyclops R3.0&amp;nbsp;&lt;/span&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;High power LED driver&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Linear current control&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Optional linear optical power control&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Built-in DAC&amp;nbsp;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Wide bandwidth&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Appropriate for scientific applications: e.g. fluorescent imaging and optogenetics&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</description>
+<packages>
+<package name="B3F">
+<description>NO SPST. Arduino's reset switch.</description>
+<wire x1="-3" y1="3" x2="3" y2="3" width="0.127" layer="21"/>
+<wire x1="3" y1="-3" x2="-3" y2="-3" width="0.127" layer="21"/>
+<wire x1="-3" y1="-3" x2="-3" y2="3" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1.5033" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1" width="0.127" layer="21"/>
+<text x="-3" y="3.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.2" y="-4.8" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="3" x="3.25" y="2.25" drill="1"/>
+<pad name="1" x="3.25" y="-2.25" drill="1"/>
+<pad name="2" x="-3.25" y="-2.25" drill="1"/>
+<pad name="4" x="-3.25" y="2.25" drill="1"/>
+<wire x1="3" y1="-3" x2="3" y2="3" width="0.127" layer="21"/>
+<circle x="-2" y="2" radius="0.5" width="0.127" layer="21"/>
+<circle x="-2" y="-2" radius="0.5" width="0.127" layer="21"/>
+<circle x="2" y="-2" radius="0.5" width="0.127" layer="21"/>
+<circle x="2" y="2" radius="0.5" width="0.127" layer="21"/>
+</package>
+<package name="EVQ-Q2">
+<wire x1="-3.3" y1="3" x2="3.3" y2="3" width="0.127" layer="21"/>
+<wire x1="3.3" y1="3" x2="3.3" y2="-3" width="0.127" layer="21"/>
+<wire x1="3.3" y1="-3" x2="-3.3" y2="-3" width="0.127" layer="21"/>
+<wire x1="-3.3" y1="-3" x2="-3.3" y2="3" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1.5033" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1" width="0.127" layer="21"/>
+<smd name="B" x="-3.4" y="2" dx="3.2" dy="1.2" layer="1"/>
+<smd name="B'" x="3.4" y="2" dx="3.2" dy="1.2" layer="1"/>
+<smd name="A'" x="3.4" y="-2" dx="3.2" dy="1.2" layer="1"/>
+<smd name="A" x="-3.4" y="-2" dx="3.2" dy="1.2" layer="1"/>
+<text x="-3" y="3.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.2" y="-4.8" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="KMR2">
+<wire x1="-2.1" y1="1.4" x2="2.1" y2="1.4" width="0.127" layer="21"/>
+<wire x1="2.1" y1="1.4" x2="2.1" y2="-1.4" width="0.127" layer="21"/>
+<wire x1="2.1" y1="-1.4" x2="-2.1" y2="-1.4" width="0.127" layer="21"/>
+<wire x1="-2.1" y1="-1.4" x2="-2.1" y2="1.4" width="0.127" layer="21"/>
+<wire x1="-0.5" y1="-0.8" x2="-1.1" y2="-0.2" width="0.127" layer="21" curve="-90"/>
+<wire x1="-1.1" y1="-0.2" x2="-1.1" y2="0.2" width="0.127" layer="21"/>
+<wire x1="-1.1" y1="0.2" x2="-0.5" y2="0.8" width="0.127" layer="21" curve="-90"/>
+<wire x1="-0.5" y1="0.8" x2="0.5" y2="0.8" width="0.127" layer="21"/>
+<wire x1="0.5" y1="0.8" x2="1.1" y2="0.2" width="0.127" layer="21" curve="-90"/>
+<wire x1="1.1" y1="0.2" x2="1.1" y2="-0.2" width="0.127" layer="21"/>
+<wire x1="1.1" y1="-0.2" x2="0.5" y2="-0.8" width="0.127" layer="21" curve="-90"/>
+<wire x1="0.5" y1="-0.8" x2="-0.5" y2="-0.8" width="0.127" layer="21"/>
+<smd name="1" x="2" y="0.8" dx="1" dy="1" layer="1"/>
+<smd name="2" x="2" y="-0.8" dx="1" dy="1" layer="1"/>
+<smd name="4" x="-2" y="-0.8" dx="1" dy="1" layer="1"/>
+<smd name="3" x="-2" y="0.8" dx="1" dy="1" layer="1"/>
+</package>
+<package name="EVQ-Q2-A">
+<wire x1="-3.3" y1="3" x2="3.3" y2="3" width="0.127" layer="21"/>
+<wire x1="3.3" y1="3" x2="3.3" y2="-3" width="0.127" layer="21"/>
+<wire x1="3.3" y1="-3" x2="-3.3" y2="-3" width="0.127" layer="21"/>
+<wire x1="-3.3" y1="-3" x2="-3.3" y2="3" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1.5033" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1" width="0.127" layer="21"/>
+<smd name="B" x="-4.55" y="2.25" dx="2.1" dy="1.4" layer="1"/>
+<smd name="B'" x="4.55" y="2.25" dx="2.1" dy="1.4" layer="1"/>
+<smd name="A'" x="4.55" y="-2.25" dx="2.1" dy="1.4" layer="1"/>
+<smd name="A" x="-4.55" y="-2.25" dx="2.1" dy="1.4" layer="1"/>
+<text x="-3" y="3.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.2" y="-4.8" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="TS2">
+<wire x1="0" y1="1.905" x2="0" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="1.905" x2="-3.175" y2="1.905" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="-1.905" x2="-3.175" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="1.905" x2="-4.445" y2="0" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="0" x2="-4.445" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.905" y2="0" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-0.635" y2="0" width="0.1524" layer="94"/>
+<wire x1="-4.445" y1="0" x2="-3.175" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-1.27" y2="1.905" width="0.254" layer="94"/>
+<circle x="0" y="-2.54" radius="0.127" width="0.4064" layer="94"/>
+<circle x="0" y="2.54" radius="0.127" width="0.4064" layer="94"/>
+<text x="-6.35" y="-2.54" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="-3.81" y="3.175" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="P" x="0" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="2" rot="R90"/>
+<pin name="S" x="0" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<pin name="S1" x="2.54" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<pin name="P1" x="2.54" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="2" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SPST_TACT" prefix="SW" uservalue="yes">
+<description>SMT 6mm switch, EVQQ2 series
+&lt;p&gt;http://www.ladyada.net/library/eagle&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="TS2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-EVQQ2" package="EVQ-Q2">
+<connects>
+<connect gate="G$1" pin="P" pad="A"/>
+<connect gate="G$1" pin="P1" pad="A'"/>
+<connect gate="G$1" pin="S" pad="B"/>
+<connect gate="G$1" pin="S1" pad="B'"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-KMR2" package="KMR2">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+<connect gate="G$1" pin="P1" pad="3"/>
+<connect gate="G$1" pin="S" pad="2"/>
+<connect gate="G$1" pin="S1" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="" package="EVQ-Q2-A">
+<connects>
+<connect gate="G$1" pin="P" pad="A"/>
+<connect gate="G$1" pin="P1" pad="A'"/>
+<connect gate="G$1" pin="S" pad="B"/>
+<connect gate="G$1" pin="S1" pad="B'"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-B3F" package="B3F">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+<connect gate="G$1" pin="P1" pad="2"/>
+<connect gate="G$1" pin="S" pad="3"/>
+<connect gate="G$1" pin="S1" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 <attribute name="DESIGNER" value="JONATHAN P. NEWMAN"/>
@@ -5608,8 +5669,8 @@ at 30/07/2012 17:45:58</description>
 <part name="SUPPLY14" library="cyclops" deviceset="GND" device=""/>
 <part name="SUPPLY15" library="cyclops" deviceset="GND" device=""/>
 <part name="S2" library="cyclops" deviceset="219-04*" device=""/>
-<part name="C1" library="cyclops" deviceset="C" device="_0603" value="??"/>
-<part name="R1" library="cyclops" deviceset="R" device="_0603" value="??"/>
+<part name="C1" library="cyclops" deviceset="C" device="_0603"/>
+<part name="R1" library="cyclops" deviceset="R" device="_0603"/>
 <part name="SUPPLY16" library="cyclops" deviceset="AGND" device=""/>
 <part name="R22" library="cyclops" deviceset="R" device="_0603" value="9k"/>
 <part name="R21" library="cyclops" deviceset="R" device="_0603" value="1k"/>
@@ -5650,7 +5711,7 @@ at 30/07/2012 17:45:58</description>
 <part name="S1" library="cyclops" deviceset="SPDT" device="_PCM12" value="INPUT SRC"/>
 <part name="C17" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="C15" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
-<part name="C9" library="cyclops" deviceset="C-POL" device="_0807" value="47uF"/>
+<part name="C9" library="cyclops" deviceset="C-POL" device="_0807" value="100uF"/>
 <part name="SUPPLY31" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY12" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY34" library="cyclops" deviceset="GND" device=""/>
@@ -5679,7 +5740,7 @@ at 30/07/2012 17:45:58</description>
 <part name="VBIAS" library="cyclops" deviceset="TP" device="TP08R"/>
 <part name="VGATE" library="cyclops" deviceset="TP" device="TP08R"/>
 <part name="R12" library="cyclops" deviceset="R" device="_0603" value="3k"/>
-<part name="PWR" library="cyclops" deviceset="LED" device="_0805" technology="GREEN" value="LED"/>
+<part name="PWR" library="cyclops" deviceset="LED" device="_0805" technology="GREEN" value="LEDGRN"/>
 <part name="SUPPLY40" library="supply2" deviceset="AGND" device=""/>
 <part name="R10" library="cyclops" deviceset="R" device="_0603" value="220k"/>
 <part name="U3" library="ti-extended" deviceset="TLV3701CDBVT" device="" value="TLV37"/>
@@ -5693,11 +5754,11 @@ at 30/07/2012 17:45:58</description>
 <part name="C6" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="SUPPLY43" library="cyclops" deviceset="AGND" device=""/>
 <part name="R11" library="cyclops" deviceset="R" device="_0603" value="3k"/>
-<part name="KILL" library="cyclops" deviceset="LED" device="_0805" technology="RED" value="LED"/>
+<part name="KILL" library="cyclops" deviceset="LED" device="_0805" technology="RED" value="LEDRED"/>
 <part name="SUPPLY44" library="supply2" deviceset="AGND" device=""/>
 <part name="C5" library="cyclops" deviceset="C" device="_0603" value="10nF"/>
 <part name="SUPPLY45" library="cyclops" deviceset="AGND" device=""/>
-<part name="S4" library="cyclops" deviceset="SPST_TACT" device="-EVQQ2" value="REVIVE"/>
+<part name="S4" library="jonnew-eagle" deviceset="SPST_TACT" device="-B3F" value="REVIVE"/>
 <part name="SUPPLY46" library="supply2" deviceset="AGND" device=""/>
 <part name="U4" library="cyclops" deviceset="*337" device="IMP" value="337-N"/>
 <part name="C12" library="cyclops" deviceset="C-POL" device="_1206" value="1uF"/>
@@ -5708,7 +5769,7 @@ at 30/07/2012 17:45:58</description>
 <part name="-2.1V" library="cyclops" deviceset="-5V" device="" value="-2.1V"/>
 <part name="-2.1V1" library="cyclops" deviceset="-5V" device="" value="-2.1V"/>
 <part name="-2.1V2" library="cyclops" deviceset="-5V" device="" value="-2.1V"/>
-<part name="C21" library="cyclops" deviceset="C" device="_0603" value="??"/>
+<part name="C21" library="cyclops" deviceset="C" device="_0603"/>
 </parts>
 <sheets>
 <sheet>

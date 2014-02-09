@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -3551,6 +3551,7 @@ grid 2.54 mm</description>
 <text x="-5.08" y="-3.175" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="ARDUINOR3_ICSP">
+<description>&lt;b&gt;Arduino R3 Shield with ISCP&lt;/b&gt;&lt;p&gt;</description>
 <wire x1="-1.27" y1="0" x2="66.04" y2="0" width="0" layer="20"/>
 <wire x1="66.04" y1="0" x2="66.04" y2="2.54" width="0" layer="20"/>
 <wire x1="66.04" y1="2.54" x2="68.58" y2="5.08" width="0" layer="20"/>
@@ -5049,6 +5050,25 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <hole x="15.24" y="50.8" drill="3.2"/>
 <hole x="66.04" y="35.56" drill="3.2"/>
 <hole x="13.97" y="2.54" drill="3.2"/>
+</package>
+<package name="B3F">
+<description>NO SPST. Arduino's reset switch.</description>
+<wire x1="-3" y1="3" x2="3" y2="3" width="0.127" layer="21"/>
+<wire x1="3" y1="-3" x2="-3" y2="-3" width="0.127" layer="21"/>
+<wire x1="-3" y1="-3" x2="-3" y2="3" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1.5033" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1" width="0.127" layer="21"/>
+<text x="-3" y="3.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.2" y="-4.8" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="3" x="3.25" y="2.25" drill="1"/>
+<pad name="1" x="3.25" y="-2.25" drill="1"/>
+<pad name="2" x="-3.25" y="-2.25" drill="1"/>
+<pad name="4" x="-3.25" y="2.25" drill="1"/>
+<wire x1="3" y1="-3" x2="3" y2="3" width="0.127" layer="21"/>
+<circle x="-2" y="2" radius="0.5" width="0.127" layer="21"/>
+<circle x="-2" y="-2" radius="0.5" width="0.127" layer="21"/>
+<circle x="2" y="-2" radius="0.5" width="0.127" layer="21"/>
+<circle x="2" y="2" radius="0.5" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -6806,6 +6826,7 @@ distributor RS Components</description>
 </devices>
 </deviceset>
 <deviceset name="SCREW2">
+<description>&lt;b&gt;Screw Terminal&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="SCREW2" x="0" y="0"/>
 </gates>
@@ -6822,6 +6843,7 @@ distributor RS Components</description>
 </devices>
 </deviceset>
 <deviceset name="SCREW3">
+<description>&lt;b&gt;Screw Terminal&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="SCREW3" x="0" y="0"/>
 </gates>
@@ -6839,6 +6861,7 @@ distributor RS Components</description>
 </devices>
 </deviceset>
 <deviceset name="SCREW4">
+<description>&lt;b&gt;Screw Terminal&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="SCREW4" x="0" y="0"/>
 </gates>
@@ -6857,6 +6880,7 @@ distributor RS Components</description>
 </devices>
 </deviceset>
 <deviceset name="SCREW5">
+<description>&lt;b&gt;Screw Terminal&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="SCREW5" x="0" y="0"/>
 </gates>
@@ -7534,6 +7558,7 @@ distributor RS Components</description>
 </devices>
 </deviceset>
 <deviceset name="ARDUINO_R3_ICSP">
+<description>&lt;b&gt;Arduino UNO R3 Sheild with ICSP&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="ARDUINOR3-ICSP" x="-33.02" y="-25.4"/>
 </gates>
@@ -7786,7 +7811,7 @@ distributor RS Components</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="SPST_TACT" prefix="SW">
+<deviceset name="SPST_TACT" prefix="SW" uservalue="yes">
 <description>SMT 6mm switch, EVQQ2 series
 &lt;p&gt;http://www.ladyada.net/library/eagle&lt;/p&gt;</description>
 <gates>
@@ -7826,9 +7851,22 @@ distributor RS Components</description>
 <technology name=""/>
 </technologies>
 </device>
+<device name="-B3F" package="B3F">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+<connect gate="G$1" pin="P1" pad="2"/>
+<connect gate="G$1" pin="S" pad="3"/>
+<connect gate="G$1" pin="S1" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="MCP4921">
+<description>&lt;b&gt;12-bit DAC with SPI interface&lt;/b&gt;&lt;p&gt;
+Microchip Technoligies&lt;br&gt;</description>
 <gates>
 <gate name="G$1" symbol="MCP4921" x="2.54" y="-5.08"/>
 </gates>
@@ -7866,6 +7904,7 @@ distributor RS Components</description>
 </devices>
 </deviceset>
 <deviceset name="DIODE" prefix="D" uservalue="yes">
+<description>&lt;b&gt;DIODE&lt;/b&gt;</description>
 <gates>
 <gate name="D" symbol="DIODE" x="0" y="0"/>
 </gates>
@@ -7891,6 +7930,7 @@ distributor RS Components</description>
 </devices>
 </deviceset>
 <deviceset name="C-POL" prefix="C" uservalue="yes">
+<description>&lt;b&gt;Polarized Capacitor&lt;/b&gt;</description>
 <gates>
 <gate name="C" symbol="C-POL" x="0" y="-2.54"/>
 </gates>
@@ -8052,6 +8092,7 @@ Sourc: www.ctscorp.com</description>
 </devices>
 </deviceset>
 <deviceset name="SCREW8">
+<description>&lt;b&gt;Screw Terminal&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="SCREW8" x="0" y="0"/>
 </gates>
@@ -8133,6 +8174,7 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 </devices>
 </deviceset>
 <deviceset name="SCREW10">
+<description>&lt;b&gt;Screw Terminal&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="SCREW10" x="0" y="0"/>
 </gates>
@@ -8198,6 +8240,7 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 </devices>
 </deviceset>
 <deviceset name="DLD101">
+<description>&lt;b&gt;LED Driver; Constant Current&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="DLD101" x="0" y="-2.54"/>
 </gates>
@@ -8683,6 +8726,7 @@ distributor Farnell 149-452</description>
 </devices>
 </deviceset>
 <deviceset name="LED" uservalue="yes">
+<description>&lt;b&gt;Surface mount LED&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="LED" x="0" y="0"/>
 </gates>
