@@ -436,6 +436,7 @@ http://www.bccomponents.com/</description>
 <wire x1="-3.175" y1="1.27" x2="-3.175" y2="-1.27" width="0.127" layer="21"/>
 </package>
 <package name="ARDUINOR3_ICSP">
+<description>&lt;b&gt;Arduino R3 Shield with ISCP&lt;/b&gt;&lt;p&gt;</description>
 <wire x1="-1.27" y1="0" x2="66.04" y2="0" width="0" layer="20"/>
 <wire x1="66.04" y1="0" x2="66.04" y2="2.54" width="0" layer="20"/>
 <wire x1="66.04" y1="2.54" x2="68.58" y2="5.08" width="0" layer="20"/>
@@ -3074,6 +3075,16 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
 <rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
 </package>
+<package name="2512W">
+<wire x1="-3.7" y1="2.1" x2="3.7" y2="2.1" width="0.127" layer="21"/>
+<wire x1="3.7" y1="2.1" x2="3.7" y2="-2.1" width="0.127" layer="21"/>
+<wire x1="3.7" y1="-2.1" x2="-3.7" y2="-2.1" width="0.127" layer="21"/>
+<wire x1="-3.7" y1="-2.1" x2="-3.7" y2="2.1" width="0.127" layer="21"/>
+<smd name="1" x="0" y="-1.25" dx="6.7" dy="1.3" layer="1"/>
+<text x="-2.54" y="2.524" size="1.016" layer="25" font="vector">&gt;NAME</text>
+<text x="-2.54" y="-3.54" size="1.016" layer="27" font="vector">&gt;VALUE</text>
+<smd name="2" x="0" y="1.25" dx="6.7" dy="1.3" layer="1"/>
+</package>
 </packages>
 <symbols>
 <symbol name="317">
@@ -3664,6 +3675,7 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="DIODE" prefix="D" uservalue="yes">
+<description>&lt;b&gt;DIODE&lt;/b&gt;</description>
 <gates>
 <gate name="D" symbol="DIODE" x="0" y="0"/>
 </gates>
@@ -3752,6 +3764,15 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <technology name=""/>
 </technologies>
 </device>
+<device name="_2512W" package="2512W">
+<connects>
+<connect gate="R" pin="1" pad="1"/>
+<connect gate="R" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="AGND" prefix="SUPPLY">
@@ -3781,6 +3802,7 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="C-POL" prefix="C" uservalue="yes">
+<description>&lt;b&gt;Polarized Capacitor&lt;/b&gt;</description>
 <gates>
 <gate name="C" symbol="C-POL" x="0" y="-2.54"/>
 </gates>
@@ -3806,6 +3828,7 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="ARDUINO_R3_ICSP">
+<description>&lt;b&gt;Arduino UNO R3 Sheild with ICSP&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="ARDUINOR3-ICSP" x="-33.02" y="-25.4"/>
 </gates>
@@ -3858,6 +3881,8 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="MCP4921">
+<description>&lt;b&gt;12-bit DAC with SPI interface&lt;/b&gt;&lt;p&gt;
+Microchip Technoligies&lt;br&gt;</description>
 <gates>
 <gate name="G$1" symbol="MCP4921" x="2.54" y="-5.08"/>
 </gates>
@@ -4614,6 +4639,7 @@ Sourc: www.ctscorp.com</description>
 </devices>
 </deviceset>
 <deviceset name="Z-DIODE" prefix="D" uservalue="yes">
+<description>&lt;b&gt;Zener Diode&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="Z-DIODE" x="0" y="0"/>
 </gates>
@@ -4648,6 +4674,7 @@ Sourc: www.ctscorp.com</description>
 </devices>
 </deviceset>
 <deviceset name="SCREW10">
+<description>&lt;b&gt;Screw Terminal&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="SCREW10" x="0" y="0"/>
 </gates>
@@ -4701,6 +4728,7 @@ Sourc: www.ctscorp.com</description>
 </devices>
 </deviceset>
 <deviceset name="S-DIODE" prefix="D" uservalue="yes">
+<description>&lt;b&gt;Schottky Diode&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="S-DIODE" x="0" y="0"/>
 </gates>
@@ -4717,6 +4745,7 @@ Sourc: www.ctscorp.com</description>
 </devices>
 </deviceset>
 <deviceset name="SPDT" prefix="S" uservalue="yes">
+<description>&lt;b&gt;SPDT Switch&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="SPDT" x="-2.54" y="0"/>
 </gates>
@@ -4758,6 +4787,7 @@ Sourc: www.ctscorp.com</description>
 </devices>
 </deviceset>
 <deviceset name="ZXTD4591E6" uservalue="yes">
+<description>&lt;b&gt;NPN/PNP Gate Driver&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="CYCLOPS_ZXTD4591E6" x="0" y="0"/>
 </gates>
@@ -5237,6 +5267,7 @@ distributor Farnell 149-452</description>
 </devices>
 </deviceset>
 <deviceset name="LED" uservalue="yes">
+<description>&lt;b&gt;Surface mount LED&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="LED" x="0" y="0"/>
 </gates>
@@ -5674,7 +5705,7 @@ at 30/07/2012 17:45:58</description>
 <part name="SUPPLY16" library="cyclops" deviceset="AGND" device=""/>
 <part name="R22" library="cyclops" deviceset="R" device="_0603" value="9k"/>
 <part name="R21" library="cyclops" deviceset="R" device="_0603" value="1k"/>
-<part name="RSENSE" library="cyclops" deviceset="R" device="_2512" value="0.1,1W"/>
+<part name="RSENSE" library="cyclops" deviceset="R" device="_2512W" value="0.1,1W"/>
 <part name="U5" library="cyclops" deviceset="ADR03AKSZ-REEL7" device="" value="ADR03"/>
 <part name="C14" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="C16" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>

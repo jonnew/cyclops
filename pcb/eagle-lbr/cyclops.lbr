@@ -5070,6 +5070,16 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <circle x="2" y="-2" radius="0.5" width="0.127" layer="21"/>
 <circle x="2" y="2" radius="0.5" width="0.127" layer="21"/>
 </package>
+<package name="2512W">
+<wire x1="-3.7" y1="2.1" x2="3.7" y2="2.1" width="0.127" layer="21"/>
+<wire x1="3.7" y1="2.1" x2="3.7" y2="-2.1" width="0.127" layer="21"/>
+<wire x1="3.7" y1="-2.1" x2="-3.7" y2="-2.1" width="0.127" layer="21"/>
+<wire x1="-3.7" y1="-2.1" x2="-3.7" y2="2.1" width="0.127" layer="21"/>
+<smd name="1" x="0" y="-1.25" dx="6.7" dy="1.3" layer="1"/>
+<text x="-2.54" y="2.524" size="1.016" layer="25" font="vector">&gt;NAME</text>
+<text x="-2.54" y="-3.54" size="1.016" layer="27" font="vector">&gt;VALUE</text>
+<smd name="2" x="0" y="1.25" dx="6.7" dy="1.3" layer="1"/>
+</package>
 </packages>
 <symbols>
 <symbol name="BANANA_TO_BOARD">
@@ -7785,6 +7795,15 @@ distributor RS Components</description>
 <technology name=""/>
 </technologies>
 </device>
+<device name="_2512W" package="2512W">
+<connects>
+<connect gate="R" pin="1" pad="1"/>
+<connect gate="R" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="24C*" prefix="IC">
@@ -8058,6 +8077,7 @@ Sourc: www.ctscorp.com</description>
 </devices>
 </deviceset>
 <deviceset name="Z-DIODE" prefix="D" uservalue="yes">
+<description>&lt;b&gt;Zener Diode&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="Z-DIODE" x="0" y="0"/>
 </gates>
@@ -8158,6 +8178,7 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 </devices>
 </deviceset>
 <deviceset name="S-DIODE" prefix="D" uservalue="yes">
+<description>&lt;b&gt;Schottky Diode&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="S-DIODE" x="0" y="0"/>
 </gates>
@@ -8199,6 +8220,7 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 </devices>
 </deviceset>
 <deviceset name="SPDT" prefix="S" uservalue="yes">
+<description>&lt;b&gt;SPDT Switch&lt;\b&gt;</description>
 <gates>
 <gate name="G$1" symbol="SPDT" x="-2.54" y="0"/>
 </gates>
@@ -8275,6 +8297,7 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 </devices>
 </deviceset>
 <deviceset name="ZXTD4591E6" uservalue="yes">
+<description>&lt;b&gt;NPN/PNP Gate Driver&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="CYCLOPS_ZXTD4591E6" x="0" y="0"/>
 </gates>
