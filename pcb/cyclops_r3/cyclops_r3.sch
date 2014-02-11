@@ -5703,8 +5703,8 @@ at 30/07/2012 17:45:58</description>
 <part name="C1" library="cyclops" deviceset="C" device="_0603"/>
 <part name="R1" library="cyclops" deviceset="R" device="_0603"/>
 <part name="SUPPLY16" library="cyclops" deviceset="AGND" device=""/>
-<part name="R22" library="cyclops" deviceset="R" device="_0603" value="9k"/>
-<part name="R21" library="cyclops" deviceset="R" device="_0603" value="1k"/>
+<part name="R22" library="cyclops" deviceset="R" device="_0603" value="9k 0.1%"/>
+<part name="R21" library="cyclops" deviceset="R" device="_0603" value="1k 0.1%"/>
 <part name="RSENSE" library="cyclops" deviceset="R" device="_2512W" value="0.1,1W"/>
 <part name="U5" library="cyclops" deviceset="ADR03AKSZ-REEL7" device="" value="ADR03"/>
 <part name="C14" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
