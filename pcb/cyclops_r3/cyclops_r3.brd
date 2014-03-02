@@ -14207,11 +14207,11 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="66.294" y1="17.256" x2="66.258" y2="17.22" width="0.4064" layer="1"/>
 <wire x1="65.439" y1="21.59" x2="65.439" y2="22.86" width="0.4064" layer="1"/>
 <wire x1="65.439" y1="20.066" x2="65.439" y2="21.59" width="0.4064" layer="1"/>
-<wire x1="17.399" y1="42.672" x2="17.2974" y2="42.672" width="0" layer="19" extent="1-1"/>
 <wire x1="12.192" y1="35.56" x2="13.843" y2="35.56" width="2.1844" layer="16"/>
 <wire x1="13.843" y1="35.56" x2="14.351" y2="35.052" width="2.1844" layer="16"/>
 <wire x1="14.351" y1="35.052" x2="14.351" y2="33.147" width="2.1844" layer="16"/>
 <wire x1="14.351" y1="33.147" x2="15.006" y2="33.147" width="1.016" layer="16"/>
+<wire x1="17.399" y1="42.672" x2="17.2974" y2="42.672" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VIN">
 <contactref element="ARDUNIO" pad="VIN"/>
