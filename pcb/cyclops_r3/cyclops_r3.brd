@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -12408,6 +12408,94 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
 <rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
 </package>
+<package name="SOIC127P600X175-8N">
+<smd name="1" x="-2.4638" y="1.905" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="2" x="-2.4638" y="0.635" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="3" x="-2.4638" y="-0.635" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="4" x="-2.4638" y="-1.905" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="5" x="2.4638" y="-1.905" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="6" x="2.4638" y="-0.635" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="7" x="2.4638" y="0.635" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="8" x="2.4638" y="1.905" dx="1.9812" dy="0.5588" layer="1"/>
+<wire x1="-1.3716" y1="-2.4892" x2="1.3716" y2="-2.4892" width="0.1524" layer="21"/>
+<wire x1="1.3716" y1="2.4892" x2="0.3048" y2="2.4892" width="0.1524" layer="21"/>
+<wire x1="0.3048" y1="2.4892" x2="-0.3048" y2="2.4892" width="0.1524" layer="21"/>
+<wire x1="-0.3048" y1="2.4892" x2="-1.3716" y2="2.4892" width="0.1524" layer="21"/>
+<wire x1="0.3048" y1="2.4892" x2="-0.3048" y2="2.4892" width="0.1524" layer="21" curve="-180"/>
+<text x="-3.4544" y="4.445" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-3.4544" y="-5.715" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
+<package name="6032M-POL">
+<wire x1="-4.508" y1="1.3128" x2="4" y2="1.3128" width="0.127" layer="21"/>
+<wire x1="4" y1="1.3128" x2="4" y2="-1.3128" width="0.127" layer="21"/>
+<wire x1="4" y1="-1.3128" x2="-4.508" y2="-1.3128" width="0.127" layer="21"/>
+<wire x1="-4.508" y1="-1.3128" x2="-4.508" y2="1.3128" width="0.127" layer="21"/>
+<smd name="+" x="-2.47" y="0" dx="2.37" dy="2.23" layer="1"/>
+<text x="-2.54" y="1.774" size="1.016" layer="25" font="vector">&gt;NAME</text>
+<text x="-2.54" y="-2.54" size="1.016" layer="27" font="vector">&gt;VALUE</text>
+<smd name="-" x="2.47" y="0" dx="2.37" dy="2.23" layer="1"/>
+<rectangle x1="-4.4878" y1="-1.3128" x2="-3.7258" y2="1.3128" layer="21"/>
+</package>
+<package name="VBPW34S">
+<smd name="C" x="3.575" y="0" dx="1.75" dy="1.8" layer="1" rot="R270"/>
+<smd name="A" x="-3.575" y="0" dx="1.75" dy="1.8" layer="1" rot="R270"/>
+<text x="-3.048" y="2.286" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.048" y="-3.556" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-1.45" y1="1.6" x2="1.85" y2="1.6" width="0.127" layer="21"/>
+<wire x1="1.85" y1="1.6" x2="1.85" y2="-1.6" width="0.127" layer="21"/>
+<wire x1="1.85" y1="-1.6" x2="-1.45" y2="-1.6" width="0.127" layer="21"/>
+<wire x1="-1.45" y1="-1.6" x2="-1.45" y2="1.6" width="0.127" layer="21"/>
+<wire x1="-0.254" y1="0.131" x2="-0.254" y2="-1.131" width="0.127" layer="21"/>
+<wire x1="-0.254" y1="-1.131" x2="0.504" y2="-0.5" width="0.127" layer="21"/>
+<wire x1="0.504" y1="-0.5" x2="-0.254" y2="0.131" width="0.127" layer="21"/>
+<wire x1="0.504" y1="0.131" x2="0.504" y2="-1.131" width="0.127" layer="21"/>
+<wire x1="-2.2" y1="-1.95" x2="-2.2" y2="1.95" width="0.127" layer="21"/>
+<wire x1="-2.2" y1="1.95" x2="2.2" y2="1.95" width="0.127" layer="21"/>
+<wire x1="2.2" y1="1.95" x2="2.2" y2="-1.95" width="0.127" layer="21"/>
+<wire x1="2.2" y1="-1.95" x2="-2.2" y2="-1.95" width="0.127" layer="21"/>
+<wire x1="-0.25" y1="-0.5" x2="-1" y2="-0.5" width="0.127" layer="21"/>
+<wire x1="0.5" y1="-0.5" x2="1.25" y2="-0.5" width="0.127" layer="21"/>
+<wire x1="0.1" y1="0.5" x2="0.35" y2="0.75" width="0.127" layer="21"/>
+<wire x1="0.35" y1="0.75" x2="0.1" y2="0.75" width="0.127" layer="21"/>
+<wire x1="0.1" y1="0.75" x2="0.4" y2="1.05" width="0.127" layer="21"/>
+<wire x1="0.6" y1="0.5" x2="0.85" y2="0.75" width="0.127" layer="21"/>
+<wire x1="0.85" y1="0.75" x2="0.6" y2="0.75" width="0.127" layer="21"/>
+<wire x1="0.6" y1="0.75" x2="0.9" y2="1.05" width="0.127" layer="21"/>
+<polygon width="0.0254" layer="21">
+<vertex x="0.2032" y="0.3556"/>
+<vertex x="-0.0508" y="0.6096"/>
+<vertex x="-0.0508" y="0.3556"/>
+</polygon>
+<polygon width="0.0254" layer="21">
+<vertex x="0.4572" y="0.6096"/>
+<vertex x="0.7112" y="0.3556"/>
+<vertex x="0.4572" y="0.3556"/>
+</polygon>
+<wire x1="-2.286" y1="-1.0668" x2="-4.6736" y2="-1.0668" width="0.127" layer="21"/>
+<wire x1="-4.6736" y1="-1.0668" x2="-4.6736" y2="1.0668" width="0.127" layer="21"/>
+<wire x1="-4.6736" y1="1.0668" x2="-2.2352" y2="1.0668" width="0.127" layer="21"/>
+<wire x1="2.286" y1="1.0668" x2="4.6736" y2="1.0668" width="0.127" layer="21"/>
+<wire x1="4.6736" y1="1.0668" x2="4.6736" y2="-1.0668" width="0.127" layer="21"/>
+<wire x1="4.6736" y1="-1.0668" x2="2.2352" y2="-1.0668" width="0.127" layer="21"/>
+</package>
+<package name="SOIC127P600X175-9N">
+<smd name="1" x="-2.4638" y="1.905" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="2" x="-2.4638" y="0.635" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="3" x="-2.4638" y="-0.635" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="4" x="-2.4638" y="-1.905" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="5" x="2.4638" y="-1.905" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="6" x="2.4638" y="-0.635" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="7" x="2.4638" y="0.635" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="8" x="2.4638" y="1.905" dx="1.9812" dy="0.5588" layer="1"/>
+<smd name="9" x="0" y="0" dx="2.286" dy="2.286" layer="1"/>
+<wire x1="-1.3716" y1="-2.4892" x2="1.3716" y2="-2.4892" width="0.1524" layer="21"/>
+<wire x1="1.3716" y1="2.4892" x2="0.3048" y2="2.4892" width="0.1524" layer="21"/>
+<wire x1="0.3048" y1="2.4892" x2="-0.3048" y2="2.4892" width="0.1524" layer="21"/>
+<wire x1="-0.3048" y1="2.4892" x2="-1.3716" y2="2.4892" width="0.1524" layer="21"/>
+<wire x1="0.3048" y1="2.4892" x2="-0.3048" y2="2.4892" width="0.1524" layer="21" curve="-180"/>
+<text x="-3.4544" y="4.445" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-3.4544" y="-5.715" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
 </packages>
 </library>
 <library name="ti-extended">
@@ -13109,6 +13197,49 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C21" library="cyclops" package="0603" value="" x="21.844" y="45.847" smashed="yes" rot="R270">
 <attribute name="NAME" x="22.86" y="47.625" size="0.889" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 </element>
+<element name="U9" library="cyclops" package="SOIC127P600X175-8N" value="AD829JRZ" x="-13.335" y="5.461">
+<attribute name="PACKAGE" value="SOIC-8" x="-13.335" y="5.461" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="19M8894" x="-13.335" y="5.461" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="AD829JRZ" x="-13.335" y="5.461" size="1.778" layer="27" display="off"/>
+<attribute name="SUPPLIER" value="Analog Devices" x="-13.335" y="5.461" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="1651321" x="-13.335" y="5.461" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R26" library="cyclops" package="0603" value="1.24k" x="-24.638" y="-5.969">
+<attribute name="MN" value="Panasonic" x="-24.638" y="-5.969" size="1.778" layer="27" display="off"/>
+<attribute name="DK" value="PxxxxHTR-ND" x="-24.638" y="-5.969" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="ERJ-3EKFxxxxV" x="-24.638" y="-5.969" size="1.778" layer="27" display="off"/>
+</element>
+<element name="C25" library="cyclops" package="0603" value=".1uF" x="-24.638" y="-9.779"/>
+<element name="C26" library="cyclops" package="0603" value=".1uF" x="-24.638" y="-11.684"/>
+<element name="R25" library="cyclops" package="0603" value="140" x="-24.638" y="-19.558">
+<attribute name="MN" value="Panasonic" x="-24.638" y="-19.558" size="1.778" layer="27" display="off"/>
+<attribute name="DK" value="PxxxxHTR-ND" x="-24.638" y="-19.558" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="ERJ-3EKFxxxxV" x="-24.638" y="-19.558" size="1.778" layer="27" display="off"/>
+</element>
+<element name="C23" library="cyclops" package="0603" value=".1uF" x="-24.638" y="-25.273"/>
+<element name="C27" library="cyclops" package="0603" value=".1uF" x="-24.638" y="-27.178"/>
+<element name="C28" library="cyclops" package="0603" value="56pF" x="-24.638" y="-29.083"/>
+<element name="C29" library="cyclops" package="0603" value="15pF" x="-24.638" y="-30.988"/>
+<element name="C30" library="cyclops" package="6032M-POL" value="10uF" x="-25.527" y="-35.179"/>
+<element name="C31" library="cyclops" package="6032M-POL" value="10uF" x="-25.527" y="-39.751"/>
+<element name="U$1" library="cyclops" package="VBPW34S" value="VBPW34S" x="-25.4" y="-45.212"/>
+<element name="R27" library="cyclops" package="0603" value="79" x="-24.638" y="-50.165">
+<attribute name="MN" value="Panasonic" x="-24.638" y="-50.165" size="1.778" layer="27" display="off"/>
+<attribute name="DK" value="PxxxxHTR-ND" x="-24.638" y="-50.165" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="ERJ-3EKFxxxxV" x="-24.638" y="-50.165" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R28" library="cyclops" package="0603" value="237" x="-24.638" y="-52.07">
+<attribute name="MN" value="Panasonic" x="-24.638" y="-52.07" size="1.778" layer="27" display="off"/>
+<attribute name="DK" value="PxxxxHTR-ND" x="-24.638" y="-52.07" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="ERJ-3EKFxxxxV" x="-24.638" y="-52.07" size="1.778" layer="27" display="off"/>
+</element>
+<element name="U10" library="cyclops" package="SOIC127P600X175-9N" value="ADA4899" x="-38.735" y="-46.609">
+<attribute name="PACKAGE" value="SOIC-8" x="-38.735" y="-46.609" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="19M0651" x="-38.735" y="-46.609" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="ADA4899-1YRDZ" x="-38.735" y="-46.609" size="1.778" layer="27" display="off"/>
+<attribute name="SUPPLIER" value="Analog Devices" x="-38.735" y="-46.609" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="1274191" x="-38.735" y="-46.609" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="N$2">
@@ -13218,6 +13349,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="60.198" y1="30.48" x2="60.7314" y2="29.9466" width="0.6096" layer="1"/>
 <wire x1="60.7314" y1="29.9466" x2="60.7314" y2="29.21" width="0.6096" layer="1"/>
 <contactref element="ARDUNIO" pad="+5V"/>
+<contactref element="C30" pad="+"/>
+<wire x1="38.1" y1="2.54" x2="-27.997" y2="-35.179" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCLK">
 <contactref element="ARDUNIO" pad="SCK"/>
@@ -14511,6 +14644,16 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="42.037" y="46.101"/>
 </polygon>
 <wire x1="4.318" y1="8.128" x2="3.556" y2="7.366" width="0.8128" layer="1"/>
+<contactref element="U10" pad="5"/>
+<contactref element="C27" pad="1"/>
+<contactref element="U10" pad="4"/>
+<contactref element="U$1" pad="A"/>
+<contactref element="C31" pad="-"/>
+<wire x1="-36.2712" y1="-48.514" x2="-41.1988" y2="-48.514" width="0" layer="19" extent="1-1"/>
+<wire x1="-28.975" y1="-45.212" x2="-36.2712" y2="-48.514" width="0" layer="19" extent="1-1"/>
+<wire x1="-23.057" y1="-39.751" x2="-28.975" y2="-45.212" width="0" layer="19" extent="1-1"/>
+<wire x1="-25.5016" y1="-27.178" x2="-23.057" y2="-39.751" width="0" layer="19" extent="1-1"/>
+<wire x1="3.556" y1="7.366" x2="-25.5016" y2="-27.178" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+15V" class="1">
 <contactref element="Q1" pad="S"/>
@@ -14556,6 +14699,45 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="65.561978125" y="9.779"/>
 <vertex x="66.78139375" y="9.779" curve="90"/>
 </polygon>
+</signal>
+<signal name="+VS">
+<contactref element="U9" pad="7"/>
+</signal>
+<signal name="-VS">
+<contactref element="U9" pad="4"/>
+</signal>
+<signal name="AGND">
+<contactref element="C23" pad="2"/>
+<contactref element="C27" pad="2"/>
+<contactref element="C30" pad="-"/>
+<contactref element="C31" pad="+"/>
+<wire x1="-23.057" y1="-35.179" x2="-27.997" y2="-39.751" width="0" layer="19" extent="1-1"/>
+<wire x1="-23.7744" y1="-27.178" x2="-23.057" y2="-35.179" width="0" layer="19" extent="1-1"/>
+<wire x1="-23.7744" y1="-25.273" x2="-23.7744" y2="-27.178" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$16">
+<contactref element="U10" pad="1"/>
+<contactref element="R26" pad="2"/>
+<contactref element="C29" pad="1"/>
+<wire x1="-25.5016" y1="-30.988" x2="-41.1988" y2="-44.704" width="0" layer="19" extent="1-1"/>
+<wire x1="-23.7744" y1="-5.969" x2="-25.5016" y2="-30.988" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$17">
+<contactref element="R26" pad="1"/>
+<contactref element="U10" pad="2"/>
+<contactref element="C29" pad="2"/>
+<wire x1="-23.7744" y1="-30.988" x2="-41.1988" y2="-45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="-25.5016" y1="-5.969" x2="-23.7744" y2="-30.988" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$19">
+<contactref element="U$1" pad="C"/>
+<contactref element="U10" pad="3"/>
+<wire x1="-21.825" y1="-45.212" x2="-41.1988" y2="-47.244" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="+7V">
+<contactref element="U10" pad="7"/>
+<contactref element="C23" pad="1"/>
+<wire x1="-25.5016" y1="-25.273" x2="-36.2712" y2="-45.974" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
