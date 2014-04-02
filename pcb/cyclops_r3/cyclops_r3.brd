@@ -8,8 +8,8 @@
 </settings>
 <grid distance="0.0125" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
 <layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
@@ -22,12 +22,12 @@
 <layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
@@ -13403,14 +13403,14 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="75.8825" y="11.7475" size="0.889" layer="25" font="vector" ratio="18" rot="SR90"/>
 <attribute name="VALUE" x="80.645" y="8.5725" size="0.889" layer="27" font="vector" ratio="18" rot="SR90"/>
 </element>
-<element name="R26" library="cyclops" package="0603" value="237" x="73.9775" y="9.8425" smashed="yes" rot="R90">
+<element name="R26" library="cyclops" package="0603" value="20k" x="73.9775" y="9.8425" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="73.9775" y="9.8425" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="73.9775" y="9.8425" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="73.9775" y="9.8425" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="71.4375" y="8.89" size="0.889" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
 <attribute name="VALUE" x="72.39" y="8.89" size="0.889" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="R27" library="cyclops" package="0603" value="237" x="73.9775" y="13.6525" smashed="yes" rot="R90">
+<element name="R27" library="cyclops" package="0603" value="4.3k" x="73.9775" y="13.6525" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="73.9775" y="13.6525" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="73.9775" y="13.6525" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="73.9775" y="13.6525" size="1.778" layer="27" rot="R90" display="off"/>
@@ -14573,12 +14573,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="13.843" y1="35.56" x2="14.351" y2="35.052" width="2.1844" layer="16"/>
 <wire x1="14.351" y1="35.052" x2="14.351" y2="33.147" width="2.1844" layer="16"/>
 <wire x1="14.351" y1="33.147" x2="15.006" y2="33.147" width="1.016" layer="16"/>
-<contactref element="VPD" pad="2"/>
-<contactref element="VPD" pad="3"/>
 <contactref element="PD_POWER" pad="2"/>
-<wire x1="83.78825" y1="5.9944" x2="94.01175" y2="5.9944" width="0" layer="19" extent="1-1"/>
-<wire x1="66.258" y1="10.72" x2="83.78825" y2="5.9944" width="0" layer="19" extent="1-1"/>
-<wire x1="17.2974" y1="42.672" x2="17.399" y2="42.672" width="0" layer="19" extent="1-1"/>
+<wire x1="17.399" y1="42.672" x2="17.2974" y2="42.672" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VIN">
 <contactref element="ARDUNIO" pad="VIN"/>
@@ -15000,6 +14996,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="79.0575" y1="28.575" x2="79.0575" y2="27.3939" width="0.6096" layer="1"/>
 <via x="76.5175" y="28.575" extent="1-16" drill="0.5"/>
 <wire x1="76.5175" y1="27.3939" x2="76.5175" y2="28.575" width="0.6096" layer="1"/>
+<contactref element="VPD" pad="2"/>
+<contactref element="VPD" pad="3"/>
 </signal>
 <signal name="N$16">
 <contactref element="U9" pad="1"/>

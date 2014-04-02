@@ -6251,8 +6251,8 @@ at 30/07/2012 17:45:58</description>
 <part name="PD_POWER" library="cyclops" deviceset="SCREW3" device="_S2B-PH-K-S" value="S2B-PH-K-S"/>
 <part name="U12" library="cyclops" deviceset="MIC5270-5.0" device="" value="MIC5270"/>
 <part name="U11" library="cyclops" deviceset="MIC5225" device=""/>
-<part name="R26" library="cyclops" deviceset="R" device="_0603" value="237"/>
-<part name="R27" library="cyclops" deviceset="R" device="_0603" value="237"/>
+<part name="R26" library="cyclops" deviceset="R" device="_0603" value="20k"/>
+<part name="R27" library="cyclops" deviceset="R" device="_0603" value="4.3k"/>
 <part name="C24" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="C29" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="C34" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
@@ -7718,6 +7718,12 @@ at 30/07/2012 17:45:58</description>
 <wire x1="111.76" y1="-76.2" x2="111.76" y2="-91.44" width="0.1524" layer="91"/>
 <pinref part="SUPPLY58" gate="G$1" pin="AGND"/>
 </segment>
+<segment>
+<pinref part="VPD" gate="G$1" pin="2"/>
+<wire x1="-60.96" y1="-25.4" x2="-38.1" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="-25.4" x2="-38.1" y2="-27.94" width="0.1524" layer="91"/>
+<pinref part="SUPPLY51" gate="G$1" pin="AGND"/>
+</segment>
 </net>
 <net name="-6V" class="0">
 <segment>
@@ -7855,14 +7861,6 @@ at 30/07/2012 17:45:58</description>
 <pinref part="VPD" gate="G$1" pin="1"/>
 <wire x1="-60.96" y1="-22.86" x2="-38.1" y2="-22.86" width="0.1524" layer="91"/>
 <label x="-55.88" y="-22.86" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="GND" class="0">
-<segment>
-<pinref part="VPD" gate="G$1" pin="2"/>
-<wire x1="-60.96" y1="-25.4" x2="-38.1" y2="-25.4" width="0.1524" layer="91"/>
-<wire x1="-38.1" y1="-25.4" x2="-38.1" y2="-27.94" width="0.1524" layer="91"/>
-<pinref part="SUPPLY51" gate="G$1" pin="AGND"/>
 </segment>
 </net>
 <net name="N$23" class="0">
