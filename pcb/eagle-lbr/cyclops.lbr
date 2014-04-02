@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -5227,6 +5227,56 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="-4.75" y1="-2" x2="-4.5" y2="-2.25" width="0.127" layer="21"/>
 <wire x1="-4.5" y1="-2.25" x2="-2" y2="-2.25" width="0.127" layer="21"/>
 <wire x1="-4.5" y1="-1.75" x2="-4.5" y2="-2.25" width="0.127" layer="21"/>
+<text x="-6.35" y="5.08" size="1.27" layer="25">&gt;NAME</text>
+<text x="-6.35" y="-6.35" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="PT-LH009">
+<wire x1="8.625" y1="-8.625" x2="-8.625" y2="-8.625" width="0.127" layer="21"/>
+<wire x1="-8.625" y1="-8.625" x2="-8.625" y2="8.625" width="0.127" layer="21"/>
+<wire x1="-8.625" y1="8.625" x2="8.625" y2="8.625" width="0.127" layer="21"/>
+<wire x1="8.625" y1="8.625" x2="8.625" y2="-8.625" width="0.127" layer="21"/>
+<wire x1="-7.5" y1="7.5" x2="-7.5" y2="-7.5" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-7.5" y1="-7.5" x2="7.5" y2="-7.5" width="0.127" layer="21" style="shortdash"/>
+<wire x1="7.5" y1="-7.5" x2="7.5" y2="7.5" width="0.127" layer="21" style="shortdash"/>
+<circle x="0" y="0" radius="7.43303125" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="6" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="6.251246875" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="7.626021875" width="0.127" layer="21"/>
+<circle x="-10" y="0" radius="0.5" width="0.127" layer="21"/>
+<wire x1="7.5" y1="7.5" x2="-7.5" y2="7.5" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-10" y1="2.25" x2="-8.65" y2="2.25" width="0.127" layer="21"/>
+<wire x1="-10.05" y1="-2.25" x2="-8.65" y2="-2.25" width="0.127" layer="21"/>
+<wire x1="-10.1" y1="-2.25" x2="-10" y2="2.25" width="0.127" layer="21" curve="-180"/>
+<circle x="10" y="0" radius="0.5" width="0.127" layer="21"/>
+<wire x1="10" y1="-2.25" x2="8.65" y2="-2.25" width="0.127" layer="21"/>
+<wire x1="10.05" y1="2.25" x2="8.65" y2="2.25" width="0.127" layer="21"/>
+<wire x1="10.1" y1="2.25" x2="10" y2="-2.25" width="0.127" layer="21" curve="-180"/>
+<wire x1="-8.75" y1="-2.25" x2="-10.013934375" y2="-2.25" width="0.127" layer="39"/>
+<wire x1="-10.013934375" y1="-2.25" x2="-12.25" y2="-0.013934375" width="0.127" layer="39" curve="-90"/>
+<wire x1="-12.25" y1="-0.013934375" x2="-9.986065625" y2="2.25" width="0.127" layer="39" curve="-90"/>
+<wire x1="-9.986065625" y1="2.25" x2="-8.75" y2="2.25" width="0.127" layer="39"/>
+<wire x1="-8.75" y1="2.25" x2="-8.75" y2="8.75" width="0.127" layer="39"/>
+<wire x1="-8.75" y1="8.75" x2="8.75" y2="8.75" width="0.127" layer="39"/>
+<wire x1="8.75" y1="8.75" x2="8.75" y2="2.25" width="0.127" layer="39"/>
+<wire x1="8.75" y1="2.25" x2="9.81155" y2="2.25" width="0.127" layer="39"/>
+<wire x1="9.81155" y1="2.25" x2="12.25" y2="-0.18845" width="0.127" layer="39" curve="-90"/>
+<wire x1="12.25" y1="-0.18845" x2="10.18845" y2="-2.25" width="0.127" layer="39" curve="-90"/>
+<wire x1="10.18845" y1="-2.25" x2="8.75" y2="-2.25" width="0.127" layer="39"/>
+<wire x1="8.75" y1="-2.25" x2="8.75" y2="-8.75" width="0.127" layer="39"/>
+<wire x1="8.75" y1="-8.75" x2="-8.75" y2="-8.75" width="0.127" layer="39"/>
+<wire x1="-8.75" y1="-8.75" x2="-8.75" y2="-2.25" width="0.127" layer="39"/>
+<wire x1="-6.440984375" y1="-7" x2="6.440984375" y2="-7" width="0.127" layer="39"/>
+<wire x1="6.440984375" y1="-7" x2="7" y2="-6.440984375" width="0.127" layer="39" curve="90"/>
+<wire x1="7" y1="-6.440984375" x2="7" y2="6.29289375" width="0.127" layer="39"/>
+<wire x1="7" y1="6.29289375" x2="6.29289375" y2="7" width="0.127" layer="39" curve="90"/>
+<wire x1="6.29289375" y1="7" x2="-6.29289375" y2="7" width="0.127" layer="39"/>
+<wire x1="-6.29289375" y1="7" x2="-7" y2="6.29289375" width="0.127" layer="39" curve="90"/>
+<wire x1="-7" y1="6.29289375" x2="-7" y2="-6.440984375" width="0.127" layer="39"/>
+<wire x1="-7" y1="-6.440984375" x2="-6.440984375" y2="-7" width="0.127" layer="39" curve="90"/>
+<hole x="-10" y="0" drill="1"/>
+<hole x="10" y="0" drill="1"/>
+<text x="-8.89" y="10.16" size="1.27" layer="25">&gt;NAME</text>
+<text x="-8.89" y="-11.43" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -6256,6 +6306,43 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <vertex x="1.778" y="2.159"/>
 <vertex x="1.778" y="1.778"/>
 </polygon>
+</symbol>
+<symbol name="MIC5270-5.0">
+<pin name="GND" x="-15.24" y="-7.62" length="middle"/>
+<pin name="-IN" x="-15.24" y="7.62" length="middle"/>
+<pin name="-OUT" x="15.24" y="7.62" length="middle" rot="R180"/>
+<wire x1="-10.16" y1="10.16" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-10.16" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-10.16" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="-10.16" y2="10.16" width="0.254" layer="94"/>
+<text x="-10.16" y="12.7" size="2.0828" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-15.24" size="2.0828" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="MIC5271">
+<wire x1="-10.16" y1="10.16" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-10.16" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-10.16" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="-10.16" y2="10.16" width="0.254" layer="94"/>
+<pin name="GND" x="-15.24" y="-7.62" length="middle"/>
+<pin name="-IN" x="-15.24" y="7.62" length="middle"/>
+<pin name="-OUT" x="15.24" y="7.62" length="middle" rot="R180"/>
+<text x="-10.16" y="12.7" size="2.0828" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-15.24" size="2.0828" layer="96">&gt;VALUE</text>
+<pin name="ADJ" x="15.24" y="-7.62" length="middle" rot="R180"/>
+<pin name="EN" x="-15.24" y="0" length="middle"/>
+</symbol>
+<symbol name="MIC5225">
+<wire x1="-10.16" y1="10.16" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-10.16" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-10.16" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="-10.16" y2="10.16" width="0.254" layer="94"/>
+<pin name="GND" x="-15.24" y="-7.62" length="middle"/>
+<pin name="+IN" x="-15.24" y="7.62" length="middle"/>
+<pin name="+OUT" x="15.24" y="7.62" length="middle" rot="R180"/>
+<text x="-10.16" y="12.7" size="2.0828" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-15.24" size="2.0828" layer="96">&gt;VALUE</text>
+<pin name="ADJ" x="15.24" y="-7.62" length="middle" rot="R180"/>
+<pin name="EN" x="-15.24" y="0" length="middle"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -9151,6 +9238,63 @@ distributor Farnell 149-452</description>
 <connects>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MIC5270-5.0">
+<description>Negative 5V fixed LDO voltage regulator</description>
+<gates>
+<gate name="G$1" symbol="MIC5270-5.0" x="2.54" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="SOT65P210X110-5N">
+<connects>
+<connect gate="G$1" pin="-IN" pad="5"/>
+<connect gate="G$1" pin="-OUT" pad="4"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MIC5271">
+<description>Negative adjustable LDO voltage regulator</description>
+<gates>
+<gate name="G$1" symbol="MIC5271" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT65P210X110-5N">
+<connects>
+<connect gate="G$1" pin="-IN" pad="5"/>
+<connect gate="G$1" pin="-OUT" pad="4"/>
+<connect gate="G$1" pin="ADJ" pad="3"/>
+<connect gate="G$1" pin="EN" pad="1"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MIC5225">
+<gates>
+<gate name="G$1" symbol="MIC5225" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT65P210X110-5N">
+<connects>
+<connect gate="G$1" pin="+IN" pad="1"/>
+<connect gate="G$1" pin="+OUT" pad="5"/>
+<connect gate="G$1" pin="ADJ" pad="4"/>
+<connect gate="G$1" pin="EN" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
