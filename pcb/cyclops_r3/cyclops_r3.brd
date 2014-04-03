@@ -12554,20 +12554,20 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <text x="-6.35" y="5.08" size="1.27" layer="25">&gt;NAME</text>
 <text x="-6.35" y="-6.35" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="PT-LH009">
+<package name="PT-LH001">
 <wire x1="8.625" y1="-8.625" x2="-8.625" y2="-8.625" width="0.127" layer="21"/>
 <wire x1="-8.625" y1="-8.625" x2="-8.625" y2="8.625" width="0.127" layer="21"/>
 <wire x1="-8.625" y1="8.625" x2="8.625" y2="8.625" width="0.127" layer="21"/>
 <wire x1="8.625" y1="8.625" x2="8.625" y2="-8.625" width="0.127" layer="21"/>
-<wire x1="-7.5" y1="7.5" x2="-7.5" y2="-7.5" width="0.127" layer="21" style="shortdash"/>
-<wire x1="-7.5" y1="-7.5" x2="7.5" y2="-7.5" width="0.127" layer="21" style="shortdash"/>
-<wire x1="7.5" y1="-7.5" x2="7.5" y2="7.5" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-7" y1="7" x2="-7.1" y2="-7" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-7.1" y1="-7" x2="7.1" y2="-7" width="0.127" layer="21" style="shortdash"/>
+<wire x1="7.1" y1="-7" x2="7" y2="7" width="0.127" layer="21" style="shortdash"/>
 <circle x="0" y="0" radius="7.43303125" width="0.127" layer="21"/>
 <circle x="0" y="0" radius="6" width="0.127" layer="21"/>
 <circle x="0" y="0" radius="6.251246875" width="0.127" layer="21"/>
 <circle x="0" y="0" radius="7.626021875" width="0.127" layer="21"/>
 <circle x="-10" y="0" radius="0.5" width="0.127" layer="21"/>
-<wire x1="7.5" y1="7.5" x2="-7.5" y2="7.5" width="0.127" layer="21" style="shortdash"/>
+<wire x1="7" y1="7" x2="-7" y2="7" width="0.127" layer="21" style="shortdash"/>
 <wire x1="-10" y1="2.25" x2="-8.65" y2="2.25" width="0.127" layer="21"/>
 <wire x1="-10.05" y1="-2.25" x2="-8.65" y2="-2.25" width="0.127" layer="21"/>
 <wire x1="-10.1" y1="-2.25" x2="-10" y2="2.25" width="0.127" layer="21" curve="-180"/>
@@ -12597,8 +12597,8 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <wire x1="-6.29289375" y1="7" x2="-7" y2="6.29289375" width="0.127" layer="39" curve="90"/>
 <wire x1="-7" y1="6.29289375" x2="-7" y2="-6.440984375" width="0.127" layer="39"/>
 <wire x1="-7" y1="-6.440984375" x2="-6.440984375" y2="-7" width="0.127" layer="39" curve="90"/>
-<hole x="-10" y="0" drill="1"/>
-<hole x="10" y="0" drill="1"/>
+<hole x="-10" y="0" drill="1.4"/>
+<hole x="10" y="0" drill="1.4"/>
 <text x="-8.89" y="10.16" size="1.27" layer="25">&gt;NAME</text>
 <text x="-8.89" y="-11.43" size="1.27" layer="27">&gt;VALUE</text>
 </package>
@@ -13451,9 +13451,9 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="81.28" y="24.765" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="82.2325" y="24.765" size="0.889" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="M12_TUBE_MOUNT" library="cyclops" package="PT-LH009" value="PT-LH009" x="83.82" y="41.91" smashed="yes">
-<attribute name="NAME" x="78.4225" y="51.1175" size="0.889" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="80.3275" y="31.75" size="0.889" layer="27" font="vector" ratio="18"/>
+<element name="M12_TUBE_MOUNT" library="cyclops" package="PT-LH001" value="PT-LH001" x="83.82" y="41.91" smashed="yes">
+<attribute name="NAME" x="78.4225" y="50.8" size="0.889" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="80.3275" y="32.0675" size="0.889" layer="27" font="vector" ratio="18"/>
 </element>
 </elements>
 <signals>

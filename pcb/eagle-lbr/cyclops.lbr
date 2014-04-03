@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -5275,6 +5275,54 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="-7" y1="-6.440984375" x2="-6.440984375" y2="-7" width="0.127" layer="39" curve="90"/>
 <hole x="-10" y="0" drill="1"/>
 <hole x="10" y="0" drill="1"/>
+<text x="-8.89" y="10.16" size="1.27" layer="25">&gt;NAME</text>
+<text x="-8.89" y="-11.43" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="PT-LH001">
+<wire x1="8.625" y1="-8.625" x2="-8.625" y2="-8.625" width="0.127" layer="21"/>
+<wire x1="-8.625" y1="-8.625" x2="-8.625" y2="8.625" width="0.127" layer="21"/>
+<wire x1="-8.625" y1="8.625" x2="8.625" y2="8.625" width="0.127" layer="21"/>
+<wire x1="8.625" y1="8.625" x2="8.625" y2="-8.625" width="0.127" layer="21"/>
+<wire x1="-7" y1="7" x2="-7.1" y2="-7" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-7.1" y1="-7" x2="7.1" y2="-7" width="0.127" layer="21" style="shortdash"/>
+<wire x1="7.1" y1="-7" x2="7" y2="7" width="0.127" layer="21" style="shortdash"/>
+<circle x="0" y="0" radius="7.43303125" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="6" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="6.251246875" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="7.626021875" width="0.127" layer="21"/>
+<circle x="-10" y="0" radius="0.5" width="0.127" layer="21"/>
+<wire x1="7" y1="7" x2="-7" y2="7" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-10" y1="2.25" x2="-8.65" y2="2.25" width="0.127" layer="21"/>
+<wire x1="-10.05" y1="-2.25" x2="-8.65" y2="-2.25" width="0.127" layer="21"/>
+<wire x1="-10.1" y1="-2.25" x2="-10" y2="2.25" width="0.127" layer="21" curve="-180"/>
+<circle x="10" y="0" radius="0.5" width="0.127" layer="21"/>
+<wire x1="10" y1="-2.25" x2="8.65" y2="-2.25" width="0.127" layer="21"/>
+<wire x1="10.05" y1="2.25" x2="8.65" y2="2.25" width="0.127" layer="21"/>
+<wire x1="10.1" y1="2.25" x2="10" y2="-2.25" width="0.127" layer="21" curve="-180"/>
+<wire x1="-8.75" y1="-2.25" x2="-10.013934375" y2="-2.25" width="0.127" layer="39"/>
+<wire x1="-10.013934375" y1="-2.25" x2="-12.25" y2="-0.013934375" width="0.127" layer="39" curve="-90"/>
+<wire x1="-12.25" y1="-0.013934375" x2="-9.986065625" y2="2.25" width="0.127" layer="39" curve="-90"/>
+<wire x1="-9.986065625" y1="2.25" x2="-8.75" y2="2.25" width="0.127" layer="39"/>
+<wire x1="-8.75" y1="2.25" x2="-8.75" y2="8.75" width="0.127" layer="39"/>
+<wire x1="-8.75" y1="8.75" x2="8.75" y2="8.75" width="0.127" layer="39"/>
+<wire x1="8.75" y1="8.75" x2="8.75" y2="2.25" width="0.127" layer="39"/>
+<wire x1="8.75" y1="2.25" x2="9.81155" y2="2.25" width="0.127" layer="39"/>
+<wire x1="9.81155" y1="2.25" x2="12.25" y2="-0.18845" width="0.127" layer="39" curve="-90"/>
+<wire x1="12.25" y1="-0.18845" x2="10.18845" y2="-2.25" width="0.127" layer="39" curve="-90"/>
+<wire x1="10.18845" y1="-2.25" x2="8.75" y2="-2.25" width="0.127" layer="39"/>
+<wire x1="8.75" y1="-2.25" x2="8.75" y2="-8.75" width="0.127" layer="39"/>
+<wire x1="8.75" y1="-8.75" x2="-8.75" y2="-8.75" width="0.127" layer="39"/>
+<wire x1="-8.75" y1="-8.75" x2="-8.75" y2="-2.25" width="0.127" layer="39"/>
+<wire x1="-6.440984375" y1="-7" x2="6.440984375" y2="-7" width="0.127" layer="39"/>
+<wire x1="6.440984375" y1="-7" x2="7" y2="-6.440984375" width="0.127" layer="39" curve="90"/>
+<wire x1="7" y1="-6.440984375" x2="7" y2="6.29289375" width="0.127" layer="39"/>
+<wire x1="7" y1="6.29289375" x2="6.29289375" y2="7" width="0.127" layer="39" curve="90"/>
+<wire x1="6.29289375" y1="7" x2="-6.29289375" y2="7" width="0.127" layer="39"/>
+<wire x1="-6.29289375" y1="7" x2="-7" y2="6.29289375" width="0.127" layer="39" curve="90"/>
+<wire x1="-7" y1="6.29289375" x2="-7" y2="-6.440984375" width="0.127" layer="39"/>
+<wire x1="-7" y1="-6.440984375" x2="-6.440984375" y2="-7" width="0.127" layer="39" curve="90"/>
+<hole x="-10" y="0" drill="1.4"/>
+<hole x="10" y="0" drill="1.4"/>
 <text x="-8.89" y="10.16" size="1.27" layer="25">&gt;NAME</text>
 <text x="-8.89" y="-11.43" size="1.27" layer="27">&gt;VALUE</text>
 </package>
