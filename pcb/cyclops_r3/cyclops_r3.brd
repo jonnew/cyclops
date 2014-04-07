@@ -13480,8 +13480,8 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="75.2475" y="26.3525" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="" x="75.2475" y="26.3525" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VID" value="DK" x="75.2475" y="26.3525" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="73.9775" y="24.5745" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
-<attribute name="VALUE" x="73.0885" y="26.2255" size="0.889" layer="27" font="vector" ratio="18" rot="R90"/>
+<attribute name="NAME" x="72.898" y="24.638" size="0.889" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="73.914" y="24.638" size="0.889" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="C31" library="cyclops" package="0805" value="1uF" x="80.3275" y="26.3525" smashed="yes" rot="R90">
 <attribute name="MN" value="TDK Corp." x="80.3275" y="26.3525" size="1.778" layer="27" rot="R90" display="off"/>
