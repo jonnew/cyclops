@@ -14058,10 +14058,10 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="58.42" y1="39.134" x2="60.96" y2="39.134" width="0.8128" layer="1"/>
 <wire x1="60.96" y1="39.134" x2="63.5" y2="39.134" width="0.8128" layer="1"/>
 <wire x1="58.42" y1="39.134" x2="58.438" y2="39.116" width="0.254" layer="1"/>
-<wire x1="59.69" y1="39.116" x2="59.69" y2="34.544" width="0.3048" layer="1"/>
-<wire x1="59.69" y1="34.544" x2="60.071" y2="34.163" width="0.3048" layer="1"/>
-<wire x1="60.071" y1="34.163" x2="61.528" y2="34.163" width="0.3048" layer="1"/>
-<wire x1="58.438" y1="39.116" x2="59.69" y2="39.116" width="0.254" layer="1"/>
+<wire x1="59.944" y1="39.116" x2="59.944" y2="34.620903125" width="0.3048" layer="1"/>
+<wire x1="59.944" y1="34.620903125" x2="60.401903125" y2="34.163" width="0.3048" layer="1"/>
+<wire x1="60.401903125" y1="34.163" x2="61.528" y2="34.163" width="0.3048" layer="1"/>
+<wire x1="58.438" y1="39.116" x2="59.944" y2="39.116" width="0.254" layer="1"/>
 </signal>
 <signal name="DACA">
 <contactref element="U1" pad="8"/>
