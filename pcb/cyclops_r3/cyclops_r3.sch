@@ -6684,7 +6684,6 @@ at 30/07/2012 17:45:58</description>
 <instance part="SUPPLY20" gate="G$1" x="-68.58" y="-20.32"/>
 <instance part="D1" gate="G$1" x="-50.8" y="20.32" rot="R90"/>
 <instance part="FRAME2" gate="G$1" x="-109.22" y="-147.32"/>
-<instance part="FRAME2" gate="G$2" x="63.5" y="-147.32"/>
 <instance part="C9" gate="C" x="17.78" y="-5.08"/>
 <instance part="SUPPLY31" gate="G$1" x="17.78" y="-20.32"/>
 <instance part="R12" gate="R" x="55.88" y="15.24" rot="R90"/>
@@ -7081,7 +7080,6 @@ at 30/07/2012 17:45:58</description>
 </instance>
 <instance part="R16" gate="R" x="35.56" y="-43.18" rot="R90"/>
 <instance part="FRAME3" gate="G$1" x="-162.56" y="-180.34"/>
-<instance part="FRAME3" gate="G$2" x="10.16" y="-180.34"/>
 <instance part="C17" gate="C" x="-58.42" y="-106.68"/>
 <instance part="C15" gate="C" x="-73.66" y="-106.68"/>
 <instance part="VREF" gate="G$1" x="35.56" y="5.08"/>
@@ -7270,7 +7268,6 @@ at 30/07/2012 17:45:58</description>
 <instance part="D3" gate="G$1" x="-10.16" y="99.06" rot="R90"/>
 <instance part="S5" gate="G$1" x="12.7" y="60.96" rot="R270"/>
 <instance part="FRAME4" gate="G$1" x="-91.44" y="-58.42"/>
-<instance part="FRAME4" gate="G$2" x="81.28" y="-58.42"/>
 <instance part="U8" gate="G$1" x="93.98" y="83.82"/>
 <instance part="SUPPLY35" gate="G$1" x="73.66" y="63.5"/>
 <instance part="Q2" gate="G$1" x="165.1" y="86.36"/>
