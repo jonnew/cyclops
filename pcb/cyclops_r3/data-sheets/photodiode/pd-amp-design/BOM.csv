@@ -1,0 +1,12 @@
+﻿Quantity,Reference Designator,Model
+1,Rf,"1.24k ohm, 0603, Thin Film, 0.5%"
+1,Rg2,"78.7 ohm, 0603, Thin Film, 0.5%"
+1,Rf2,"237 ohm, 0603, Thin Film, 0.5%"
+1,Rfilter,"140 ohm, 0603, Thin Film, 0.5%"
+1,Cf,"15pF, 0603, C0G, 5%"
+1,Cfilter,"57pF, 0603, C0G, 5%"
+4,"Cbp+, Cbp-, Cbp2+, Cbp2-","100nF, 0603, X7R, 20%"
+2,"Ctant+, Ctant-","10uF, 6032, tantalum, 20%"
+1,U1,ADA4899
+1,U2,AD829
+1,D1,Custom
