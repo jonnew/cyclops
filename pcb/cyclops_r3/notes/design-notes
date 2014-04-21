@@ -58,9 +58,9 @@ X12. The P-Channel Power FET providing reverse polarity protection cannot be use
 
 EDIT:	> I ended up just using the PFET as traditional power switch, with the source terminal facing the external power supply. This way it could be used for overcurrent protection. This is more important for two reasons. 1. The polarity is clearly marked on the boards silkscreen. 2. The negative rail does never had reverse polarity protection anyway, so its not like this config was really protecting the circuit anyway.
 
-13. Integrated amplified photodiode daughter board
+X13. Integrated amplified photodiode daughter board
 
-15. Make the negative input something like -6V or 7V
+X15. Make the negative input something like -6V or 7V
 	
 	> Will allow me to put a negative regulator on the photodiode board to get a -5V rail there
 	> Make sure its not going to mess with operation of the negative regulator on the LED driver itself

@@ -7256,10 +7256,10 @@ at 30/07/2012 17:45:58</description>
 <instance part="CTL_K" gate="1" x="-55.88" y="86.36" rot="MR180"/>
 <instance part="R22" gate="R" x="27.94" y="2.54" rot="R180"/>
 <instance part="R21" gate="R" x="15.24" y="-12.7" rot="R270"/>
-<instance part="RSENSE" gate="R" x="167.64" y="2.54" rot="R90"/>
+<instance part="RSENSE" gate="R" x="167.64" y="-10.16" rot="R90"/>
 <instance part="SUPPLY22" gate="G$1" x="15.24" y="-40.64"/>
 <instance part="SUPPLY23" gate="G$1" x="-55.88" y="60.96"/>
-<instance part="SUPPLY24" gate="G$1" x="167.64" y="-12.7"/>
+<instance part="SUPPLY24" gate="G$1" x="167.64" y="-40.64"/>
 <instance part="C20" gate="C" x="17.78" y="132.08"/>
 <instance part="C19" gate="C" x="0" y="132.08"/>
 <instance part="SUPPLY30" gate="G$1" x="-10.16" y="60.96"/>
@@ -7299,7 +7299,7 @@ at 30/07/2012 17:45:58</description>
 <nets>
 <net name="N$2" class="0">
 <segment>
-<wire x1="167.64" y1="25.4" x2="167.64" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="25.4" x2="167.64" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="25.4" x2="167.64" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="U7" gate="B" pin="+IN"/>
 <pinref part="RSENSE" gate="R" pin="2"/>
@@ -7378,7 +7378,7 @@ at 30/07/2012 17:45:58</description>
 </segment>
 <segment>
 <pinref part="RSENSE" gate="R" pin="1"/>
-<wire x1="167.64" y1="-2.54" x2="167.64" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="-15.24" x2="167.64" y2="-38.1" width="0.1524" layer="91"/>
 <pinref part="SUPPLY24" gate="G$1" pin="AGND"/>
 </segment>
 <segment>
