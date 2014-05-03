@@ -18,3 +18,7 @@ X3. There is a big wiring error connecting +12V to LED-. It is just a leftover t
 6. The N-FET that souces to the LED and, probably (I don't have this on my board to see for sure), the photodiode power jack might are too close the barrel jack on the Arduino and therefore you can't push the sheild down the whole way.
 
 7. It would be good to have a third daughter board for aumatic heatsink LED alignment and to provide a mounting bracket for the photodiod and fiber.
+
+8. I'm starting to think all the major board signals should have dedicate BNC or LED-specific connectors. This will make using the thing a lot easier.
+
+9. More grnd test points needed.
