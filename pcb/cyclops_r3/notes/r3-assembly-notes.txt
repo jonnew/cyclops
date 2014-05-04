@@ -8,6 +8,9 @@ X3. There is a big wiring error connecting +12V to LED-. It is just a leftover t
 
 4. Board temp circuit does not seem to work.I see no change in the VTemp as the pcb temperature rises
 
+	+ The circuit works, its just that the reference does not have good access to the rise in temp.
+	+ The ADR03 is very stable across temperature, so maybe we can just give it a low thermal resistance path the heatsink area so we can get a better temp measurement.
+
 5. The comparitor circuit is always in kill mode and this does not turn off the P channel FET for some reason. 
 
 	+ This is puzzling because I thoroughly breadboarded this part of the circuit
@@ -22,3 +25,25 @@ X3. There is a big wiring error connecting +12V to LED-. It is just a leftover t
 8. I'm starting to think all the major board signals should have dedicate BNC or LED-specific connectors. This will make using the thing a lot easier.
 
 9. More grnd test points needed.
+
+10. Instead of having a separate power rail, you just just use a voltage inverter to get the negative rail. You can use and ON semiconductor AN920/D according to this http://www.onsemi.com/pub_link/Collateral/AN920-D.PDF. This could even pick off power from the the arduino since that has been regulated down to 5 or 3 volts for you.
+
+11. Power should go in a barrel jack at the back of the board. The power should be about to supply the arduino. The 12V regulated supplies can be paralleled to do that somehow.
+
+
+--
+
+Thinking about packaging:
+
+1. Instead of using this microswitches, you need to design around a front panel. This means that the sheild does not have to be the size and shape of an Arduino. You can have a tab that sticks out for the 4 BNC connections
+
+a. VCTL
+b. VREF
+c. VI
+d. VAUX
+
+
+2. Switches should extend out to be comparable with the BNCs
+3. LEDs should backlight areas in the front panel, like the OE board does.
+4. LED connector should be keyed
+5. 
