@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.4">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6251,6 +6251,11 @@ at 30/07/2012 17:45:58</description>
 <wire x1="27.94" y1="-10.16" x2="5.08" y2="-10.16" width="0.1524" layer="91"/>
 <label x="5.08" y="-10.16" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="I/O_BLOCK" gate="G$1" pin="6"/>
+<wire x1="43.18" y1="-30.48" x2="68.58" y2="-30.48" width="0.1524" layer="91"/>
+<label x="50.8" y="-30.48" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="VAUX" class="0">
 <segment>
@@ -6345,11 +6350,6 @@ at 30/07/2012 17:45:58</description>
 </net>
 <net name="+12V" class="1">
 <segment>
-<pinref part="I/O_BLOCK" gate="G$1" pin="4"/>
-<wire x1="43.18" y1="-20.32" x2="68.58" y2="-20.32" width="0.1524" layer="91"/>
-<label x="50.8" y="-20.32" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="PD_POWER" gate="G$1" pin="1"/>
 <wire x1="27.94" y1="-5.08" x2="5.08" y2="-5.08" width="0.1524" layer="91"/>
 <label x="5.08" y="-5.08" size="1.778" layer="95"/>
@@ -6402,6 +6402,13 @@ at 30/07/2012 17:45:58</description>
 <pinref part="TMP2" gate="1" pin="1"/>
 <pinref part="ARDUNIO" gate="G$1" pin="A2"/>
 <wire x1="76.2" y1="17.78" x2="76.2" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="LED+" class="0">
+<segment>
+<pinref part="I/O_BLOCK" gate="G$1" pin="4"/>
+<wire x1="43.18" y1="-20.32" x2="68.58" y2="-20.32" width="0.1524" layer="91"/>
+<label x="50.8" y="-20.32" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
