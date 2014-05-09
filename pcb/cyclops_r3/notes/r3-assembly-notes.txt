@@ -46,4 +46,10 @@ d. VAUX
 2. Switches should extend out to be comparable with the BNCs
 3. LEDs should backlight areas in the front panel, like the OE board does.
 4. LED connector should be keyed
-5. 
+
+
+-- 
+
+I just realized something -- why am I thinking about this PCB as an arduino sheild. I should be doing the opposite, as OE does with their board. The arduino is an _accessery_ to my board. My board will function without it. However, there should be a place where you can plug in the arudino to get added functionality. That will allow me to make this board as big as I want, with power being transered between layers, a good front/back panel design, and proper heaksinking...
+
+So, look to the OE board for inspiration (maybe a bit smaller though...)
