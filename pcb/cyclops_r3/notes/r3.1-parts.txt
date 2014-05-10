@@ -1,0 +1,12 @@
+parts to add for 3.1
+
+1	WM18484-ND	3-terminal power jack
+1	WM18464-ND	3-terminal power plug
+3	WM7079CT-ND	plug terminals
+1	160-1478-2-ND	greed right angle LED (0603)
+1	160-1479-1-ND 	red right angle LED (0603)
+2	401-1999-1-ND	slide switch
+1	450-1373-ND	test push-button switch
+1	CKN2062-ND	power rocker switch
+1	1175-1615-ND	10-pin IDC
+1	CT2251-ND	1 turn 1K pot
