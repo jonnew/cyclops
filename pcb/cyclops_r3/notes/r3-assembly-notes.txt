@@ -39,6 +39,8 @@ X11. Power should go in a barrel jack at the back of the board. The power should
 
 	> Edit: Decided to go with the mini-jr molex connector since its standard and supports large currents (up to 9A with 16 Ga wire).
 
+12. Consider switching out the LM337 for a MIC**** or equivalent because that chip is complete overkill. You are literally powering a single quad op-amp with it.
+
 
 --
 
