@@ -6,50 +6,58 @@
 
 X3. There is a big wiring error connecting +12V to LED-. It is just a leftover trace from an earlier version that was not caught by DRC because there were numereous intentional infractions in this area. Just remove that trace completely.
 
-4. Board temp circuit does not seem to work.I see no change in the VTemp as the pcb temperature rises
+X4. Board temp circuit does not seem to work.I see no change in the VTemp as the pcb temperature rises
 
-	+ The circuit works, its just that the reference does not have good access to the rise in temp.
-	+ The ADR03 is very stable across temperature, so maybe we can just give it a low thermal resistance path the heatsink area so we can get a better temp measurement.
+	EDit: The circuit works, its just that the reference does not have good access to the rise in temp.
+	The ADR03 is very stable across temperature, so maybe we can just give it a low thermal resistance path the heatsink area so we can get a better temp measurement.
 
-5. The comparitor circuit is always in kill mode and this does not turn off the P channel FET for some reason. 
+X5. The comparitor circuit is always in kill mode and this does not turn off the P channel FET for some reason. 
 
 	+ This is puzzling because I thoroughly breadboarded this part of the circuit
 	+ The comparitor is providing about 7 V to the gate of the FET (which by my calculations it should not be), so that this one problem
 	+ The other problem is that with 7 volts at the gate, the FET should be off, which it does not seem to be. 
 	+ I need to re-breadboard this circuit to figure out what the heck is going on
 
-6. The N-FET that souces to the LED and, probably (I don't have this on my board to see for sure), the photodiode power jack might are too close the barrel jack on the Arduino and therefore you can't push the sheild down the whole way.
+	Edit: Filter cap was too small and the circuit triggered on noise. I changed this circuit so it provides a warning, but does not shut down the power. The reason is the 317 has overcurrent protection (1.5A max) built in, so this circuit was not needed anyway.
 
-7. It would be good to have a third daughter board for aumatic heatsink LED alignment and to provide a mounting bracket for the photodiod and fiber.
+X6. The N-FET that souces to the LED and, probably (I don't have this on my board to see for sure), the photodiode power jack might are too close the barrel jack on the Arduino and therefore you can't push the sheild down the whole way.
 
-8. I'm starting to think all the major board signals should have dedicate BNC or LED-specific connectors. This will make using the thing a lot easier.
+7. It would be good to have a third daughter board for automatic heatsink LED alignment and to provide a mounting bracket for the photodiod and fiber.
+	
+	> Edit: I think the solution is to add a standardized LED port, containing the LED+/- signals, PD power, and a return like for VPD so that I can just create a daughterboard later that has the PD and LED interface on it already. 
+
+X8. I'm starting to think all the major board signals should have dedicate BNC or LED-specific connectors. This will make using the thing a lot easier.
 
 9. More grnd test points needed.
 
 10. Instead of having a separate power rail, you just just use a voltage inverter to get the negative rail. You can use and ON semiconductor AN920/D according to this http://www.onsemi.com/pub_link/Collateral/AN920-D.PDF. This could even pick off power from the the arduino since that has been regulated down to 5 or 3 volts for you.
 
-11. Power should go in a barrel jack at the back of the board. The power should be about to supply the arduino. The 12V regulated supplies can be paralleled to do that somehow.
+X11. Power should go in a barrel jack at the back of the board. The power should be about to supply the arduino. The 12V regulated supplies can be paralleled to do that somehow.
+
+	> Edit: Decided to go with the mini-jr molex connector since its standard and supports large currents (up to 9A with 16 Ga wire).
 
 
 --
 
-Thinking about packaging:
+X Thinking about packaging:
 
-1. Instead of using this microswitches, you need to design around a front panel. This means that the sheild does not have to be the size and shape of an Arduino. You can have a tab that sticks out for the 4 BNC connections
+X1. Instead of using this microswitches, you need to design around a front panel. This means that the sheild does not have to be the size and shape of an Arduino. You can have a tab that sticks out for the 4 BNC connections
 
-a. VCTL
-b. VREF
-c. VI
-d. VAUX
+Xa. VCTL
+Xb. VREF
+Xc. VI
+Xd. VAUX
 
 
-2. Switches should extend out to be comparable with the BNCs
-3. LEDs should backlight areas in the front panel, like the OE board does.
-4. LED connector should be keyed
+X2. Switches should extend out to be comparable with the BNCs
+X3. LEDs should backlight areas in the front panel, like the OE board does.
+X4. LED connector should be keyed
+
+EDit: This board is now standardized for the B5-080 extruded aluminum enclosure, but a custom enclosure will also work.
 
 
 -- 
 
-I just realized something -- why am I thinking about this PCB as an arduino sheild. I should be doing the opposite, as OE does with their board. The arduino is an _accessery_ to my board. My board will function without it. However, there should be a place where you can plug in the arudino to get added functionality. That will allow me to make this board as big as I want, with power being transered between layers, a good front/back panel design, and proper heaksinking...
+X I just realized something -- why am I thinking about this PCB as an arduino sheild. I should be doing the opposite, as OE does with their board. The arduino is an _accessery_ to my board. My board will function without it. However, there should be a place where you can plug in the arudino to get added functionality. That will allow me to make this board as big as I want, with power being transered between layers, a good front/back panel design, and proper heaksinking...
 
 So, look to the OE board for inspiration (maybe a bit smaller though...)
