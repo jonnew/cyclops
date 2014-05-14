@@ -13,3 +13,5 @@ parts to add for 3.1
 1	1175-1615-ND	10-pin IDC
 1	CT2251-ND	1 turn 1K pot
 1 	B5-080		enclosure (newark)
+1 	S9177-ND	10-pin idc header
+1 	S9318-ND	10-pin idc socket
