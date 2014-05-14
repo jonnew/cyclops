@@ -41,6 +41,8 @@ X11. Power should go in a barrel jack at the back of the board. The power should
 
 12. Consider switching out the LM337 for a MIC**** or equivalent because that chip is complete overkill. You are literally powering a single quad op-amp with it.
 
+13. Add some 4-40 holes for standoffs.
+
 
 --
 
