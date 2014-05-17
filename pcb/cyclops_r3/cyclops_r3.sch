@@ -6707,6 +6707,10 @@ at 30/07/2012 17:45:58</description>
 <part name="L2" library="cyclops" deviceset="L" device="_0805" value="MPZ1608"/>
 <part name="P+3" library="cyclops" deviceset="+5V" device=""/>
 <part name="LED_PD" library="cyclops" deviceset="PINH2X5" device="_ICD-H"/>
+<part name="VAUX1" library="cyclops" deviceset="BNC" device="_V-BITE" value="361V509E"/>
+<part name="SUPPLY29" library="cyclops" deviceset="AGND" device=""/>
+<part name="R28" library="cyclops" deviceset="R" device="_0603" value="50"/>
+<part name="SUPPLY32" library="cyclops" deviceset="AGND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6792,6 +6796,13 @@ at 30/07/2012 17:45:58</description>
 </instance>
 <instance part="P+3" gate="1" x="73.66" y="0" smashed="yes"/>
 <instance part="LED_PD" gate="G$1" x="68.58" y="-53.34"/>
+<instance part="VAUX1" gate="G$1" x="93.98" y="-53.34"/>
+<instance part="SUPPLY29" gate="G$1" x="109.22" y="-60.96"/>
+<instance part="R28" gate="R" x="119.38" y="-53.34" smashed="yes" rot="R90">
+<attribute name="NAME" x="121.92" y="-50.5714" size="1.778" layer="95"/>
+<attribute name="VALUE" x="121.92" y="-55.372" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY32" gate="G$1" x="119.38" y="-60.96"/>
 </instances>
 <busses>
 </busses>
@@ -7011,26 +7022,6 @@ at 30/07/2012 17:45:58</description>
 <wire x1="63.5" y1="-2.54" x2="63.5" y2="0" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="30.48" y1="-33.02" x2="20.32" y2="-33.02" width="0.1524" layer="91"/>
-<pinref part="PWR_DIST" gate="G$1" pin="1"/>
-<label x="20.32" y="-33.02" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="30.48" y1="-35.56" x2="20.32" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="PWR_DIST" gate="G$1" pin="3"/>
-<label x="20.32" y="-35.56" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="38.1" y1="-33.02" x2="48.26" y2="-33.02" width="0.1524" layer="91"/>
-<pinref part="PWR_DIST" gate="G$1" pin="2"/>
-<label x="43.18" y="-33.02" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="38.1" y1="-35.56" x2="48.26" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="PWR_DIST" gate="G$1" pin="4"/>
-<label x="43.18" y="-35.56" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="LED_PD" gate="G$1" pin="5"/>
 <wire x1="63.5" y1="-53.34" x2="53.34" y2="-53.34" width="0.1524" layer="91"/>
 <label x="53.34" y="-53.34" size="1.778" layer="95"/>
@@ -7045,12 +7036,46 @@ at 30/07/2012 17:45:58</description>
 <wire x1="71.12" y1="-58.42" x2="81.28" y2="-58.42" width="0.1524" layer="91"/>
 <label x="76.2" y="-58.42" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="VAUX1" gate="G$1" pin="2"/>
+<wire x1="96.52" y1="-55.88" x2="109.22" y2="-55.88" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-55.88" x2="109.22" y2="-58.42" width="0.1524" layer="91"/>
+<pinref part="SUPPLY29" gate="G$1" pin="AGND"/>
+</segment>
+<segment>
+<wire x1="30.48" y1="-38.1" x2="20.32" y2="-38.1" width="0.1524" layer="91"/>
+<pinref part="PWR_DIST" gate="G$1" pin="5"/>
+<label x="20.32" y="-38.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="30.48" y1="-40.64" x2="20.32" y2="-40.64" width="0.1524" layer="91"/>
+<pinref part="PWR_DIST" gate="G$1" pin="7"/>
+<label x="20.32" y="-40.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="38.1" y1="-40.64" x2="48.26" y2="-40.64" width="0.1524" layer="91"/>
+<pinref part="PWR_DIST" gate="G$1" pin="8"/>
+<label x="43.18" y="-40.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="38.1" y1="-38.1" x2="48.26" y2="-38.1" width="0.1524" layer="91"/>
+<pinref part="PWR_DIST" gate="G$1" pin="6"/>
+<label x="43.18" y="-38.1" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="VAUX" class="0">
 <segment>
 <pinref part="VAUX" gate="G$1" pin="1"/>
 <wire x1="96.52" y1="-15.24" x2="109.22" y2="-15.24" width="0.1524" layer="91"/>
 <label x="101.6" y="-15.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="VAUX1" gate="G$1" pin="1"/>
+<wire x1="96.52" y1="-53.34" x2="109.22" y2="-53.34" width="0.1524" layer="91"/>
+<label x="101.6" y="-53.34" size="1.778" layer="95"/>
+<wire x1="109.22" y1="-53.34" x2="109.22" y2="-48.26" width="0.1524" layer="91"/>
+<pinref part="R28" gate="R" pin="2"/>
+<wire x1="109.22" y1="-48.26" x2="119.38" y2="-48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VI" class="0">
@@ -7152,24 +7177,24 @@ at 30/07/2012 17:45:58</description>
 <label x="71.12" y="-15.24" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="38.1" y1="-38.1" x2="48.26" y2="-38.1" width="0.1524" layer="91"/>
-<pinref part="PWR_DIST" gate="G$1" pin="6"/>
-<label x="43.18" y="-38.1" size="1.778" layer="95"/>
+<wire x1="30.48" y1="-33.02" x2="20.32" y2="-33.02" width="0.1524" layer="91"/>
+<pinref part="PWR_DIST" gate="G$1" pin="1"/>
+<label x="20.32" y="-33.02" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="38.1" y1="-40.64" x2="48.26" y2="-40.64" width="0.1524" layer="91"/>
-<pinref part="PWR_DIST" gate="G$1" pin="8"/>
-<label x="43.18" y="-40.64" size="1.778" layer="95"/>
+<wire x1="30.48" y1="-35.56" x2="20.32" y2="-35.56" width="0.1524" layer="91"/>
+<pinref part="PWR_DIST" gate="G$1" pin="3"/>
+<label x="20.32" y="-35.56" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="30.48" y1="-40.64" x2="20.32" y2="-40.64" width="0.1524" layer="91"/>
-<pinref part="PWR_DIST" gate="G$1" pin="7"/>
-<label x="20.32" y="-40.64" size="1.778" layer="95"/>
+<wire x1="38.1" y1="-33.02" x2="48.26" y2="-33.02" width="0.1524" layer="91"/>
+<pinref part="PWR_DIST" gate="G$1" pin="2"/>
+<label x="43.18" y="-33.02" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="30.48" y1="-38.1" x2="20.32" y2="-38.1" width="0.1524" layer="91"/>
-<pinref part="PWR_DIST" gate="G$1" pin="5"/>
-<label x="20.32" y="-38.1" size="1.778" layer="95"/>
+<wire x1="38.1" y1="-35.56" x2="48.26" y2="-35.56" width="0.1524" layer="91"/>
+<pinref part="PWR_DIST" gate="G$1" pin="4"/>
+<label x="43.18" y="-35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+12V" class="1">
@@ -7270,6 +7295,12 @@ at 30/07/2012 17:45:58</description>
 <pinref part="LED_PD" gate="G$1" pin="9"/>
 <wire x1="63.5" y1="-58.42" x2="53.34" y2="-58.42" width="0.1524" layer="91"/>
 <label x="53.34" y="-58.42" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="AGND" class="0">
+<segment>
+<pinref part="R28" gate="R" pin="1"/>
+<pinref part="SUPPLY32" gate="G$1" pin="AGND"/>
 </segment>
 </net>
 </nets>
