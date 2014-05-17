@@ -3612,14 +3612,12 @@ Please make sure your boards conform to these design rules.</description>
 <via x="97.409" y="65.024" extent="1-16" drill="0.3302"/>
 <via x="96.139" y="65.024" extent="1-16" drill="0.3302"/>
 <via x="94.869" y="65.024" extent="1-16" drill="0.3302"/>
-<via x="93.599" y="63.754" extent="1-16" drill="0.3302"/>
 <via x="93.599" y="65.024" extent="1-16" drill="0.3302"/>
 <via x="92.329" y="65.024" extent="1-16" drill="0.3302"/>
 <via x="91.059" y="65.024" extent="1-16" drill="0.3302"/>
 <via x="89.789" y="65.024" extent="1-16" drill="0.3302"/>
 <via x="88.519" y="65.024" extent="1-16" drill="0.3302"/>
 <via x="87.249" y="65.024" extent="1-16" drill="0.3302"/>
-<via x="85.979" y="65.024" extent="1-16" drill="0.3302"/>
 <via x="85.979" y="65.024" extent="1-16" drill="0.3302"/>
 <via x="91.059" y="58.674" extent="1-16" drill="0.3302"/>
 <via x="92.329" y="58.674" extent="1-16" drill="0.3302"/>
@@ -3694,7 +3692,6 @@ Please make sure your boards conform to these design rules.</description>
 <via x="85.979" y="52.324" extent="1-16" drill="0.3302"/>
 <via x="85.979" y="51.054" extent="1-16" drill="0.3302"/>
 <via x="87.249" y="51.054" extent="1-16" drill="0.3302"/>
-<via x="88.519" y="51.054" extent="1-16" drill="0.3302"/>
 <via x="88.519" y="51.054" extent="1-16" drill="0.3302"/>
 <via x="89.789" y="51.054" extent="1-16" drill="0.3302"/>
 <via x="91.059" y="51.054" extent="1-16" drill="0.3302"/>
@@ -3815,7 +3812,6 @@ Please make sure your boards conform to these design rules.</description>
 <via x="106.299" y="48.514" extent="1-16" drill="0.3302"/>
 <via x="106.299" y="49.784" extent="1-16" drill="0.3302"/>
 <via x="105.029" y="49.784" extent="1-16" drill="0.3302"/>
-<via x="105.029" y="49.784" extent="1-16" drill="0.3302"/>
 <via x="103.759" y="49.784" extent="1-16" drill="0.3302"/>
 <via x="102.489" y="49.784" extent="1-16" drill="0.3302"/>
 <via x="102.489" y="51.054" extent="1-16" drill="0.3302"/>
@@ -3843,7 +3839,6 @@ Please make sure your boards conform to these design rules.</description>
 <via x="103.759" y="57.404" extent="1-16" drill="0.3302"/>
 <via x="102.489" y="57.404" extent="1-16" drill="0.3302"/>
 <via x="102.489" y="58.674" extent="1-16" drill="0.3302"/>
-<via x="103.759" y="58.674" extent="1-16" drill="0.3302"/>
 <via x="103.759" y="58.674" extent="1-16" drill="0.3302"/>
 <via x="105.029" y="58.674" extent="1-16" drill="0.3302"/>
 <via x="106.299" y="58.674" extent="1-16" drill="0.3302"/>
@@ -3875,7 +3870,9 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="75.685" y1="26.8224" x2="75.692" y2="26.797" width="0" layer="19" extent="1-1"/>
 <wire x1="93.599" y1="53.9115" x2="93.599" y2="53.594" width="0" layer="19" extent="1-1"/>
 <wire x1="86.4616" y1="76.969" x2="87.63" y2="76.962" width="0" layer="19" extent="1-1"/>
-<wire x1="72.4084" y1="31.5722" x2="74.542" y2="32.1056" width="0" layer="19" extent="1-1"/>
+<wire x1="72.4084" y1="31.5722" x2="74.0086" y2="31.5722" width="0.6096" layer="1"/>
+<wire x1="74.0086" y1="31.5722" x2="74.542" y2="32.1056" width="0.6096" layer="1"/>
+<wire x1="74.549" y1="33.147" x2="74.549" y2="32.131" width="0.6096" layer="1"/>
 </signal>
 <signal name="N$29">
 </signal>
