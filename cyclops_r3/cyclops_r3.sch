@@ -6148,7 +6148,7 @@ at 30/07/2012 17:45:58</description>
 <part name="C7" library="cyclops" deviceset="C-POL" device="_1206" value="1uF"/>
 <part name="C8" library="cyclops" deviceset="C-POL" device="_1206" value="10uF"/>
 <part name="C11" library="cyclops" deviceset="C-POL" device="_1206" value="1uF"/>
-<part name="C10" library="cyclops" deviceset="C-POL" device="_0807" value="47uF"/>
+<part name="C10" library="cyclops" deviceset="C-POL" device="_0807" value="100uF"/>
 <part name="SUPPLY11" library="cyclops" deviceset="AGND" device=""/>
 <part name="SUPPLY7" library="cyclops" deviceset="GND" device=""/>
 <part name="U1" library="cyclops" deviceset="MCP4921" device="SOIC" value="MCP4921"/>
@@ -6362,7 +6362,7 @@ at 30/07/2012 17:45:58</description>
 </instance>
 <instance part="P+3" gate="1" x="73.66" y="0" smashed="yes"/>
 <instance part="LED_PD" gate="G$1" x="68.58" y="-53.34"/>
-<instance part="VAUX_IN" gate="G$1" x="93.98" y="-53.34"/>
+<instance part="VAUX_IN" gate="G$1" x="93.98" y="-48.26"/>
 <instance part="SUPPLY29" gate="G$1" x="109.22" y="-60.96"/>
 <instance part="R28" gate="R" x="119.38" y="-53.34" smashed="yes" rot="R90">
 <attribute name="NAME" x="121.92" y="-50.5714" size="1.778" layer="95"/>
@@ -6604,8 +6604,8 @@ at 30/07/2012 17:45:58</description>
 </segment>
 <segment>
 <pinref part="VAUX_IN" gate="G$1" pin="2"/>
-<wire x1="96.52" y1="-55.88" x2="109.22" y2="-55.88" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="-55.88" x2="109.22" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="-50.8" x2="109.22" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-50.8" x2="109.22" y2="-58.42" width="0.1524" layer="91"/>
 <pinref part="SUPPLY29" gate="G$1" pin="AGND"/>
 </segment>
 <segment>
@@ -6631,17 +6631,10 @@ at 30/07/2012 17:45:58</description>
 </net>
 <net name="VAUX" class="0">
 <segment>
-<pinref part="VAUX_OUT" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="-15.24" x2="109.22" y2="-15.24" width="0.1524" layer="91"/>
-<label x="101.6" y="-15.24" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="VAUX_IN" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="-53.34" x2="109.22" y2="-53.34" width="0.1524" layer="91"/>
-<label x="101.6" y="-53.34" size="1.778" layer="95"/>
-<wire x1="109.22" y1="-53.34" x2="109.22" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="-48.26" x2="119.38" y2="-48.26" width="0.1524" layer="91"/>
+<label x="101.6" y="-48.26" size="1.778" layer="95"/>
 <pinref part="R28" gate="R" pin="2"/>
-<wire x1="109.22" y1="-48.26" x2="119.38" y2="-48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VI" class="0">
@@ -6867,6 +6860,13 @@ at 30/07/2012 17:45:58</description>
 <segment>
 <pinref part="R28" gate="R" pin="1"/>
 <pinref part="SUPPLY32" gate="G$1" pin="AGND"/>
+</segment>
+</net>
+<net name="VAUX_OUT" class="0">
+<segment>
+<pinref part="VAUX_OUT" gate="G$1" pin="1"/>
+<wire x1="96.52" y1="-15.24" x2="109.22" y2="-15.24" width="0.1524" layer="91"/>
+<label x="101.6" y="-15.24" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -7750,6 +7750,17 @@ at 30/07/2012 17:45:58</description>
 <label x="154.94" y="68.58" size="1.778" layer="95"/>
 </segment>
 </net>
+</nets>
+</sheet>
+<sheet>
+<description>V_AUX Buffer</description>
+<plain>
+</plain>
+<instances>
+</instances>
+<busses>
+</busses>
+<nets>
 </nets>
 </sheet>
 </sheets>
