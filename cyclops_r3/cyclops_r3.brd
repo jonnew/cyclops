@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.025" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -36,8 +36,8 @@
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
@@ -207,6 +207,9 @@ July 2014</text>
 <hole x="108.585" y="3.81" drill="3.302"/>
 <dimension x1="1.27" y1="0" x2="1.27" y2="80.01" x3="-11.684" y3="40.005" textsize="1.016" textratio="18" layer="51" dtype="vertical" unit="inch" visible="yes"/>
 <dimension x1="0" y1="78.74" x2="125.095" y2="78.74" x3="62.5475" y3="90.932" textsize="1.016" textratio="18" layer="51" dtype="horizontal" unit="inch"/>
+<text x="10.033" y="5.715" size="1.4224" layer="21" font="vector" ratio="18" align="center">GND</text>
+<text x="17.018" y="5.715" size="1.4224" layer="21" font="vector" ratio="18" align="center">+12V</text>
+<text x="119.38" y="62.738" size="1.4224" layer="21" font="vector" ratio="18" rot="R90" align="center">GND</text>
 </plain>
 <libraries>
 <library name="cyclops">
@@ -3853,6 +3856,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="75.431" y1="29.9466" x2="75.431" y2="29.965" width="0.3048" layer="1"/>
 <wire x1="75.431" y1="29.965" x2="75.438" y2="29.972" width="0.3048" layer="1"/>
 <wire x1="74.3896" y1="40.64" x2="75.438" y2="40.64" width="0.4064" layer="1"/>
+<via x="122.555" y="62.865" extent="1-16" drill="2.8" shape="octagon"/>
+<via x="10.16" y="2.54" extent="1-16" drill="2.8" shape="octagon"/>
 </signal>
 <signal name="N$1">
 <contactref element="R1" pad="1"/>
@@ -4688,6 +4693,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="75.692" y1="26.8154" x2="75.685" y2="26.8224" width="0.3048" layer="1"/>
 <wire x1="73.406" y1="31.877" x2="73.406" y2="31.8586" width="0.3048" layer="1"/>
 <wire x1="73.406" y1="31.8586" x2="73.399" y2="31.8516" width="0.3048" layer="1"/>
+<via x="17.145" y="2.54" extent="1-16" drill="2.8" shape="octagon"/>
 </signal>
 <signal name="N$29">
 </signal>
