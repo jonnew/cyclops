@@ -29,9 +29,9 @@ X6. The N-FET that souces to the LED and, probably (I don't have this on my boar
 
 X8. I'm starting to think all the major board signals should have dedicate BNC or LED-specific connectors. This will make using the thing a lot easier.
 
-9. More grnd test points needed.
+X9. More grnd test points needed.
 
-10. Instead of having a separate power rail, you just just use a voltage inverter to get the negative rail. You can use and ON semiconductor AN920/D according to this http://www.onsemi.com/pub_link/Collateral/AN920-D.PDF. This could even pick off power from the the arduino since that has been regulated down to 5 or 3 volts for you.
+X10. Instead of having a separate power rail, you just just use a voltage inverter to get the negative rail. You can use and ON semiconductor AN920/D according to this http://www.onsemi.com/pub_link/Collateral/AN920-D.PDF. This could even pick off power from the the arduino since that has been regulated down to 5 or 3 volts for you.
 
     > Edit: Looks like this part is ultra standard. Should read the document and pursue.
 
@@ -39,9 +39,9 @@ X11. Power should go in a barrel jack at the back of the board. The power should
 
 	> Edit: Decided to go with the mini-jr molex connector since its standard and supports large currents (up to 9A with 16 Ga wire).
 
-12. Consider switching out the LM337 for a MIC**** or equivalent because that chip is complete overkill. You are literally powering a single quad op-amp with it.
+X2. Consider switching out the LM337 for a MIC**** or equivalent because that chip is complete overkill. You are literally powering a single quad op-amp with it.
 
-13. Add some 4-40 holes for standoffs.
+X13. Add some 4-40 holes for standoffs.
 
 
 --
