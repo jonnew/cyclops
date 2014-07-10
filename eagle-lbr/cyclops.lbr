@@ -161,7 +161,7 @@
 &lt;/body&gt;
 &lt;/html&gt;</description>
 <packages>
-<package name="BANANA_TO_BOARD">
+<package name="105-110X">
 <description>Right angle female banana socket to board (Emerson Network Solutions)</description>
 <wire x1="-0.3175" y1="2.2225" x2="10.4775" y2="2.2225" width="0.127" layer="21"/>
 <wire x1="10.4775" y1="2.2225" x2="10.4775" y2="-2.2225" width="0.127" layer="21"/>
@@ -169,9 +169,10 @@
 <wire x1="-0.3175" y1="-2.2225" x2="-0.3175" y2="2.2225" width="0.127" layer="21"/>
 <pad name="P$1" x="0" y="0" drill="1.3208" shape="octagon"/>
 <pad name="P$2" x="10.16" y="0" drill="1.3208" shape="octagon"/>
-<text x="1.27" y="0" size="1.27" layer="25">&gt;NAME</text>
+<text x="0" y="2.54" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
 <rectangle x1="0" y1="-1.905" x2="10.16" y2="1.905" layer="39"/>
 <rectangle x1="0" y1="-1.905" x2="10.16" y2="1.905" layer="39"/>
+<text x="0" y="-3.556" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 </package>
 <package name="TO220">
 <description>&lt;b&gt;TO 220 horizontal&lt;/b&gt;</description>
@@ -4395,9 +4396,9 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 <smd name="NC1" x="-3.65" y="1.1" dx="1" dy="0.8" layer="1"/>
 <smd name="NC4" x="3.65" y="1.1" dx="1" dy="0.8" layer="1"/>
 <smd name="NC3" x="3.65" y="-1.1" dx="1" dy="0.8" layer="1"/>
-<wire x1="4.4" y1="-1.7" x2="4.4" y2="1.7" width="0.127" layer="21"/>
-<wire x1="4.4" y1="1.7" x2="-4.4" y2="1.7" width="0.127" layer="21"/>
-<wire x1="-4.4" y1="-1.7" x2="4.4" y2="-1.7" width="0.127" layer="21"/>
+<wire x1="4.4" y1="-1.7" x2="4.4" y2="1.7" width="0.1524" layer="21"/>
+<wire x1="4.4" y1="1.7" x2="-4.4" y2="1.7" width="0.1524" layer="21"/>
+<wire x1="-4.4" y1="-1.7" x2="4.4" y2="-1.7" width="0.1524" layer="21"/>
 <polygon width="0.127" layer="51">
 <vertex x="0.1" y="-1.7"/>
 <vertex x="0.1" y="-2.8"/>
@@ -4406,7 +4407,7 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 <vertex x="1.4" y="-2.8"/>
 <vertex x="1.4" y="-1.7"/>
 </polygon>
-<wire x1="-4.4" y1="1.7" x2="-4.4" y2="-1.7" width="0.127" layer="21"/>
+<wire x1="-4.4" y1="1.7" x2="-4.4" y2="-1.7" width="0.1524" layer="21"/>
 <rectangle x1="-4.572" y1="-2.032" x2="-4.318" y2="1.778" layer="39"/>
 <rectangle x1="-4.572" y1="-2.032" x2="4.572" y2="-1.778" layer="39"/>
 <rectangle x1="4.318" y1="-1.778" x2="4.572" y2="2.032" layer="39"/>
@@ -4445,8 +4446,8 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 <vertex x="-5" y="0.75"/>
 </polygon>
 <rectangle x1="-3.5" y1="-5" x2="3.5" y2="5" layer="39"/>
-<text x="-3.81" y="6.35" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.81" y="-7.62" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-3.048" y="6.096" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="-3.048" y="-7.112" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 </package>
 <package name="SM42">
 <smd name="2" x="0" y="2" dx="2" dy="2" layer="1"/>
@@ -5422,10 +5423,10 @@ Make a shield with ease, this package has all the named pins as well as the two 
 </package>
 <package name="SOT23-BEC">
 <description>TO-236 ITT Intermetall</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.127" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.127" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.127" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.127" layer="51"/>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="21"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="21"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="21"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="21"/>
 <smd name="C" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
 <smd name="E" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
 <smd name="B" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
@@ -5835,6 +5836,8 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="1.905" y1="12.7" x2="2.54" y2="12.065" width="0.127" layer="21"/>
 <wire x1="2.54" y1="12.065" x2="2.54" y2="4.445" width="0.127" layer="21"/>
 <wire x1="-2.54" y1="12.065" x2="2.54" y2="12.065" width="0.127" layer="21"/>
+<text x="-2.032" y="2.032" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="-2.794" y="-2.794" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 </package>
 <package name="JS102011SAQN">
 <smd name="2" x="0" y="2.75" dx="2.5" dy="1.2" layer="1" rot="R270"/>
@@ -5856,6 +5859,8 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="0" y1="-3.8" x2="0" y2="-1.8" width="0.127" layer="21"/>
 <rectangle x1="0" y1="-3.8" x2="1.4" y2="-1.8" layer="21"/>
 <rectangle x1="-4.4" y1="-1.8" x2="4.4" y2="1.8" layer="39"/>
+<text x="-5.08" y="4.572" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="-5.08" y="-3.556" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 </package>
 <package name="LED-0603">
 <text x="-1.27" y="0" size="1.27" layer="25" rot="R90">&gt;NAME</text>
@@ -5905,6 +5910,8 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="2.54" y1="-3.302" x2="2.54" y2="-6.477" width="0.127" layer="21"/>
 <pad name="3" x="8.382" y="7.2898" drill="1.8034" shape="octagon"/>
 <hole x="8.382" y="0" drill="2.9972"/>
+<text x="-1.778" y="4.318" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="-2.286" y="-7.874" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 </package>
 <package name="2X05-BIG">
 <wire x1="0" y1="-1.905" x2="0.635" y2="-2.54" width="0.1524" layer="21"/>
@@ -6010,11 +6017,125 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="0" y1="10.16" x2="0.254" y2="9.906" width="0.127" layer="21"/>
 <wire x1="0.254" y1="9.906" x2="0.254" y2="4.572" width="0.127" layer="21"/>
 </package>
+<package name="A-2107">
+<pad name="1" x="0" y="0" drill="1.5" shape="octagon"/>
+<pad name="2" x="15.8" y="0" drill="1.5" shape="octagon"/>
+<wire x1="-5" y1="3" x2="-5" y2="-3" width="0.1524" layer="21"/>
+<wire x1="-4" y1="-4" x2="20" y2="-4" width="0.1524" layer="21"/>
+<wire x1="20" y1="-4" x2="20" y2="4" width="0.1524" layer="21"/>
+<wire x1="20" y1="4" x2="-4" y2="4" width="0.1524" layer="21"/>
+<wire x1="-5" y1="3" x2="-4" y2="3" width="0.1524" layer="21"/>
+<wire x1="-4" y1="3" x2="-4" y2="4" width="0.1524" layer="21"/>
+<wire x1="-5" y1="-3" x2="-4" y2="-3" width="0.1524" layer="21"/>
+<wire x1="-4" y1="-3" x2="-4" y2="-4" width="0.1524" layer="21"/>
+<wire x1="-4" y1="3" x2="-4" y2="-3" width="0.1524" layer="21"/>
+<text x="-3.81" y="2.54" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="-3.81" y="-3.81" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
+</package>
+<package name="ARDUINOR3_PINS_NOHOLES">
+<pad name="D4" x="54.61" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A0" x="52.07" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D3" x="57.15" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D2" x="59.69" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D1" x="62.23" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D0" x="64.77" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D5" x="52.07" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D6" x="49.53" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D7" x="46.99" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D8" x="42.926" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D9" x="40.386" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D10" x="37.846" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D11" x="35.306" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D12" x="32.766" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="D13" x="30.226" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="GND" x="27.686" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="AREF" x="25.146" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A1" x="54.61" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A2" x="57.15" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A3" x="59.69" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A4" x="62.23" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="A5" x="64.77" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="VIN" x="46.99" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="GND2" x="44.45" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="GND3" x="41.91" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="5VB" x="39.37" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="3V" x="36.83" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="RESET" x="34.29" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="SDA" x="22.606" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="SCL" x="20.066" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="IOREF" x="31.75" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<pad name="RESERVED" x="29.21" y="2.54" drill="1" diameter="1.6764" shape="octagon"/>
+<text x="33.0099" y="0.254" size="0.889" layer="21" font="vector" ratio="18">RST</text>
+<text x="36.0223" y="0.254" size="0.889" layer="21" font="vector" ratio="18">3v</text>
+<text x="38.5623" y="0.254" size="0.889" layer="21" font="vector" ratio="18">5v</text>
+<text x="41.7931" y="0.254" size="0.889" layer="21" font="vector" ratio="18">Gnd</text>
+<text x="46.0553" y="0.254" size="0.889" layer="21" font="vector" ratio="18">Vin</text>
+<text x="51.181" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A0</text>
+<text x="53.721" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A1</text>
+<text x="56.261" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A2</text>
+<text x="58.801" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A3</text>
+<text x="61.341" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A4</text>
+<text x="63.881" y="0.254" size="0.889" layer="21" font="vector" ratio="18">A5</text>
+<text x="26.289" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">ARef</text>
+<text x="29.21" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">Gnd</text>
+<text x="31.115" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">13</text>
+<text x="33.655" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">12</text>
+<text x="36.195" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">11</text>
+<text x="38.735" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">10</text>
+<text x="40.767" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">9</text>
+<text x="43.307" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">8</text>
+<text x="47.371" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">7</text>
+<text x="49.911" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">6</text>
+<text x="52.451" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">5</text>
+<text x="54.991" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">4</text>
+<text x="57.531" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">3</text>
+<text x="60.071" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">2</text>
+<text x="62.611" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">1</text>
+<text x="65.151" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">0</text>
+<text x="20.447" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">SCL</text>
+<text x="22.987" y="53.086" size="0.889" layer="21" font="vector" ratio="18" rot="R180">SDA</text>
+<text x="30.7239" y="0.254" size="0.889" layer="21" font="vector" ratio="18">IOr</text>
+<pad name="MOSI" x="67.437" y="27.94" drill="1" diameter="1.778" shape="octagon"/>
+<polygon width="0.127" layer="40">
+<vertex x="1.27" y="44.45"/>
+<vertex x="11.43" y="44.45"/>
+<vertex x="11.43" y="31.75"/>
+<vertex x="1.27" y="31.75"/>
+</polygon>
+<pad name="SCK" x="64.897" y="27.94" drill="1" diameter="1.778" shape="octagon"/>
+<pad name="MISO" x="64.897" y="30.48" drill="1" diameter="1.778" shape="square"/>
+<pad name="5VA" x="67.437" y="30.48" drill="1" diameter="1.778" shape="octagon"/>
+<pad name="GND1" x="67.437" y="25.4" drill="1" diameter="1.778" shape="octagon"/>
+<pad name="RESET$1" x="64.897" y="25.4" drill="1" diameter="1.778" shape="octagon"/>
+<wire x1="0" y1="0" x2="67.31" y2="0" width="0.1524" layer="21"/>
+<wire x1="67.31" y1="0" x2="67.31" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="67.31" y1="2.54" x2="69.85" y2="5.08" width="0.1524" layer="21"/>
+<wire x1="69.85" y1="5.08" x2="69.85" y2="37.846" width="0.1524" layer="21"/>
+<wire x1="69.85" y1="37.846" x2="67.31" y2="40.386" width="0.1524" layer="21"/>
+<wire x1="67.31" y1="40.386" x2="67.31" y2="51.816" width="0.1524" layer="21"/>
+<wire x1="67.31" y1="51.816" x2="65.786" y2="53.34" width="0.1524" layer="21"/>
+<wire x1="65.786" y1="53.34" x2="0" y2="53.34" width="0.1524" layer="21"/>
+<wire x1="0" y1="53.34" x2="0" y2="0" width="0.1524" layer="21"/>
+</package>
+<package name="BDN18">
+<wire x1="0" y1="0" x2="0" y2="45.72" width="0.1524" layer="21"/>
+<wire x1="0" y1="45.72" x2="45.72" y2="45.72" width="0.1524" layer="21"/>
+<wire x1="45.72" y1="45.72" x2="45.72" y2="0" width="0.1524" layer="21"/>
+<wire x1="45.72" y1="0" x2="0" y2="0" width="0.1524" layer="21"/>
+<rectangle x1="0" y1="0" x2="45.72" y2="45.72" layer="39"/>
+<text x="0" y="47.752" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="0" y="-3.556" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BANANA_TO_BOARD">
 <text x="0" y="2.54" size="1.778" layer="95">&gt;NAME</text>
-<pin name="P$1" x="0" y="0" length="middle"/>
+<pin name="1" x="0" y="0" visible="off" length="short"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="10.16" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-2.54" x2="10.16" y2="2.54" width="0.254" layer="94"/>
+<wire x1="10.16" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<text x="0" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="N-MOSFET">
 </symbol>
@@ -7224,6 +7345,22 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <text x="-2.667" y="-3.175" size="1.778" layer="96">&gt;VALUE</text>
 <wire x1="0" y1="0" x2="0" y2="2.54" width="0.254" layer="94"/>
 </symbol>
+<symbol name="HEATSINK">
+<wire x1="0" y1="0" x2="0" y2="7.62" width="0.254" layer="94"/>
+<wire x1="0" y1="7.62" x2="2.54" y2="7.62" width="0.254" layer="94"/>
+<wire x1="2.54" y1="7.62" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="7.62" width="0.254" layer="94"/>
+<wire x1="5.08" y1="7.62" x2="7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="7.62" x2="7.62" y2="2.54" width="0.254" layer="94"/>
+<wire x1="7.62" y1="2.54" x2="10.16" y2="2.54" width="0.254" layer="94"/>
+<wire x1="10.16" y1="2.54" x2="10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="7.62" x2="12.7" y2="7.62" width="0.254" layer="94"/>
+<wire x1="12.7" y1="7.62" x2="12.7" y2="0" width="0.254" layer="94"/>
+<wire x1="12.7" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<text x="0" y="10.16" size="1.27" layer="95">&gt;NAME</text>
+<text x="0" y="-2.54" size="1.27" layer="96">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="BANANA_TO_BOARD">
@@ -7234,9 +7371,17 @@ Digikey part: J111-ND (or similar).</description>
 <gate name="G$1" symbol="BANANA_TO_BOARD" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="BANANA_TO_BOARD">
+<device name="_TIP-JACK" package="105-110X">
 <connects>
-<connect gate="G$1" pin="P$1" pad="P$1 P$2"/>
+<connect gate="G$1" pin="1" pad="P$1 P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_A2107" package="A-2107">
+<connects>
+<connect gate="G$1" pin="1" pad="1 2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -8815,6 +8960,51 @@ distributor RS Components</description>
 </technologies>
 </device>
 <device name="_PINS" package="ARUDINOR3_PINS">
+<connects>
+<connect gate="G$1" pin="/RESET" pad="RESET"/>
+<connect gate="G$1" pin="3V" pad="3V"/>
+<connect gate="G$1" pin="5VA" pad="5VA"/>
+<connect gate="G$1" pin="5VB" pad="5VB"/>
+<connect gate="G$1" pin="A0" pad="A0"/>
+<connect gate="G$1" pin="A1" pad="A1"/>
+<connect gate="G$1" pin="A2" pad="A2"/>
+<connect gate="G$1" pin="A3" pad="A3"/>
+<connect gate="G$1" pin="A4/SDA" pad="A4"/>
+<connect gate="G$1" pin="A5/SCL" pad="A5"/>
+<connect gate="G$1" pin="AREF" pad="AREF"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D10" pad="D10"/>
+<connect gate="G$1" pin="D11" pad="D11"/>
+<connect gate="G$1" pin="D12" pad="D12"/>
+<connect gate="G$1" pin="D13" pad="D13"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="D8" pad="D8"/>
+<connect gate="G$1" pin="D9" pad="D9"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="GND1" pad="GND1"/>
+<connect gate="G$1" pin="GND2" pad="GND2"/>
+<connect gate="G$1" pin="GND3" pad="GND3"/>
+<connect gate="G$1" pin="IOREF" pad="IOREF"/>
+<connect gate="G$1" pin="MISO" pad="MISO"/>
+<connect gate="G$1" pin="MOSI" pad="MOSI"/>
+<connect gate="G$1" pin="RESERVED" pad="RESERVED"/>
+<connect gate="G$1" pin="RST" pad="RESET$1"/>
+<connect gate="G$1" pin="SCK" pad="SCK"/>
+<connect gate="G$1" pin="SCL" pad="SCL"/>
+<connect gate="G$1" pin="SDA" pad="SDA"/>
+<connect gate="G$1" pin="VIN" pad="VIN"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_NOHOLES" package="ARDUINOR3_PINS_NOHOLES">
 <connects>
 <connect gate="G$1" pin="/RESET" pad="RESET"/>
 <connect gate="G$1" pin="3V" pad="3V"/>
@@ -10540,6 +10730,18 @@ With larger annulars</description>
 </gates>
 <devices>
 <device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="HEATSINK">
+<gates>
+<gate name="G$1" symbol="HEATSINK" x="0" y="0"/>
+</gates>
+<devices>
+<device name="_BDN18" package="BDN18">
 <technologies>
 <technology name=""/>
 </technologies>
