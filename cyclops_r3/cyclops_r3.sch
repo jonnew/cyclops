@@ -6502,6 +6502,12 @@ at 30/07/2012 17:45:58</description>
 <part name="P-2" library="cyclops" deviceset="-5V" device="" value="-2.1V"/>
 <part name="P+5" library="cyclops" deviceset="+5V" device="" value="+12V"/>
 <part name="R17" library="cyclops" deviceset="R" device="_0603" value="220k"/>
+<part name="T1" library="cyclops" deviceset="SJ" device=""/>
+<part name="T2" library="cyclops" deviceset="SJ" device=""/>
+<part name="T3" library="cyclops" deviceset="SJ" device=""/>
+<part name="T4" library="cyclops" deviceset="SJ" device=""/>
+<part name="TRIG" library="cyclops" deviceset="BNC" device="_V-BITE" value="361V509E"/>
+<part name="U$47" library="cyclops" deviceset="GND1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6576,6 +6582,24 @@ at 30/07/2012 17:45:58</description>
 <instance part="U$43" gate="G$1" x="195.58" y="53.34"/>
 <instance part="LED-" gate="G$1" x="73.66" y="0" rot="R180"/>
 <instance part="LED+" gate="G$1" x="73.66" y="10.16" rot="R180"/>
+<instance part="T1" gate="1" x="25.4" y="121.92" smashed="yes">
+<attribute name="NAME" x="30.48" y="121.92" size="1.778" layer="95"/>
+<attribute name="VALUE" x="22.86" y="118.11" size="1.778" layer="96"/>
+</instance>
+<instance part="T2" gate="1" x="25.4" y="119.38" smashed="yes">
+<attribute name="NAME" x="30.48" y="119.38" size="1.778" layer="95"/>
+<attribute name="VALUE" x="22.86" y="115.57" size="1.778" layer="96"/>
+</instance>
+<instance part="T3" gate="1" x="25.4" y="116.84" smashed="yes">
+<attribute name="NAME" x="30.48" y="116.84" size="1.778" layer="95"/>
+<attribute name="VALUE" x="22.86" y="113.03" size="1.778" layer="96"/>
+</instance>
+<instance part="T4" gate="1" x="25.4" y="114.3" smashed="yes">
+<attribute name="NAME" x="30.48" y="114.3" size="1.778" layer="95"/>
+<attribute name="VALUE" x="22.86" y="110.49" size="1.778" layer="96"/>
+</instance>
+<instance part="TRIG" gate="G$1" x="210.82" y="-7.62"/>
+<instance part="U$47" gate="G$1" x="226.06" y="-15.24"/>
 </instances>
 <busses>
 </busses>
@@ -6999,6 +7023,57 @@ at 30/07/2012 17:45:58</description>
 <pinref part="LED_PD" gate="G$1" pin="1"/>
 <wire x1="66.04" y1="-10.16" x2="55.88" y2="-10.16" width="0.1524" layer="91"/>
 <label x="55.88" y="-10.16" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TRIG" class="0">
+<segment>
+<wire x1="2.54" y1="121.92" x2="15.24" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="T1" gate="1" pin="1"/>
+<pinref part="T2" gate="1" pin="1"/>
+<wire x1="15.24" y1="121.92" x2="20.32" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="119.38" x2="15.24" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="119.38" x2="15.24" y2="121.92" width="0.1524" layer="91"/>
+<junction x="15.24" y="121.92"/>
+<pinref part="T3" gate="1" pin="1"/>
+<wire x1="20.32" y1="116.84" x2="15.24" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="116.84" x2="15.24" y2="119.38" width="0.1524" layer="91"/>
+<junction x="15.24" y="119.38"/>
+<pinref part="T4" gate="1" pin="1"/>
+<wire x1="20.32" y1="114.3" x2="15.24" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="114.3" x2="15.24" y2="116.84" width="0.1524" layer="91"/>
+<junction x="15.24" y="116.84"/>
+</segment>
+<segment>
+<pinref part="TRIG" gate="G$1" pin="1"/>
+<wire x1="213.36" y1="-7.62" x2="226.06" y2="-7.62" width="0.1524" layer="91"/>
+<label x="218.44" y="-7.62" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="CS7" class="0">
+<segment>
+<wire x1="30.48" y1="119.38" x2="48.26" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="116.84" x2="45.72" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="114.3" x2="43.18" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="T4" gate="1" pin="2"/>
+<pinref part="T3" gate="1" pin="2"/>
+<pinref part="T2" gate="1" pin="2"/>
+<pinref part="T1" gate="1" pin="2"/>
+<pinref part="ARDUNIO" gate="G$1" pin="D7"/>
+<wire x1="30.48" y1="121.92" x2="53.34" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="121.92" x2="53.34" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="ARDUNIO" gate="G$1" pin="D8"/>
+<wire x1="48.26" y1="119.38" x2="48.26" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="ARDUNIO" gate="G$1" pin="D9"/>
+<wire x1="45.72" y1="116.84" x2="45.72" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="ARDUNIO" gate="G$1" pin="D10"/>
+<wire x1="43.18" y1="114.3" x2="43.18" y2="109.22" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="GND2" class="0">
+<segment>
+<pinref part="TRIG" gate="G$1" pin="2"/>
+<wire x1="213.36" y1="-10.16" x2="226.06" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="-10.16" x2="226.06" y2="-12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
