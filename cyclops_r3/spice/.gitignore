@@ -1,0 +1,5 @@
+# Ignore the backup files created by EAGLE
+*.op.raw
+*.log
+*.net
+*.raw
