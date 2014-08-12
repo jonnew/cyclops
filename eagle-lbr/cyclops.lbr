@@ -10942,13 +10942,60 @@ With larger annulars</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="LEONARDO_HEADER_SET">
+<deviceset name="ARDUINO_6PIN_HEADER">
 <gates>
-<gate name="G$1" symbol="ARDUINO-6-PIN-HEADER" x="2.54" y="0"/>
-<gate name="G$2" symbol="ARDUINO-8-PIN-HEADER" x="2.54" y="-7.62"/>
-<gate name="G$3" symbol="ARDUINO-8-PIN-HEADER" x="-7.62" y="-7.62"/>
-<gate name="G$4" symbol="ARDUNIO-10-PIN-HEADER" x="-7.62" y="0"/>
-<gate name="G$5" symbol="ARDUINO-ICSP-HEADER" x="-7.62" y="7.62"/>
+<gate name="G$1" symbol="ARDUINO-6-PIN-HEADER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ARDUINO_8PIN_HEADER">
+<gates>
+<gate name="G$1" symbol="ARDUINO-8-PIN-HEADER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ARDUINO_10PIN_HEADER">
+<gates>
+<gate name="G$1" symbol="ARDUNIO-10-PIN-HEADER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ARDUINO_ICSP">
+<gates>
+<gate name="G$1" symbol="ARDUINO-ICSP-HEADER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ARDUINO_HEADER_SET">
+<gates>
+<gate name="G$1" symbol="ARDUINO-6-PIN-HEADER" x="0" y="0"/>
+<gate name="G$2" symbol="ARDUNIO-10-PIN-HEADER" x="10.16" y="0"/>
+<gate name="G$3" symbol="ARDUINO-8-PIN-HEADER" x="0" y="7.62"/>
+<gate name="G$4" symbol="ARDUINO-8-PIN-HEADER" x="10.16" y="7.62"/>
 </gates>
 <devices>
 <device name="">

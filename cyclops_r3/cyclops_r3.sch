@@ -4237,19 +4237,19 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <text x="0" y="6.35" size="1.27" layer="95">&gt;NAME</text>
 <text x="7.62" y="6.35" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="ARDUINO-ICSP-HEADER">
+<wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="7.62" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<text x="1.905" y="1.905" size="1.27" layer="94">ICSP</text>
+</symbol>
 <symbol name="ARDUINO-6-PIN-HEADER">
 <wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
 <wire x1="0" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
 <wire x1="7.62" y1="5.08" x2="7.62" y2="0" width="0.254" layer="94"/>
 <wire x1="7.62" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
 <text x="1.905" y="1.905" size="1.27" layer="94">6-Pin</text>
-</symbol>
-<symbol name="ARDUINO-8-PIN-HEADER">
-<wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
-<wire x1="7.62" y1="5.08" x2="7.62" y2="0" width="0.254" layer="94"/>
-<wire x1="7.62" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<text x="1.905" y="1.905" size="1.27" layer="94">8-Pin</text>
 </symbol>
 <symbol name="ARDUNIO-10-PIN-HEADER">
 <wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
@@ -4258,12 +4258,12 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <wire x1="7.62" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
 <text x="1.905" y="1.905" size="1.27" layer="94">10-Pin</text>
 </symbol>
-<symbol name="ARDUINO-ICSP-HEADER">
+<symbol name="ARDUINO-8-PIN-HEADER">
 <wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
 <wire x1="0" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
 <wire x1="7.62" y1="5.08" x2="7.62" y2="0" width="0.254" layer="94"/>
 <wire x1="7.62" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<text x="1.905" y="1.905" size="1.27" layer="94">ICSP</text>
+<text x="1.905" y="1.905" size="1.27" layer="94">8-Pin</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -6300,13 +6300,24 @@ Digikey part: J111-ND (or similar).</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="LEONARDO_HEADER_SET">
+<deviceset name="ARDUINO_ICSP">
 <gates>
-<gate name="G$1" symbol="ARDUINO-6-PIN-HEADER" x="2.54" y="0"/>
-<gate name="G$2" symbol="ARDUINO-8-PIN-HEADER" x="2.54" y="-7.62"/>
-<gate name="G$3" symbol="ARDUINO-8-PIN-HEADER" x="-7.62" y="-7.62"/>
-<gate name="G$4" symbol="ARDUNIO-10-PIN-HEADER" x="-7.62" y="0"/>
-<gate name="G$5" symbol="ARDUINO-ICSP-HEADER" x="-7.62" y="7.62"/>
+<gate name="G$1" symbol="ARDUINO-ICSP-HEADER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ARDUINO_HEADER_SET">
+<gates>
+<gate name="G$1" symbol="ARDUINO-6-PIN-HEADER" x="0" y="0"/>
+<gate name="G$2" symbol="ARDUNIO-10-PIN-HEADER" x="10.16" y="0"/>
+<gate name="G$3" symbol="ARDUINO-8-PIN-HEADER" x="0" y="7.62"/>
+<gate name="G$4" symbol="ARDUINO-8-PIN-HEADER" x="10.16" y="7.62"/>
 </gates>
 <devices>
 <device name="">
@@ -6470,7 +6481,7 @@ at 30/07/2012 17:45:58</description>
 <part name="C9" library="cyclops" deviceset="C-POL" device="_0807" value="100uF"/>
 <part name="S2" library="cyclops" deviceset="SPDT" device="_CFPA" value="TEST"/>
 <part name="U8" library="cyclops" deviceset="ZXTD4591E6" device="" value="ZXTD45"/>
-<part name="Q2" library="cyclops" deviceset="N-MOSFET" device="TO-262" value="IRF540"/>
+<part name="Q2" library="cyclops" deviceset="N-MOSFET" device="TO-262" value="IRF510"/>
 <part name="R20" library="cyclops" deviceset="R" device="_0603" value="10"/>
 <part name="VAUX_OUT" library="cyclops" deviceset="BNC" device="_V-BITE" value="361V509E"/>
 <part name="REF2.5" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
@@ -6580,7 +6591,8 @@ at 30/07/2012 17:45:58</description>
 <part name="T3" library="cyclops" deviceset="SJ" device=""/>
 <part name="TRIG" library="cyclops" deviceset="BNC" device="_V-BITE" value="361V509E"/>
 <part name="U$47" library="cyclops" deviceset="GND1" device=""/>
-<part name="LEONARDO_HEADERS" library="cyclops" deviceset="LEONARDO_HEADER_SET" device=""/>
+<part name="LEO-ICSP" library="cyclops" deviceset="ARDUINO_ICSP" device=""/>
+<part name="LEO-HEADERS" library="cyclops" deviceset="ARDUINO_HEADER_SET" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6673,11 +6685,11 @@ at 30/07/2012 17:45:58</description>
 </instance>
 <instance part="TRIG" gate="G$1" x="210.82" y="-7.62"/>
 <instance part="U$47" gate="G$1" x="226.06" y="-15.24"/>
-<instance part="LEONARDO_HEADERS" gate="G$1" x="63.5" y="40.64"/>
-<instance part="LEONARDO_HEADERS" gate="G$2" x="40.64" y="40.64"/>
-<instance part="LEONARDO_HEADERS" gate="G$3" x="60.96" y="91.44"/>
-<instance part="LEONARDO_HEADERS" gate="G$4" x="33.02" y="91.44"/>
-<instance part="LEONARDO_HEADERS" gate="G$5" x="83.82" y="66.04"/>
+<instance part="LEO-ICSP" gate="G$1" x="83.82" y="66.04"/>
+<instance part="LEO-HEADERS" gate="G$1" x="66.04" y="40.64"/>
+<instance part="LEO-HEADERS" gate="G$2" x="33.02" y="88.9"/>
+<instance part="LEO-HEADERS" gate="G$3" x="55.88" y="88.9"/>
+<instance part="LEO-HEADERS" gate="G$4" x="35.56" y="40.64"/>
 </instances>
 <busses>
 </busses>
@@ -7741,7 +7753,10 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="U$45" gate="G$1" x="63.5" y="63.5"/>
 <instance part="P+4" gate="1" x="-10.16" y="134.62"/>
 <instance part="U7" gate="A" x="-27.94" y="25.4" rot="MR0"/>
-<instance part="HEATSINK" gate="G$1" x="157.48" y="83.82"/>
+<instance part="HEATSINK" gate="G$1" x="157.48" y="91.44" smashed="yes" rot="R270">
+<attribute name="NAME" x="157.48" y="92.71" size="1.27" layer="95"/>
+<attribute name="VALUE" x="157.48" y="77.47" size="1.27" layer="96"/>
+</instance>
 <instance part="R14" gate="R" x="-40.64" y="124.46" rot="R180"/>
 <instance part="R15" gate="R" x="-27.94" y="114.3" rot="R270"/>
 <instance part="U$26" gate="G$1" x="-27.94" y="101.6"/>
