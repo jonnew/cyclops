@@ -1,0 +1,8 @@
+ScreenWidth=700
+ScreenHeight=600
+AutoOpen=Y
+AutoDatabase=M:/public/cyclops/bom/cyclops.BOMdb
+Database=M:/public/cyclops/bom/cyclops.BOMdb
+AutoOpenSetup=N
+AutoSetup=
+CsvSeparator=,

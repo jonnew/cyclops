@@ -4104,6 +4104,7 @@ distributor Farnell 149-452</description>
 <part name="NULL" library="cyclops" deviceset="TRIM_US-" device="SM-42/43A" value="20k"/>
 <part name="C32" library="cyclops" deviceset="C" device="_0603" value="10pF"/>
 <part name="SUPPLY60" library="cyclops" deviceset="AGND" device=""/>
+<part name="SUPPLY1" library="cyclops" deviceset="AGND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4167,12 +4168,13 @@ distributor Farnell 149-452</description>
 <instance part="VDD" gate="G$1" x="-5.08" y="-55.88"/>
 <instance part="VSS" gate="G$1" x="111.76" y="-55.88"/>
 <instance part="VPD_PRE" gate="G$1" x="-20.32" y="35.56"/>
-<instance part="PD" gate="G$1" x="-66.04" y="30.48"/>
+<instance part="PD" gate="G$1" x="-66.04" y="86.36"/>
 <instance part="GND" gate="G$1" x="-91.44" y="-22.86"/>
 <instance part="SUPPLY59" gate="G$1" x="-91.44" y="-33.02"/>
 <instance part="NULL" gate="1" x="35.56" y="12.7"/>
 <instance part="C32" gate="C" x="35.56" y="60.96"/>
 <instance part="SUPPLY60" gate="G$1" x="35.56" y="50.8"/>
+<instance part="SUPPLY1" gate="G$1" x="-58.42" y="5.08"/>
 </instances>
 <busses>
 </busses>
@@ -4315,17 +4317,12 @@ distributor Farnell 149-452</description>
 <wire x1="-66.04" y1="71.12" x2="-66.04" y2="83.82" width="0.1524" layer="91"/>
 <junction x="-66.04" y="71.12"/>
 <pinref part="C27" gate="C" pin="2"/>
-<wire x1="-66.04" y1="83.82" x2="-48.26" y2="83.82" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$19" class="0">
-<segment>
 <pinref part="D4" gate="G$1" pin="C"/>
-<wire x1="-66.04" y1="17.78" x2="-66.04" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="U9" gate="A" pin="+IN"/>
-<wire x1="-66.04" y1="27.94" x2="-58.42" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="-66.04" y1="83.82" x2="-48.26" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="-66.04" y1="17.78" x2="-66.04" y2="38.1" width="0.1524" layer="91"/>
+<junction x="-66.04" y="38.1"/>
 <pinref part="PD" gate="G$1" pin="TP"/>
-<junction x="-66.04" y="27.94"/>
+<junction x="-66.04" y="83.82"/>
 </segment>
 </net>
 <net name="+7V" class="0">
@@ -4526,6 +4523,13 @@ distributor Farnell 149-452</description>
 <wire x1="40.64" y1="68.58" x2="35.56" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="68.58" x2="35.56" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="C32" gate="C" pin="1"/>
+</segment>
+</net>
+<net name="AGND" class="0">
+<segment>
+<pinref part="U9" gate="A" pin="+IN"/>
+<wire x1="-58.42" y1="27.94" x2="-58.42" y2="7.62" width="0.1524" layer="91"/>
+<pinref part="SUPPLY1" gate="G$1" pin="AGND"/>
 </segment>
 </net>
 </nets>
