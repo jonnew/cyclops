@@ -3343,7 +3343,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="26.67" y="9.017" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="25.019" y="2.032" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="R22" library="cyclops" package="0603" value="5.6k" x="33.02" y="72.898" smashed="yes">
+<element name="R22" library="cyclops" package="0603" value="5.6k DNP" x="33.02" y="72.898" smashed="yes">
 <attribute name="MN" value="Panasonic" x="33.02" y="72.898" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="33.02" y="72.898" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="33.02" y="72.898" size="1.778" layer="27" display="off"/>
@@ -3434,6 +3434,12 @@ Modified: 2014.07.10
 <attribute name="NAME" x="11.303" y="9.779" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="20.32" y="0.508" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
+<element name="ILED0" library="cyclops" package="SJ" value="" x="57.912" y="50.8" rot="R180"/>
+<element name="ILED1" library="cyclops" package="SJ" value="" x="57.912" y="53.34" rot="R180"/>
+<element name="ILED2" library="cyclops" package="SJ" value="" x="57.912" y="58.42" rot="R180"/>
+<element name="ILED3" library="cyclops" package="SJ" value="" x="57.912" y="55.88" rot="R180"/>
+<element name="U10" library="cyclops" package="SOT23-6" value="MCP4022" x="35.814" y="51.816" rot="R90"/>
+<element name="C18" library="cyclops" package="0603" value=".1uF" x="-8.128" y="-15.24"/>
 </elements>
 <signals>
 <signal name="VFB">
@@ -3578,6 +3584,8 @@ Modified: 2014.07.10
 <wire x1="29.21" y1="56.388" x2="27.432" y2="54.61" width="0.1778" layer="16"/>
 <via x="27.432" y="54.61" extent="1-16" drill="0.3302"/>
 <wire x1="27.432" y1="54.61" x2="10.414" y2="54.61" width="0.1778" layer="1"/>
+<contactref element="U10" pad="4"/>
+<wire x1="34.714" y1="52.766" x2="10.414" y2="50.8" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DACA">
 <contactref element="U1" pad="8"/>
@@ -3630,6 +3638,8 @@ Modified: 2014.07.10
 <wire x1="68.326" y1="26.6954" x2="68.58" y2="26.4414" width="0.3048" layer="1"/>
 <wire x1="61.08" y1="26.67" x2="61.08" y2="24.518" width="0.3048" layer="1"/>
 <wire x1="61.08" y1="24.518" x2="61.087" y2="24.511" width="0.3048" layer="1"/>
+<contactref element="LEONARDO" pad="AREF"/>
+<wire x1="6.724" y1="23.876" x2="31.4706" y2="24.892" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VAUX">
 <contactref element="VAUX_IN" pad="1"/>
@@ -3696,6 +3706,14 @@ Modified: 2014.07.10
 <via x="68.58" y="47.371" extent="1-16" drill="0.3302"/>
 <wire x1="70.284" y1="39.37" x2="70.919" y2="38.735" width="0.3048" layer="1"/>
 <wire x1="70.919" y1="38.735" x2="73.8054" y2="38.735" width="0.3048" layer="1"/>
+<contactref element="ILED0" pad="1"/>
+<contactref element="ILED1" pad="1"/>
+<contactref element="ILED2" pad="1"/>
+<contactref element="ILED3" pad="1"/>
+<wire x1="58.674" y1="55.88" x2="58.674" y2="58.42" width="0" layer="19" extent="1-1"/>
+<wire x1="58.674" y1="53.34" x2="58.674" y2="55.88" width="0" layer="19" extent="1-1"/>
+<wire x1="58.674" y1="50.8" x2="58.674" y2="53.34" width="0" layer="19" extent="1-1"/>
+<wire x1="68.453" y1="61.3718125" x2="58.674" y2="58.42" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="_VREF">
 <contactref element="U7" pad="5"/>
@@ -3743,6 +3761,8 @@ Modified: 2014.07.10
 <wire x1="47.244" y1="74.168" x2="49.276" y2="74.168" width="0.3048" layer="1"/>
 <wire x1="49.276" y1="74.168" x2="50.167" y2="73.277" width="0.3048" layer="1"/>
 <wire x1="50.167" y1="73.277" x2="50.167" y2="72.731" width="0.3048" layer="1"/>
+<contactref element="U10" pad="6"/>
+<wire x1="34.714" y1="50.866" x2="33.8836" y2="72.898" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$6">
 <contactref element="REF_ADJ" pad="3"/>
@@ -4000,7 +4020,7 @@ Modified: 2014.07.10
 <contactref element="C1" pad="1"/>
 <wire x1="39.5916" y1="55.245" x2="41.2934" y2="55.245" width="0.254" layer="1"/>
 </signal>
-<signal name="VCTL_PRE">
+<signal name="N$34">
 <contactref element="S2" pad="3"/>
 <contactref element="DAC/VCTL" pad="2"/>
 <wire x1="17.78" y1="64.008" x2="23.241" y2="69.469" width="0.3048" layer="1"/>
@@ -4356,7 +4376,7 @@ Modified: 2014.07.10
 <contactref element="LEONARDO" pad="VIN"/>
 <wire x1="54.984" y1="45.72" x2="52.5526" y2="45.72" width="1.016" layer="1"/>
 </signal>
-<signal name="+12V" class="1">
+<signal name="+11V" class="1">
 <via x="51.181" y="14.605" extent="1-16" drill="0.9"/>
 <via x="42.037" y="14.605" extent="1-16" drill="0.9"/>
 <contactref element="U2" pad="4"/>
@@ -4839,11 +4859,13 @@ Modified: 2014.07.10
 <wire x1="64.77" y1="70.104" x2="62.865" y2="68.199" width="0.3048" layer="1"/>
 <via x="62.865" y="62.484" extent="1-16" drill="0.3302"/>
 </signal>
-<signal name="N$16">
+<signal name="VCTL_PROTECT">
 <contactref element="GAIN" pad="3"/>
 <contactref element="R22" pad="1"/>
 <wire x1="31.369" y1="75.184" x2="31.369" y2="73.6854" width="0.3048" layer="1"/>
 <wire x1="31.369" y1="73.6854" x2="32.1564" y2="72.898" width="0.3048" layer="1"/>
+<contactref element="U10" pad="5"/>
+<wire x1="34.714" y1="51.816" x2="32.1564" y2="72.898" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="LED-">
 <contactref element="LED-" pad="1"/>
@@ -4946,23 +4968,50 @@ Modified: 2014.07.10
 </signal>
 <signal name="T0">
 <contactref element="T0" pad="2"/>
-<contactref element="LEONARDO" pad="D7"/>
-<wire x1="8.89" y1="45.72" x2="6.724" y2="45.72" width="0.1778" layer="1"/>
+<contactref element="LEONARDO" pad="D8"/>
+<wire x1="6.724" y1="41.656" x2="8.89" y2="45.72" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="T1">
 <contactref element="T1" pad="2"/>
-<contactref element="LEONARDO" pad="D8"/>
-<wire x1="8.89" y1="41.656" x2="6.724" y2="41.656" width="0.1778" layer="1"/>
+<contactref element="LEONARDO" pad="D9"/>
+<wire x1="6.724" y1="39.116" x2="8.89" y2="41.656" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="T2">
 <contactref element="T2" pad="2"/>
-<contactref element="LEONARDO" pad="D9"/>
-<wire x1="8.89" y1="39.116" x2="6.724" y2="39.116" width="0.1778" layer="1"/>
+<contactref element="LEONARDO" pad="D10"/>
+<wire x1="6.724" y1="36.576" x2="8.89" y2="39.116" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="T3">
 <contactref element="T3" pad="2"/>
-<contactref element="LEONARDO" pad="D10"/>
-<wire x1="8.89" y1="36.576" x2="6.724" y2="36.576" width="0.1778" layer="1"/>
+<contactref element="LEONARDO" pad="D11"/>
+<wire x1="6.724" y1="34.036" x2="8.89" y2="36.576" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$7">
+<contactref element="LEONARDO" pad="A0"/>
+</signal>
+<signal name="N$19">
+<contactref element="LEONARDO" pad="A1"/>
+</signal>
+<signal name="N$21">
+<contactref element="LEONARDO" pad="A2"/>
+</signal>
+<signal name="N$23">
+<contactref element="LEONARDO" pad="A3"/>
+</signal>
+<signal name="N$16">
+<contactref element="U10" pad="1"/>
+<contactref element="C18" pad="1"/>
+<wire x1="-8.9916" y1="-15.24" x2="36.914" y2="50.866" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$24">
+<contactref element="U10" pad="2"/>
+<contactref element="C18" pad="2"/>
+<wire x1="-7.2644" y1="-15.24" x2="36.914" y2="51.816" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="POT">
+<contactref element="U10" pad="3"/>
+<contactref element="LEONARDO" pad="D7"/>
+<wire x1="36.914" y1="52.766" x2="6.724" y2="45.72" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <errors>
