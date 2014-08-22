@@ -6650,7 +6650,7 @@ at 30/07/2012 17:45:58</description>
 <part name="P+6" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 <part name="C5" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="R24" library="cyclops" deviceset="R" device="_0603" value="1k"/>
-<part name="OC_COMP" library="cyclops" deviceset="LED" device="_0603" value="LEDRED"/>
+<part name="COMP" library="cyclops" deviceset="LED" device="_0603" value="LEDRED"/>
 <part name="L3" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="U$49" library="cyclops" deviceset="GND2" device=""/>
 </parts>
@@ -7160,13 +7160,6 @@ at 30/07/2012 17:45:58</description>
 <label x="76.2" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$11" class="0">
-<segment>
-<pinref part="L1" gate="L" pin="1"/>
-<pinref part="LEONARDO" gate="G$1" pin="GND2"/>
-<wire x1="53.34" y1="45.72" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$14" class="0">
 <segment>
 <pinref part="L2" gate="L" pin="1"/>
@@ -7356,6 +7349,17 @@ at 30/07/2012 17:45:58</description>
 <wire x1="66.04" y1="129.54" x2="66.04" y2="109.22" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="KEEPOUT_GND" class="0">
+<segment>
+<pinref part="LEONARDO" gate="G$1" pin="GND3"/>
+<wire x1="50.8" y1="48.26" x2="50.8" y2="45.72" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="L1" gate="L" pin="1"/>
+<pinref part="LEONARDO" gate="G$1" pin="GND2"/>
+<wire x1="53.34" y1="45.72" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -7420,7 +7424,7 @@ at 30/07/2012 17:45:58</description>
 <instance part="U$18" gate="G$1" x="-38.1" y="-83.82"/>
 <instance part="U$19" gate="G$1" x="-17.78" y="-83.82"/>
 <instance part="R24" gate="R" x="93.98" y="-55.88" rot="R90"/>
-<instance part="OC_COMP" gate="G$1" x="93.98" y="-68.58"/>
+<instance part="COMP" gate="G$1" x="93.98" y="-68.58"/>
 <instance part="U$49" gate="G$1" x="93.98" y="-114.3"/>
 </instances>
 <busses>
@@ -7557,7 +7561,7 @@ at 30/07/2012 17:45:58</description>
 <wire x1="73.66" y1="-88.9" x2="73.66" y2="-111.76" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="OC_COMP" gate="G$1" pin="C"/>
+<pinref part="COMP" gate="G$1" pin="C"/>
 <wire x1="93.98" y1="-73.66" x2="93.98" y2="-111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -7675,7 +7679,7 @@ at 30/07/2012 17:45:58</description>
 <net name="N$16" class="0">
 <segment>
 <pinref part="R24" gate="R" pin="1"/>
-<pinref part="OC_COMP" gate="G$1" pin="A"/>
+<pinref part="COMP" gate="G$1" pin="A"/>
 <wire x1="93.98" y1="-60.96" x2="93.98" y2="-66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
