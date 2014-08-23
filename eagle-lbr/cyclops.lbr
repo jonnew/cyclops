@@ -7555,6 +7555,57 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="1.27" y1="0" x2="2.54" y2="0.635" width="0.254" layer="94"/>
 <wire x1="2.54" y1="-0.635" x2="1.27" y2="0" width="0.254" layer="94"/>
 </symbol>
+<symbol name="LEONARDOR3-ICSP">
+<wire x1="-30.48" y1="25.4" x2="-30.48" y2="-25.4" width="0.254" layer="94"/>
+<wire x1="-30.48" y1="-25.4" x2="27.94" y2="-25.4" width="0.254" layer="94"/>
+<wire x1="27.94" y1="-25.4" x2="27.94" y2="-22.86" width="0.254" layer="94"/>
+<wire x1="27.94" y1="-22.86" x2="33.02" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="33.02" y1="-17.78" x2="33.02" y2="7.62" width="0.254" layer="94"/>
+<wire x1="33.02" y1="7.62" x2="27.94" y2="12.7" width="0.254" layer="94"/>
+<wire x1="27.94" y1="12.7" x2="27.94" y2="22.86" width="0.254" layer="94"/>
+<wire x1="27.94" y1="22.86" x2="25.4" y2="25.4" width="0.254" layer="94"/>
+<wire x1="25.4" y1="25.4" x2="-30.48" y2="25.4" width="0.254" layer="94"/>
+<text x="-22.86" y="2.54" size="5.08" layer="94">LEONARDO</text>
+<text x="-7.62" y="-2.54" size="2.54" layer="94">R3</text>
+<pin name="D0" x="22.86" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D1" x="20.32" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D2" x="17.78" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D3" x="15.24" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D4" x="12.7" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D5" x="10.16" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D6" x="7.62" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D7" x="5.08" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D8" x="0" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D9" x="-2.54" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D10" x="-5.08" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D11" x="-7.62" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D12" x="-10.16" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="D13" x="-12.7" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="GND" x="-15.24" y="30.48" visible="pin" length="middle" direction="pas" rot="R270"/>
+<pin name="AREF" x="-17.78" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="A5" x="25.4" y="-30.48" visible="pin" length="middle" rot="R90"/>
+<pin name="A4" x="22.86" y="-30.48" visible="pin" length="middle" rot="R90"/>
+<pin name="A3" x="20.32" y="-30.48" visible="pin" length="middle" rot="R90"/>
+<pin name="A2" x="17.78" y="-30.48" visible="pin" length="middle" rot="R90"/>
+<pin name="A1" x="15.24" y="-30.48" visible="pin" length="middle" rot="R90"/>
+<pin name="A0" x="12.7" y="-30.48" visible="pin" length="middle" rot="R90"/>
+<pin name="VIN" x="7.62" y="-30.48" visible="pin" length="middle" direction="pwr" rot="R90"/>
+<pin name="GND2" x="5.08" y="-30.48" visible="pin" length="middle" direction="pas" rot="R90"/>
+<pin name="GND3" x="2.54" y="-30.48" visible="pin" length="middle" direction="pas" rot="R90"/>
+<pin name="5VB" x="0" y="-30.48" visible="pin" length="middle" direction="pas" rot="R90"/>
+<pin name="3V" x="-2.54" y="-30.48" visible="pin" length="middle" direction="pas" rot="R90"/>
+<pin name="/RESET" x="-5.08" y="-30.48" visible="pin" length="middle" rot="R90"/>
+<pin name="IOREF" x="-7.62" y="-30.48" visible="pin" length="middle" direction="out" rot="R90"/>
+<pin name="NC" x="-10.16" y="-30.48" visible="pin" length="middle" direction="nc" rot="R90"/>
+<pin name="SCL" x="-22.86" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="SDA" x="-20.32" y="30.48" visible="pin" length="middle" rot="R270"/>
+<pin name="MISO" x="20.32" y="7.62" visible="pin" length="short" direction="pas"/>
+<pin name="5VA" x="30.48" y="5.08" visible="pin" length="short" direction="pas" rot="R180"/>
+<pin name="MOSI" x="30.48" y="0" visible="pin" length="short" direction="pas" rot="R180"/>
+<pin name="GND1" x="30.48" y="-5.08" visible="pin" length="short" direction="pas" rot="R180"/>
+<pin name="SCK" x="20.32" y="2.54" visible="pin" length="short" direction="pas"/>
+<pin name="RST" x="20.32" y="-2.54" visible="pin" length="short" direction="pas"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="BANANA_TO_BOARD">
@@ -11047,6 +11098,58 @@ With larger annulars</description>
 <connect gate="G$1" pin="VSS" pad="2"/>
 <connect gate="G$1" pin="W" pad="5"/>
 <connect gate="G$1" pin="~CS" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LEONARDO_R3_ICSP">
+<gates>
+<gate name="G$1" symbol="LEONARDOR3-ICSP" x="-2.54" y="2.54"/>
+</gates>
+<devices>
+<device name="" package="ARDUINOR3_PINS_NOHOLES">
+<connects>
+<connect gate="G$1" pin="/RESET" pad="RESET$1"/>
+<connect gate="G$1" pin="3V" pad="3V"/>
+<connect gate="G$1" pin="5VA" pad="5VA"/>
+<connect gate="G$1" pin="5VB" pad="5VB"/>
+<connect gate="G$1" pin="A0" pad="A0"/>
+<connect gate="G$1" pin="A1" pad="A1"/>
+<connect gate="G$1" pin="A2" pad="A2"/>
+<connect gate="G$1" pin="A3" pad="A3"/>
+<connect gate="G$1" pin="A4" pad="A4"/>
+<connect gate="G$1" pin="A5" pad="A5"/>
+<connect gate="G$1" pin="AREF" pad="AREF"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D10" pad="D10"/>
+<connect gate="G$1" pin="D11" pad="D11"/>
+<connect gate="G$1" pin="D12" pad="D12"/>
+<connect gate="G$1" pin="D13" pad="D13"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="D8" pad="D8"/>
+<connect gate="G$1" pin="D9" pad="D9"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="GND1" pad="GND1"/>
+<connect gate="G$1" pin="GND2" pad="GND2"/>
+<connect gate="G$1" pin="GND3" pad="GND3"/>
+<connect gate="G$1" pin="IOREF" pad="IOREF"/>
+<connect gate="G$1" pin="MISO" pad="MISO"/>
+<connect gate="G$1" pin="MOSI" pad="MOSI"/>
+<connect gate="G$1" pin="NC" pad="RESERVED"/>
+<connect gate="G$1" pin="RST" pad="RESET"/>
+<connect gate="G$1" pin="SCK" pad="SCK"/>
+<connect gate="G$1" pin="SCL" pad="SCL"/>
+<connect gate="G$1" pin="SDA" pad="SDA"/>
+<connect gate="G$1" pin="VIN" pad="VIN"/>
 </connects>
 <technologies>
 <technology name=""/>
