@@ -1,0 +1,3 @@
+# Ignore all the binarys and temporary build files produced by ino
+
+.build/

@@ -36,8 +36,8 @@
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
@@ -2984,33 +2984,33 @@ Modified: 2014.07.10
 <attribute name="NAME" x="99.187" y="23.248" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="99.187" y="22.105" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="R6" library="cyclops" package="0603" value="1.82k" x="88.011" y="26.296" smashed="yes" rot="R90">
+<element name="R7" library="cyclops" package="0603" value="1.82k" x="88.011" y="26.296" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="88.011" y="26.296" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="88.011" y="26.296" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="88.011" y="26.296" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="86.106" y="23.629" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="88.392" y="23.629" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="R5" library="cyclops" package="0603" value="240" x="88.011" y="29.838" smashed="yes" rot="R90">
+<element name="R6" library="cyclops" package="0603" value="240" x="88.011" y="29.838" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="88.011" y="29.838" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="88.011" y="29.838" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="88.011" y="29.838" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="85.845" y="28.956" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="86.988" y="28.956" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C6" library="cyclops" package="1206-POL" value="1uF" x="88.385" y="21.463" smashed="yes" rot="R180">
+<element name="C7" library="cyclops" package="1206-POL" value="1uF" x="88.385" y="21.463" smashed="yes" rot="R180">
 <attribute name="NAME" x="91.955" y="21.717" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="91.955" y="20.574" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="C8" library="cyclops" package="1206-POL" value="10uF" x="83.7" y="26.289" smashed="yes" rot="R180">
+<element name="C9" library="cyclops" package="1206-POL" value="10uF" x="83.7" y="26.289" smashed="yes" rot="R180">
 <attribute name="NAME" x="81.16" y="29.083" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="81.16" y="27.813" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="C12" library="cyclops" package="1206-POL" value="1uF" x="37.853" y="17.653" smashed="yes" rot="R270">
+<element name="C13" library="cyclops" package="1206-POL" value="1uF" x="37.853" y="17.653" smashed="yes" rot="R270">
 <attribute name="NAME" x="36.576" y="13.723" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="36.576" y="21.089" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="C11" library="cyclops" package="153CLV-0807" value="100uF" x="52.952" y="17.653" smashed="yes" rot="R270">
+<element name="C12" library="cyclops" package="153CLV-0807" value="100uF" x="52.952" y="17.653" smashed="yes" rot="R270">
 <attribute name="NAME" x="50.412" y="15.748" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="51.682" y="15.748" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
@@ -3018,7 +3018,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="35.56" y="53.213" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
 <attribute name="VALUE" x="39.751" y="52.578" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
-<element name="C2" library="cyclops" package="0805" value="10uF" x="41.409" y="54.61" smashed="yes" rot="R90">
+<element name="C3" library="cyclops" package="0805" value="10uF" x="41.409" y="54.61" smashed="yes" rot="R90">
 <attribute name="MN" value="TDK Corp." x="41.409" y="54.61" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="41.409" y="54.61" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="" x="41.409" y="54.61" size="1.778" layer="27" rot="R90" display="off"/>
@@ -3026,11 +3026,11 @@ Modified: 2014.07.10
 <attribute name="NAME" x="42.538" y="50.546" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="43.681" y="50.546" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C3" library="cyclops" package="0603" value=".1uF" x="31.362" y="57.15" smashed="yes" rot="R270">
+<element name="C4" library="cyclops" package="0603" value=".1uF" x="31.362" y="57.15" smashed="yes" rot="R270">
 <attribute name="NAME" x="30.854" y="59.944" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="31.87" y="59.944" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C4" library="cyclops" package="0805" value="1uF" x="29.33" y="57.404" smashed="yes" rot="R270">
+<element name="C5" library="cyclops" package="0805" value="1uF" x="29.33" y="57.404" smashed="yes" rot="R270">
 <attribute name="MN" value="TDK Corp." x="29.33" y="57.404" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="29.33" y="57.404" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DK" value="" x="29.33" y="57.404" size="1.778" layer="27" rot="R270" display="off"/>
@@ -3038,23 +3038,23 @@ Modified: 2014.07.10
 <attribute name="NAME" x="28.314" y="59.944" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="29.457" y="59.944" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C1" library="cyclops" package="0603" value="" x="45.459" y="57.277" smashed="yes">
+<element name="C2" library="cyclops" package="0603" value="" x="45.459" y="57.277" smashed="yes">
 <attribute name="NAME" x="45.847" y="55.252" size="1.016" layer="25" font="vector" ratio="18"/>
 </element>
-<element name="R1" library="cyclops" package="0603" value="" x="42.03" y="57.277" smashed="yes" rot="R180">
+<element name="R2" library="cyclops" package="0603" value="" x="42.03" y="57.277" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="42.03" y="57.277" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="42.03" y="57.277" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="42.03" y="57.277" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="42.926" y="55.252" size="1.016" layer="25" font="vector" ratio="18"/>
 </element>
-<element name="R21" library="cyclops" package="0603" value="1k" x="74.669" y="38.735" smashed="yes" rot="R180">
+<element name="R23" library="cyclops" package="0603" value="1k" x="74.669" y="38.735" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="73.399" y="38.735" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="73.399" y="38.735" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="73.399" y="38.735" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="76.581" y="38.862" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="76.588" y="37.846" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="R22" library="cyclops" package="0603" value="1k" x="74.669" y="40.64" smashed="yes">
+<element name="R24" library="cyclops" package="0603" value="1k" x="74.669" y="40.64" smashed="yes">
 <attribute name="MN" value="Panasonic" x="74.669" y="40.64" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="74.669" y="40.64" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="74.669" y="40.64" size="1.778" layer="27" display="off"/>
@@ -3074,7 +3074,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="69.9446" y="27.178" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
 <attribute name="VALUE" x="68.954" y="23.749" size="1.016" layer="27" font="vector" ratio="18" rot="SR90"/>
 </element>
-<element name="C15" library="cyclops" package="0805" value="1uF" x="75.431" y="30.988" smashed="yes" rot="R270">
+<element name="C16" library="cyclops" package="0805" value="1uF" x="75.431" y="30.988" smashed="yes" rot="R270">
 <attribute name="MN" value="TDK Corp." x="75.431" y="30.988" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="75.431" y="30.988" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DK" value="" x="75.431" y="30.988" size="1.778" layer="27" rot="R270" display="off"/>
@@ -3082,7 +3082,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="78.098" y="29.845" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="79.241" y="29.845" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C17" library="cyclops" package="0603" value=".1uF" x="73.399" y="30.988" smashed="yes" rot="R270">
+<element name="C18" library="cyclops" package="0603" value=".1uF" x="73.399" y="30.988" smashed="yes" rot="R270">
 <attribute name="NAME" x="72.771" y="27.947" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="76.073" y="28.074" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
@@ -3095,21 +3095,21 @@ Modified: 2014.07.10
 <attribute name="NAME" x="68.192" y="30.607" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
 <attribute name="VALUE" x="66.287" y="28.321" size="1.016" layer="27" font="vector" ratio="18" rot="SR0"/>
 </element>
-<element name="R13" library="cyclops" package="0603" value="470" x="70.351" y="23.114" smashed="yes">
+<element name="R15" library="cyclops" package="0603" value="470" x="70.351" y="23.114" smashed="yes">
 <attribute name="MN" value="Panasonic" x="72.891" y="23.114" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="72.891" y="23.114" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="72.891" y="23.114" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="66.682" y="21.082" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="69.984" y="21.082" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="R14" library="cyclops" package="0603" value="1k" x="64.255" y="28.829" smashed="yes" rot="R270">
+<element name="R16" library="cyclops" package="0603" value="1k" x="64.255" y="28.829" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="64.255" y="26.289" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="64.255" y="26.289" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="64.255" y="26.289" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="62.223" y="28.067" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="63.239" y="28.067" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C22" library="cyclops" package="0805" value="1uF" x="60.071" y="44.316" smashed="yes" rot="R90">
+<element name="C23" library="cyclops" package="0805" value="1uF" x="60.071" y="44.316" smashed="yes" rot="R90">
 <attribute name="MN" value="TDK Corp." x="60.071" y="44.316" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="60.071" y="44.316" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="" x="60.071" y="44.316" size="1.778" layer="27" rot="R90" display="off"/>
@@ -3117,7 +3117,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="59.175" y="46.863" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="60.318" y="46.863" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C20" library="cyclops" package="0603" value=".1uF" x="62.103" y="44.069" smashed="yes" rot="R90">
+<element name="C21" library="cyclops" package="0603" value=".1uF" x="62.103" y="44.069" smashed="yes" rot="R90">
 <attribute name="NAME" x="61.595" y="46.863" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="62.611" y="46.863" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
@@ -3126,17 +3126,17 @@ Modified: 2014.07.10
 </element>
 <element name="D2" library="cyclops" package="SOD123" value="DS11015" x="65.278" y="50.68" smashed="yes" rot="R90">
 <attribute name="NAME" x="64.135" y="50.426" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
-<attribute name="VALUE" x="68.714" y="52.959" size="1.016" layer="27" font="vector" ratio="18"/>
+<attribute name="VALUE" x="68.714" y="52.705" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="CURR/AUX" library="cyclops" package="JS102011SAQN" value="JS102" x="41.656" y="1.778" smashed="yes">
 <attribute name="NAME" x="45.353" y="7.493" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
 <attribute name="VALUE" x="43.956" y="2.286" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
-<element name="C18" library="cyclops" package="0603" value=".1uF" x="73.653" y="25.781" smashed="yes" rot="R270">
+<element name="C19" library="cyclops" package="0603" value=".1uF" x="73.653" y="25.781" smashed="yes" rot="R270">
 <attribute name="NAME" x="73.914" y="21.089" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="74.923" y="21.082" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C16" library="cyclops" package="0805" value="1uF" x="75.685" y="25.781" smashed="yes" rot="R270">
+<element name="C17" library="cyclops" package="0805" value="1uF" x="75.685" y="25.781" smashed="yes" rot="R270">
 <attribute name="MN" value="TDK Corp." x="75.685" y="25.781" size="1.016" layer="27" font="vector" ratio="15" rot="R270" display="off"/>
 <attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="75.685" y="25.781" size="1.016" layer="27" font="vector" ratio="15" rot="R270" display="off"/>
 <attribute name="DK" value="" x="75.685" y="25.781" size="1.016" layer="27" font="vector" ratio="15" rot="R270" display="off"/>
@@ -3144,7 +3144,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="76.962" y="21.216" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="78.098" y="21.209" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C10" library="cyclops" package="153CLV-0807" value="100uF" x="43.935" y="17.653" smashed="yes" rot="R270">
+<element name="C11" library="cyclops" package="153CLV-0807" value="100uF" x="43.935" y="17.653" smashed="yes" rot="R270">
 <attribute name="NAME" x="41.395" y="15.748" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="42.665" y="15.748" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
@@ -3160,7 +3160,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="86.741" y="58.42" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
 <attribute name="VALUE" x="86.741" y="55.626" size="1.016" layer="27" font="vector" ratio="18" rot="R270"/>
 </element>
-<element name="R23" library="cyclops" package="0603" value="10" x="87.51" y="42.545" smashed="yes" rot="R180">
+<element name="R25" library="cyclops" package="0603" value="10" x="87.51" y="42.545" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="87.51" y="42.545" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="87.51" y="42.545" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="87.51" y="42.545" size="1.778" layer="27" rot="R180" display="off"/>
@@ -3187,7 +3187,7 @@ Modified: 2014.07.10
 <attribute name="TP_SIGNAL_NAME" value="" x="91.066" y="44.323" size="1" layer="37" rot="R270"/>
 <attribute name="NAME" x="94.9839" y="42.118" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="R8" library="cyclops" package="0603" value="3k" x="8.128" y="77.47" smashed="yes" rot="R180">
+<element name="R9" library="cyclops" package="0603" value="3k" x="8.128" y="77.47" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="6.604" y="60.706" size="1.6764" layer="27" ratio="18" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="6.604" y="60.706" size="1.6764" layer="27" ratio="18" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="6.604" y="60.706" size="1.6764" layer="27" ratio="18" rot="R180" display="off"/>
@@ -3206,32 +3206,32 @@ Modified: 2014.07.10
 <attribute name="NAME" x="71.24" y="58.5216" size="1.016" layer="25" font="vector" ratio="18" rot="SR90"/>
 <attribute name="VALUE" x="67.7926" y="56.268" size="1.016" layer="27" font="vector" ratio="18" rot="SR0"/>
 </element>
-<element name="R4" library="cyclops" package="0603" value="10k" x="67.31" y="62.738" smashed="yes" rot="R90">
+<element name="R5" library="cyclops" package="0603" value="10k" x="67.31" y="62.738" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="67.056" y="64.135" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="67.056" y="64.135" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="67.056" y="64.135" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="NAME" x="66.802" y="64.643" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
 <attribute name="VALUE" x="67.818" y="64.643" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="R3" library="cyclops" package="0603" value="110k" x="65.024" y="62.738" smashed="yes" rot="R90">
+<element name="R4" library="cyclops" package="0603" value="110k" x="65.024" y="62.738" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="64.643" y="64.135" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="64.643" y="64.135" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="64.643" y="64.135" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="NAME" x="64.389" y="64.643" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
 <attribute name="VALUE" x="65.405" y="64.643" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="R2" library="cyclops" package="0603" value="10k" x="69.596" y="62.738" smashed="yes" rot="R90">
+<element name="R3" library="cyclops" package="0603" value="10k" x="69.596" y="62.738" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="69.596" y="62.738" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="69.596" y="62.738" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="69.596" y="62.738" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="NAME" x="69.088" y="64.643" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
 <attribute name="VALUE" x="70.104" y="64.643" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="C9" library="cyclops" package="0603" value=".1uF" x="67.31" y="59.182" smashed="yes" rot="R90">
-<attribute name="NAME" x="64.262" y="57.658" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="65.278" y="57.658" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<element name="C10" library="cyclops" package="0603" value=".1uF" x="67.31" y="59.182" smashed="yes" rot="R90">
+<attribute name="NAME" x="64.643" y="57.658" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="65.659" y="57.658" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="R9" library="cyclops" package="0603" value="1k" x="42.926" y="77.47" smashed="yes" rot="R180">
+<element name="R10" library="cyclops" package="0603" value="1k" x="42.926" y="77.47" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="41.529" y="70.866" size="1.6764" layer="27" ratio="18" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="41.529" y="70.866" size="1.6764" layer="27" ratio="18" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="41.529" y="70.866" size="1.6764" layer="27" ratio="18" rot="R180" display="off"/>
@@ -3241,7 +3241,7 @@ Modified: 2014.07.10
 <element name="OC" library="cyclops" package="LED-0603" value="LEDRED" x="44.196" y="78.867" smashed="yes" rot="R90">
 <attribute name="NAME" x="45.593" y="76.073" size="1.016" layer="25" font="vector" ratio="18" rot="SR90"/>
 </element>
-<element name="C7" library="cyclops" package="0603" value=".1uF" x="71.882" y="62.738" smashed="yes" rot="R90">
+<element name="C8" library="cyclops" package="0603" value=".1uF" x="71.882" y="62.738" smashed="yes" rot="R90">
 <attribute name="NAME" x="71.501" y="64.643" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
 <attribute name="VALUE" x="72.517" y="64.643" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
@@ -3249,22 +3249,22 @@ Modified: 2014.07.10
 <attribute name="NAME" x="109.6702" y="31.877" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="110.9148" y="30.607" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C13" library="cyclops" package="1206-POL" value="1uF" x="108.719" y="37.846" smashed="yes">
+<element name="C14" library="cyclops" package="1206-POL" value="1uF" x="108.719" y="37.846" smashed="yes">
 <attribute name="NAME" x="106.433" y="40.767" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="106.433" y="39.497" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="C14" library="cyclops" package="1206-POL" value="1uF" x="108.084" y="28.067" smashed="yes" rot="R180">
+<element name="C15" library="cyclops" package="1206-POL" value="1uF" x="108.084" y="28.067" smashed="yes" rot="R180">
 <attribute name="NAME" x="112.141" y="28.074" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="112.141" y="26.931" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="R10" library="cyclops" package="0603" value="0" x="103.378" y="36.322" smashed="yes" rot="R90">
+<element name="R12" library="cyclops" package="0603" value="0" x="103.378" y="36.322" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="103.378" y="36.322" size="0.889" layer="27" font="vector" ratio="18" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="103.378" y="36.322" size="0.889" layer="27" font="vector" ratio="18" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="103.378" y="36.322" size="0.889" layer="27" font="vector" ratio="18" rot="R90" display="off"/>
 <attribute name="NAME" x="100.711" y="35.56" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
 <attribute name="VALUE" x="101.854" y="35.56" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="C23" library="cyclops" package="0805" value="1uF" x="75.184" y="44.323" smashed="yes" rot="R90">
+<element name="C24" library="cyclops" package="0805" value="1uF" x="75.184" y="44.323" smashed="yes" rot="R90">
 <attribute name="MN" value="TDK Corp." x="75.184" y="44.323" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="75.184" y="44.323" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="" x="75.184" y="44.323" size="1.778" layer="27" rot="R90" display="off"/>
@@ -3272,7 +3272,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="76.835" y="45.085" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="76.835" y="43.942" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="C21" library="cyclops" package="0603" value=".1uF" x="73.152" y="44.069" smashed="yes" rot="R90">
+<element name="C22" library="cyclops" package="0603" value=".1uF" x="73.152" y="44.069" smashed="yes" rot="R90">
 <attribute name="NAME" x="74.676" y="42.037" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
 <attribute name="VALUE" x="72.263" y="45.72" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
@@ -3296,7 +3296,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="78.352" y="61.087" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="79.749" y="61.087" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="R7" library="cyclops" package="0603" value="10k" x="74.81" y="59.182" smashed="yes" rot="R270">
+<element name="R8" library="cyclops" package="0603" value="10k" x="74.81" y="59.182" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="74.81" y="59.182" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="74.81" y="59.182" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="74.81" y="59.182" size="1.778" layer="27" rot="R270" display="off"/>
@@ -3328,10 +3328,10 @@ Modified: 2014.07.10
 <attribute name="NAME" x="11.049" y="67.691" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="15.621" y="73.914" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="L1" library="cyclops" package="0603" value="MPZ1608" x="51.689" y="43.18" smashed="yes" rot="R180">
+<element name="L6" library="cyclops" package="0603" value="MPZ1608" x="51.689" y="43.18" smashed="yes" rot="R180">
 <attribute name="NAME" x="48.641" y="43.688" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
 </element>
-<element name="L2" library="cyclops" package="0603" value="MPZ1608" x="51.689" y="45.72" smashed="yes" rot="R180">
+<element name="L5" library="cyclops" package="0603" value="MPZ1608" x="51.689" y="45.72" smashed="yes" rot="R180">
 <attribute name="NAME" x="48.641" y="46.228" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
 <attribute name="VALUE" x="53.721" y="48.133" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
@@ -3343,7 +3343,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="26.67" y="9.017" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="25.019" y="2.032" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="R17" library="cyclops" package="0603" value="5.6k DNP" x="40.894" y="60.706" smashed="yes" rot="R90">
+<element name="R19" library="cyclops" package="0603" value="5.6k DNP" x="40.894" y="60.706" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="40.894" y="60.706" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="40.894" y="60.706" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="40.894" y="60.706" size="1.778" layer="27" rot="R90" display="off"/>
@@ -3358,26 +3358,26 @@ Modified: 2014.07.10
 <attribute name="NAME" x="103.632" y="0.508" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="93.218" y="7.874" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="R11" library="cyclops" package="0603" value="1k" x="66.675" y="34.417" smashed="yes" rot="R90">
+<element name="R13" library="cyclops" package="0603" value="1k" x="66.675" y="34.417" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="64.135" y="35.814" size="0.8128" layer="27" font="vector" ratio="18" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="64.135" y="35.814" size="0.8128" layer="27" font="vector" ratio="18" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="64.135" y="35.814" size="0.8128" layer="27" font="vector" ratio="18" rot="R90" display="off"/>
 <attribute name="NAME" x="64.262" y="32.893" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
 <attribute name="VALUE" x="65.278" y="32.893" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="R12" library="cyclops" package="0603" value="1k" x="68.961" y="33.655" smashed="yes" rot="R180">
+<element name="R14" library="cyclops" package="0603" value="1k" x="68.961" y="33.655" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="67.564" y="30.988" size="0.8128" layer="27" font="vector" ratio="18" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="67.564" y="30.988" size="0.8128" layer="27" font="vector" ratio="18" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="67.564" y="30.988" size="0.8128" layer="27" font="vector" ratio="18" rot="R180" display="off"/>
 <attribute name="VALUE" x="70.485" y="33.655" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="R15" library="cyclops" package="0603" value="1k" x="68.961" y="35.179" smashed="yes">
+<element name="R17" library="cyclops" package="0603" value="1k" x="68.961" y="35.179" smashed="yes">
 <attribute name="MN" value="Panasonic" x="70.358" y="37.973" size="0.8128" layer="27" font="vector" ratio="18" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="70.358" y="37.973" size="0.8128" layer="27" font="vector" ratio="18" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="70.358" y="37.973" size="0.8128" layer="27" font="vector" ratio="18" display="off"/>
 <attribute name="VALUE" x="70.485" y="35.179" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="C19" library="cyclops" package="0603" value=".1uF" x="68.961" y="36.703" smashed="yes" rot="R180">
+<element name="C20" library="cyclops" package="0603" value=".1uF" x="68.961" y="36.703" smashed="yes" rot="R180">
 <attribute name="VALUE" x="67.691" y="38.1" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="U$30" library="open-ephys" package="OPEN_EPHYS_LOGO" value="OPEN_EPHYS_LOGO" x="14.478" y="37.338" smashed="yes"/>
@@ -3386,28 +3386,28 @@ Modified: 2014.07.10
 <attribute name="NAME" x="108.966" y="69.977" size="1.016" layer="26" font="vector" ratio="18" rot="MR0"/>
 <attribute name="VALUE" x="108.966" y="18.669" size="1.016" layer="28" font="vector" ratio="18" rot="MR0"/>
 </element>
-<element name="R16" library="cyclops" package="0603" value="1k" x="74.676" y="51.816" smashed="yes" rot="R180">
+<element name="R18" library="cyclops" package="0603" value="1k" x="74.676" y="51.816" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="72.771" y="51.181" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="72.771" y="51.181" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="72.771" y="51.181" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="76.581" y="53.213" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="76.581" y="52.197" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="R19" library="cyclops" package="0603" value="1k" x="74.676" y="49.911" smashed="yes">
+<element name="R21" library="cyclops" package="0603" value="1k" x="74.676" y="49.911" smashed="yes">
 <attribute name="MN" value="Panasonic" x="76.581" y="51.181" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="76.581" y="51.181" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="76.581" y="51.181" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="76.708" y="50.673" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="76.708" y="49.657" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="R20" library="cyclops" package="0603" value="220k" x="74.676" y="48.006" smashed="yes" rot="R180">
+<element name="R22" library="cyclops" package="0603" value="220k" x="74.676" y="48.006" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="74.676" y="48.006" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="74.676" y="48.006" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="74.676" y="48.006" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="76.581" y="48.387" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="76.581" y="47.371" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="R18" library="cyclops" package="0603" value="220k" x="28.575" y="11.811" smashed="yes" rot="R90">
+<element name="R20" library="cyclops" package="0603" value="220k" x="28.575" y="11.811" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="28.575" y="11.811" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="28.575" y="11.811" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="28.575" y="11.811" size="1.778" layer="27" rot="R90" display="off"/>
@@ -3438,11 +3438,11 @@ Modified: 2014.07.10
 <attribute name="VALUE" x="40.056" y="58.293" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 <attribute name="NAME" x="37.595" y="61.341" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="C5" library="cyclops" package="0603" value=".1uF" x="34.798" y="60.96" smashed="yes" rot="R270">
+<element name="C6" library="cyclops" package="0603" value=".1uF" x="34.798" y="60.96" smashed="yes" rot="R270">
 <attribute name="NAME" x="33.528" y="64.262" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="33.528" y="63.246" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="R24" library="cyclops" package="0603" value="1k" x="25.908" y="77.47" smashed="yes" rot="R180">
+<element name="R11" library="cyclops" package="0603" value="1k" x="25.908" y="77.47" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="24.638" y="60.96" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="24.638" y="60.96" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="24.638" y="60.96" size="1.778" layer="27" rot="R180" display="off"/>
@@ -3452,10 +3452,30 @@ Modified: 2014.07.10
 <element name="COMP" library="cyclops" package="LED-0603" value="LEDRED" x="27.178" y="78.867" smashed="yes" rot="R90">
 <attribute name="NAME" x="28.575" y="76.2" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="L4" library="cyclops" package="0603" value="MPZ1608" x="59.055" y="58.42"/>
-<element name="L5" library="cyclops" package="0603" value="MPZ1608" x="59.055" y="55.88"/>
-<element name="L6" library="cyclops" package="0603" value="MPZ1608" x="59.055" y="53.34"/>
-<element name="L7" library="cyclops" package="0603" value="MPZ1608" x="59.055" y="50.8"/>
+<element name="L3" library="cyclops" package="0603" value="MPZ1608" x="59.055" y="58.42" smashed="yes">
+<attribute name="NAME" x="60.071" y="59.817" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
+</element>
+<element name="L2" library="cyclops" package="0603" value="MPZ1608" x="59.055" y="55.88" smashed="yes">
+<attribute name="NAME" x="60.198" y="57.15" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
+</element>
+<element name="L1" library="cyclops" package="0603" value="MPZ1608" x="59.055" y="53.34" smashed="yes">
+<attribute name="NAME" x="60.071" y="54.61" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
+</element>
+<element name="L0" library="cyclops" package="0603" value="MPZ1608" x="59.055" y="50.8" smashed="yes">
+<attribute name="NAME" x="60.071" y="52.07" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
+<attribute name="VALUE" x="59.055" y="60.579" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+</element>
+<element name="R1" library="cyclops" package="0603" value="10k" x="66.421" y="54.991" smashed="yes" rot="R180">
+<attribute name="MN" value="Panasonic" x="66.421" y="54.991" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DK" value="PxxxxHTR-ND" x="66.421" y="54.991" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="ERJ-3EKFxxxxV" x="66.421" y="54.991" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="68.072" y="55.626" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="68.072" y="54.61" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+</element>
+<element name="C1" library="cyclops" package="0603" value=".1uF" x="62.103" y="54.229" smashed="yes" rot="R270">
+<attribute name="NAME" x="61.214" y="57.404" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="61.214" y="56.388" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+</element>
 </elements>
 <signals>
 <signal name="VFB">
@@ -3475,8 +3495,8 @@ Modified: 2014.07.10
 </signal>
 <signal name="N$15">
 <contactref element="U8" pad="9"/>
-<contactref element="R21" pad="1"/>
-<contactref element="R22" pad="1"/>
+<contactref element="R23" pad="1"/>
+<contactref element="R24" pad="1"/>
 <wire x1="73.6784" y1="40.767" x2="73.8054" y2="40.64" width="0.3048" layer="1"/>
 <wire x1="70.284" y1="40.64" x2="73.8054" y2="40.64" width="0.3048" layer="1"/>
 <wire x1="75.5326" y1="38.735" x2="73.8054" y2="40.4622" width="0.3048" layer="1"/>
@@ -3484,13 +3504,13 @@ Modified: 2014.07.10
 </signal>
 <signal name="N$20">
 <contactref element="U6" pad="5"/>
-<contactref element="R13" pad="2"/>
+<contactref element="R15" pad="2"/>
 <wire x1="71.2146" y1="23.114" x2="69.8176" y2="24.511" width="0.3048" layer="1"/>
 <wire x1="69.8176" y1="24.511" x2="69.8176" y2="25.1206" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$22">
 <contactref element="REF_ADJ" pad="2"/>
-<contactref element="R13" pad="1"/>
+<contactref element="R15" pad="1"/>
 <wire x1="69.4874" y1="23.114" x2="69.4344" y2="23.061" width="0.3048" layer="1"/>
 <wire x1="69.4344" y1="23.061" x2="65.525" y2="23.061" width="0.3048" layer="1"/>
 </signal>
@@ -3512,8 +3532,8 @@ Modified: 2014.07.10
 <vertex x="36.83" y="59.182"/>
 </polygon>
 <contactref element="U1" pad="1"/>
-<contactref element="C3" pad="1"/>
 <contactref element="C4" pad="1"/>
+<contactref element="C5" pad="1"/>
 <via x="27.813" y="58.42" extent="1-16" drill="0.3302"/>
 <via x="31.115" y="59.182" extent="1-16" drill="0.3302"/>
 <wire x1="29.33" y1="58.4454" x2="29.3046" y2="58.42" width="0.6096" layer="1"/>
@@ -3523,7 +3543,7 @@ Modified: 2014.07.10
 <wire x1="31.362" y1="58.0136" x2="31.3874" y2="58.039" width="0.6096" layer="1"/>
 <contactref element="LEONARDO" pad="5VA"/>
 <contactref element="U2" pad="1"/>
-<contactref element="C5" pad="1"/>
+<contactref element="C6" pad="1"/>
 <via x="33.528" y="61.722" extent="1-16" drill="0.3302"/>
 <wire x1="33.528" y1="61.722" x2="34.6456" y2="61.722" width="0.4064" layer="1"/>
 <wire x1="34.6456" y1="61.722" x2="34.798" y2="61.8236" width="0.4064" layer="1"/>
@@ -3563,9 +3583,9 @@ Modified: 2014.07.10
 </signal>
 <signal name="N$72">
 <contactref element="U3" pad="1"/>
-<contactref element="R6" pad="2"/>
-<contactref element="R5" pad="1"/>
-<contactref element="C8" pad="+"/>
+<contactref element="R7" pad="2"/>
+<contactref element="R6" pad="1"/>
+<contactref element="C9" pad="+"/>
 <wire x1="88.011" y1="28.9744" x2="88.011" y2="27.1596" width="0.6096" layer="1"/>
 <wire x1="91.1155" y1="26.2128" x2="90.3732" y2="26.2128" width="0.6096" layer="1"/>
 <wire x1="90.3732" y1="26.2128" x2="89.408" y2="27.178" width="0.6096" layer="1"/>
@@ -3630,7 +3650,7 @@ Modified: 2014.07.10
 </signal>
 <signal name="DACA">
 <contactref element="U1" pad="8"/>
-<contactref element="R1" pad="2"/>
+<contactref element="R2" pad="2"/>
 <contactref element="DAC/VCTL" pad="1"/>
 <wire x1="38.1184" y1="68.834" x2="23.749" y2="68.834" width="0.3048" layer="1"/>
 <wire x1="23.749" y1="68.834" x2="22.479" y2="67.564" width="0.3048" layer="1"/>
@@ -3650,7 +3670,7 @@ Modified: 2014.07.10
 </signal>
 <signal name="REF2.5">
 <contactref element="U1" pad="6"/>
-<contactref element="C2" pad="1"/>
+<contactref element="C3" pad="1"/>
 <contactref element="U6" pad="4"/>
 <contactref element="REF_ADJ" pad="1"/>
 <contactref element="REF2.1" pad="TP"/>
@@ -3692,7 +3712,7 @@ Modified: 2014.07.10
 <wire x1="57.404" y1="43.307" x2="58.42" y2="44.323" width="0.3048" layer="16"/>
 <wire x1="58.42" y1="44.323" x2="58.674" y2="44.323" width="0.3048" layer="16"/>
 <via x="58.674" y="44.323" extent="1-16" drill="0.3302"/>
-<contactref element="R18" pad="1"/>
+<contactref element="R20" pad="1"/>
 <wire x1="58.674" y1="44.323" x2="60.452" y2="44.323" width="0.3048" layer="1"/>
 <wire x1="60.452" y1="44.323" x2="60.706" y2="44.069" width="0.3048" layer="1"/>
 <wire x1="60.706" y1="44.069" x2="64.703" y2="44.069" width="0.3048" layer="1"/>
@@ -3716,8 +3736,8 @@ Modified: 2014.07.10
 </signal>
 <signal name="VI">
 <contactref element="U8" pad="8"/>
-<contactref element="R21" pad="2"/>
-<contactref element="R2" pad="2"/>
+<contactref element="R23" pad="2"/>
+<contactref element="R3" pad="2"/>
 <contactref element="VI" pad="1"/>
 <wire x1="69.596" y1="63.6016" x2="69.596" y2="67.564" width="0.3048" layer="1"/>
 <wire x1="69.596" y1="67.564" x2="71.374" y2="69.342" width="0.3048" layer="1"/>
@@ -3737,26 +3757,16 @@ Modified: 2014.07.10
 <wire x1="69.088" y1="39.37" x2="68.58" y2="39.878" width="0.3048" layer="1"/>
 <wire x1="68.58" y1="39.878" x2="68.58" y2="47.371" width="0.3048" layer="15"/>
 <wire x1="68.58" y1="47.371" x2="71.501" y2="50.292" width="0.3048" layer="1"/>
-<wire x1="71.501" y1="50.292" x2="71.501" y2="54.61" width="0.3048" layer="1"/>
-<wire x1="71.501" y1="54.61" x2="71.501" y2="56.642" width="0.3048" layer="1"/>
+<wire x1="71.501" y1="50.292" x2="71.501" y2="54.864" width="0.3048" layer="1"/>
+<wire x1="71.501" y1="54.991" x2="71.501" y2="56.642" width="0.3048" layer="1"/>
 <wire x1="71.501" y1="56.642" x2="70.739" y2="57.404" width="0.3048" layer="1"/>
 <via x="68.58" y="39.878" extent="1-16" drill="0.3302"/>
 <via x="68.58" y="47.371" extent="1-16" drill="0.3302"/>
 <wire x1="70.284" y1="39.37" x2="70.919" y2="38.735" width="0.3048" layer="1"/>
 <wire x1="70.919" y1="38.735" x2="73.8054" y2="38.735" width="0.3048" layer="1"/>
-<contactref element="L4" pad="2"/>
-<contactref element="L5" pad="2"/>
-<contactref element="L6" pad="2"/>
-<contactref element="L7" pad="2"/>
-<wire x1="59.9186" y1="58.42" x2="59.9186" y2="55.88" width="0.3048" layer="1"/>
-<wire x1="59.9186" y1="55.88" x2="59.9186" y2="53.34" width="0.3048" layer="1"/>
-<wire x1="59.9186" y1="53.34" x2="59.9186" y2="50.8" width="0.3048" layer="1"/>
-<wire x1="59.9186" y1="58.42" x2="59.944" y2="58.3946" width="0.3048" layer="1"/>
-<wire x1="59.944" y1="58.3946" x2="59.944" y2="54.61" width="0.3048" layer="1"/>
-<wire x1="59.944" y1="54.61" x2="65.659" y2="54.61" width="0.3048" layer="1"/>
-<via x="65.659" y="54.61" extent="1-16" drill="0.3302" diameter="0.3302"/>
-<wire x1="65.659" y1="54.61" x2="71.501" y2="54.61" width="0.3048" layer="16"/>
-<via x="71.501" y="54.61" extent="1-16" drill="0.3302" diameter="0.3302"/>
+<contactref element="R1" pad="1"/>
+<wire x1="67.2846" y1="54.991" x2="71.501" y2="54.991" width="0.3048" layer="1"/>
+<wire x1="71.501" y1="54.991" x2="71.501" y2="54.864" width="0.3048" layer="1"/>
 </signal>
 <signal name="_VREF">
 <contactref element="U8" pad="5"/>
@@ -3774,7 +3784,7 @@ Modified: 2014.07.10
 <wire x1="67.818" y1="44.45" x2="67.691" y2="44.323" width="0.3048" layer="1"/>
 <contactref element="GAIN" pad="2"/>
 <wire x1="60.325" y1="62.611" x2="66.421" y2="56.515" width="0.3048" layer="1"/>
-<contactref element="R20" pad="2"/>
+<contactref element="R22" pad="2"/>
 <wire x1="73.8124" y1="48.006" x2="72.263" y2="46.4566" width="0.3048" layer="1"/>
 <wire x1="72.263" y1="46.4566" x2="72.263" y2="44.958" width="0.3048" layer="1"/>
 <wire x1="72.263" y1="44.958" x2="71.755" y2="44.45" width="0.3048" layer="1"/>
@@ -3792,7 +3802,7 @@ Modified: 2014.07.10
 </signal>
 <signal name="VCTL">
 <contactref element="S1" pad="2"/>
-<contactref element="R17" pad="2"/>
+<contactref element="R19" pad="2"/>
 <wire x1="50.167" y1="73.277" x2="50.167" y2="72.731" width="0.3048" layer="1"/>
 <contactref element="U2" pad="6"/>
 <wire x1="40.894" y1="61.5696" x2="50.167" y2="70.8426" width="0.3048" layer="1"/>
@@ -3802,42 +3812,42 @@ Modified: 2014.07.10
 </signal>
 <signal name="N$6">
 <contactref element="REF_ADJ" pad="3"/>
-<contactref element="R14" pad="2"/>
+<contactref element="R16" pad="2"/>
 <wire x1="64.255" y1="27.9654" x2="64.255" y2="25.961" width="0.3048" layer="1"/>
 </signal>
 <signal name="GND">
-<contactref element="C8" pad="-"/>
-<contactref element="R6" pad="1"/>
-<contactref element="C11" pad="-"/>
+<contactref element="C9" pad="-"/>
+<contactref element="R7" pad="1"/>
 <contactref element="C12" pad="-"/>
-<contactref element="C6" pad="-"/>
-<contactref element="C2" pad="2"/>
+<contactref element="C13" pad="-"/>
+<contactref element="C7" pad="-"/>
+<contactref element="C3" pad="2"/>
 <contactref element="U6" pad="2"/>
-<contactref element="C15" pad="2"/>
-<contactref element="C17" pad="2"/>
+<contactref element="C16" pad="2"/>
+<contactref element="C18" pad="2"/>
 <contactref element="RSENSE" pad="1"/>
 <contactref element="U7" pad="4"/>
 <contactref element="D3" pad="A"/>
-<contactref element="C18" pad="2"/>
-<contactref element="C16" pad="2"/>
-<contactref element="R14" pad="1"/>
-<contactref element="C10" pad="-"/>
-<contactref element="C1" pad="2"/>
+<contactref element="C19" pad="2"/>
+<contactref element="C17" pad="2"/>
+<contactref element="R16" pad="1"/>
+<contactref element="C11" pad="-"/>
+<contactref element="C2" pad="2"/>
 <contactref element="U9" pad="3"/>
 <contactref element="VAUX_OUT" pad="3"/>
 <contactref element="VAUX_OUT" pad="2"/>
 <contactref element="PWR" pad="C"/>
 <contactref element="U4" pad="2"/>
-<contactref element="R4" pad="2"/>
-<contactref element="C9" pad="2"/>
-<contactref element="C7" pad="2"/>
+<contactref element="R5" pad="2"/>
+<contactref element="C10" pad="2"/>
+<contactref element="C8" pad="2"/>
+<contactref element="C15" pad="+"/>
+<contactref element="R12" pad="2"/>
 <contactref element="C14" pad="+"/>
-<contactref element="R10" pad="2"/>
-<contactref element="C13" pad="+"/>
-<contactref element="C20" pad="2"/>
-<contactref element="C22" pad="2"/>
 <contactref element="C21" pad="2"/>
 <contactref element="C23" pad="2"/>
+<contactref element="C22" pad="2"/>
+<contactref element="C24" pad="2"/>
 <contactref element="Q1" pad="E"/>
 <contactref element="VI" pad="3"/>
 <contactref element="VI" pad="2"/>
@@ -4029,34 +4039,34 @@ Modified: 2014.07.10
 <vertex x="117.983" y="57.785"/>
 <vertex x="117.983" y="62.865"/>
 </polygon>
-<contactref element="C4" pad="2"/>
+<contactref element="C5" pad="2"/>
 <via x="29.21" y="55.118" extent="1-16" drill="0.3302" diameter="0.3302"/>
 <wire x1="29.33" y1="56.3626" x2="29.21" y2="56.2426" width="0.6096" layer="1"/>
 <wire x1="29.21" y1="56.2426" x2="29.21" y2="55.118" width="0.6096" layer="1"/>
-<contactref element="C3" pad="2"/>
+<contactref element="C4" pad="2"/>
 <via x="30.988" y="55.118" extent="1-16" drill="0.3302"/>
 <wire x1="30.988" y1="55.118" x2="31.362" y2="55.492" width="0.6096" layer="1"/>
 <wire x1="31.362" y1="55.492" x2="31.362" y2="56.2864" width="0.6096" layer="1"/>
 <contactref element="U1" pad="7"/>
 <via x="36.703" y="56.007" extent="1-16" drill="0.6"/>
 <contactref element="LEONARDO" pad="GND1"/>
-<contactref element="L1" pad="2"/>
+<contactref element="L6" pad="2"/>
 <via x="49.022" y="43.18" extent="1-16" drill="0.9"/>
 <wire x1="49.022" y1="43.18" x2="50.8254" y2="43.18" width="1.016" layer="1"/>
-<contactref element="R11" pad="2"/>
-<contactref element="C19" pad="2"/>
+<contactref element="R13" pad="2"/>
+<contactref element="C20" pad="2"/>
 <via x="66.929" y="36.703" extent="1-16" drill="0.3302"/>
 <wire x1="68.0974" y1="36.703" x2="66.929" y2="36.703" width="0.3048" layer="1"/>
 <wire x1="66.675" y1="35.2806" x2="66.675" y2="36.449" width="0.3048" layer="1"/>
 <wire x1="66.675" y1="36.449" x2="66.929" y2="36.703" width="0.3048" layer="1"/>
-<contactref element="R22" pad="2"/>
+<contactref element="R24" pad="2"/>
 <wire x1="73.653" y1="24.9174" x2="73.653" y2="24.899" width="0.3048" layer="1"/>
 <wire x1="73.653" y1="24.899" x2="73.66" y2="24.892" width="0.3048" layer="1"/>
 <wire x1="75.431" y1="29.9466" x2="75.431" y2="29.965" width="0.3048" layer="1"/>
 <wire x1="75.431" y1="29.965" x2="75.438" y2="29.972" width="0.3048" layer="1"/>
 <wire x1="75.5326" y1="40.64" x2="76.581" y2="40.64" width="0.4064" layer="1"/>
 <via x="121.158" y="59.182" extent="1-16" drill="1.5" shape="octagon"/>
-<contactref element="R19" pad="2"/>
+<contactref element="R21" pad="2"/>
 <via x="76.581" y="49.911" extent="1-16" drill="0.3302"/>
 <wire x1="75.5396" y1="49.911" x2="76.581" y2="49.911" width="0.3048" layer="1"/>
 <wire x1="42.037" y1="20.701" x2="43.933" y2="20.701" width="1.27" layer="1"/>
@@ -4066,7 +4076,7 @@ Modified: 2014.07.10
 <contactref element="TRIG" pad="3"/>
 <contactref element="TRIG" pad="2"/>
 <contactref element="U2" pad="2"/>
-<contactref element="C5" pad="2"/>
+<contactref element="C6" pad="2"/>
 <via x="33.528" y="59.944" extent="1-16" drill="0.3302"/>
 <wire x1="33.528" y1="59.944" x2="34.6456" y2="59.944" width="0.4064" layer="1"/>
 <wire x1="34.6456" y1="59.944" x2="34.798" y2="60.0964" width="0.4064" layer="1"/>
@@ -4099,10 +4109,13 @@ Modified: 2014.07.10
 <wire x1="29.33" y1="56.3626" x2="29.2354" y2="56.3626" width="0.4064" layer="1"/>
 <wire x1="29.2354" y1="56.3626" x2="29.21" y2="56.388" width="0.4064" layer="1"/>
 <contactref element="LED_PD" pad="9"/>
+<contactref element="C1" pad="2"/>
+<via x="62.103" y="52.324" extent="1-16" drill="0.3302"/>
+<wire x1="62.103" y1="53.3654" x2="62.103" y2="52.324" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$1">
-<contactref element="R1" pad="1"/>
-<contactref element="C1" pad="1"/>
+<contactref element="R2" pad="1"/>
+<contactref element="C2" pad="1"/>
 <wire x1="42.8936" y1="57.277" x2="44.5954" y2="57.277" width="0.254" layer="1"/>
 </signal>
 <signal name="N$34">
@@ -4115,7 +4128,7 @@ Modified: 2014.07.10
 <signal name="N$10">
 <contactref element="U9" pad="6"/>
 <contactref element="U9" pad="4"/>
-<contactref element="R23" pad="1"/>
+<contactref element="R25" pad="1"/>
 <wire x1="88.73" y1="46.282" x2="89.481" y2="46.282" width="0.4064" layer="1"/>
 <wire x1="89.481" y1="46.282" x2="89.662" y2="46.101" width="0.4064" layer="1"/>
 <wire x1="89.662" y1="46.101" x2="89.662" y2="44.577" width="0.4064" layer="1"/>
@@ -4127,7 +4140,7 @@ Modified: 2014.07.10
 </signal>
 <signal name="N$13">
 <contactref element="Q2" pad="G"/>
-<contactref element="R23" pad="2"/>
+<contactref element="R25" pad="2"/>
 <contactref element="VGATE" pad="TP"/>
 <wire x1="86.6464" y1="42.545" x2="85.0576" y2="42.545" width="0.6096" layer="1"/>
 <wire x1="86.6464" y1="42.545" x2="87.9164" y2="41.275" width="0.3048" layer="1"/>
@@ -4140,8 +4153,8 @@ Modified: 2014.07.10
 </signal>
 <signal name="REF5.0">
 <contactref element="S1" pad="1"/>
-<contactref element="R15" pad="2"/>
-<contactref element="C19" pad="1"/>
+<contactref element="R17" pad="2"/>
+<contactref element="C20" pad="1"/>
 <contactref element="REF5.1" pad="TP"/>
 <wire x1="59.563" y1="61.976" x2="61.214" y2="60.325" width="0.3048" layer="1"/>
 <wire x1="69.8246" y1="35.179" x2="69.8246" y2="36.703" width="0.3048" layer="1"/>
@@ -4181,7 +4194,7 @@ Modified: 2014.07.10
 <wire x1="68.453" y1="38.227" x2="67.31" y2="39.37" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$3">
-<contactref element="R8" pad="1"/>
+<contactref element="R9" pad="1"/>
 <contactref element="PWR" pad="A"/>
 <wire x1="8.9916" y1="78.867" x2="8.9916" y2="77.47" width="0.254" layer="1"/>
 </signal>
@@ -4203,12 +4216,12 @@ Modified: 2014.07.10
 <wire x1="73.152" y1="57.023" x2="76.581" y2="57.023" width="0.3048" layer="1"/>
 <wire x1="76.581" y1="57.023" x2="77.851" y2="58.293" width="0.3048" layer="1"/>
 <wire x1="77.851" y1="58.293" x2="77.851" y2="66.802" width="0.3048" layer="1"/>
-<contactref element="R16" pad="2"/>
+<contactref element="R18" pad="2"/>
 <wire x1="73.8124" y1="51.816" x2="72.136" y2="51.816" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$5">
-<contactref element="R3" pad="2"/>
-<contactref element="R4" pad="1"/>
+<contactref element="R4" pad="2"/>
+<contactref element="R5" pad="1"/>
 <contactref element="U4" pad="4"/>
 <wire x1="65.024" y1="63.6016" x2="66.7512" y2="61.8744" width="0.254" layer="1"/>
 <wire x1="66.7512" y1="61.8744" x2="67.31" y2="61.8744" width="0.254" layer="1"/>
@@ -4220,24 +4233,24 @@ Modified: 2014.07.10
 </signal>
 <signal name="COMP+">
 <contactref element="U4" pad="3"/>
-<contactref element="R2" pad="1"/>
-<contactref element="C7" pad="1"/>
+<contactref element="R3" pad="1"/>
+<contactref element="C8" pad="1"/>
 <wire x1="72.0414" y1="60.1218" x2="71.882" y2="60.2812" width="0.254" layer="1"/>
 <wire x1="71.882" y1="60.2812" x2="71.882" y2="61.8744" width="0.254" layer="1"/>
 <wire x1="69.596" y1="61.8744" x2="71.882" y2="61.8744" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$12">
-<contactref element="R10" pad="1"/>
+<contactref element="R12" pad="1"/>
 <contactref element="U5" pad="1"/>
 <wire x1="103.378" y1="35.4584" x2="105.9872" y2="35.4584" width="0.6096" layer="1"/>
 <wire x1="105.9872" y1="35.4584" x2="106.2412" y2="35.2044" width="0.6096" layer="1"/>
 </signal>
 <signal name="-1.25V">
 <contactref element="U5" pad="3"/>
-<contactref element="C14" pad="-"/>
+<contactref element="C15" pad="-"/>
 <contactref element="U8" pad="11"/>
-<contactref element="C23" pad="1"/>
-<contactref element="C21" pad="1"/>
+<contactref element="C24" pad="1"/>
+<contactref element="C22" pad="1"/>
 <wire x1="106.433" y1="28.067" x2="106.2412" y2="28.067" width="0.6096" layer="1"/>
 <wire x1="106.2412" y1="28.067" x2="106.2412" y2="30.5816" width="0.6096" layer="1"/>
 <wire x1="106.934" y1="30.607" x2="106.2666" y2="30.607" width="0.6096" layer="1"/>
@@ -4259,14 +4272,14 @@ Modified: 2014.07.10
 <wire x1="73.025" y1="43.2816" x2="73.152" y2="43.2054" width="0.6096" layer="1"/>
 <wire x1="70.284" y1="43.18" x2="73.025" y2="43.18" width="0.4064" layer="1"/>
 <wire x1="73.025" y1="43.18" x2="73.152" y2="43.2054" width="0.4064" layer="1"/>
-<contactref element="R20" pad="1"/>
+<contactref element="R22" pad="1"/>
 <wire x1="75.5396" y1="48.006" x2="76.2" y2="48.006" width="0.3048" layer="1"/>
 <wire x1="76.2" y1="48.006" x2="76.962" y2="47.244" width="0.3048" layer="1"/>
 <wire x1="76.962" y1="47.244" x2="76.962" y2="43.307" width="0.3048" layer="1"/>
 </signal>
 <signal name="-6V">
 <contactref element="U5" pad="4"/>
-<contactref element="C13" pad="-"/>
+<contactref element="C14" pad="-"/>
 <contactref element="PWR_DIST" pad="9"/>
 <contactref element="PWR_DIST" pad="11"/>
 <contactref element="PWR_DIST" pad="12"/>
@@ -4327,7 +4340,7 @@ Modified: 2014.07.10
 <signal name="+15V" class="1">
 <contactref element="U3" pad="3"/>
 <contactref element="D1" pad="C"/>
-<contactref element="C6" pad="+"/>
+<contactref element="C7" pad="+"/>
 <contactref element="PWR_IN" pad="1"/>
 <wire x1="96.266" y1="26.1423" x2="96.1955" y2="26.2128" width="1.016" layer="1"/>
 <contactref element="PWR_DIST" pad="1"/>
@@ -4389,7 +4402,7 @@ Modified: 2014.07.10
 <wire x1="83.439" y1="6.477" x2="83.439" y2="8.763" width="2.54" layer="1"/>
 </signal>
 <signal name="N$2">
-<contactref element="R9" pad="1"/>
+<contactref element="R10" pad="1"/>
 <contactref element="OC" pad="A"/>
 <wire x1="43.7896" y1="77.47" x2="43.7896" y2="78.867" width="0.3048" layer="1"/>
 </signal>
@@ -4409,12 +4422,12 @@ Modified: 2014.07.10
 </signal>
 <signal name="N$27">
 <contactref element="U4" pad="1"/>
-<contactref element="R7" pad="2"/>
+<contactref element="R8" pad="2"/>
 <wire x1="72.0414" y1="58.2422" x2="74.7338" y2="58.2422" width="0.3048" layer="1"/>
 <wire x1="74.7338" y1="58.2422" x2="74.81" y2="58.3184" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$28">
-<contactref element="R7" pad="1"/>
+<contactref element="R8" pad="1"/>
 <contactref element="Q1" pad="B"/>
 <wire x1="74.81" y1="60.0456" x2="74.81" y2="61.831" width="0.3048" layer="1"/>
 <wire x1="74.81" y1="61.831" x2="74.742" y2="61.899" width="0.3048" layer="1"/>
@@ -4461,7 +4474,7 @@ Modified: 2014.07.10
 </polygon>
 </signal>
 <signal name="N$14">
-<contactref element="L2" pad="1"/>
+<contactref element="L5" pad="1"/>
 <contactref element="LEONARDO" pad="VIN"/>
 <wire x1="54.984" y1="45.72" x2="52.5526" y2="45.72" width="1.016" layer="1"/>
 </signal>
@@ -4471,27 +4484,27 @@ Modified: 2014.07.10
 <contactref element="U3" pad="4"/>
 <contactref element="U3" pad="2"/>
 <contactref element="D1" pad="A"/>
-<contactref element="R5" pad="2"/>
-<contactref element="C11" pad="+"/>
+<contactref element="R6" pad="2"/>
 <contactref element="C12" pad="+"/>
+<contactref element="C13" pad="+"/>
 <contactref element="U6" pad="3"/>
-<contactref element="C15" pad="1"/>
-<contactref element="C17" pad="1"/>
+<contactref element="C16" pad="1"/>
+<contactref element="C18" pad="1"/>
 <contactref element="U8" pad="4"/>
 <contactref element="U7" pad="7"/>
 <contactref element="D2" pad="C"/>
-<contactref element="C18" pad="1"/>
-<contactref element="C16" pad="1"/>
-<contactref element="C10" pad="+"/>
+<contactref element="C19" pad="1"/>
+<contactref element="C17" pad="1"/>
+<contactref element="C11" pad="+"/>
 <contactref element="U9" pad="1"/>
-<contactref element="R8" pad="2"/>
-<contactref element="Q2" pad="D"/>
-<contactref element="C22" pad="1"/>
-<contactref element="C20" pad="1"/>
-<contactref element="R3" pad="1"/>
-<contactref element="U4" pad="5"/>
-<contactref element="C9" pad="1"/>
 <contactref element="R9" pad="2"/>
+<contactref element="Q2" pad="D"/>
+<contactref element="C23" pad="1"/>
+<contactref element="C21" pad="1"/>
+<contactref element="R4" pad="1"/>
+<contactref element="U4" pad="5"/>
+<contactref element="C10" pad="1"/>
+<contactref element="R10" pad="2"/>
 <polygon width="0.254" layer="16" thermals="no" rank="2">
 <vertex x="62.992" y="68.072"/>
 <vertex x="108.712" y="68.072"/>
@@ -4594,7 +4607,7 @@ Modified: 2014.07.10
 <vertex x="8.636" y="63.246"/>
 <vertex x="8.636" y="65.278"/>
 </polygon>
-<contactref element="L2" pad="2"/>
+<contactref element="L5" pad="2"/>
 <via x="6.223" y="77.47" extent="1-16" drill="0.3302"/>
 <wire x1="6.223" y1="77.47" x2="7.2644" y2="77.47" width="0.254" layer="1"/>
 <via x="90.297" y="32.893" extent="1-16" drill="0.3302"/>
@@ -4926,7 +4939,7 @@ Modified: 2014.07.10
 <wire x1="73.406" y1="31.877" x2="73.406" y2="31.8586" width="0.3048" layer="1"/>
 <wire x1="73.406" y1="31.8586" x2="73.399" y2="31.8516" width="0.3048" layer="1"/>
 <via x="121.158" y="64.643" extent="1-16" drill="1.5" shape="octagon"/>
-<contactref element="R18" pad="2"/>
+<contactref element="R20" pad="2"/>
 <wire x1="40.894" y1="77.47" x2="41.155" y2="77.463" width="0.3048" layer="1"/>
 <wire x1="41.155" y1="77.463" x2="42.0624" y2="77.47" width="0.3048" layer="1"/>
 <wire x1="88.011" y1="30.7016" x2="88.011" y2="31.877" width="0.6096" layer="1"/>
@@ -4965,7 +4978,7 @@ Modified: 2014.07.10
 </signal>
 <signal name="VCTL_PROTECT">
 <contactref element="GAIN" pad="3"/>
-<contactref element="R17" pad="1"/>
+<contactref element="R19" pad="1"/>
 <contactref element="U2" pad="5"/>
 <wire x1="38.438" y1="59.69" x2="37.846" y2="59.69" width="0.3048" layer="1"/>
 <wire x1="37.846" y1="59.69" x2="37.338" y2="60.198" width="0.3048" layer="1"/>
@@ -5029,8 +5042,8 @@ Modified: 2014.07.10
 <signal name="N$17">
 </signal>
 <signal name="VREFA2X1">
-<contactref element="R12" pad="1"/>
-<contactref element="R15" pad="1"/>
+<contactref element="R14" pad="1"/>
+<contactref element="R17" pad="1"/>
 <contactref element="U7" pad="6"/>
 <wire x1="71.2654" y1="30.6578" x2="70.0786" y2="30.6578" width="0.3048" layer="1"/>
 <wire x1="70.0786" y1="30.6578" x2="69.8246" y2="30.9118" width="0.3048" layer="1"/>
@@ -5039,8 +5052,8 @@ Modified: 2014.07.10
 <wire x1="69.6214" y1="33.655" x2="68.0974" y2="35.179" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$18">
-<contactref element="R12" pad="2"/>
-<contactref element="R11" pad="1"/>
+<contactref element="R14" pad="2"/>
+<contactref element="R13" pad="1"/>
 <contactref element="U7" pad="2"/>
 <wire x1="66.8966" y1="31.3182" x2="67.818" y2="31.3182" width="0.3048" layer="1"/>
 <wire x1="67.818" y1="31.3182" x2="68.072" y2="31.5722" width="0.3048" layer="1"/>
@@ -5051,8 +5064,8 @@ Modified: 2014.07.10
 <wire x1="67.9958" y1="33.5534" x2="68.0974" y2="33.655" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$8">
-<contactref element="R16" pad="1"/>
-<contactref element="R19" pad="1"/>
+<contactref element="R18" pad="1"/>
+<contactref element="R21" pad="1"/>
 <contactref element="U8" pad="13"/>
 <wire x1="70.284" y1="45.72" x2="71.501" y2="45.72" width="0.3048" layer="1"/>
 <wire x1="71.501" y1="45.72" x2="71.755" y2="45.974" width="0.3048" layer="1"/>
@@ -5100,22 +5113,22 @@ Modified: 2014.07.10
 </signal>
 <signal name="N$7">
 <contactref element="LEONARDO" pad="A0"/>
-<contactref element="L7" pad="1"/>
+<contactref element="L0" pad="1"/>
 <wire x1="58.1914" y1="50.8" x2="54.984" y2="50.8" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$19">
 <contactref element="LEONARDO" pad="A1"/>
-<contactref element="L6" pad="1"/>
+<contactref element="L1" pad="1"/>
 <wire x1="54.984" y1="53.34" x2="58.1914" y2="53.34" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$21">
 <contactref element="LEONARDO" pad="A2"/>
-<contactref element="L5" pad="1"/>
+<contactref element="L2" pad="1"/>
 <wire x1="58.1914" y1="55.88" x2="54.984" y2="55.88" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$23">
 <contactref element="LEONARDO" pad="A3"/>
-<contactref element="L4" pad="1"/>
+<contactref element="L3" pad="1"/>
 <wire x1="54.984" y1="58.42" x2="58.1914" y2="58.42" width="0.3048" layer="1"/>
 </signal>
 <signal name="POT">
@@ -5134,12 +5147,12 @@ Modified: 2014.07.10
 <wire x1="28.448" y1="59.944" x2="31.75" y2="59.944" width="0.1778" layer="16"/>
 </signal>
 <signal name="N$16">
-<contactref element="R24" pad="1"/>
+<contactref element="R11" pad="1"/>
 <contactref element="COMP" pad="A"/>
 <wire x1="26.7716" y1="77.47" x2="26.7716" y2="78.867" width="0.3048" layer="1"/>
 </signal>
 <signal name="OC_COMP">
-<contactref element="R24" pad="2"/>
+<contactref element="R11" pad="2"/>
 <contactref element="LEONARDO" pad="D2"/>
 <wire x1="25.0444" y1="77.47" x2="23.876" y2="77.47" width="0.3048" layer="1"/>
 <wire x1="23.876" y1="77.47" x2="22.098" y2="79.248" width="0.3048" layer="16"/>
@@ -5152,7 +5165,7 @@ Modified: 2014.07.10
 </signal>
 <signal name="KEEPOUT_GND">
 <contactref element="LEONARDO" pad="GND3"/>
-<contactref element="L1" pad="1"/>
+<contactref element="L6" pad="1"/>
 <contactref element="LEONARDO" pad="GND2"/>
 <wire x1="54.984" y1="43.18" x2="52.5526" y2="43.18" width="1.016" layer="1"/>
 <polygon width="0.4064" layer="2" isolate="0.381" thermals="no">
@@ -5195,6 +5208,24 @@ Modified: 2014.07.10
 <wire x1="37.3888" y1="0.8382" x2="76.5302" y2="0.8382" width="0.1778" layer="1"/>
 <wire x1="76.5302" y1="0.8382" x2="78.359" y2="2.667" width="0.1778" layer="1"/>
 <wire x1="78.359" y1="2.667" x2="78.359" y2="8.763" width="0.1778" layer="1"/>
+</signal>
+<signal name="N$11">
+<contactref element="L3" pad="2"/>
+<contactref element="R1" pad="2"/>
+<contactref element="C1" pad="1"/>
+<contactref element="L0" pad="2"/>
+<contactref element="L1" pad="2"/>
+<contactref element="L2" pad="2"/>
+<wire x1="65.5574" y1="54.991" x2="62.103" y2="54.991" width="0.3048" layer="1"/>
+<wire x1="62.103" y1="54.991" x2="62.103" y2="55.0926" width="0.3048" layer="1"/>
+<wire x1="62.103" y1="55.0926" x2="59.944" y2="55.0926" width="0.3048" layer="1"/>
+<wire x1="59.944" y1="55.0926" x2="59.944" y2="55.118" width="0.3048" layer="1"/>
+<wire x1="59.944" y1="55.118" x2="59.9186" y2="55.118" width="0.3048" layer="1"/>
+<wire x1="59.9186" y1="55.118" x2="59.9186" y2="55.88" width="0.3048" layer="1"/>
+<wire x1="59.9186" y1="55.88" x2="59.9186" y2="58.42" width="0.3048" layer="1"/>
+<wire x1="59.9186" y1="55.88" x2="59.9186" y2="53.467" width="0.3048" layer="1"/>
+<wire x1="59.9186" y1="53.34" x2="59.9186" y2="50.8" width="0.3048" layer="1"/>
+<wire x1="59.9186" y1="53.34" x2="59.9186" y2="53.467" width="0.3048" layer="1"/>
 </signal>
 </signals>
 <errors>
@@ -5326,133 +5357,133 @@ Modified: 2014.07.10
 <approved hash="19,1,949d2a0323709b2e"/>
 <approved hash="19,1,904510b0f2b3e6ca"/>
 <approved hash="19,1,fd041cf81086f17a"/>
+<approved hash="19,1,f7a646da3a028b7e"/>
 <approved hash="5,1,87b354b8ae05a956"/>
+<approved hash="19,1,efa6bcb2ec087e1b"/>
+<approved hash="5,1,305ed650afae4874"/>
 <approved hash="5,1,aa5a4c34305ad230"/>
 <approved hash="5,1,2c2fc22fbe1d59dd"/>
-<approved hash="5,1,305ed650afae4874"/>
-<approved hash="19,1,efa6bcb2ec087e1b"/>
-<approved hash="19,1,f7a646da3a028b7e"/>
-<approved hash="19,1,bda34edf4e08bd74"/>
 <approved hash="19,1,803b7347720a8176"/>
-<approved hash="19,1,d6939be716f31b85"/>
-<approved hash="19,1,bda74edb3206c17a"/>
-<approved hash="19,1,9321f03583834b95"/>
 <approved hash="19,1,bdbb4ec74282b1fe"/>
+<approved hash="19,1,d6939be716f31b85"/>
+<approved hash="19,1,bda34edf4e08bd74"/>
+<approved hash="19,1,bda74edb3206c17a"/>
 <approved hash="19,1,bd3f4e434a88b9f4"/>
-<approved hash="19,1,ea19eb1d6e09270f"/>
-<approved hash="19,1,bd3f4a434e88b9f4"/>
+<approved hash="19,1,9321f03583834b95"/>
 <approved hash="19,1,bda34adf4a08bd74"/>
-<approved hash="19,1,10ab6fbfbf79776f"/>
-<approved hash="19,1,bda74adb3606c17a"/>
-<approved hash="19,1,803b7747760a8176"/>
 <approved hash="19,1,bdbb4ac74682b1fe"/>
+<approved hash="19,1,bd3f4a434e88b9f4"/>
+<approved hash="19,1,bda74adb3606c17a"/>
+<approved hash="19,1,10ab6fbfbf79776f"/>
+<approved hash="19,1,ea19eb1d6e09270f"/>
+<approved hash="19,1,803b7747760a8176"/>
+<approved hash="19,1,c63a1f461e0ec772"/>
 <approved hash="19,1,fba622da5e02877e"/>
-<approved hash="19,1,61e15c9ac78b3af0"/>
 <approved hash="19,1,44557b4482fe1ce8"/>
+<approved hash="19,1,fba222de220cfb70"/>
 <approved hash="19,1,fb3e2242268cfff0"/>
 <approved hash="19,1,fbba22c62e86f7fa"/>
-<approved hash="19,1,c63a1f461e0ec772"/>
-<approved hash="19,1,fba222de220cfb70"/>
-<approved hash="19,1,51db4ecfd6742861"/>
+<approved hash="19,1,61e15c9ac78b3af0"/>
 <approved hash="19,1,463ddf41de0f4773"/>
+<approved hash="19,1,51db4ecfd6742861"/>
 <approved hash="19,1,7bbde2c1ee8777fb"/>
-<approved hash="19,1,7b39e245e68d7ff1"/>
 <approved hash="19,1,7ba1e2dd9e03077f"/>
-<approved hash="19,1,7ba5e2d9e20d7b71"/>
 <approved hash="19,1,b56ee81713004e7b"/>
-<approved hash="19,1,e545ba51fdf575e0"/>
-<approved hash="19,1,fda64ada36048178"/>
+<approved hash="19,1,7ba5e2d9e20d7b71"/>
+<approved hash="19,1,7b39e245e68d7ff1"/>
+<approved hash="19,1,c03a77467608c174"/>
 <approved hash="19,1,fda24ade4a0afd76"/>
-<approved hash="19,1,fd3e4a424e8af9f6"/>
 <approved hash="19,1,fdba4ac64680f1fc"/>
 <approved hash="19,1,c8f7418cc49985e2"/>
-<approved hash="19,1,c03a77467608c174"/>
+<approved hash="19,1,fda64ada36048178"/>
+<approved hash="19,1,e545ba51fdf575e0"/>
+<approved hash="19,1,fd3e4a424e8af9f6"/>
+<approved hash="19,1,fdb94ec54280f1fc"/>
+<approved hash="19,1,c03973457208c174"/>
 <approved hash="19,1,fd3d4e414a8af9f6"/>
 <approved hash="19,1,947e9908141c5968"/>
-<approved hash="19,1,fda14edd4e0afd76"/>
-<approved hash="19,1,fdb94ec54280f1fc"/>
-<approved hash="19,1,fda54ed932048178"/>
-<approved hash="19,1,c03973457208c174"/>
 <approved hash="19,1,9accf9d8a16c297a"/>
+<approved hash="19,1,fda54ed932048178"/>
+<approved hash="19,1,fda14edd4e0afd76"/>
+<approved hash="19,1,210bff4287155985"/>
+<approved hash="19,1,1062cbe9b30669ce"/>
 <approved hash="19,1,ab26700509e1de81"/>
 <approved hash="19,1,1676656374da46cc"/>
 <approved hash="19,1,779946e53a390b45"/>
-<approved hash="19,1,210bff4287155985"/>
-<approved hash="19,1,07214ff80a02f18f"/>
 <approved hash="19,1,ba5f61661cdcc334"/>
-<approved hash="19,1,1062cbe9b30669ce"/>
+<approved hash="19,1,07214ff80a02f18f"/>
 <approved hash="19,1,5c51fcd4814b55e2"/>
+<approved hash="19,1,c24956975fa5cdb9"/>
 <approved hash="19,1,c1e4ab38aee2c04e"/>
 <approved hash="19,1,c743539f5720c64c"/>
-<approved hash="19,1,cc45589953b2cdbe"/>
-<approved hash="19,1,c24956975fa5cdb9"/>
 <approved hash="19,1,5511199b759aaefe"/>
+<approved hash="19,1,cc45589953b2cdbe"/>
 <approved hash="19,1,c02754fd5179c365"/>
 <approved hash="19,1,c741539b5709c795"/>
+<approved hash="19,1,7031414d41ae70d2"/>
 <approved hash="19,1,7733464f499578e9"/>
 <approved hash="19,1,7741463d458e74f2"/>
 <approved hash="19,1,105461a09a04cc8f"/>
-<approved hash="19,1,773d46414b8a7af6"/>
-<approved hash="19,1,7031414d41ae70d2"/>
-<approved hash="19,1,8aa2bbdeba048b78"/>
 <approved hash="19,1,743b45474437754b"/>
+<approved hash="19,1,773d46414b8a7af6"/>
+<approved hash="19,1,8aa2bbdeba048b78"/>
 <approved hash="19,1,436fd46bc1df97d6"/>
-<approved hash="19,1,7c3c0540043f7d43"/>
-<approved hash="19,1,7f46063a05867cfa"/>
-<approved hash="19,1,7836014a01a678da"/>
 <approved hash="19,1,7f3a06460b8272fe"/>
-<approved hash="19,1,47e1f8ea24511a58"/>
-<approved hash="19,1,8c5407a61a822e08"/>
 <approved hash="19,1,82a5fbd9fa0c8370"/>
+<approved hash="19,1,7f46063a05867cfa"/>
+<approved hash="19,1,7c3c0540043f7d43"/>
+<approved hash="19,1,7836014a01a678da"/>
 <approved hash="19,1,7f340648099d70e1"/>
-<approved hash="19,1,88a103dd020c8970"/>
-<approved hash="19,1,6a1aff10b0af5ea3"/>
+<approved hash="19,1,8c5407a61a822e08"/>
+<approved hash="19,1,47e1f8ea24511a58"/>
+<approved hash="19,1,7542fe3efd8676fa"/>
 <approved hash="19,1,753efe42f38278fe"/>
 <approved hash="19,1,ea54cddcdf7cdd88"/>
 <approved hash="19,1,7530fe4cf19d7ae1"/>
+<approved hash="19,1,6a1aff10b0af5ea3"/>
 <approved hash="19,1,7232f94ef9a672da"/>
-<approved hash="19,1,7542fe3efd8676fa"/>
 <approved hash="19,1,7638fd44fc3f7743"/>
-<approved hash="19,1,9e55cfdeb3fbb701"/>
+<approved hash="19,1,88a103dd020c8970"/>
 <approved hash="19,1,c8a13fdd3e09c975"/>
-<approved hash="19,1,9e9c5b9667204d28"/>
+<approved hash="19,1,3232c54ec5a332df"/>
+<approved hash="19,1,3542c23ec18336ff"/>
+<approved hash="19,1,9e55cfdeb3fbb701"/>
 <approved hash="19,1,3530c24ccd983ae4"/>
 <approved hash="19,1,353ec242cf8738fb"/>
+<approved hash="19,1,9e9c5b9667204d28"/>
 <approved hash="19,1,3638c144c03a3746"/>
-<approved hash="19,1,3542c23ec18336ff"/>
-<approved hash="19,1,3232c54ec5a332df"/>
 <approved hash="19,1,bb3e4a42479bb6e7"/>
-<approved hash="19,1,46a1b7ddb6154769"/>
-<approved hash="19,1,b83849444826b95a"/>
-<approved hash="19,1,bb424a3e499fb8e3"/>
-<approved hash="19,1,e50bae1dfbbac1b3"/>
-<approved hash="19,1,dc49e5d590717291"/>
 <approved hash="19,1,bc324d4e4dbfbcc3"/>
+<approved hash="19,1,dc49e5d590717291"/>
+<approved hash="19,1,bb424a3e499fb8e3"/>
+<approved hash="19,1,b83849444826b95a"/>
+<approved hash="19,1,46a1b7ddb6154769"/>
+<approved hash="19,1,e50bae1dfbbac1b3"/>
 <approved hash="19,1,bb304a4c4584b4f8"/>
-<approved hash="19,1,86a487d8860c8770"/>
-<approved hash="19,1,7b3b7a47778276fe"/>
-<approved hash="19,1,7b477a3b798678fa"/>
-<approved hash="19,1,7b357a49759d74e1"/>
-<approved hash="19,1,08505fcba8efd40d"/>
 <approved hash="19,1,7c377d4b7da67cda"/>
-<approved hash="19,1,783d7941783f7943"/>
+<approved hash="19,1,7b3b7a47778276fe"/>
+<approved hash="19,1,86a487d8860c8770"/>
 <approved hash="19,1,498cd286e63c8c35"/>
+<approved hash="19,1,783d7941783f7943"/>
+<approved hash="19,1,08505fcba8efd40d"/>
+<approved hash="19,1,7b357a49759d74e1"/>
+<approved hash="19,1,7b477a3b798678fa"/>
 <approved hash="19,1,0542223e218606fa"/>
-<approved hash="19,1,b25039c16d61338c"/>
 <approved hash="19,1,0530224c2d9d0ae1"/>
-<approved hash="19,1,06382144203f0743"/>
-<approved hash="19,1,f8a1dfddde0cf970"/>
-<approved hash="19,1,0232254e25a602da"/>
-<approved hash="19,1,3c06f90d1ab200bf"/>
+<approved hash="19,1,b25039c16d61338c"/>
 <approved hash="19,1,053e22422f8208fe"/>
-<approved hash="19,1,3903ba9fbfb3399f"/>
-<approved hash="19,1,3e61bdfbba9a3fc6"/>
+<approved hash="19,1,f8a1dfddde0cf970"/>
+<approved hash="19,1,06382144203f0743"/>
+<approved hash="19,1,3c06f90d1ab200bf"/>
+<approved hash="19,1,0232254e25a602da"/>
+<approved hash="19,1,3c0bbf95b446311a"/>
 <approved hash="19,1,7f7a239ba12d96c1"/>
+<approved hash="19,1,3e61bdfbba9a3fc6"/>
 <approved hash="19,1,3907ba9dbe6a39b6"/>
+<approved hash="19,1,c1a5bc39b9b0c05c"/>
+<approved hash="19,1,3903ba9fbfb3399f"/>
 <approved hash="19,1,0667fe027497362d"/>
 <approved hash="19,1,3205b199b4413d0d"/>
-<approved hash="19,1,c1a5bc39b9b0c05c"/>
-<approved hash="19,1,3c0bbf95b446311a"/>
 </errors>
 </board>
 </drawing>
