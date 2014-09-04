@@ -1,6 +1,5 @@
 Digikey,Quantity,Description
 445-7456-1-ND,10,CERAMIC CAP.
-445-XXXX-1-ND,1,CERAMIC CAP.
 445-7644-1-ND,1,CERAMIC CAP.
 445-10547-1-ND,5,CERAMIC CAP.
 478-7526-1-ND,4,TANT CAP.
@@ -51,11 +50,11 @@ OSH Park,Quantity,Description
 Cyclops PCB,1,https://oshpark.com/shared_projects/tZwgF7jG
 ,,
 Adafruit,Quantity,Description
-883 (Adafruit),1,Arduino Leonardo ATmega32u4 without headers
+883,1,Arduino Leonardo ATmega32u4 without headers
 ,,
 Newark,Quantity,Description
-80P3616 (Newark),1,"PCB, SOCKET, 4MM"
-80P3613 (Newark),1,"PCB, SOCKET, 4MM"
+80P3616,1,"PCB, SOCKET, 4MM"
+80P3613,1,"PCB, SOCKET, 4MM"
 B5-080BK,1,Case
 ,,
 Samtec,Quantity,Description
