@@ -6329,7 +6329,7 @@ at 30/07/2012 17:45:58</description>
 <part name="U$41" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$42" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$43" library="cyclops" deviceset="GND2" device=""/>
-<part name="R19" library="cyclops" deviceset="R" device="_0603" value="5.6k DNP"/>
+<part name="R19" library="cyclops" deviceset="R" device="_0603" value="5.6k(DNP)"/>
 <part name="U$45" library="cyclops" deviceset="GND2" device=""/>
 <part name="P+4" library="cyclops" deviceset="+5V" device="" value="+12V"/>
 <part name="LED-" library="cyclops" deviceset="BANANA_TO_BOARD" device="_A2107" value="A2107-B"/>
@@ -7041,6 +7041,7 @@ to serve as denoising jumper</text>
 <wire x1="93.98" y1="-40.64" x2="93.98" y2="-30.48" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="-30.48" x2="259.08" y2="-30.48" width="0.1524" layer="91"/>
 <wire x1="259.08" y1="-30.48" x2="259.08" y2="5.08" width="0.1524" layer="91"/>
+<label x="7.62" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="OC_COMP" class="0">
