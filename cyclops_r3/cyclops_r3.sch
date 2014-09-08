@@ -6372,6 +6372,9 @@ at 30/07/2012 17:45:58</description>
 <part name="C1" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="U$50" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$28" library="cyclops" deviceset="GND2" device=""/>
+<part name="R26" library="cyclops" deviceset="R" device="_0603" value="10k"/>
+<part name="R27" library="cyclops" deviceset="R" device="_0603" value="10k"/>
+<part name="P+7" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 </parts>
 <sheets>
 <sheet>
@@ -6493,6 +6496,15 @@ to serve as denoising jumper</text>
 <instance part="C1" gate="C" x="99.06" y="30.48"/>
 <instance part="U$50" gate="G$1" x="99.06" y="20.32"/>
 <instance part="U$28" gate="G$1" x="53.34" y="25.4"/>
+<instance part="R26" gate="R" x="15.24" y="35.56" smashed="yes" rot="R180">
+<attribute name="NAME" x="10.16" y="38.1" size="1.778" layer="95"/>
+<attribute name="VALUE" x="15.24" y="38.1" size="1.778" layer="96"/>
+</instance>
+<instance part="R27" gate="R" x="15.24" y="27.94" smashed="yes" rot="R180">
+<attribute name="NAME" x="10.16" y="30.48" size="1.778" layer="95"/>
+<attribute name="VALUE" x="15.24" y="30.48" size="1.778" layer="96"/>
+</instance>
+<instance part="P+7" gate="1" x="25.4" y="40.64"/>
 </instances>
 <busses>
 </busses>
@@ -6915,6 +6927,15 @@ to serve as denoising jumper</text>
 <pinref part="C6" gate="C" pin="1"/>
 <junction x="251.46" y="20.32"/>
 </segment>
+<segment>
+<pinref part="R27" gate="R" pin="1"/>
+<wire x1="20.32" y1="27.94" x2="25.4" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="27.94" x2="25.4" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="R26" gate="R" pin="1"/>
+<wire x1="25.4" y1="35.56" x2="25.4" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="35.56" x2="25.4" y2="35.56" width="0.1524" layer="91"/>
+<junction x="25.4" y="35.56"/>
+</segment>
 </net>
 <net name="LED-" class="0">
 <segment>
@@ -7069,12 +7090,16 @@ to serve as denoising jumper</text>
 <wire x1="27.94" y1="109.22" x2="27.94" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="114.3" x2="2.54" y2="114.3" width="0.1524" layer="91"/>
 <label x="7.62" y="114.3" size="1.778" layer="95"/>
-<wire x1="2.54" y1="114.3" x2="2.54" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="114.3" x2="2.54" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="27.94" x2="2.54" y2="-38.1" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="-38.1" x2="91.44" y2="-38.1" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="-38.1" x2="91.44" y2="-15.24" width="0.1524" layer="91"/>
 <pinref part="LED_PD" gate="G$1" pin="6"/>
 <wire x1="73.66" y1="-15.24" x2="91.44" y2="-15.24" width="0.1524" layer="91"/>
 <label x="78.74" y="-15.24" size="1.778" layer="95"/>
+<pinref part="R27" gate="R" pin="2"/>
+<wire x1="2.54" y1="27.94" x2="10.16" y2="27.94" width="0.1524" layer="91"/>
+<junction x="2.54" y="27.94"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -7083,12 +7108,16 @@ to serve as denoising jumper</text>
 <wire x1="25.4" y1="109.22" x2="25.4" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="111.76" x2="5.08" y2="111.76" width="0.1524" layer="91"/>
 <label x="7.62" y="111.76" size="1.778" layer="95"/>
-<wire x1="5.08" y1="111.76" x2="5.08" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="111.76" x2="5.08" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="35.56" x2="5.08" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="-35.56" x2="88.9" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="-35.56" x2="88.9" y2="-17.78" width="0.1524" layer="91"/>
 <pinref part="LED_PD" gate="G$1" pin="8"/>
 <wire x1="73.66" y1="-17.78" x2="88.9" y2="-17.78" width="0.1524" layer="91"/>
 <label x="78.74" y="-17.78" size="1.778" layer="95"/>
+<pinref part="R26" gate="R" pin="2"/>
+<wire x1="10.16" y1="35.56" x2="5.08" y2="35.56" width="0.1524" layer="91"/>
+<junction x="5.08" y="35.56"/>
 </segment>
 </net>
 <net name="N$11" class="0">
