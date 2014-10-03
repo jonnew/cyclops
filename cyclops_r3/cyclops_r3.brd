@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3126,8 +3126,8 @@ Modified: 2014.07.10
 <attribute name="NAME" x="64.135" y="50.426" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="68.714" y="52.705" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="CURR/AUX" library="cyclops" package="JS102011SAQN" value="JS102" x="41.656" y="1.778" smashed="yes">
-<attribute name="NAME" x="45.353" y="7.493" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
+<element name="AUX&lt;-&gt;CURR" library="cyclops" package="JS102011SAQN" value="JS102" x="41.656" y="1.778" smashed="yes">
+<attribute name="NAME" x="46.75" y="7.366" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
 <attribute name="VALUE" x="43.956" y="2.286" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="C19" library="cyclops" package="0603" value=".1uF" x="73.653" y="25.781" smashed="yes" rot="R270">
@@ -3322,8 +3322,8 @@ Modified: 2014.07.10
 <attribute name="NAME" x="30.48" y="73.025" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="35.306" y="73.025" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="DAC/VCTL" library="cyclops" package="2M1-SP1-T2-B4-M6RE" value="2M1" x="17.78" y="76.2" smashed="yes" rot="R270">
-<attribute name="NAME" x="11.049" y="67.691" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+<element name="VCTL&lt;-&gt;DAC" library="cyclops" package="2M1-SP1-T2-B4-M6RE" value="2M1" x="17.78" y="76.2" smashed="yes" rot="R270">
+<attribute name="NAME" x="13.462" y="60.96" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="16.383" y="73.914" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="L6" library="cyclops" package="0603" value="MPZ1608" x="51.689" y="43.18" smashed="yes" rot="R180">
@@ -3492,7 +3492,7 @@ Modified: 2014.07.10
 <signals>
 <signal name="VFB">
 <contactref element="U8" pad="6"/>
-<contactref element="CURR/AUX" pad="2"/>
+<contactref element="AUX&lt;-&gt;CURR" pad="2"/>
 <wire x1="65.084" y1="40.64" x2="60.325" y2="40.64" width="0.3048" layer="1"/>
 <wire x1="60.325" y1="40.64" x2="58.801" y2="39.116" width="0.3048" layer="1"/>
 <wire x1="58.801" y1="39.116" x2="58.801" y2="25.908" width="0.3048" layer="1"/>
@@ -3669,7 +3669,7 @@ Modified: 2014.07.10
 <signal name="DACA">
 <contactref element="U1" pad="8"/>
 <contactref element="R2" pad="2"/>
-<contactref element="DAC/VCTL" pad="1"/>
+<contactref element="VCTL&lt;-&gt;DAC" pad="1"/>
 <wire x1="38.1184" y1="68.834" x2="23.749" y2="68.834" width="0.3048" layer="1"/>
 <wire x1="23.749" y1="68.834" x2="22.479" y2="67.564" width="0.3048" layer="1"/>
 <wire x1="22.479" y1="67.564" x2="22.479" y2="64.008" width="0.3048" layer="1"/>
@@ -3735,7 +3735,7 @@ Modified: 2014.07.10
 <wire x1="60.452" y1="44.323" x2="60.706" y2="44.069" width="0.3048" layer="1"/>
 <wire x1="60.706" y1="44.069" x2="64.703" y2="44.069" width="0.3048" layer="1"/>
 <wire x1="64.703" y1="44.069" x2="65.084" y2="44.45" width="0.3048" layer="1"/>
-<contactref element="CURR/AUX" pad="1"/>
+<contactref element="AUX&lt;-&gt;CURR" pad="1"/>
 <wire x1="28.575" y1="6.477" x2="30.524" y2="4.528" width="0.3048" layer="1"/>
 <wire x1="30.524" y1="4.528" x2="39.156" y2="4.528" width="0.3048" layer="1"/>
 <wire x1="47.117" y1="10.16" x2="46.355" y2="9.398" width="0.3048" layer="1"/>
@@ -4138,7 +4138,7 @@ Modified: 2014.07.10
 </signal>
 <signal name="N$34">
 <contactref element="TEST" pad="3"/>
-<contactref element="DAC/VCTL" pad="2"/>
+<contactref element="VCTL&lt;-&gt;DAC" pad="2"/>
 <wire x1="17.78" y1="64.008" x2="23.241" y2="69.469" width="0.3048" layer="1"/>
 <wire x1="23.241" y1="69.469" x2="44.365" y2="69.469" width="0.3048" layer="1"/>
 <wire x1="44.365" y1="69.469" x2="47.627" y2="72.731" width="0.3048" layer="1"/>
@@ -4452,7 +4452,7 @@ Modified: 2014.07.10
 </signal>
 <signal name="VINPUT">
 <contactref element="VCTL" pad="1"/>
-<contactref element="DAC/VCTL" pad="3"/>
+<contactref element="VCTL&lt;-&gt;DAC" pad="3"/>
 <wire x1="25.4" y1="76.327" x2="65.405" y2="76.327" width="0.3048" layer="1"/>
 <wire x1="65.405" y1="76.327" x2="68.326" y2="73.406" width="0.3048" layer="1"/>
 <wire x1="13.081" y1="64.008" x2="25.4" y2="76.327" width="0.3048" layer="1"/>
@@ -5039,7 +5039,7 @@ Modified: 2014.07.10
 <wire x1="87.249" y1="9.525" x2="87.249" y2="9.271" width="3.048" layer="1"/>
 <wire x1="85.979" y1="8.763" x2="86.487" y2="8.763" width="1.4224" layer="1"/>
 <wire x1="86.487" y1="8.763" x2="87.249" y2="9.525" width="1.4224" layer="1"/>
-<contactref element="CURR/AUX" pad="3"/>
+<contactref element="AUX&lt;-&gt;CURR" pad="3"/>
 <wire x1="44.327" y1="4.699" x2="44.156" y2="4.528" width="0.8128" layer="1" curve="90"/>
 <wire x1="120.269" y1="22.352" x2="120.269" y2="44.323" width="3.048" layer="1"/>
 <wire x1="120.269" y1="44.323" x2="116.332" y2="48.26" width="3.048" layer="1"/>

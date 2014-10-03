@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6237,7 +6237,7 @@ at 30/07/2012 17:45:58</description>
 <part name="C21" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="D3" library="cyclops" deviceset="S-DIODE" device="SOD-123" value="DS11015"/>
 <part name="D2" library="cyclops" deviceset="S-DIODE" device="SOD-123" value="DS11015"/>
-<part name="CURR/AUX" library="cyclops" deviceset="SPDT" device="_JS" value="JS102"/>
+<part name="AUX&lt;-&gt;CURR" library="cyclops" deviceset="SPDT" device="_JS" value="JS102"/>
 <part name="FRAME1" library="cyclops" deviceset="FRAME_A_L" device=""/>
 <part name="FRAME2" library="cyclops" deviceset="FRAME_A_L" device=""/>
 <part name="FRAME3" library="cyclops" deviceset="FRAME_A_L" device=""/>
@@ -6282,7 +6282,7 @@ at 30/07/2012 17:45:58</description>
 <part name="PWR_DIST" library="cyclops" deviceset="PINH2X6" device=""/>
 <part name="PWR_IN" library="cyclops" deviceset="PINH1X3" device="_MINI-JR" value="PINH1X3_MINI-JR"/>
 <part name="GAIN" library="cyclops" deviceset="POT_US" device="_3310" value="1k"/>
-<part name="DAC/VCTL" library="cyclops" deviceset="SPDT" device="_MTS-M6" value="2M1"/>
+<part name="VCTL&lt;-&gt;DAC" library="cyclops" deviceset="SPDT" device="_MTS-M6" value="2M1"/>
 <part name="L6" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="L5" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="LED_PD" library="cyclops" deviceset="PINH2X5" device="_ICD-H"/>
@@ -6421,7 +6421,7 @@ to serve as denoising jumper</text>
 <instance part="VCTL" gate="G$1" x="144.78" y="15.24"/>
 <instance part="PWR_DIST" gate="G$1" x="33.02" y="-20.32"/>
 <instance part="PWR_IN" gate="G$1" x="25.4" y="5.08"/>
-<instance part="DAC/VCTL" gate="G$1" x="193.04" y="17.78" rot="MR0"/>
+<instance part="VCTL&lt;-&gt;DAC" gate="G$1" x="193.04" y="17.78" rot="MR0"/>
 <instance part="L6" gate="L" x="53.34" y="38.1" smashed="yes">
 <attribute name="NAME" x="52.07" y="30.48" size="1.778" layer="95" rot="R90"/>
 </instance>
@@ -6601,7 +6601,7 @@ to serve as denoising jumper</text>
 <pinref part="R2" gate="R" pin="2"/>
 <wire x1="172.72" y1="78.74" x2="172.72" y2="81.28" width="0.1524" layer="91"/>
 <junction x="172.72" y="81.28"/>
-<pinref part="DAC/VCTL" gate="G$1" pin="1"/>
+<pinref part="VCTL&lt;-&gt;DAC" gate="G$1" pin="1"/>
 <wire x1="180.34" y1="20.32" x2="185.42" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="81.28" x2="180.34" y2="20.32" width="0.1524" layer="91"/>
 </segment>
@@ -6748,7 +6748,7 @@ to serve as denoising jumper</text>
 <segment>
 <pinref part="VCTL" gate="G$1" pin="1"/>
 <label x="152.4" y="15.24" size="1.778" layer="95"/>
-<pinref part="DAC/VCTL" gate="G$1" pin="3"/>
+<pinref part="VCTL&lt;-&gt;DAC" gate="G$1" pin="3"/>
 <wire x1="185.42" y1="15.24" x2="147.32" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -6772,7 +6772,7 @@ to serve as denoising jumper</text>
 <segment>
 <wire x1="195.58" y1="17.78" x2="203.2" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="TEST" gate="G$1" pin="1"/>
-<pinref part="DAC/VCTL" gate="G$1" pin="2"/>
+<pinref part="VCTL&lt;-&gt;DAC" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="VCTL" class="0">
@@ -7711,7 +7711,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="C21" gate="C" x="33.02" y="111.76"/>
 <instance part="D3" gate="G$1" x="-10.16" y="73.66" rot="R90"/>
 <instance part="D2" gate="G$1" x="-10.16" y="99.06" rot="R90"/>
-<instance part="CURR/AUX" gate="G$1" x="7.62" y="48.26" rot="MR270"/>
+<instance part="AUX&lt;-&gt;CURR" gate="G$1" x="7.62" y="48.26" rot="MR270"/>
 <instance part="FRAME4" gate="G$1" x="-91.44" y="-58.42"/>
 <instance part="U9" gate="G$1" x="83.82" y="83.82"/>
 <instance part="Q2" gate="G$1" x="142.24" y="86.36"/>
@@ -7762,7 +7762,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <label x="144.78" y="45.72" size="1.778" layer="95"/>
 <wire x1="10.16" y1="20.32" x2="68.58" y2="20.32" width="0.1524" layer="91"/>
 <junction x="68.58" y="20.32"/>
-<pinref part="CURR/AUX" gate="G$1" pin="3"/>
+<pinref part="AUX&lt;-&gt;CURR" gate="G$1" pin="3"/>
 <wire x1="10.16" y1="40.64" x2="10.16" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -7771,7 +7771,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="7.62" y1="81.28" x2="15.24" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="50.8" x2="7.62" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="U8" gate="B" pin="-IN"/>
-<pinref part="CURR/AUX" gate="G$1" pin="2"/>
+<pinref part="AUX&lt;-&gt;CURR" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="VI" class="0">
@@ -7797,7 +7797,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <pinref part="R20" gate="R" pin="1"/>
 <wire x1="-35.56" y1="35.56" x2="-35.56" y2="38.1" width="0.1524" layer="91"/>
 <junction x="-35.56" y="35.56"/>
-<pinref part="CURR/AUX" gate="G$1" pin="1"/>
+<pinref part="AUX&lt;-&gt;CURR" gate="G$1" pin="1"/>
 <wire x1="5.08" y1="35.56" x2="5.08" y2="40.64" width="0.1524" layer="91"/>
 <junction x="5.08" y="35.56"/>
 </segment>
