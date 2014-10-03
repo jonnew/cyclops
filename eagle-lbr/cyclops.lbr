@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1.27" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -6162,11 +6162,11 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <text x="0" y="-3.556" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 </package>
 <package name="2M1-SP1-T2-B4-M6RE">
-<pad name="2" x="12.192" y="0" drill="0.8" shape="octagon"/>
-<pad name="1" x="12.192" y="4.699" drill="0.8" shape="octagon"/>
-<pad name="3" x="12.192" y="-4.699" drill="0.8" shape="octagon"/>
-<pad name="M2" x="-0.508" y="2.54" drill="0.8" shape="octagon"/>
-<pad name="M1" x="-0.508" y="-2.54" drill="0.8" shape="octagon"/>
+<pad name="2" x="12.192" y="0" drill="1.8542" shape="octagon"/>
+<pad name="1" x="12.192" y="4.699" drill="1.8542" shape="octagon"/>
+<pad name="3" x="12.192" y="-4.699" drill="1.8542" shape="octagon"/>
+<pad name="M2" x="-0.508" y="2.54" drill="1.8542" shape="octagon"/>
+<pad name="M1" x="-0.508" y="-2.54" drill="1.8542" shape="octagon"/>
 <wire x1="-0.508" y1="1.27" x2="-0.508" y2="-1.27" width="0.1524" layer="21"/>
 <wire x1="-0.508" y1="-3.81" x2="-0.508" y2="-6.35" width="0.1524" layer="21"/>
 <wire x1="-0.508" y1="-6.35" x2="9.144" y2="-6.35" width="0.1524" layer="21"/>

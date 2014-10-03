@@ -3398,11 +3398,11 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <text x="0" y="-3.556" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 </package>
 <package name="2M1-SP1-T2-B4-M6RE">
-<pad name="2" x="12.192" y="0" drill="0.8" shape="octagon"/>
-<pad name="1" x="12.192" y="4.699" drill="0.8" shape="octagon"/>
-<pad name="3" x="12.192" y="-4.699" drill="0.8" shape="octagon"/>
-<pad name="M2" x="-0.508" y="2.54" drill="0.8" shape="octagon"/>
-<pad name="M1" x="-0.508" y="-2.54" drill="0.8" shape="octagon"/>
+<pad name="2" x="12.192" y="0" drill="1.8542" shape="octagon"/>
+<pad name="1" x="12.192" y="4.699" drill="1.8542" shape="octagon"/>
+<pad name="3" x="12.192" y="-4.699" drill="1.8542" shape="octagon"/>
+<pad name="M2" x="-0.508" y="2.54" drill="1.8542" shape="octagon"/>
+<pad name="M1" x="-0.508" y="-2.54" drill="1.8542" shape="octagon"/>
 <wire x1="-0.508" y1="1.27" x2="-0.508" y2="-1.27" width="0.1524" layer="21"/>
 <wire x1="-0.508" y1="-3.81" x2="-0.508" y2="-6.35" width="0.1524" layer="21"/>
 <wire x1="-0.508" y1="-6.35" x2="9.144" y2="-6.35" width="0.1524" layer="21"/>
@@ -6245,7 +6245,7 @@ at 30/07/2012 17:45:58</description>
 <part name="C19" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="C17" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="C11" library="cyclops" deviceset="C-POL" device="_0807" value="100uF"/>
-<part name="S1" library="cyclops" deviceset="SPDT" device="_CFPA" value="TEST"/>
+<part name="TEST" library="cyclops" deviceset="SPDT" device="_CFPA" value="CFPA"/>
 <part name="U9" library="cyclops" deviceset="ZXTD4591E6" device="" value="ZXTD45"/>
 <part name="Q2" library="cyclops" deviceset="N-MOSFET" device="TO-262" value="IRF510"/>
 <part name="R25" library="cyclops" deviceset="R" device="_0603" value="10"/>
@@ -6282,7 +6282,7 @@ at 30/07/2012 17:45:58</description>
 <part name="PWR_DIST" library="cyclops" deviceset="PINH2X6" device=""/>
 <part name="PWR_IN" library="cyclops" deviceset="PINH1X3" device="_MINI-JR" value="PINH1X3_MINI-JR"/>
 <part name="GAIN" library="cyclops" deviceset="POT_US" device="_3310" value="1k"/>
-<part name="DAC/VCTL" library="cyclops" deviceset="SPDT" device="_MTS-M6" value="JS102"/>
+<part name="DAC/VCTL" library="cyclops" deviceset="SPDT" device="_MTS-M6" value="2M1"/>
 <part name="L6" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="L5" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="LED_PD" library="cyclops" deviceset="PINH2X5" device="_ICD-H"/>
@@ -6398,7 +6398,7 @@ to serve as denoising jumper</text>
 </instance>
 <instance part="FRAME1" gate="G$1" x="-12.7" y="-68.58"/>
 <instance part="FRAME1" gate="G$2" x="160.02" y="-68.58"/>
-<instance part="S1" gate="G$1" x="210.82" y="20.32" rot="R180"/>
+<instance part="TEST" gate="G$1" x="210.82" y="20.32" rot="R180"/>
 <instance part="VAUX_OUT" gate="G$1" x="109.22" y="15.24"/>
 <instance part="CS1" gate="1" x="109.22" y="121.92" smashed="yes">
 <attribute name="NAME" x="114.3" y="121.92" size="1.778" layer="95"/>
@@ -6771,13 +6771,13 @@ to serve as denoising jumper</text>
 <net name="N$34" class="0">
 <segment>
 <wire x1="195.58" y1="17.78" x2="203.2" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="S1" gate="G$1" pin="1"/>
+<pinref part="TEST" gate="G$1" pin="1"/>
 <pinref part="DAC/VCTL" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="VCTL" class="0">
 <segment>
-<pinref part="S1" gate="G$1" pin="2"/>
+<pinref part="TEST" gate="G$1" pin="2"/>
 <wire x1="213.36" y1="20.32" x2="218.44" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="U2" gate="G$1" pin="A"/>
 <label x="218.44" y="20.32" size="1.778" layer="95" rot="R180"/>
@@ -6785,7 +6785,7 @@ to serve as denoising jumper</text>
 </net>
 <net name="REF5.0" class="0">
 <segment>
-<pinref part="S1" gate="G$1" pin="3"/>
+<pinref part="TEST" gate="G$1" pin="3"/>
 <wire x1="203.2" y1="22.86" x2="198.12" y2="22.86" width="0.1524" layer="91"/>
 <label x="193.04" y="22.86" size="1.778" layer="95"/>
 </segment>
