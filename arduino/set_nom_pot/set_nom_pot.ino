@@ -1,5 +1,6 @@
-#define WIPER_UD 12
-#define CS 6
+  
+
+int CS 6;
 
 void setup() {
 	
