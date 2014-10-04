@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -213,6 +213,8 @@ August 2014</text>
 <text x="53.975" y="9.271" size="1.016" layer="21" font="vector" ratio="18" rot="R270" align="center">+15V</text>
 <text x="69.215" y="9.525" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">-6V</text>
 <text x="61.595" y="13.97" size="1.016" layer="21" font="vector" ratio="18" align="center">GND</text>
+<text x="20.32" y="87.63" size="1.016" layer="21" font="vector" ratio="18">VCTL</text>
+<text x="12.7" y="87.63" size="1.016" layer="21" font="vector" ratio="18">DAC</text>
 </plain>
 <libraries>
 <library name="cyclops">
@@ -3274,7 +3276,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="74.676" y="42.037" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
 <attribute name="VALUE" x="72.263" y="45.72" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="CS1" library="cyclops" package="SJ" value="" x="9.652" y="48.26" smashed="yes">
+<element name="CS3" library="cyclops" package="SJ" value="" x="9.652" y="48.26" smashed="yes">
 <attribute name="NAME" x="11.684" y="47.879" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="10.0521" y="48.26" size="0.02" layer="27"/>
 </element>
@@ -3282,11 +3284,11 @@ Modified: 2014.07.10
 <attribute name="NAME" x="11.684" y="50.419" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="10.0521" y="50.8" size="0.02" layer="27"/>
 </element>
-<element name="CS3" library="cyclops" package="SJ" value="" x="9.652" y="53.34" smashed="yes">
+<element name="CS1" library="cyclops" package="SJ" value="" x="9.652" y="53.34" smashed="yes">
 <attribute name="NAME" x="11.684" y="52.832" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="10.0521" y="53.34" size="0.02" layer="27"/>
 </element>
-<element name="CS4" library="cyclops" package="SJ" value="" x="9.652" y="55.88" smashed="yes">
+<element name="CS0" library="cyclops" package="SJ" value="" x="9.652" y="55.88" smashed="yes">
 <attribute name="NAME" x="11.684" y="55.372" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="10.0521" y="55.88" size="0.02" layer="27"/>
 </element>
@@ -3412,19 +3414,19 @@ Modified: 2014.07.10
 <attribute name="NAME" x="28.575" y="10.033" size="1.016" layer="25" font="vector" ratio="18" rot="R90" align="center-right"/>
 <attribute name="VALUE" x="28.575" y="13.589" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="T1" library="cyclops" package="SJ" value="" x="9.652" y="41.656" smashed="yes" rot="R180">
+<element name="T0" library="cyclops" package="SJ" value="" x="9.652" y="41.656" smashed="yes" rot="R180">
 <attribute name="NAME" x="11.684" y="41.148" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="9.2519" y="41.656" size="0.02" layer="27" rot="R180"/>
 </element>
-<element name="T2" library="cyclops" package="SJ" value="" x="9.652" y="39.116" smashed="yes" rot="R180">
+<element name="T1" library="cyclops" package="SJ" value="" x="9.652" y="39.116" smashed="yes" rot="R180">
 <attribute name="NAME" x="11.684" y="38.608" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="9.2519" y="39.116" size="0.02" layer="27" rot="R180"/>
 </element>
-<element name="T3" library="cyclops" package="SJ" value="" x="9.652" y="36.576" smashed="yes" rot="R180">
+<element name="T2" library="cyclops" package="SJ" value="" x="9.652" y="36.576" smashed="yes" rot="R180">
 <attribute name="NAME" x="11.684" y="36.068" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="9.2519" y="36.576" size="0.02" layer="27" rot="R180"/>
 </element>
-<element name="T4" library="cyclops" package="SJ" value="" x="9.652" y="34.036" smashed="yes" rot="R180">
+<element name="T3" library="cyclops" package="SJ" value="" x="9.652" y="34.036" smashed="yes" rot="R180">
 <attribute name="NAME" x="11.684" y="33.528" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="9.2519" y="34.036" size="0.02" layer="27" rot="R180"/>
 </element>
@@ -3626,26 +3628,26 @@ Modified: 2014.07.10
 <wire x1="11.938" y1="46.736" x2="11.938" y2="50.334940625" width="0.1778" layer="1"/>
 </signal>
 <signal name="CS0">
-<contactref element="CS4" pad="1"/>
+<contactref element="CS0" pad="1"/>
 <contactref element="LEONARDO" pad="D3"/>
 <wire x1="8.89" y1="55.88" x2="6.724" y2="55.88" width="0.1778" layer="1"/>
 </signal>
 <signal name="CS1">
-<contactref element="CS3" pad="1"/>
+<contactref element="CS1" pad="1"/>
 <contactref element="LEONARDO" pad="D4"/>
 <wire x1="6.724" y1="53.34" x2="8.89" y2="53.34" width="0.1778" layer="1"/>
 </signal>
 <signal name="CS3">
-<contactref element="CS1" pad="1"/>
+<contactref element="CS3" pad="1"/>
 <contactref element="LEONARDO" pad="D6"/>
 <wire x1="6.724" y1="48.26" x2="8.89" y2="48.26" width="0.1778" layer="1"/>
 </signal>
 <signal name="CS">
 <contactref element="U1" pad="2"/>
-<contactref element="CS4" pad="2"/>
-<contactref element="CS3" pad="2"/>
-<contactref element="CS2" pad="2"/>
+<contactref element="CS0" pad="2"/>
 <contactref element="CS1" pad="2"/>
+<contactref element="CS2" pad="2"/>
+<contactref element="CS3" pad="2"/>
 <wire x1="10.414" y1="55.88" x2="10.414" y2="53.34" width="0.1778" layer="1"/>
 <wire x1="10.414" y1="52.832" x2="10.414" y2="53.34" width="0.1778" layer="1"/>
 <wire x1="10.414" y1="53.34" x2="10.414" y2="50.8" width="0.1778" layer="1"/>
@@ -5096,10 +5098,10 @@ Modified: 2014.07.10
 <wire x1="75.5396" y1="51.6382" x2="75.5396" y2="51.816" width="0.3048" layer="1"/>
 </signal>
 <signal name="TRIG">
+<contactref element="T0" pad="1"/>
 <contactref element="T1" pad="1"/>
 <contactref element="T2" pad="1"/>
 <contactref element="T3" pad="1"/>
-<contactref element="T4" pad="1"/>
 <contactref element="TRIG" pad="1"/>
 <wire x1="12.827" y1="6.477" x2="12.827" y2="9.144" width="0.1778" layer="1"/>
 <wire x1="10.414" y1="34.036" x2="10.414" y2="39.116" width="0.1778" layer="1"/>
@@ -5112,22 +5114,22 @@ Modified: 2014.07.10
 <wire x1="12.954" y1="6.604" x2="12.827" y2="6.477" width="0.1778" layer="1"/>
 </signal>
 <signal name="T0">
-<contactref element="T1" pad="2"/>
+<contactref element="T0" pad="2"/>
 <contactref element="LEONARDO" pad="D8"/>
 <wire x1="8.89" y1="41.656" x2="6.724" y2="41.656" width="0.1778" layer="1"/>
 </signal>
 <signal name="T1">
-<contactref element="T2" pad="2"/>
+<contactref element="T1" pad="2"/>
 <contactref element="LEONARDO" pad="D9"/>
 <wire x1="6.724" y1="39.116" x2="8.89" y2="39.116" width="0.1778" layer="1"/>
 </signal>
 <signal name="T2">
-<contactref element="T3" pad="2"/>
+<contactref element="T2" pad="2"/>
 <contactref element="LEONARDO" pad="D10"/>
 <wire x1="8.89" y1="36.576" x2="6.724" y2="36.576" width="0.1778" layer="1"/>
 </signal>
 <signal name="T3">
-<contactref element="T4" pad="2"/>
+<contactref element="T3" pad="2"/>
 <contactref element="LEONARDO" pad="D11"/>
 <wire x1="6.724" y1="34.036" x2="8.89" y2="34.036" width="0.1778" layer="1"/>
 </signal>

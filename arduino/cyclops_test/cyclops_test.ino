@@ -4,9 +4,11 @@
 Cyclops cyclops;
 
 void setup() {
-
+  
 }
 
 void loop() {
-    cyclops.send_test_waveform(CH1);
+    cyclops.mcp4921_send_test_waveform(CH0);
+    
+    cyclops.over_current_protect(CH0,200);
 }
