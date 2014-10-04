@@ -1,0 +1,35 @@
+#######################################
+# Syntax Coloring Map For Cyclops
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Cyclops KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+send_test_waveform KEYWORD2
+shutdown_dac KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+CH1 LITERAL1 	
+CH2 LITERAL1
+CH3 LITERAL1  		
+CH4 LITERAL1  			
+TRIG1 LITERAL1  			
+TRIG2 LITERAL1 			
+TRIG3 LITERAL1  		
+TRIG4 LITERAL1  		
+WIPER_UD LITERAL1  		
+LDAC LITERAL1 	
+OC_COMP LITERAL1   	
+DAC_CONF_ACTIVE LITERAL1
+DAC_CONF_SHDN LITERAL1
+ 

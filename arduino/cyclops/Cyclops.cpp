@@ -4,71 +4,66 @@
 
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-#include "Arduino.h"
+//#include <Arduino.h>
+//#include <SPI.h>
+//#include <avr/pgmspace.h>
 #include "Cyclops.h"
-#include <SPI.h>
 
 // Public Methods
-Cyclops::Cyclops()
-{
+Cyclops::Cyclops(void) {
+
     // Set pin modes
-    pinMode (CS1, OUTPUT);
-    pinMode (CS2, OUTPUT);
-    pinMode (CS3, OUTPUT);
-    pinMode (CS4, OUTPUT);
-    pinMode (LDAC, OUTPUT);
+    pinMode(CH1, OUTPUT);
+    pinMode(CH2, OUTPUT);
+    pinMode(CH3, OUTPUT);
+    pinMode(CH4, OUTPUT);
+    pinMode(LDAC, OUTPUT);
 
     // Get the load-dac line ready
-    digitalWrite(CS1, HIGH);
-    digitalWrite(CS2, HIGH);
-    digitalWrite(CS3, HIGH);
-    digitalWrite(CS4, HIGH);
+    digitalWrite(CH1, HIGH);
+    digitalWrite(CH2, HIGH);
+    digitalWrite(CH3, HIGH);
+    digitalWrite(CH4, HIGH);
     digitalWrite(LDAC, HIGH);
-
-    // Initialize SPI bus
+	
+	// Initialize SPI bus
     SPI.setDataMode(SPI_MODE0);
     SPI.setBitOrder(MSBFIRST);
     SPI.begin();
-
-    // Intitialize private variables
+	
+    // Initialize private variables
     _v_out = 0;
+	_initialized = true;
 }
 
-/* default implementation: may be overridden */
-void Cyclops::send_test_waveform(int channel)
+void Cyclops::send_test_waveform(uint16_t chan) {
 
-    while (_v_out < 4085)
-    {
+    while (_v_out < 4085) {
       _v_out += 10;
-      update_DAC(channel, 0x1000);
+      update_dac(chan);
     }
-    while (_v_out > 10)
-    {
+    while (_v_out > 10) {
       _v_out -= 10;
-      update_DAC(channel, 0x1000);
+      update_dac(chan);
     }
 }
 
 // Private Methods 
 
-void Cyclops::update_dac(int channel, short address) {
+void Cyclops::update_dac(uint16_t chan) {
 
     // Create data packet
-    int data = _v_out & 0x0fff;
-    int spi_out = address | data;
+    unsigned int spi_out = DAC_CONF_ACTIVE | (_v_out & 0x0fff);
 
     // take the SS pin low to select the chip
-    digitalWrite(channel, LOW);
+    digitalWrite(chan, LOW);
 
     //  send in the address and value via SPI:
     SPI.transfer(spi_out >> 8 & 0xff);
     SPI.transfer(spi_out >> 0 & 0xff);
 
     // take the SS pin high to de-select the chip:
-    digitalWrite(mcp_cs, HIGH);
+    digitalWrite(chan, HIGH);
 
     // Update both DAC outputs by loading their
     // output registers w/ >100 ns delay
@@ -76,4 +71,21 @@ void Cyclops::update_dac(int channel, short address) {
     __asm__("nop\n\t");
     __asm__("nop\n\t");
     digitalWrite(LDAC, HIGH);
+}
+
+void Cyclops::shutdown_dac(uint16_t chan) {
+
+	// Create data packet
+    unsigned int spi_out = DAC_CONF_SHDN;
+
+    // take the SS pin low to select the chip
+    digitalWrite(chan, LOW);
+
+    //  send in the address and value via SPI:
+    SPI.transfer(spi_out >> 8 & 0xff);
+    SPI.transfer(spi_out >> 0 & 0xff);
+
+    // take the SS pin high to de-select the chip:
+    digitalWrite(chan, HIGH);
+
 }
