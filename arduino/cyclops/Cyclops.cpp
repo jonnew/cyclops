@@ -1,7 +1,21 @@
 /*
- Cyclops.cpp - Cyclops Driver
- Copyright (c) 2014 Jonathan Newman  All right reserved.
+Copyright (c) 2014 Jon Newman (jpnewman ~at~ mit <dot> edu) 
+All right reserved.
 
+This file is part of the Cyclops Library (CL) for Arduino.
+
+CL is free software: you can redistribute it and/or modify
+it under the terms of the Lesser GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+CL is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+Lesser GNU General Public License for more details.
+
+You should have received a copy of the Lesser GNU General Public License
+along with CL.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "Cyclops.h"
@@ -32,6 +46,9 @@ Cyclops::Cyclops(uint16_t channel) {
     pinMode(WIPER_UD, OUTPUT);
     pinMode(LDAC, OUTPUT);
     pinMode(OC_COMP, OUTPUT);
+
+	// Pull the trigger line down
+	digitalWrite(_trig_lut[_channel], LOW);
 
     // Get the CS and load-dac lines ready
     digitalWrite(_cs_lut[_channel], HIGH);
@@ -175,7 +192,7 @@ void Cyclops::mcp4921_shutdown_dac (void) {
 
 }
 
-void Cyclops::mcp4022_set_nom_AWR (void) {
+void Cyclops::mcp4022_set_nom_AW_resistance(void) {
 
 	// This trimmer is 50k with 64 positions
 	// Decrement the wiper 64 times to 0x00
@@ -191,7 +208,7 @@ void Cyclops::mcp4022_set_nom_AWR (void) {
     //_wiper_position[_channel] = NOM_WIPER_POS;
 
 	// Write to EEPROM
-	mcp4022_save_pot_resistance();
+	mcp4022_save_AW_resistance();
 }
 
 void Cyclops::mcp4022_unpulse_pot(byte n) {
@@ -258,7 +275,7 @@ void Cyclops::mcp4022_decrement_pot( byte n) {
     digitalWrite(_cs_lut[_channel], HIGH);
 }
 
-void Cyclops::mcp4022_save_pot_resistance( void ) {
+void Cyclops::mcp4022_save_AW_resistance( void ) {
 
 	// Bring WIPER_UD HIGH
 	digitalWrite(WIPER_UD, HIGH);
@@ -271,5 +288,26 @@ void Cyclops::mcp4022_save_pot_resistance( void ) {
 
     // Take the CS pin high to deselect the chip
     digitalWrite(_cs_lut[_channel], HIGH);
+}
+
+void attach_interupt( void ) {
+	
+	// Enable pin-change interupt on port B
+	sbi(PCICR, PCIE0);
+
+	switch (_trig_lut[_channel]) {
+		case TRIG0:
+			sbi(PCMSK0, PCINT4);
+			break;
+		case TRIG1:
+			sbi(PCMSK0, PCINT5);
+			break;
+		case TRIG2:
+			sbi(PCMSK0, PCINT6);
+			break;
+		case TRIG3:
+			sbi(PCMSK0, PCINT7);
+			break;
+	}
 }
 

@@ -1,9 +1,22 @@
 /*
- Cyclops.h - Cyclops driver header file
- Copyright (c) 2014 Jonathan Newman  All right reserved.
+Copyright (c) 2014 Jon Newman (jpnewman ~at~ mit <dot> edu) 
+All right reserved.
 
+This file is part of the Cyclops Library (CL) for Arduino.
+
+CL is free software: you can redistribute it and/or modify
+it under the terms of the Lesser GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+CL is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+Lesser GNU General Public License for more details.
+
+You should have received a copy of the Lesser GNU General Public License
+along with CL.  If not, see <http://www.gnu.org/licenses/>.
 */
-
 #ifndef Cyclops_h
 #define Cyclops_h
 
@@ -12,6 +25,7 @@
 #else
  #include <WProgram.h>
 #endif
+//#include <pins_arduino.h>
 #include <SPI.h>
 #include <Wire.h>
 //#include <avr/pgmspace.h>
@@ -49,6 +63,10 @@
 #define NOM_WIPER_POS       56          // This is the number of B --> A steps to get ~5k
                                         // between the W-A connection on the MCP4022
 
+//Function macros for setting bits in registers
+#define cbi(sfr,bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
+#define sbi(sfr,bit) (_SFR_BYTE(sfr) |= _BV(bit))
+
 class Cyclops {
   public:
     Cyclops( uint16_t channel );
@@ -71,17 +89,19 @@ class Cyclops {
     void over_current_protect( float current_limit_mA );
     
     // Set/save input divider resistance
-    void mcp4022_set_nom_AWR( void );
+    void mcp4022_set_nom_AW_resistance( void );
     void mcp4022_decrement_pot( byte n );
     void mcp4022_increment_pot( byte n ); 
-    void mcp4022_save_pot_resistance( void );
+    void mcp4022_save_AW_resistance( void );
    
   private:
     
     // Private, low-level functions        
     void mcp4022_pulse_pot( byte n );
     void mcp4022_unpulse_pot( byte n );
+	void attach_interupt( void );
 
+	// Private properties
     uint16_t _channel;
 	boolean _initialized;
     byte _wiper_position[4];
