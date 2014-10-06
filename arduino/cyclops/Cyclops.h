@@ -14,14 +14,17 @@
 #endif
 #include <SPI.h>
 #include <Wire.h>
-#include <unordered_map>
 //#include <avr/pgmspace.h>
 
-// Pin Definitions
-#define CH0 				0       	// Chip select pins
+// Each 'channel' each defines a board address.
+// Corresponding pins numbers can be accessed through
+// the look-up tables (_a_in_lut, _cs_lut, _trig_lut).
+#define CH0 				0       	// Channels
 #define CH1 				1       	//
 #define CH2 				2       	//
 #define CH3 				3       	//
+
+// Pin Definitions
 #define CS0 				3       	// Chip select pins
 #define CS1 				4       	//
 #define CS2 				5       	//
@@ -35,7 +38,7 @@
 #define A2                  2           //
 #define A3                  3           //
 #define WIPER_UD 			12 			// MCP4022 digital pot up/down pin
-#define LDAC  				7      		// MCP4921 DAC SPI lines
+#define LDAC  				7      		// MCP4921 load DAC line (sync all channels)
 #define OC_COMP  			2   		// Over-current compensation line
 
 //MCP4921 commands
@@ -43,7 +46,8 @@
 #define DAC_CONF_SHDN 		(0x1000)
 
 //MCP4022 
-#define NOM_WIPER_POS       56
+#define NOM_WIPER_POS       56          // This is the number of B --> A steps to get ~5k
+                                        // between the W-A connection on the MCP4022
 
 class Cyclops {
   public:
@@ -51,6 +55,8 @@ class Cyclops {
 
     // Onboard signal generation
 	void mcp4921_send_test_waveform(uint16_t chan);
+    void mcp4921_single_shot(uint16_t chan, uint16_t voltage);
+    void mcp4921_generate_waveform(uint16_t chan, int voltage[], uint16_t length, uint16_t sample_period_us);
 	void mcp4921_shutdown_dac(uint16_t chan);
     
     // Current measurement and OC protection
@@ -58,26 +64,25 @@ class Cyclops {
     void over_current_protect(uint16_t chan, float current_limit_mA);
     
     // Set/save input divider resistance
-    void mcp4022_set_5point6k(uint16_t chan);
+    void mcp4022_set_nom_AWR(uint16_t chan);
     void mcp4022_decrement_pot(uint16_t chan, byte n);
     void mcp4022_increment_pot(uint16_t chan, byte n); 
     void mcp4022_save_pot_resistance(uint16_t chan);
-    
-	//void load_waveform(int channel, int[] waveform);
-    //void attach_waveform(int channel, int triggerline);
-    //void single_shot(int channel, int voltage);
-    //void pulse(int channel, int voltage, int duration_usec);
-
+   
   private:
-    void mcp4921_update_dac(uint16_t chan);
+    void mcp4921_load_data(uint16_t chan, uint16_t voltage);
+    void mcp4921_load_dac(void);
     void mcp4022_pulse_pot(byte n);
     void mcp4022_unpulse_pot(byte n);
     uint16_t _v_out;
     float _current_mA;
 	boolean _initialized;
     byte _wiper_position[4];
-    static const uint16_t* _a_in_lut;
-    static const uint16_t* _cs_lut;
+
+    // Channel --> physical pin LUTs
+    static const uint16_t *_a_in_lut;
+    static const uint16_t *_cs_lut;
+
 
 };
 
