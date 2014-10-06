@@ -67,6 +67,12 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #define cbi(sfr,bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
 #define sbi(sfr,bit) (_SFR_BYTE(sfr) |= _BV(bit))
 
+// Interupt handling stuff
+typedef void (*voidFuncPtr)(void);
+volatile static voidFuncPtr interupt_func[8] // One function pointer for each bit on PORTB
+	= { NULL };
+volatile static uint8_t interupt_last;		 // Last port state
+
 class Cyclops {
   public:
     Cyclops( uint16_t channel );
@@ -87,7 +93,10 @@ class Cyclops {
     // Current measurement and OC protection
     float measure_current( void );
     void over_current_protect( float current_limit_mA );
-    
+	
+	// Attach/detach interupt
+	void attach_interupt( void (*user_func)(void) );
+	
     // Set/save input divider resistance
     void mcp4022_set_nom_AW_resistance( void );
     void mcp4022_decrement_pot( byte n );
@@ -96,10 +105,11 @@ class Cyclops {
    
   private:
     
-    // Private, low-level functions        
+    // Low-level digital pot functions        
     void mcp4022_pulse_pot( byte n );
     void mcp4022_unpulse_pot( byte n );
-	void attach_interupt( void );
+static void isr( void ); 					 // Global interupt service routine	
+
 
 	// Private properties
     uint16_t _channel;
@@ -110,6 +120,7 @@ class Cyclops {
     static const uint16_t *_a_in_lut;
     static const uint16_t *_cs_lut;
     static const uint16_t *_trig_lut;
+	static const uint16_t *_trig_port_pos_lut;
 
 };
 

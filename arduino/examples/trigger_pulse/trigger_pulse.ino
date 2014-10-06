@@ -39,7 +39,7 @@ void setup() {
 
 void loop() {
     
-    cyclops0.mcp4921_send_test_waveform();
+    // Nothing to do, everything is handled by the interput handler
 }
 
 void serialPrint() {

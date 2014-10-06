@@ -20,13 +20,15 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "Cyclops.h"
 
-// Initialize the CS and analog in look-up tables
+// Populate the LUTs
 static const uint16_t cs_lut_data[] = {(uint16_t)CS0, (uint16_t)CS1, (uint16_t)CS2, (uint16_t)CS3};
 const uint16_t *Cyclops::_cs_lut = cs_lut_data;
 static const uint16_t a_in_lut_data[] = {(uint16_t)A0, (uint16_t)A1, (uint16_t)A2, (uint16_t)A3};
 const uint16_t *Cyclops::_a_in_lut = a_in_lut_data;
 static const uint16_t trig_lut_data[] = {(uint16_t)TRIG0, (uint16_t)TRIG1, (uint16_t)TRIG2, (uint16_t)TRIG3};
 const uint16_t *Cyclops::_trig_lut = trig_lut_data;
+static const uint16_t trig_port_pos_lut_data[] = {4,5,6,7};
+const uint16_t *Cyclops::_trig_port_pos_lut = trig_port_pos_lut_data;
 
 Cyclops::Cyclops(uint16_t channel) {
 
@@ -290,9 +292,10 @@ void Cyclops::mcp4022_save_AW_resistance( void ) {
     digitalWrite(_cs_lut[_channel], HIGH);
 }
 
-void attach_interupt( void ) {
+void Cyclops::attach_interupt( void (*user_func)(void)) {
 	
-	// Enable pin-change interupt on port B
+	// Enable pin-change interupt on port B, which is the only one
+	// used by the Cyclops for triggering
 	sbi(PCICR, PCIE0);
 
 	switch (_trig_lut[_channel]) {
@@ -309,5 +312,43 @@ void attach_interupt( void ) {
 			sbi(PCMSK0, PCINT7);
 			break;
 	}
+
+	// Assign function pointer for the interput handler to execute
+	interupt_func[_trig_port_pos_lut[_channel]] = user_func;
+	
+}
+
+// Interupt handler
+void isr(void) {
+	uint8_t bit;
+	uint8_t curr;
+	uint8_t mask;
+	uint8_t pin;
+
+	// get the pin states for the indicated port.
+	curr = PINB;
+	mask = curr ^ interupt_last;
+	interupt_last = curr;
+
+	// mask is pins that have changed. screen out non pcint pins.
+	if ((mask &= PCMSK0) == 0) {
+		return;
+	}
+
+	// mask is pcint pins that have changed.
+	for (uint8_t i=0; i < 8; i++) {
+		bit = 0x01 << i;
+		pin = i;
+		if (bit & mask) {
+			// Trigger interrupt if bit is currently high.
+			if ((curr & bit) && (interupt_func[pin] != NULL)) {
+				interupt_func[pin]();
+			}
+		}
+	}
+}
+
+SIGNAL(PCINT0_vect) {
+	isr();
 }
 
