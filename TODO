@@ -2,10 +2,12 @@ R3.3 Board
 
 1. Move the banana jacks medial a touch to avoid hitting the enclosure when PCB is mounted on the middle rung.
 
-2. Move the DAC/VCTL switch forward a touch so it is inlin with the extent of the potentiometer knob.
+2. Move the DAC/VCTL switch forward a touch so it is in line with the extent of the potentiometer knob.
 
 3. CS1-4 are labeled backwards.
 
 4. Put labels on the SPI (ICSP) connector.
 
 5. Trade out front panel pot for one with switch.
+
+6. The point of the OC protect circuit should be to deal with _mean_ overcurrent conditions. This means that the time constant of the filter in front of the analog current measurement pin should be on the order of 1 second.

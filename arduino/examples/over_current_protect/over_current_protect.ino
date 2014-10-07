@@ -29,6 +29,8 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 // with jumper pads soldered so that CS0, TRIG0, and A0 are used
 Cyclops cyclops0(CH0);
 
+// Random voltage
+long randVoltage;
 
 void setup() {
   
@@ -36,17 +38,26 @@ void setup() {
   cyclops0.mcp4022_set_nom_AW_resistance();
   
   // Save the resistance in non-volatile EEPROM for startup
-  cyclops1.mcp4022_save_AW_resistance();
-  
+  cyclops0.mcp4022_save_AW_resistance();
 }
 
 void loop() {
   
-    // Each board includes an onboard 12-bit (4095 position)
-    // DAC spanning 0-5 volts.
-    
-    // Generates a triangle wave ranging fro 0 to full scale
-    cyclops0.mcp4921_send_test_waveform();
-}
+  // Each board includes an onboard 12-bit (4095 position)
+  // DAC spanning 0-5 volts.
+  
+  // Generate random voltage from 0 to 4095
+  randVoltage = random(0,4096);
+  
+  // Load the DAC registers with the random voltage and update
+  // the output. 
+  cyclops0.mcp4921_load_voltage(randVoltage);
+  cyclops0.mcp4921_load_dac();
+  
+  // Call the overcurrent protection function to ensure
+  // the mean current is limited to < 250 mA during random
+  // waveform generation 
+  cyclops0.over_current_protect(250);
 
+}
 
