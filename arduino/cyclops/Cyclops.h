@@ -25,12 +25,10 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #else
  #include <WProgram.h>
 #endif
-//#include <pins_arduino.h>
 #include <SPI.h>
 #include <Wire.h>
-//#include <avr/pgmspace.h>
 
-// Each 'channel' each defines a board address.
+// Each 'channel' defines a board address.
 // Corresponding pins numbers can be accessed through
 // the look-up tables (_a_in_lut, _cs_lut, _trig_lut).
 #define CH0 				0       	// Channels
@@ -72,9 +70,12 @@ typedef void (*voidFuncPtr)(void);
 volatile static voidFuncPtr interupt_func[8] // One function pointer for each bit on PORTB
 	= { NULL };
 volatile static uint8_t interupt_last;		 // Last port state
+static void isr( void ); 					 // Global interupt service routine	
 
 class Cyclops {
+
   public:
+
     Cyclops( uint16_t channel );
 
     // Object properties
@@ -108,8 +109,6 @@ class Cyclops {
     // Low-level digital pot functions        
     void mcp4022_pulse_pot( byte n );
     void mcp4022_unpulse_pot( byte n );
-static void isr( void ); 					 // Global interupt service routine	
-
 
 	// Private properties
     uint16_t _channel;

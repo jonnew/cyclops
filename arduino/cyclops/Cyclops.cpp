@@ -27,7 +27,7 @@ static const uint16_t a_in_lut_data[] = {(uint16_t)A0, (uint16_t)A1, (uint16_t)A
 const uint16_t *Cyclops::_a_in_lut = a_in_lut_data;
 static const uint16_t trig_lut_data[] = {(uint16_t)TRIG0, (uint16_t)TRIG1, (uint16_t)TRIG2, (uint16_t)TRIG3};
 const uint16_t *Cyclops::_trig_lut = trig_lut_data;
-static const uint16_t trig_port_pos_lut_data[] = {4,5,6,7};
+static const uint16_t trig_port_pos_lut_data[] = {4,5,6,7}; 
 const uint16_t *Cyclops::_trig_port_pos_lut = trig_port_pos_lut_data;
 
 Cyclops::Cyclops(uint16_t channel) {
@@ -327,7 +327,7 @@ void isr(void) {
 
 	// get the pin states for the indicated port.
 	curr = PINB;
-	mask = curr ^ interupt_last;
+	mask = curr ^ interupt_last; // Bitwise xor for change detection
 	interupt_last = curr;
 
 	// mask is pins that have changed. screen out non pcint pins.
@@ -341,7 +341,7 @@ void isr(void) {
 		pin = i;
 		if (bit & mask) {
 			// Trigger interrupt if bit is currently high.
-			if ((curr & bit) && (interupt_func[pin] != NULL)) {
+			if ((interupt_func[pin] != NULL)) { // (curr & bit) && 
 				interupt_func[pin]();
 			}
 		}
