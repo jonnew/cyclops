@@ -1,18 +1,34 @@
 /*
- Cyclops.cpp - Cyclops Driver
- Copyright (c) 2014 Jonathan Newman  All right reserved.
+Copyright (c) 2014 Jon Newman (jpnewman ~at~ mit <dot> edu) 
+All right reserved.
 
+This file is part of the Cyclops Library (CL) for Arduino.
+
+CL is free software: you can redistribute it and/or modify
+it under the terms of the Lesser GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+CL is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+Lesser GNU General Public License for more details.
+
+You should have received a copy of the Lesser GNU General Public License
+along with CL.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "Cyclops.h"
 
-// Initialize the CS and analog in look-up tables
+// Populate the LUTs
 static const uint16_t cs_lut_data[] = {(uint16_t)CS0, (uint16_t)CS1, (uint16_t)CS2, (uint16_t)CS3};
 const uint16_t *Cyclops::_cs_lut = cs_lut_data;
 static const uint16_t a_in_lut_data[] = {(uint16_t)A0, (uint16_t)A1, (uint16_t)A2, (uint16_t)A3};
 const uint16_t *Cyclops::_a_in_lut = a_in_lut_data;
 static const uint16_t trig_lut_data[] = {(uint16_t)TRIG0, (uint16_t)TRIG1, (uint16_t)TRIG2, (uint16_t)TRIG3};
 const uint16_t *Cyclops::_trig_lut = trig_lut_data;
+static const uint16_t trig_port_pos_lut_data[] = {4,5,6,7}; 
+const uint16_t *Cyclops::_trig_port_pos_lut = trig_port_pos_lut_data;
 
 Cyclops::Cyclops(uint16_t channel) {
 
@@ -32,6 +48,9 @@ Cyclops::Cyclops(uint16_t channel) {
     pinMode(WIPER_UD, OUTPUT);
     pinMode(LDAC, OUTPUT);
     pinMode(OC_COMP, OUTPUT);
+
+	// Pull the trigger line down
+	digitalWrite(_trig_lut[_channel], LOW);
 
     // Get the CS and load-dac lines ready
     digitalWrite(_cs_lut[_channel], HIGH);
@@ -175,7 +194,7 @@ void Cyclops::mcp4921_shutdown_dac (void) {
 
 }
 
-void Cyclops::mcp4022_set_nom_AWR (void) {
+void Cyclops::mcp4022_set_nom_AW_resistance(void) {
 
 	// This trimmer is 50k with 64 positions
 	// Decrement the wiper 64 times to 0x00
@@ -191,7 +210,7 @@ void Cyclops::mcp4022_set_nom_AWR (void) {
     //_wiper_position[_channel] = NOM_WIPER_POS;
 
 	// Write to EEPROM
-	mcp4022_save_pot_resistance();
+	mcp4022_save_AW_resistance();
 }
 
 void Cyclops::mcp4022_unpulse_pot(byte n) {
@@ -258,7 +277,7 @@ void Cyclops::mcp4022_decrement_pot( byte n) {
     digitalWrite(_cs_lut[_channel], HIGH);
 }
 
-void Cyclops::mcp4022_save_pot_resistance( void ) {
+void Cyclops::mcp4022_save_AW_resistance( void ) {
 
 	// Bring WIPER_UD HIGH
 	digitalWrite(WIPER_UD, HIGH);
@@ -271,5 +290,65 @@ void Cyclops::mcp4022_save_pot_resistance( void ) {
 
     // Take the CS pin high to deselect the chip
     digitalWrite(_cs_lut[_channel], HIGH);
+}
+
+void Cyclops::attach_interupt( void (*user_func)(void)) {
+	
+	// Enable pin-change interupt on port B, which is the only one
+	// used by the Cyclops for triggering
+	sbi(PCICR, PCIE0);
+
+	switch (_trig_lut[_channel]) {
+		case TRIG0:
+			sbi(PCMSK0, PCINT4);
+			break;
+		case TRIG1:
+			sbi(PCMSK0, PCINT5);
+			break;
+		case TRIG2:
+			sbi(PCMSK0, PCINT6);
+			break;
+		case TRIG3:
+			sbi(PCMSK0, PCINT7);
+			break;
+	}
+
+	// Assign function pointer for the interput handler to execute
+	interupt_func[_trig_port_pos_lut[_channel]] = user_func;
+	
+}
+
+// Interupt handler
+void isr(void) {
+	uint8_t bit;
+	uint8_t curr;
+	uint8_t mask;
+	uint8_t pin;
+
+	// get the pin states for the indicated port.
+	curr = PINB;
+	mask = curr ^ interupt_last; // Bitwise xor for change detection
+	interupt_last = curr;
+
+	// mask is pins that have changed. screen out non pcint pins.
+	if ((mask &= PCMSK0) == 0) {
+		return;
+	}
+
+	// mask is pcint pins that have changed.
+	for (uint8_t i=0; i < 8; i++) {
+		bit = 0x01 << i;
+		pin = i;
+		if (bit & mask) {
+			// Trigger interrupt if bit is currently high.
+			if ((interupt_func[pin] != NULL)) { // (curr & bit) && 
+				interupt_func[pin]();
+			}
+		}
+	}
+}
+
+SIGNAL(PCINT0_vect) {
+	isr();
 }
 
