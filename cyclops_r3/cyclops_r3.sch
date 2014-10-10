@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3491,6 +3491,38 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <text x="-1" y="3" size="1.016" layer="25" font="vector" ratio="20">&gt;NAME</text>
 <text x="-1" y="-4" size="1.016" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
+<package name="SL3P-150-100-F">
+<hole x="-1.27" y="0" drill="1.1684"/>
+<hole x="1.27" y="0" drill="1.1684"/>
+<wire x1="-1.4986" y1="7.747" x2="1.4986" y2="7.747" width="0.127" layer="21"/>
+<wire x1="2.2606" y1="0.9144" x2="2.2606" y2="4.4704" width="0.127" layer="21"/>
+<wire x1="2.2606" y1="4.4704" x2="-2.2606" y2="4.4704" width="0.127" layer="21"/>
+<wire x1="-2.2606" y1="4.4704" x2="-2.2606" y2="0.9144" width="0.127" layer="21"/>
+<wire x1="-2.2606" y1="0.9144" x2="2.2606" y2="0.9144" width="0.127" layer="21"/>
+<wire x1="-2.2606" y1="4.4704" x2="-2.2606" y2="5.207" width="0.127" layer="21"/>
+<wire x1="2.2606" y1="5.207" x2="2.2606" y2="4.4704" width="0.127" layer="21"/>
+<wire x1="-1.4986" y1="5.207" x2="-1.4986" y2="7.747" width="0.127" layer="21"/>
+<wire x1="1.4986" y1="5.207" x2="1.4986" y2="7.747" width="0.127" layer="21"/>
+<text x="-2.794" y="-0.254" size="1.016" layer="25" font="vector" ratio="20" rot="R90">&gt;NAME</text>
+<text x="3.81" y="-0.889" size="1.016" layer="27" font="vector" ratio="20" rot="R90">&gt;VALUE</text>
+<text x="-3.556" y="6.223" size="1.016" layer="21" font="vector" ratio="20">PCB Edge</text>
+<wire x1="-3.429" y1="6.096" x2="-3.556" y2="5.969" width="0.127" layer="21"/>
+<wire x1="-3.556" y1="5.969" x2="-3.556" y2="5.461" width="0.127" layer="21"/>
+<wire x1="-3.683" y1="5.588" x2="-3.556" y2="5.461" width="0.127" layer="21"/>
+<wire x1="-3.556" y1="5.461" x2="-3.429" y2="5.588" width="0.127" layer="21"/>
+<wire x1="-3.683" y1="5.588" x2="-3.429" y2="5.588" width="0.127" layer="21"/>
+<wire x1="-3.81" y1="5.207" x2="3.81" y2="5.207" width="0.127" layer="21" style="shortdash"/>
+<wire x1="3.683" y1="6.096" x2="3.81" y2="5.969" width="0.127" layer="22"/>
+<wire x1="3.81" y1="5.969" x2="3.81" y2="5.461" width="0.127" layer="22"/>
+<wire x1="3.937" y1="5.588" x2="3.81" y2="5.461" width="0.127" layer="22"/>
+<wire x1="3.81" y1="5.461" x2="3.683" y2="5.588" width="0.127" layer="22"/>
+<wire x1="3.937" y1="5.588" x2="3.683" y2="5.588" width="0.127" layer="22"/>
+<rectangle x1="-2.286" y1="4.445" x2="2.286" y2="5.207" layer="41"/>
+<wire x1="-2.2606" y1="-1.016" x2="-2.2606" y2="0.889" width="0.127" layer="21"/>
+<wire x1="-2.2606" y1="-1.016" x2="2.2606" y2="-1.016" width="0.127" layer="21"/>
+<wire x1="2.2606" y1="-1.016" x2="2.2606" y2="0.889" width="0.127" layer="21"/>
+<rectangle x1="-2.286" y1="-1.016" x2="2.286" y2="0.889" layer="41"/>
+</package>
 </packages>
 <symbols>
 <symbol name="317">
@@ -4101,6 +4133,20 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <wire x1="1.27" y1="0" x2="5.08" y2="0" width="0.254" layer="94"/>
 <wire x1="1.27" y1="0" x2="2.54" y2="0.635" width="0.254" layer="94"/>
 <wire x1="2.54" y1="-0.635" x2="1.27" y2="0" width="0.254" layer="94"/>
+</symbol>
+<symbol name="LIGHT-PIPE">
+<wire x1="0" y1="0" x2="3.81" y2="3.81" width="0.254" layer="94"/>
+<wire x1="3.81" y1="3.81" x2="6.35" y2="3.81" width="0.254" layer="94"/>
+<wire x1="6.35" y1="3.81" x2="6.35" y2="1.27" width="0.254" layer="94"/>
+<wire x1="6.35" y1="1.27" x2="6.35" y2="0" width="0.254" layer="94"/>
+<wire x1="6.35" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="6.35" y1="1.27" x2="7.62" y2="1.27" width="0.254" layer="94"/>
+<wire x1="6.35" y1="3.81" x2="7.62" y2="3.81" width="0.254" layer="94"/>
+<wire x1="7.62" y1="1.27" x2="7.62" y2="3.81" width="0.254" layer="94" curve="180"/>
+<wire x1="8.89" y1="3.81" x2="10.16" y2="4.445" width="0.254" layer="94"/>
+<wire x1="9.525" y1="2.54" x2="10.795" y2="2.54" width="0.254" layer="94"/>
+<wire x1="8.89" y1="1.27" x2="10.16" y2="0.635" width="0.254" layer="94"/>
+<text x="12.7" y="0" size="1.27" layer="96" rot="R90">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -6093,6 +6139,18 @@ Digikey part: J111-ND (or similar).</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="LIGHT-PIPE" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="LIGHT-PIPE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="_SL30-150-100-F" package="SL3P-150-100-F">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="ti-extended">
@@ -6375,6 +6433,9 @@ at 30/07/2012 17:45:58</description>
 <part name="R26" library="cyclops" deviceset="R" device="_0603" value="10k"/>
 <part name="R27" library="cyclops" deviceset="R" device="_0603" value="10k"/>
 <part name="P+7" library="cyclops" deviceset="+5V" device="" value="+5V"/>
+<part name="U$51" library="cyclops" deviceset="LIGHT-PIPE" device="_SL30-150-100-F" value="SLP3"/>
+<part name="U$52" library="cyclops" deviceset="LIGHT-PIPE" device="_SL30-150-100-F" value="SLP3"/>
+<part name="U$53" library="cyclops" deviceset="LIGHT-PIPE" device="_SL30-150-100-F" value="SLP3"/>
 </parts>
 <sheets>
 <sheet>
@@ -7210,6 +7271,9 @@ to serve as denoising jumper</text>
 <instance part="R11" gate="R" x="93.98" y="-55.88" rot="R90"/>
 <instance part="COMP" gate="G$1" x="93.98" y="-68.58"/>
 <instance part="U$49" gate="G$1" x="93.98" y="-114.3"/>
+<instance part="U$51" gate="G$1" x="68.58" y="-73.66" rot="R90"/>
+<instance part="U$52" gate="G$1" x="88.9" y="-73.66" rot="R90"/>
+<instance part="U$53" gate="G$1" x="63.5" y="0" rot="R270"/>
 </instances>
 <busses>
 </busses>
