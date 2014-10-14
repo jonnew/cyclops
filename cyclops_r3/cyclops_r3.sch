@@ -3387,6 +3387,29 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <wire x1="66.04" y1="51.816" x2="64.516" y2="53.34" width="0.1524" layer="21"/>
 <wire x1="64.516" y1="53.34" x2="0" y2="53.34" width="0.1524" layer="21"/>
 <wire x1="0" y1="53.34" x2="0" y2="0" width="0.1524" layer="21"/>
+<text x="64.77" y="4.445" size="0.889" layer="21" font="vector" ratio="18" rot="R90">RST</text>
+<text x="66.3575" y="4.445" size="0.889" layer="21" font="vector" ratio="18" rot="R90">GND</text>
+<text x="66.3575" y="7.3025" size="0.889" layer="21" font="vector" ratio="18" rot="R90">MOSI</text>
+<text x="64.77" y="11.1125" size="0.889" layer="21" font="vector" ratio="18" rot="R90">MISO</text>
+<text x="66.3575" y="11.7475" size="0.889" layer="21" font="vector" ratio="18" rot="R90">5V</text>
+<wire x1="63.5" y1="4.1275" x2="65.0875" y2="4.1275" width="0.127" layer="21"/>
+<wire x1="65.0875" y1="4.1275" x2="66.675" y2="4.1275" width="0.127" layer="21"/>
+<wire x1="66.675" y1="4.1275" x2="66.675" y2="6.985" width="0.127" layer="21"/>
+<wire x1="66.675" y1="6.985" x2="66.675" y2="10.795" width="0.127" layer="21"/>
+<wire x1="66.675" y1="10.795" x2="66.675" y2="14.2875" width="0.127" layer="21"/>
+<wire x1="66.675" y1="14.2875" x2="65.0875" y2="14.2875" width="0.127" layer="21"/>
+<wire x1="65.0875" y1="14.2875" x2="63.5" y2="14.2875" width="0.127" layer="21"/>
+<wire x1="63.5" y1="14.2875" x2="63.5" y2="10.795" width="0.127" layer="21"/>
+<text x="64.77" y="7.3025" size="0.889" layer="21" font="vector" ratio="18" rot="R90">SCLK</text>
+<wire x1="63.5" y1="10.795" x2="63.5" y2="6.985" width="0.127" layer="21"/>
+<wire x1="63.5" y1="6.985" x2="63.5" y2="4.1275" width="0.127" layer="21"/>
+<wire x1="63.5" y1="10.795" x2="66.675" y2="10.795" width="0.127" layer="21"/>
+<wire x1="63.5" y1="6.985" x2="66.675" y2="6.985" width="0.127" layer="21"/>
+<wire x1="65.0875" y1="4.1275" x2="65.0875" y2="14.2875" width="0.127" layer="21"/>
+<wire x1="67.31" y1="27.94" x2="67.8134875" y2="27.94" width="0.127" layer="21"/>
+<wire x1="67.8134875" y1="27.94" x2="68.2625" y2="27.4909875" width="0.127" layer="21"/>
+<wire x1="68.2625" y1="27.4909875" x2="68.2625" y2="15.875" width="0.127" layer="21"/>
+<wire x1="68.2625" y1="15.875" x2="66.9925" y2="14.605" width="0.127" layer="21"/>
 </package>
 <package name="BDN18">
 <wire x1="0" y1="0" x2="0" y2="45.72" width="0.1524" layer="21"/>
@@ -6426,8 +6449,8 @@ at 30/07/2012 17:45:58</description>
 <part name="L2" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="L1" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="L0" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
-<part name="R1" library="cyclops" deviceset="R" device="_0603" value="10k"/>
-<part name="C1" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
+<part name="R1" library="cyclops" deviceset="R" device="_0603" value="100k"/>
+<part name="C1" library="cyclops" deviceset="C" device="_0603" value="1uF"/>
 <part name="U$50" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$28" library="cyclops" deviceset="GND2" device=""/>
 <part name="R26" library="cyclops" deviceset="R" device="_0603" value="10k"/>
