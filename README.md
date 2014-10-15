@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------
 
-This file is part of the Cyclops Precision LED Driver Project. Copyright (C) 2013-2014 Cyclops-LED-Driver
+This file is part of the Cyclops Precision LED Driver Project. Copyright (C) 2014 Jonathan P. Newman (jpnewman snail mit period edu)
 
 -------------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ Precision current source, with optional optical feedback mode, for driving high 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Cyclops LED Driver</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jonnew/cyclops" property="cc:attributionName" rel="cc:attributionURL">Jonathan P. Newman</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/jonnew/cyclops" rel="dct:source">https://github.com/jonnew/cyclops</a>.
 
 # Software Licensing
-Copyright (c) 2014 Jon Newman (jpnewman ~at~ mit <dot> edu) 
+Copyright (c) 2014 Jonathan P. Newman 
 All right reserved.
 
 Cyclops Library (CL) for Arduino.
