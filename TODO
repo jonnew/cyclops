@@ -17,3 +17,5 @@ R3.3 Board
 
 6. The point of the OC protect circuit should be to deal with _mean_ overcurrent conditions. This means that the time constant of the filter in front of the analog current measurement pin should be on the order of 1 second.
 	+ Changed to 100 msec as compromise.
+	
+7. Add back panel cutouts for USB.
