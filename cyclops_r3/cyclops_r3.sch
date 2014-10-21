@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.4">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -5205,7 +5205,17 @@ Microchip Technoligies&lt;br&gt;</description>
 <technology name=""/>
 </technologies>
 </device>
-<device name="_MTS-M6" package="2M1-SP1-T2-B4-M6RE">
+<device name="_2M-NOOFF" package="2M1-SP1-T2-B4-M6RE">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_2M-WITHOFF" package="2M1-SP1-T2-B4-M6RE">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
@@ -6331,8 +6341,8 @@ at 30/07/2012 17:45:58</description>
 <part name="Q2" library="cyclops" deviceset="N-MOSFET" device="TO-262" value="IRF510"/>
 <part name="R25" library="cyclops" deviceset="R" device="_0603" value="10"/>
 <part name="VAUX_OUT" library="cyclops" deviceset="BNC" device="_V-BITE" value="361V509E"/>
-<part name="REF2.1" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
-<part name="REF5.1" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
+<part name="REF2.5" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
+<part name="REF5.0" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
 <part name="VBIAS" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
 <part name="VGATE" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
 <part name="R9" library="cyclops" deviceset="R" device="_0603" value="3k"/>
@@ -6363,7 +6373,7 @@ at 30/07/2012 17:45:58</description>
 <part name="PWR_DIST" library="cyclops" deviceset="PINH2X6" device=""/>
 <part name="PWR_IN" library="cyclops" deviceset="PINH1X3" device="_MINI-JR" value="PINH1X3_MINI-JR"/>
 <part name="GAIN" library="cyclops" deviceset="POT_US" device="_3310" value="1k"/>
-<part name="VCTL&lt;-&gt;DAC" library="cyclops" deviceset="SPDT" device="_MTS-M6" value="2M1"/>
+<part name="VCTL&lt;-&gt;DAC" library="cyclops" deviceset="SPDT" device="_2M-WITHOFF" value="2M1-SP3"/>
 <part name="L6" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="L5" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="LED_PD" library="cyclops" deviceset="PINH2X5" device="_ICD-H"/>
@@ -7587,8 +7597,8 @@ to serve as denoising jumper</text>
 <instance part="FRAME3" gate="G$1" x="-162.56" y="-180.34"/>
 <instance part="C19" gate="C" x="-58.42" y="-106.68"/>
 <instance part="C17" gate="C" x="-73.66" y="-106.68"/>
-<instance part="REF2.1" gate="G$1" x="35.56" y="5.08"/>
-<instance part="REF5.1" gate="G$1" x="45.72" y="-81.28"/>
+<instance part="REF2.5" gate="G$1" x="35.56" y="5.08"/>
+<instance part="REF5.0" gate="G$1" x="45.72" y="-81.28"/>
 <instance part="U$1" gate="G$1" x="-73.66" y="-154.94"/>
 <instance part="U$2" gate="G$1" x="-58.42" y="-154.94"/>
 <instance part="U$3" gate="G$1" x="-73.66" y="-55.88"/>
@@ -7659,7 +7669,7 @@ to serve as denoising jumper</text>
 <wire x1="35.56" y1="-17.78" x2="35.56" y2="2.54" width="0.1524" layer="91"/>
 <junction x="35.56" y="2.54"/>
 <label x="53.34" y="2.54" size="1.778" layer="95"/>
-<pinref part="REF2.1" gate="G$1" pin="TP"/>
+<pinref part="REF2.5" gate="G$1" pin="TP"/>
 </segment>
 <segment>
 <wire x1="-17.78" y1="-88.9" x2="-40.64" y2="-88.9" width="0.1524" layer="91"/>
@@ -7747,7 +7757,7 @@ to serve as denoising jumper</text>
 <wire x1="45.72" y1="-83.82" x2="76.2" y2="-83.82" width="0.1524" layer="91"/>
 <junction x="45.72" y="-83.82"/>
 <label x="66.04" y="-83.82" size="1.778" layer="95"/>
-<pinref part="REF5.1" gate="G$1" pin="TP"/>
+<pinref part="REF5.0" gate="G$1" pin="TP"/>
 </segment>
 </net>
 </nets>
