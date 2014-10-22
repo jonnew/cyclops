@@ -6373,7 +6373,7 @@ at 30/07/2012 17:45:58</description>
 <part name="PWR_DIST" library="cyclops" deviceset="PINH2X6" device=""/>
 <part name="PWR_IN" library="cyclops" deviceset="PINH1X3" device="_MINI-JR" value="PINH1X3_MINI-JR"/>
 <part name="GAIN" library="cyclops" deviceset="POT_US" device="_3310" value="1k"/>
-<part name="VCTL&lt;-&gt;DAC" library="cyclops" deviceset="SPDT" device="_2M-WITHOFF" value="2M1-SP3"/>
+<part name="VCTL&lt;-&gt;DAC" library="cyclops" deviceset="SPDT" device="_2M-WITHOFF" value="100-SP3"/>
 <part name="L6" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="L5" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="LED_PD" library="cyclops" deviceset="PINH2X5" device="_ICD-H"/>

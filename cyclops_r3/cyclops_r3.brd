@@ -3380,7 +3380,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="30.48" y="73.025" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="35.306" y="73.025" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="VCTL&lt;-&gt;DAC" library="cyclops" package="2M1-SP1-T2-B4-M6RE" value="2M1-SP3" x="17.78" y="76.835" smashed="yes" rot="R270">
+<element name="VCTL&lt;-&gt;DAC" library="cyclops" package="2M1-SP1-T2-B4-M6RE" value="100-SP3" x="17.78" y="76.835" smashed="yes" rot="R270">
 <attribute name="NAME" x="12.827" y="61.595" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="15.113" y="74.549" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
