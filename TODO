@@ -20,3 +20,8 @@ R3.3 Board
 	+ Changed to 100 msec as compromise.
 	
 7. Add back panel cutouts for USB.
+
+8. Move pcb mount plane down one level in enclosure.
+
+9. Add a logic level converter to the trig input. This will allow the use of the arduino zero when it comes out.
+	+ http://dlnmh9ip6v2uc.cloudfront.net/datasheets/BreakoutBoards/Logic_Level_Bidirectional.pdf

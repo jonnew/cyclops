@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -6420,7 +6420,7 @@ at 30/07/2012 17:45:58</description>
 <part name="U$41" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$42" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$43" library="cyclops" deviceset="GND2" device=""/>
-<part name="R19" library="cyclops" deviceset="R" device="_0603" value="5.6k(DNP)"/>
+<part name="R19" library="cyclops" deviceset="R" device="_0603" value="5.6k"/>
 <part name="U$45" library="cyclops" deviceset="GND2" device=""/>
 <part name="P+4" library="cyclops" deviceset="+5V" device="" value="+12V"/>
 <part name="LED-" library="cyclops" deviceset="BANANA_TO_BOARD" device="_A2107" value="A2107-B"/>
@@ -7795,6 +7795,7 @@ to serve as denoising jumper</text>
 Max(VREF) ~ 0.75V
 Max(ILED) ~ 1.5 Amps</text>
 <text x="-68.58" y="-5.08" size="1.6764" layer="94">VI = 1A/1V</text>
+<text x="-33.02" y="106.68" size="1.778" layer="97" rot="R90">DNP</text>
 </plain>
 <instances>
 <instance part="U8" gate="B" x="22.86" y="83.82"/>
