@@ -6373,7 +6373,7 @@ at 30/07/2012 17:45:58</description>
 <part name="PWR_DIST" library="cyclops" deviceset="PINH2X6" device=""/>
 <part name="PWR_IN" library="cyclops" deviceset="PINH1X3" device="_MINI-JR" value="PINH1X3_MINI-JR"/>
 <part name="GAIN" library="cyclops" deviceset="POT_US" device="_3310" value="1k"/>
-<part name="VCTL&lt;-&gt;DAC" library="cyclops" deviceset="SPDT" device="_2M-WITHOFF" value="100-SP3"/>
+<part name="VCTL&lt;OFF&gt;DAC" library="cyclops" deviceset="SPDT" device="_2M-WITHOFF" value="100-SP3"/>
 <part name="L6" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="L5" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="LED_PD" library="cyclops" deviceset="PINH2X5" device="_ICD-H"/>
@@ -6515,7 +6515,7 @@ to serve as denoising jumper</text>
 <instance part="VCTL" gate="G$1" x="144.78" y="15.24"/>
 <instance part="PWR_DIST" gate="G$1" x="33.02" y="-20.32"/>
 <instance part="PWR_IN" gate="G$1" x="25.4" y="5.08"/>
-<instance part="VCTL&lt;-&gt;DAC" gate="G$1" x="193.04" y="17.78" rot="MR0"/>
+<instance part="VCTL&lt;OFF&gt;DAC" gate="G$1" x="193.04" y="17.78" rot="MR0"/>
 <instance part="L6" gate="L" x="53.34" y="38.1" smashed="yes">
 <attribute name="NAME" x="52.07" y="30.48" size="1.778" layer="95" rot="R90"/>
 </instance>
@@ -6695,7 +6695,7 @@ to serve as denoising jumper</text>
 <pinref part="R2" gate="R" pin="2"/>
 <wire x1="172.72" y1="78.74" x2="172.72" y2="81.28" width="0.1524" layer="91"/>
 <junction x="172.72" y="81.28"/>
-<pinref part="VCTL&lt;-&gt;DAC" gate="G$1" pin="1"/>
+<pinref part="VCTL&lt;OFF&gt;DAC" gate="G$1" pin="1"/>
 <wire x1="180.34" y1="20.32" x2="185.42" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="81.28" x2="180.34" y2="20.32" width="0.1524" layer="91"/>
 </segment>
@@ -6842,7 +6842,7 @@ to serve as denoising jumper</text>
 <segment>
 <pinref part="VCTL" gate="G$1" pin="1"/>
 <label x="152.4" y="15.24" size="1.778" layer="95"/>
-<pinref part="VCTL&lt;-&gt;DAC" gate="G$1" pin="3"/>
+<pinref part="VCTL&lt;OFF&gt;DAC" gate="G$1" pin="3"/>
 <wire x1="185.42" y1="15.24" x2="147.32" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -6866,7 +6866,7 @@ to serve as denoising jumper</text>
 <segment>
 <wire x1="195.58" y1="17.78" x2="203.2" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="TEST" gate="G$1" pin="1"/>
-<pinref part="VCTL&lt;-&gt;DAC" gate="G$1" pin="2"/>
+<pinref part="VCTL&lt;OFF&gt;DAC" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="VCTL" class="0">
