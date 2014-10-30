@@ -6346,14 +6346,14 @@ at 30/07/2012 17:45:58</description>
 <part name="VBIAS" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
 <part name="VGATE" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
 <part name="R9" library="cyclops" deviceset="R" device="_0603" value="3k"/>
-<part name="PWR" library="cyclops" deviceset="LED" device="_0603" value="LEDGRN"/>
+<part name="PWR" library="cyclops" deviceset="LED" device="_0603" value="BLUE"/>
 <part name="U4" library="ti-extended" deviceset="TLV3701CDBVT" device="" value="TLV3701"/>
 <part name="R5" library="cyclops" deviceset="R" device="_0603" value="10k"/>
 <part name="R4" library="cyclops" deviceset="R" device="_0603" value="110k"/>
 <part name="R3" library="cyclops" deviceset="R" device="_0603" value="10k"/>
 <part name="C10" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="R10" library="cyclops" deviceset="R" device="_0603" value="1k"/>
-<part name="OC" library="cyclops" deviceset="LED" device="_0603" value="LEDRED"/>
+<part name="OC" library="cyclops" deviceset="LED" device="_0603" value="RED"/>
 <part name="C8" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="U5" library="cyclops" deviceset="*337" device="IMP" value="337-N"/>
 <part name="C14" library="cyclops" deviceset="C-POL" device="_1206" value="1uF"/>
@@ -6453,7 +6453,7 @@ at 30/07/2012 17:45:58</description>
 <part name="P+6" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 <part name="C6" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="R11" library="cyclops" deviceset="R" device="_0603" value="1k"/>
-<part name="COMP" library="cyclops" deviceset="LED" device="_0603" value="LEDRED"/>
+<part name="COMP" library="cyclops" deviceset="LED" device="_0603" value="RED"/>
 <part name="U$49" library="cyclops" deviceset="GND2" device=""/>
 <part name="L3" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="L2" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>

@@ -3251,8 +3251,8 @@ Modified: 2014.07.10
 <attribute name="NAME" x="20.828" y="77.23" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="20.828" y="76.087" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="PWR" library="cyclops" package="LED-0603" value="LEDGRN" x="20.32" y="77.978" smashed="yes" rot="R90">
-<attribute name="NAME" x="19.304" y="72.39" size="1.016" layer="25" font="vector" ratio="18"/>
+<element name="PWR" library="cyclops" package="LED-0603" value="BLUE" x="20.32" y="77.978" smashed="yes" rot="R90">
+<attribute name="NAME" x="17.78" y="72.39" size="1.016" layer="25" font="vector" ratio="18"/>
 </element>
 <element name="U4" library="ti-extended" package="SOT95P280X145-5N" value="TLV3701" x="70.746" y="59.182" smashed="yes" rot="R180">
 <attribute name="PACKAGE" value="SOT-23-5" x="70.746" y="59.182" size="1.6764" layer="27" ratio="18" rot="R180" display="off"/>
@@ -3295,8 +3295,8 @@ Modified: 2014.07.10
 <attribute name="NAME" x="44.577" y="77.089" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="44.577" y="76.073" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="OC" library="cyclops" package="LED-0603" value="LEDRED" x="44.069" y="77.978" smashed="yes" rot="R90">
-<attribute name="NAME" x="41.91" y="72.263" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
+<element name="OC" library="cyclops" package="LED-0603" value="RED" x="44.069" y="77.978" smashed="yes" rot="R90">
+<attribute name="NAME" x="42.037" y="72.263" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
 </element>
 <element name="C8" library="cyclops" package="0603" value=".1uF" x="71.882" y="62.738" smashed="yes" rot="R90">
 <attribute name="NAME" x="71.501" y="64.643" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
@@ -3506,8 +3506,8 @@ Modified: 2014.07.10
 <attribute name="NAME" x="26.924" y="77.216" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="26.924" y="76.2" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="COMP" library="cyclops" package="LED-0603" value="LEDRED" x="26.416" y="77.978" smashed="yes" rot="R90">
-<attribute name="NAME" x="23.495" y="72.263" size="1.016" layer="25" font="vector" ratio="18"/>
+<element name="COMP" library="cyclops" package="LED-0603" value="RED" x="26.416" y="77.978" smashed="yes" rot="R90">
+<attribute name="NAME" x="23.495" y="72.39" size="1.016" layer="25" font="vector" ratio="18"/>
 </element>
 <element name="L3" library="cyclops" package="0603" value="MPZ1608" x="59.055" y="58.42" smashed="yes">
 <attribute name="NAME" x="60.071" y="59.817" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
