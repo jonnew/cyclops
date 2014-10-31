@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -6404,7 +6404,7 @@ at 30/07/2012 17:45:58</description>
 <part name="U$25" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$27" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$29" library="cyclops" deviceset="GND2" device=""/>
-<part name="P-1" library="cyclops" deviceset="-5V" device="" value="-2.1V"/>
+<part name="P-1" library="cyclops" deviceset="-5V" device="" value="-1.25V"/>
 <part name="P+1" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 <part name="P+2" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 <part name="P+3" library="cyclops" deviceset="+5V" device="" value="+12v"/>
@@ -6437,7 +6437,7 @@ at 30/07/2012 17:45:58</description>
 <part name="U$26" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$20" library="cyclops" deviceset="GND2" device=""/>
 <part name="R22" library="cyclops" deviceset="R" device="_0603" value="220k"/>
-<part name="P-2" library="cyclops" deviceset="-5V" device="" value="-2.1V"/>
+<part name="P-2" library="cyclops" deviceset="-5V" device="" value="-1.25V"/>
 <part name="P+5" library="cyclops" deviceset="+5V" device="" value="+12V"/>
 <part name="R20" library="cyclops" deviceset="R" device="_0603" value="220k"/>
 <part name="T0" library="cyclops" deviceset="SJ" device=""/>
