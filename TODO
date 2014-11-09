@@ -26,7 +26,7 @@ R3.3 Board
 	+ Done.
 
 9. Add a logic level converter to the trig input. This will allow the use of the arduino zero when it comes out.
-	+ http://dlnmh9ip6v2uc.cloudfront.net/datasheets/BreakoutBoards/Logic_Level_Bidirectional.pdf
+	+ Done.
 	
 10. Switching to the LT2052 was good because it allows the LED to turn fully off when the input signal is grounded. Its bad because it introduces small anomalies in the rising edge of the current/light waveform for large pulses from the off state. Can I find something that has really low input offset, is pretty fast, has RRIO, can handle the rails provided, and maybe, can allow the circuit to operate of of a single supply rail?
 
