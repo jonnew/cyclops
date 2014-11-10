@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -4027,12 +4027,12 @@ Modified: 2014.07.10
 <vertex x="1.27" y="65.278"/>
 <vertex x="1.27" y="78.02158125"/>
 <vertex x="1.98841875" y="78.74"/>
-<vertex x="21.844" y="78.74"/>
-<vertex x="23.114" y="77.47"/>
-<vertex x="23.114" y="76.708"/>
-<vertex x="27.94" y="76.708"/>
-<vertex x="27.94" y="80.264"/>
-<vertex x="124.968" y="80.01"/>
+<vertex x="20.828" y="78.74"/>
+<vertex x="21.717" y="77.851"/>
+<vertex x="21.717" y="76.708"/>
+<vertex x="27.051" y="76.708"/>
+<vertex x="27.051" y="80.01"/>
+<vertex x="124.968" y="80.137"/>
 <vertex x="124.968" y="0"/>
 <vertex x="76.835" y="0"/>
 <vertex x="81.407" y="4.699"/>
@@ -4152,9 +4152,9 @@ Modified: 2014.07.10
 <vertex x="20.828" y="78.74"/>
 <vertex x="21.717" y="77.851"/>
 <vertex x="21.717" y="76.708"/>
-<vertex x="26.543" y="76.708"/>
-<vertex x="26.543" y="80.264"/>
-<vertex x="124.968" y="80.01"/>
+<vertex x="27.051" y="76.708"/>
+<vertex x="27.051" y="80.01"/>
+<vertex x="124.968" y="80.137"/>
 <vertex x="124.968" y="0"/>
 <vertex x="74.295" y="0"/>
 <vertex x="78.867" y="4.699"/>
@@ -4646,24 +4646,24 @@ Modified: 2014.07.10
 </signal>
 <signal name="KEEPOUT">
 <polygon width="0.4064" layer="15" isolate="0.381">
-<vertex x="53.594" y="64.897"/>
-<vertex x="56.896" y="64.897"/>
+<vertex x="53.594" y="64.516"/>
+<vertex x="56.896" y="64.516"/>
 <vertex x="56.896" y="60.706"/>
 <vertex x="58.039" y="59.563"/>
 <vertex x="58.801" y="59.563"/>
 <vertex x="59.055" y="59.309"/>
-<vertex x="59.055" y="49.53"/>
-<vertex x="53.594" y="49.53"/>
+<vertex x="59.055" y="49.911"/>
+<vertex x="53.594" y="49.911"/>
 </polygon>
 <polygon width="0.4064" layer="16" isolate="0.381">
-<vertex x="53.594" y="64.897"/>
-<vertex x="56.896" y="64.897"/>
+<vertex x="53.594" y="64.516"/>
+<vertex x="56.896" y="64.516"/>
 <vertex x="56.896" y="60.706"/>
 <vertex x="58.039" y="59.563"/>
 <vertex x="58.801" y="59.563"/>
 <vertex x="59.055" y="59.309"/>
-<vertex x="59.055" y="49.53"/>
-<vertex x="53.594" y="49.53"/>
+<vertex x="59.055" y="49.911"/>
+<vertex x="53.594" y="49.911"/>
 </polygon>
 </signal>
 <signal name="N$14">
@@ -4773,12 +4773,12 @@ Modified: 2014.07.10
 <vertex x="1.27" y="65.278"/>
 <vertex x="1.27" y="78.02158125"/>
 <vertex x="1.98841875" y="78.74"/>
-<vertex x="21.844" y="78.74"/>
-<vertex x="23.114" y="77.47"/>
-<vertex x="23.114" y="76.708"/>
-<vertex x="27.94" y="76.708"/>
-<vertex x="27.94" y="80.264"/>
-<vertex x="124.968" y="80.01"/>
+<vertex x="20.828" y="78.74"/>
+<vertex x="21.717" y="77.851"/>
+<vertex x="21.717" y="76.708"/>
+<vertex x="27.051" y="76.708"/>
+<vertex x="27.051" y="80.01"/>
+<vertex x="124.968" y="80.137"/>
 <vertex x="124.968" y="0"/>
 <vertex x="76.835" y="0"/>
 <vertex x="81.407" y="4.699"/>
@@ -5369,14 +5369,14 @@ Modified: 2014.07.10
 <contactref element="LEONARDO" pad="GND2"/>
 <wire x1="55.492" y1="43.18" x2="53.5686" y2="43.18" width="1.016" layer="1"/>
 <polygon width="0.4064" layer="2" isolate="0.381" thermals="no">
-<vertex x="53.594" y="64.897"/>
-<vertex x="56.896" y="64.897"/>
+<vertex x="53.594" y="64.516"/>
+<vertex x="56.896" y="64.516"/>
 <vertex x="56.896" y="60.579"/>
 <vertex x="57.912" y="59.563"/>
 <vertex x="58.801" y="59.563"/>
 <vertex x="59.055" y="59.309"/>
-<vertex x="59.055" y="49.53"/>
-<vertex x="53.594" y="49.53"/>
+<vertex x="59.055" y="49.911"/>
+<vertex x="53.594" y="49.911"/>
 </polygon>
 </signal>
 <signal name="SDA">
