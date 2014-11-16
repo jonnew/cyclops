@@ -30,6 +30,13 @@ R3.3 Board
 	
 10. Switching to the LT2052 was good because it allows the LED to turn fully off when the input signal is grounded. Its bad because it introduces small anomalies in the rising edge of the current/light waveform for large pulses from the off state. Can I find something that has really low input offset, is pretty fast, has RRIO, can handle the rails provided, and maybe, can allow the circuit to operate of of a single supply rail?
 
-	+ LMP7709? Might be too quick. I did a spice simulation and it looks pretty good. A bit of overshoot though. I should buy a few and look at least.
-	
+	+ LMP7709? 
+		- This is an uncompensated amplifier
+		- Works very well for the optical/current FB loop, but the follower configs are unstable
+		- Use a single channel version for the optical loop and compensated amps for everything else.
+
 11. The negative rail is not needed if you use a  low drift, precision amplifier that is RRO to ground. If this is the solution, then get rid of it, and use a simple barrel connector so people don't have to use a lab supply.
+
+12. Front panel holes are all too big, make their tolerances tighter.
+
+13. Add on/off switch.
