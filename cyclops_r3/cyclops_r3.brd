@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -4393,9 +4393,9 @@ Modified: 2014.07.10
 <signal name="VREF">
 <contactref element="U8" pad="14"/>
 <contactref element="VREF" pad="1"/>
-<wire x1="77.851" y1="66.802" x2="79.121" y2="68.072" width="0.3048" layer="1"/>
-<wire x1="79.121" y1="68.072" x2="111.705984375" y2="68.072" width="0.3048" layer="1"/>
-<wire x1="111.705984375" y1="68.072" x2="115.019396875" y2="71.3854125" width="0.3048" layer="1"/>
+<wire x1="77.851" y1="66.802" x2="79.629" y2="68.58" width="0.3048" layer="1"/>
+<wire x1="79.629" y1="68.58" x2="112.213984375" y2="68.58" width="0.3048" layer="1"/>
+<wire x1="112.213984375" y1="68.58" x2="115.019396875" y2="71.3854125" width="0.3048" layer="1"/>
 <wire x1="115.019396875" y1="71.3854125" x2="115.294696875" y2="71.797428125" width="0.3048" layer="1"/>
 <wire x1="115.294696875" y1="71.797428125" x2="115.57" y2="72.462065625" width="0.3048" layer="1"/>
 <wire x1="115.57" y1="72.462065625" x2="115.57" y2="73.406" width="0.3048" layer="1"/>
@@ -5196,9 +5196,9 @@ Modified: 2014.07.10
 <contactref element="LED-" pad="2"/>
 <contactref element="U8" pad="10"/>
 <contactref element="RSENSE" pad="2"/>
-<wire x1="80.137" y1="67.183" x2="79.121" y2="66.167" width="0.8128" layer="1"/>
-<wire x1="79.121" y1="66.167" x2="79.121" y2="42.926" width="0.8128" layer="1"/>
-<wire x1="79.121" y1="42.926" x2="78.105" y2="41.91" width="0.8128" layer="1"/>
+<wire x1="80.137" y1="67.183" x2="79.121" y2="66.167" width="1.27" layer="1"/>
+<wire x1="79.121" y1="66.167" x2="79.121" y2="42.926" width="1.27" layer="1"/>
+<wire x1="79.121" y1="42.926" x2="78.105" y2="41.91" width="1.27" layer="1"/>
 <wire x1="78.105" y1="41.91" x2="70.284" y2="41.91" width="0.8128" layer="1"/>
 <contactref element="LED_PD" pad="2"/>
 <contactref element="LED_PD" pad="1"/>
@@ -5208,7 +5208,7 @@ Modified: 2014.07.10
 <vertex x="82.677" y="7.747"/>
 <vertex x="82.677" y="12.7"/>
 </polygon>
-<wire x1="107.95" y1="67.183" x2="80.137" y2="67.183" width="0.8128" layer="1"/>
+<wire x1="107.95" y1="67.183" x2="80.137" y2="67.183" width="1.27" layer="1"/>
 <wire x1="120.269" y1="24.257" x2="114.046" y2="18.034" width="3.048" layer="1"/>
 <wire x1="114.046" y1="18.034" x2="114.046" y2="17.78" width="3.048" layer="1"/>
 <wire x1="114.046" y1="17.78" x2="114.046" y2="11.43" width="3.048" layer="1"/>
@@ -5226,10 +5226,10 @@ Modified: 2014.07.10
 <wire x1="120.269" y1="44.323" x2="116.332" y2="48.26" width="3.048" layer="1"/>
 <wire x1="116.332" y1="48.26" x2="114.904" y2="48.26" width="3.048" layer="1"/>
 <wire x1="114.904" y1="48.26" x2="114.681" y2="48.483" width="3.048" layer="1"/>
-<wire x1="116.332" y1="48.26" x2="112.395" y2="48.26" width="0.8128" layer="1"/>
-<wire x1="112.395" y1="48.26" x2="109.728" y2="50.927" width="0.8128" layer="1"/>
-<wire x1="109.728" y1="50.927" x2="109.728" y2="65.405" width="0.8128" layer="1"/>
-<wire x1="109.728" y1="65.405" x2="107.95" y2="67.183" width="0.8128" layer="1"/>
+<wire x1="116.332" y1="48.26" x2="112.395" y2="48.26" width="1.27" layer="1"/>
+<wire x1="112.395" y1="48.26" x2="109.728" y2="50.927" width="1.27" layer="1"/>
+<wire x1="109.728" y1="50.927" x2="109.728" y2="65.405" width="1.27" layer="1"/>
+<wire x1="109.728" y1="65.405" x2="107.95" y2="67.183" width="1.27" layer="1"/>
 <wire x1="83.439" y1="8.763" x2="82.169" y2="10.033" width="0.3048" layer="16"/>
 <wire x1="82.169" y1="10.033" x2="72.009" y2="10.033" width="0.3048" layer="16"/>
 <wire x1="72.009" y1="10.033" x2="68.834" y2="6.858" width="0.3048" layer="16"/>
