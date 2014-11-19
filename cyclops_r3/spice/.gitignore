@@ -1,4 +1,4 @@
-# Ignore the backup files created by EAGLE
+# Ignore non-essential lt-spice files
 *.op.raw
 *.log
 *.net
