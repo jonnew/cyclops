@@ -41,5 +41,11 @@ R3.3 Board
 
 13. Add on/off switch.
 
-14. Simulate the usage of a class AB amplifier (diodes in series with base drive on totem pole) to decrease dead time during pulses.
+X14. Simulate the usage of a class AB amplifier (diodes in series with base drive on totem pole) to decrease dead time during pulses.
 
+	+ Results were not good...
+
+15. The negative supply will be nessesary because even RRIO amps can only approach the rails, they generally cannot go to them. This is true for the LMP7707, which I will be using for the gate drive circuit. Therefore, I need to generate a small negative supply.
+	
+	+ Either a inverting switching regulator or a switched cap voltage inverter followed by a linear regulator.
+	+ The OE ac. board has a good example of this.

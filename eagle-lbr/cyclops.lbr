@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -4131,8 +4131,8 @@ Sourc: www.ctscorp.com</description>
 <wire x1="1.1938" y1="0.508" x2="1.1938" y2="0.7874" width="0.127" layer="51"/>
 <wire x1="1.1938" y1="0.7874" x2="0.6858" y2="0.7874" width="0.127" layer="51"/>
 <wire x1="0.3048" y1="1.0922" x2="-0.3048" y2="1.0922" width="0.127" layer="21" curve="-180"/>
-<text x="-3.4544" y="2.54" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
-<text x="-3.4544" y="-4.445" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+<text x="-3.81" y="1.27" size="1.27" layer="25" font="vector" ratio="18" rot="SR0">&gt;NAME</text>
+<text x="-3.81" y="-2.54" size="1.27" layer="27" font="vector" ratio="18" rot="SR0">&gt;VALUE</text>
 </package>
 <package name="2512">
 <wire x1="-1.5494" y1="1.8128" x2="1.5494" y2="1.8128" width="0.1016" layer="51"/>
@@ -5156,8 +5156,8 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="0.3048" y1="2.4892" x2="-0.3048" y2="2.4892" width="0.1524" layer="21"/>
 <wire x1="-0.3048" y1="2.4892" x2="-1.3716" y2="2.4892" width="0.1524" layer="21"/>
 <wire x1="0.3048" y1="2.4892" x2="-0.3048" y2="2.4892" width="0.1524" layer="21" curve="-180"/>
-<text x="-4.6736" y="3.3782" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
-<text x="-5.7404" y="-5.2324" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+<text x="-3.81" y="3.81" size="1.27" layer="25" font="vector" ratio="18" rot="SR0">&gt;NAME</text>
+<text x="-3.81" y="-5.08" size="1.27" layer="27" font="vector" ratio="18" rot="SR0">&gt;VALUE</text>
 </package>
 <package name="SOIC127P600X175-9N">
 <smd name="1" x="-2.4638" y="1.905" dx="1.9812" dy="0.5588" layer="1"/>
@@ -6361,6 +6361,23 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="0.3048" y1="1.0922" x2="-0.3048" y2="1.0922" width="0" layer="51" curve="-180"/>
 <text x="-3.81" y="1.27" size="1.27" layer="25" font="vector" ratio="18" rot="SR0">&gt;NAME</text>
 <text x="-3.81" y="-2.54" size="1.27" layer="27" font="vector" ratio="18" rot="SR0">&gt;VALUE</text>
+</package>
+<package name="SOT95P310X175-5N">
+<smd name="1" x="-1.35" y="0.95" dx="1" dy="0.55" layer="1"/>
+<wire x1="-0.7" y1="-1.5" x2="0.7" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="0.6858" y1="-0.1524" x2="0.6858" y2="0.1524" width="0.127" layer="51"/>
+<wire x1="0.7" y1="1.5" x2="0.3048" y2="1.5" width="0.127" layer="21"/>
+<wire x1="0.3048" y1="1.5" x2="-0.3048" y2="1.5" width="0.127" layer="21"/>
+<wire x1="-0.3048" y1="1.5" x2="-0.7" y2="1.5" width="0.127" layer="21"/>
+<wire x1="0.6858" y1="-1.5" x2="0.6858" y2="1.5" width="0.127" layer="51"/>
+<wire x1="-0.6858" y1="1.5" x2="-0.6858" y2="-1.5" width="0.127" layer="51"/>
+<wire x1="0.3048" y1="1.5" x2="-0.3048" y2="1.5" width="0.127" layer="21" curve="-180"/>
+<text x="-3.048" y="1.778" size="1.27" layer="25" font="vector" ratio="18" rot="SR0">&gt;NAME</text>
+<text x="-3.048" y="-3.048" size="1.27" layer="27" font="vector" ratio="18" rot="SR0">&gt;VALUE</text>
+<smd name="2" x="-1.35" y="0" dx="1" dy="0.55" layer="1"/>
+<smd name="3" x="-1.35" y="-0.95" dx="1" dy="0.55" layer="1"/>
+<smd name="5" x="1.35" y="0.95" dx="1" dy="0.55" layer="1"/>
+<smd name="4" x="1.35" y="-0.95" dx="1" dy="0.55" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -11337,6 +11354,38 @@ With larger annulars</description>
 <attribute name="PACKAGE" value="SC-70-6" constant="no"/>
 <attribute name="SUPPLIER" value="Analog Devices" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="OPAMP" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="OPAMP" x="0" y="0"/>
+<gate name="G$2" symbol="PWR+-" x="0" y="0"/>
+</gates>
+<devices>
+<device name="_SOIC" package="SOIC127P600X175-8N">
+<connects>
+<connect gate="G$1" pin="+IN" pad="3"/>
+<connect gate="G$1" pin="-IN" pad="2"/>
+<connect gate="G$1" pin="OUT" pad="6"/>
+<connect gate="G$2" pin="V+" pad="7"/>
+<connect gate="G$2" pin="V-" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_SOT-23" package="SOT95P310X175-5N">
+<connects>
+<connect gate="G$1" pin="+IN" pad="3"/>
+<connect gate="G$1" pin="-IN" pad="4"/>
+<connect gate="G$1" pin="OUT" pad="1"/>
+<connect gate="G$2" pin="V+" pad="5"/>
+<connect gate="G$2" pin="V-" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
