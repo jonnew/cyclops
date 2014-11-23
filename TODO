@@ -43,7 +43,7 @@ R3.3 Board
 
 X14. Simulate the usage of a class AB amplifier (diodes in series with base drive on totem pole) to decrease dead time during pulses.
 
-	+ Results were not good...
+	+ Using a class A+AB amplifier really improves things. Response is very fast, reduced quiescent current compared to strait AB with diodes. Its been incorporated into r3.5.
 
 15. The negative supply will be nessesary because even RRIO amps can only approach the rails, they generally cannot go to them. This is true for the LMP7707, which I will be using for the gate drive circuit. Therefore, I need to generate a small negative supply.
 	
