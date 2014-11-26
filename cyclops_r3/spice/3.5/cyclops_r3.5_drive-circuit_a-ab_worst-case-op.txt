@@ -1,0 +1,51 @@
+2014.11.23
+Worst-case DC operating poing for the a-ab driver design. In this case the driver is being over driven to produce 1.6A through the diode, which would not happen.
+
+       --- Operating Point ---
+
+V(n004):	 4.39221	 voltage
+V(+v):	 10.9194	 voltage
+V(gate):	 9.79741	 voltage
+V(sense):	 0.400081	 voltage
+V(nc_01):	 0	 voltage
+V(-v):	 -0.998872	 voltage
+V(n001):	 10.3799	 voltage
+V(n002):	 9.79823	 voltage
+V(n003):	 9.20195	 voltage
+V(n005):	 9.79708	 voltage
+V(bias):	 9.81096	 voltage
+V(in):	 0.4	 voltage
+V(nc_02):	 0.125	 voltage
+I(D1):	 1.60032	 device_current
+I(R8):	 -0.0016366	 device_current
+I(R7):	 0.000656862	 device_current
+I(R6):	 0.00463674	 device_current
+I(R5):	 0.000245222	 device_current
+I(R4):	 0.000979741	 device_current
+I(R3):	 0.00491356	 device_current
+I(Rsense):	 1.60032	 device_current
+I(V5):	 1.82408e-011	 device_current
+I(V4):	 0	 device_current
+I(V2):	 -1.61258	 device_current
+I(V3):	 0.0112785	 device_current
+I(V1):	 0	 device_current
+Ix(m1:1):	 1.60032	 subckt_current
+Ix(m1:2):	 -1.0142e-012	 subckt_current
+Ix(m1:3):	 -1.60032	 subckt_current
+Ix(u2:P1):	 0.00162775	 subckt_current
+Ix(u2:P2):	 8.8521e-006	 subckt_current
+Ix(u2:P3):	 -0.000653521	 subckt_current
+Ix(u2:P4):	 0.000656862	 subckt_current
+Ix(u2:P5):	 -3.34192e-006	 subckt_current
+Ix(u2:P6):	 -0.0016366	 subckt_current
+Ix(x2:3):	 -1.82408e-011	 subckt_current
+Ix(x2:4):	 -1.82406e-011	 subckt_current
+Ix(x2:5):	 0.00577651	 subckt_current
+Ix(x2:2):	 -0.000839566	 subckt_current
+Ix(x2:1):	 -0.00493695	 subckt_current
+Ix(u1:P1):	 0.0046088	 subckt_current
+Ix(u1:P2):	 2.45971e-005	 subckt_current
+Ix(u1:P3):	 -0.000235161	 subckt_current
+Ix(u1:P4):	 0.00023637	 subckt_current
+Ix(u1:P5):	 -1.20915e-006	 subckt_current
+Ix(u1:P6):	 -0.00463339	 subckt_current
