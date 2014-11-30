@@ -6681,6 +6681,106 @@ at 30/07/2012 17:45:58</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="jumper">
+<description>&lt;b&gt;Jumpers&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SJ_2W">
+<description>&lt;b&gt;Solder jumper&lt;/b&gt;</description>
+<wire x1="3.175" y1="-1.524" x2="-3.175" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="1.524" x2="3.429" y2="1.27" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-3.429" y1="1.27" x2="-3.175" y2="1.524" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-3.429" y1="-1.27" x2="-3.175" y2="-1.524" width="0.1524" layer="21" curve="90"/>
+<wire x1="3.175" y1="-1.524" x2="3.429" y2="-1.27" width="0.1524" layer="21" curve="90"/>
+<wire x1="3.429" y1="-1.27" x2="3.429" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-3.429" y1="-1.27" x2="-3.429" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-3.175" y1="1.524" x2="3.175" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="2.794" y1="0" x2="3.302" y2="0" width="0.1524" layer="51"/>
+<wire x1="-2.794" y1="0" x2="-3.302" y2="0" width="0.1524" layer="51"/>
+<wire x1="0" y1="0.762" x2="0" y2="1.397" width="0.1524" layer="51"/>
+<wire x1="0" y1="-1.397" x2="0" y2="-0.762" width="0.1524" layer="51"/>
+<wire x1="2.032" y1="0.127" x2="2.032" y2="-0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<wire x1="-2.032" y1="-0.127" x2="-2.032" y2="0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<smd name="1" x="-2.54" y="0" dx="1.27" dy="2.54" layer="1"/>
+<smd name="2" x="0" y="0" dx="1.27" dy="2.54" layer="1"/>
+<smd name="3" x="2.54" y="0" dx="1.27" dy="2.54" layer="1"/>
+<text x="-3.429" y="1.778" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-0.1001" y="0" size="0.02" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.508" y1="-0.762" x2="0.508" y2="0.762" layer="51"/>
+</package>
+<package name="SJ_2">
+<description>&lt;b&gt;Solder jumper&lt;/b&gt;</description>
+<wire x1="2.159" y1="-1.016" x2="-2.159" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="2.159" y1="1.016" x2="2.413" y2="0.762" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.413" y1="0.762" x2="-2.159" y2="1.016" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.413" y1="-0.762" x2="-2.159" y2="-1.016" width="0.1524" layer="21" curve="90"/>
+<wire x1="2.159" y1="-1.016" x2="2.413" y2="-0.762" width="0.1524" layer="21" curve="90"/>
+<wire x1="2.413" y1="-0.762" x2="2.413" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-2.413" y1="-0.762" x2="-2.413" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-2.159" y1="1.016" x2="2.159" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="1.778" y1="0" x2="2.286" y2="0" width="0.1524" layer="51"/>
+<wire x1="-1.778" y1="0" x2="-2.286" y2="0" width="0.1524" layer="51"/>
+<wire x1="0" y1="0.762" x2="0" y2="1.016" width="0.1524" layer="51"/>
+<wire x1="0" y1="-1.016" x2="0" y2="-0.762" width="0.1524" layer="51"/>
+<wire x1="1.016" y1="0.127" x2="1.016" y2="-0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<wire x1="-1.016" y1="-0.127" x2="-1.016" y2="0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<smd name="1" x="-1.524" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<smd name="2" x="0" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<smd name="3" x="1.524" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<text x="-2.413" y="1.27" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-0.1001" y="0" size="0.02" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.508" y1="-0.762" x2="0.508" y2="0.762" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="SJ_2">
+<wire x1="-0.635" y1="-1.397" x2="0.635" y2="-1.397" width="1.27" layer="94" curve="180" cap="flat"/>
+<wire x1="-0.635" y1="1.397" x2="0.635" y2="1.397" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="1.27" y1="-0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="-0.635" x2="-1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-1.27" y2="0.635" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="0.635" x2="1.27" y2="0.635" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.1524" layer="94"/>
+<text x="2.54" y="0.381" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-1.905" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-1.27" y1="-0.635" x2="1.27" y2="0.635" layer="94"/>
+<pin name="3" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="1" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
+<pin name="2" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SJ2W" prefix="SJ" uservalue="yes">
+<description>SMD solder &lt;b&gt;JUMPER&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="SJ_2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="W" package="SJ_2W">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="" package="SJ_2">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 <attribute name="DESIGNER" value="JONATHAN P. NEWMAN"/>
@@ -6795,7 +6895,7 @@ at 30/07/2012 17:45:58</description>
 <part name="P-1" library="cyclops" deviceset="-5V" device="" value="-1.25V"/>
 <part name="P+1" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 <part name="P+2" library="cyclops" deviceset="+5V" device="" value="+5V"/>
-<part name="P+3" library="cyclops" deviceset="+5V" device="" value="+12v"/>
+<part name="P+3" library="cyclops" deviceset="+5V" device="" value="+11v"/>
 <part name="U$32" library="cyclops" deviceset="GND1" device=""/>
 <part name="U$33" library="cyclops" deviceset="GND1" device=""/>
 <part name="U$34" library="cyclops" deviceset="GND1" device=""/>
@@ -6904,6 +7004,9 @@ at 30/07/2012 17:45:58</description>
 <part name="U$14" library="cyclops" deviceset="GND2" device=""/>
 <part name="P+14" library="cyclops" deviceset="+5V" device="" value="+11V"/>
 <part name="U$52" library="cyclops" deviceset="GND2" device=""/>
+<part name="P+13" library="cyclops" deviceset="+5V" device="" value="+5V"/>
+<part name="NEG_SUPPLY" library="jumper" deviceset="SJ2W" device=""/>
+<part name="P+15" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 </parts>
 <sheets>
 <sheet>
@@ -7040,6 +7143,7 @@ to serve as denoising jumper</text>
 <instance part="U$55" gate="G$1" x="220.98" y="-17.78"/>
 <instance part="C7" gate="C" x="220.98" y="-7.62"/>
 <instance part="U$9" gate="G$1" x="30.48" y="17.78" rot="MR0"/>
+<instance part="P+13" gate="1" x="45.72" y="38.1"/>
 </instances>
 <busses>
 </busses>
@@ -7402,7 +7506,7 @@ to serve as denoising jumper</text>
 <label x="78.74" y="-7.62" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$14" class="0">
+<net name="VIN_ARDUINO" class="0">
 <segment>
 <pinref part="L2" gate="L" pin="1"/>
 <pinref part="LEONARDO" gate="G$1" pin="VIN"/>
@@ -7459,6 +7563,12 @@ to serve as denoising jumper</text>
 <wire x1="172.72" y1="-2.54" x2="172.72" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="-2.54" x2="172.72" y2="0" width="0.1524" layer="91"/>
 <junction x="172.72" y="-2.54"/>
+</segment>
+<segment>
+<pinref part="LEONARDO" gate="G$1" pin="5VB"/>
+<wire x1="48.26" y1="53.34" x2="48.26" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="30.48" x2="45.72" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="30.48" x2="45.72" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED-" class="0">
@@ -7694,7 +7804,7 @@ to serve as denoising jumper</text>
 <description>Power</description>
 <plain>
 <text x="-68.58" y="55.88" size="3.81" layer="98">Pos. Regulation</text>
-<text x="-93.98" y="-60.96" size="3.81" layer="98">Neg. Regulation</text>
+<text x="-93.98" y="-53.34" size="3.81" layer="98">Neg. Regulation</text>
 <wire x1="50.8" y1="-45.72" x2="50.8" y2="-147.32" width="0.254" layer="97" style="shortdash"/>
 <wire x1="50.8" y1="-45.72" x2="-96.52" y2="-45.72" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="-96.52" y1="-45.72" x2="-96.52" y2="63.5" width="0.1524" layer="97" style="shortdash"/>
@@ -7727,7 +7837,7 @@ to serve as denoising jumper</text>
 <instance part="U$15" gate="G$1" x="129.54" y="-83.82"/>
 <instance part="X1" gate="G$1" x="63.5" y="0" rot="R270"/>
 <instance part="U$51" gate="G$1" x="-48.26" y="-88.9"/>
-<instance part="C31" gate="C" x="-83.82" y="-91.44"/>
+<instance part="C31" gate="C" x="-76.2" y="-91.44"/>
 <instance part="C32" gate="C" x="-7.62" y="-66.04" rot="R90"/>
 <instance part="C33" gate="C" x="35.56" y="-91.44"/>
 <instance part="D4" gate="G$1" x="12.7" y="-91.44" rot="R270"/>
@@ -7740,6 +7850,8 @@ to serve as denoising jumper</text>
 <instance part="L7" gate="L" x="50.8" y="-73.66" smashed="yes" rot="R90">
 <attribute name="NAME" x="58.42" y="-72.39" size="1.778" layer="95" rot="R180"/>
 </instance>
+<instance part="NEG_SUPPLY" gate="G$1" x="-88.9" y="-66.04" rot="R180"/>
+<instance part="P+15" gate="1" x="-101.6" y="-66.04"/>
 </instances>
 <busses>
 </busses>
@@ -7851,8 +7963,8 @@ to serve as denoising jumper</text>
 <wire x1="-20.32" y1="-101.6" x2="-20.32" y2="-109.22" width="0.1524" layer="91"/>
 <junction x="-20.32" y="-109.22"/>
 <pinref part="C31" gate="C" pin="-"/>
-<wire x1="-83.82" y1="-93.98" x2="-83.82" y2="-109.22" width="0.1524" layer="91"/>
-<wire x1="-83.82" y1="-109.22" x2="-33.02" y2="-109.22" width="0.1524" layer="91"/>
+<wire x1="-76.2" y1="-93.98" x2="-76.2" y2="-109.22" width="0.1524" layer="91"/>
+<wire x1="-76.2" y1="-109.22" x2="-33.02" y2="-109.22" width="0.1524" layer="91"/>
 <junction x="-33.02" y="-109.22"/>
 <wire x1="-27.94" y1="-116.84" x2="-27.94" y2="-109.22" width="0.1524" layer="91"/>
 <junction x="-27.94" y="-109.22"/>
@@ -7968,14 +8080,30 @@ to serve as denoising jumper</text>
 <junction x="-68.58" y="-83.82"/>
 <pinref part="U$51" gate="G$1" pin="~SHDN"/>
 <wire x1="-68.58" y1="-93.98" x2="-60.96" y2="-93.98" width="0.1524" layer="91"/>
-<wire x1="-93.98" y1="-66.04" x2="-83.82" y2="-66.04" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="-66.04" x2="-76.2" y2="-66.04" width="0.1524" layer="91"/>
 <pinref part="C31" gate="C" pin="+"/>
-<wire x1="-83.82" y1="-66.04" x2="-68.58" y2="-66.04" width="0.1524" layer="91"/>
-<wire x1="-83.82" y1="-86.36" x2="-83.82" y2="-66.04" width="0.1524" layer="91"/>
-<junction x="-83.82" y="-66.04"/>
+<wire x1="-76.2" y1="-66.04" x2="-68.58" y2="-66.04" width="0.1524" layer="91"/>
+<wire x1="-76.2" y1="-86.36" x2="-76.2" y2="-66.04" width="0.1524" layer="91"/>
+<junction x="-76.2" y="-66.04"/>
 <pinref part="L12" gate="G$2" pin="2"/>
 <wire x1="-68.58" y1="-66.04" x2="-55.88" y2="-66.04" width="0.1524" layer="91"/>
 <junction x="-68.58" y="-66.04"/>
+<pinref part="NEG_SUPPLY" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="+5V" class="0">
+<segment>
+<pinref part="NEG_SUPPLY" gate="G$1" pin="1"/>
+<wire x1="-88.9" y1="-71.12" x2="-101.6" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="-101.6" y1="-71.12" x2="-101.6" y2="-68.58" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="VIN_ARDUINO" class="0">
+<segment>
+<pinref part="NEG_SUPPLY" gate="G$1" pin="3"/>
+<wire x1="-88.9" y1="-60.96" x2="-88.9" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="-58.42" x2="-101.6" y2="-58.42" width="0.1524" layer="91"/>
+<label x="-101.6" y="-58.42" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
