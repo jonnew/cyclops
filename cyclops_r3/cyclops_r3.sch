@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6567,14 +6567,14 @@ Digikey part: J111-ND (or similar).</description>
 <devices>
 <device name="" package="SOT65P300X175-N">
 <connects>
-<connect gate="G$1" pin="COM" pad="1"/>
-<connect gate="G$1" pin="GND" pad="4"/>
-<connect gate="G$1" pin="IN" pad="5"/>
-<connect gate="G$1" pin="NC" pad="7"/>
-<connect gate="G$1" pin="NO" pad="6"/>
-<connect gate="G$1" pin="V+" pad="8"/>
-<connect gate="G$1" pin="V-" pad="3"/>
-<connect gate="G$1" pin="~EN" pad="2"/>
+<connect gate="G$1" pin="COM" pad="8"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="IN" pad="3"/>
+<connect gate="G$1" pin="NC" pad="1"/>
+<connect gate="G$1" pin="NO" pad="4"/>
+<connect gate="G$1" pin="V+" pad="2"/>
+<connect gate="G$1" pin="V-" pad="6"/>
+<connect gate="G$1" pin="~EN" pad="7"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -7007,6 +7007,7 @@ at 30/07/2012 17:45:58</description>
 <part name="P+13" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 <part name="NEG_SUPPLY" library="jumper" deviceset="SJ2W" device=""/>
 <part name="P+15" library="cyclops" deviceset="+5V" device="" value="+5V"/>
+<part name="U$53" library="cyclops" deviceset="GND2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8569,6 +8570,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="U$14" gate="G$1" x="5.08" y="12.7"/>
 <instance part="P+14" gate="1" x="55.88" y="25.4"/>
 <instance part="U$52" gate="G$1" x="55.88" y="10.16"/>
+<instance part="U$53" gate="G$1" x="50.8" y="55.88"/>
 </instances>
 <busses>
 </busses>
@@ -8704,6 +8706,10 @@ Max(ILED) ~ 1.5 Amps</text>
 <pinref part="AUX&lt;-&gt;CURR" gate="G$1" pin="3"/>
 <wire x1="55.88" y1="15.24" x2="55.88" y2="12.7" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="R25" gate="R" pin="2"/>
+<wire x1="50.8" y1="63.5" x2="50.8" y2="58.42" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+11V" class="1">
 <segment>
@@ -8835,16 +8841,12 @@ Max(ILED) ~ 1.5 Amps</text>
 <junction x="22.86" y="76.2"/>
 <wire x1="101.6" y1="53.34" x2="101.6" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="U12" gate="G$1" pin="C2"/>
-<wire x1="22.86" y1="53.34" x2="50.8" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="53.34" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="R29" gate="R" pin="2"/>
-<wire x1="50.8" y1="53.34" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="53.34" x2="96.52" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="53.34" x2="101.6" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="60.96" x2="96.52" y2="53.34" width="0.1524" layer="91"/>
 <junction x="96.52" y="53.34"/>
-<pinref part="R25" gate="R" pin="2"/>
-<wire x1="50.8" y1="63.5" x2="50.8" y2="53.34" width="0.1524" layer="91"/>
-<junction x="50.8" y="53.34"/>
 <wire x1="66.04" y1="45.72" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
 <junction x="66.04" y="53.34"/>
 <pinref part="U10" gate="G$2" pin="V-"/>

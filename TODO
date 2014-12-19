@@ -34,6 +34,9 @@ X9. Add a logic level converter to the trig input. This will allow the use of th
 		- This is an decompensated amplifier
 		- Works very well for the current FB loop, but the follower configs are unstable
 		- Use a single channel version for the optical loop and compensated amps for everything else.
+		- Will require thought concerning the optical feedback loop since the loop gain cannot be determined apriori. Options are:
+			- Adjustable attenuator (trimpot) on the VAUX input
+			- Optical feedback path uses a compensated amplifier (e.g. LM7701)
 
 X11. The negative rail is not needed if you use a  low drift, precision amplifier that is RRO to ground. If this is the solution, then get rid of it, and use a simple barrel connector so people don't have to use a lab supply.
 	+ This is not actually true. To ensure the LED off, control signal must go slightly below ground.
