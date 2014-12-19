@@ -6567,14 +6567,14 @@ Digikey part: J111-ND (or similar).</description>
 <devices>
 <device name="" package="SOT65P300X175-N">
 <connects>
-<connect gate="G$1" pin="COM" pad="1"/>
-<connect gate="G$1" pin="GND" pad="4"/>
-<connect gate="G$1" pin="IN" pad="5"/>
-<connect gate="G$1" pin="NC" pad="7"/>
-<connect gate="G$1" pin="NO" pad="6"/>
-<connect gate="G$1" pin="V+" pad="8"/>
-<connect gate="G$1" pin="V-" pad="3"/>
-<connect gate="G$1" pin="~EN" pad="2"/>
+<connect gate="G$1" pin="COM" pad="8"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="IN" pad="3"/>
+<connect gate="G$1" pin="NC" pad="1"/>
+<connect gate="G$1" pin="NO" pad="4"/>
+<connect gate="G$1" pin="V+" pad="2"/>
+<connect gate="G$1" pin="V-" pad="6"/>
+<connect gate="G$1" pin="~EN" pad="7"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -6939,7 +6939,7 @@ at 30/07/2012 17:45:58</description>
 <part name="U$48" library="cyclops" deviceset="GND1" device=""/>
 <part name="P+6" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 <part name="C8" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
-<part name="R15" library="cyclops" deviceset="R" device="_0603" value="1k"/>
+<part name="R15" library="cyclops" deviceset="R" device="_0603" value="470"/>
 <part name="COMP" library="cyclops" deviceset="LED" device="_0603" value="RED"/>
 <part name="U$49" library="cyclops" deviceset="GND2" device=""/>
 <part name="L3" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
@@ -6972,7 +6972,6 @@ at 30/07/2012 17:45:58</description>
 <part name="U13" library="cyclops" deviceset="ZXTD4591E6" device="" value="ZXTD45"/>
 <part name="R30" library="cyclops" deviceset="R" device="_0603" value="2.2k"/>
 <part name="R29" library="cyclops" deviceset="R" device="_0603" value="2.2k"/>
-<part name="R26" library="cyclops" deviceset="R" device="_0603" value="2.2k"/>
 <part name="R31" library="cyclops" deviceset="R" device="_0603" value="0.5"/>
 <part name="R32" library="cyclops" deviceset="R" device="_0603" value="0.5"/>
 <part name="R33" library="cyclops" deviceset="R" device="_0603" value="10k"/>
@@ -6981,7 +6980,7 @@ at 30/07/2012 17:45:58</description>
 <part name="P-3" library="cyclops" deviceset="-5V" device="" value="-1.25V"/>
 <part name="P+11" library="cyclops" deviceset="+5V" device="" value="+11V"/>
 <part name="FRAME5" library="cyclops" deviceset="FRAME_A_L" device=""/>
-<part name="U4" library="cyclops" deviceset="LT1611" device="" value="LT1931"/>
+<part name="U4" library="cyclops" deviceset="LT1611" device="" value="LT1931A"/>
 <part name="C12" library="cyclops" deviceset="C" device="_1206" value="1uF"/>
 <part name="C16" library="cyclops" deviceset="C" device="_1210" value="22uF"/>
 <part name="D2" library="cyclops" deviceset="S-DIODE" device="SOD-123" value="MBR0520L"/>
@@ -6993,7 +6992,6 @@ at 30/07/2012 17:45:58</description>
 <part name="L8" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="FRAME6" library="cyclops" deviceset="FRAME_A_L" device=""/>
 <part name="POWER" library="cyclops" deviceset="BARREL-JACK" device="_PJ-063BH"/>
-<part name="U12" library="cyclops" deviceset="MAX4564" device=""/>
 <part name="C31" library="cyclops" deviceset="C" device="_0603" value="10nF"/>
 <part name="C34" library="cyclops" deviceset="C" device="_0603" value="10nF"/>
 <part name="U$12" library="cyclops" deviceset="GND2" device=""/>
@@ -7007,6 +7005,9 @@ at 30/07/2012 17:45:58</description>
 <part name="NEG_SUPPLY" library="jumper" deviceset="SJ2W" device=""/>
 <part name="P+15" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 <part name="C9" library="cyclops" deviceset="C" device="_0805" value="4.7uF"/>
+<part name="U$9" library="cyclops" deviceset="GND2" device=""/>
+<part name="U$11" library="cyclops" deviceset="MAX4564" device=""/>
+<part name="R26" library="cyclops" deviceset="R" device="_0603" value="2.2k"/>
 </parts>
 <sheets>
 <sheet>
@@ -8527,7 +8528,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="FRAME4" gate="G$1" x="-91.44" y="-58.42"/>
 <instance part="U14" gate="G$1" x="119.38" y="83.82"/>
 <instance part="Q2" gate="G$1" x="162.56" y="86.36"/>
-<instance part="VGATE" gate="G$1" x="129.54" y="109.22"/>
+<instance part="VGATE" gate="G$1" x="154.94" y="86.36"/>
 <instance part="C30" gate="C" x="-17.78" y="-10.16"/>
 <instance part="C28" gate="C" x="-25.4" y="-10.16"/>
 <instance part="GAIN" gate="G$1" x="-50.8" y="86.36" rot="MR180"/>
@@ -8563,7 +8564,6 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="U13" gate="G$1" x="76.2" y="83.82" rot="MR180"/>
 <instance part="R30" gate="R" x="96.52" y="66.04" rot="R270"/>
 <instance part="R29" gate="R" x="96.52" y="101.6" rot="R270"/>
-<instance part="R26" gate="R" x="50.8" y="68.58" rot="R270"/>
 <instance part="R31" gate="R" x="144.78" y="91.44"/>
 <instance part="R32" gate="R" x="144.78" y="76.2"/>
 <instance part="R33" gate="R" x="152.4" y="66.04" rot="R90"/>
@@ -8573,7 +8573,6 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="P+11" gate="1" x="68.58" y="66.04"/>
 <instance part="LED-" gate="G$1" x="165.1" y="33.02" rot="R90"/>
 <instance part="LED+" gate="G$1" x="165.1" y="73.66" rot="R270"/>
-<instance part="U12" gate="G$1" x="30.48" y="30.48"/>
 <instance part="C31" gate="C" x="5.08" y="22.86"/>
 <instance part="C34" gate="C" x="81.28" y="35.56"/>
 <instance part="U$12" gate="G$1" x="81.28" y="25.4"/>
@@ -8583,6 +8582,9 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="U$14" gate="G$1" x="5.08" y="12.7"/>
 <instance part="P+14" gate="1" x="55.88" y="25.4"/>
 <instance part="U$52" gate="G$1" x="55.88" y="10.16"/>
+<instance part="U$9" gate="G$1" x="50.8" y="60.96"/>
+<instance part="U$11" gate="G$1" x="30.48" y="30.48"/>
+<instance part="R26" gate="R" x="50.8" y="73.66" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -8598,10 +8600,10 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="165.1" y1="20.32" x2="165.1" y2="33.02" width="0.1524" layer="91"/>
 <junction x="165.1" y="20.32"/>
 <pinref part="LED-" gate="G$1" pin="1"/>
-<pinref part="U12" gate="G$1" pin="NC"/>
 <wire x1="43.18" y1="33.02" x2="73.66" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="33.02" x2="73.66" y2="20.32" width="0.1524" layer="91"/>
 <junction x="73.66" y="20.32"/>
+<pinref part="U$11" gate="G$1" pin="NC"/>
 </segment>
 </net>
 <net name="VI" class="0">
@@ -8632,8 +8634,8 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="-5.08" y1="5.08" x2="63.5" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="5.08" x2="63.5" y2="27.94" width="0.1524" layer="91"/>
 <junction x="-5.08" y="5.08"/>
-<pinref part="U12" gate="G$1" pin="NO"/>
 <wire x1="63.5" y1="27.94" x2="43.18" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="U$11" gate="G$1" pin="NO"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -8706,17 +8708,21 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="5.08" y1="17.78" x2="5.08" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U12" gate="G$1" pin="GND"/>
 <wire x1="17.78" y1="22.86" x2="15.24" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="15.24" y1="22.86" x2="15.24" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="15.24" y1="22.86" x2="15.24" y2="33.02" width="0.1524" layer="91"/>
 <junction x="15.24" y="22.86"/>
-<pinref part="U12" gate="G$1" pin="~EN"/>
 <wire x1="15.24" y1="33.02" x2="17.78" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="U$11" gate="G$1" pin="GND"/>
+<pinref part="U$11" gate="G$1" pin="~EN"/>
 </segment>
 <segment>
 <pinref part="AUX&lt;-&gt;CURR" gate="G$1" pin="3"/>
 <wire x1="55.88" y1="15.24" x2="55.88" y2="12.7" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="50.8" y1="68.58" x2="50.8" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="R26" gate="R" pin="2"/>
 </segment>
 </net>
 <net name="+11V" class="1">
@@ -8770,12 +8776,12 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="68.58" y1="58.42" x2="68.58" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U12" gate="G$1" pin="V+"/>
 <wire x1="43.18" y1="38.1" x2="81.28" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="38.1" x2="86.36" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="38.1" x2="86.36" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="C34" gate="C" pin="1"/>
 <junction x="81.28" y="38.1"/>
+<pinref part="U$11" gate="G$1" pin="V+"/>
 </segment>
 <segment>
 <pinref part="AUX&lt;-&gt;CURR" gate="G$1" pin="1"/>
@@ -8849,16 +8855,12 @@ Max(ILED) ~ 1.5 Amps</text>
 <junction x="22.86" y="76.2"/>
 <wire x1="101.6" y1="53.34" x2="101.6" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="U14" gate="G$1" pin="C2"/>
-<wire x1="22.86" y1="53.34" x2="50.8" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="53.34" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="R30" gate="R" pin="2"/>
-<wire x1="50.8" y1="53.34" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="53.34" x2="96.52" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="53.34" x2="101.6" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="60.96" x2="96.52" y2="53.34" width="0.1524" layer="91"/>
 <junction x="96.52" y="53.34"/>
-<pinref part="R26" gate="R" pin="2"/>
-<wire x1="50.8" y1="63.5" x2="50.8" y2="53.34" width="0.1524" layer="91"/>
-<junction x="50.8" y="53.34"/>
 <wire x1="66.04" y1="45.72" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
 <junction x="66.04" y="53.34"/>
 <pinref part="U11" gate="G$2" pin="V-"/>
@@ -8951,9 +8953,9 @@ Max(ILED) ~ 1.5 Amps</text>
 <junction x="50.8" y="83.82"/>
 <pinref part="U13" gate="G$1" pin="B1"/>
 <wire x1="50.8" y1="81.28" x2="58.42" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="R26" gate="R" pin="1"/>
-<wire x1="50.8" y1="73.66" x2="50.8" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="78.74" x2="50.8" y2="81.28" width="0.1524" layer="91"/>
 <junction x="50.8" y="81.28"/>
+<pinref part="R26" gate="R" pin="1"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -8976,7 +8978,8 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="149.86" y1="91.44" x2="152.4" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="91.44" x2="152.4" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="Q2" gate="G$1" pin="G"/>
-<wire x1="152.4" y1="83.82" x2="160.02" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="83.82" x2="154.94" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="83.82" x2="160.02" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="83.82" x2="152.4" y2="76.2" width="0.1524" layer="91"/>
 <junction x="152.4" y="83.82"/>
 <pinref part="R32" gate="R" pin="2"/>
@@ -8984,60 +8987,46 @@ Max(ILED) ~ 1.5 Amps</text>
 <pinref part="R33" gate="R" pin="2"/>
 <wire x1="152.4" y1="71.12" x2="152.4" y2="76.2" width="0.1524" layer="91"/>
 <junction x="152.4" y="76.2"/>
-</segment>
-</net>
-<net name="COM" class="0">
-<segment>
-<pinref part="U11" gate="G$1" pin="-IN"/>
-<pinref part="U12" gate="G$1" pin="COM"/>
-<wire x1="12.7" y1="81.28" x2="17.78" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="38.1" x2="12.7" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="38.1" x2="12.7" y2="81.28" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="IN" class="0">
-<segment>
-<pinref part="U12" gate="G$1" pin="IN"/>
-<wire x1="43.18" y1="22.86" x2="45.72" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="45.72" y1="22.86" x2="45.72" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="AUX&lt;-&gt;CURR" gate="G$1" pin="2"/>
+<pinref part="VGATE" gate="G$1" pin="TP"/>
+<junction x="154.94" y="83.82"/>
 </segment>
 </net>
 <net name="-1.15V" class="0">
 <segment>
 <wire x1="0" y1="15.24" x2="0" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="U12" gate="G$1" pin="V-"/>
 <wire x1="0" y1="27.94" x2="5.08" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="C31" gate="C" pin="1"/>
 <wire x1="5.08" y1="27.94" x2="17.78" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="25.4" x2="5.08" y2="27.94" width="0.1524" layer="91"/>
 <junction x="5.08" y="27.94"/>
+<pinref part="U$11" gate="G$1" pin="V-"/>
+</segment>
+</net>
+<net name="IN" class="0">
+<segment>
+<pinref part="AUX&lt;-&gt;CURR" gate="G$1" pin="2"/>
+<wire x1="45.72" y1="17.78" x2="43.18" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="U$11" gate="G$1" pin="IN"/>
+<wire x1="43.18" y1="22.86" x2="43.18" y2="17.78" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="COM" class="0">
+<segment>
+<pinref part="U11" gate="G$1" pin="-IN"/>
+<wire x1="17.78" y1="81.28" x2="12.7" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="81.28" x2="12.7" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="U$11" gate="G$1" pin="COM"/>
+<wire x1="12.7" y1="38.1" x2="17.78" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
 </sheet>
 </sheets>
 <errors>
-<approved hash="102,1,154.94,99.06,VDD,+5V,,,,"/>
-<approved hash="102,1,154.94,63.5,AVSS,GND,,,,"/>
-<approved hash="104,5,22.86,91.44,U7P,V+,+12V,,,"/>
-<approved hash="104,5,22.86,76.2,U7P,V-,-2.1V,,,"/>
-<approved hash="104,1,55.88,48.26,ARDUNIO,VIN,N$14,,,"/>
-<approved hash="104,4,-17.78,2.54,U5,VIN,+12V,,,"/>
-<approved hash="104,4,-17.78,-83.82,U6,V+,+12V,,,"/>
-<approved hash="104,4,-17.78,-106.68,U6,V-,GND,,,"/>
-<approved hash="104,2,-2.54,-83.82,U3,VCC,+12V,,,"/>
-<approved hash="113,1,179.471,62.23,C1,,,,,"/>
-<approved hash="113,1,180.056,73.66,R1,,,,,"/>
 <approved hash="113,1,126.896,39.266,FRAME1,,,,,"/>
 <approved hash="113,2,30.376,-39.474,FRAME2,,,,,"/>
 <approved hash="113,4,-22.964,-72.494,FRAME3,,,,,"/>
 <approved hash="113,5,48.156,49.426,FRAME4,,,,,"/>
-<approved hash="113,5,24.13,-0.159088,C19,,,,,"/>
-<approved hash="113,1,109.834,119.626,CS1,,,,,"/>
-<approved hash="113,1,109.834,117.086,CS2,,,,,"/>
-<approved hash="113,1,109.834,114.546,CS3,,,,,"/>
-<approved hash="113,1,109.834,112.006,CS4,,,,,"/>
 <approved hash="113,4,-73.66,-154.305,U$1,,,,,"/>
 <approved hash="113,4,-58.42,-154.305,U$2,,,,,"/>
 <approved hash="113,4,-73.66,-55.245,U$3,,,,,"/>
@@ -9045,56 +9034,12 @@ Max(ILED) ~ 1.5 Amps</text>
 <approved hash="113,4,35.56,-55.245,U$5,,,,,"/>
 <approved hash="113,4,-25.4,-113.665,U$6,,,,,"/>
 <approved hash="113,4,-25.4,-17.145,U$7,,,,,"/>
-<approved hash="113,2,-38.1,-19.685,U$8,,,,,"/>
-<approved hash="113,2,-17.78,-19.685,U$9,,,,,"/>
 <approved hash="113,2,5.08,-19.685,U$10,,,,,"/>
-<approved hash="113,2,17.78,-19.685,U$11,,,,,"/>
-<approved hash="113,2,30.48,-19.685,U$12,,,,,"/>
-<approved hash="113,2,43.18,-19.685,U$13,,,,,"/>
-<approved hash="113,2,55.88,-19.685,U$14,,,,,"/>
-<approved hash="113,2,149.86,5.715,U$15,,,,,"/>
-<approved hash="113,2,73.66,-113.665,U$16,,,,,"/>
-<approved hash="113,2,-7.62,-121.285,U$17,,,,,"/>
-<approved hash="113,2,-38.1,-83.185,U$18,,,,,"/>
-<approved hash="113,2,-17.78,-83.185,U$19,,,,,"/>
-<approved hash="113,5,-50.8,61.595,U$20,,,,,"/>
 <approved hash="113,5,-10.16,61.595,U$21,,,,,"/>
-<approved hash="113,5,33.02,53.975,U$22,,,,,"/>
-<approved hash="113,5,45.72,53.975,U$23,,,,,"/>
-<approved hash="113,5,33.02,97.155,U$24,,,,,"/>
-<approved hash="113,5,45.72,97.155,U$25,,,,,"/>
-<approved hash="113,5,124.46,46.355,U$26,,,,,"/>
-<approved hash="113,5,35.56,-37.465,U$27,,,,,"/>
-<approved hash="113,5,144.78,-37.465,U$29,,,,,"/>
-<approved hash="113,1,53.34,25.908,U$28,,,,,"/>
-<approved hash="113,1,129.54,53.848,U$32,,,,,"/>
-<approved hash="113,1,101.6,53.848,U$33,,,,,"/>
-<approved hash="113,1,210.82,53.848,U$34,,,,,"/>
-<approved hash="113,1,220.98,53.848,U$35,,,,,"/>
-<approved hash="113,1,124.46,8.255,U$36,,,,,"/>
-<approved hash="113,1,160.02,8.255,U$37,,,,,"/>
-<approved hash="113,1,124.46,-19.685,U$38,,,,,"/>
-<approved hash="113,1,160.02,-14.605,U$39,,,,,"/>
-<approved hash="113,1,195.58,-14.605,U$40,,,,,"/>
-<approved hash="113,1,154.94,53.975,U$41,,,,,"/>
-<approved hash="113,1,177.8,53.975,U$42,,,,,"/>
-<approved hash="113,1,195.58,53.975,U$43,,,,,"/>
-<approved hash="113,5,63.5,64.135,U$45,,,,,"/>
 <approved hash="113,4,-40.64,-154.305,U$44,,,,,"/>
 <approved hash="113,4,45.72,-154.305,U$46,,,,,"/>
-<approved hash="115,5,22.86,66.04,-2.1V,,,,,"/>
-<approved hash="115,1,76.2,10.16,LED+,,,,,"/>
-<approved hash="115,1,76.2,0,LED-,,,,,"/>
-<approved hash="115,1,55.88,27.94,+12V,,,,,"/>
-<approved hash="115,5,35.56,-31.75,GND,,,,,"/>
-<approved hash="115,5,45.72,59.69,GND,,,,,"/>
-<approved hash="115,5,33.02,59.69,GND,,,,,"/>
-<approved hash="115,5,45.72,102.87,GND,,,,,"/>
-<approved hash="115,5,33.02,102.87,GND,,,,,"/>
-<approved hash="115,5,124.46,57.15,GND,,,,,"/>
-<approved hash="115,5,63.5,71.12,GND,,,,,"/>
+<approved hash="113,5,-50.8,61.595,U$20,,,,,"/>
 <approved hash="115,5,-10.16,66.04,GND,,,,,"/>
-<approved hash="115,5,144.78,-22.86,GND,,,,,"/>
 <approved hash="115,5,-50.8,71.12,GND,,,,,"/>
 <approved hash="115,4,45.72,-130.81,GND,,,,,"/>
 <approved hash="115,4,-40.64,-147.32,GND,,,,,"/>
@@ -9105,29 +9050,6 @@ Max(ILED) ~ 1.5 Amps</text>
 <approved hash="115,4,-58.42,-41.91,GND,,,,,"/>
 <approved hash="115,4,-73.66,-41.91,GND,,,,,"/>
 <approved hash="115,4,-25.4,-12.7,GND,,,,,"/>
-<approved hash="115,2,73.66,-100.33,GND,,,,,"/>
-<approved hash="115,2,139.7,3.81,GND,,,,,"/>
-<approved hash="115,2,-38.1,-78.74,GND,,,,,"/>
-<approved hash="115,2,-17.78,-78.74,GND,,,,,"/>
-<approved hash="115,2,-5.08,-99.06,GND,,,,,"/>
-<approved hash="115,2,55.88,-12.7,GND,,,,,"/>
-<approved hash="115,2,17.78,-12.7,GND,,,,,"/>
-<approved hash="115,2,-38.1,-12.7,GND,,,,,"/>
-<approved hash="115,2,43.18,-12.7,GND,,,,,"/>
-<approved hash="115,2,30.48,-12.7,GND,,,,,"/>
-<approved hash="115,2,5.08,-12.7,GND,,,,,"/>
-<approved hash="115,2,-17.78,-12.7,GND,,,,,"/>
-<approved hash="115,1,53.34,29.21,GND,,,,,"/>
-<approved hash="115,1,101.6,64.77,GND,,,,,"/>
-<approved hash="115,1,210.82,62.23,GND,,,,,"/>
-<approved hash="115,1,220.98,62.23,GND,,,,,"/>
-<approved hash="115,1,118.11,-10.16,GND,,,,,"/>
-<approved hash="115,1,153.67,12.7,GND,,,,,"/>
-<approved hash="115,1,189.23,-10.16,GND,,,,,"/>
-<approved hash="115,1,153.67,-10.16,GND,,,,,"/>
-<approved hash="115,1,118.11,12.7,GND,,,,,"/>
-<approved hash="115,1,177.8,57.15,GND,,,,,"/>
-<approved hash="115,1,195.58,62.23,GND,,,,,"/>
 </errors>
 </schematic>
 </drawing>
