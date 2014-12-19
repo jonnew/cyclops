@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8496,6 +8496,7 @@ Max(VREF) ~ 0.75V
 Max(ILED) ~ 1.5 Amps</text>
 <text x="-68.58" y="-40.64" size="1.6764" layer="94">VI = 1A/1V</text>
 <text x="-33.02" y="106.68" size="1.778" layer="97" rot="R90">DNP</text>
+<text x="-78.74" y="144.78" size="3.81" layer="98">Drivetrain</text>
 </plain>
 <instances>
 <instance part="U9" gate="C" x="60.96" y="-5.08" rot="MR0"/>
@@ -8717,12 +8718,13 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="-17.78" y1="25.4" x2="-25.4" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="25.4" x2="-25.4" y2="22.86" width="0.1524" layer="91"/>
 <junction x="-25.4" y="25.4"/>
-<wire x1="-25.4" y1="25.4" x2="-35.56" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="25.4" x2="-35.56" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="-35.56" y1="25.4" x2="-35.56" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C27" gate="C" pin="1"/>
 <wire x1="30.48" y1="106.68" x2="30.48" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="106.68" x2="22.86" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="106.68" x2="22.86" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="D2" gate="G$1" pin="C"/>
 <wire x1="-10.16" y1="101.6" x2="-10.16" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="124.46" x2="22.86" y2="124.46" width="0.1524" layer="91"/>
@@ -8736,7 +8738,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <pinref part="Q2" gate="G$1" pin="D"/>
 <wire x1="165.1" y1="91.44" x2="165.1" y2="124.46" width="0.1524" layer="91"/>
 <label x="165.1" y="111.76" size="1.778" layer="95" rot="R180"/>
-<wire x1="22.86" y1="93.98" x2="22.86" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="106.68" x2="22.86" y2="124.46" width="0.1524" layer="91"/>
 <junction x="22.86" y="124.46"/>
 <pinref part="R28" gate="R" pin="1"/>
 <wire x1="96.52" y1="106.68" x2="96.52" y2="124.46" width="0.1524" layer="91"/>
@@ -8744,8 +8746,8 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="66.04" y1="124.46" x2="66.04" y2="132.08" width="0.1524" layer="91"/>
 <junction x="66.04" y="124.46"/>
 <pinref part="U10" gate="G$2" pin="V+"/>
-<wire x1="22.86" y1="91.44" x2="22.86" y2="93.98" width="0.1524" layer="91"/>
-<junction x="22.86" y="93.98"/>
+<wire x1="22.86" y1="91.44" x2="22.86" y2="106.68" width="0.1524" layer="91"/>
+<junction x="22.86" y="106.68"/>
 </segment>
 <segment>
 <pinref part="U11" gate="G$1" pin="C1"/>

@@ -1,4 +1,4 @@
-R3.3 Board
+R3.3 --> R3.5
 
 X1. Move the banana jacks medial a touch to avoid hitting the enclosure when PCB is mounted on the middle rung.
 	+ Moved both banana jacks inward 0.075"
@@ -32,7 +32,7 @@ X9. Add a logic level converter to the trig input. This will allow the use of th
 
 	+ LMP7709? 
 		- This is an decompensated amplifier
-		- Works very well for the optical/current FB loop, but the follower configs are unstable
+		- Works very well for the current FB loop, but the follower configs are unstable
 		- Use a single channel version for the optical loop and compensated amps for everything else.
 
 X11. The negative rail is not needed if you use a  low drift, precision amplifier that is RRO to ground. If this is the solution, then get rid of it, and use a simple barrel connector so people don't have to use a lab supply.
@@ -58,3 +58,8 @@ X16. May want to consider the use of cold-switching on all front/rear panel swit
 	+ Switches control DC logic signals that open/close transistor switches near the circuitry of interest
 	+ Prevents high speed, precision signals from wandering to/from the front/back panels
 	+ I did this for the current/voltage optical feedback path since the switch was introducing a lot cabling, especially for the current feedback signal. 
+
+17. Replace current negative LDO with something like the TPS7A30xx to combate the 1 MHz ripple produced by the new switching inverter from 15.
+
+	+ Just reuse the design on the puggleboard.
+
