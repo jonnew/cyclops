@@ -1,6 +1,6 @@
 ScreenWidth=200
 ScreenHeight=600
-AutoOpen=N
+AutoOpen=Y
 AutoDatabase=/home/jon/Public/cyclops/bom/cyclops.BOMdb
 Database=/home/jon/Public/cyclops/bom/cyclops.BOMdb
 Database=M:/public/cyclops/bom/cyclops.BOMdb

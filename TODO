@@ -63,3 +63,5 @@ X16. May want to consider the use of cold-switching on all front/rear panel swit
 
 	+ Just reuse the design on the puggleboard.
 
+18. Move the power jack to the right side of the board with a switch. Move the expansion port and banana jacks left to accomidate. Update the panel design to refect this change.
+
