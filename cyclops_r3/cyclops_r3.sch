@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -6991,8 +6991,8 @@ at 30/07/2012 17:45:58</description>
 <text x="91.44" y="43.18" size="1.6764" layer="94">Only populate one ferrite
 to serve as denoising jumper</text>
 <text x="193.04" y="129.54" size="3.81" layer="98">Input and output</text>
-<wire x1="52.578" y1="11.938" x2="57.658" y2="13.97" width="0.1524" layer="97"/>
-<circle x="57.658" y="11.938" radius="0.567959375" width="0.1524" layer="97"/>
+<wire x1="53.34" y1="17.78" x2="58.42" y2="20.32" width="0.1524" layer="97"/>
+<circle x="58.42" y="17.78" radius="0.635" width="0.1524" layer="97"/>
 <text x="59.436" y="12.7" size="1.778" layer="97">Panel switch</text>
 </plain>
 <instances>
@@ -7120,9 +7120,9 @@ to serve as denoising jumper</text>
 <instance part="P+10" gate="1" x="220.98" y="2.54"/>
 <instance part="U$55" gate="G$1" x="220.98" y="-17.78"/>
 <instance part="C7" gate="C" x="220.98" y="-7.62"/>
-<instance part="POWER" gate="G$1" x="39.878" y="14.478" rot="MR0"/>
+<instance part="POWER" gate="G$1" x="40.64" y="15.24" rot="MR0"/>
 <instance part="P+13" gate="1" x="45.72" y="38.1"/>
-<instance part="U$11" gate="G$1" x="80.518" y="6.858"/>
+<instance part="U$11" gate="G$1" x="53.34" y="7.62"/>
 </instances>
 <busses>
 </busses>
@@ -7354,8 +7354,9 @@ to serve as denoising jumper</text>
 <pinref part="PWR_DIST" gate="G$1" pin="12"/>
 </segment>
 <segment>
-<wire x1="57.658" y1="11.938" x2="80.518" y2="11.938" width="0.1524" layer="91"/>
-<wire x1="80.518" y1="11.938" x2="80.518" y2="9.398" width="0.1524" layer="91"/>
+<pinref part="POWER" gate="G$1" pin="OUT"/>
+<wire x1="38.1" y1="12.7" x2="53.34" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="12.7" x2="53.34" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VAUX" class="0">
@@ -7444,11 +7445,6 @@ to serve as denoising jumper</text>
 </net>
 <net name="+15V" class="1">
 <segment>
-<wire x1="37.338" y1="17.018" x2="52.578" y2="17.018" width="0.1524" layer="91"/>
-<label x="47.498" y="17.018" size="1.778" layer="95"/>
-<pinref part="POWER" gate="G$1" pin="IN"/>
-</segment>
-<segment>
 <wire x1="27.94" y1="-5.08" x2="17.78" y2="-5.08" width="0.1524" layer="91"/>
 <pinref part="PWR_DIST" gate="G$1" pin="1"/>
 <label x="17.78" y="-5.08" size="1.778" layer="95"/>
@@ -7477,6 +7473,10 @@ to serve as denoising jumper</text>
 <wire x1="35.56" y1="-10.16" x2="45.72" y2="-10.16" width="0.1524" layer="91"/>
 <label x="40.64" y="-10.16" size="1.778" layer="95"/>
 <pinref part="PWR_DIST" gate="G$1" pin="6"/>
+</segment>
+<segment>
+<wire x1="58.42" y1="17.78" x2="78.74" y2="17.78" width="0.1524" layer="91"/>
+<label x="66.04" y="17.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+11V" class="1">
@@ -7796,10 +7796,11 @@ to serve as denoising jumper</text>
 <label x="55.88" y="-5.08" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="PGND" class="0">
+<net name="POW_IN" class="1">
 <segment>
-<pinref part="POWER" gate="G$1" pin="OUT"/>
-<wire x1="37.338" y1="11.938" x2="52.578" y2="11.938" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="17.78" x2="53.34" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="POWER" gate="G$1" pin="IN"/>
+<label x="43.18" y="17.78" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
