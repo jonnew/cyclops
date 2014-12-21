@@ -1,0 +1,129 @@
+* [Disclaimer] (C) Copyright Texas Instruments Incorporated 2004 All rights reserved 
+* Texas Instruments Incorporated hereby grants the user of this SPICE Macro-model a 
+* non-exclusive, nontransferable license to use this SPICE Macro-model under the following 
+* terms. Before using this SPICE Macro-model, the user should read this license. If the 
+* user does not accept these terms, the SPICE Macro-model should be returned to Texas 
+* Instruments within 30 days. The user is granted this license only to use the SPICE 
+* Macro-model and is not granted rights to sell, load, rent, lease or license the SPICE 
+* Macro-model in whole or in part, or in modified form to anyone other than user. User may 
+* modify the SPICE Macro-model to suit its specific applications but rights to derivative 
+* works and such modifications shall belong to Texas Instruments. This SPICE Macro-model is 
+* provided on an "AS IS" basis and Texas Instruments makes absolutely no warranty with 
+* respect to the information contained herein. TEXAS INSTRUMENTS DISCLAIMS AND CUSTOMER 
+* WAIVES ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY OR 
+* FITNESS FOR A PARTICULAR PURPOSE. The entire risk as to quality and performance is with 
+* the Customer. ACCORDINGLY, IN NO EVENT SHALL THE COMPANY BE LIABLE FOR ANY DAMAGES, 
+* WHETHER IN CONTRACT OR TORT,INCLUDING ANY LOST PROFITS OR OTHER INCIDENTAL, CONSEQUENTIAL,
+* EXEMPLARY, OR PUNITIVE DAMAGES ARISING OUT OF THE USE OR APPLICATION OF THE SPICE 
+* Macro-model provided in this package. Further, Texas Instruments reserves the right to 
+* discontinue or make changes without notice to any product herein to improve reliability, 
+* function, or design. Texas Instruments does not convey any license under patent rights or 
+* any other intellectual property rights, including those of third parties.
+*  
+* THS4281 SUBCIRCUIT Rev-
+* HIGH SPEED VOLTAGE FEEDBACK AMPLIFIER  
+* WRITTEN 8/27/04
+* THIS MODEL SIMULATES TYPICAL VALUES FOR THE FOLLOWING:
+* BANDWIDTH IN NOISE GAINS OF 2V/V OR MORE, SLEW RATE, SETTLING TIME, OUTPUT VOLTAGE LIMIT, INPUT VOLTAGE NOISE,
+* INPUT BIAS CURRENT, INPUT OFFSET VOLTAGE, INPUT OFFSET CURRENT, OUTPUT LOADING EFFECTS (above 100 ohm load)
+* CMRR AND PSRR SHOW THE SAME TREND AS MEASURED DATA, BUT ARE NOT ACCURATE OVER FREQUENCY
+* THIS MODEL WILL NOT PROVIDE ACCURATE SIMULATION OF:
+* OUTPUT IMPEDANCE, INPUT CURRENT NOISE, DISTORTION, INPUT OFFSET vs INPUT COMMON-MODE VOLTAGE
+* UNITY GAIN BANDWIDTH OF THIS MODEL IS LOWER THAN ACTUAL PART. IT IS IMPROVED BY ADDING 1.3k OHM IN FEEDBACK.
+* CONNECTIONS:      	NON-INVERTING INPUT
+*  		    	| INVERTING INPUT
+*     		   	|  | POSITIVE POWER SUPPLY
+*      		    	|  |  | NEGATIVE POWER SUPPLY
+*             	    	|  |  |  |  OUTPUT
+*		
+.SUBCKT THS4281     VIN+ VIN-  VS+ VS- OUT
+*
+*INPUT*
+Q1         002 001 003 PNP_IN  16
+Q2         010 VIN+ 009 PNP_IN  16
+Q17         018 001 008 NPN_IN  16
+Q18         017 VIN+ 020 NPN_IN  16
+I2         004 005 DC 21u  
+I3         006 007 DC 21u  
+R1         006 008  2.5k  
+R2         009 005  2.5k  
+R3         003 005  2.5k  
+R13       006 020  2.5k  
+R8         VS- 007  500  
+R9         004 VS+  500  
+C1         0 VIN+  2.2p  
+C2         0 VIN-  2.2p  
+
+* OFFSET AND BIAS CURRENT*
+I1         001 0 DC 0.5u  
+I4         VIN+ 0 DC 0.6u  
+V5         001 VIN- 500u
+
+*Z NODE*
+Q5         011 011 018 PNP  4
+Q6         014 014 002 NPN  4
+Q7         VOB 011 017 PNP  12
+Q8         VOB 014 010 NPN  12
+R6         VS- 012  4k  
+R7         013 VS+  4k  
+I5         011 012 DC 20u  
+I6         013 014 DC 20u  
+R4         VS- 010  4k  
+R5         017 VS+  4k  
+R10         018 VS+  12k  
+R11         VS- 002  12k  
+
+*OUTPUT BUFFER*
+Q23         025 034 035 NPN  4
+Q24         028 030 035 PNP  4
+Q25         034 034 VOB NPN  4
+Q26         030 030 VOB PNP  4
+Q27         VObottom 033 036 PNP  4
+Q28         033 033 037 PNP  4
+Q29         VOtop 032 036 NPN  4
+Q30         032 032 037 NPN  4
+I9         030 029 DC 21u  
+I10         024 032 DC 21u  
+I11         033 027 DC 21u  
+I12         026 034 DC 21u  
+R19         024 VS+  4k  
+R20         026 VS+  4k  
+R21         VS- 027  4k  
+R22         VS- 029  4k  
+R26         035 036  1k  
+R24         037 VS+  1meg  
+R25         VS- 037  1meg  
+R23         031 VOB  100  
+C5         OUT 031 2.5p
+
+*OUTPUT BIAS*
+Q3         015 015 016 NPN  4
+Q9         VObottom 021 VOtop PNP  4
+Q10         021 021 022 PNP  2
+Q12         VOtop 015 VObottom NPN  12
+Q13         022 022 VS+ PNP  8
+Q14         VOtop 022 VS+ PNP  8
+Q15         VObottom 016 VS- NPN  8
+Q16         016 016 VS- NPN  8
+Q19         025 025 VS+ PNP  8
+Q20         VOtop 025 VS+ PNP  8
+Q21         VObottom 028 VS- NPN  8
+Q22         028 028 VS- NPN  8
+I7         VS+ 015 DC 10u  
+I8         021 VS- DC 10u  
+
+*OUTPUT*
+Q4          OUT1 VObottom VS- NPN 200
+Q11        OUT1 VOtop VS+ PNP  200
+Rout	   OUT1 OUT 15
+R12         019 OUT  150  
+R14         023 VOtop  150  
+C3         OUT 023  0.3p  
+C4         VObottom 019  0.3p  
+
+.MODEL NPN_IN NPN KF=0.3E-12
+.MODEL PNP_IN PNP KF=0.3E-12 
+.MODEL NPN NPN BF=300 VAF=300 
+.MODEL PNP PNP BF=300 VAF=300
+.ENDS
+*$

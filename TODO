@@ -28,7 +28,7 @@ X8. Move pcb mount plane down one level in enclosure.
 X9. Add a logic level converter to the trig input. This will allow the use of the arduino zero when it comes out.
 	+ Done.
 	
-10. Switching to the LT2052 was good because it allows the LED to turn fully off when the input signal is grounded. Its bad because it introduces small anomalies in the rising edge of the current/light waveform for large pulses from the off state. Can I find something that has really low input offset, is pretty fast, has RRIO, can handle the rails provided, and maybe, can allow the circuit to operate of of a single supply rail?
+X10. Switching to the LT2052 was good because it allows the LED to turn fully off when the input signal is grounded. Its bad because it introduces small anomalies in the rising edge of the current/light waveform for large pulses from the off state. Can I find something that has really low input offset, is pretty fast, has RRIO, can handle the rails provided, and maybe, can allow the circuit to operate of of a single supply rail?
 
 	+ LMP7709? 
 		- This is an decompensated amplifier
@@ -37,6 +37,9 @@ X9. Add a logic level converter to the trig input. This will allow the use of th
 		- Will require thought concerning the optical feedback loop since the loop gain cannot be determined apriori. Options are:
 			- Adjustable attenuator (trimpot) on the VAUX input
 			- Optical feedback path uses a compensated amplifier (e.g. LM7701)
+	+ The more I thought about this, the more apparent it became that my current design philosophy is being hindered by previous asumptions about circuit stability.
+		- Now that the feedback path does not contain a secondary amplifier, it should be much more trival to make the feedback loop stable even with an extremely fast amplifier
+		- Enter the THS4281. 90 MHz GBWP, 35 V/us slew. And super stable in my control loop  according to spice simulations. Also has comparable voltage noise to the LMP7707 and rail to rail IO. Also can handle wider voltage rails. OK, lets use that!
 
 X11. The negative rail is not needed if you use a  low drift, precision amplifier that is RRO to ground. If this is the solution, then get rid of it, and use a simple barrel connector so people don't have to use a lab supply.
 	+ This is not actually true. To ensure the LED off, control signal must go slightly below ground.
@@ -67,4 +70,8 @@ X16. May want to consider the use of cold-switching on all front/rear panel swit
 	+ Just reuse the design on the puggleboard.
 
 18. Move the power jack to the right side of the board with a switch. Move the expansion port and banana jacks left to accomidate. Update the panel design to refect this change.
+
+	+ Make sure the power jack is not going to run into the extruded enclosure (z direction)
+	
+X19. Use the same package for the IRF510 and the LM317
 
