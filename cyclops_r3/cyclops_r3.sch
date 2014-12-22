@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -274,7 +274,7 @@ grid 2.54 mm</description>
 <vertex x="5.6515" y="8.4455"/>
 <vertex x="5.6515" y="7.8105"/>
 </polygon>
-<smd name="4" x="0" y="3.1115" dx="9.017" dy="10.668" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
+<smd name="4" x="0" y="3.1115" dx="9.017" dy="10.668" layer="1" rot="R90" thermals="no"/>
 </package>
 <package name="SMA-DO214AC">
 <description>&lt;B&gt;DIODE&lt;/B&gt;</description>

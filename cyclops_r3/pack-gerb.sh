@@ -8,4 +8,4 @@ zip gerber.zip ./gerber/*
 
 mkdir stencil 
 mv ./cyclops_r3.SST ./cyclops_r3.CST stencil
-zip stencil.zip /stencil/*
+zip stencil.zip ./stencil/*
