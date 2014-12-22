@@ -44,9 +44,9 @@ X10. Switching to the LT2052 was good because it allows the LED to turn fully of
 X11. The negative rail is not needed if you use a  low drift, precision amplifier that is RRO to ground. If this is the solution, then get rid of it, and use a simple barrel connector so people don't have to use a lab supply.
 	+ This is not actually true. To ensure the LED off, control signal must go slightly below ground.
 
-12. Front panel holes are all too big, make their tolerances tighter.
+X12. Front panel holes are all too big, make their tolerances tighter.
 
-13. Add on/off switch.
+X13. Add on/off switch.
 
 	+ Add switch to BOM
 
@@ -72,11 +72,20 @@ X17. Replace current negative LDO with something like the TPS7A30xx to combat th
 	+ Just reuse the design on the puggleboard.
 	+ I'm not sure the increase in cost and complexity is worth it. The switching regulator has 1 mVP2P ripple at 1 MZ. The switching transients will be filtered by the ferrite separating linear and switching stages. The LM337 has ~20 dB PSRR at 1 MHz, which translates to a 10x reduction in ripple. I think we can deal with 100 uVP2P ripple given that the neg rail is being used for precision opamps with PSRRs in the 100's of dB.
 
-18. Move the power jack to the right side of the board with a switch. Move the expansion port and banana jacks left to accommodate. Update the panel design to reflect this change.
+X18. Move the power jack to the right side of the board with a switch. Move the expansion port and banana jacks left to accommodate. Update the panel design to reflect this change.
 
 	+ Make sure the power jack is not going to run into the extruded enclosure (z direction)
 	
 X19. Use the same package for the IRF510 and the LM317
 
-20. Add a suitable power supply to BOM
+X20. Add non-pcb mount components to BOM
+
+	+ xSuitable power supply
+	+ xTrim pot dial
+	+ xPower switch
+	+ xPanels
+	+ xM8 connector (optional)
+	+ xArduino
+	+ xTest button cap
+	
 
