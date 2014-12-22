@@ -23559,11 +23559,11 @@ Modified: 2014.07.10
 <attribute name="NAME" x="80.5815" y="69.088" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="87.757" y="77.978" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
-<element name="REF2.1" library="cyclops" package="TP16R" value="TPTP16R" x="64.636" y="26.67" smashed="yes" rot="R90">
+<element name="REF2.5" library="cyclops" package="TP16R" value="TPTP16R" x="64.636" y="26.67" smashed="yes" rot="R90">
 <attribute name="TP_SIGNAL_NAME" value="" x="66.541" y="26.67" size="1" layer="37" rot="R90"/>
 <attribute name="NAME" x="63.4739" y="24.719" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="REF5.1" library="cyclops" package="TP16R" value="TPTP16R" x="65.398" y="36.83" smashed="yes" rot="R90">
+<element name="REF5.0" library="cyclops" package="TP16R" value="TPTP16R" x="65.398" y="36.83" smashed="yes" rot="R90">
 <attribute name="TP_SIGNAL_NAME" value="" x="67.303" y="36.83" size="1" layer="37" rot="R90"/>
 <attribute name="NAME" x="61.549" y="34.6971" size="1.016" layer="25" font="vector" ratio="18"/>
 </element>
@@ -23821,7 +23821,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="26.924" y="77.216" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="26.924" y="76.2" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="COMP" library="cyclops" package="LED-0603" value="RED" x="26.416" y="77.978" smashed="yes" rot="R90">
+<element name="COMP" library="cyclops" package="LED-0603" value="ORG" x="26.416" y="77.978" smashed="yes" rot="R90">
 <attribute name="NAME" x="23.495" y="72.39" size="1.016" layer="25" font="vector" ratio="18"/>
 </element>
 <element name="L3" library="cyclops" package="0603" value="MPZ1608" x="59.055" y="58.42" smashed="yes">
@@ -24229,7 +24229,7 @@ Modified: 2014.07.10
 <contactref element="C4" pad="1"/>
 <contactref element="U8" pad="4"/>
 <contactref element="REF_ADJ" pad="1"/>
-<contactref element="REF2.1" pad="TP"/>
+<contactref element="REF2.5" pad="TP"/>
 <wire x1="73.3736" y1="26.4414" x2="72.136" y2="26.4414" width="0.6096" layer="1"/>
 <wire x1="72.136" y1="26.4414" x2="70.8314" y2="26.4414" width="0.6096" layer="1"/>
 <wire x1="70.8314" y1="26.4414" x2="70.351" y2="25.961" width="0.3048" layer="1"/>
@@ -24782,7 +24782,7 @@ Modified: 2014.07.10
 <contactref element="TEST" pad="1"/>
 <contactref element="R20" pad="2"/>
 <contactref element="C26" pad="1"/>
-<contactref element="REF5.1" pad="TP"/>
+<contactref element="REF5.0" pad="TP"/>
 <wire x1="73.3806" y1="35.179" x2="73.3806" y2="36.703" width="0.3048" layer="1"/>
 <wire x1="73.3806" y1="36.703" x2="73.3806" y2="36.7284" width="0.3048" layer="1"/>
 <wire x1="73.3806" y1="36.7284" x2="72.517" y2="37.592" width="0.3048" layer="1"/>
