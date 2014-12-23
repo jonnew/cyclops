@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -4657,6 +4657,8 @@ distributor Farnell 149-452</description>
 <wire x1="5.08" y1="-0.381" x2="5.334" y2="-0.381" width="0.127" layer="51"/>
 <wire x1="5.334" y1="-0.381" x2="5.207" y2="-0.254" width="0.127" layer="51"/>
 <rectangle x1="-5.842" y1="0.254" x2="5.842" y2="6.858" layer="39"/>
+<wire x1="-5.969" y1="0" x2="5.969" y2="0" width="0.127" layer="51" style="shortdash"/>
+<wire x1="-5.969" y1="0" x2="5.969" y2="0" width="0.127" layer="21"/>
 </package>
 <package name="B1,27">
 <description>&lt;b&gt;TEST PAD&lt;/b&gt;</description>
@@ -6016,7 +6018,7 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="17.526" y1="-5.334" x2="17.526" y2="5.334" width="0.1524" layer="21"/>
 <wire x1="17.526" y1="5.334" x2="-2.413" y2="5.334" width="0.1524" layer="21"/>
 <wire x1="-2.413" y1="5.08" x2="-2.413" y2="5.334" width="0.1524" layer="21"/>
-<wire x1="-2.413" y1="5.08" x2="-2.413" y2="-5.08" width="0.1524" layer="21" style="shortdash"/>
+<wire x1="-2.413" y1="5.08" x2="-2.413" y2="-5.08" width="0.1524" layer="51" style="shortdash"/>
 <text x="-2.159" y="2.54" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
 <text x="-2.159" y="-3.81" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 <wire x1="-2.413" y1="-5.08" x2="-2.413" y2="-5.334" width="0.1524" layer="21"/>
@@ -6034,6 +6036,7 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="-2.921" y1="-4.572" x2="-3.048" y2="-4.445" width="0.127" layer="51"/>
 <wire x1="-3.048" y1="-4.445" x2="-3.048" y2="-4.699" width="0.127" layer="51"/>
 <wire x1="-3.048" y1="-4.699" x2="-2.921" y2="-4.572" width="0.127" layer="51"/>
+<wire x1="-2.413" y1="5.08" x2="-2.413" y2="-5.08" width="0.1524" layer="21"/>
 </package>
 <package name="ARDUINOR3_PINS_NOHOLES">
 <pad name="D4" x="53.34" y="50.8" drill="1" diameter="1.6764" shape="octagon"/>
@@ -6190,9 +6193,7 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="-0.508" y1="-1.524" x2="-0.508" y2="-1.016" width="0.1524" layer="21"/>
 <wire x1="-0.508" y1="1.016" x2="-0.508" y2="1.524" width="0.1524" layer="21"/>
 <wire x1="-0.508" y1="3.556" x2="-0.508" y2="4.826" width="0.1524" layer="21"/>
-<wire x1="4.318" y1="-4.826" x2="4.318" y2="-2.794" width="0.1524" layer="21" style="shortdash"/>
-<wire x1="4.318" y1="-2.794" x2="4.318" y2="2.794" width="0.1524" layer="21" style="shortdash"/>
-<wire x1="4.318" y1="2.794" x2="4.318" y2="4.826" width="0.1524" layer="21" style="shortdash"/>
+<wire x1="4.318" y1="-4.826" x2="4.318" y2="4.826" width="0.1524" layer="51" style="shortdash"/>
 <wire x1="4.318" y1="2.794" x2="6.096" y2="2.794" width="0.1524" layer="21"/>
 <wire x1="6.096" y1="2.794" x2="7.112" y2="2.794" width="0.1524" layer="21"/>
 <wire x1="7.112" y1="2.794" x2="8.128" y2="2.794" width="0.1524" layer="21"/>
@@ -6235,6 +6236,7 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="4.826" y1="-4.572" x2="4.953" y2="-4.445" width="0.1524" layer="51"/>
 <wire x1="4.953" y1="-4.445" x2="4.953" y2="-4.699" width="0.1524" layer="51"/>
 <wire x1="4.953" y1="-4.699" x2="4.826" y2="-4.572" width="0.1524" layer="51"/>
+<wire x1="4.318" y1="-4.826" x2="4.318" y2="4.826" width="0.1524" layer="21"/>
 </package>
 <package name="PWR5322">
 <smd name="1" x="0" y="0" dx="3.7" dy="4.2" layer="1"/>
@@ -6266,7 +6268,7 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="-3.683" y1="5.588" x2="-3.556" y2="5.461" width="0.127" layer="51"/>
 <wire x1="-3.556" y1="5.461" x2="-3.429" y2="5.588" width="0.127" layer="51"/>
 <wire x1="-3.683" y1="5.588" x2="-3.429" y2="5.588" width="0.127" layer="51"/>
-<wire x1="-3.81" y1="5.207" x2="3.81" y2="5.207" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-3.81" y1="5.207" x2="3.81" y2="5.207" width="0.127" layer="51" style="shortdash"/>
 <wire x1="3.683" y1="6.096" x2="3.81" y2="5.969" width="0.127" layer="51"/>
 <wire x1="3.81" y1="5.969" x2="3.81" y2="5.461" width="0.127" layer="51"/>
 <wire x1="3.937" y1="5.588" x2="3.81" y2="5.461" width="0.127" layer="51"/>
@@ -6277,6 +6279,7 @@ Make a shield with ease, this package has all the named pins as well as the two 
 <wire x1="-2.2606" y1="-1.016" x2="2.2606" y2="-1.016" width="0.127" layer="21"/>
 <wire x1="2.2606" y1="-1.016" x2="2.2606" y2="0.889" width="0.127" layer="21"/>
 <rectangle x1="-2.286" y1="-1.016" x2="2.286" y2="0.889" layer="41"/>
+<wire x1="-2.2606" y1="5.207" x2="2.2606" y2="5.207" width="0.127" layer="21"/>
 </package>
 <package name="SOT65P210X110-6N">
 <smd name="1" x="-1.1176" y="0.6604" dx="1.016" dy="0.3556" layer="1"/>
@@ -6446,14 +6449,12 @@ Source: DCJ0303.pdf</description>
 <text x="-5.08" y="-10.16" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
 </package>
 <package name="PJ-063BH">
-<wire x1="-5" y1="0" x2="-3.25" y2="0" width="0.127" layer="21" style="shortdash"/>
 <pad name="1" x="0" y="-12" drill="3.1" shape="octagon"/>
 <pad name="2" x="0" y="-6" drill="2.35" shape="octagon"/>
 <hole x="0" y="-3" drill="1.6"/>
 <pad name="M1" x="-4.5" y="-6" drill="2.6" shape="octagon"/>
 <pad name="M2" x="4.5" y="-6" drill="2.6" shape="octagon"/>
-<wire x1="-3.25" y1="0" x2="3.25" y2="0" width="0.127" layer="21" style="shortdash"/>
-<wire x1="3.25" y1="0" x2="5" y2="0" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-5.005" y1="0" x2="5" y2="0" width="0.127" layer="51" style="shortdash"/>
 <wire x1="-5" y1="0" x2="-5" y2="-4" width="0.127" layer="21"/>
 <wire x1="5" y1="0" x2="5" y2="-4" width="0.127" layer="21"/>
 <wire x1="-5" y1="-8" x2="-5" y2="-13" width="0.127" layer="21"/>
@@ -6487,6 +6488,7 @@ Source: DCJ0303.pdf</description>
 <wire x1="-4.707" y1="0.504" x2="-4.58" y2="0.631" width="0.127" layer="51"/>
 <wire x1="-4.58" y1="0.631" x2="-4.834" y2="0.631" width="0.127" layer="51"/>
 <wire x1="-4.834" y1="0.631" x2="-4.707" y2="0.504" width="0.127" layer="51"/>
+<wire x1="-5.005" y1="0" x2="5" y2="0" width="0.127" layer="21"/>
 </package>
 <package name="SOT65P300X175-N">
 <smd name="1" x="-1.1176" y="0.6604" dx="1.016" dy="0.3556" layer="1"/>
@@ -26711,6 +26713,53 @@ Source: DCJ0303.pdf</description>
 <rectangle x1="3.556" y1="1.016" x2="4.064" y2="1.524" layer="51"/>
 <rectangle x1="3.556" y1="-1.524" x2="4.064" y2="-1.016" layer="51"/>
 </package>
+<package name="SJ_2W">
+<description>&lt;b&gt;Solder jumper&lt;/b&gt;</description>
+<wire x1="3.175" y1="-1.524" x2="-3.175" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="1.524" x2="3.429" y2="1.27" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-3.429" y1="1.27" x2="-3.175" y2="1.524" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-3.429" y1="-1.27" x2="-3.175" y2="-1.524" width="0.1524" layer="21" curve="90"/>
+<wire x1="3.175" y1="-1.524" x2="3.429" y2="-1.27" width="0.1524" layer="21" curve="90"/>
+<wire x1="3.429" y1="-1.27" x2="3.429" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-3.429" y1="-1.27" x2="-3.429" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-3.175" y1="1.524" x2="3.175" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="2.794" y1="0" x2="3.302" y2="0" width="0.1524" layer="51"/>
+<wire x1="-2.794" y1="0" x2="-3.302" y2="0" width="0.1524" layer="51"/>
+<wire x1="0" y1="0.762" x2="0" y2="1.397" width="0.1524" layer="51"/>
+<wire x1="0" y1="-1.397" x2="0" y2="-0.762" width="0.1524" layer="51"/>
+<wire x1="2.032" y1="0.127" x2="2.032" y2="-0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<wire x1="-2.032" y1="-0.127" x2="-2.032" y2="0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<smd name="1" x="-2.54" y="0" dx="1.27" dy="2.54" layer="1"/>
+<smd name="2" x="0" y="0" dx="1.27" dy="2.54" layer="1"/>
+<smd name="3" x="2.54" y="0" dx="1.27" dy="2.54" layer="1"/>
+<text x="-3.429" y="1.778" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-0.1001" y="0" size="0.02" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.508" y1="-0.762" x2="0.508" y2="0.762" layer="51"/>
+</package>
+<package name="SJ_2">
+<description>&lt;b&gt;Solder jumper&lt;/b&gt;</description>
+<wire x1="2.159" y1="-1.016" x2="-2.159" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="2.159" y1="1.016" x2="2.413" y2="0.762" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.413" y1="0.762" x2="-2.159" y2="1.016" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.413" y1="-0.762" x2="-2.159" y2="-1.016" width="0.1524" layer="21" curve="90"/>
+<wire x1="2.159" y1="-1.016" x2="2.413" y2="-0.762" width="0.1524" layer="21" curve="90"/>
+<wire x1="2.413" y1="-0.762" x2="2.413" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-2.413" y1="-0.762" x2="-2.413" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-2.159" y1="1.016" x2="2.159" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="1.778" y1="0" x2="2.286" y2="0" width="0.1524" layer="51"/>
+<wire x1="-1.778" y1="0" x2="-2.286" y2="0" width="0.1524" layer="51"/>
+<wire x1="0" y1="0.762" x2="0" y2="1.016" width="0.1524" layer="51"/>
+<wire x1="0" y1="-1.016" x2="0" y2="-0.762" width="0.1524" layer="51"/>
+<wire x1="1.016" y1="0.127" x2="1.016" y2="-0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<wire x1="-1.016" y1="-0.127" x2="-1.016" y2="0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<smd name="1" x="-1.524" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<smd name="2" x="0" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<smd name="3" x="1.524" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<text x="-2.413" y="1.27" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-0.1001" y="0" size="0.02" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.508" y1="-0.762" x2="0.508" y2="0.762" layer="51"/>
+<rectangle x1="-2.159" y1="-0.889" x2="2.159" y2="0.889" layer="29"/>
+</package>
 </packages>
 <symbols>
 <symbol name="BANANA_TO_BOARD">
@@ -28189,6 +28238,22 @@ Source: DCJ0303.pdf</description>
 <pin name="6" x="5.08" y="-2.54" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
 <pin name="7" x="-2.54" y="-5.08" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="8" x="5.08" y="-5.08" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
+</symbol>
+<symbol name="SJ_2">
+<wire x1="-0.635" y1="-1.397" x2="0.635" y2="-1.397" width="1.27" layer="94" curve="180" cap="flat"/>
+<wire x1="-0.635" y1="1.397" x2="0.635" y2="1.397" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="1.27" y1="-0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="-0.635" x2="-1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-1.27" y2="0.635" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="0.635" x2="1.27" y2="0.635" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.1524" layer="94"/>
+<text x="2.54" y="0.381" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-1.905" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-1.27" y1="-0.635" x2="1.27" y2="0.635" layer="94"/>
+<pin name="3" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="1" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
+<pin name="2" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -31966,6 +32031,34 @@ Source: DCJ0303.pdf</description>
 <connect gate="G$1" pin="6" pad="6"/>
 <connect gate="G$1" pin="7" pad="7"/>
 <connect gate="G$1" pin="8" pad="8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SJ2W" prefix="SJ" uservalue="yes">
+<description>SMD solder &lt;b&gt;JUMPER&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="SJ_2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="W" package="SJ_2W">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="" package="SJ_2">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
