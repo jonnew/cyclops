@@ -23453,7 +23453,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="75.946" y="39.37" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
 <attribute name="VALUE" x="76.835" y="41.91" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="RSENSE" library="cyclops" package="2512" value="0.25,2W" x="75.819" y="15.12" smashed="yes" rot="R90">
+<element name="RSENSE" library="cyclops" package="2512" value="1R0,2W" x="75.819" y="15.12" smashed="yes" rot="R90">
 <attribute name="NAME" x="73.406" y="13.85" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="79.121" y="13.85" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
