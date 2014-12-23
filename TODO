@@ -88,4 +88,13 @@ X20. Add non-pcb mount components to BOM
 	+ xArduino
 	+ xTest button cap
 	
+21. Replace LM317 with LT1863. Update supporting passives to make up for increased IC cost
+	+ Caps - do I even need the tantalum cap on the regulator output, or is my electrolytic in parallel with all of the bypass caps good enough?
+	+ Loose over-voltage protection diode
+	
+	
+22. Increase Rsense to 1 ohm to get the msot of the THS4281
+	
+	+ Update the VI output amp to account for this, but leave the feedback network so that other sense resistors can be used without board modification.
+	
 
