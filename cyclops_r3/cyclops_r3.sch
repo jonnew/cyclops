@@ -6624,8 +6624,8 @@ at 30/07/2012 17:45:58</description>
 <part name="C6" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="C2" library="cyclops" deviceset="C" device="_0603"/>
 <part name="R4" library="cyclops" deviceset="R" device="_0603"/>
-<part name="R27" library="cyclops" deviceset="R" device="_0603" value="3k"/>
-<part name="R28" library="cyclops" deviceset="R" device="_0603" value="1k"/>
+<part name="R27" library="cyclops" deviceset="R" device="_0603" value="0"/>
+<part name="R28" library="cyclops" deviceset="R" device="_0603"/>
 <part name="RSENSE" library="cyclops" deviceset="R" device="_2512" value="1R0,2W"/>
 <part name="U8" library="cyclops" deviceset="ADR03AKSZ-REEL7" device="" value="ADR03"/>
 <part name="C22" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
@@ -6820,7 +6820,7 @@ at 30/07/2012 17:45:58</description>
 <part name="U$51" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$53" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$11" library="cyclops" deviceset="GND2" device=""/>
-<part name="U15" library="cyclops" deviceset="LT1963" device="_DDPAK"/>
+<part name="U15" library="cyclops" deviceset="LT1963" device="_DDPAK" value="LT1963A"/>
 <part name="C37" library="cyclops" deviceset="C-POL" device="_0807" value="100uF"/>
 <part name="C39" library="cyclops" deviceset="C-POL" device="_0807" value="100uF"/>
 <part name="R34" library="cyclops" deviceset="R" device="_0603" value="240"/>
