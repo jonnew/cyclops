@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3749,6 +3749,33 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <text x="-0.1001" y="0" size="0.02" layer="27">&gt;VALUE</text>
 <rectangle x1="-0.508" y1="-0.762" x2="0.508" y2="0.762" layer="51"/>
 </package>
+<package name="5-DDPAK">
+<smd name="TAB" x="0" y="0" dx="10.668" dy="8.89" layer="1"/>
+<smd name="3" x="0" y="-9.271" dx="1.0668" dy="2.286" layer="1"/>
+<smd name="2" x="-1.7018" y="-9.271" dx="1.0668" dy="2.286" layer="1"/>
+<smd name="1" x="-3.4036" y="-9.271" dx="1.0668" dy="2.286" layer="1"/>
+<smd name="4" x="1.7018" y="-9.271" dx="1.0668" dy="2.286" layer="1"/>
+<smd name="5" x="3.4036" y="-9.271" dx="1.0668" dy="2.286" layer="1"/>
+<text x="-5.08" y="7.62" size="1.27" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="-5.08" y="6.35" size="1.27" layer="27" font="vector" ratio="18">&gt;VALUE</text>
+<wire x1="-5.6007" y1="4.6863" x2="5.7023" y2="4.6863" width="0.127" layer="21"/>
+<wire x1="5.7023" y1="4.6863" x2="5.7023" y2="-4.9022" width="0.1524" layer="21"/>
+<wire x1="5.7023" y1="-4.9022" x2="-5.6007" y2="-4.9022" width="0.1524" layer="21"/>
+<wire x1="-5.6007" y1="-4.9022" x2="-5.6007" y2="4.6863" width="0.1524" layer="21"/>
+<polygon width="0.1524" layer="21">
+<vertex x="-5.6007" y="4.6863"/>
+<vertex x="-5.6007" y="5.3213"/>
+<vertex x="-4.3307" y="5.6388"/>
+<vertex x="4.7498" y="5.6388"/>
+<vertex x="5.7023" y="5.3213"/>
+<vertex x="5.7023" y="4.6863"/>
+</polygon>
+<rectangle x1="-3.81" y1="-8.001" x2="-2.921" y2="-5.08" layer="51"/>
+<rectangle x1="-2.159" y1="-8.001" x2="-1.27" y2="-5.08" layer="51"/>
+<rectangle x1="-0.4445" y1="-8.001" x2="0.4445" y2="-5.08" layer="51"/>
+<rectangle x1="1.2065" y1="-8.001" x2="2.0955" y2="-5.08" layer="51"/>
+<rectangle x1="2.921" y1="-8.001" x2="3.81" y2="-5.08" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="317">
@@ -4451,6 +4478,19 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <pin name="3" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
 <pin name="1" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
 <pin name="2" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
+</symbol>
+<symbol name="LT1963">
+<wire x1="-10.16" y1="-17.78" x2="10.16" y2="-17.78" width="0.4064" layer="94"/>
+<wire x1="10.16" y1="-17.78" x2="10.16" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="10.16" y1="2.54" x2="-10.16" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="-10.16" y1="2.54" x2="-10.16" y2="-17.78" width="0.4064" layer="94"/>
+<text x="-7.62" y="5.715" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="3.175" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="VI" x="-12.7" y="0" length="short" direction="in"/>
+<pin name="ADJ" x="12.7" y="-10.16" length="short" direction="in" rot="R180"/>
+<pin name="VO" x="12.7" y="0" length="short" direction="pas" rot="R180"/>
+<pin name="~SHDN" x="-12.7" y="-10.16" length="short" direction="in"/>
+<pin name="GND" x="0" y="-20.32" length="short" direction="in" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -6604,6 +6644,26 @@ Digikey part: J111-ND (or similar).</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="LT1963" prefix="U" uservalue="yes">
+<description>1.5A, Low Noise Fast Transient Response LDO Regulators</description>
+<gates>
+<gate name="G$1" symbol="LT1963" x="0" y="5.08"/>
+</gates>
+<devices>
+<device name="_DDPAK" package="5-DDPAK">
+<connects>
+<connect gate="G$1" pin="ADJ" pad="5"/>
+<connect gate="G$1" pin="GND" pad="3 TAB"/>
+<connect gate="G$1" pin="VI" pad="2"/>
+<connect gate="G$1" pin="VO" pad="4"/>
+<connect gate="G$1" pin="~SHDN" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="ti-extended">
@@ -6933,6 +6993,11 @@ at 30/07/2012 17:45:58</description>
 <part name="U$51" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$53" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$11" library="cyclops" deviceset="GND2" device=""/>
+<part name="U15" library="cyclops" deviceset="LT1963" device="_DDPAK"/>
+<part name="C37" library="cyclops" deviceset="C-POL" device="_0807" value="100uF"/>
+<part name="C39" library="cyclops" deviceset="C-POL" device="_0807" value="100uF"/>
+<part name="R34" library="cyclops" deviceset="R" device="_0603" value="240"/>
+<part name="R35" library="cyclops" deviceset="R" device="_0603" value="2.15k"/>
 </parts>
 <sheets>
 <sheet>
@@ -7791,6 +7856,14 @@ to serve as denoising jumper</text>
 </instance>
 <instance part="P+15" gate="1" x="-101.6" y="-66.04"/>
 <instance part="C9" gate="C" x="-78.74" y="-88.9"/>
+<instance part="U15" gate="G$1" x="210.82" y="33.02"/>
+<instance part="C37" gate="C" x="180.34" y="22.86"/>
+<instance part="C39" gate="C" x="292.1" y="22.86"/>
+<instance part="R34" gate="R" x="246.38" y="2.54" smashed="yes" rot="R90">
+<attribute name="NAME" x="244.8814" y="-1.27" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="249.682" y="-1.27" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R35" gate="R" x="246.38" y="22.86" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -7908,6 +7981,22 @@ to serve as denoising jumper</text>
 <junction x="-27.94" y="-109.22"/>
 <pinref part="C9" gate="C" pin="2"/>
 </segment>
+<segment>
+<pinref part="R34" gate="R" pin="1"/>
+<wire x1="246.38" y1="-2.54" x2="246.38" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="U15" gate="G$1" pin="GND"/>
+<wire x1="246.38" y1="-7.62" x2="210.82" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="-7.62" x2="210.82" y2="12.7" width="0.1524" layer="91"/>
+<junction x="246.38" y="-7.62"/>
+<pinref part="C37" gate="C" pin="-"/>
+<wire x1="180.34" y1="20.32" x2="180.34" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="-7.62" x2="210.82" y2="-7.62" width="0.1524" layer="91"/>
+<junction x="210.82" y="-7.62"/>
+<wire x1="246.38" y1="-7.62" x2="292.1" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="292.1" y1="-7.62" x2="292.1" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="C39" gate="C" pin="-"/>
+<wire x1="210.82" y1="-7.62" x2="210.82" y2="-15.24" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$3" class="0">
 <segment>
@@ -7952,6 +8041,19 @@ to serve as denoising jumper</text>
 <wire x1="-38.1" y1="0" x2="-38.1" y2="35.56" width="0.1524" layer="91"/>
 <label x="-63.5" y="35.56" size="1.778" layer="95"/>
 <wire x1="-66.04" y1="35.56" x2="-38.1" y2="35.56" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U15" gate="G$1" pin="VI"/>
+<wire x1="198.12" y1="33.02" x2="195.58" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="C37" gate="C" pin="+"/>
+<wire x1="195.58" y1="33.02" x2="180.34" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="33.02" x2="172.72" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="27.94" x2="180.34" y2="33.02" width="0.1524" layer="91"/>
+<junction x="180.34" y="33.02"/>
+<pinref part="U15" gate="G$1" pin="~SHDN"/>
+<wire x1="198.12" y1="22.86" x2="195.58" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="22.86" x2="195.58" y2="33.02" width="0.1524" layer="91"/>
+<junction x="195.58" y="33.02"/>
 </segment>
 </net>
 <net name="N$32" class="0">
@@ -8043,6 +8145,32 @@ to serve as denoising jumper</text>
 <wire x1="-88.9" y1="-60.96" x2="-88.9" y2="-58.42" width="0.1524" layer="91"/>
 <wire x1="-88.9" y1="-58.42" x2="-101.6" y2="-58.42" width="0.1524" layer="91"/>
 <label x="-101.6" y="-58.42" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="+12V" class="1">
+<segment>
+<pinref part="R35" gate="R" pin="2"/>
+<wire x1="246.38" y1="27.94" x2="246.38" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="U15" gate="G$1" pin="VO"/>
+<wire x1="223.52" y1="33.02" x2="246.38" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="C39" gate="C" pin="+"/>
+<wire x1="246.38" y1="33.02" x2="292.1" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="292.1" y1="33.02" x2="292.1" y2="27.94" width="0.1524" layer="91"/>
+<junction x="246.38" y="33.02"/>
+</segment>
+</net>
+<net name="N$12" class="0">
+<segment>
+<pinref part="R34" gate="R" pin="2"/>
+<wire x1="246.38" y1="7.62" x2="246.38" y2="12.7" width="0.1524" layer="91"/>
+<junction x="246.38" y="12.7"/>
+<pinref part="R35" gate="R" pin="1"/>
+<wire x1="246.38" y1="17.78" x2="246.38" y2="12.7" width="0.1524" layer="91"/>
+<junction x="246.38" y="12.7"/>
+<wire x1="246.38" y1="12.7" x2="231.14" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="U15" gate="G$1" pin="ADJ"/>
+<wire x1="223.52" y1="22.86" x2="231.14" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="22.86" x2="231.14" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
