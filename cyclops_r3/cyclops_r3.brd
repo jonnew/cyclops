@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -185,8 +185,8 @@ Dec. 2014</text>
 <hole x="95.377" y="8.255" drill="3.302"/>
 <dimension x1="1.27" y1="0" x2="1.27" y2="80.01" x3="-16.002" y3="40.005" textsize="1.016" textratio="18" layer="51" dtype="vertical" unit="inch" visible="yes"/>
 <dimension x1="0" y1="78.74" x2="125.095" y2="78.74" x3="62.5475" y3="102.87" textsize="1.016" textratio="18" layer="51" dtype="horizontal" unit="inch"/>
-<text x="92.837" y="5.08" size="1.016" layer="21" font="vector" ratio="18" align="center">GND</text>
-<text x="75.692" y="5.588" size="1.016" layer="21" font="vector" ratio="18" align="center">+11V</text>
+<text x="93.345" y="5.08" size="1.016" layer="21" font="vector" ratio="18" align="center">GND</text>
+<text x="75.692" y="5.588" size="1.016" layer="21" font="vector" ratio="18" align="center">+12V</text>
 <text x="13.081" y="87.503" size="1.016" layer="51" font="vector" ratio="18">VCTL</text>
 <text x="5.461" y="87.503" size="1.016" layer="51" font="vector" ratio="18">DAC</text>
 <text x="10.541" y="91.313" size="1.016" layer="51" font="vector" ratio="18" rot="R90">DISABLE</text>
@@ -24564,7 +24564,7 @@ Modified: 2014.07.10
 <wire x1="78.987" y1="29.9466" x2="78.987" y2="29.965" width="0.3048" layer="1"/>
 <wire x1="78.987" y1="29.965" x2="78.994" y2="29.972" width="0.3048" layer="1"/>
 <wire x1="79.0886" y1="40.64" x2="80.137" y2="40.64" width="0.4064" layer="1"/>
-<via x="92.837" y="2.667" extent="1-16" drill="2" shape="octagon" alwaysstop="yes"/>
+<via x="93.345" y="2.667" extent="1-16" drill="2" shape="octagon" alwaysstop="yes"/>
 <contactref element="R24" pad="2"/>
 <via x="80.137" y="49.911" extent="1-16" drill="0.3302"/>
 <wire x1="79.0956" y1="49.911" x2="80.137" y2="49.911" width="0.3048" layer="1"/>
@@ -25004,9 +25004,9 @@ Modified: 2014.07.10
 <contactref element="LED+" pad="2"/>
 <contactref element="LED+" pad="1"/>
 <wire x1="89.6493" y1="27.94" x2="87.122" y2="27.94" width="2.54" layer="1"/>
-<wire x1="87.122" y1="27.94" x2="85.344" y2="26.162" width="2.54" layer="1"/>
-<wire x1="85.344" y1="17.78" x2="85.344" y2="2.54" width="2.54" layer="1"/>
-<wire x1="85.344" y1="17.78" x2="85.344" y2="26.162" width="2.54" layer="1"/>
+<wire x1="87.122" y1="27.94" x2="85.344" y2="26.162" width="3.048" layer="1"/>
+<wire x1="85.344" y1="17.78" x2="85.344" y2="2.54" width="3.81" layer="1"/>
+<wire x1="85.344" y1="17.78" x2="85.344" y2="26.162" width="3.81" layer="1"/>
 <contactref element="EXPANSION" pad="2"/>
 <contactref element="EXPANSION" pad="1"/>
 <wire x1="85.344" y1="2.54" x2="81.534" y2="6.35" width="2.54" layer="16"/>
@@ -25162,8 +25162,8 @@ Modified: 2014.07.10
 <wire x1="85.471" y1="39.624" x2="85.471" y2="38.1" width="0.6096" layer="1"/>
 <wire x1="85.471" y1="38.1" x2="85.471" y2="37.338" width="0.3048" layer="1"/>
 <wire x1="85.471" y1="37.338" x2="85.4964" y2="37.3126" width="0.3048" layer="1"/>
-<wire x1="66.294" y1="2.54" x2="66.294" y2="17.78" width="2.54" layer="1"/>
-<wire x1="75.819" y1="17.695" x2="66.379" y2="17.695" width="2.54" layer="1"/>
+<wire x1="66.294" y1="2.54" x2="66.294" y2="17.78" width="3.81" layer="1"/>
+<wire x1="75.819" y1="17.695" x2="66.379" y2="17.695" width="3.81" layer="1"/>
 <wire x1="66.379" y1="17.695" x2="66.294" y2="17.78" width="2.54" layer="1"/>
 <contactref element="EXPANSION" pad="3"/>
 <contactref element="EXPANSION" pad="4"/>
@@ -25573,8 +25573,8 @@ Modified: 2014.07.10
 <signal name="IN">
 <contactref element="AUX&lt;&gt;CURR" pad="2"/>
 <contactref element="U12" pad="3"/>
-<wire x1="91.186" y1="29.718" x2="85.217" y2="29.718" width="0.3048" layer="1"/>
-<wire x1="85.217" y1="29.718" x2="82.677" y2="32.258" width="0.3048" layer="1"/>
+<wire x1="90.678" y1="30.226" x2="84.709" y2="30.226" width="0.3048" layer="1"/>
+<wire x1="84.709" y1="30.226" x2="82.677" y2="32.258" width="0.3048" layer="1"/>
 <via x="82.677" y="32.258" extent="1-16" drill="0.3302"/>
 <wire x1="82.677" y1="32.258" x2="82.677" y2="37.846" width="0.3048" layer="16"/>
 <wire x1="82.677" y1="37.846" x2="82.931" y2="38.1" width="0.3048" layer="16"/>
@@ -25582,7 +25582,7 @@ Modified: 2014.07.10
 <wire x1="82.931" y1="38.1" x2="83.947" y2="38.1" width="0.3048" layer="1"/>
 <wire x1="83.947" y1="38.1" x2="84.1756" y2="37.8714" width="0.3048" layer="1"/>
 <wire x1="84.1756" y1="37.8714" x2="84.1756" y2="37.3126" width="0.3048" layer="1"/>
-<wire x1="91.186" y1="29.718" x2="91.948" y2="28.956" width="0.3048" layer="1"/>
+<wire x1="90.678" y1="30.226" x2="91.948" y2="28.956" width="0.3048" layer="1"/>
 <wire x1="91.948" y1="28.956" x2="91.948" y2="19.558" width="0.3048" layer="1"/>
 <wire x1="100.584" y1="6.731" x2="100.584" y2="4.528" width="0.3048" layer="16"/>
 <via x="100.584" y="6.731" extent="1-16" drill="0.3302"/>
