@@ -93,8 +93,8 @@ x21. Replace LM317 with LT1963. Update supporting passives to make up for increa
 		+ I don't think I do, especially for a 12V output voltage. In this case, the ceramic bypass caps will work fine.
 	+ xLoose over-voltage protection diode
 	+ xBring the positive rail up to 12V. The overcurrent warning circuit depends on this voltage so that will need to be updated. It would be better if this circuit used an actual reference instead of the positive rail to create a trigger for the OC led.	
-	+ Leave space for a tanalum or ceramic output cap, but do not populate.
-		+ These really should not be nessesary, so I choose not to do this.
+	+ xLeave space for a tanalum or ceramic output cap, but do not populate.
+		+ These really should not be nessesary, but I left a spot for a 10uF tantalum on the output side marked DNP.
 	+ xMove one of the 100 uF caps to the input side of the regulator.
 	+ xLoose all the ouput tantalums because their are enough paralleled ceramic bypass capactitors on islated ICs to meet the stability requirements	
 X22. Increase Rsense to 1 ohm to get the msot of the THS4281
@@ -104,3 +104,4 @@ X22. Increase Rsense to 1 ohm to get the msot of the THS4281
 23. Double check voltage ratings on ceramic caps.
 
 24. Final BOM update.
+	+ Account for (DNP) components on the spreadsheet that might be seen by others.
