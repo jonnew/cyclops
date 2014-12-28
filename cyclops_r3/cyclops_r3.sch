@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6811,7 +6811,7 @@ at 30/07/2012 17:45:58</description>
 <part name="P+13" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 <part name="NEG_SUPPLY" library="cyclops" deviceset="SJ2W" device=""/>
 <part name="P+15" library="cyclops" deviceset="+5V" device="" value="+5V"/>
-<part name="C9" library="cyclops" deviceset="C" device="_0805" value="4.7uF"/>
+<part name="C9" library="cyclops" deviceset="C" device="_1206" value="4.7uF"/>
 <part name="U$9" library="cyclops" deviceset="GND2" device=""/>
 <part name="U12" library="cyclops" deviceset="MAX4564" device=""/>
 <part name="R26" library="cyclops" deviceset="R" device="_0603" value="2.2k"/>

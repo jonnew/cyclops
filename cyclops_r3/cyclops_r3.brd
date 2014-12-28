@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -215,6 +215,11 @@ IN USE.</text>
 <text x="22.606" y="17.145" size="1.016" layer="21" font="vector" ratio="18" rot="R90">(DNP)</text>
 <text x="76.581" y="41.402" size="1.016" layer="21" font="vector" ratio="18">(DNP)</text>
 <text x="114.935" y="66.548" size="1.016" layer="21" font="vector" ratio="18">(DNP)</text>
+<text x="46.99" y="24.13" size="2.1844" layer="21" font="vector" ratio="18" rot="R180" align="center">Cyclops
+Rev. 3.5</text>
+<text x="46.99" y="17.78" size="1.27" layer="21" font="vector" ratio="18" rot="R180" align="center">CC BY-SA-NC 4.0
+Jon Newman
+Dec. 2014</text>
 </plain>
 <libraries>
 <library name="cyclops">
@@ -23941,13 +23946,9 @@ Modified: 2014.07.10
 <attribute name="NAME" x="51.689" y="37.084" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
 <attribute name="VALUE" x="52.07" y="39.7779" size="0.02" layer="27" rot="R90"/>
 </element>
-<element name="C9" library="cyclops" package="0805" value="4.7uF" x="33.528" y="44.196" smashed="yes" rot="R270">
-<attribute name="MN" value="TDK Corp." x="33.528" y="44.196" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="33.528" y="44.196" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DK" value="" x="33.528" y="44.196" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VID" value="DK" x="33.528" y="44.196" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="32.512" y="47.371" size="1.016" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="32.512" y="46.228" size="1.016" layer="27" font="vector" ratio="18"/>
+<element name="C9" library="cyclops" package="1206" value="4.7uF" x="33.528" y="44.196" smashed="yes" rot="R270">
+<attribute name="NAME" x="32.512" y="48.387" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="32.512" y="47.244" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="U12" library="cyclops" package="SOT65P300X175-N" value="MAX4564" x="84.836" y="36.195" smashed="yes" rot="R270">
 <attribute name="NAME" x="81.685" y="34.211" size="1.016" layer="25" font="vector" ratio="18" rot="SR90"/>
