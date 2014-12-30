@@ -137,29 +137,6 @@
 <layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <board>
-<description>&lt;html&gt;
-	&lt;head&gt;
-		&lt;title&gt;Cyclops 3.0 PCB&lt;/title&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-		&lt;h3&gt;
-			&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Cyclops R3.0&amp;nbsp;&lt;/span&gt;&lt;/h3&gt;
-		&lt;ul&gt;
-			&lt;li&gt;
-				&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;High power LED driver&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
-			&lt;li&gt;
-				&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Linear current control&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
-			&lt;li&gt;
-				&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Optional linear optical power control&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
-			&lt;li&gt;
-				&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Built-in DAC&amp;nbsp;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
-			&lt;li&gt;
-				&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Wide bandwidth&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
-			&lt;li&gt;
-				&lt;strong&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;Appropriate for scientific applications: e.g. fluorescent imaging and optogenetics&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/body&gt;
-&lt;/html&gt;</description>
 <plain>
 <wire x1="36.83" y1="16.891" x2="36.83" y2="68.6435" width="0" layer="20"/>
 <wire x1="35.2425" y1="70.231" x2="10.16" y2="70.231" width="0" layer="20"/>
