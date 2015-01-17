@@ -9,7 +9,7 @@
 <grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
 <layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
@@ -22,20 +22,20 @@
 <layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -23732,16 +23732,20 @@ Modified: 2014.07.10
 <attribute name="NAME" x="60.833" y="50.8" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="59.055" y="59.563" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="R3" library="cyclops" package="0603" value="100k" x="69.977" y="54.991" smashed="yes" rot="R180">
+<element name="R3" library="cyclops" package="0603" value="110k" x="69.977" y="54.991" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="69.977" y="54.991" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="69.977" y="54.991" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="69.977" y="54.991" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="71.628" y="55.626" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="71.628" y="54.61" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="C1" library="cyclops" package="0603" value="1uF" x="65.659" y="54.229" smashed="yes" rot="R270">
-<attribute name="NAME" x="64.77" y="57.404" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="64.77" y="56.388" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+<element name="C1" library="cyclops" package="0805" value="1uF" x="65.659" y="53.975" smashed="yes" rot="R270">
+<attribute name="NAME" x="64.77" y="57.785" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="64.77" y="56.642" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+<attribute name="MN" value="TDK Corp." x="65.659" y="53.975" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="65.659" y="53.975" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DK" value="" x="65.659" y="53.975" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VID" value="DK" x="65.659" y="53.975" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="R1" library="cyclops" package="0603" value="10k" x="9.525" y="18.669" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="9.525" y="18.669" size="1.778" layer="27" rot="R180" display="off"/>
@@ -24557,8 +24561,8 @@ Modified: 2014.07.10
 <wire x1="29.33" y1="56.3626" x2="29.2354" y2="56.3626" width="0.4064" layer="1"/>
 <wire x1="29.2354" y1="56.3626" x2="29.21" y2="56.388" width="0.4064" layer="1"/>
 <contactref element="C1" pad="2"/>
-<via x="65.659" y="52.324" extent="1-16" drill="0.3302"/>
-<wire x1="65.659" y1="53.3654" x2="65.659" y2="52.324" width="0.3048" layer="1"/>
+<via x="65.659" y="51.816" extent="1-16" drill="0.3302"/>
+<wire x1="65.659" y1="52.9336" x2="65.659" y2="51.816" width="0.3048" layer="1"/>
 <wire x1="18.1864" y1="77.978" x2="17.145" y2="77.978" width="0.3048" layer="1"/>
 <contactref element="C3" pad="2"/>
 <contactref element="U2" pad="3"/>
@@ -25328,14 +25332,16 @@ Modified: 2014.07.10
 <contactref element="L5" pad="2"/>
 <contactref element="L4" pad="2"/>
 <wire x1="69.1134" y1="54.991" x2="65.659" y2="54.991" width="0.3048" layer="1"/>
-<wire x1="65.659" y1="54.991" x2="65.659" y2="55.0926" width="0.3048" layer="1"/>
-<wire x1="65.659" y1="55.0926" x2="59.944" y2="55.0926" width="0.3048" layer="1"/>
+<wire x1="65.659" y1="54.991" x2="65.659" y2="55.0164" width="0.3048" layer="1"/>
 <wire x1="59.944" y1="55.0926" x2="59.944" y2="55.118" width="0.3048" layer="1"/>
 <wire x1="59.944" y1="55.118" x2="59.9186" y2="55.118" width="0.3048" layer="1"/>
 <wire x1="59.9186" y1="55.118" x2="59.9186" y2="55.88" width="0.3048" layer="1"/>
 <wire x1="59.9186" y1="55.88" x2="59.9186" y2="58.42" width="0.3048" layer="1"/>
-<wire x1="59.9186" y1="55.88" x2="59.9186" y2="53.34" width="0.3048" layer="1"/>
+<wire x1="59.9186" y1="55.88" x2="59.9186" y2="55.0164" width="0.3048" layer="1"/>
+<wire x1="59.9186" y1="54.737" x2="59.9186" y2="53.34" width="0.3048" layer="1"/>
 <wire x1="59.9186" y1="53.34" x2="59.9186" y2="50.8" width="0.3048" layer="1"/>
+<wire x1="65.659" y1="55.0164" x2="59.9186" y2="55.0164" width="0.3048" layer="1"/>
+<wire x1="59.9186" y1="55.0164" x2="59.9186" y2="54.737" width="0.3048" layer="1"/>
 </signal>
 <signal name="VLOGIC">
 <contactref element="U2" pad="1"/>

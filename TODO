@@ -106,3 +106,13 @@ X23. Double check voltage ratings on ceramic caps.
 
 24. Final BOM update.
 	+ Account for (DNP) components on the spreadsheet that might be seen by others.
+
+25. Increase the size of the 0603 outline silkscren. Currently, it is not being printed because its too close to the pads.
+
+26. For some reason, the labels on the CS and T jumpers are back to the old, wrong convention.
+
+27. For the power jack, the middle pin and guide pins are too close to the board edge. Fix the package.
+
+28. The holes for the banana jack connectors are a bit to small. Make them bigger and make there annulus bigger as well for easier soldering.
+
+29. With a 1 Ohm current feedback resistor, I see a bit of ringing on the current waveform for low-mid currents (~100 mA or so). I should probably just a use a 0.5 Ohm resistor to increase the stability of the feedback loop at the cost of slightly degrated bandwidth (still sub 100 ns rise time though).
