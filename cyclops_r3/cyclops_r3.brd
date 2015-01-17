@@ -188,7 +188,6 @@ Rev. 3.5</text>
 <text x="103.124" y="13.716" size="1.016" layer="21" font="vector" ratio="18" align="center">PANEL SWITCH.
 SHORT IF NOT
 IN USE.</text>
-<text x="84.836" y="48.895" size="1.016" layer="21" font="vector" ratio="18" rot="R90">(DNP)</text>
 <text x="29.845" y="11.43" size="1.016" layer="21" font="vector" ratio="18">(DNP)</text>
 <text x="22.606" y="17.145" size="1.016" layer="21" font="vector" ratio="18" rot="R90">(DNP)</text>
 <text x="76.581" y="41.402" size="1.016" layer="21" font="vector" ratio="18">(DNP)</text>
