@@ -9,7 +9,7 @@ TODO: R3.3 --> R3.5
 - [x] Move the DAC/VCTL switch forward a touch so it is in line with the extent of the potentiometer knob.
   + Moved forward 0.025" since that is all the solder lug through hole connectors would allow.
   
-- [x] CS1-4 are labelled backwards.
+- [x] CS1-4 are labeled backwards.
 
 - [x] Put labels on the SPI (ICSP) connector.  
 
@@ -27,7 +27,7 @@ TODO: R3.3 --> R3.5
   
 - [x] Switching to the LT2052 was good because it allows the LED to turn fully off when the input signal is grounded. Its bad because it introduces small anomalies in the rising edge of the current/light waveform for large pulses from the off state. Can I find something that has really low input offset, is pretty fast, has RRIO, can handle the rails provided, and maybe, can allow the circuit to operate of of a single supply rail?
   + LMP7709? 
-    - This is an de compensated amplifier
+    - This is an de-compensated amplifier
     - Works very well for the current FB loop, but the follower configs are unstable
     - Use a single channel version for the optical loop and compensated amps for everything else.
     - Will require thought concerning the optical feedback loop since the loop gain cannot be determined a priori. Options are:
@@ -49,7 +49,6 @@ TODO: R3.3 --> R3.5
 
 - [x] The negative supply will be necessary because even RRIO amps can only approach the rails, they generally cannot go to them. This is true for the LMP7707, which I will be using for the gate drive circuit. Therefore, I need to generate a small negative supply.
   + Either a inverting switching regulator or a switched cap voltage inverter followed by a linear regulator.
-  + The OE ac. board has a good example of this.
   + Ended up using a Cuk inverter.
 
 - [x] May want to consider the use of cold-switching on all front/rear panel switches
@@ -83,7 +82,7 @@ TODO: R3.3 --> R3.5
   + Leave space for a tantalum or ceramic output cap, but do not populate.
     + These really should not be necessary, but I left a spot for a 10uF tantalum on the output side marked DNP.
   + Move one of the 100 uF caps to the input side of the regulator.
-  + Loose all the output tantalums because their are enough paralleled ceramic bypass capactitors on islated ICs to meet the stability requirements  
+  + Loose all the output tantalums because their are enough paralleled ceramic bypass capacitors on isolated ICs to meet the stability requirements  
   
 - [x] Increase Rsense to 1 ohm to get the most of the THS4281
   + Update the VI output amp to account for this, but leave the feedback network so that other sense resistors can be used without board modification.
@@ -93,7 +92,7 @@ TODO: R3.3 --> R3.5
 - [ ] Final BOM update.
   + Account for (DNP) components on the spreadsheet that might be seen by others.
 
-- [ ] Increase the size of the 0603 outline silkscren. Currently, it is not being printed because its too close to the pads.
+- [ ] Increase the size of the 0603 outline silkscreen. Currently, it is not being printed because its too close to the pads.
 
 - [ ] For some reason, the labels on the CS and T jumpers are back to the old, wrong convention.
 
@@ -101,4 +100,5 @@ TODO: R3.3 --> R3.5
 
 - [ ] The holes for the banana jack connectors are a bit to small. Make them bigger and make there annulus bigger as well for easier soldering.
 
-- [ ] With a 1 Ohm current feedback resistor, I see a bit of ringing on the current waveform for low-mid currents (~100 mA or so). I should probably just a use a 0.5 Ohm resistor to increase the stability of the feedback loop at the cost of slightly degrated bandwidth (still sub 100 ns rise time though).
+- [ ] With a 1 Ohm current feedback resistor, I see a bit of ringing on the current waveform for low-mid currents (~100 mA or so). I should probably just a use a 0.5 Ohm resistor to increase the stability of the feedback loop at the cost of slightly degraded bandwidth (still sub 100 ns rise time though).
+  + I'm starting to think that th THS4281 would be a cool idea if the LED was located inside the driver. This would ensure short cable lengths and prevent instabilities. But its not, so I'm questioning whether its worth it to use such a fast opamp instead of something slower that ensures stability even with ridiculous choices for cabling.

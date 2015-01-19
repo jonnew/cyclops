@@ -37,8 +37,6 @@ void setup() {
   // Set input resistors on both boards to nominal A-W Resistance
   cyclops0.mcp4022_set_nom_AW_resistance();
   
-  // Save the resistance in non-volatile EEPROM for startup
-  cyclops0.mcp4022_save_AW_resistance();
 }
 
 void loop() {
@@ -47,17 +45,17 @@ void loop() {
   // DAC spanning 0-5 volts.
   
   // Generate random voltage from 0 to 4095
-  randVoltage = random(0,4096);
+  //randVoltage = random(0,4096);
   
   // Load the DAC registers with the random voltage and update
   // the output. 
-  cyclops0.mcp4921_load_voltage(randVoltage);
-  cyclops0.mcp4921_load_dac();
+  //cyclops0.mcp4921_load_voltage(randVoltage);
+  //cyclops0.mcp4921_load_dac();
   
   // Call the overcurrent protection function to ensure
   // the mean current is limited to < 250 mA during random
   // waveform generation 
-  cyclops0.over_current_protect(250);
+  //cyclops0.over_current_protect(250);
 
 }
 

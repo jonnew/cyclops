@@ -6690,8 +6690,8 @@ at 30/07/2012 17:45:58</description>
 <part name="U$44" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$46" library="cyclops" deviceset="GND2" device=""/>
 <part name="HEATSINK" library="cyclops" deviceset="HEATSINK" device="_BDN18" value="BDN18"/>
-<part name="R21" library="cyclops" deviceset="R" device="_0603" value="1k"/>
-<part name="R24" library="cyclops" deviceset="R" device="_0603" value="1k"/>
+<part name="R21" library="cyclops" deviceset="R" device="_0603" value="0"/>
+<part name="R24" library="cyclops" deviceset="R" device="_0603"/>
 <part name="U$26" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$20" library="cyclops" deviceset="GND2" device=""/>
 <part name="R25" library="cyclops" deviceset="R" device="_0603" value="220k"/>

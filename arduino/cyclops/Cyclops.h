@@ -59,7 +59,7 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #define DAC_CONF_SHDN 		(0x1000)
 
 //MCP4022 
-#define NOM_WIPER_POS       56          // This is the number of B --> A steps to get ~5k
+#define NOM_WIPER_POS       47          // This is the number of B --> A steps to get ~5k
                                         // between the W-A connection on the MCP4022
 
 //Function macros for setting bits in registers
