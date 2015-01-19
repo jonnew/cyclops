@@ -1,104 +1,77 @@
 TODO: R3.3 --> R3.5
 =============
 
-
 - [x] Move the banana jacks medial a touch to avoid hitting the enclosure when PCB is mounted on the middle rung.
-  + Moved both banana jacks inward 0.075"
-  + Also moved LED_PD connector inward 0.05"
-  
+  - Moved both banana jacks inward 0.075"
+  - Also moved LED_PD connector inward 0.05"
 - [x] Move the DAC/VCTL switch forward a touch so it is in line with the extent of the potentiometer knob.
-  + Moved forward 0.025" since that is all the solder lug through hole connectors would allow.
-  
+  - Moved forward 0.025" since that is all the solder lug through hole connectors would allow.
 - [x] CS1-4 are labeled backwards.
-
 - [x] Put labels on the SPI (ICSP) connector.  
-
 - [x] Trade out front panel pot for one with switch.
-  + Instead, I just switched the DAC/VCTL switch to have a middle, disable position
-
+  - Instead, I just switched the DAC/VCTL switch to have a middle, disable position
 - [x] The point of the OC protect circuit should be to deal with _mean_ overcurrent conditions. This means that the time constant of the filter in front of the analog current measurement pin should be on the order of 1 second.
-  + Changed to 100 msec as compromise.
-  
+  - Changed to 100 msec as compromise.
 - [x] Add back panel cutouts for USB.
-
 - [x] Move pcb mount plane down one level in enclosure.
-
 - [x] Add a logic level converter to the trig input. This will allow the use of the arduino zero when it comes out.
-  
 - [x] Switching to the LT2052 was good because it allows the LED to turn fully off when the input signal is grounded. Its bad because it introduces small anomalies in the rising edge of the current/light waveform for large pulses from the off state. Can I find something that has really low input offset, is pretty fast, has RRIO, can handle the rails provided, and maybe, can allow the circuit to operate of of a single supply rail?
-  + LMP7709? 
+  - LMP7709? 
     - This is an de-compensated amplifier
     - Works very well for the current FB loop, but the follower configs are unstable
     - Use a single channel version for the optical loop and compensated amps for everything else.
     - Will require thought concerning the optical feedback loop since the loop gain cannot be determined a priori. Options are:
       - Adjustable attenuator (trimpot) on the VAUX input
       - Optical feedback path uses a compensated amplifier (e.g. LM7701)
-  + The more I thought about this, the more apparent it became that my current design philosophy is being hindered by previous assumptions about circuit stability.
+  - The more I thought about this, the more apparent it became that my current design philosophy is being hindered by previous assumptions about circuit stability.
     - Now that the feedback path does not contain a secondary amplifier, it should be much more trivial to make the feedback loop stable even with an extremely fast amplifier
     - Enter the THS4281. 90 MHz GBWP, 35 V/us slew. And super stable in my control loop  according to spice simulations. Also has comparable voltage noise to the LMP7707 and rail to rail IO. Also can handle wider voltage rails. OK, lets use that!
-
 - [x] The negative rail is not needed if you use a  low drift, precision amplifier that is RRO to ground. If this is the solution, then get rid of it, and use a simple barrel connector so people don't have to use a lab supply.
-  + This is not actually true. To ensure the LED off, control signal must go slightly below ground.
-
+  - This is not actually true. To ensure the LED off, control signal must go slightly below ground.
 - [x] Front panel holes are all too big, make their tolerances tighter.
-
 - [x] Add on/off switch.
-
 - [x] Simulate the usage of a class AB amplifier (diodes in series with base drive on totem pole) to decrease dead time during pulses.
-  + Using a class A+AB amplifier really improves things. Response is very fast, reduced quiescent current compared to strait AB with diodes. Its been incorporated into r3.5.
-
+  - Using a class A+AB amplifier really improves things. Response is very fast, reduced quiescent current compared to strait AB with diodes. Its been incorporated into r3.5.
 - [x] The negative supply will be necessary because even RRIO amps can only approach the rails, they generally cannot go to them. This is true for the LMP7707, which I will be using for the gate drive circuit. Therefore, I need to generate a small negative supply.
-  + Either a inverting switching regulator or a switched cap voltage inverter followed by a linear regulator.
-  + Ended up using a Cuk inverter.
-
+  - Either a inverting switching regulator or a switched cap voltage inverter followed by a linear regulator.
+  - Ended up using a Cuk inverter.
 - [x] May want to consider the use of cold-switching on all front/rear panel switches
-  + Switches control DC logic signals that open/close transistor switches near the circuitry of interest
-  + Prevents high speed, precision signals from wandering to/from the front/back panels
-  + I did this for the current/voltage optical feedback path since the switch was introducing a lot cabling, especially for the current feedback signal. 
-
+  - Switches control DC logic signals that open/close transistor switches near the circuitry of interest
+  - Prevents high speed, precision signals from wandering to/from the front/back panels
+  - I did this for the current/voltage optical feedback path since the switch was introducing a lot cabling, especially for the current feedback signal. 
 - [x] Replace current negative LDO with something like the TPS7A30xx to combat the 1 MHz ripple produced by the new switching inverter from 15.
-  + Just reuse the design on the puggleboard.
-  + I'm not sure the increase in cost and complexity is worth it. The switching regulator has 1 mVP2P ripple at 1 MZ. The switching transients will be filtered by the ferrite separating linear and switching stages. The LM337 has ~20 dB PSRR at 1 MHz, which translates to a 10x reduction in ripple. I think we can deal with 100 uVP2P ripple given that the neg rail is being used for precision opamps with PSRRs in the 100's of dB.
-
+  - Just reuse the design on the puggleboard.
+  - I'm not sure the increase in cost and complexity is worth it. The switching regulator has 1 mVP2P ripple at 1 MZ. The switching transients will be filtered by the ferrite separating linear and switching stages. The LM337 has ~20 dB PSRR at 1 MHz, which translates to a 10x reduction in ripple. I think we can deal with 100 uVP2P ripple given that the neg rail is being used for precision opamps with PSRRs in the 100's of dB.
 - [x] Move the power jack to the right side of the board with a switch. Move the expansion port and banana jacks left to accommodate. Update the panel design to reflect this change.
-  + Make sure the power jack is not going to run into the extruded enclosure (z direction)
-  
+  - Make sure the power jack is not going to run into the extruded enclosure (z direction)
 - [x] Use the same package for the IRF510 and the LM317
-
 - [x] Add non-pcb mount components to BOM
-  + Suitable power supply
-  + Trim pot dial
-  + Power switch
-  + Panels
-  + M8 connector (optional)
-  + Arduino
-  + Test button cap
-  
+  - Suitable power supply
+  - Trim pot dial
+  - Power switch
+  - Panels
+  - M8 connector (optional)
+  - Arduino
+  - Test button cap
 - [x] Replace LM317 with LT1963. Update supporting passives to make up for increased IC cost
-  + Caps - do I even need the tantalum cap on the regulator output, or is my electrolytic in parallel with all of the bypass caps good enough?
-    + I don't think I do, especially for a 12V output voltage. In this case, the ceramic bypass caps will work fine.
-  + Loose over-voltage protection diode
-  + Bring the positive rail up to 12V. The over-current warning circuit depends on this voltage so that will need to be updated. It would be better if this circuit used an actual reference instead of the positive rail to create a trigger for the OC led.  
-  + Leave space for a tantalum or ceramic output cap, but do not populate.
-    + These really should not be necessary, but I left a spot for a 10uF tantalum on the output side marked DNP.
-  + Move one of the 100 uF caps to the input side of the regulator.
-  + Loose all the output tantalums because their are enough paralleled ceramic bypass capacitors on isolated ICs to meet the stability requirements  
-  
+  - Caps - do I even need the tantalum cap on the regulator output, or is my electrolytic in parallel with all of the bypass caps good enough?
+    - I don't think I do, especially for a 12V output voltage. In this case, the ceramic bypass caps will work fine.
+  - Loose over-voltage protection diode
+  - Bring the positive rail up to 12V. The over-current warning circuit depends on this voltage so that will need to be updated. It would be better if this circuit used an actual reference instead of the positive rail to create a trigger for the OC led.  
+  - Leave space for a tantalum or ceramic output cap, but do not populate.
+    - These really should not be necessary, but I left a spot for a 10uF tantalum on the output side marked DNP.
+  - Move one of the 100 uF caps to the input side of the regulator.
+  - Loose all the output tantalums because their are enough paralleled ceramic bypass capacitors on isolated ICs to meet the stability requirements  
 - [x] Increase Rsense to 1 ohm to get the most of the THS4281
-  + Update the VI output amp to account for this, but leave the feedback network so that other sense resistors can be used without board modification.
-  
+  - Update the VI output amp to account for this, but leave the feedback network so that other sense resistors can be used without board modification.
 - [x] Double check voltage ratings on ceramic caps.
-
 - [ ] Final BOM update.
-  + Account for (DNP) components on the spreadsheet that might be seen by others.
-
+  - Account for (DNP) components on the spreadsheet that might be seen by others.
 - [ ] Increase the size of the 0603 outline silkscreen. Currently, it is not being printed because its too close to the pads.
-
 - [ ] For some reason, the labels on the CS and T jumpers are back to the old, wrong convention.
-
 - [ ] For the power jack, the middle pin and guide pins are too close to the board edge. Fix the package.
-
 - [ ] The holes for the banana jack connectors are a bit to small. Make them bigger and make there annulus bigger as well for easier soldering.
-
 - [ ] With a 1 Ohm current feedback resistor, I see a bit of ringing on the current waveform for low-mid currents (~100 mA or so). I should probably just a use a 0.5 Ohm resistor to increase the stability of the feedback loop at the cost of slightly degraded bandwidth (still sub 100 ns rise time though).
-  + I'm starting to think that th THS4281 would be a cool idea if the LED was located inside the driver. This would ensure short cable lengths and prevent instabilities. But its not, so I'm questioning whether its worth it to use such a fast opamp instead of something slower that ensures stability even with ridiculous choices for cabling.
+  - I'm starting to think that th THS4281 would be a cool idea if the LED was located inside the driver. This would ensure short cable lengths and prevent instabilities. But its not, so I'm questioning whether its worth it to use such a fast opamp instead of something slower that ensures stability even with ridiculous choices for cabling.
+  - I don't know if this is the problem though. I ran a quick spice simulation and the change that most accurately captures the peaking I'm seeing is to add a series inductor to LED- terminal of around 80nF or so. 
+      
