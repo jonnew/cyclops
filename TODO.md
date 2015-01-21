@@ -67,11 +67,11 @@ TODO: R3.3 --> R3.5
 - [x] Double check voltage ratings on ceramic caps.
 - [ ] Final BOM update.
   - Account for (DNP) components on the spreadsheet that might be seen by others.
-- [ ] Increase the size of the 0603 outline silkscreen. Currently, it is not being printed because its too close to the pads.
-- [ ] For some reason, the labels on the CS and T jumpers are back to the old, wrong convention.
-- [ ] For the power jack, the middle pin and guide pins are too close to the board edge. Fix the package.
-- [ ] The holes for the banana jack connectors are a bit to small. Make them bigger and make there annulus bigger as well for easier soldering.
-- [ ] With a 1 Ohm current feedback resistor, I see a bit of ringing on the current waveform for low-mid currents (~100 mA or so). I should probably just a use a 0.5 Ohm resistor to increase the stability of the feedback loop at the cost of slightly degraded bandwidth (still sub 100 ns rise time though).
+- [x] Increase the size of the 0603 outline silkscreen. Currently, it is not being printed because its too close to the pads.
+- [x] For some reason, the labels on the CS and T jumpers are back to the old, wrong convention.
+- [x] For the power jack, the middle pin and guide pins are too close to the board edge. Fix the package.
+- [x] The holes for the banana jack connectors are a bit to small. Make them bigger and make their annulus bigger as well for easier soldering.
+- [x] With a 1 Ohm current feedback resistor, I see a bit of ringing on the current waveform for low-mid currents (~100 mA or so). I should probably just a use a 0.5 Ohm resistor to increase the stability of the feedback loop at the cost of slightly degraded bandwidth (still sub 100 ns rise time though).
   - I'm starting to think that th THS4281 would be a cool idea if the LED was located inside the driver. This would ensure short cable lengths and prevent instabilities. But its not, so I'm questioning whether its worth it to use such a fast opamp instead of something slower that ensures stability even with ridiculous choices for cabling.
   - I don't know if this is the problem though. I ran a quick spice simulation and the change that most accurately captures the peaking I'm seeing is to add a series inductor to LED- terminal of around 80nF or so. 
-      
+- [x] Loose the two s-diodes providing protection for the THS4281 and replace with a single ~5V zener at the 5V input stange of the circuit. This is much more meaningful.
