@@ -287,20 +287,6 @@ grid 2.54 mm</description>
 <rectangle x1="-1.016" y1="-0.635" x2="-0.6096" y2="0.635" layer="51"/>
 <rectangle x1="0.6096" y1="-0.635" x2="1.016" y2="0.635" layer="51"/>
 </package>
-<package name="1206">
-<wire x1="-1.5494" y1="0.8128" x2="1.5494" y2="0.8128" width="0.1016" layer="51"/>
-<wire x1="1.5494" y1="-0.8128" x2="-1.5494" y2="-0.8128" width="0.1016" layer="51"/>
-<wire x1="-2.413" y1="1.143" x2="2.413" y2="1.143" width="0.127" layer="21"/>
-<wire x1="2.413" y1="1.143" x2="2.413" y2="-1.143" width="0.127" layer="21"/>
-<wire x1="2.413" y1="-1.143" x2="-2.413" y2="-1.143" width="0.127" layer="21"/>
-<wire x1="-2.413" y1="-1.143" x2="-2.413" y2="1.143" width="0.127" layer="21"/>
-<smd name="1" x="-1.651" y="0" dx="1.2192" dy="1.8796" layer="1"/>
-<smd name="2" x="1.651" y="0" dx="1.2192" dy="1.8796" layer="1"/>
-<text x="-2.54" y="1.524" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
-<text x="-2.54" y="-2.54" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
-<rectangle x1="-1.6002" y1="-0.8128" x2="-1.0922" y2="0.8128" layer="51"/>
-<rectangle x1="1.0922" y1="-0.8128" x2="1.6002" y2="0.8128" layer="51"/>
-</package>
 <package name="153CLV-0807">
 <description>&lt;b&gt;Aluminum electrolytic capacitors&lt;/b&gt;&lt;p&gt;
 SMD (Chip) Long Life Vertical 153 CLV&lt;p&gt;
@@ -457,10 +443,10 @@ NS Package M08A</description>
 <package name="2512">
 <wire x1="-1.5494" y1="1.8128" x2="1.5494" y2="1.8128" width="0.1016" layer="51"/>
 <wire x1="1.5494" y1="-1.8128" x2="-1.5494" y2="-1.8128" width="0.1016" layer="51"/>
-<wire x1="-4" y1="2" x2="4" y2="2" width="0.127" layer="21"/>
-<wire x1="4" y1="2" x2="4" y2="-2" width="0.127" layer="21"/>
-<wire x1="4" y1="-2" x2="-4" y2="-2" width="0.127" layer="21"/>
-<wire x1="-4" y1="-2" x2="-4" y2="2" width="0.127" layer="21"/>
+<wire x1="-4.254" y1="2.254" x2="4.254" y2="2.254" width="0.127" layer="21"/>
+<wire x1="4.254" y1="2.254" x2="4.254" y2="-2.254" width="0.127" layer="21"/>
+<wire x1="4.254" y1="-2.254" x2="-4.254" y2="-2.254" width="0.127" layer="21"/>
+<wire x1="-4.254" y1="-2.254" x2="-4.254" y2="2.254" width="0.127" layer="21"/>
 <smd name="1" x="-2.575" y="0" dx="2.45" dy="3.7" layer="1"/>
 <text x="-2.54" y="2.524" size="1.016" layer="25" font="vector">&gt;NAME</text>
 <text x="-2.54" y="-3.54" size="1.016" layer="27" font="vector">&gt;VALUE</text>
@@ -3716,6 +3702,20 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 <wire x1="1.778" y1="-0.762" x2="1.778" y2="0.762" width="0.127" layer="21"/>
 <rectangle x1="0.0635" y1="-0.762" x2="0.381" y2="0.762" layer="21"/>
 </package>
+<package name="1206">
+<wire x1="-1.5494" y1="0.8128" x2="1.5494" y2="0.8128" width="0.1016" layer="51"/>
+<wire x1="1.5494" y1="-0.8128" x2="-1.5494" y2="-0.8128" width="0.1016" layer="51"/>
+<wire x1="-2.54" y1="1.27" x2="2.54" y2="1.27" width="0.127" layer="21"/>
+<wire x1="2.54" y1="1.27" x2="2.54" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="2.54" y1="-1.27" x2="-2.54" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="-1.27" x2="-2.54" y2="1.27" width="0.127" layer="21"/>
+<smd name="1" x="-1.651" y="0" dx="1.2192" dy="1.8796" layer="1"/>
+<smd name="2" x="1.651" y="0" dx="1.2192" dy="1.8796" layer="1"/>
+<text x="-2.54" y="1.524" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="-2.54" y="-2.54" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
+<rectangle x1="-1.6002" y1="-0.8128" x2="-1.0922" y2="0.8128" layer="51"/>
+<rectangle x1="1.0922" y1="-0.8128" x2="1.6002" y2="0.8128" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="R">
@@ -6625,7 +6625,7 @@ at 30/07/2012 17:45:58</description>
 <attributes>
 <attribute name="DESIGNER" value="JONATHAN P. NEWMAN"/>
 <attribute name="DOC_NUMBER" value="N/A"/>
-<attribute name="REVISION" value="3.5"/>
+<attribute name="REVISION" value="3.5A"/>
 </attributes>
 <variantdefs>
 </variantdefs>
