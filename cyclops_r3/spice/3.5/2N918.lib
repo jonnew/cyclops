@@ -1,0 +1,35 @@
+******
+* Spice Model
+* Item: 2N918
+* Date: 8/12/10
+* Revsion History: REV A
+*==========================================================
+* This model was developed by: 
+* Central Semiconductor Corp.
+* 145 Adams Avenue
+* Hauppauge, NY 11788
+*
+* These models are subject to change without notice.
+* Users may not directly or indirectly re-sell or 
+* re-distribute this model. This model may not 
+* be modified, or altered without the consent of Central Semiconductor Corp. 
+*
+* For more information on this model contact
+* Central Semiconductor Corp. at:
+* (631) 435-1110 or Engineering@centralsemi.com
+* http://www.centralsemi.com
+*===========================================================
+*
+******
+*SRC=2N918;2N918;BJTs NPN; Si;  30V  50.0mA  600MHz   CENTRAL TRANSISTOR
+.MODEL 2N918  NPN (IS=1.55467e-17 BF=296.182 NF=0.850014 VAF=10
++IKF=0.00544635 ISE=2.01913e-14 NE=1.54276 BR=19.550
++NR=0.825166 VAR=73.1109 IKR=0.0544635 ISC=1e-160
++NC=2.9688 RB=21.0221 IRB=0.478136 RBM=0.1384250
++RE=0.000646335 RC=3.0552 XTB=0.582018 XTI=1
++EG=1.06135 CJE=1.08982e-12 VJE=0.99 MJE=0.230
++TF=2.15066e-11 XTF=1000 VTF=1.33967 ITF=0.0010
++CJC=1.89423e-12 VJC=0.95 MJC=0.23 XCJC=0.4084790
++FC=0.1 CJS=0 VJS=0.75 MJS=0.50
++TR=1e-07 PTF=0 KF=0 AF=1)
+******

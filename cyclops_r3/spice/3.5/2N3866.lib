@@ -1,0 +1,50 @@
+******
+* Spice Model
+* Item: 2N3866
+* Date: 8/11/10
+* Revision History: A
+* ==========================================================
+* This model was developed by: 
+* Central Semiconductor Corp.
+* 145 Adams Avenue
+* Hauppauge, NY 11788
+*
+* These models are subject to change without notice.
+* Users may not directly or indirectly re-sell or 
+* re-distribute this model. This model may not 
+* be modified, or altered without the consent of Central Semiconductor Corp. 
+*
+* For more information on this model contact
+* Central Semiconductor Corp. at:
+* (631) 435-1110 or Engineering@centralsemi.com
+* http://www.centralsemi.com
+* ==========================================================
+******
+*SRC=2N3866;2N3866;BJTs NPN; Si;55.0V  0.40A  500MHz   Central Semi Central Semi
+.MODEL 2N3866  NPN (
++ IS=13.232E-12
++ BF=1.2948E3
++ VAF=100
++ IKF=.13116
++ ISE=785.43E-12
++ NE=1.7362
++ BR=1.0408
++ VAR=100
++ IKR=3.3880
++ ISC=13.232E-12
++ NC=1.4860
++ NK=.72187
++ RB=8.9057
++ RC=1.7862
++ CJE=31.375E-12
++ VJE=.87558
++ MJE=.31831
++ CJC=7.3111E-12
++ VJC=.76419
++ MJC=.30725
++ TF=178.96E-12
++ XTF=10.044
++ VTF=10.275
++ ITF=5.8742
++ TR=10.000E-9 )
+******
