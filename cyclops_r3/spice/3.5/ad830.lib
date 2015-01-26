@@ -1,0 +1,120 @@
+* AD830  SPICE Macro-model             
+* Description: Amplifier
+* Generic Desc: High Speed, Video Difference Amplifier
+* Developed by: JCB / PMI
+* Revision History: 08/10/2012 - Updated to new header style
+* 1.0 (05/1993)
+* Copyright 1993, 2012 by Analog Devices
+*
+* Refer to http://www.analog.com/Analog_Root/static/techSupport/designTools/spiceModels/license/spice_general.html for License Statement.  Use of this model
+* indicates your acceptance with the terms and provisions in the License Statement.
+*
+* BEGIN Notes:
+*
+* Not Modeled:
+*    
+* Parameters modeled include: 
+*
+* END Notes
+*
+* Node assignments
+*                X1 input
+*                | X2 input
+*                | | Y1 input
+*                | | | Y2 input
+*                | | | | negative supply
+*                | | | | | output
+*                | | | | | | positive supply
+*                | | | | | | |
+.SUBCKT AD830    1 2 3 4 5 7 8
+*
+* X1-X2 INPUT STAGE
+*
+Q1   17  1   9   QX
+Q2   18  11  10  QX
+R1   9   12  1100
+R2   10  12  1100
+I1   12  5   2E-3
+EOS1 2   11  POLY(1) (31,98)  1.5E-3  1
+IOS1 1   2   0.5E-7
+C1   1   2   2E-12
+RD1  1   2   1.93E6
+*
+* Y1-Y2 INPUT STAGE
+*
+Q3   17  3   14  QX
+Q4   18  13  15  QX
+R3   14  16  1100
+R4   15  16  1100
+I2   16  5   2.02E-3
+VOS2 4   13  1.5E-3
+IOS2 3   4   0.5E-7
+C2   3   4   2E-12
+RD2  3   4   1.93E6
+*
+VC1  32  17  DC  0.4
+VC2  33  18  DC  0.4
+D7   8   32  DX
+D8   8   33  DX
+*
+EREF 98  0   24  0  1
+*
+* TRANSCONDUCTANCE STAGE & DOMINANT POLE AT 17.9 KHZ
+*
+R7   19  98  2.46E6
+C3   19  98  3.62E-12
+F1   98  19  POLY(2)  VC1  VC2  0   1   -1
+V2   8   20  1.7
+V3   21  5   1.7
+D1   19  20  DX
+D2   21  19  DX
+*
+* POLE AT 250 MHZ
+*
+R6   22  98   1E6
+C4   22  98   637E-18
+G2   98  22   19  98  1E-6
+*
+* COMMON-MODE GAIN NETWORK WITH ZERO AT 100 KHZ
+*
+R10  30  31   1E6
+R11  31  98   1
+C7   30  31   3.18E-12
+E3   98  30   POLY(2)  (1,98) (2,98)  0  5  5
+*
+* POLE AT 200 MHZ
+*
+R12  23 98   1E6
+C8   23 98   796E-18
+G4   98 23   22  98  1E-6
+*
+* OUTPUT STAGE
+*
+R13  24  8   500E3
+R14  24  5   500E3
+FSY  8   5   POLY(2) V7 V8 10E-3 1 1
+R15  29  8   34
+R16  29  5   34
+L1   29  7   6E-10
+G7   29  8   8  23  2.94E-2
+G8   5  29   23  5  2.94E-2
+V4   25 29   0.74
+V5   29 26   0.74
+D3   23 25   DX
+D4   26 23   DX
+G5   98 70   29 23 2.94E-2
+D5   70 71   DX
+D6   72 70   DX
+V7   71 98   DC 0
+V8   98 72   DC 0
+*
+* MODELS USED
+*
+.MODEL QX NPN(BF=202)
+.MODEL DX   D(IS=1E-15)
+.ENDS
+
+
+
+
+
