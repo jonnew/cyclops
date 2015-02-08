@@ -74,4 +74,8 @@ TODO: R3.3 --> R3.5
 - [x] With a 1 Ohm current feedback resistor, I see a bit of ringing on the current waveform for low-mid currents (~100 mA or so). I should probably just a use a 0.5 Ohm resistor to increase the stability of the feedback loop at the cost of slightly degraded bandwidth (still sub 100 ns rise time though).
   - I'm starting to think that th THS4281 would be a cool idea if the LED was located inside the driver. This would ensure short cable lengths and prevent instabilities. But its not, so I'm questioning whether its worth it to use such a fast opamp instead of something slower that ensures stability even with ridiculous choices for cabling.
   - I don't know if this is the problem though. I ran a quick spice simulation and the change that most accurately captures the peaking I'm seeing is to add a series inductor to LED- terminal of around 80nF or so. 
-      
+- [ ] Add testpoints for -5V and -1.25V rails.      
+- [x] Test zener diode input protection circuit.
+  - Works well, but now when the gain pot is shunted to ground there is a small amout of light coming from the LED. I'm not sure if the zener is playing into this somehow. Is the 220k pulldown not enough?
+  - Interestingly, when the gain pot value is increased and there is no signal present at VIN, and resistance is placed between the wiper and groud, the VIN at the opamp input is lowered, and the LED turns off completely.
+  - Its because when the trimmer turned off, the opamp input pin has a dead short to ground, completely nullifying the effect of the pull down. The solution is simply to isolate the pulldown by putting a small resistor (e.g. 200 ohm) in series with the wiper of the pot.
