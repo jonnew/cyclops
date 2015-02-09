@@ -65,7 +65,7 @@ TODO: R3.3 --> R3.5
 - [x] Increase Rsense to 1 ohm to get the most of the THS4281
   - Update the VI output amp to account for this, but leave the feedback network so that other sense resistors can be used without board modification.
 - [x] Double check voltage ratings on ceramic caps.
-- [ ] Final BOM update.
+- [x] Final BOM update.
   - Account for (DNP) components on the spreadsheet that might be seen by others.
 - [x] Increase the size of the 0603 outline silkscreen. Currently, it is not being printed because its too close to the pads.
 - [x] For some reason, the labels on the CS and T jumpers are back to the old, wrong convention.
