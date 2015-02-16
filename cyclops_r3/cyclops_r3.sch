@@ -6666,8 +6666,8 @@ at 30/07/2012 17:45:58</description>
 <part name="TEST" library="cyclops" deviceset="SPDT" device="_CFPA" value="CFPA"/>
 <part name="Q2" library="cyclops" deviceset="N-MOSFET" device="TO-262" value="IRF510"/>
 <part name="VAUX_OUT" library="cyclops" deviceset="BNC" device="_V-BITE" value="361V509E"/>
-<part name="REF2.1" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
-<part name="REF5.1" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
+<part name="REF2.5" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
+<part name="REF5.0" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
 <part name="R10" library="cyclops" deviceset="R" device="_0603" value="3k"/>
 <part name="PWR" library="cyclops" deviceset="LED" device="_0603" value="BLUE"/>
 <part name="U7" library="ti-extended" deviceset="TLV3701CDBVT" device="" value="TLV3701"/>
@@ -8172,8 +8172,8 @@ to serve as denoising jumper</text>
 <instance part="FRAME3" gate="G$1" x="-162.56" y="-180.34"/>
 <instance part="C23" gate="C" x="-58.42" y="-106.68"/>
 <instance part="C21" gate="C" x="-73.66" y="-106.68"/>
-<instance part="REF2.1" gate="G$1" x="35.56" y="5.08"/>
-<instance part="REF5.1" gate="G$1" x="45.72" y="-81.28"/>
+<instance part="REF2.5" gate="G$1" x="35.56" y="5.08"/>
+<instance part="REF5.0" gate="G$1" x="45.72" y="-81.28"/>
 <instance part="U$1" gate="G$1" x="-73.66" y="-154.94"/>
 <instance part="U$2" gate="G$1" x="-58.42" y="-154.94"/>
 <instance part="U$3" gate="G$1" x="-73.66" y="-55.88"/>
@@ -8254,7 +8254,7 @@ to serve as denoising jumper</text>
 <wire x1="35.56" y1="-17.78" x2="35.56" y2="2.54" width="0.1524" layer="91"/>
 <junction x="35.56" y="2.54"/>
 <label x="53.34" y="2.54" size="1.778" layer="95"/>
-<pinref part="REF2.1" gate="G$1" pin="TP"/>
+<pinref part="REF2.5" gate="G$1" pin="TP"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -8337,7 +8337,7 @@ to serve as denoising jumper</text>
 <wire x1="45.72" y1="-83.82" x2="76.2" y2="-83.82" width="0.1524" layer="91"/>
 <junction x="45.72" y="-83.82"/>
 <label x="66.04" y="-83.82" size="1.778" layer="95"/>
-<pinref part="REF5.1" gate="G$1" pin="TP"/>
+<pinref part="REF5.0" gate="G$1" pin="TP"/>
 </segment>
 </net>
 </nets>
