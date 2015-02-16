@@ -6859,6 +6859,7 @@ at 30/07/2012 17:45:58</description>
 <part name="C32" library="cyclops" deviceset="C" device="_0603" value="220pF"/>
 <part name="-5V" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
 <part name="-1.25V" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
+<part name="VPRE" library="cyclops" deviceset="TP" device="TP16R" value="TPTP16R"/>
 </parts>
 <sheets>
 <sheet>
@@ -7004,6 +7005,7 @@ to serve as denoising jumper</text>
 <instance part="R5" gate="R" x="215.9" y="25.4"/>
 <instance part="D1" gate="G$1" x="241.3" y="43.18" rot="R90"/>
 <instance part="U$21" gate="G$1" x="241.3" y="33.02"/>
+<instance part="VPRE" gate="G$1" x="223.52" y="50.8"/>
 </instances>
 <busses>
 </busses>
@@ -7679,7 +7681,9 @@ to serve as denoising jumper</text>
 <wire x1="241.3" y1="48.26" x2="223.52" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="223.52" y1="48.26" x2="223.52" y2="25.4" width="0.1524" layer="91"/>
 <junction x="223.52" y="25.4"/>
-<label x="223.52" y="48.26" size="1.778" layer="95"/>
+<label x="228.6" y="48.26" size="1.778" layer="95"/>
+<pinref part="VPRE" gate="G$1" pin="TP"/>
+<junction x="223.52" y="48.26"/>
 </segment>
 </net>
 </nets>
