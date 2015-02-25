@@ -1,51 +1,18 @@
-------------------------------------------------------------------------
+Cyclops Documentation (UNDER CONSTRUCTION)
+==============
+This documents provides construction, usage, and performance documentation for the Cyclops LED driver. This document   evolves with the repository. To view old revisions, checkout tags or old commits using their SHA.
 
-This file is part of the Cyclops Precision LED Driver Project. Copyright (C) Jonathan P. Newman (jpnewman snail mit period edu)
+# Specification
 
--------------------------------------------------------------------------
+# Usage
 
-# Cyclops-LED-Driver
-Precision current source, with optional optical feedback mode, for driving high power LEDs
-
-# More information
-[Rev. 2.0b Cyclops Driver Wiki] (https://potterlab.gatech.edu/main/newman/wiki/index.php?title=Cyclops_Driver_R2) *Deprecated*
-
-[Rev. 3.5 Cyclops Driver Wiki] (https://open-ephys.atlassian.net/wiki/display/OEW/Cyclops+LED+Driver)*Current*
-
-# License 
-## Hardware 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Cyclops LED Driver</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jonnew/cyclops" property="cc:attributionName" rel="cc:attributionURL">Jonathan P. Newman</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/jonnew/cyclops" rel="dct:source">https://github.com/jonnew/cyclops</a>.
-
-## Software
-Copyright (c) Jonathan P. Newman 
-All right reserved.
-
-Cyclops Library (CL) for Arduino.
-
-CL is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-CL is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with CL.  If not, see <http://www.gnu.org/licenses/>.
-
-# Documentation
-
-## Usage
-
-## Building it
-Before you build a board, its recommended that you get in touch @jonnew for a couple reasons:
+# Construction 
+Before you build a board, its recommended that you get in touch [jonnew](https://github.com/jonnew)for a couple reasons:
 - We are interested in getting feedback on which portions of this documentation need improvement.
 - The cyclops is a fairly complex PCB. If you have doubts, let us know so we can help you with the build.
 
-### Components
-The bill of materials (BOM) required to build a 1,2,3, or 4-channel device is available on a [https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing Google spreadsheet]. Most of the parts can be purchased from Digikey, but there are a few components that need to be bought from other sources such as Newark, Adafruit, and Samtec. All vendor, part number, and quanitity information is listed on the BOM. As a convienience, the spreadsheet contains links to pre-populated Digikey carts (which are optimized for quanitity discounts) for up to 4 circuits.
+## Components
+The bill of materials (BOM) required to build a 1,2,3, or 4-channel device is available on a [https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing Google spreadsheet]. Most of the parts can be purchased from Digikey, but there are a few components that need to be bought from other sources such as Newark, Adafruit, and Samtec. All vendor, part number, and quantity information is listed on the BOM. As a convenience, the spreadsheet contains links to pre-populated Digikey carts (which are optimized for quantity discounts) for up to 4 circuits.
 
 The PCB can be purchased from OSH park [TODO here]. This is a four layer PCB. Note that OSH park sells a minimum of 3 boards per order. PCB stencils, useful for those performing reflow or hot-air soldering, are available from OSH stencils at the following link: TODO. If you plan to hand solder the board, then you do not need to purchase these stencils.
 
@@ -53,11 +20,11 @@ The BOM includes several optional components, which are not in the pre-populated
 - An extruded aluminum enclosure, which houses the completed board. The enclosure is recommended because the large voltages and current transients used to drive high power LEDs can cause capacitive and inductive interference with nearby recording equipment. Acrylic front and rear panels can be purchased from Ponoko using the links supplied in the BOM. The instructions below show how these plastic pieces are modified to provide proper electrical shielding.
 - TODO: An M8-4 connector.
     
-### PCB
+## PCB
 
-### Construction
+## Enclosure
 
-### Circuit testing
+## Circuit testing
 
 
 Enclosure
@@ -68,7 +35,7 @@ PCB Construction
 Circuit Tuning and Testing 
 Enclosure Construction
 Building It
-lectrical Components
+Electrical Components
 Enclosure
 The BOM includes To make the device, there are two major steps
 PCB construction
