@@ -79,8 +79,8 @@ TODO: R3.3 --> R3.5
   - Works well, but now when the gain pot is shunted to ground there is a small amout of light coming from the LED. I'm not sure if the zener is playing into this somehow. Is the 220k pulldown not enough?
   - Interestingly, when the gain pot value is increased and there is no signal present at VIN, and resistance is placed between the wiper and groud, the VIN at the opamp input is lowered, and the LED turns off completely.
   - Its because when the trimmer turned off, the opamp input pin has a dead short to ground, completely nullifying the effect of the pull down. The solution is simply to isolate the pulldown by putting a small resistor (e.g. 200 ohm) in series with the wiper of the pot.
-- [ ] The rear panel has issues
+- [x] The rear panel has issues
   - The holes for the banana sockets are too low. Measure empirically and try to find a mistake in reference to datasheet.
   - The light pipe hole should be moved upward by a fraction of a mm
-  - The potentiometers guild hole should be moved toward the main potentiometer hole a bit.
+  - The potentiometer's guide hole should be moved toward the main potentiometer hole a bit.
   - Move CFPA switch back a smidge.
