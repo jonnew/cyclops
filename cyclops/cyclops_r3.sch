@@ -8598,7 +8598,6 @@ to serve as denoising jumper</text>
 Max(VREF) ~ 0.75V
 Max(ILED) ~ 1.5 Amps</text>
 <text x="-68.58" y="-40.64" size="1.6764" layer="94">VI = 1A/1V</text>
-<text x="-32.258" y="108.204" size="1.778" layer="97" rot="R90">DNP</text>
 <text x="-78.74" y="144.78" size="3.81" layer="98">Drivetrain</text>
 <text x="-32.258" y="45.466" size="1.778" layer="97" rot="R90">DNP</text>
 </plain>
