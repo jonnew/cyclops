@@ -349,6 +349,10 @@ void isr(void) {
 }
 
 SIGNAL(PCINT0_vect) {
-	isr();
+    
+    char sreg_bak = SREG;
+    cli();
+    isr();
+    SREG = sreg_bak;
 }
 
