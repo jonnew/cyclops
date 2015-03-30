@@ -6834,7 +6834,7 @@ at 30/07/2012 17:45:58</description>
 <part name="REF_ADJ" library="cyclops" deviceset="TRIM_US-" device="SM-42/43W" value="10k"/>
 <part name="LEONARDO" library="cyclops" deviceset="LEONARDO_R3_ICSP" device="" value="LEONARDO_R3_ICSP"/>
 <part name="U1" library="cyclops" deviceset="MCP4921" device="SOIC" value="MCP4921"/>
-<part name="C4" library="cyclops" deviceset="C" device="_0805" value="10uF"/>
+<part name="C4" library="cyclops" deviceset="C" device="_1206" value="10uF"/>
 <part name="C5" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="C6" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="C2" library="cyclops" deviceset="C" device="_0603"/>
