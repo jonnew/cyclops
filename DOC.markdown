@@ -8,7 +8,7 @@ This documents provides construction, usage, and performance documentation for t
   - LED jacks: 1 mm to low 
   - Exapnsion header: 1 mm to low 
   - Aux/curr swithc: 0.25 mm to low
-
+- [ ] The LED polarity labels on the panel is reversed 
 # Specification
 
 # Usage
