@@ -2,6 +2,13 @@ Cyclops Documentation (UNDER CONSTRUCTION)
 ==============
 This documents provides construction, usage, and performance documentation for the Cyclops LED driver. This document   evolves with the repository. To view old revisions, checkout tags or old commits using their SHA.
 
+
+### TODO
+- [ ] The rear panel holes seems to have slight vertical offsets
+  - LED jacks: 1 mm to low 
+  - Exapnsion header: 1 mm to low 
+  - Aux/curr swithc: 0.25 mm to low
+
 # Specification
 
 # Usage
