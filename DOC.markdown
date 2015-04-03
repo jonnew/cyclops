@@ -9,6 +9,7 @@ This documents provides construction, usage, and performance documentation for t
   - Exapnsion header: 1 mm to low 
   - Aux/curr swithc: 0.25 mm to low
 - [ ] The LED polarity labels on the panel is reversed 
+- [ ] Sometimes, because of intrisic tolerance issues, the 5.1V zener's reverse breakdown is too low and it affects valid signals in the 0-5V range. Get a more reasonable value, e.g. 6V, zener.
 # Specification
 
 # Usage
