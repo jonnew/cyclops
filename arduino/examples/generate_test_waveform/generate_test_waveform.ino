@@ -36,8 +36,6 @@ void setup() {
   // Set input resistors on both boards to nominal A-W Resistance
   cyclops0.mcp4022_set_nom_AW_resistance();
   
-  // Save the resistance in non-volatile EEPROM for startup
-  cyclops1.mcp4022_save_AW_resistance();
   
 }
 
