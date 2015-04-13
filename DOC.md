@@ -29,7 +29,7 @@ Cyclops is an open-source, high-power LED driver that enables extremely precise 
   - Programmable triggering logic
   - Respond to USB input
 	  
-***
+---
 #### TODO 
 **Revision 3.6**
 - [ ] Get [DOC.md](DOC.md) in working order
@@ -48,11 +48,11 @@ Cyclops is an open-source, high-power LED driver that enables extremely precise 
 - [ ] The LED polarity labels on the panel is reversed 
 - [ ] Sometimes, because of intrinsic tolerance issues, the 5.1V zener's reverse breakdown is too low and it affects valid signals in the 0-5V range. Get a more reasonable value, e.g. 6V, zener.
 
-***
+---
 #### Performance Specifications
 TODO
 
-***
+---
 #### Usage
 ##### Feedback Modes
 The main functional component of the device is a feedback assisted, power, enhancement-mode N-MOSFET ([IRF510](http://www.vishay.com/docs/91015/sihf510.pdf)). Current is drawn from the source pin of the FET in accordance with one of two feedback modes: current feedback or auxiliary feedback. In both modes, the FET acts as a variable resistor whose resistance is changed in inverse relation to the gate voltage. The difference between the two modes is in how the gate voltage is regulated.
