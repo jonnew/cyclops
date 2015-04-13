@@ -1,7 +1,33 @@
-### Cyclops LED Driver Documentation
+## Cyclops LED Driver Documentation
 Cyclops is an open-source, high-power LED driver that enables extremely precise control of light power for optogenetic stimulation. The circuit was developed by Jon Newman while in Steve Potter's lab at Georgia Tech in order to complete his thesis work, which required the delivery of ultra-precise, continuously time-varying light waveforms for optogenetic stimulation [1]. This was, and still is, not possible with commercial hardware for optogenetic stimulation. Since its first use, the circuit has been continuously improved in terms of speed, precision, programmability, and ease of use. This document provides construction, usage, and performance documentation for the Cyclops LED driver. This document evolves with the repository. To view old revisions, checkout tags or old commits using their SHA.
 
-#### Features
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+  - [Features](#features)
+- [	  ](#)
+  - [TODO](#todo)
+- [](#)
+  - [Performance Specifications](#performance-specifications)
+- [](#-1)
+  - [Usage](#usage)
+    - [Feedback Modes](#feedback-modes)
+      - [Current Feedback Mode](#current-feedback-mode)
+      - [Auxiliary Feedback Mode](#auxiliary-feedback-mode)
+    - [Stimulus Generation Options](#stimulus-generation-options)
+  - [Construction](#construction)
+    - [Components](#components)
+    - [PCB](#pcb)
+    - [Enclosure](#enclosure)
+    - [Circuit testing](#circuit-testing)
+  - [License](#license)
+    - [Hardware Licensing](#hardware-licensing)
+    - [Software Licensing](#software-licensing)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+### Features
 **Circuit Features**
 - Ultra-precise
 - High power
@@ -17,7 +43,7 @@ Cyclops is an open-source, high-power LED driver that enables extremely precise 
   - 4 synchronizable optical channels
   - Accepts external analog, gate, or trigger inputs
 
-**Stimulus Generation Option**
+**Stimulus Generation Options**
 - External stimulus sequencer
 - External digital trigger
   - TTL logic level
@@ -30,7 +56,7 @@ Cyclops is an open-source, high-power LED driver that enables extremely precise 
   - Respond to USB input
 	  
 ---
-#### TODO 
+### TODO 
 **Revision 3.6**
 - [ ] Get [DOC.md](DOC.md) in working order
 - [ ] Create an fiber coupled LED interface with integrated optical power measurements
@@ -49,23 +75,23 @@ Cyclops is an open-source, high-power LED driver that enables extremely precise 
 - [ ] Sometimes, because of intrinsic tolerance issues, the 5.1V zener's reverse breakdown is too low and it affects valid signals in the 0-5V range. Get a more reasonable value, e.g. 6V, zener.
 
 ---
-#### Performance Specifications
+### Performance Specifications
 TODO
 
 ---
-#### Usage
-##### Feedback Modes
+### Usage
+#### Feedback Modes
 The main functional component of the device is a feedback assisted, power, enhancement-mode N-MOSFET ([IRF510](http://www.vishay.com/docs/91015/sihf510.pdf)). Current is drawn from the source pin of the FET in accordance with one of two feedback modes: current feedback or auxiliary feedback. In both modes, the FET acts as a variable resistor whose resistance is changed in inverse relation to the gate voltage. The difference between the two modes is in how the gate voltage is regulated.
 - In **current feedback mode**, the gate voltage is adjusted such that the voltage drop across the sense resistor (1 ohm in the schematic) is equal to a  supplied reference voltage.
 - In **auxiliary feedback mode**, some external voltage that has a positive and monotonic relationship with optical power is provided as a feedback signal.
 
-###### Current Feedback Mode
+##### Current Feedback Mode
 Using the circuit in current feedback mode ensures that the forward diode current across the LED is precisely modulated according the voltage at the VREF pin. This configuration is a standard method for driving LEDs because the relationship between current and LED irradiance is smooth and monotonic. This means that more current across the LED will generate more light power (while staying within the LED's maximum ratings, of course). However, the relationship between current and irradiance is not linear. For most LEDs, it looks like a logarithmic function. Additionally, the efficiency of the LED is inversely related to its temperature. So, as the LED operates and heats up, the amount of light it produces drops even when the current is held constant. The severity of an LED's temperature dependence and current/irradiance nonlinearity depend on the type of LED (the color and who made it). These properties should be clearly documented in the LED's data sheet. With a quality LED and proper thermal management, the effects of temperature and static current/irradiance nonlinearity are fairly minimal and can be ignored in most situations.
 
-###### Auxiliary Feedback Mode
+##### Auxiliary Feedback Mode
 When extremely stable, linear control of light power is required, the auxiliary feedback port can be used to used to compensate for the temperature dependence and static nonlinearity of the current/irradiance relationship of the LED. For example, when the auxiliary voltage is supplied by an amplified photodiode that is somewhere indecent to radiation from the LED, the gate voltage is adjusted such that the measured light power matches a DAC-supplied reference voltage. This is the case in the circuit diagram. This configuration is referred to as optical feedback mode. The [PDA36a](https://www.thorlabs.com/thorProduct.cfm?partNumber=PDA36A) adjustable amplified photodiode from Thorlabs is a good option for supplying optical feedback. However, you can make your own amplified photodiode for a fraction of the price, and a design is included within the cyclops repository. Optical feedback completely linearizes the relationship between a supplied reference voltage and the light power produced by the LED by compensating for the current/irradiance nonlinearities and temperature dependence.
 
-##### Stimulus Generation Options
+#### Stimulus Generation Options
 There are three ways to generate light signals using the driver. The behavior of each of these options is dependent on the feedback mode being used by the driver. The behavior of each input option is described in relation to the feedback mode of the driver.
 
 1. **TEST** - TEST button. 
@@ -88,12 +114,12 @@ There are three ways to generate light signals using the driver. The behavior of
   - *Auxilary Feedback*: Generate the optical power specified by (DAC Voltage/5V) * h  * mW. The intensity of the LED will be dependent on the auxiliary feedback signal used which defines the 'h' parameter. 
 
 
-#### Construction 
+### Construction 
 Before you build a board, its recommended that you get in touch [jonnew](https://github.com/jonnew)for a couple reasons:
 - We are interested in getting feedback on which portions of this documentation need improvement.
 - The cyclops is a fairly complex PCB. If you have doubts, let us know so we can help you with the build.
 
-##### Components
+#### Components
 The bill of materials (BOM) required to build a 1,2,3, or 4-channel device is available on a [https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing Google spreadsheet]. Most of the parts can be purchased from Digikey, but there are a few components that need to be bought from other sources such as Newark, Adafruit, and Samtec. All vendor, part number, and quantity information is listed on the BOM. As a convenience, the spreadsheet contains links to pre-populated Digikey carts (which are optimized for quantity discounts) for up to 4 circuits.
 
 The PCB can be purchased from OSH park [TODO here]. This is a four layer PCB. Note that OSH park sells a minimum of 3 boards per order. PCB stencils, useful for those performing reflow or hot-air soldering, are available from OSH stencils at the following link: TODO. If you plan to hand solder the board, then you do not need to purchase these stencils.
@@ -102,11 +128,11 @@ The BOM includes several optional components, which are not in the pre-populated
 - An extruded aluminum enclosure, which houses the completed board. The enclosure is recommended because the large voltages and current transients used to drive high power LEDs can cause capacitive and inductive interference with nearby recording equipment. Acrylic front and rear panels can be purchased from Ponoko using the links supplied in the BOM. The instructions below show how these plastic pieces are modified to provide proper electrical shielding.
 - TODO: An M8-4 connector.
     
-##### PCB
+#### PCB
 
-##### Enclosure
+#### Enclosure
 
-##### Circuit testing
+#### Circuit testing
 
 
 Enclosure
@@ -191,11 +217,11 @@ Analog rail  and ground
 If there is a short, you must track it down and get rid of it before applying power
 Enclosure Construction
 
-#### License
-##### Hardware Licensing
+### License
+#### Hardware Licensing
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Cyclops LED Driver</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jonnew/cyclops" property="cc:attributionName" rel="cc:attributionURL">Jonathan P. Newman</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/jonnew/cyclops" rel="dct:source">https://github.com/jonnew/cyclops</a>.
 
-##### Software Licensing
+#### Software Licensing
 Copyright (c) Jonathan P. Newman 
 All right reserved.
 
