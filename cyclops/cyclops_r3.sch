@@ -7023,7 +7023,7 @@ at 30/07/2012 17:45:58</description>
 <part name="U$51" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$53" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$11" library="cyclops" deviceset="GND2" device=""/>
-<part name="U5" library="cyclops" deviceset="LT1963" device="_DDPAK" value="LT1963A"/>
+<part name="U5" library="cyclops" deviceset="LT1963" device="_DDPAK" value="LT1764A"/>
 <part name="C10" library="cyclops" deviceset="C-POL" device="_0807" value="100uF"/>
 <part name="C13" library="cyclops" deviceset="C-POL" device="_0807" value="100uF"/>
 <part name="R9" library="cyclops" deviceset="R" device="_0603" value="240"/>

@@ -188,7 +188,6 @@ Rev. 3.5A</text>
 <text x="103.124" y="13.716" size="1.016" layer="21" font="vector" ratio="18" align="center">PANEL SWITCH.
 SHORT IF NOT
 IN USE.</text>
-<text x="29.845" y="11.43" size="1.016" layer="21" font="vector" ratio="18">(DNP)</text>
 <text x="22.606" y="17.145" size="1.016" layer="21" font="vector" ratio="18" rot="R90">(DNP)</text>
 <text x="76.581" y="41.402" size="1.016" layer="21" font="vector" ratio="18">(DNP)</text>
 <text x="120.142" y="65.405" size="1.016" layer="21" font="vector" ratio="18" rot="R90">GND</text>
@@ -23976,7 +23975,7 @@ Modified: 2014.07.10
 <attribute name="VALUE" x="95.377" y="37.719" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="U$56" library="cyclops" package="CYCLOPS_LOGO" value="" x="38.01153125" y="38.350165625" rot="MR0"/>
-<element name="U5" library="cyclops" package="5-DDPAK" value="LT1963A" x="91.694" y="57.15" smashed="yes" rot="R90">
+<element name="U5" library="cyclops" package="5-DDPAK" value="LT1764A" x="91.694" y="57.15" smashed="yes" rot="R90">
 <attribute name="NAME" x="84.455" y="53.721" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="85.725" y="53.721" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
