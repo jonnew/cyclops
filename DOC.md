@@ -76,6 +76,7 @@ Cyclops is an open-source, high-power LED driver that enables extremely precise 
 - [x] Sometimes, because of intrinsic tolerance issues, the 5.1V zener's reverse breakdown is too low and it affects valid signals in the 0-5V range. Get a more reasonable value, e.g. 6V, zener.
   - **EDIT** This was due to a bad zener. Ignore this change. 
 - [x] Trade out the LT1964A for a LT1764A, which has a 3A output capability and a will allow the circuit to read 1.5A instead of crapping out at 1.25 since the quiescent circuit is current hog.
+- [ ] Put some extra through holes in for wire-to-board access to +/- LED, digital ground, and I2C bus for EEPROM on thorlabs leds.
 ---
 ### Performance Specifications
 TODO
