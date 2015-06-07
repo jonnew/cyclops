@@ -55,7 +55,6 @@ Cyclops is an open-source, high-power LED driver that enables extremely precise 
   - Programmable triggering logic
   - Respond to USB input
 	  
----
 ### TODO 
 **Revision 3.6**
 - [ ] Get [DOC.md](DOC.md) in working order
@@ -118,21 +117,27 @@ There are three ways to generate light signals using the driver. The behavior of
 
 
 ### Construction 
-Before you build a board, its recommended that you get in touch [jonnew](https://github.com/jonnew)for a couple reasons:
+Before you build a board, its recommended that you get in touch [jonnew](https://github.com/jonnew) for a couple reasons:
 - We are interested in getting feedback on which portions of this documentation need improvement.
 - The cyclops is a fairly complex PCB. If you have doubts, let us know so we can help you with the build.
 
 #### Components
-The bill of materials (BOM) required to build a 1,2,3, or 4-channel device is available on a [https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing Google spreadsheet]. Most of the parts can be purchased from Digikey, but there are a few components that need to be bought from other sources such as Newark, Adafruit, and Samtec. All vendor, part number, and quantity information is listed on the BOM. As a convenience, the spreadsheet contains links to pre-populated Digikey carts (which are optimized for quantity discounts) for up to 4 circuits.
+The bill of materials (BOM) required to build a 1,2,3, or 4 devices is available on [this google doc](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing). Most of the parts can be purchased from Digikey, but there are a few components that need to be bought from other sources such as Newark, Adafruit, and Samtec. All vendor, part number, and quantity information is listed on the BOM. In some cases, two suppliers are provided for a single part to make alternative sources available. As a convenience, the spreadsheet contains links to a pre-populated Digikey cart (which are optimized for quantity discounts).
 
-The PCB can be purchased from OSH park [TODO here]. This is a four layer PCB. Note that OSH park sells a minimum of 3 boards per order. PCB stencils, useful for those performing reflow or hot-air soldering, are available from OSH stencils at the following link: TODO. If you plan to hand solder the board, then you do not need to purchase these stencils.
+The PCB can be purchased from OSH park [here]() or Seed Studio [here](). This is a four layer PCB. Note that OSH park sells a minimum of 3 boards per order and Seed studio sells a minimum of 5 boards per order. PCB stencils, useful for those performing reflow or hot-air soldering, are available from OSH stencils [here](). If you plan to hand solder the board, then you do not need to purchase these stencils.
 
-The BOM includes several optional components, which are not in the pre-populated Digikey carts. These include
-- An extruded aluminum enclosure, which houses the completed board. The enclosure is recommended because the large voltages and current transients used to drive high power LEDs can cause capacitive and inductive interference with nearby recording equipment. Acrylic front and rear panels can be purchased from Ponoko using the links supplied in the BOM. The instructions below show how these plastic pieces are modified to provide proper electrical shielding.
-- TODO: An M8-4 connector.
+The BOM includes several optional components, which are not in the pre-populated Digikey cart. These include:
+- __An extruded aluminum enclosure__, which houses the completed board. The enclosure is recommended because the large voltages and current transients used to drive high power LEDs can cause capacitive and inductive interference with nearby recording equipment. Acrylic front and rear panels can be purchased from Ponoko using the links supplied in the BOM. The instructions below show how these plastic pieces are modified to provide proper electrical shielding.
+- An __M8-4 connector__. This is a rather expensive connector that allows cyclops to drive [Thorlabs LED modules]() or [Doric LED modules](http://doriclenses.com/life-sciences/243-led-modules).
     
 #### PCB
+The cyclops PCB is constructed using standard surface mount construction techniques. However, there are a few tricky bits that are worth reviewing before you begin:
 
+0. The barrel power jack is mounted on the _bottom_ of the board. It fits on both the top and the bottom, but will not fit in the enclosure if mounted on the top.
+0. To install the power switch, be sure to use appropritate hookup wire capable of handling the currents that the driver requires. AWG 20 (~0.8 mm) braided copper wires or thicker is recommended.
+0. Each board has an address that is defined by solder jumper positions. 
+0. Don't forget to install the heatsink.
+0. The light pipes over the front LEDs need to be seated firmly for the board to fit inside the enclosure.
 #### Enclosure
 
 #### Circuit testing
