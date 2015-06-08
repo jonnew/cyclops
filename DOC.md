@@ -6,11 +6,9 @@ Cyclops is an open-source, high-power LED driver that enables extremely precise 
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
   - [Features](#features)
-- [	  ](#)
   - [TODO](#todo)
-- [](#)
   - [Performance Specifications](#performance-specifications)
-- [](#-1)
+- [](#)
   - [Usage](#usage)
     - [Feedback Modes](#feedback-modes)
       - [Current Feedback Mode](#current-feedback-mode)
@@ -131,13 +129,38 @@ The BOM includes several optional components, which are not in the pre-populated
 - An __M8-4 connector__. This is a rather expensive connector that allows cyclops to drive [Thorlabs LED modules]() or [Doric LED modules](http://doriclenses.com/life-sciences/243-led-modules).
     
 #### PCB
-The cyclops PCB is constructed using standard surface mount construction techniques. However, there are a few tricky bits that are worth reviewing before you begin:
+The cyclops PCB can be constructed by purchasing from one of the pre-uploaded options:
+  - [OSH Park]() - made in America, excellent quality.
+  - [Seeed Studio]() - made in China, good quality.
+or [the gerber files](https://github.com/jonnew/cyclops/tree/master/cyclops/gerber) can be used with your PCB fabricator of choice.
 
-0. The barrel power jack is mounted on the _bottom_ of the board. It fits on both the top and the bottom, but will not fit in the enclosure if mounted on the top.
-0. To install the power switch, be sure to use appropritate hookup wire capable of handling the currents that the driver requires. AWG 20 (~0.8 mm) braided copper wires or thicker is recommended.
-0. Each board has an address that is defined by solder jumper positions. 
+PCB component population and soldering is fairly straightforward and requires standard surface mount construction techniques. However, there are a few bits of information that are worth reviewing before you begin:
+
+0. The barrel power jack (name: "POWER", value: PJ-063BH on the schematic) should be mounted on the _bottom_ of the board. It fits on both the top and the bottom, and will properly supply the board with power if mounted on the top. However, if the barrel jack is mounted on the top side of the board, it will not fit inside the enclosure. 
+
+  [](http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg "Location of power jack")
+  **Power jack installation**
+
+0. When installing the power switch, be sure to use hookup wire capable of handling the currents that the driver requires. AWG 20 (~0.8 mm diameter) braided copper wire or thicker is recommended. Even if you don't want to use the power switch, jumper the switch solder points using AWG 20 wire or thicker.
+
+  [](http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg "Installing the power switch")
+  **Power switch installation**
+
+0. Each board has an address (0 through 3) that is defined by two solder jumpers and the location of a ferrite chip. This allows cyclops boards to be stacked to share a power supply while being driven by a common microcontroller. For each board that will share a microcontroller, a unique address must be specified and the solder jumpers and ferrite chip must be soldered in appropriate positions to reflect this address. See the picture below to better understand this addressing scheme.
+
+  [](http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg "Board address scheme")
+  **Board address scheme**
+
 0. Don't forget to install the heatsink.
+
+  [](http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg "Heatsink installation")
+  **Installing the heatsink**
+
 0. The light pipes over the front LEDs need to be seated firmly for the board to fit inside the enclosure.
+
+  [](http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg "Light pipe installation")
+  **Installing the light pipes**
+
 #### Enclosure
 
 #### Circuit testing
@@ -239,4 +262,4 @@ The code associated with the Cyclops project is distributed in the hope that it 
 
 You should have received a copy of the GNU General Public License along with this code.  If not, see <http://www.gnu.org/licenses/>.
 
-
+<!-- Image links -->
