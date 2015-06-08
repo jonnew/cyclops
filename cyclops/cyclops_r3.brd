@@ -21478,30 +21478,6 @@ Source: smt-pots.pdf</description>
 <rectangle x1="-3.08724375" y1="36.875975" x2="-2.83324375" y2="36.96055625" layer="21"/>
 <rectangle x1="-2.749425" y1="36.875975" x2="-2.57924375" y2="36.96055625" layer="21"/>
 </package>
-<package name="SJ_2">
-<description>&lt;b&gt;Solder jumper&lt;/b&gt;</description>
-<wire x1="2.159" y1="-1.016" x2="-2.159" y2="-1.016" width="0.1524" layer="21"/>
-<wire x1="2.159" y1="1.016" x2="2.413" y2="0.762" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-2.413" y1="0.762" x2="-2.159" y2="1.016" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-2.413" y1="-0.762" x2="-2.159" y2="-1.016" width="0.1524" layer="21" curve="90"/>
-<wire x1="2.159" y1="-1.016" x2="2.413" y2="-0.762" width="0.1524" layer="21" curve="90"/>
-<wire x1="2.413" y1="-0.762" x2="2.413" y2="0.762" width="0.1524" layer="21"/>
-<wire x1="-2.413" y1="-0.762" x2="-2.413" y2="0.762" width="0.1524" layer="21"/>
-<wire x1="-2.159" y1="1.016" x2="2.159" y2="1.016" width="0.1524" layer="21"/>
-<wire x1="1.778" y1="0" x2="2.286" y2="0" width="0.1524" layer="51"/>
-<wire x1="-1.778" y1="0" x2="-2.286" y2="0" width="0.1524" layer="51"/>
-<wire x1="0" y1="0.762" x2="0" y2="1.016" width="0.1524" layer="51"/>
-<wire x1="0" y1="-1.016" x2="0" y2="-0.762" width="0.1524" layer="51"/>
-<wire x1="1.016" y1="0.127" x2="1.016" y2="-0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
-<wire x1="-1.016" y1="-0.127" x2="-1.016" y2="0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
-<smd name="1" x="-1.524" y="0" dx="1.1684" dy="1.6002" layer="1"/>
-<smd name="2" x="0" y="0" dx="1.1684" dy="1.6002" layer="1"/>
-<smd name="3" x="1.524" y="0" dx="1.1684" dy="1.6002" layer="1"/>
-<text x="-2.413" y="1.27" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-0.1001" y="0" size="0.02" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.508" y1="-0.762" x2="0.508" y2="0.762" layer="51"/>
-<rectangle x1="-2.159" y1="-0.889" x2="2.159" y2="0.889" layer="29"/>
-</package>
 <package name="5-DDPAK">
 <smd name="TAB" x="0" y="0" dx="10.668" dy="8.89" layer="1"/>
 <smd name="3" x="0" y="-9.271" dx="1.0668" dy="2.286" layer="1"/>
@@ -23947,10 +23923,6 @@ Modified: 2014.07.10
 <attribute name="NAME" x="81.661" y="41.91" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="81.661" y="40.894" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="NEG_SUPPLY" library="cyclops" package="SJ_2" value="" x="52.07" y="39.878" smashed="yes" rot="R90">
-<attribute name="NAME" x="51.689" y="37.084" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
-<attribute name="VALUE" x="52.07" y="39.7779" size="0.02" layer="27" rot="R90"/>
-</element>
 <element name="C9" library="cyclops" package="1206" value="4.7uF" x="33.528" y="44.196" smashed="yes" rot="R270">
 <attribute name="NAME" x="32.512" y="48.387" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="32.512" y="47.244" size="1.016" layer="27" font="vector" ratio="18"/>
@@ -24129,9 +24101,6 @@ Modified: 2014.07.10
 <wire x1="15.113" y1="28.194" x2="15.8496" y2="28.194" width="0.4064" layer="1"/>
 <wire x1="15.8496" y1="28.194" x2="15.875" y2="28.1686" width="0.4064" layer="1"/>
 <contactref element="LEONARDO" pad="5VB"/>
-<contactref element="NEG_SUPPLY" pad="1"/>
-<wire x1="52.07" y1="38.354" x2="55.238" y2="38.354" width="1.016" layer="1"/>
-<wire x1="55.238" y1="38.354" x2="55.492" y2="38.1" width="1.016" layer="1"/>
 </signal>
 <signal name="SCLK">
 <contactref element="LEONARDO" pad="SCK"/>
@@ -25157,12 +25126,28 @@ Modified: 2014.07.10
 <contactref element="L2" pad="1"/>
 <contactref element="LEONARDO" pad="VIN"/>
 <wire x1="55.492" y1="45.72" x2="53.5686" y2="45.72" width="1.016" layer="1"/>
-<contactref element="NEG_SUPPLY" pad="3"/>
-<wire x1="52.07" y1="41.402" x2="53.34" y2="41.402" width="1.016" layer="1"/>
 <wire x1="53.34" y1="41.402" x2="53.848" y2="41.91" width="1.016" layer="1"/>
 <via x="53.848" y="41.91" extent="1-16" drill="0.7"/>
 <wire x1="53.848" y1="41.91" x2="53.848" y2="44.076" width="1.016" layer="16"/>
 <wire x1="53.848" y1="44.076" x2="55.492" y2="45.72" width="1.016" layer="16"/>
+<contactref element="U4" pad="5"/>
+<contactref element="U4" pad="4"/>
+<polygon width="0.127" layer="1" thermals="no">
+<vertex x="30.226" y="37.084"/>
+<vertex x="26.416" y="37.084"/>
+<vertex x="26.416" y="48.006"/>
+<vertex x="38.862" y="48.006"/>
+<vertex x="38.862" y="42.418"/>
+<vertex x="36.068" y="42.418"/>
+<vertex x="36.068" y="44.45"/>
+<vertex x="30.226" y="44.45"/>
+</polygon>
+<contactref element="L7" pad="3"/>
+<contactref element="C9" pad="1"/>
+<wire x1="53.34" y1="41.402" x2="49.022" y2="41.402" width="1.016" layer="1"/>
+<wire x1="49.022" y1="41.402" x2="46.228" y2="44.196" width="1.016" layer="1"/>
+<wire x1="46.228" y1="44.196" x2="37.832" y2="44.196" width="1.016" layer="1"/>
+<wire x1="37.832" y1="44.196" x2="36.642" y2="43.006" width="1.016" layer="1"/>
 </signal>
 <signal name="N$29">
 </signal>
@@ -25598,27 +25583,6 @@ Modified: 2014.07.10
 <vertex x="40.64" y="41.148"/>
 <vertex x="38.354" y="41.148"/>
 </polygon>
-</signal>
-<signal name="VIN">
-<contactref element="U4" pad="5"/>
-<contactref element="U4" pad="4"/>
-<polygon width="0.127" layer="1" thermals="no">
-<vertex x="30.226" y="37.084"/>
-<vertex x="26.416" y="37.084"/>
-<vertex x="26.416" y="48.006"/>
-<vertex x="38.862" y="48.006"/>
-<vertex x="38.862" y="42.418"/>
-<vertex x="36.068" y="42.418"/>
-<vertex x="36.068" y="44.45"/>
-<vertex x="30.226" y="44.45"/>
-</polygon>
-<contactref element="L7" pad="3"/>
-<contactref element="NEG_SUPPLY" pad="2"/>
-<wire x1="52.07" y1="39.878" x2="51.308" y2="39.878" width="1.27" layer="1"/>
-<wire x1="51.308" y1="39.878" x2="50.546" y2="39.878" width="1.4224" layer="1"/>
-<wire x1="50.546" y1="39.878" x2="45.212" y2="45.212" width="1.778" layer="1"/>
-<wire x1="45.212" y1="45.212" x2="37.592" y2="45.212" width="1.778" layer="1"/>
-<contactref element="C9" pad="1"/>
 </signal>
 <signal name="COM">
 <contactref element="U11" pad="4"/>
