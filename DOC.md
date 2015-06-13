@@ -25,6 +25,8 @@ Cyclops is an open-source, high-power LED driver that enables extremely precise 
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+
+
 ### Features
 **Circuit Features**
 - Ultra-precise
@@ -88,6 +90,12 @@ The main functional component of the device is a feedback assisted, power, enhan
 ##### Current Feedback Mode
 Using the circuit in current feedback mode ensures that the forward diode current across the LED is precisely modulated according the voltage at the VREF pin. This configuration is a standard method for driving LEDs because the relationship between current and LED irradiance is smooth and monotonic. This means that more current across the LED will generate more light power (while staying within the LED's maximum ratings, of course). However, the relationship between current and irradiance is not linear. For most LEDs, it looks like a logarithmic function. Additionally, the efficiency of the LED is inversely related to its temperature. So, as the LED operates and heats up, the amount of light it produces drops even when the current is held constant. The severity of an LED's temperature dependence and current/irradiance nonlinearity depend on the type of LED (the color and who made it). These properties should be clearly documented in the LED's data sheet. With a quality LED and proper thermal management, the effects of temperature and static current/irradiance nonlinearity are fairly minimal and can be ignored in most situations.
 
+<div style="text-align:center">
+  <img src ="https://raw.githubusercontent.com/jonnew/cyclops/master/art/current_feedback_diagram.png" style="width: 200px;" />
+  <br>
+  <b>Fig. 1</b> <i>Current feedback configuration.</i>
+</div>
+
 ##### Auxiliary Feedback Mode
 When extremely stable, linear control of light power is required, the auxiliary feedback port can be used to used to compensate for the temperature dependence and static nonlinearity of the current/irradiance relationship of the LED. For example, when the auxiliary voltage is supplied by an amplified photodiode that is somewhere indecent to radiation from the LED, the gate voltage is adjusted such that the measured light power matches a DAC-supplied reference voltage. This is the case in the circuit diagram. This configuration is referred to as optical feedback mode. The [PDA36a](https://www.thorlabs.com/thorProduct.cfm?partNumber=PDA36A) adjustable amplified photodiode from Thorlabs is a good option for supplying optical feedback. However, you can make your own amplified photodiode for a fraction of the price, and a design is included within the cyclops repository. Optical feedback completely linearizes the relationship between a supplied reference voltage and the light power produced by the LED by compensating for the current/irradiance nonlinearities and temperature dependence.
 
@@ -133,47 +141,61 @@ The cyclops PCB can be constructed by purchasing from one of the pre-uploaded op
   - [OSH Park]() - made in America, excellent quality.
   - [Seeed Studio]() - made in China, good quality.
 
-Alternatively, [the gerber files](https://github.com/jonnew/cyclops/tree/master/cyclops/gerber) can be used with your PCB fabricator of choice. PCB component population and soldering is fairly straightforward and requires standard surface mount construction techniques. However, there are a few bits of information that are worth reviewing before you begin:
+Alternatively, the [gerber files](https://en.wikipedia.org/wiki/Gerber_format) in the cyclops repo ([link](https://github.com/jonnew/cyclops/tree/master/cyclops/gerber)) can be uploaded to the PCB fabrication service of your choice. The layer of each gerber file is identified by its file extension:
+
+     *.GBO = board outline 
+     *.GTS = top solder mask
+     *.GBS = bottom solder mask
+     *.GTO = top silk screen
+     *.GBO = bottom silk screen
+     *.GTL = top copper
+     *.G2L = inner layer 2 copper
+     *.G3L = inner layer 3 copper
+     *.GBL = bottom copper
+     *.XLN = drill hits and sizes
+
+#### PCB assembly
+PCB component population and soldering is fairly straightforward and requires standard surface mount construction techniques. However, there are a few bits of information that are worth reviewing before you begin:
 
 0. The barrel power jack (name: "POWER", value: PJ-063BH on the schematic) should be mounted on the _bottom_ of the board. It fits on both the top and the bottom, and will properly supply the board with power if mounted on the top. However, if the barrel jack is mounted on the top side of the board, it will not fit inside the enclosure.
 
-<div style="text-align:center">
-  <img src ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg" />
-  <br>
-  <b>Fig. 1</b> <i>Power jack installation</i>
-</div>
+    <div style="text-align:center">
+      <img src ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg" />
+      <br>
+      <b>Fig. 1</b> <i>Power jack installation</i>
+    </div>
 
 0. When installing the power switch, be sure to use hookup wire capable of handling the currents that the driver requires. AWG 20 (~0.8 mm diameter) braided copper wire or thicker is recommended. Even if you don't want to use the power switch, jumper the switch solder points using AWG 20 wire or thicker.
 
-<div style="text-align:center">
-  <img src ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg" />
-  <br>
-  <b>Fig. 1</b> <i>Power switch installation</i>
-</div>
+    <div style="text-align:center">
+      <img src ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg" />
+      <br>
+      <b>Fig. 2</b> <i>Power switch installation</i>
+    </div>
 
 0. Each board has an address (0 through 3) that is defined by two solder jumpers and the location of a ferrite chip. This allows cyclops boards to be stacked to share a power supply while being driven by a common microcontroller. For each board that will share a microcontroller, a unique address must be specified and the solder jumpers and ferrite chip must be soldered in appropriate positions to reflect this address. See the picture below to better understand this addressing scheme.
 
-<div style="text-align:center">
-  <img src ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg" />
-  <br>
-  <b>Fig. 1</b> <i>Set board address</i>
-</div>
+    <div style="text-align:center">
+      <img src ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg" />
+      <br>
+      <b>Fig. 3</b> <i>Set board address</i>
+    </div>
 
 0. Don't forget to install the heatsink.
 
-<div style="text-align:center">
-  <img src ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg" />
-  <br>
-  <b>Fig. 1</b> <i>Installing the heatsink</i>
-</div>
+    <div style="text-align:center">
+      <img src ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg" />
+      <br>
+      <b>Fig. 4</b> <i>Installing the heatsink</i>
+    </div>
 
 0. The light pipes over the front LEDs need to be seated firmly for the board to fit inside the enclosure.
 
-<div style="text-align:center">
-  <img src ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg" />
-  <br>
-  <b>Fig. 1</b> <i>Install the light pipes</i>
-</div>
+    <div style="text-align:center">
+      <img src ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg" />
+      <br>
+      <b>Fig. 5</b> <i>Install the light pipes</i>
+    </div>
 
 #### Enclosure
 
