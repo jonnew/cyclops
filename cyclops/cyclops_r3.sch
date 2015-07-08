@@ -6840,7 +6840,6 @@ at 30/07/2012 17:45:58</description>
 <part name="LED+" library="cyclops" deviceset="BANANA_TO_BOARD" device="_A2107" value="A2107-R"/>
 <part name="R17" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="R18" library="cyclops" deviceset="R" device="_0603" value="1k"/>
-<part name="R21" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="C24" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="U$44" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$46" library="cyclops" deviceset="GND2" device=""/>
@@ -8293,7 +8292,6 @@ to serve as denoising jumper</text>
 <instance part="U$7" gate="G$1" x="-25.4" y="-17.78"/>
 <instance part="R17" gate="R" x="-40.64" y="-137.16" rot="R270"/>
 <instance part="R18" gate="R" x="-2.54" y="-121.92" rot="R180"/>
-<instance part="R21" gate="R" x="35.56" y="-83.82"/>
 <instance part="C24" gate="C" x="45.72" y="-104.14"/>
 <instance part="U$44" gate="G$1" x="-40.64" y="-154.94"/>
 <instance part="U$46" gate="G$1" x="45.72" y="-154.94"/>
@@ -8414,18 +8412,6 @@ to serve as denoising jumper</text>
 <wire x1="35.56" y1="-33.02" x2="35.56" y2="-38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="VREFA2X1" class="0">
-<segment>
-<wire x1="25.4" y1="-83.82" x2="30.48" y2="-83.82" width="0.1524" layer="91"/>
-<pinref part="R18" gate="R" pin="1"/>
-<wire x1="2.54" y1="-121.92" x2="25.4" y2="-121.92" width="0.1524" layer="91"/>
-<wire x1="25.4" y1="-121.92" x2="25.4" y2="-83.82" width="0.1524" layer="91"/>
-<pinref part="R21" gate="R" pin="1"/>
-<pinref part="U9" gate="A" pin="OUT"/>
-<wire x1="17.78" y1="-83.82" x2="25.4" y2="-83.82" width="0.1524" layer="91"/>
-<junction x="25.4" y="-83.82"/>
-</segment>
-</net>
 <net name="N$18" class="0">
 <segment>
 <wire x1="-40.64" y1="-91.44" x2="-40.64" y2="-121.92" width="0.1524" layer="91"/>
@@ -8440,14 +8426,19 @@ to serve as denoising jumper</text>
 </net>
 <net name="REF5.0" class="0">
 <segment>
-<pinref part="R21" gate="R" pin="2"/>
+<pinref part="R18" gate="R" pin="1"/>
+<wire x1="2.54" y1="-121.92" x2="25.4" y2="-121.92" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="-121.92" x2="25.4" y2="-83.82" width="0.1524" layer="91"/>
+<pinref part="U9" gate="A" pin="OUT"/>
+<wire x1="17.78" y1="-83.82" x2="25.4" y2="-83.82" width="0.1524" layer="91"/>
+<junction x="25.4" y="-83.82"/>
 <pinref part="C24" gate="C" pin="1"/>
-<wire x1="40.64" y1="-83.82" x2="45.72" y2="-83.82" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="-83.82" x2="45.72" y2="-101.6" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="-83.82" x2="76.2" y2="-83.82" width="0.1524" layer="91"/>
 <junction x="45.72" y="-83.82"/>
 <label x="66.04" y="-83.82" size="1.778" layer="95"/>
 <pinref part="REF5.0" gate="G$1" pin="TP"/>
+<wire x1="25.4" y1="-83.82" x2="45.72" y2="-83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
