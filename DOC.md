@@ -1,3 +1,4 @@
+__SYK test__
 __Cyclops__ is an open-source, high-power LED driver that enables extremely
 precise control of light power for optogenetic stimulation. The circuit was
 developed by Jon Newman while in Steve Potter's lab at Georgia Tech in order to
