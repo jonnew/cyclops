@@ -11,7 +11,7 @@ AutoSaveProject=1
 [Win_1]
 Type="Control Panel"
 Loc="0 27 876 426"
-State=1
+State=3
 Number=0
 
 [Desktop]
