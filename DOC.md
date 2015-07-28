@@ -266,9 +266,10 @@ gerber file is identified by its file extension:
 
 Below is an example of finished Cyclops board (ver 3.5A). Let's begin!
 
-    <div style="text-align:center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/0_FinishedExample.jpg?raw=true"
-    /> <br> <b>Fig. 1</b> <i>A finished Cyclops board</i> </div>
+<div style="text-align:center"> <img 
+src="https://github.com/jonnew/cyclops/blob/documentation/art/0_FinishedExample.jpg?raw=true"
+style="width: 400px;"
+/> <br> <b>Fig. 1</b> <i>A finished Cyclops board</i> </div>
 
 
 *Below is Jon's original description*
