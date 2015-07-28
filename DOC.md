@@ -266,10 +266,172 @@ gerber file is identified by its file extension:
 
 Below is an example of finished Cyclops board (ver 3.5A). Let's begin!
 
-    <div style="text-align:center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/0_FinishedExample.jpg?raw=true"
-    /> <br> <b>Fig. 1</b> <i>A finished Cyclops board</i> </div>
+<div style="text-align:center"> <img src
+="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_finished1.jpg?raw=true" style="width: 500px;"
+/> <br> <b>Fig. 1</b> <i>A finished Cyclops board</i> </div>
 
+0. Here is our PCB from Seeed Studio. Jon was surprised by the quality given its extremely low price.
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board1.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 2</b> <i>A raw Cyclops PCB</i> </div>
+
+0. Here are some pictures of Jon's materials. 
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/SolderPaste.jpg?raw=true" style="width: 300px;"
+    /> <br> <i>A solder paste...</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/Station.jpg?raw=true" style="width: 500px;"
+    /> <br> <i>My station. PCB is held by PanaVise grip holder on top of an anti-static mat.</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/DigikeyParts.jpg?raw=true" style="width: 400px;"
+    /> <br> <i>A bunch of parts from Digi-Key</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/HeatGun.jpg?raw=true" style="width: 300px;"
+    /> <br> <i>A heat gun</i> </div>
+
+0. Now open cyclops_r3.brd file from Eagle.  
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/Eagle.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 3</b> <i>You should be able to see this</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/EagleInfo.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 4</b> <i>By clicking '+', you can pull up the detailed info (e.g. part number)</i> </div>
+
+0. Take a look, and start putting solder paste on top of the plates on top of the front side of the board. You don't need to put solder paste on all of them. Just on the necessary ones. How do I figure out?
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/SolderGoodExample.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 5</b> <i>This is a good example. Actually a little too much solder there. </i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/artSolderBadExample.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 6</b> <i>Bad example. Too much solder paste.. these will cause short later</i> </div>
+
+0. You can look at the picture below and put solder on the exact same gold plates as in the picture. I actually missed some gold plates at this step, but don't worry for now. You can put solder just like this.
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board_solderPaste1.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 7</b> <i>After putting solder paste to all necessary slots (a few are missing here) </i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board_solderPaste2.jpg?raw=true" style="width: 500px;"
+
+    /> <br> <b>Fig. 8</b> <i>Closer look 1. Too much solder in general, but will work</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board_solderPaste3.jpg?raw=true" style="width: 500px;"
+
+    /> <br> <b>Fig. 9</b> <i>Closer look 2. Too much solder in general, but will work</i> </div>
+
+0. If you want to pause at any point, by the way, you should store it in the fridge to prevent solder paste from drying. Now populate all integrated circuits (ICs).
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_IC.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 10</b> <i>After populating all integrated circuits</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_IC2.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 11</b> <i>Here is a closer look.</i> </div>
+
+0. Then populate all resistors, capacitors and other passive parts.
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_RnC.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 12</b> <i>After populating all integrated circuits</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_otherPassives.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 13</b> <i>Here is a closer look.</i> </div>
+
+0. Next step is to reflow solder. Let me show my homemade reflow oven. You can make a similar one or use a commercial one.
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/ReflowOven.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 14</b> <i>Carefully bring the PCB and place it in the oven like this.</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/ReflowOven2.jpg?raw=true" style="width: 500px;"
+    /> <br> <i>Here is a closer look.</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/ReflowOven3.jpg?raw=true" style="width: 400px;"
+    /> <br> <i>A board...</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/ReflowOven4.jpg?raw=true" style="width: 500px;"
+    /> <br> <i>As it goes above 200C, the solder starts to reflow. Like a live worm</i> </div>
+
+0. After reflow, take the PCB out and check for possible shorts. We need to fix it.
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/ShortExample.jpg?raw=true" style="width: 300px;"
+    /> <br> <b>Fig. 15</b> <i>See the blob of solder there?</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/ShortExample2.jpg?raw=true" style="width: 300px;"
+    /> <br> <b>Fig. 16</b> <i>Use this solder remover and flux</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/ShortExample3.jpg?raw=true" style="width: 300px;"
+    /> <br> <b>Fig. 17</b> <i>Bring it to the solder blob and sort of press it down with solder. Then the solder gets absorbed to the remover.</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/ShortExample4.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 18</b> <i>Problem fixed! There is enough solder after removal, so mostly you don't need to worry about connection.</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/oldBoard.jpg?raw=true" style="width: 300px;"
+    /> <br> <i>By the way, there are some differences between different versions of the board. For example, 1 kOhm there in the middle of the picture was replaced to a 0 ohm one in the newer version.</i> </div>
+
+0. Now populate all electromechanical parts.
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_EM1.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 19</b> <i>After populating all electromechanicals. Front side.</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_EM2.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 20</b> <i>After populating all electromechanicals. Back side.</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_EM5.jpg?raw=true" style="width: 500px;"
+    /> <br> <i>Front side..</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_EM6.jpg?raw=true" style="width: 500px;"
+    /> <br> <i>Front side, with different camera focus..</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_EM3.jpg?raw=true" style="width: 500px;"
+    /> <br> <i>Back side..</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_EM4.jpg?raw=true" style="width: 500px;"
+    /> <br> <i>Back side, with different camera focus..</i> </div>
+
+0. Finally, let's install the power switch. You need to hookup wire capable of
+handling the currents that the driver requires. AWG 20 (~0.8 mm diameter)
+braided copper wire or thicker is recommended. Even if you don't want to use
+the power switch, jumper the switch solder points using AWG 20 wire or thicker.
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/PowerSwitch.jpg?raw=true" style="width: 300px;"
+    /> <br> <b>Fig. 21</b> <i>Power switch.</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_PowerSwitch1.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 22</b> <i>Front side.</i> </div>
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_PowerSwitch2.jpg?raw=true" style="width: 500px;"
+    /> <br> <b>Fig. 23</b> <i>Back side.</i> </div>
 
 *Below is Jon's original description*
 
