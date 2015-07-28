@@ -266,7 +266,6 @@ gerber file is identified by its file extension:
 
 Below is an example of finished Cyclops board (ver 3.5A). Let's begin!
 
-<<<<<<< HEAD
 <div style="text-align:center"> <img src
 ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_finished1.jpg?raw=true" style="width: 500px;"
 /> <br> <b>Fig. 1</b> <i>A finished Cyclops board</i> </div>
@@ -374,12 +373,6 @@ Below is an example of finished Cyclops board (ver 3.5A). Let's begin!
     <div style="text-align:center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/ShortExample.jpg?raw=true" style="width: 300px;"
     /> <br> <b>Fig. 15</b> <i>See the blob of solder there?</i> </div>
-=======
-<div style="text-align:center"> <img 
-src="https://github.com/jonnew/cyclops/blob/documentation/art/0_FinishedExample.jpg?raw=true"
-style="width: 400px;"
-/> <br> <b>Fig. 1</b> <i>A finished Cyclops board</i> </div>
->>>>>>> 29f06153af01f349aafed7918ce60788e1f8e9e8
 
     <div style="text-align:center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/ShortExample2.jpg?raw=true" style="width: 300px;"
