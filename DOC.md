@@ -299,7 +299,7 @@ Below is an example of finished Cyclops board (ver 3.5A). Let's begin!
     <div style="text-align:center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Eagle.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 3</b> <i>You should be able to see this</i> </div>
-
+      
     <div style="text-align:center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/EagleInfo.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 4</b> <i>By clicking '+', you can pull up the detailed info (e.g. part number)</i> </div>
@@ -311,7 +311,7 @@ Below is an example of finished Cyclops board (ver 3.5A). Let's begin!
     /> <br> <b>Fig. 5</b> <i>This is a good example. Actually a little too much solder there. </i> </div>
 
     <div style="text-align:center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/artSolderBadExample.jpg?raw=true" style="width: 500px;"
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/SolderBadExample.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 6</b> <i>Bad example. Too much solder paste.. these will cause short later</i> </div>
 
 0. You can look at the picture below and put solder on the exact same gold plates as in the picture. I actually missed some gold plates at this step, but don't worry for now. You can put solder just like this.
@@ -430,7 +430,7 @@ the power switch, jumper the switch solder points using AWG 20 wire or thicker.
     /> <br> <b>Fig. 22</b> <i>Front side.</i> </div>
 
     <div style="text-align:center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_PowerSwitch2.jpg?raw=true" style="width: 500px;"
+    ="https://github.com/jonnew/cyclops/blob/documentation/Cyclops3.5A_PowerSwitch2.jpg?raw=true" style="width: 500px;"n
     /> <br> <b>Fig. 23</b> <i>Back side.</i> </div>
 
 *Below is Jon's original description*
