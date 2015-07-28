@@ -1,9 +1,8 @@
-__SYK test__
 __Cyclops__ is an open-source, high-power LED driver that enables extremely
 precise control of light power for optogenetic stimulation. The circuit was
 developed by Jon Newman while in Steve Potter's lab at Georgia Tech in order to
 complete his thesis work, which required the delivery of ultra-precise,
-continuously time-varying light waveforms for optogenetic stimulation [1][1].
+continuously time-varying light waveforms for optogenetic stimulation [1].
 This was, and still is, not possible with commercial hardware for optogenetic
 stimulation. Since its first use, the circuit has been continuously improved in
 terms of speed, precision, programmability, and ease of use. This document
@@ -264,6 +263,16 @@ gerber file is identified by its file extension:
      *.XLN = drill hits and sizes
 
 #### PCB Assembly 
+
+Below is an example of finished Cyclops board (ver 3.5A). Let's begin!
+
+    <div style="text-align:center"> <img src
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/0_FinishedExample.jpg"
+    /> <br> <b>Fig. 1</b> <i>A finished Cyclops board</i> </div>
+
+
+*Below is Jon's original description*
+
 PCB component population and soldering is fairly
 straightforward and requires standard surface mount construction techniques.
 However, there are a few bits of information that are worth reviewing before
