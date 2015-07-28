@@ -297,11 +297,11 @@ Below is an example of finished Cyclops board (ver 3.5A). Let's begin!
 0. Now open cyclops_r3.brd file from Eagle.  
 
     <div style="text-align:center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Eagle.jpg?raw=true" style="width: 500px;"
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/Eagle.JPG?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 3</b> <i>You should be able to see this</i> </div>
       
     <div style="text-align:center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/EagleInfo.jpg?raw=true" style="width: 500px;"
+    ="https://github.com/jonnew/cyclops/blob/documentation/art/EagleInfo.JPG?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 4</b> <i>By clicking '+', you can pull up the detailed info (e.g. part number)</i> </div>
 
 0. Take a look, and start putting solder paste on top of the plates on top of the front side of the board. You don't need to put solder paste on all of them. Just on the necessary ones. How do I figure out?
