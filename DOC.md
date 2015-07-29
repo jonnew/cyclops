@@ -1,18 +1,18 @@
-__Cyclops__ is an open-source, high-power LED driver that enables extremely
-precise control of light power for optogenetic stimulation. The circuit was
-developed by Jon Newman while in Steve Potter's lab at Georgia Tech in order to
-complete his thesis work, which required the delivery of ultra-precise,
-continuously time-varying light waveforms for optogenetic stimulation [1].
-This was, and still is, not possible with commercial hardware for optogenetic
-stimulation. Since its first use, the circuit has been continuously improved in
-terms of speed, precision, programmability, and ease of use. This document
-provides construction, usage, and performance documentation for the Cyclops LED
-driver. This document evolves with the repository. To view old revisions,
-checkout tags or old commits using their SHA.
+__Cyclops__ is a high-power LED driver that enables precise control of light
+power for optogenetic stimulation. The circuit was developed by Jon Newman
+while in Steve Potter's lab at Georgia Tech in order to complete his thesis
+work, which required the delivery of ultra-precise, continuously time-varying
+light waveforms for optogenetic stimulation [1].  This was, and still is, not
+possible with commercial hardware for optogenetic stimulation. Since its first
+use, the circuit has been improved in terms of speed, precision,
+programmability, and ease of use. This document provides construction, usage,
+and performance documentation for the Cyclops LED driver. This document evolves
+with the repository. To view old revisions, checkout tags or old commits using
+their SHA.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**
 
   - [Features](#features)
   - [TODO](#todo)
@@ -33,8 +33,6 @@ checkout tags or old commits using their SHA.
     - [Software Licensing](#software-licensing)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
 
 ### Features
 **Circuit Features**
@@ -63,61 +61,30 @@ checkout tags or old commits using their SHA.
   - Powerful Arduino library
   - Programmable triggering logic
   - Respond to USB input
-	  
-### TODO 
-**Revision 3.6**
-- [ ] Get [DOC.md](DOC.md) in working order
-- [ ] Create an fiber coupled LED interface with integrated optical power
-  measurements
-  - [In progress](https://github.com/jonnew/cyclops/tree/master/photodiode)
-- [ ] High side current sense
-- [ ] Arduino gets replaced with a
-  [Teensy](https://www.pjrc.com/teensy/teensy31.html).
-
-**Revision 3.5B**
-- [ ] Get the board on CircuitHub
-- [ ] Get the device on the Open Ephys store
-- [ ] The rear panel holes seems to have slight vertical offsets
-  - LED jacks: 1 mm to low 
-  - Expansion header: 1 mm to low 
-  - Aux/curr switch: 0.25 mm to low
-  - *EDIT* After further inspection it seems like the expansion header might
-    be 90% of the problem. Recheck before making changes.
-- [x] The LED polarity labels on the panel are reversed 
-- [x] Sometimes, because of intrinsic tolerance issues, the 5.1V zener's
-  reverse breakdown is too low and it affects valid signals in the 0-5V range.
-  Get a more reasonable value, e.g. 6V, zener.
-  - *EDIT* This was due to a bad zener. Ignore this change. 
-- [x] Trade out the LT1964A for a LT1764A, which has a 3A output capability and
-  a will allow the circuit to read 1.5A instead of crapping out at 1.25 since
-  the quiescent circuit is current hog.
-- [x] Put some extra through holes in for wire-to-board access to +/- LED,
-  digital GND, and I2C bus for EEPROM on thorlabs leds.
 
 ### Performance Specifications
 TODO
 
----
 ### Usage
 #### Feedback Modes
 The main functional component of the device is a feedback assisted, power,
 enhancement-mode N-MOSFET
 ([IRF510](http://www.vishay.com/docs/91015/sihf510.pdf)). Current is drawn from
-the source pin of the FET in accordance with one of two feedback modes: current
-feedback or auxiliary feedback. In both modes, the FET acts as a variable
+the source pin of the FET in accordance with one of two feedback modes: **current
+feedback** or **auxiliary feedback**. In both modes, the FET acts as a variable
 resistor whose resistance is changed in inverse relation to the gate voltage.
 The difference between the two modes is in how the gate voltage is regulated.
 - In **current feedback mode**, the gate voltage is adjusted such that the
-  voltage drop across the sense resistor (1 ohm in the schematic) is equal to a
-  supplied reference voltage.
+  voltage drop across the sense resistor (RSENSE = 1 ohm in the schematic) is
+  equal to a supplied reference voltage.
 - In **auxiliary feedback mode**, some external voltage that has a positive and
   monotonic relationship with optical power is provided as a feedback signal.
   This is feedback voltage is typically supplied by an amplified photodiode
 
 ##### Current Feedback Mode
-Using the circuit in current feedback mode ensures that the forward diode
-current across the LED is precisely modulated according the voltage at the VREF
-pin. This configuration is a standard method for driving LEDs because the
+Using the circuit in current feedback mode ensures that the forward current
+across the LED is precisely regulated according the voltage at the VREF pin.
+This configuration is a standard method for driving LEDs because the
 relationship between current and LED irradiance is smooth and monotonic. This
 means that more current across the LED will generate more light power (while
 staying within the LED's maximum ratings, of course). However, the relationship
@@ -132,9 +99,10 @@ thermal management, the effects of temperature and static current/irradiance
 nonlinearity are fairly minimal and can be ignored in most situations.
 
 <div style="text-align:center">
-  <img src ="https://raw.githubusercontent.com/jonnew/cyclops/master/art/current_feedback_diagram.png" style="width: 200px;" />
+  <img src="https://raw.githubusercontent.com/jonnew/cyclops/master/art/current_feedback_diagram.png"
+       width="250px;" />
   <br>
-  <b>Fig. 1</b> <i>Current feedback configuration.</i>
+  <i>Current feedback configuration.</i>
 </div>
 
 ##### Auxiliary Feedback Mode
@@ -155,9 +123,10 @@ reference voltage and the light power produced by the LED by compensating for
 the current/irradiance nonlinearities and temperature dependence.
 
 <div style="text-align:center">
-  <img src ="https://raw.githubusercontent.com/jonnew/cyclops/master/art/optical_feedback_diagram.png" style="width: 200px;" />
+  <img src ="https://raw.githubusercontent.com/jonnew/cyclops/master/art/optical_feedback_diagram.png"
+       width="250px;" />
   <br>
-  <b>Fig. 1</b> <i>Optical feedback configuration.</i>
+  <i>Optical feedback configuration.</i>
 </div>
 
 #### Stimulus Generation Options
@@ -266,35 +235,55 @@ gerber file is identified by its file extension:
 
 Below is an example of finished Cyclops board (ver 3.5A). Let's begin!
 
-<div style="text-align:center"> <img src
-="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_finished1.jpg?raw=true" style="width: 500px;"
-/> <br> <b>Fig. 1</b> <i>A finished Cyclops board</i> </div>
+<div style="text-align:center"> 
+  <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_finished1.jpg?raw=true"
+       width="400px;" />
+  <br>
+  <i>A finished Cyclops device.</i>
+</div>
 
-0. Here is our PCB from Seeed Studio. Jon was surprised by the quality given its extremely low price.
+0. Put the bare PCB on a flat surface, preferably one that is static
+   dissipative. The pictured PCB was purchased from [Seeed Studio](). Ten of
+   these boards can be purchased for about 100 dollars.
 
-    <div style="text-align:center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board1.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 2</b> <i>A raw Cyclops PCB</i> </div>
+    <div style="text-align:center">
+      <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board1.jpg?raw=true"
+           width="400px;" />
+      <br>
+      <i>A bare Cyclops PCB.</i>
+    </div>
 
-0. Here are some pictures of Jon's materials. 
+0. Below are pictured some of the materials you will need to construct a board.
 
-    <div style="text-align:center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/SolderPaste.jpg?raw=true" style="width: 300px;"
-    /> <br> <i>A solder paste...</i> </div>
+    <div style="text-align:center">
+      <img src="https://github.com/jonnew/cyclops/blob/documentation/art/SolderPaste.jpg?raw=true"
+           width="300px;" />
+      <br>
+      <i>Solder paste. We use [Chipquik 291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).</i>
+    </div>
 
-    <div style="text-align:center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Station.jpg?raw=true" style="width: 500px;"
-    /> <br> <i>My station. PCB is held by PanaVise grip holder on top of an anti-static mat.</i> </div>
+    <div style="text-align:center">
+      <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Station.jpg?raw=true"
+           width="400px;" />
+      <br>
+      <i>Instead of populating components on a table, holding the PCB using a PanaVise can be helpful.</i>
+    </div>
 
-    <div style="text-align:center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/DigikeyParts.jpg?raw=true" style="width: 400px;"
-    /> <br> <i>A bunch of parts from Digi-Key</i> </div>
+    <div style="text-align:center">
+      <img src="https://github.com/jonnew/cyclops/blob/documentation/art/DigikeyParts.jpg?raw=true"
+           width="300px;" />
+      <br>
+      <i>Circuit components. A complete bill of materials is provided [here]().</i>
+    </div>
 
-    <div style="text-align:center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/HeatGun.jpg?raw=true" style="width: 300px;"
-    /> <br> <i>A heat gun</i> </div>
+    <div style="text-align:center">
+      <img src="https://github.com/jonnew/cyclops/blob/documentation/art/HeatGun.jpg?raw=true"
+           width="300px;" />
+      <br>
+      <i>A hot air rework station. These can be purchased from [Sparkfun](https://www.sparkfun.com/products/10706). </i>
+    </div>
 
-0. Now open cyclops_r3.brd file from Eagle.  
+0. Now open cyclops_r3.brd file from Eagle.
 
     <div style="text-align:center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Eagle.JPG?raw=true" style="width: 500px;"
@@ -580,3 +569,34 @@ this code.  If not, see <http://www.gnu.org/licenses/>.
 ChR2](http://journal.frontiersin.org/article/10.3389/fncir.2013.00184/full#).
 (\* - equal contributions, co-first authors) Front. Neural Circuits (7:184)
 2013.  doi: 10.3389/fncir.2013.00184
+
+### TODO
+**Revision 3.6**
+- [ ] Get [DOC.md](DOC.md) in working order
+- [ ] Create an fiber coupled LED interface with integrated optical power
+  measurements
+  - [In progress](https://github.com/jonnew/cyclops/tree/master/photodiode)
+- [ ] High side current sense
+- [ ] Arduino gets replaced with a
+  [Teensy](https://www.pjrc.com/teensy/teensy31.html).
+
+**Revision 3.5B**
+- [ ] Get the board on CircuitHub
+- [ ] Get the device on the Open Ephys store
+- [ ] The rear panel holes seems to have slight vertical offsets
+  - LED jacks: 1 mm to low 
+  - Expansion header: 1 mm to low 
+  - Aux/curr switch: 0.25 mm to low
+  - *EDIT* After further inspection it seems like the expansion header might
+    be 90% of the problem. Recheck before making changes.
+- [x] The LED polarity labels on the panel are reversed 
+- [x] Sometimes, because of intrinsic tolerance issues, the 5.1V zener's
+  reverse breakdown is too low and it affects valid signals in the 0-5V range.
+  Get a more reasonable value, e.g. 6V, zener.
+  - *EDIT* This was due to a bad zener. Ignore this change. 
+- [x] Trade out the LT1964A for a LT1764A, which has a 3A output capability and
+  a will allow the circuit to read 1.5A instead of crapping out at 1.25 since
+  the quiescent circuit is current hog.
+- [x] Put some extra through holes in for wire-to-board access to +/- LED,
+  digital GND, and I2C bus for EEPROM on thorlabs leds.
+
