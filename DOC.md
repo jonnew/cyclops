@@ -36,6 +36,7 @@ their SHA.
 
 ### Features
 **Circuit Features**
+
 - Ultra-precise
 - High power
 - Up to 1.5A per LED
@@ -51,6 +52,7 @@ their SHA.
   - Accepts external analog, gate, or trigger inputs
 
 **Stimulus Generation Options**
+
 - External stimulus sequencer
 - External digital trigger
   - TTL logic level
@@ -74,6 +76,7 @@ the source pin of the FET in accordance with one of two feedback modes: **curren
 feedback** or **auxiliary feedback**. In both modes, the FET acts as a variable
 resistor whose resistance is changed in inverse relation to the gate voltage.
 The difference between the two modes is in how the gate voltage is regulated.
+
 - In **current feedback mode**, the gate voltage is adjusted such that the
   voltage drop across the sense resistor (RSENSE = 1 ohm in the schematic) is
   equal to a supplied reference voltage.
@@ -98,7 +101,7 @@ be clearly documented in the LED's data sheet. With a quality LED and proper
 thermal management, the effects of temperature and static current/irradiance
 nonlinearity are fairly minimal and can be ignored in most situations.
 
-<div style="text-align:center">
+<div align="center">
   <img src="https://raw.githubusercontent.com/jonnew/cyclops/master/art/current_feedback_diagram.png"
        width="250px;" />
   <br>
@@ -122,7 +125,7 @@ Optical feedback completely linearizes the relationship between a supplied
 reference voltage and the light power produced by the LED by compensating for
 the current/irradiance nonlinearities and temperature dependence.
 
-<div style="text-align:center">
+<div align="center">
   <img src ="https://raw.githubusercontent.com/jonnew/cyclops/master/art/optical_feedback_diagram.png"
        width="250px;" />
   <br>
@@ -136,9 +139,8 @@ behavior of each input option is described in relation to the feedback mode of
 the driver.
 
 1. `TEST` The test button is always available and will override all other input
-   modes.
+   modes. Using the `TEST` button the behavior of the circuit is:
 
-    __Behavior__:
   - *Current Feedback*: Source the current specified by the MAX CURR. dial.
   - *Auxilary Feedback*: Generate the optical power specified by the h * mW
     level that is  specified by the MAX POWER dial. The intensity of the LED
@@ -148,9 +150,8 @@ the driver.
 2. `EXT` This option is engaged when the SOURCE switch is moved to the EXT
 position and user supplied voltage waveforms are present at the EXT BNC input.
 If the user attempts to supply more than 5V to the EXT input, the circuit will
-clamp the input signal to 5V.
+clamp the input signal to 5V. Using the `EXT` pin the behavior of the circuit is:
 
-    __Behavior__:
   - *Current Feedback*: Source the current specified by (EXT Voltage / 5V) *
     MAX CURR. 
   - *Auxilary Feedback*: Generate the optical power specified by (EXT
@@ -161,8 +162,8 @@ clamp the input signal to 5V.
 DAC position and can be used to generate pre-programmed waveforms and waveform
 sequences triggered by a digital pulse to the TRIG input. This feature relies
 on optional Arduino installation and programming the device using its API.
+Using the `DAC` mode, the behavior of the circuit is:
 
-    __Behavior__:
   - *Current Feedback*: Source the current specified by (DAC Voltage / 5V) *
     MAX CURR. 
   - *Auxilary Feedback*: Generate the optical power specified by (DAC
@@ -198,6 +199,7 @@ purchase these stencils.
 
 The BOM includes several optional components, which are not in the
 pre-populated Digikey cart. These include:
+
 - __An extruded aluminum enclosure__, which houses the completed board. The
   enclosure is recommended because the large voltages and current transients
   used to drive high power LEDs can cause capacitive and inductive interference
@@ -209,10 +211,20 @@ pre-populated Digikey cart. These include:
   cyclops to drive [Thorlabs LED modules]() or [Doric LED
   modules](http://doriclenses.com/life-sciences/243-led-modules).
     
-#### PCB The cyclops PCB can be constructed by purchasing from one of the
+#### PCB 
+The cyclops PCB can be constructed by purchasing from one of the
 pre-uploaded options:
+
   - [OSH Park]() - made in America, excellent quality.
   - [Seeed Studio]() - made in China, good quality.
+
+<div align="center">
+  <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board1.jpg?raw=true"
+       width="400px;" />
+  <br>
+  <i>A bare Cyclops PCB, top side, purchased from Seeed Studio.</i>
+  <p>
+</div>
 
 Alternatively, the [gerber files](https://en.wikipedia.org/wiki/Gerber_format)
 in the cyclops repo
@@ -233,50 +245,43 @@ gerber file is identified by its file extension:
 
 #### PCB Assembly 
 
-Below is an example of finished Cyclops board (ver 3.5A). Let's begin!
+Below is an example of finished Cyclops board (ver 3.5A). The following steps
+will provide a visual guide through the board assembly process. 
 
-<div style="text-align:center"> 
+<div align="center">
   <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_finished1.jpg?raw=true"
        width="400px;" />
   <br>
   <i>A finished Cyclops device.</i>
+  <p>
 </div>
 
 0. Put the bare PCB on a flat surface, preferably one that is static
-   dissipative. The pictured PCB was purchased from [Seeed Studio](). Ten of
-   these boards can be purchased for about 100 dollars.
-
-    <div style="text-align:center">
-      <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board1.jpg?raw=true"
-           width="400px;" />
-      <br>
-      <i>A bare Cyclops PCB.</i>
-    </div>
-
+   dissipative or anti-static. 
 0. Below are pictured some of the materials you will need to construct a board.
 
-    <div style="text-align:center">
+    <div align="center">
       <img src="https://github.com/jonnew/cyclops/blob/documentation/art/SolderPaste.jpg?raw=true"
            width="300px;" />
       <br>
       <i>Solder paste. We use [Chipquik 291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).</i>
     </div>
 
-    <div style="text-align:center">
+    <div align="center">
       <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Station.jpg?raw=true"
            width="400px;" />
       <br>
       <i>Instead of populating components on a table, holding the PCB using a PanaVise can be helpful.</i>
     </div>
 
-    <div style="text-align:center">
+    <div align="center">
       <img src="https://github.com/jonnew/cyclops/blob/documentation/art/DigikeyParts.jpg?raw=true"
            width="300px;" />
       <br>
       <i>Circuit components. A complete bill of materials is provided [here]().</i>
     </div>
 
-    <div style="text-align:center">
+    <div align="center">
       <img src="https://github.com/jonnew/cyclops/blob/documentation/art/HeatGun.jpg?raw=true"
            width="300px;" />
       <br>
@@ -285,123 +290,123 @@ Below is an example of finished Cyclops board (ver 3.5A). Let's begin!
 
 0. Now open cyclops_r3.brd file from Eagle.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Eagle.JPG?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 3</b> <i>You should be able to see this</i> </div>
       
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/EagleInfo.JPG?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 4</b> <i>By clicking '+', you can pull up the detailed info (e.g. part number)</i> </div>
 
 0. Take a look, and start putting solder paste on top of the plates on top of the front side of the board. You don't need to put solder paste on all of them. Just on the necessary ones. How do I figure out?
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/SolderGoodExample.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 5</b> <i>This is a good example. Actually a little too much solder there. </i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/SolderBadExample.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 6</b> <i>Bad example. Too much solder paste.. these will cause short later</i> </div>
 
 0. You can look at the picture below and put solder on the exact same gold plates as in the picture. I actually missed some gold plates at this step, but don't worry for now. You can put solder just like this.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board_solderPaste1.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 7</b> <i>After putting solder paste to all necessary slots (a few are missing here) </i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board_solderPaste2.jpg?raw=true" style="width: 500px;"
 
     /> <br> <b>Fig. 8</b> <i>Closer look 1. Too much solder in general, but will work</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board_solderPaste3.jpg?raw=true" style="width: 500px;"
 
     /> <br> <b>Fig. 9</b> <i>Closer look 2. Too much solder in general, but will work</i> </div>
 
 0. If you want to pause at any point, by the way, you should store it in the fridge to prevent solder paste from drying. Now populate all integrated circuits (ICs).
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_IC.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 10</b> <i>After populating all integrated circuits</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_IC2.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 11</b> <i>Here is a closer look.</i> </div>
 
 0. Then populate all resistors, capacitors and other passive parts.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_RnC.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 12</b> <i>After populating all integrated circuits</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_otherPassives.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 13</b> <i>Here is a closer look.</i> </div>
 
 0. Next step is to reflow solder. Let me show my homemade reflow oven. You can make a similar one or use a commercial one.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/ReflowOven.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 14</b> <i>Carefully bring the PCB and place it in the oven like this.</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/ReflowOven2.jpg?raw=true" style="width: 500px;"
     /> <br> <i>Here is a closer look.</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/ReflowOven3.jpg?raw=true" style="width: 400px;"
     /> <br> <i>A board...</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/ReflowOven4.jpg?raw=true" style="width: 500px;"
     /> <br> <i>As it goes above 200C, the solder starts to reflow. Like a live worm</i> </div>
 
 0. After reflow, take the PCB out and check for possible shorts. We need to fix it.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/ShortExample.jpg?raw=true" style="width: 300px;"
     /> <br> <b>Fig. 15</b> <i>See the blob of solder there?</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/ShortExample2.jpg?raw=true" style="width: 300px;"
     /> <br> <b>Fig. 16</b> <i>Use this solder remover and flux</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/ShortExample3.jpg?raw=true" style="width: 300px;"
     /> <br> <b>Fig. 17</b> <i>Bring it to the solder blob and sort of press it down with solder. Then the solder gets absorbed to the remover.</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/ShortExample4.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 18</b> <i>Problem fixed! There is enough solder after removal, so mostly you don't need to worry about connection.</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/oldBoard.jpg?raw=true" style="width: 300px;"
     /> <br> <i>By the way, there are some differences between different versions of the board. For example, 1 kOhm there in the middle of the picture was replaced to a 0 ohm one in the newer version.</i> </div>
 
 0. Now populate all electromechanical parts.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM1.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 19</b> <i>After populating all electromechanicals. Front side.</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM2.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 20</b> <i>After populating all electromechanicals. Back side.</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM5.jpg?raw=true" style="width: 500px;"
     /> <br> <i>Front side..</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM6.jpg?raw=true" style="width: 500px;"
     /> <br> <i>Front side, with different camera focus..</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM3.jpg?raw=true" style="width: 500px;"
     /> <br> <i>Back side..</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM4.jpg?raw=true" style="width: 500px;"
     /> <br> <i>Back side, with different camera focus..</i> </div>
 
@@ -410,15 +415,15 @@ handling the currents that the driver requires. AWG 20 (~0.8 mm diameter)
 braided copper wire or thicker is recommended. Even if you don't want to use
 the power switch, jumper the switch solder points using AWG 20 wire or thicker.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/PowerSwitch.jpg?raw=true" style="width: 300px;"
     /> <br> <b>Fig. 21</b> <i>Power switch.</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_PowerSwitch1.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 22</b> <i>Front side.</i> </div>
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_PowerSwitch2.jpg?raw=true" style="width: 500px;"n
     /> <br> <b>Fig. 23</b> <i>Back side.</i> </div>
 
@@ -435,7 +440,7 @@ bottom, and will properly supply the board with power if mounted on the top.
 However, if the barrel jack is mounted on the top side of the board, it will
 not fit inside the enclosure.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg"
     /> <br> <b>Fig. 1</b> <i>Power jack installation</i> </div>
 
@@ -444,7 +449,7 @@ handling the currents that the driver requires. AWG 20 (~0.8 mm diameter)
 braided copper wire or thicker is recommended. Even if you don't want to use
 the power switch, jumper the switch solder points using AWG 20 wire or thicker.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg"
     /> <br> <b>Fig. 2</b> <i>Power switch installation</i> </div>
 
@@ -456,27 +461,26 @@ specified and the solder jumpers and ferrite chip must be soldered in
 appropriate positions to reflect this address. See the picture below to better
 understand this addressing scheme.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg"
     /> <br> <b>Fig. 3</b> <i>Set board address</i> </div>
 
 0. Don't forget to install the heatsink.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg"
     /> <br> <b>Fig. 4</b> <i>Installing the heatsink</i> </div>
 
 0. The light pipes over the front LEDs need to be seated firmly for the board
 to fit inside the enclosure.
 
-    <div style="text-align:center"> <img src
+    <div align="center"> <img src
     ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg"
     /> <br> <b>Fig. 5</b> <i>Install the light pipes</i> </div>
 
 #### Enclosure
 
 #### Circuit testing
-
 
 Enclosure Construction Required Skills Required Tools PCB Construction Circuit
 Tuning and Testing Enclosure Construction Building It Electrical Components
