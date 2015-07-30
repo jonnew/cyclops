@@ -101,12 +101,7 @@ be clearly documented in the LED's data sheet. With a quality LED and proper
 thermal management, the effects of temperature and static current/irradiance
 nonlinearity are fairly minimal and can be ignored in most situations.
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/jonnew/cyclops/master/art/current_feedback_diagram.png"
-       width="250px;" />
-  <br>
-  <i>Current feedback configuration.</i>
-</div>
+![Current feedback configuration.](/images/current_feedback_diagram.png)
 
 ##### Auxiliary Feedback Mode
 When extremely stable, linear control of light power is required, the auxiliary
@@ -125,12 +120,7 @@ Optical feedback completely linearizes the relationship between a supplied
 reference voltage and the light power produced by the LED by compensating for
 the current/irradiance nonlinearities and temperature dependence.
 
-<div align="center">
-  <img src ="https://raw.githubusercontent.com/jonnew/cyclops/master/art/optical_feedback_diagram.png"
-       width="250px;" />
-  <br>
-  <i>Optical feedback configuration.</i>
-</div>
+![Optical feedback configuration.](/images/optical_feedback_diagram.png)
 
 #### Stimulus Generation Options
 There are three ways to generate light signals using the driver. The behavior
