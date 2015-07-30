@@ -12,25 +12,25 @@ their SHA.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-  - [Features](#features)
-  - [TODO](#todo)
-  - [Performance Specifications](#performance-specifications)
-- [](#)
-  - [Usage](#usage)
-    - [Feedback Modes](#feedback-modes)
-      - [Current Feedback Mode](#current-feedback-mode)
-      - [Auxiliary Feedback Mode](#auxiliary-feedback-mode)
-    - [Stimulus Generation Options](#stimulus-generation-options)
-  - [Construction](#construction)
-    - [Components](#components)
-    - [PCB](#pcb)
-    - [Enclosure](#enclosure)
-    - [Circuit testing](#circuit-testing)
-  - [License](#license)
-    - [Hardware Licensing](#hardware-licensing)
-    - [Software Licensing](#software-licensing)
+- [Features](#features)
+- [Performance Specifications](#performance-specifications)
+- [Usage](#usage)
+  - [Feedback Modes](#feedback-modes)
+    - [Current Feedback Mode](#current-feedback-mode)
+    - [Auxiliary Feedback Mode](#auxiliary-feedback-mode)
+  - [Stimulus Generation Options](#stimulus-generation-options)
+- [Construction](#construction)
+  - [Components](#components)
+  - [PCB Assembly](#pcb-assembly)
+  - [Enclosure](#enclosure)
+  - [Circuit testing](#circuit-testing)
+- [License](#license)
+  - [Hardware Licensing <a rel="license"](#hardware-licensing-a-rellicense)
+  - [Software Licensing](#software-licensing)
+- [References](#references)
+- [TODO](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -101,7 +101,7 @@ be clearly documented in the LED's data sheet. With a quality LED and proper
 thermal management, the effects of temperature and static current/irradiance
 nonlinearity are fairly minimal and can be ignored in most situations.
 
-![Current feedback configuration.](/images/current_feedback_diagram.png)
+![Current feedback configuration.](./images/current_feedback_diagram.png)
 
 ##### Auxiliary Feedback Mode
 When extremely stable, linear control of light power is required, the auxiliary
@@ -120,7 +120,7 @@ Optical feedback completely linearizes the relationship between a supplied
 reference voltage and the light power produced by the LED by compensating for
 the current/irradiance nonlinearities and temperature dependence.
 
-![Optical feedback configuration.](/images/optical_feedback_diagram.png)
+![Optical feedback configuration.](./images/optical_feedback_diagram.png)
 
 #### Stimulus Generation Options
 There are three ways to generate light signals using the driver. The behavior
@@ -208,7 +208,7 @@ pre-uploaded options:
   - [OSH Park]() - made in America, excellent quality.
   - [Seeed Studio]() - made in China, good quality.
 
-![A bare Cyclops PCB, top side, purchased from Seeed Studio.](/images/cyclops3.5A_board1.jpg)
+![A bare Cyclops PCB, top side, purchased from Seeed Studio.](./images/cyclops3.5A_board1.jpg)
 
 Alternatively, the [gerber
 files](https://github.com/jonnew/cyclops/tree/master/cyclops/gerber) can be
@@ -229,14 +229,14 @@ gerber file is identified by its file extension:
 #### PCB Assembly 
 The following steps will provide a visual guide to construct your own board. 
 
-![Finished device (revision 3.3).](/images/cyclops3.3_both.jpg)
+![Finished device (revision 3.3).](./images/cyclops3.3_both.jpg)
 
 0. Place the bare PCB on a flat surface, preferably one that is static
    dissipative or anti-static. Anti-static mats can purchased from Amazon for 10.00
    USD or so.
 0. Below are pictured some of the materials you will need to construct a board.
 
-![Solder paste. We use [Chipquik 291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](/images/SolderPaste.jpg)
+![Solder paste. We use [Chipquik 291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./images/SolderPaste.jpg)
 
     <div align="center">
       <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Station.jpg?raw=true"
