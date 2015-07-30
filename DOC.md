@@ -244,14 +244,13 @@ gerber file is identified by its file extension:
      *.XLN = drill hits and sizes
 
 #### PCB Assembly 
+The following steps will provide a visual guide to construct your own board. 
 
-Below is an example of finished Cyclops board (ver 3.5A). The following steps
-will provide a visual guide through the board assembly process. 
+![Finished device (revision 3.3).](/images/cyclops3.3_both.jpg)
 
-![Finished device.](./images/Cyclops3.5A_finished1.jpg)
-
-0. Put the bare PCB on a flat surface, preferably one that is static
-   dissipative or anti-static. 
+0. Place the bare PCB on a flat surface, preferably one that is static
+   dissipative or anti-static. Anti-static mats can purchased from Amazon for 10.00
+   USD or so.
 0. Below are pictured some of the materials you will need to construct a board.
 
     <div align="center">
