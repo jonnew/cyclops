@@ -1,0 +1,3 @@
+[submodule "jonnew-lbr"]
+	path = jonnew-lbr
+	url = git@github.com:jonnew/jonnew-lbr.git
