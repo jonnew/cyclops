@@ -201,24 +201,17 @@ pre-populated Digikey cart. These include:
   cyclops to drive [Thorlabs LED modules]() or [Doric LED
   modules](http://doriclenses.com/life-sciences/243-led-modules).
     
-#### PCB 
+ ### PCB 
 The cyclops PCB can be constructed by purchasing from one of the
 pre-uploaded options:
 
   - [OSH Park]() - made in America, excellent quality.
   - [Seeed Studio]() - made in China, good quality.
 
-<div align="center">
-  <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board1.jpg?raw=true"
-       width="400px;" />
-  <br>
-  <i>A bare Cyclops PCB, top side, purchased from Seeed Studio.</i>
-  <p>
-</div>
+![A bare Cyclops PCB, top side, purchased from Seeed Studio.](/images/cyclops3.5A_board1.jpg)
 
-Alternatively, the [gerber files](https://en.wikipedia.org/wiki/Gerber_format)
-in the cyclops repo
-([link](https://github.com/jonnew/cyclops/tree/master/cyclops/gerber)) can be
+Alternatively, the [gerber
+files](https://github.com/jonnew/cyclops/tree/master/cyclops/gerber) can be
 uploaded to the PCB fabrication service of your choice. The layer of each
 gerber file is identified by its file extension:
 
@@ -243,12 +236,7 @@ The following steps will provide a visual guide to construct your own board.
    USD or so.
 0. Below are pictured some of the materials you will need to construct a board.
 
-    <div align="center">
-      <img src="https://github.com/jonnew/cyclops/blob/documentation/art/SolderPaste.jpg?raw=true"
-           width="300px;" />
-      <br>
-      <i>Solder paste. We use [Chipquik 291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).</i>
-    </div>
+![Solder paste. We use [Chipquik 291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](/images/SolderPaste.jpg)
 
     <div align="center">
       <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Station.jpg?raw=true"
