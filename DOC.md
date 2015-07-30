@@ -248,13 +248,7 @@ gerber file is identified by its file extension:
 Below is an example of finished Cyclops board (ver 3.5A). The following steps
 will provide a visual guide through the board assembly process. 
 
-<div align="center">
-  <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_finished1.jpg?raw=true"
-       width="400px;" />
-  <br>
-  <i>A finished Cyclops device.</i>
-  <p>
-</div>
+![Finished device.](./images/Cyclops3.5A_finished1.jpg)
 
 0. Put the bare PCB on a flat surface, preferably one that is static
    dissipative or anti-static. 
