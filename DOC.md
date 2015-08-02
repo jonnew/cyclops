@@ -85,6 +85,7 @@ The difference between the two modes is in how the gate voltage is regulated.
   This is feedback voltage is typically supplied by an amplified photodiode
 
 ##### Current Feedback Mode
+To use current feedback mode, push the rear slide switch to the CURR position (![Current feedback mode.](./images/curr_switch_icon.png)).
 Using the circuit in current feedback mode ensures that the forward current
 across the LED is precisely regulated according the voltage at the VREF pin.
 This configuration is a standard method for driving LEDs because the
@@ -104,6 +105,7 @@ nonlinearity are fairly minimal and can be ignored in most situations.
 ![Current feedback configuration.](./images/current_feedback_diagram.png)
 
 ##### Auxiliary Feedback Mode
+To use auxilary feedback mode, push the rear slide switch to the AUX position (![Auxilary feedback mode.](./images/aux_switch_icon.png)).
 When extremely stable, linear control of light power is required, the auxiliary
 feedback input can be used to used to compensate for the temperature dependence
 and static nonlinearity of the current/irradiance relationship of the LED. For
@@ -128,40 +130,40 @@ of each of these options is dependent on the feedback mode being used. The
 behavior of each input option is described in relation to the feedback mode of
 the driver.
 
-1. `TEST` The test button is always available and will override all other input
+1. ![Test button.](./images/test_button_icon.png) The test button is always available and will override all other input
    modes. Using the `TEST` button the behavior of the circuit is:
 
-  - ![Current feedback mode.](./images/curr_switch_icon.png): Source the current specified by the MAX CURR. dial.
-  - ![Auxilary feedback mode.](./images/aux_switch_icon.png): Generate the optical power specified by the h * mW
+  - ![Current feedback mode.](./images/curr_switch_icon.png) Source the current specified by the MAX CURR. dial.
+  - ![Auxilary feedback mode.](./images/aux_switch_icon.png) Generate the optical power specified by the h * mW
     level that is  specified by the MAX POWER dial. The intensity of the LED
     will be dependent on the auxiliary feedback signal used which defines the
     'h' parameter. 
 
-2. `EXT` This option is engaged when the SOURCE switch is moved to the EXT
+2. ![EXT mode.](./images/ext_toggle_icon.png) External input mode is engaged when the SOURCE switch is moved to the EXT
 position and user supplied voltage waveforms are present at the EXT BNC input.
 If the user attempts to supply more than 5V to the EXT input, the circuit will
-clamp the input signal to 5V. Using the `EXT` pin the behavior of the circuit is:
+clamp the input signal to 5V. Using `EXT` mode, the behavior of the circuit is:
 
-  - ![Current feedback mode.](./images/curr_switch_icon.png): Source the current specified by (EXT Voltage / 5V) *
+  - ![Current feedback mode.](./images/curr_switch_icon.png) Source the current specified by (EXT Voltage / 5V) *
     MAX CURR. 
-  - ![Auxilary feedback mode.](./images/aux_switch_icon.png): Generate the optical power specified by (EXT
+  - ![Auxilary feedback mode.](./images/aux_switch_icon.png) Generate the optical power specified by (EXT
     Voltage/5V) * h  * mW. The intensity of the LED will be dependent on the
     auxiliary feedback signal used which defines the 'h' parameter. 
 
-3. `DAC` - The internal DAC is engaged when the SOURCE switch is moved to the
+3. ![DAC mode.](./images/ext_toggle_icon.png) The internal DAC is engaged when the SOURCE switch is moved to the
 DAC position and can be used to generate pre-programmed waveforms and waveform
 sequences triggered by a digital pulse to the TRIG input. This feature relies
 on optional Arduino installation and programming the device using its API.
 Using the `DAC` mode, the behavior of the circuit is:
 
-  - ![Current feedback mode.](./images/curr_switch_icon.png): Source the current specified by (DAC Voltage / 5V) *
+  - ![Current feedback mode.](./images/curr_switch_icon.png) Source the current specified by (DAC Voltage / 5V) *
     MAX CURR. 
-  - ![Auxilary feedback mode.](./images/aux_switch_icon.png): Generate the optical power specified by (DAC
+  - ![Auxilary feedback mode.](./images/aux_switch_icon.png) Generate the optical power specified by (DAC
     Voltage/5V) * h  * mW. The intensity of the LED will be dependent on the
     auxiliary feedback signal used which defines the 'h' parameter. 
 
 ### Construction 
-If you have questions or comments that arrise during device assembly, please direct your questions to
+If you have questions during device assembly, please direct them to
 the [open-ephys forum](https://groups.google.com/forum/#!forum/open-ephys) so that others may benefit.
 
 #### Components 
@@ -216,6 +218,21 @@ gerber file is identified by its file extension:
      *.XLN = drill hits and sizes
 
 #### PCB Assembly 
+To assemble the PCB, you will need the following materials
+
+- A soldering device. At minimum, a soldering iron regulated to ~370 deg.
+c). However, a hot-air rework tool or reflow oven are recommended. A low cost,
+high-quality hot-air rework station can be purchased from SparkFun.
+- Copper braid ('solder wick') for solder removal (e.g this) 
+- Stereoscope or loupe PCB Construction (optional) 
+- Isoproyl alcohol
+
+PCB component population and soldering is fairly straightforward and requires standard surface mount construction techniques.
+
+- A tutorial on hot-air soldering can be found [here](https://youtu.be/1z0IiuQ35HU).
+- A great tutorial filled with general tips and tricks for surface mount soldering can be
+found [here](https://youtu.be/pdGSFc7VjBE).
+
 The following steps provide a visual guide to construct your own board. The goal is to create a fully populated PCB like this one: 
 
 ![Finished device (revision 3.3).](./images/cyclops3.3_both.jpg)
@@ -229,6 +246,8 @@ _After construction, you should run through the electrical tests outlined in the
 0. Below are pictured some of the materials you will need to construct a board.
 
   ![Wire solder and an soldering iron can be used to construct the PCB, but solder paste combined with a hot air rework station or a reflow oven makes things much easier. We use [Chipquik 291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./images/SolderPaste.jpg)
+
+  We recommend `no-clean' solder paste due to ease of use.
 
   ![Instead of populating components on a table, holding the PCB using a PanaVise can be helpful.](./images/Station.jpg)
 
@@ -255,6 +274,12 @@ _After construction, you should run through the electrical tests outlined in the
 
   ![Bad solder placement. Too much paste!](./images/SolderBadExample.jpg)
 
+  StartApply solder paste to the pads A leaded,   Apply components to board Start with integrated circuits
+
+End with passives (resistors, capacitors, inductors, and diodes).  Use the
+stereoscope or loupe to ensure that pads are making contact with the pins of
+the placed components.  Precise component alignment is not necessary.
+Components will self-align during the reflow process.
 0. You can look at the picture below and put solder on the exact same gold plates as in the picture. I actually missed some gold plates at this step, but don't worry for now. You can put solder just like this.
 
     <div align="center"> <img src
@@ -291,7 +316,14 @@ _After construction, you should run through the electrical tests outlined in the
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_otherPassives.jpg?raw=true" style="width: 500px;"
     /> <br> <b>Fig. 13</b> <i>Here is a closer look.</i> </div>
 
-0. Next step is to reflow solder. Let me show my homemade reflow oven. You can make a similar one or use a commercial one.
+0. Next step is to reflow solder. Let me show my homemade reflow oven. You can make a similar one or use a commercial one. Reflow the solder paste on the board using your oven or hot air gun as
+described in the links above.  After the solder has cooled, examine solder pads
+using the stereoscope of loupe for solder bridges between pins, solder that has
+not melted, or pads lacking a decent solder joint Fix any issues using a
+standard soldering iron If there are solder bridges present, get rid of them
+using some solder wick before moving on.  Solder through-hole components in
+place using a standard soldering iron. A low cost reflow oven can be made form a toaster oven as shown here. This link also
+contains useful information on the basics of the reflow soldering process,
 
     <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/ReflowOven.jpg?raw=true" style="width: 500px;"
@@ -331,7 +363,11 @@ _After construction, you should run through the electrical tests outlined in the
     ="https://github.com/jonnew/cyclops/blob/documentation/art/oldBoard.jpg?raw=true" style="width: 300px;"
     /> <br> <i>By the way, there are some differences between different versions of the board. For example, 1 kOhm there in the middle of the picture was replaced to a 0 ohm one in the newer version.</i> </div>
 
-0. Now populate all electromechanical parts.
+0. Now populate all electromechanical parts. The barrel power jack (name: "POWER", value: PJ-063BH on the schematic)
+should be mounted on the _bottom_ of the board. It fits on both the top and the
+bottom, and will properly supply the board with power if mounted on the top.
+However, if the barrel jack is mounted on the top side of the board, it will
+not fit inside the enclosure.
 
     <div align="center"> <img src
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM1.jpg?raw=true" style="width: 500px;"
@@ -357,6 +393,19 @@ _After construction, you should run through the electrical tests outlined in the
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM4.jpg?raw=true" style="width: 500px;"
     /> <br> <i>Back side, with different camera focus..</i> </div>
 
+0. Don't forget to install the heatsink.
+
+0. The light pipes over the front LEDs need to be seated firmly for the board
+to fit inside the enclosure.
+
+0. Each board has an address (0 through 3) that is defined by two solder
+jumpers and the location of a ferrite chip. This allows cyclops boards to be
+stacked to share a power supply while being driven by a common microcontroller.
+For each board that will share a microcontroller, a unique address must be
+specified and the solder jumpers and ferrite chip must be soldered in
+appropriate positions to reflect this address. See the picture below to better
+understand this addressing scheme.
+
 0. Finally, let's install the power switch. You need to hookup wire capable of
 handling the currents that the driver requires. AWG 20 (~0.8 mm diameter)
 braided copper wire or thicker is recommended. Even if you don't want to use
@@ -374,114 +423,28 @@ the power switch, jumper the switch solder points using AWG 20 wire or thicker.
     ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_PowerSwitch2.jpg?raw=true" style="width: 500px;"n
     /> <br> <b>Fig. 23</b> <i>Back side.</i> </div>
 
-*Below is Jon's original description*
-
-PCB component population and soldering is fairly
-straightforward and requires standard surface mount construction techniques.
-However, there are a few bits of information that are worth reviewing before
-you begin:
-
-0. The barrel power jack (name: "POWER", value: PJ-063BH on the schematic)
-should be mounted on the _bottom_ of the board. It fits on both the top and the
-bottom, and will properly supply the board with power if mounted on the top.
-However, if the barrel jack is mounted on the top side of the board, it will
-not fit inside the enclosure.
-
-    <div align="center"> <img src
-    ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg"
-    /> <br> <b>Fig. 1</b> <i>Power jack installation</i> </div>
-
-0. When installing the power switch, be sure to use hookup wire capable of
-handling the currents that the driver requires. AWG 20 (~0.8 mm diameter)
-braided copper wire or thicker is recommended. Even if you don't want to use
-the power switch, jumper the switch solder points using AWG 20 wire or thicker.
-
-    <div align="center"> <img src
-    ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg"
-    /> <br> <b>Fig. 2</b> <i>Power switch installation</i> </div>
-
-0. Each board has an address (0 through 3) that is defined by two solder
-jumpers and the location of a ferrite chip. This allows cyclops boards to be
-stacked to share a power supply while being driven by a common microcontroller.
-For each board that will share a microcontroller, a unique address must be
-specified and the solder jumpers and ferrite chip must be soldered in
-appropriate positions to reflect this address. See the picture below to better
-understand this addressing scheme.
-
-    <div align="center"> <img src
-    ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg"
-    /> <br> <b>Fig. 3</b> <i>Set board address</i> </div>
-
-0. Don't forget to install the heatsink.
-
-    <div align="center"> <img src
-    ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg"
-    /> <br> <b>Fig. 4</b> <i>Installing the heatsink</i> </div>
-
-0. The light pipes over the front LEDs need to be seated firmly for the board
-to fit inside the enclosure.
-
-    <div align="center"> <img src
-    ="http://greentreesarborcareinc.com/wp-content/uploads/2014/01/image-placeholder.jpg"
-    /> <br> <b>Fig. 5</b> <i>Install the light pipes</i> </div>
 
 #### Enclosure
+To construct the enclosure, you we will use the following materials
+
+- Phillips head screwdriver (if
+you are using the enclosure) 
+- A white paint pen (e.g. these)
+- Conductive coating for EMI suppression (e.g. this).
 
 #### Circuit testing
+To perform basic electrical testing, you we will use the following materials
 
-Enclosure Construction Required Skills Required Tools PCB Construction Circuit
-Tuning and Testing Enclosure Construction Building It Electrical Components
-Enclosure The BOM includes To make the device, there are two major steps PCB
-construction Circuit tuning and testing and one optional step: Enclosure
-assembly.  The skills and tools required to complete device construction are
-outlined below.  Required Skills Surface mount soldering Hot-air or reflow
-soldering are preferred.  A tutorial on hot-air soldering can be found here A
-great tutorial on general tips and tricks for surface mount soldering can be
-found here Basic understanding of practical electronics, such as how to use a
-multi-meter and oscilloscope Required Tools Solder stencil (optional) Stencils
-are helpful for applying solder paste to the PCB. See the videos linked above
-for usage information.
+- Multimeter. A low cost mulitmeter is available from
+[sparkfun](https://www.sparkfun.com/products/12966).
+- Jeweler's flat head screwdriver.
+- Oscilloscope (optional, but recommended for performance verification)
 
-Soldering device At minimum, a soldering iron regulated to 700 deg. F (370 deg.
-c) A hot-air rework tool or reflow oven are recommended A low cost,
-high-quality hot-air rework station can be purchased from SparkFun A low cost
-reflow oven can be made form a toaster oven as shown here. This link also
-contains useful information on the basics of the reflow soldering process,
-Electrical test equipment Mulitmeter A low cost mulitmeter is available from
-sparkfun Oscilloscope Optional, but recommended for performance verification
-Misc Jeweler's flat head screwdriver (e.g. these) Phillips head screwdriver (if
-you are using the enclosure) A white paint pen (e.g. these) Solder Wire for
-iron Paste for hot-air or reflow Copper braid ('solder wick') for solder
-removal (e.g this) Usage Stereoscope or loupe PCB Construction Clean the board
-using isoproyl alcohol
-
-Apply solder paste to the pads A leaded, no-clean paste is recommended due to
-ease of use.  Apply components to board Start with integrated circuits
-
-End with passives (resistors, capacitors, inductors, and diodes).  Use the
-stereoscope or loupe to ensure that pads are making contact with the pins of
-the placed components.  Precise component alignment is not necessary.
-Components will self-align during the reflow process.
-
-
-Do not place or solder through-hole components at this time BNC connectors 0.1"
-pitch headers IDC connector etc.
-
-
-Reflow the solder paste on the board using your oven or hot air gun as
-described in the links above.  After the solder has cooled, examine solder pads
-using the stereoscope of loupe for solder bridges between pins, solder that has
-not melted, or pads lacking a decent solder joint Fix any issues using a
-standard soldering iron If there are solder bridges present, get rid of them
-using some solder wick before moving on.  Solder through-hole components in
-place using a standard soldering iron.  Solder the power switch in place using
-AWG 20 wire or thicker
-
-Circuit Tuning and Testing Before powering on the device, check for shorts
-between power traces on the board.  Put your multimeter in continuity mode
+0. Before powering on the device, check for shorts
+between power traces on the board. Put your multimeter in continuity mode
 Check for shorts between the Digital rail (TPXX) and ground (TPGND) Analog rail
 and ground If there is a short, you must track it down and get rid of it before
-applying power Enclosure Construction
+applying power. If you find a short, test the same contact points on an unpopluated PCB to ensure that it is not due to a PCB fabrication defect. If so, contact your PCB for a return.
 
 ### License 
 #### Hardware Licensing <a rel="license"
