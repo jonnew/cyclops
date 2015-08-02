@@ -131,8 +131,8 @@ the driver.
 1. `TEST` The test button is always available and will override all other input
    modes. Using the `TEST` button the behavior of the circuit is:
 
-  - *Current Feedback*: Source the current specified by the MAX CURR. dial.
-  - *Auxilary Feedback*: Generate the optical power specified by the h * mW
+  - ![Current feedback mode.](./images/curr_switch_icon.png): Source the current specified by the MAX CURR. dial.
+  - ![Auxilary feedback mode.](./images/aux_switch_icon.png): Generate the optical power specified by the h * mW
     level that is  specified by the MAX POWER dial. The intensity of the LED
     will be dependent on the auxiliary feedback signal used which defines the
     'h' parameter. 
@@ -142,9 +142,9 @@ position and user supplied voltage waveforms are present at the EXT BNC input.
 If the user attempts to supply more than 5V to the EXT input, the circuit will
 clamp the input signal to 5V. Using the `EXT` pin the behavior of the circuit is:
 
-  - *Current Feedback*: Source the current specified by (EXT Voltage / 5V) *
+  - ![Current feedback mode.](./images/curr_switch_icon.png): Source the current specified by (EXT Voltage / 5V) *
     MAX CURR. 
-  - *Auxilary Feedback*: Generate the optical power specified by (EXT
+  - ![Auxilary feedback mode.](./images/aux_switch_icon.png): Generate the optical power specified by (EXT
     Voltage/5V) * h  * mW. The intensity of the LED will be dependent on the
     auxiliary feedback signal used which defines the 'h' parameter. 
 
@@ -154,43 +154,33 @@ sequences triggered by a digital pulse to the TRIG input. This feature relies
 on optional Arduino installation and programming the device using its API.
 Using the `DAC` mode, the behavior of the circuit is:
 
-  - *Current Feedback*: Source the current specified by (DAC Voltage / 5V) *
+  - ![Current feedback mode.](./images/curr_switch_icon.png): Source the current specified by (DAC Voltage / 5V) *
     MAX CURR. 
-  - *Auxilary Feedback*: Generate the optical power specified by (DAC
+  - ![Auxilary feedback mode.](./images/aux_switch_icon.png): Generate the optical power specified by (DAC
     Voltage/5V) * h  * mW. The intensity of the LED will be dependent on the
     auxiliary feedback signal used which defines the 'h' parameter. 
 
-
 ### Construction 
-Before you build a board, its recommended that you get in touch
-[@jonnew](https://github.com/jonnew) for a couple reasons:
-- We are interested in getting feedback on which portions of this documentation
-  need improvement.
-- The cyclops is a fairly complex PCB. If you have doubts, let us know so we
-  can help you with the build.
+If you have questions or comments that arrise during device assembly, please direct your questions to
+the [open-ephys forum](https://groups.google.com/forum/#!forum/open-ephys) so that others may benefit.
 
 #### Components 
 The bill of materials (BOM) required to build a 1,2,3, or 4 devices is
-available on [this google
-doc](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
+available on [this google doc](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
 Most of the parts can be purchased from Digikey, but there are a few components
 that need to be bought from other sources such as Newark, Adafruit, and Samtec.
-All vendor, part number, and quantity information is listed on the BOM. In some
-cases, two suppliers are provided for a single part to make alternative sources
-available. As a convenience, the spreadsheet contains links to a pre-populated
+All vendor, part number, and quantity information is listed on the BOM. If you are having trouble getting a part, check the BOM since there are alternative suppliers listed for some parts. As a convenience, the spreadsheet contains links to a pre-populated
 Digikey cart (which are optimized for quantity discounts).
 
-The PCB can be purchased from OSH park [here]() or Seed Studio [here](). This
+The PCB can be purchased from OSH park [here](https://oshpark.com/shared_projects/N5vW5JmD) or Seed Studio [here](http://www.seeedstudio.com/service/). This
 is a four layer PCB. Note that OSH park sells a minimum of 3 boards per order
 and Seed studio sells a minimum of 5 boards per order. PCB stencils, useful for
-those performing reflow or hot-air soldering, are available from OSH stencils
-[here](). If you plan to hand solder the board, then you do not need to
-purchase these stencils.
+those performing reflow or hot-air soldering, can be purchased from a service like [OSH stencils](https://www.oshstencils.com) using the gerber files located in `./cyclops/stencil`. If you plan to hand solder the board, then you do not need to purchase these stencils.
 
 The BOM includes several optional components, which are not in the
 pre-populated Digikey cart. These include:
 
-- __An extruded aluminum enclosure__, which houses the completed board. The
+- An __extruded aluminum enclosure__, which houses the completed board. The
   enclosure is recommended because the large voltages and current transients
   used to drive high power LEDs can cause capacitive and inductive interference
   with nearby recording equipment. Acrylic front and rear panels can be
@@ -198,24 +188,23 @@ pre-populated Digikey cart. These include:
   below show how these plastic pieces are modified to provide proper electrical
   shielding.
 - An __M8-4 connector__. This is a rather expensive connector that allows
-  cyclops to drive [Thorlabs LED modules]() or [Doric LED
+  cyclops to drive [Thorlabs LED modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206) or [Doric LED
   modules](http://doriclenses.com/life-sciences/243-led-modules).
     
  ### PCB 
 The cyclops PCB can be constructed by purchasing from one of the
 pre-uploaded options:
 
-  - [OSH Park]() - made in America, excellent quality.
-  - [Seeed Studio]() - made in China, good quality.
+  - [OSH Park](https://oshpark.com/shared_projects/N5vW5JmD) - made in America, excellent quality.
+  - [Seeed Studio]() - made in China, very good quality.
 
 ![A bare Cyclops PCB, top side, purchased from Seeed Studio.](./images/cyclops3.5A_board1.jpg)
 
-Alternatively, the [gerber
-files](https://github.com/jonnew/cyclops/tree/master/cyclops/gerber) can be
+Alternatively, the [gerber files](./cyclops/gerber/) can be
 uploaded to the PCB fabrication service of your choice. The layer of each
 gerber file is identified by its file extension:
 
-     *.GBO = board outline 
+     *.GKO = board outline 
      *.GTS = top solder mask 
      *.GBS = bottom solder mask
      *.GTO = top silk screen 
@@ -227,57 +216,44 @@ gerber file is identified by its file extension:
      *.XLN = drill hits and sizes
 
 #### PCB Assembly 
-The following steps will provide a visual guide to construct your own board. 
+The following steps provide a visual guide to construct your own board. The goal is to create a fully populated PCB like this one: 
 
 ![Finished device (revision 3.3).](./images/cyclops3.3_both.jpg)
+
+_After construction, you should run through the electrical tests outlined in the next section before applying power to the board._
 
 0. Place the bare PCB on a flat surface, preferably one that is static
    dissipative or anti-static. Anti-static mats can purchased from Amazon for 10.00
    USD or so.
+
 0. Below are pictured some of the materials you will need to construct a board.
 
-![Solder paste. We use [Chipquik 291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./images/SolderPaste.jpg)
+  ![Wire solder and an soldering iron can be used to construct the PCB, but solder paste combined with a hot air rework station or a reflow oven makes things much easier. We use [Chipquik 291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./images/SolderPaste.jpg)
 
-    <div align="center">
-      <img src="https://github.com/jonnew/cyclops/blob/documentation/art/Station.jpg?raw=true"
-           width="400px;" />
-      <br>
-      <i>Instead of populating components on a table, holding the PCB using a PanaVise can be helpful.</i>
-    </div>
+  ![Instead of populating components on a table, holding the PCB using a PanaVise can be helpful.](./images/Station.jpg)
 
-    <div align="center">
-      <img src="https://github.com/jonnew/cyclops/blob/documentation/art/DigikeyParts.jpg?raw=true"
-           width="300px;" />
-      <br>
-      <i>Circuit components. A complete bill of materials is provided [here]().</i>
-    </div>
+  ![Circuit components. A complete bill of materials is provided in the [BOM](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).](./images/DigikeyParts.jpg)
 
-    <div align="center">
-      <img src="https://github.com/jonnew/cyclops/blob/documentation/art/HeatGun.jpg?raw=true"
-           width="300px;" />
-      <br>
-      <i>A hot air rework station. These can be purchased from [Sparkfun](https://www.sparkfun.com/products/10706). </i>
-    </div>
+  ![A soldering iron can be used to assemble the PCB, but a hot air rework station makes things much easier. These can be purchased from [Sparkfun](https://www.sparkfun.com/products/10706).](./images/SolderPaste.jpg)
 
-0. Now open cyclops_r3.brd file from Eagle.
+0. The silkscreen layer on the PCB (white text) has almost all the information you will need to properly populated the PCB. However, its a good ideal to to open the [cyclops design](./cyclops/cyclops_r3.brd) in [EAGLE](http://www.cadsoftusa.com/eagle-pcb-design-software/). This will allow you to get detailed information on components before placing them on the board.
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Eagle.JPG?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 3</b> <i>You should be able to see this</i> </div>
-      
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/EagleInfo.JPG?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 4</b> <i>By clicking '+', you can pull up the detailed info (e.g. part number)</i> </div>
+  ![The cyclops PCB design in CadSoft EAGLE](./images/Eagle.JPG)
 
-0. Take a look, and start putting solder paste on top of the plates on top of the front side of the board. You don't need to put solder paste on all of them. Just on the necessary ones. How do I figure out?
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/SolderGoodExample.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 5</b> <i>This is a good example. Actually a little too much solder there. </i> </div>
+  You can then the `information` tool to get detailed information on each component, e.g. to ensure you are placing the correct value resistor or capacitor.
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/SolderBadExample.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 6</b> <i>Bad example. Too much solder paste.. these will cause short later</i> </div>
+  ![By selecting the information tool and clicking the cross at the center of a component, you can pull up detailed info (e.g. part number)](./images/EagleInfo.JPG)
+
+0. After cleaning the surface of the board with isopropyl acholhol or similar, apply solder paste to each of the pads. For an excellent series of tips on effective methods for dispensing solder paste, see [Mike's video on the subject](https://youtu.be/pdGSFc7VjBE). Do not apply solder paste to through-holes or the the pads shown outlined in red in the following image. These will be hand soldered later in the assembly process.
+
+  ![Do not apply paste these solder pads.](./images/cyclops3.3_no-paste.JPG)
+
+  The correct amount of solder paste to apply is 'enough'. Each component conectact should sit a small amount of paste, but a blobs of paste that envelop the component pad or pin may result in a short. The following images show examples of good and bad solder placement.
+
+  ![Good solder placement.](./images/SolderGoodExample.jpg)
+
+  ![Bad solder placement. Too much paste!](./images/SolderBadExample.jpg)
 
 0. You can look at the picture below and put solder on the exact same gold plates as in the picture. I actually missed some gold plates at this step, but don't worry for now. You can put solder just like this.
 
