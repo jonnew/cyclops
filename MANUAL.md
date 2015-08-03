@@ -68,6 +68,25 @@ their SHA.
 TODO
 
 ### Usage
+#### Current Feedback Mode
+To use current feedback mode, push the rear slide switch to the CURR position (![Current feedback mode.](./images/curr_switch_icon.png)).
+Using the circuit in current feedback mode ensures that the forward current
+across the LED is precisely regulated according the voltage at the VREF pin.
+This configuration is a standard method for driving LEDs because the
+relationship between current and LED irradiance is smooth and monotonic. This
+means that more current across the LED will generate more light power (while
+staying within the LED's maximum ratings, of course). However, the relationship
+between current and irradiance is not linear. For most LEDs, it looks like a
+logarithmic function. Additionally, the efficiency of the LED is inversely
+related to its temperature. So, as the LED operates and heats up, the amount of
+light it produces drops even when the current is held constant. The severity of
+an LED's temperature dependence and current/irradiance nonlinearity depend on
+the type of LED (roughly, the color and who made it). These properties should
+be clearly documented in the LED's data sheet. With a quality LED and proper
+thermal management, the effects of temperature and static current/irradiance
+nonlinearity are fairly minimal and can be ignored in most situations.
+
+![Current feedback configuration.](./images/current_feedback_diagram.png)
 
 ##### Auxiliary Feedback Mode
 To use auxilary feedback mode, push the rear slide switch to the AUX position
