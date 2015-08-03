@@ -14,35 +14,30 @@ __Contributors__
 
 - jonnew [http://www.mit.edu/~jpnewman/](http://www.mit.edu/~jpnewman/)
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+__Table of Contents__
 
 - [Features](#features)
-  - [Circuit Features](#circuit-features)
-  - [Stimulus Generation Options](#stimulus-generation-options)
-  - [Performance Specifications](#performance-specifications)
-  - [Usage](#usage)
-    - [Current Feedback Mode](#current-feedback-mode)
-      - [Auxiliary Feedback Mode](#auxiliary-feedback-mode)
-    - [Stimulus Generation Options](#stimulus-generation-options-1)
-  - [Construction](#construction)
+    - [Circuit Features](#circuit-features)
+    - [Multiple stimulus generation options](#multiple-stimulus-generation-options)
+- [Performance Specifications](#performance-specifications)
+- [Usage](#usage)
+    - [Feedback modes](#feedback-modes)
+        - [Current Feedback Mode](#current-feedback-mode)
+        - [Auxiliary Feedback Mode](#auxiliary-feedback-mode)
+    - [Stimulus Generation Options](#stimulus-generation-options)
+- [Construction](#construction)
     - [Components](#components)
     - [Board Assembly](#board-assembly)
     - [Enclosure](#enclosure)
     - [Circuit testing](#circuit-testing)
-  - [License](#license)
-    - [Hardware Licensing <a rel="license"](#hardware-licensing-a-rellicense)
+- [License](#license)
+    - [Hardware Licensing](#hardware-licensing)
     - [Software Licensing](#software-licensing)
-  - [References](#references)
-  - [TODO](#todo)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+- [References](#references)
 
 \newpage
-
 ## Features
-###Circuit Features
+### Circuit Features
 - Ultra-precise
 - High power
 - Up to 1.5A per LED
@@ -57,7 +52,7 @@ __Contributors__
     - 4 synchronizable optical channels
     - Accepts external analog, gate, or trigger inputs
 
-###Stimulus Generation Options
+### Multiple stimulus generation options
 - External stimulus sequencer
 - External digital trigger
     - TTL logic level
@@ -69,32 +64,46 @@ __Contributors__
     - Programmable triggering logic
     - Respond to USB input
 
+\newpage
 ## Performance Specifications
-TODO
+TODO:
+
+- Oscope traces showing 1A rise/fall times
+- Freq. response
+- Optical vs. current FB mode characteristics
+
+\FloatBarrier
+\newpage
 
 ## Usage
-### Current Feedback Mode
-To use current feedback mode, push the rear slide switch to the CURR position (![Current feedback mode.](./images/curr_switch_icon.png)).
-Using the circuit in current feedback mode ensures that the forward current
-across the LED is precisely regulated according the voltage at the VREF pin.
-This configuration is a standard method for driving LEDs because the
-relationship between current and LED irradiance is smooth and monotonic. This
-means that more current across the LED will generate more light power (while
-staying within the LED's maximum ratings, of course). However, the relationship
-between current and irradiance is not linear. For most LEDs, it looks like a
-logarithmic function. Additionally, the efficiency of the LED is inversely
-related to its temperature. So, as the LED operates and heats up, the amount of
-light it produces drops even when the current is held constant. The severity of
-an LED's temperature dependence and current/irradiance nonlinearity depend on
-the type of LED (roughly, the color and who made it). These properties should
-be clearly documented in the LED's data sheet. With a quality LED and proper
-thermal management, the effects of temperature and static current/irradiance
+TODO: Front and back panel diagram with IO and switch specifications along with icon images.
+
+### Feedback modes
+
+#### Current Feedback Mode 
+
+To use current feedback mode, push the `F.B. MODE` slide switch to the `CURR` position
+(![Current feedback mode.](./images/curr_switch_icon.png)). Using the circuit
+in current feedback mode ensures that the forward current across the LED is
+precisely regulated according the voltage at the `VREF` pin. This configuration
+is a standard method for driving LEDs because the relationship between current
+and LED irradiance is smooth and monotonic. This means that more current across
+the LED will generate more light power (while staying within the LED's maximum
+ratings, of course).  However, the relationship between current and irradiance
+is not linear. For most LEDs, it looks like a logarithmic function.
+Additionally, the efficiency of the LED is inversely related to its
+temperature. So, as the LED operates and heats up, the amount of light it
+produces drops even when the current is held constant. The severity of an LED's
+temperature dependence and current/irradiance nonlinearity depend on the type
+of LED (roughly, the color and who made it). These properties should be clearly
+documented in the LED's data sheet. With a quality LED and proper thermal
+management, the effects of temperature and static current/irradiance
 nonlinearity are fairly minimal and can be ignored in most situations.
 
 ![Current feedback configuration.](./images/current_feedback_diagram.png)
 
-#### Auxiliary Feedback Mode
-To use auxilary feedback mode, push the rear slide switch to the AUX position
+#### Auxiliary Feedback Mode 
+To use auxilary feedback mode, push the `F.B. MODE` slide switch to the `AUX` position
 (![Auxilary feedback mode.](./images/aux_switch_icon.png)).  When extremely
 stable, linear control of light power is required, the auxiliary feedback input
 can be used to used to compensate for the temperature dependence and static
@@ -125,16 +134,16 @@ the driver.
    the behavior of the circuit is:
 
   - ![Current feedback mode.](./images/curr_switch_icon.png) Source the current
-    specified by the MAX CURR. dial.
+    specified by the `MAX CURR.` dial.
   - ![Auxilary feedback mode.](./images/aux_switch_icon.png) Generate the
-    optical power specified by the h * mW level that is  specified by the MAX
-    POWER dial. The intensity of the LED will be dependent on the auxiliary
+    optical power specified by the h * mW level that is  specified by the `MAX
+    POWER` dial. The intensity of the LED will be dependent on the auxiliary
     feedback signal used which defines the 'h' parameter. 
 
 2. ![EXT mode.](./images/ext_toggle_icon.png) External input mode is engaged
-when the SOURCE switch is moved to the EXT position and user supplied voltage
-waveforms are present at the EXT BNC input.  If the user attempts to supply
-more than 5V to the EXT input, the circuit will clamp the input signal to 5V.
+when the `SOURCE` switch is moved to the `EXT` position and user supplied voltage
+waveforms are present at the `EXT` BNC input.  If the user attempts to supply
+more than 5V to the `EXT` input, the circuit will clamp the input signal to 5V.
 Using `EXT` mode, the behavior of the circuit is:
 
   - ![Current feedback mode.](./images/curr_switch_icon.png) Source the current
@@ -144,12 +153,12 @@ Using `EXT` mode, the behavior of the circuit is:
     LED will be dependent on the auxiliary feedback signal used which defines
     the 'h' parameter. 
 
-3. ![DAC mode.](./images/dac_toggle_icon.png) The internal DAC is engaged when
-the SOURCE switch is moved to the DAC position and can be used to generate
-pre-programmed waveforms and waveform sequences triggered by a digital pulse to
-the TRIG input. This feature relies on optional Arduino installation and
-programming the device using its API.  Using the `DAC` mode, the behavior of
-the circuit is:
+3. ![DAC mode.](./images/dac_toggle_icon.png) The internal digital to analog
+   converter (DAC) is engaged when the `SOURCE` switch is moved to the `DAC`
+   position and can be used to generate pre-programmed waveforms and waveform
+   sequences triggered by a digital pulse to the `TRIG` input. This feature
+   relies on optional Arduino installation and programming the device using its
+   API. Using the `DAC` mode, the behavior of the circuit is:
 
   - ![Current feedback mode.](./images/curr_switch_icon.png) Source the current
     specified by (DAC Voltage / 5V) * MAX CURR. 
@@ -161,7 +170,7 @@ the circuit is:
 ## Construction 
 If you have questions during device assembly, please direct them to the
 [open-ephys forum](https://groups.google.com/forum/#!forum/open-ephys) so that
-others may benefit.
+others may benefit. Pull requests improving this documentation are welcome.
 
 ### Components 
 The bill of materials (BOM) is available on [this google
@@ -223,16 +232,29 @@ pre-populated Digikey cart. These include:
 ### Board Assembly 
 To assemble a Cyclops board, you will need the following materials
 
-- A soldering device. 
+- A soldering iron and, if possible, a hot-air reflow device.
     - At minimum, a soldering iron regulated to ~370 deg.  c) will do the job. 
-    - A hot-air rework tool or reflow oven are recommended and the assembly
-      instructions below assume you are using one of these two options. A low
-      cost, high-quality hot-air rework station can be purchased from SparkFun
+    - In addition to the iron, a hot-air rework tool or reflow oven are
+      recommended and the assembly instructions below assume you are using one
+      of these two options. A low cost, high-quality hot-air rework station can
+      be purchased from SparkFun
       [here](https://www.sparkfun.com/products/10706).
+
+    ![A soldering iron can be used to assemble the PCB, but a hot air rework
+    station makes things much easier. These can be purchased from
+    [Sparkfun](https://www.sparkfun.com/products/10706).](./images/HeatGun.jpg)
+
 - Copper braid ('solder wick') for solder removal (e.g
   [this](https://www.sparkfun.com/products/9327))
 - Liquid flux (`no-clean` variants are easiest since they don't have to be
   thoroughly removed after use)
+- Solder paste (e.g. [this](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568))
+
+    ![Wire solder and an soldering iron can be used to construct the PCB, but
+    solder paste combined with a hot air rework station or a reflow oven makes
+    things much easier. We use [Chipquik
+    291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./images/SolderPaste.jpg)
+
 - Stereoscope or loupe (optional but nice for tracking down shorts.) 
 - Isopropyl alcohol for cleaning flux off the board (e.g.
   [this](http://amzn.com/B0047YB3OW); optional)
@@ -254,27 +276,13 @@ goal is to create a fully populated PCB like this one:
 _Following board construction, you should run through the electrical tests outlined in
 the next section before applying power._
 
-0. Place the bare PCB on a flat surface, preferably one that is static
+1. Place the bare PCB on a flat surface, preferably one that is static
    dissipative or anti-static. Alternatively, the board can be mounted in a PCB vice. 
 
     ![Instead of populating components on a table, holding the PCB using a
     PanaVise can be helpful.](./images/Station.jpg)
 
-0. Below are pictured some of the materials you will need to construct a board.
-
-    ![Wire solder and an soldering iron can be used to construct the PCB, but
-    solder paste combined with a hot air rework station or a reflow oven makes
-    things much easier. We use [Chipquik
-    291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./images/SolderPaste.jpg)
-  
-    ![Circuit components. A complete bill of materials is provided in the
-    [BOM](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).](./images/DigikeyParts.jpg)
-  
-    ![A soldering iron can be used to assemble the PCB, but a hot air rework
-    station makes things much easier. These can be purchased from
-    [Sparkfun](https://www.sparkfun.com/products/10706).](./images/SolderPaste.jpg)
-
-0. The silkscreen layer on the PCB (white text) has almost all the information
+1. The silkscreen layer on the PCB (white text) has almost all the information
    you will need to properly populated the PCB. However, its a good ideal to to
    open the [cyclops design](./cyclops/cyclops_r3.brd) in
    [EAGLE](http://www.cadsoftusa.com/eagle-pcb-design-software/). This will
@@ -291,14 +299,14 @@ the next section before applying power._
     a component, you can pull up detailed info (e.g. part
     number)](./images/EagleInfo.JPG)
 
-0. After cleaning the surface of the board with isopropyl acholhol or similar,
+1. After cleaning the surface of the board with isopropyl acholhol or similar,
    apply solder paste to each of the pads. For an excellent series of tips on
    effective methods for dispensing solder paste, see [Mike's video on the
    subject](https://youtu.be/pdGSFc7VjBE). Do not apply solder paste to
    through-holes or the pads shown outlined in red in the following image.
    These will be hand soldered later in the assembly process.
 
-    TODO
+    TODO: Image
   
     The correct amount of solder paste to apply is `enough'. Each component
     contact should sit in a small amount of paste, but blobs of paste that
@@ -312,23 +320,7 @@ the next section before applying power._
     If you need to pause at any point, you should store place the PCB in the
     fridge to prevent the flux in the solder paste from breaking down. 
 
-0. You can look at the picture below and put solder on the exact same gold plates as in the picture. I actually missed some gold plates at this step, but don't worry for now. You can put solder just like this.
-
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/cyclops3.5A_board_solderPaste1.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 7</b> <i>After putting solder paste to all necessary slots (a few are missing here) </i> </div>
-
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board_solderPaste2.jpg?raw=true" style="width: 500px;"
-
-    /> <br> <b>Fig. 8</b> <i>Closer look 1. Too much solder in general, but will work</i> </div>
-
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_board_solderPaste3.jpg?raw=true" style="width: 500px;"
-
-    /> <br> <b>Fig. 9</b> <i>Closer look 2. Too much solder in general, but will work</i> </div>
-
-0. Populate all __top-side surface mount__ components on the board. There is a
+1. Populate all __top-side surface mount__ components on the board. There is a
    single surface mount switch on the back of the board that will be hand
    soldered later. Additionally, all through hole components (e.g. power jack,
    BNC connectors, etc) will be populated later. Start by placing the
@@ -341,122 +333,100 @@ the next section before applying power._
 
     ![Zoomed view of ingegrated circuit placement.](./images/cyclops3.5A_IC2.jpg)
 
-0. After placing the ICs, place the passive components (resistors,
+1. After placing the ICs, place the passive components (resistors,
    capacitors, inductors, and diodes).  
 
     ![Ingegrated circuit population.](./images/cyclops3.5A_RnC.jpg)
 
     ![Ingegrated circuit population.](./images/cyclops3.5A_otherPassives.jpg)
 
-0. Next step is to reflow solder. Let me show my homemade reflow oven. You can make a similar one or use a commercial one. Reflow the solder paste on the board using your oven or hot air gun as
-described in the links above.  After the solder has cooled, examine solder pads
-using the stereoscope of loupe for solder bridges between pins, solder that has
-not melted, or pads lacking a decent solder joint Fix any issues using a
-standard soldering iron If there are solder bridges present, get rid of them
-using some solder wick before moving on.  Solder through-hole components in
-place using a standard soldering iron. A low cost reflow oven can be made form a toaster oven as shown here. This link also
-contains useful information on the basics of the reflow soldering process,
+1. Next, reflow solder the board. We use a homemade reflow oven constructed
+   from a toaster oven, Arduino board, [reflow oven control
+   shield](http://www.rocketscream.com/shop/reflow-oven-controller-shield-arduino-compatiblee),
+   and [mains relay](https://www.adafruit.com/products/268). You can make a
+   similar one, use a commercial reflow oven, or use the hot air station.
+   Reflow the solder paste on the board using your oven or hot air gun as
+   described in the links above.  
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/ReflowOven.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 14</b> <i>Carefully bring the PCB and place it in the oven like this.</i> </div>
+    ![Homemade reflow oven with the populated board inside.](./images/ReflowOven.jpg)
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/ReflowOven2.jpg?raw=true" style="width: 500px;"
-    /> <br> <i>Here is a closer look.</i> </div>
+    ![The board is shown after the reflow temperature has been reached. Reflow
+    will occur at different temperatures depending on the specification of the
+    solder paste you are using.](./images/ReflowOven4.jpg)
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/ReflowOven3.jpg?raw=true" style="width: 400px;"
-    /> <br> <i>A board...</i> </div>
+1. After the solder has cooled, examine solder pads using the stereoscope of
+   loupe for solder bridges between pins, solder that has not melted, or pads
+   lacking a decent solder joint. Fix any issues using a standard soldering iron
+   If there are solder bridges present, get rid of them using some solder wick
+   before moving on.  Solder through-hole components in place using a standard
+   soldering iron. A low cost reflow oven can be made form a toaster oven as
+   shown here. This link also contains useful information on the basics of the
+   reflow soldering process,
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/ReflowOven4.jpg?raw=true" style="width: 500px;"
-    /> <br> <i>As it goes above 200C, the solder starts to reflow. Like a live worm</i> </div>
 
-0. After reflow, take the PCB out and check for possible shorts. We need to fix it.
+    ![Example of a short between IC pins. This must be resolved before moving
+    forward.](./images/ShortExample.jpg)
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/ShortExample.jpg?raw=true" style="width: 300px;"
-    /> <br> <b>Fig. 15</b> <i>See the blob of solder there?</i> </div>
+    ![Dipping the copper braid in flux will make the solder wick much more
+    redily.](./images/ShortExample2.jpg)
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/ShortExample2.jpg?raw=true" style="width: 300px;"
-    /> <br> <b>Fig. 16</b> <i>Use this solder remover and flux</i> </div>
+    ![Place the copper braid over the solder blob and then press with the
+    soldering iron. You should see the excess solder wick up the copper
+    braid.](./images/ShortExample3.jpg)
+    
+    ![Often you will not have to re-apply solder after this process because
+    there will be enough left over to maintain a good electrical
+    contact. Once you are satisfied the flux residue can be cleaned using
+    isopropyl alcohol](./images/ShortExample4.jpg)
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/ShortExample3.jpg?raw=true" style="width: 300px;"
-    /> <br> <b>Fig. 17</b> <i>Bring it to the solder blob and sort of press it down with solder. Then the solder gets absorbed to the remover.</i> </div>
+1. Each board has an address (0 through 3) that is defined by two solder
+   jumpers and the location of a ferrite chip. This allows cyclops boards to be
+   stacked to share a power supply while being driven by a common
+   microcontroller.  For each board that will share a microcontroller, a unique
+   address must be specified and the solder jumpers and ferrite chip must be
+   soldered in appropriate positions to reflect this address. See the picture
+   below to better understand this addressing scheme.
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/ShortExample4.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 18</b> <i>Problem fixed! There is enough solder after removal, so mostly you don't need to worry about connection.</i> </div>
+1. Flip the board over and install the final surface mount component, the
+   `AUX<>CURR` slide switch, by hand soldering.
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/oldBoard.jpg?raw=true" style="width: 300px;"
-    /> <br> <i>By the way, there are some differences between different versions of the board. For example, 1 kOhm there in the middle of the picture was replaced to a 0 ohm one in the newer version.</i> </div>
+1. Next, populate all electromechanical components. This can be soldered in
+   place with a standard soldering iron and a large chisel tip.
 
-0. Now populate all electromechanical parts. The barrel power jack (name: "POWER", value: PJ-063BH on the schematic)
-should be mounted on the _bottom_ of the board. It fits on both the top and the
-bottom, and will properly supply the board with power if mounted on the top.
-However, if the barrel jack is mounted on the top side of the board, it will
-not fit inside the enclosure.
+    ![Top side of board following electromechanical component installation.](./images/cyclops3.5A_EM1.jpg)
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM1.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 19</b> <i>After populating all electromechanicals. Front side.</i> </div>
+    ![Bottom side of board following electromechanical component installation.](./images/cyclops3.5A_EM2.jpg)
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM2.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 20</b> <i>After populating all electromechanicals. Back side.</i> </div>
+    __Note:__ The the barrel power jack (name: `POWER`, value: PJ-063BH on the
+    schematic) should be mounted on the __bottom__ of the board. It fits on
+    both the top and the bottom, and will properly supply the board with power
+    if mounted on the top.  However, if the barrel jack is mounted on the top
+    side of the board, it will not fit inside the enclosure.
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM5.jpg?raw=true" style="width: 500px;"
-    /> <br> <i>Front side..</i> </div>
+1. Install the power switch. You need to use hookup wire capable of handling
+   the currents that the driver requires. AWG 20 (~1.8 mm diameter) braided
+   copper wire or thicker is recommended. Use heat-shrink tubing to cover
+   electrical contacts. If you don't want to use the power switch, jumper the
+   switch solder points using AWG 20 wire or thicker.
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM6.jpg?raw=true" style="width: 500px;"
-    /> <br> <i>Front side, with different camera focus..</i> </div>
+    ![Power switch components.](./images/PowerSwitch.jpg)
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM3.jpg?raw=true" style="width: 500px;"
-    /> <br> <i>Back side..</i> </div>
+    ![Power switch installation.](./images/cyclops3.5A_PowerSwitch1.jpg)
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_EM4.jpg?raw=true" style="width: 500px;"
-    /> <br> <i>Back side, with different camera focus..</i> </div>
+1. Install the heatsink.
 
-0. Don't forget to install the heatsink.
+    ![Botton of board with ahesive-backed heatsink in place.](./images/cyclops3.5A_heatsink.jpg)
 
-0. The light pipes over the front LEDs need to be seated firmly for the board
-to fit inside the enclosure.
+1. Install the light pipes over the front LEDs. These need to be seated firmly
+   for the board to fit inside the enclosure.
 
-0. Each board has an address (0 through 3) that is defined by two solder
-jumpers and the location of a ferrite chip. This allows cyclops boards to be
-stacked to share a power supply while being driven by a common microcontroller.
-For each board that will share a microcontroller, a unique address must be
-specified and the solder jumpers and ferrite chip must be soldered in
-appropriate positions to reflect this address. See the picture below to better
-understand this addressing scheme.
+    TODO: Image
 
-0. Finally, let's install the power switch. You need to hookup wire capable of
-handling the currents that the driver requires. AWG 20 (~0.8 mm diameter)
-braided copper wire or thicker is recommended. Even if you don't want to use
-the power switch, jumper the switch solder points using AWG 20 wire or thicker.
-
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/PowerSwitch.jpg?raw=true" style="width: 300px;"
-    /> <br> <b>Fig. 21</b> <i>Power switch.</i> </div>
-
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_PowerSwitch1.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 22</b> <i>Front side.</i> </div>
-
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_PowerSwitch2.jpg?raw=true" style="width: 500px;"n
-    /> <br> <b>Fig. 23</b> <i>Back side.</i> </div>
-
+\FloatBarrier
+\newpage
 
 ### Enclosure
+
 To construct the enclosure, you we will use the following materials
 
 - Phillips head screwdriver (if
@@ -464,19 +434,84 @@ you are using the enclosure)
 - A white paint pen (e.g. these)
 - Conductive coating for EMI suppression (e.g. this).
 
+\FloatBarrier
+\newpage
+
 ### Circuit testing
 To perform basic electrical testing, you we will use the following materials
 
-- Multimeter. A low cost mulitmeter is available from
+- Digital multimeter (DMM). A low cost mulitmeter is available from
 [sparkfun](https://www.sparkfun.com/products/12966).
 - Jeweler's flat head screwdriver.
 - Oscilloscope (optional, but recommended for performance verification)
 
-0. Before powering on the device, check for shorts
-between power traces on the board. Put your multimeter in continuity mode
-Check for shorts between the Digital rail (TPXX) and ground (TPGND) Analog rail
-and ground If there is a short, you must track it down and get rid of it before
-applying power. If you find a short, test the same contact points on an unpopluated PCB to ensure that it is not due to a PCB fabrication defect. If so, contact your PCB for a return.
+1. Before powering on the device, check for shorts between power traces on the
+   board. Put your DMM in continuity mode and check for shorts between
+   GND and the various DC voltage supplies on the board. These include
+
+    - `+12V`    Positive analog rail
+    - `-5V`     Negative analog analog rail 1
+    - `-1.25V`  Negative analog rail 2
+    - `REF5.0`  5V voltage reference
+    - `REF2.5`  2.5V voltage reference
+    - `5v`      Digital rail
+    
+    TODO: image
+
+    If there is a short, you must track it down and get rid of it before
+    applying power. If you find a short, test the same contact points on an
+    unpopulated PCB to ensure that it is not due to a PCB fabrication defect. If
+    so, contact your PCB for a return.
+
+1. Obtain a power supply which can source at least 2 amps at 15 volts. You can
+   use a switching supply, since current sourced to the LED is regulated. The
+   BOM includes a reasonably priced option that is capable of powering a single
+   device. Plug this power supply into the barrel jack and turn the power
+   switch on. You should see the power LED illuminate.
+
+1. Put your DMM in DC voltage measurement mode. Touch the negative probe to the
+   GND test point and measure the voltage on each DC voltage supply. They
+   should have the following approximate values:
+
+    - `+12V`    12 volts
+    - `-5V`     -5 volts
+    - `-1.25V`  -1.25 volts
+    - `REF5.0`  5.0 volts
+    - `REF2.5`  2.5 volts
+    - `5v`      5 volts
+
+1. While measuring the `REF2.5` testpoint, use the jeweler's screwdriver to
+   turn the `REF_ADJ` trimpot until it is exactly 2.50 volts. `REF2.5` and
+   provides an internal reference voltage for the TEST switch. It serves the
+   purpose of the `VCTL` signal, but does not require an external source.
+
+1. Next, we need to ensure that upon the first test of our LED driver, we will
+   not accidentally source too much current to the LED and destroy it. Ensure
+   the device is set to current feedback mode using the rear panel slide
+   switch.  Using your DMM in voltage measurement mode, probe the VREF pin pad
+   on the front BNC connector. Depress the `TEST` button and turn the `GAIN`
+   potentiometer until the voltage measurment reads ~100mV. This indicates that
+   the circuit will attempt to drive 100 mA through an LED attached to the LED
+   port. Obtain a high power LED. Ensure that it can handle the 100 mA current
+   that we are about to supply to it. Tie its anode to LED+ and cathode to
+   LED-, respectively. 
+
+1. Use the DMM in voltage measurment mode to probe the voltage at the `VI` BNC
+   connector. Depress the `TEST` button. The LED should light up. __Don't look
+   directly at the LED - your eye lenses are very good at focusing light to
+   dangerously high levels at your retina__. In current feedback mode, the
+   voltage at the `VI` port relfects the current through the LED with 1V = 1A.
+   Examine the voltage at 'VI' port, which should read 100mV, corresponding to
+   100 mA. If the LED does not illuminate, ensure that you switched the device
+   to current feedback mode. If the device is left in AUX mode, and there is a
+   high impedance at the AUX BNC connector (e.g. nothing is plugged in), the
+   circuit will appear not to function.
+
+1. Now you are ready to supply time-varying input, from 0-5 volts, to the V_CTL
+   pin to drive the LED.
+
+\FloatBarrier
+\newpage
 
 ## License 
 ### Hardware Licensing 
@@ -508,6 +543,9 @@ Public License for more details.
 
 You should have received a copy of the GNU General Public License along with
 this code.  If not, see <http://www.gnu.org/licenses/>.
+
+\FloatBarrier
+\newpage
 
 ## References 
 [1] T. Tchumatchenko\*, J.P. Newman\*, M.-f. Fong, S.M. Potter.
