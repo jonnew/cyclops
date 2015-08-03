@@ -163,21 +163,31 @@ Using the `DAC` mode, the behavior of the circuit is:
     auxiliary feedback signal used which defines the 'h' parameter. 
 
 ### Construction 
-If you have questions during device assembly, please direct them to
-the [open-ephys forum](https://groups.google.com/forum/#!forum/open-ephys) so that others may benefit.
+If you have questions during device assembly, please direct them to the
+[open-ephys forum](https://groups.google.com/forum/#!forum/open-ephys) so that
+others may benefit.
 
 #### Components 
 The bill of materials (BOM) required to build a 1,2,3, or 4 devices is
-available on [this google doc](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
+available on [this google
+doc](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
 Most of the parts can be purchased from Digikey, but there are a few components
 that need to be bought from other sources such as Newark, Adafruit, and Samtec.
-All vendor, part number, and quantity information is listed on the BOM. If you are having trouble getting a part, check the BOM since there are alternative suppliers listed for some parts. As a convenience, the spreadsheet contains links to a pre-populated
-Digikey cart (which are optimized for quantity discounts).
+All vendor, part number, and quantity information is listed on the BOM. If you
+are having trouble getting a part, check the BOM since there are alternative
+suppliers listed for some parts. As a convenience, the spreadsheet contains
+links to a pre-populated Digikey cart (which are optimized for quantity
+discounts).
 
-The PCB can be purchased from OSH park [here](https://oshpark.com/shared_projects/N5vW5JmD) or Seed Studio [here](http://www.seeedstudio.com/service/). This
-is a four layer PCB. Note that OSH park sells a minimum of 3 boards per order
-and Seed studio sells a minimum of 5 boards per order. PCB stencils, useful for
-those performing reflow or hot-air soldering, can be purchased from a service like [OSH stencils](https://www.oshstencils.com) using the gerber files located in `./cyclops/stencil`. If you plan to hand solder the board, then you do not need to purchase these stencils.
+The PCB can be purchased from OSH park
+[here](https://oshpark.com/shared_projects/N5vW5JmD) or Seed Studio
+[here](http://www.seeedstudio.com/service/). This is a four layer PCB. Note
+that OSH park sells a minimum of 3 boards per order and Seed studio sells a
+minimum of 5 boards per order. PCB stencils, useful for those performing reflow
+or hot-air soldering, can be purchased from a service like [OSH
+stencils](https://www.oshstencils.com) using the gerber files located in
+`./cyclops/stencil`. If you plan to hand solder the board, then you do not need
+to purchase these stencils.
 
 The BOM includes several optional components, which are not in the
 pre-populated Digikey cart. These include:
@@ -190,21 +200,22 @@ pre-populated Digikey cart. These include:
   below show how these plastic pieces are modified to provide proper electrical
   shielding.
 - An __M8-4 connector__. This is a rather expensive connector that allows
-  cyclops to drive [Thorlabs LED modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206) or [Doric LED
-  modules](http://doriclenses.com/life-sciences/243-led-modules).
+  cyclops to drive [Thorlabs LED
+  modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206) or
+  [Doric LED modules](http://doriclenses.com/life-sciences/243-led-modules).
     
- ### PCB 
+#### PCB 
 The cyclops PCB can be constructed by purchasing from one of the
 pre-uploaded options:
 
-  - [OSH Park](https://oshpark.com/shared_projects/N5vW5JmD) - made in America, excellent quality.
-  - [Seeed Studio]() - made in China, very good quality.
+- [OSH Park](https://oshpark.com/shared_projects/N5vW5JmD) - made in America, excellent quality.
+- [Seeed Studio]() - made in China, very good quality.
 
 ![A bare Cyclops PCB, top side, purchased from Seeed Studio.](./images/cyclops3.5A_board1.jpg)
 
-Alternatively, the [gerber files](./cyclops/gerber/) can be
-uploaded to the PCB fabrication service of your choice. The layer of each
-gerber file is identified by its file extension:
+Alternatively, the [gerber files](./cyclops/gerber/) can be uploaded to the PCB
+fabrication service of your choice. The layer of each gerber file is identified
+by its file extension:
 
      *.GKO = board outline 
      *.GTS = top solder mask 
@@ -220,66 +231,93 @@ gerber file is identified by its file extension:
 #### PCB Assembly 
 To assemble the PCB, you will need the following materials
 
-- A soldering device. At minimum, a soldering iron regulated to ~370 deg.
-c). However, a hot-air rework tool or reflow oven are recommended. A low cost,
-high-quality hot-air rework station can be purchased from SparkFun.
-- Copper braid ('solder wick') for solder removal (e.g this) 
-- Stereoscope or loupe PCB Construction (optional) 
-- Isoproyl alcohol
+- A soldering device. At minimum, a soldering iron regulated to ~370 deg.  c)
+  will do the job. However, a hot-air rework tool or reflow oven are
+  recommended and the assembly instructions below assume you are using one of
+  these two options. A low cost, high-quality hot-air rework station can be
+  purchased from SparkFun [here](https://www.sparkfun.com/products/10706).
+- Copper braid ('solder wick') for solder removal (e.g
+  [this](https://www.sparkfun.com/products/9327))
+- Stereoscope or loupe (Optional) 
+- Liquid flux (No-clean variants are easiest since they don't have to be
+  removed after use)
+- Isopropyl alcohol for cleaning flux off the board (e.g.
+  [thos](http://amzn.com/B0047YB3OW); Optional)
+- An anti-static mat (e.g. [this](http://amzn.com/B00009XT3H); Optional)
 
-PCB component population and soldering is fairly straightforward and requires standard surface mount construction techniques.
+PCB component population and soldering is fairly straightforward and requires
+standard surface mount construction techniques.
 
 - A tutorial on hot-air soldering can be found [here](https://youtu.be/1z0IiuQ35HU).
 - A great tutorial filled with general tips and tricks for surface mount soldering can be
 found [here](https://youtu.be/pdGSFc7VjBE).
 
-The following steps provide a visual guide to construct your own board. The goal is to create a fully populated PCB like this one: 
+The following steps provide a visual guide to construct your own board. The
+goal is to create a fully populated PCB like this one: 
 
 ![Finished device (revision 3.3).](./images/cyclops3.3_both.jpg)
 
-_After construction, you should run through the electrical tests outlined in the next section before applying power to the board._
+_After construction, you should run through the electrical tests outlined in
+the next section before applying power to the board._
 
 0. Place the bare PCB on a flat surface, preferably one that is static
-   dissipative or anti-static. Anti-static mats can purchased from Amazon for 10.00
-   USD or so.
+   dissipative or anti-static. 
 
 0. Below are pictured some of the materials you will need to construct a board.
 
-  ![Wire solder and an soldering iron can be used to construct the PCB, but solder paste combined with a hot air rework station or a reflow oven makes things much easier. We use [Chipquik 291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./images/SolderPaste.jpg)
+    ![Wire solder and an soldering iron can be used to construct the PCB, but
+    solder paste combined with a hot air rework station or a reflow oven makes
+    things much easier. We use [Chipquik
+    291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./images/SolderPaste.jpg)
+  
+    ![Instead of populating components on a table, holding the PCB using a
+    PanaVise can be helpful.](./images/Station.jpg)
+  
+    ![Circuit components. A complete bill of materials is provided in the
+    [BOM](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).](./images/DigikeyParts.jpg)
+  
+    ![A soldering iron can be used to assemble the PCB, but a hot air rework
+    station makes things much easier. These can be purchased from
+    [Sparkfun](https://www.sparkfun.com/products/10706).](./images/SolderPaste.jpg)
 
-  We recommend `no-clean' solder paste due to ease of use.
+0. The silkscreen layer on the PCB (white text) has almost all the information
+   you will need to properly populated the PCB. However, its a good ideal to to
+   open the [cyclops design](./cyclops/cyclops_r3.brd) in
+   [EAGLE](http://www.cadsoftusa.com/eagle-pcb-design-software/). This will
+   allow you to get detailed information on components before placing them on
+   the board.
 
-  ![Instead of populating components on a table, holding the PCB using a PanaVise can be helpful.](./images/Station.jpg)
+    ![The cyclops PCB design in CadSoft EAGLE](./images/Eagle.JPG)
+  
+    You can then the `information` tool to get detailed information on each
+    component, e.g. to ensure you are placing the correct value resistor or
+    capacitor.
+  
+    ![By selecting the information tool and clicking the cross at the center of
+    a component, you can pull up detailed info (e.g. part
+    number)](./images/EagleInfo.JPG)
 
-  ![Circuit components. A complete bill of materials is provided in the [BOM](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).](./images/DigikeyParts.jpg)
+0. After cleaning the surface of the board with isopropyl acholhol or similar,
+   apply solder paste to each of the pads. For an excellent series of tips on
+   effective methods for dispensing solder paste, see [Mike's video on the
+   subject](https://youtu.be/pdGSFc7VjBE). Do not apply solder paste to
+   through-holes or the pads shown outlined in red in the following image.
+   These will be hand soldered later in the assembly process.
 
-  ![A soldering iron can be used to assemble the PCB, but a hot air rework station makes things much easier. These can be purchased from [Sparkfun](https://www.sparkfun.com/products/10706).](./images/SolderPaste.jpg)
+    ![Do not apply paste these solder pads.](./images/cyclops3.3_no-paste.JPG)
+  
+    The correct amount of solder paste to apply is 'enough'. Each component
+    contact should sit in a small amount of paste, but blobs of paste that
+    envelop the component pad or pin may later result in a short. The following images
+    show examples of good and bad solder placement.
+  
+    ![Good solder placement.](./images/SolderGoodExample.jpg)
+  
+    ![Bad solder placement. Too much paste!](./images/SolderBadExample.jpg)
 
-0. The silkscreen layer on the PCB (white text) has almost all the information you will need to properly populated the PCB. However, its a good ideal to to open the [cyclops design](./cyclops/cyclops_r3.brd) in [EAGLE](http://www.cadsoftusa.com/eagle-pcb-design-software/). This will allow you to get detailed information on components before placing them on the board.
+    If you need to pause at any point, you should store place the PCB in the
+    fridge to prevent the flux in the solder paste from breaking down. 
 
-  ![The cyclops PCB design in CadSoft EAGLE](./images/Eagle.JPG)
-
-
-  You can then the `information` tool to get detailed information on each component, e.g. to ensure you are placing the correct value resistor or capacitor.
-
-  ![By selecting the information tool and clicking the cross at the center of a component, you can pull up detailed info (e.g. part number)](./images/EagleInfo.JPG)
-
-0. After cleaning the surface of the board with isopropyl acholhol or similar, apply solder paste to each of the pads. For an excellent series of tips on effective methods for dispensing solder paste, see [Mike's video on the subject](https://youtu.be/pdGSFc7VjBE). Do not apply solder paste to through-holes or the the pads shown outlined in red in the following image. These will be hand soldered later in the assembly process.
-
-  ![Do not apply paste these solder pads.](./images/cyclops3.3_no-paste.JPG)
-
-  The correct amount of solder paste to apply is 'enough'. Each component conectact should sit a small amount of paste, but a blobs of paste that envelop the component pad or pin may result in a short. The following images show examples of good and bad solder placement.
-
-  ![Good solder placement.](./images/SolderGoodExample.jpg)
-
-  ![Bad solder placement. Too much paste!](./images/SolderBadExample.jpg)
-
-  StartApply solder paste to the pads A leaded,   Apply components to board Start with integrated circuits
-
-End with passives (resistors, capacitors, inductors, and diodes).  Use the
-stereoscope or loupe to ensure that pads are making contact with the pins of
-the placed components.  Precise component alignment is not necessary.
-Components will self-align during the reflow process.
 0. You can look at the picture below and put solder on the exact same gold plates as in the picture. I actually missed some gold plates at this step, but don't worry for now. You can put solder just like this.
 
     <div align="center"> <img src
@@ -296,25 +334,25 @@ Components will self-align during the reflow process.
 
     /> <br> <b>Fig. 9</b> <i>Closer look 2. Too much solder in general, but will work</i> </div>
 
-0. If you want to pause at any point, by the way, you should store it in the fridge to prevent solder paste from drying. Now populate all integrated circuits (ICs).
+0. Populate all __top-side surface mount__ components on the board. There is a
+   single surface mount switch on the back of the board that will be hand
+   soldered later. Additionally, all through hole components (e.g. power jack,
+   BNC connectors, etc) will be populated later. Start by placing the
+   integrated circuits (ICs). Use the stereoscope or loupe to ensure that pads
+   are making contact with the pins of the placed components.  Precise
+   component alignment is not necessary.  Components will self-align during the
+   reflow process.
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_IC.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 10</b> <i>After populating all integrated circuits</i> </div>
+    ![Ingegrated circuit population.](./images/Cyclops3.5A_IC.jpg)
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_IC2.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 11</b> <i>Here is a closer look.</i> </div>
+    ![Zoomed view of ingegrated circuit placement.](./images/Cyclops3.5A_IC2.jpg)
 
-0. Then populate all resistors, capacitors and other passive parts.
+0. After placing the ICs, place the passive components (resistors,
+   capacitors, inductors, and diodes).  
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_RnC.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 12</b> <i>After populating all integrated circuits</i> </div>
+    ![Ingegrated circuit population.](./images/Cyclops3.5A_RnC.jpg)
 
-    <div align="center"> <img src
-    ="https://github.com/jonnew/cyclops/blob/documentation/art/Cyclops3.5A_otherPassives.jpg?raw=true" style="width: 500px;"
-    /> <br> <b>Fig. 13</b> <i>Here is a closer look.</i> </div>
+    ![Ingegrated circuit population.](./images/Cyclops3.5A_otherPassives.jpg)
 
 0. Next step is to reflow solder. Let me show my homemade reflow oven. You can make a similar one or use a commercial one. Reflow the solder paste on the board using your oven or hot air gun as
 described in the links above.  After the solder has cooled, examine solder pads
