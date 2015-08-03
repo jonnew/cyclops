@@ -1,18 +1,16 @@
-### Cyclops LED Driver
+## Cyclops LED Driver
 Precision, wide-bandwidth current source with optional optical feedback mode
-for driving high power LEDs
+for driving high-power LEDs.
+
+### Documentation
+Documentation and usage information are maintained within this repository in
+[MANUAL.md](./MANUAL.md). If you have questions concerning usage, performance,
+etc., please direct them toward the [Open Ephys
+forum](https://groups.google.com/forum/#!forum/open-ephys).
 
 ### TODO
-**Revision 3.6**
-- [ ] Get [DOC.md](DOC.md) in working order
-- [ ] Create an fiber coupled LED interface with integrated optical power
-  measurements
-  - [In progress](https://github.com/jonnew/cyclops/tree/master/photodiode)
-- [ ] High side current sense
-- [ ] Arduino gets replaced with a
-  [Teensy](https://www.pjrc.com/teensy/teensy31.html).
 
-**Revision 3.5B**
+**Revision 3.5A**
 - [ ] Get the board on CircuitHub
 - [ ] Get the device on the Open Ephys store
 - [ ] The rear panel holes seems to have slight vertical offsets
@@ -32,11 +30,14 @@ for driving high power LEDs
 - [x] Put some extra through holes in for wire-to-board access to +/- LED,
   digital GND, and I2C bus for EEPROM on thorlabs leds.
 
-#### Documentation
-Documentation and usage information are maintained within this repository in
-[MANUAL.md](./MANUAL.md). If you have questions concerning usage, performance,
-etc., please direct them toward the [Open Ephys
-forum](https://groups.google.com/forum/#!forum/open-ephys).
+**Revision 3.6**
+- [ ] Get [MANUAL.md](./MANUAL.md) in working order
+- [ ] Create an fiber coupled LED interface with integrated optical power
+  measurements
+  - [In progress](./experimental/photodiode/)
+- [ ] High side current sense
+- [ ] Arduino gets replaced with a
+  [Teensy](https://www.pjrc.com/teensy/teensy31.html).
 
 #### Hardware Licensing
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img

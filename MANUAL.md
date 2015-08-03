@@ -431,8 +431,8 @@ To construct the enclosure, you we will use the following materials
 
 - Phillips head screwdriver (if
 you are using the enclosure) 
-- A white paint pen (e.g. these)
-- Conductive coating for EMI suppression (e.g. this).
+- A white paint pen (e.g. [these](http://amzn.com/B001PLKRZQ))
+- Conductive coating for EMI suppression (e.g. [this](http://amzn.com/B008OA931A)).
 
 \FloatBarrier
 \newpage
