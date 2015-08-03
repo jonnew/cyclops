@@ -10,6 +10,10 @@ and performance documentation for the Cyclops LED driver. This document evolves
 with the repository. To view old revisions, checkout tags or old commits using
 their SHA.
 
+__Contributors__
+
+- jonnew [http://www.mit.edu/~jpnewman/](http://www.mit.edu/~jpnewman/)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -19,6 +23,7 @@ their SHA.
   - [Stimulus Generation Options](#stimulus-generation-options)
   - [Performance Specifications](#performance-specifications)
   - [Usage](#usage)
+    - [Current Feedback Mode](#current-feedback-mode)
       - [Auxiliary Feedback Mode](#auxiliary-feedback-mode)
     - [Stimulus Generation Options](#stimulus-generation-options-1)
   - [Construction](#construction)
@@ -64,11 +69,11 @@ their SHA.
     - Programmable triggering logic
     - Respond to USB input
 
-### Performance Specifications
+## Performance Specifications
 TODO
 
-### Usage
-#### Current Feedback Mode
+## Usage
+### Current Feedback Mode
 To use current feedback mode, push the rear slide switch to the CURR position (![Current feedback mode.](./images/curr_switch_icon.png)).
 Using the circuit in current feedback mode ensures that the forward current
 across the LED is precisely regulated according the voltage at the VREF pin.
@@ -88,7 +93,7 @@ nonlinearity are fairly minimal and can be ignored in most situations.
 
 ![Current feedback configuration.](./images/current_feedback_diagram.png)
 
-##### Auxiliary Feedback Mode
+#### Auxiliary Feedback Mode
 To use auxilary feedback mode, push the rear slide switch to the AUX position
 (![Auxilary feedback mode.](./images/aux_switch_icon.png)).  When extremely
 stable, linear control of light power is required, the auxiliary feedback input
@@ -109,7 +114,7 @@ the current/irradiance nonlinearities and temperature dependence.
 
 ![Optical feedback configuration.](./images/optical_feedback_diagram.png)
 
-#### Stimulus Generation Options
+### Stimulus Generation Options
 There are three ways to generate light signals using the driver. The behavior
 of each of these options is dependent on the feedback mode being used. The
 behavior of each input option is described in relation to the feedback mode of
@@ -153,12 +158,12 @@ the circuit is:
     LED will be dependent on the auxiliary feedback signal used which defines
     the 'h' parameter. 
 
-### Construction 
+## Construction 
 If you have questions during device assembly, please direct them to the
 [open-ephys forum](https://groups.google.com/forum/#!forum/open-ephys) so that
 others may benefit.
 
-#### Components 
+### Components 
 The bill of materials (BOM) is available on [this google
 doc](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
 Most of the parts can be purchased from Digikey, but there are a few components
@@ -215,7 +220,7 @@ pre-populated Digikey cart. These include:
   modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206) or
   [Doric LED modules](http://doriclenses.com/life-sciences/243-led-modules).
     
-#### Board Assembly 
+### Board Assembly 
 To assemble a Cyclops board, you will need the following materials
 
 - A soldering device. 
@@ -451,7 +456,7 @@ the power switch, jumper the switch solder points using AWG 20 wire or thicker.
     /> <br> <b>Fig. 23</b> <i>Back side.</i> </div>
 
 
-#### Enclosure
+### Enclosure
 To construct the enclosure, you we will use the following materials
 
 - Phillips head screwdriver (if
@@ -459,7 +464,7 @@ you are using the enclosure)
 - A white paint pen (e.g. these)
 - Conductive coating for EMI suppression (e.g. this).
 
-#### Circuit testing
+### Circuit testing
 To perform basic electrical testing, you we will use the following materials
 
 - Multimeter. A low cost mulitmeter is available from
@@ -473,10 +478,10 @@ Check for shorts between the Digital rail (TPXX) and ground (TPGND) Analog rail
 and ground If there is a short, you must track it down and get rid of it before
 applying power. If you find a short, test the same contact points on an unpopluated PCB to ensure that it is not due to a PCB fabrication defect. If so, contact your PCB for a return.
 
-### License 
-#### Hardware Licensing <a rel="license"
-href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative
-Commons License" style="border-width:0"
+## License 
+### Hardware Licensing 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
+alt="Creative Commons License" style="border-width:0"
 src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span
 xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Cyclops LED
 Driver</span> by <a xmlns:cc="http://creativecommons.org/ns#"
@@ -488,7 +493,7 @@ Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br
 href="https://github.com/jonnew/cyclops"
 rel="dct:source">https://github.com/jonnew/cyclops</a>.
 
-#### Software Licensing 
+### Software Licensing 
 Copyright (c) Jonathan P. Newman All right reserved.
 
 The code associated with the Cyclops project is free software: you can
@@ -504,40 +509,9 @@ Public License for more details.
 You should have received a copy of the GNU General Public License along with
 this code.  If not, see <http://www.gnu.org/licenses/>.
 
-### References 
+## References 
 [1] T. Tchumatchenko\*, J.P. Newman\*, M.-f. Fong, S.M. Potter.
 [Delivery of time-varying stimuli using
 ChR2](http://journal.frontiersin.org/article/10.3389/fncir.2013.00184/full#).
 (\* - equal contributions, co-first authors) Front. Neural Circuits (7:184)
 2013.  doi: 10.3389/fncir.2013.00184
-
-### TODO
-**Revision 3.6**
-- [ ] Get [DOC.md](DOC.md) in working order
-- [ ] Create an fiber coupled LED interface with integrated optical power
-  measurements
-  - [In progress](https://github.com/jonnew/cyclops/tree/master/photodiode)
-- [ ] High side current sense
-- [ ] Arduino gets replaced with a
-  [Teensy](https://www.pjrc.com/teensy/teensy31.html).
-
-**Revision 3.5B**
-- [ ] Get the board on CircuitHub
-- [ ] Get the device on the Open Ephys store
-- [ ] The rear panel holes seems to have slight vertical offsets
-  - LED jacks: 1 mm to low 
-  - Expansion header: 1 mm to low 
-  - Aux/curr switch: 0.25 mm to low
-  - *EDIT* After further inspection it seems like the expansion header might
-    be 90% of the problem. Recheck before making changes.
-- [x] The LED polarity labels on the panel are reversed 
-- [x] Sometimes, because of intrinsic tolerance issues, the 5.1V zener's
-  reverse breakdown is too low and it affects valid signals in the 0-5V range.
-  Get a more reasonable value, e.g. 6V, zener.
-  - *EDIT* This was due to a bad zener. Ignore this change. 
-- [x] Trade out the LT1964A for a LT1764A, which has a 3A output capability and
-  a will allow the circuit to read 1.5A instead of crapping out at 1.25 since
-  the quiescent circuit is current hog.
-- [x] Put some extra through holes in for wire-to-board access to +/- LED,
-  digital GND, and I2C bus for EEPROM on thorlabs leds.
-
