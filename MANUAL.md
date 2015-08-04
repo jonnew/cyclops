@@ -76,7 +76,11 @@ TODO:
 \newpage
 
 ## Usage
-TODO: Front and back panel diagram with IO and switch specifications along with icon images.
+The cyclops is a device that is capable of transforming voltage signals (e.g. sine waves, square pulses, etc.) into optical signals from high-power LEDs. Voltage signals to drive the device can be generated internally using an on-board digital to analog converter or can be delivered from an external source, such as a function generator or stimulus sequencer. The cyclops provides numerous measurements of circuit operation that can be measured and recorded during an experiment such as LED current and stimulus reference voltages. The device can be controlled over a USB interface using its [Arduino library](./arduino/cyclops/). The device also can be configured to drive commercially available LED modules from Thorlabs and Doric.
+
+![Cyclops panel interface specification.](./images/device3.5A_io-diagram.png)
+
+Below we provide an explanation of the operational modes of the device and the different ways it can be used to generate optical stimuli. Refer to the above diagram to locate the physical switches, dials, and connectors corresponding to verbal or iconic descriptions device settings.
 
 ### Feedback modes
 
