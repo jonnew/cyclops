@@ -66,10 +66,20 @@ __Table of Contents__
 
 \newpage
 ## Performance Specifications
+The following oscilloscope traces give indicates of the circuit's precision and speed. Note that time series traces are __not__ averaged - these traces display per-pulse temporal characteristics. Optical characteristics and optical feedback signal for the Cyclops driver were provided by a Thorlabs PDA36 amplified photodiode set to 0 dB of transimpedance gain.  Measurements were performed a single Osram golden dragon LED.
+
+![Trigger (yellow), current (pink), and light power (blue) traces during pulsed operation in current feedback mode. Input waveform is a 1 kHz 0 to 750 mV, 10% duty cycle square wave.](./images/cyclops3.5A_performance-1khz-750mA.png)
+
+![Zoomed traces showing waveform 10-90% rise times. Optical rise time statistics are shown at the bottom of the image.](./images/cyclops3.5A_performance-750mA-rise.png)
+
+![Zoomed traces showing waveform 10-90% fall times. Optical fall time statistics are shown at the bottom of the image.](./images/cyclops3.5A_performance-750mA-fall.png)
+
+The current-feedback mode -3dB bandwidth was determined by applying a flat noise signal over 50 MHz with mean = 1.0V and Vpp = 500 mV into the `EXT` port with maximal current gain. It occurs at around 2.5 MHz.
+
+![Optical bandwidth in current feedback mode. -3dBm occurs at ~2.4 MHz. Input signal was was noise, flat over 50 MHz, mean = 1.0V, Vpp = 500 mV.](./images/cyclops3.5A_performance-bw.png)
+
 TODO:
 
-- Oscope traces showing 1A rise/fall times
-- Freq. response
 - Optical vs. current FB mode characteristics
 
 \FloatBarrier
