@@ -72,7 +72,7 @@ The following oscilloscope traces give indicates of the circuit's precision and 
 
 ![Zoomed traces showing waveform 10-90% rise times. Optical rise time statistics are shown at the bottom of the image.](./images/cyclops3.5A_performance-750mA-rise.png)
 
-![Zoomed traces showing waveform 10-90% fall times. Optical fall time statistics are shown at the bottom of the image.](./images/cyclops3.5A_performance-750mA-fall.png)
+![Zoomed traces showing waveform 10-90% fall times. Optical fall time statistics are shown at the bottom of the image.](./images/cyclops3.5A_performance_750mA-fall.png)
 
 The current-feedback mode -3dB bandwidth was determined by applying a flat noise signal over 50 MHz with mean = 1.0V and Vpp = 500 mV into the `EXT` port with maximal current gain. It occurs at around 2.5 MHz.
 
