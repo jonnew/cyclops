@@ -66,17 +66,32 @@ __Table of Contents__
 
 \newpage
 ## Performance Specifications
-The following oscilloscope traces give indicates of the circuit's precision and speed. Note that time series traces are __not__ averaged - these traces display per-pulse temporal characteristics. Optical characteristics and optical feedback signal for the Cyclops driver were provided by a Thorlabs PDA36 amplified photodiode set to 0 dB of transimpedance gain.  Measurements were performed a single Osram golden dragon LED.
+The following oscilloscope traces give indicates of the circuit's precision and
+speed. Note that time series traces are __not__ averaged - these traces display
+per-pulse temporal characteristics. Optical characteristics and optical
+feedback signal for the Cyclops driver were provided by a Thorlabs PDA36
+amplified photodiode set to 0 dB of transimpedance gain.  Measurements were
+performed a single Osram golden dragon LED.
 
-![Trigger (yellow), current (pink), and light power (blue) traces during pulsed operation in current feedback mode. Input waveform is a 1 kHz 0 to 750 mV, 10% duty cycle square wave.](./images/cyclops3.5A_performance-1khz-750mA.png)
+![Trigger (yellow), current (pink), and light power (blue) traces during pulsed
+operation in current feedback mode. Input waveform is a 1 kHz 0 to 750 mV, 10%
+duty cycle square wave.](./images/cyclops3.5A_performance-1khz-750mA.png)
 
-![Zoomed traces showing waveform 10-90% rise times. Optical rise time statistics are shown at the bottom of the image.](./images/cyclops3.5A_performance-750mA-rise.png)
+![Zoomed traces showing waveform 10-90% rise times. Optical rise time
+statistics are shown at the bottom of the
+image.](./images/cyclops3.5A_performance-750mA-rise.png)
 
-![Zoomed traces showing waveform 10-90% fall times. Optical fall time statistics are shown at the bottom of the image.](./images/cyclops3.5A_performance_750mA-fall.png)
+![Zoomed traces showing waveform 10-90% fall times. Optical fall time
+statistics are shown at the bottom of the
+image.](./images/cyclops3.5A_performance_750mA-fall.png)
 
-The current-feedback mode -3dB bandwidth was determined by applying a flat noise signal over 50 MHz with mean = 1.0V and Vpp = 500 mV into the `EXT` port with maximal current gain. It occurs at around 2.5 MHz.
+The current-feedback mode -3dB bandwidth was determined by applying a flat
+noise signal over 50 MHz with mean = 1.0V and Vpp = 500 mV into the `EXT` port
+with maximal current gain. It occurs at around 2.5 MHz.
 
-![Optical bandwidth in current feedback mode. -3dBm occurs at ~2.4 MHz. Input signal was was noise, flat over 50 MHz, mean = 1.0V, Vpp = 500 mV.](./images/cyclops3.5A_performance-bw.png)
+![Optical bandwidth in current feedback mode. -3dBm occurs at ~2.4 MHz. Input
+signal was was noise, flat over 50 MHz, mean = 1.0V, Vpp = 500
+mV.](./images/cyclops3.5A_performance-bw.png)
 
 TODO:
 
@@ -86,11 +101,23 @@ TODO:
 \newpage
 
 ## Usage
-The cyclops is a device that is capable of transforming voltage signals (e.g. sine waves, square pulses, etc.) into optical signals from high-power LEDs. Voltage signals to drive the device can be generated internally using an on-board digital to analog converter or can be delivered from an external source, such as a function generator or stimulus sequencer. The cyclops provides numerous measurements of circuit operation that can be measured and recorded during an experiment such as LED current and stimulus reference voltages. The device can be controlled over a USB interface using its [Arduino library](./arduino/cyclops/). The device also can be configured to drive commercially available LED modules from Thorlabs and Doric.
+The cyclops is a device that is capable of transforming voltage signals (e.g.
+sine waves, square pulses, etc.) into optical signals from high-power LEDs.
+Voltage signals to drive the device can be generated internally using an
+on-board digital to analog converter or can be delivered from an external
+source, such as a function generator or stimulus sequencer. The cyclops
+provides numerous measurements of circuit operation that can be measured and
+recorded during an experiment such as LED current and stimulus reference
+voltages. The device can be controlled over a USB interface using its [Arduino
+library](./arduino/cyclops/). The device also can be configured to drive
+commercially available LED modules from Thorlabs and Doric.
 
-![Cyclops panel interface specification.](./images/device3.5A_io-diagram.png)
+![Cyclops physical interface.](./images/device3.5A_io-diagram.png)
 
-Below we provide an explanation of the operational modes of the device and the different ways it can be used to generate optical stimuli. Refer to the above diagram to locate the physical switches, dials, and connectors corresponding to verbal or iconic descriptions device settings.
+Below we provide an explanation of the operational modes of the device and the
+different ways it can be used to generate optical stimuli. Refer to the above
+diagram to locate the physical switches, dials, and connectors corresponding to
+verbal or iconic descriptions device settings.
 
 ### Feedback modes
 
@@ -180,6 +207,9 @@ Using `EXT` mode, the behavior of the circuit is:
     optical power specified by (DAC Voltage/5V) * h  * mW. The intensity of the
     LED will be dependent on the auxiliary feedback signal used which defines
     the 'h' parameter. 
+
+\FloatBarrier
+\newpage
 
 ## Construction 
 If you have questions during device assembly, please direct them to the
@@ -348,11 +378,12 @@ the next section before applying power._
     ![Zoomed view of ingegrated circuit placement.](./images/cyclops3.5A_IC2.jpg)
 
 1. After placing the ICs, place the passive components (resistors,
-   capacitors, inductors, and diodes).  
+   capacitors, inductors, diodes, and ferrite chips).  
 
-    ![Ingegrated circuit population.](./images/cyclops3.5A_RnC.jpg)
+    ![Board following resistor and capacitor population.](./images/cyclops3.5A_RnC.jpg)
 
-    ![Ingegrated circuit population.](./images/cyclops3.5A_otherPassives.jpg)
+    ![Board with all top-side surface mount components
+    installed.](./images/cyclops3.5A_otherPassives.jpg)
 
 1. Next, reflow solder the board. We use a homemade reflow oven constructed
    from a toaster oven, Arduino board, [reflow oven control
