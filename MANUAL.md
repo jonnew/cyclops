@@ -13,6 +13,7 @@ their SHA.
 __Contributors__
 
 - jonnew [http://www.mit.edu/~jpnewman/](http://www.mit.edu/~jpnewman/)
+- Sung-Yon Kim [Lab website](http://www.sungyonkimlab.org/)
 
 __Table of Contents__
 
