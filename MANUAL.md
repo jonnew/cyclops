@@ -12,8 +12,8 @@ their SHA.
 
 __Contributors__
 
-- jonnew [http://www.mit.edu/~jpnewman/](http://www.mit.edu/~jpnewman/)
-- Sung-Yon Kim [Lab website](http://www.sungyonkimlab.org/)
+- [jonnew](http://www.mit.edu/~jpnewman/)
+- [Sung-Yon Kim](http://www.sungyonkimlab.org/)
 
 __Table of Contents__
 
@@ -211,6 +211,10 @@ Using `EXT` mode, the behavior of the circuit is:
 
 \FloatBarrier
 \newpage
+
+### Programming the onboard microcontroller
+
+TODO
 
 ## Construction 
 If you have questions during device assembly, please direct them to the
@@ -507,7 +511,7 @@ To perform basic electrical testing, you we will use the following materials
     If there is a short, you must track it down and get rid of it before
     applying power. If you find a short, test the same contact points on an
     unpopulated PCB to ensure that it is not due to a PCB fabrication defect. If
-    so, contact your PCB for a return.
+    so, contact your PCB fabricator for a return.
 
 1. Obtain a power supply which can source at least 2 amps at 15 volts. You can
    use a switching supply, since current sourced to the LED is regulated. The
@@ -527,34 +531,38 @@ To perform basic electrical testing, you we will use the following materials
     - `5v`      5 volts
 
 1. While measuring the `REF2.5` testpoint, use the jeweler's screwdriver to
-   turn the `REF_ADJ` trimpot until it is exactly 2.50 volts. `REF2.5` and
+   turn the `REF_ADJ` trimpot until it reads exactly 2.50 volts. `REF2.5`
    provides an internal reference voltage for the TEST switch. It serves the
-   purpose of the `VCTL` signal, but does not require an external source.
+   purpose of the `VCTL` signal, but does not require an external source. It
+   also provides the reference voltage for the onboard DAC if that is used.
 
 1. Next, we need to ensure that upon the first test of our LED driver, we will
    not accidentally source too much current to the LED and destroy it. Ensure
    the device is set to current feedback mode using the rear panel slide
    switch.  Using your DMM in voltage measurement mode, probe the VREF pin pad
    on the front BNC connector. Depress the `TEST` button and turn the `GAIN`
-   potentiometer until the voltage measurment reads ~100mV. This indicates that
+   potentiometer until the voltage measurement reads ~100mV. This indicates that
    the circuit will attempt to drive 100 mA through an LED attached to the LED
    port. Obtain a high power LED. Ensure that it can handle the 100 mA current
-   that we are about to supply to it. Tie its anode to LED+ and cathode to
+   that we are about to supply to it. Connect its anode to LED+ and cathode to
    LED-, respectively. 
 
-1. Use the DMM in voltage measurment mode to probe the voltage at the `VI` BNC
+1. Use the DMM in voltage measurement mode to probe the voltage at the `VI` BNC
    connector. Depress the `TEST` button. The LED should light up. __Don't look
-   directly at the LED - your eye lenses are very good at focusing light to
+   directly at the LED - your eyes' lenses are very good at focusing light to
    dangerously high levels at your retina__. In current feedback mode, the
-   voltage at the `VI` port relfects the current through the LED with 1V = 1A.
-   Examine the voltage at 'VI' port, which should read 100mV, corresponding to
-   100 mA. If the LED does not illuminate, ensure that you switched the device
-   to current feedback mode. If the device is left in AUX mode, and there is a
-   high impedance at the AUX BNC connector (e.g. nothing is plugged in), the
-   circuit will appear not to function.
+   voltage at the `VI` port reflects the current through the LED with the scale
+   factor of 1V = 1A.  Examine the voltage at `VI` port, which should read
+   100mV, corresponding to 100 mA through the LED. If the LED does not
+   illuminate, ensure that you switched the device to current feedback mode. If
+   the device is left in AUX mode, and there is a high impedance at the AUX BNC
+   connector (e.g.  nothing is plugged in), the circuit will appear not to
+   function.
 
 1. Now you are ready to supply time-varying input, from 0-5 volts, to the V_CTL
-   pin to drive the LED.
+   pin to drive the LED or to program the onboard DAC to control the LED output.
+
+
 
 \FloatBarrier
 \newpage
