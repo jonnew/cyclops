@@ -10,7 +10,7 @@ and performance documentation for the Cyclops LED driver. This document evolves
 with the repository. To view old revisions, checkout tags or old commits using
 their SHA.
 
-![](./images/cyclops_cartoon.png)\
+<img src="./images/cyclops_cartoon.png" width="300" />
 
 \newpage
 __Contributors__
