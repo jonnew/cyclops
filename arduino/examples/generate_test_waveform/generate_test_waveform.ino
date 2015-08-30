@@ -19,7 +19,7 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 
-#include <Cyclops.h>
+#include <CyclopsZero.h>
 
 // Unfortunately, when using the arudino IDE, these need to be 
 // re-included here even though they are included in Cyclops.h
@@ -30,11 +30,12 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 // with jumper pads soldered so that CS0, TRIG0, and A0 are used
 Cyclops cyclops0(CH0);
 
-
 void setup() {
+
+  Serial.begin(9600);
   
   // Set input resistors on both boards to nominal A-W Resistance
-  cyclops0.mcp4022_set_nom_AW_resistance();
+  //cyclops0.mcp4022_set_nom_AW_resistance();
   
   
 }
@@ -43,9 +44,12 @@ void loop() {
   
     // Each board includes an onboard 12-bit (4095 position)
     // DAC spanning 0-5 volts.
-    
+digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);              // wait for a second
+  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);              // wait for a second
     // Generates a triangle wave ranging fro 0 to full scale
-    cyclops0.mcp4921_send_test_waveform();
+    //cyclops0.mcp4921_send_test_waveform();
 }
 
 
