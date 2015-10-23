@@ -143,7 +143,7 @@ void Cyclops::mcp4921_send_test_waveform(void) {
 }
 
 
-void Cyclops::mcp4921_generate_waveform( int voltage[], uint16_t length, uint16_t sample_period_us) {
+void Cyclops::mcp4921_generate_waveform(int voltage[], uint16_t length, uint16_t sample_period_us) {
 
     for (int i = 0; i < length; i++) {
         mcp4921_load_voltage(voltage[i]);
@@ -152,7 +152,7 @@ void Cyclops::mcp4921_generate_waveform( int voltage[], uint16_t length, uint16_
     }
 }
 
-void Cyclops::mcp4921_load_voltage( uint16_t voltage) {
+void Cyclops::mcp4921_load_voltage(uint16_t voltage) {
 
     // Create data packet
     unsigned int spi_out = DAC_CONF_ACTIVE | (voltage & 0x0fff);
