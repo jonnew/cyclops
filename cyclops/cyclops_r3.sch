@@ -6836,8 +6836,8 @@ at 30/07/2012 17:45:58</description>
 <part name="U$42" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$43" library="cyclops" deviceset="GND2" device=""/>
 <part name="R23" library="cyclops" deviceset="R" device="_0603" value="2.2k"/>
-<part name="LED-" library="cyclops" deviceset="BANANA_TO_BOARD" device="_A2107" value="A2107-B"/>
-<part name="LED+" library="cyclops" deviceset="BANANA_TO_BOARD" device="_A2107" value="A2107-R"/>
+<part name="LED-" library="cyclops" deviceset="BANANA_TO_BOARD" device="_A2107" value="24.243.2"/>
+<part name="LED+" library="cyclops" deviceset="BANANA_TO_BOARD" device="_A2107" value="24.243.1"/>
 <part name="R17" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="R18" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="C24" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
@@ -6863,7 +6863,7 @@ at 30/07/2012 17:45:58</description>
 <part name="P+6" library="cyclops" deviceset="+5V" device="" value="+5V"/>
 <part name="C8" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="R16" library="cyclops" deviceset="R" device="_0603" value="470"/>
-<part name="COMP" library="cyclops" deviceset="LED" device="_0603" value="ORG"/>
+<part name="COMP" library="cyclops" deviceset="LED" device="_0603" value="RED"/>
 <part name="U$49" library="cyclops" deviceset="GND2" device=""/>
 <part name="L3" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
 <part name="L4" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
