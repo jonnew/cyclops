@@ -18,7 +18,6 @@ You should have received a copy of the GNU General Public License
 along with CL.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
 #include <Cyclops.h>
 
 // Unfortunately, when using the arudino IDE, these need to be
@@ -44,10 +43,8 @@ float beta = 1.0;
 float freq = 0.0;
 
 
-void 
-setup() 
+void setup() 
 {
-  //Serial.begin(9600);
     
     // Set input resistors on both boards to nominal A-W Resistance
     cyclops0.mcp4022_set_nom_AW_resistance();
@@ -56,15 +53,12 @@ setup()
     beta = (FREQ_END - FREQ_START) / ( ((float) CHIRP_TIME_MS)/1000.0 ); 
 }
 
-void 
-loop() 
+void loop() 
 {
     now = ((float) (millis() % CHIRP_TIME_MS)) / 1000.0;  
 
     freq = 2.0 * PI * (FREQ_START * now + (beta / 2.0) * pow (now,2));
     dac_voltage = (unsigned int) (4095.0 * (sin(freq)/2.0 + 0.5));
-
-
 
     // Each board includes an onboard 12-bit (4095 position)
     // DAC spanning 0-5 volts.
