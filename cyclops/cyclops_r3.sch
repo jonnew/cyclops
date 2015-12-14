@@ -6616,7 +6616,6 @@ at 30/07/2012 17:45:58</description>
 <part name="P-7" library="cyclops" deviceset="-5V" device="" value="-1.25V"/>
 <part name="U3" library="cyclops" deviceset="MAX4564" device=""/>
 <part name="SUPPLY12" library="cyclops" deviceset="+12V" device=""/>
-<part name="U$48" library="cyclops" deviceset="GND2" device=""/>
 <part name="R21" library="cyclops" deviceset="R" device="_0603" value="10k"/>
 <part name="U$62" library="cyclops" deviceset="GND1" device=""/>
 <part name="Q3" library="cyclops" deviceset="BC817*" device="SMD" technology="-16" value="BC817"/>
@@ -6634,6 +6633,7 @@ at 30/07/2012 17:45:58</description>
 <part name="OC1" library="cyclops" deviceset="R" device="_0603" value="0"/>
 <part name="OC0" library="cyclops" deviceset="R" device="_0603" value="0"/>
 <part name="OC3" library="cyclops" deviceset="R" device="_0603" value="0"/>
+<part name="R37" library="cyclops" deviceset="R" device="_0603" value="0"/>
 </parts>
 <sheets>
 <sheet>
@@ -8157,7 +8157,7 @@ denoising jumper</text>
 <vertex x="159.004" y="50.546"/>
 <vertex x="158.496" y="50.546"/>
 </polygon>
-<text x="-45.72" y="60.96" size="1.6764" layer="94">MAX(VCTL) = 5.0V
+<text x="-81.28" y="50.8" size="1.6764" layer="94">MAX(VCTL) = 5.0V
 -- implies --
 Max(VREF) ~ 0.75V
 Max(ILED) ~ 1.5 Amps</text>
@@ -8182,7 +8182,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="Q2" gate="G$1" x="162.56" y="88.9"/>
 <instance part="C28" gate="C" x="-17.78" y="-10.16"/>
 <instance part="C26" gate="C" x="-25.4" y="-10.16"/>
-<instance part="GAIN" gate="G$1" x="-53.34" y="76.2" rot="MR180"/>
+<instance part="GAIN" gate="G$1" x="-53.34" y="66.04" rot="MR180"/>
 <instance part="U$22" gate="G$1" x="-25.4" y="-20.32"/>
 <instance part="U$23" gate="G$1" x="-17.78" y="-20.32"/>
 <instance part="U$24" gate="G$1" x="-25.4" y="10.16"/>
@@ -8190,7 +8190,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="U$27" gate="G$1" x="73.66" y="-38.1"/>
 <instance part="U$29" gate="G$1" x="165.1" y="-38.1"/>
 <instance part="P-1" gate="1" x="-35.56" y="-20.32"/>
-<instance part="R23" gate="R" x="-53.34" y="91.44" rot="R90"/>
+<instance part="R23" gate="R" x="-53.34" y="81.28" rot="R90"/>
 <instance part="HEATSINK" gate="G$1" x="175.26" y="93.98" smashed="yes" rot="R270">
 <attribute name="NAME" x="175.26" y="95.25" size="1.27" layer="95"/>
 <attribute name="VALUE" x="175.26" y="80.01" size="1.27" layer="96"/>
@@ -8243,7 +8243,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="U14" gate="G$1" x="99.06" y="109.22"/>
 <instance part="U14" gate="G$2" x="99.06" y="68.58"/>
 <instance part="SUPPLY14" gate="G$1" x="78.74" y="83.82"/>
-<instance part="R24" gate="R" x="-15.24" y="76.2"/>
+<instance part="R24" gate="R" x="-22.86" y="66.04"/>
 <instance part="P-6" gate="1" x="22.86" y="55.88"/>
 <instance part="C32" gate="C" x="30.48" y="48.26" rot="R90"/>
 <instance part="C14" gate="C" x="-76.2" y="119.38"/>
@@ -8253,7 +8253,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="P-7" gate="1" x="-71.12" y="104.14"/>
 <instance part="U3" gate="G$1" x="-55.88" y="111.76" rot="R270"/>
 <instance part="SUPPLY12" gate="G$1" x="-35.56" y="99.06"/>
-<instance part="U$48" gate="G$1" x="-68.58" y="76.2"/>
+<instance part="R37" gate="R" x="-22.86" y="86.36" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -8321,7 +8321,7 @@ Max(ILED) ~ 1.5 Amps</text>
 </net>
 <net name="GND" class="0">
 <segment>
-<wire x1="-53.34" y1="68.58" x2="-53.34" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="58.42" x2="-53.34" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="GAIN" gate="G$1" pin="E"/>
 </segment>
 <segment>
@@ -8411,12 +8411,6 @@ Max(ILED) ~ 1.5 Amps</text>
 <pinref part="U3" gate="G$1" pin="~EN"/>
 <wire x1="-76.2" y1="109.22" x2="-81.28" y2="109.22" width="0.1524" layer="91"/>
 <junction x="-81.28" y="109.22"/>
-</segment>
-<segment>
-<pinref part="U3" gate="G$1" pin="NO"/>
-<wire x1="-58.42" y1="99.06" x2="-58.42" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="-58.42" y1="86.36" x2="-68.58" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="-68.58" y1="86.36" x2="-68.58" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C36" gate="C" pin="2"/>
@@ -8509,6 +8503,8 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="-33.02" y1="147.32" x2="0" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="U11" gate="G$1" pin="+IN"/>
 <pinref part="R24" gate="R" pin="2"/>
+<wire x1="-17.78" y1="66.04" x2="-10.16" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="66.04" x2="-10.16" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="76.2" x2="0" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="0" y1="76.2" x2="0" y2="88.9" width="0.1524" layer="91"/>
 <junction x="0" y="88.9"/>
@@ -8604,7 +8600,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <segment>
 <pinref part="GAIN" gate="G$1" pin="A"/>
 <pinref part="R23" gate="R" pin="1"/>
-<wire x1="-53.34" y1="83.82" x2="-53.34" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="73.66" x2="-53.34" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VAUX_OUT" class="0">
@@ -8734,7 +8730,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <segment>
 <pinref part="GAIN" gate="G$1" pin="W"/>
 <pinref part="R24" gate="R" pin="1"/>
-<wire x1="-48.26" y1="76.2" x2="-20.32" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="-48.26" y1="66.04" x2="-27.94" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="OVER_CURR" class="0">
@@ -8750,15 +8746,29 @@ Max(ILED) ~ 1.5 Amps</text>
 <label x="-25.4" y="111.76" size="1.778" layer="95"/>
 <pinref part="R23" gate="R" pin="2"/>
 <pinref part="U3" gate="G$1" pin="NC"/>
-<wire x1="-53.34" y1="99.06" x2="-53.34" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="99.06" x2="-53.34" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="93.98" x2="-53.34" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="93.98" x2="-43.18" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="93.98" x2="-43.18" y2="73.66" width="0.1524" layer="91"/>
+<junction x="-53.34" y="93.98"/>
+<wire x1="-43.18" y1="73.66" x2="-22.86" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="-22.86" y1="73.66" x2="-22.86" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="R37" gate="R" pin="1"/>
 </segment>
 </net>
 <net name="VCTL" class="0">
 <segment>
 <pinref part="U3" gate="G$1" pin="COM"/>
 <wire x1="-81.28" y1="132.08" x2="-48.26" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="-48.26" y1="132.08" x2="-48.26" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="-48.26" y1="132.08" x2="-48.26" y2="127" width="0.1524" layer="91"/>
 <label x="-81.28" y="132.08" size="1.778" layer="95"/>
+<wire x1="-48.26" y1="127" x2="-48.26" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="-48.26" y1="127" x2="-35.56" y2="127" width="0.1524" layer="91"/>
+<wire x1="-35.56" y1="127" x2="-35.56" y2="106.68" width="0.1524" layer="91"/>
+<junction x="-48.26" y="127"/>
+<pinref part="R37" gate="R" pin="2"/>
+<wire x1="-35.56" y1="106.68" x2="-22.86" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="-22.86" y1="106.68" x2="-22.86" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

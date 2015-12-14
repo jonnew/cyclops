@@ -89,6 +89,23 @@ image.](./images/cyclops3.5A_performance-750mA-rise.png)
 statistics are shown at the bottom of the
 image.](./images/cyclops3.5A_performance_750mA-fall.png)
 
+The following traces are the same as the previous ones except that the
+amplified photodiode was used to provide optical feedback. The slowdown
+compared to current feedback is due to a speed of the photodiode. A faster
+amplified photodiode would provide crisper rise and fall times
+
+![Trigger (yellow), current (pink), and light power (blue) traces during pulsed
+operation in optical feedback mode. Input waveform is a 1 kHz 0 to 750 mV, 10%
+duty cycle square wave.](./images/cyclops3.5A_performance-1khz-750mA-optical-fb.png)
+
+![Zoomed traces showing waveform 10-90% rise times in optical feedback mode.
+Optical rise time statistics are shown at the bottom of the
+image.](./images/cyclops3.5A_performance-750mA-rise-optical-fb.png)
+
+![Zoomed traces showing waveform 10-90% fall times in optical feedback mode.
+Optical fall time statistics are shown at the bottom of the
+image.](./images/cyclops3.5A_performance_750mA-fall-optical-fb.png)
+
 The current-feedback mode -3dB bandwidth was determined by applying a flat
 noise signal over 50 MHz with mean = 1.0V and Vpp = 500 mV into the `EXT` port
 with maximal current gain. It occurs at around 2.5 MHz.
@@ -96,10 +113,6 @@ with maximal current gain. It occurs at around 2.5 MHz.
 ![Optical bandwidth in current feedback mode. -3dBm occurs at ~2.4 MHz. Input
 signal was was noise, flat over 50 MHz, mean = 1.0V, Vpp = 500
 mV.](./images/cyclops3.5A_performance-bw.png)
-
-TODO:
-
-- Optical vs. current FB mode characteristics
 
 \FloatBarrier
 \newpage
@@ -126,35 +139,34 @@ verbal or iconic descriptions device settings.
 ### Feedback modes
 
 #### Current Feedback Mode 
-
-To use current feedback mode, push the `F.B. MODE` slide switch to the `CURR` position
-(![Current feedback mode.](./images/curr_switch_icon.png)). Using the circuit
-in current feedback mode ensures that the forward current across the LED is
-precisely regulated according the voltage at the `VREF` pin. This configuration
-is a standard method for driving LEDs because the relationship between current
-and LED irradiance is smooth and monotonic. This means that more current across
-the LED will generate more light power (while staying within the LED's maximum
-ratings, of course).  However, the relationship between current and irradiance
-is not linear. For most LEDs, it looks like a logarithmic function.
-Additionally, the efficiency of the LED is inversely related to its
-temperature. So, as the LED operates and heats up, the amount of light it
-produces drops even when the current is held constant. The severity of an LED's
-temperature dependence and current/irradiance nonlinearity depend on the type
-of LED (roughly, the color and who made it). These properties should be clearly
-documented in the LED's data sheet. With a quality LED and proper thermal
-management, the effects of temperature and static current/irradiance
+To use current feedback mode, push the `F.B. MODE` slide switch to the `CURR`
+position (![Current feedback mode.](./images/curr_switch_icon.png)). Using the
+circuit in current feedback mode ensures that the forward current across the
+LED is precisely regulated according the voltage at the `VREF` pin. This
+configuration is a standard method for driving LEDs because the relationship
+between current and LED irradiance is smooth and monotonic. This means that
+more current across the LED will generate more light power (while staying
+within the LED's maximum ratings, of course).  However, the relationship
+between current and irradiance is not linear. For most LEDs, it looks like a
+logarithmic function.  Additionally, the efficiency of the LED is inversely
+related to its temperature. So, as the LED operates and heats up, the amount of
+light it produces drops even when the current is held constant. The severity of
+an LED's temperature dependence and current/irradiance nonlinearity depend on
+the type of LED (roughly, the color and who made it). These properties should
+be clearly documented in the LED's data sheet. With a quality LED and proper
+thermal management, the effects of temperature and static current/irradiance
 nonlinearity are fairly minimal and can be ignored in most situations.
 
 ![Current feedback configuration.](./images/current_feedback_diagram.png)
 
 #### Auxiliary Feedback Mode 
-To use auxilary feedback mode, push the `F.B. MODE` slide switch to the `AUX` position
-(![Auxilary feedback mode.](./images/aux_switch_icon.png)).  When extremely
-stable, linear control of light power is required, the auxiliary feedback input
-can be used to used to compensate for the temperature dependence and static
-nonlinearity of the current/irradiance relationship of the LED. For example,
-when the auxiliary voltage is supplied by an amplified photodiode that is
-somewhere indecent to radiation from the LED, or is sampled from the fiber
+To use auxilary feedback mode, push the `F.B. MODE` slide switch to the `AUX`
+position (![Auxilary feedback mode.](./images/aux_switch_icon.png)).  When
+extremely stable, linear control of light power is required, the auxiliary
+feedback input can be used to used to compensate for the temperature dependence
+and static nonlinearity of the current/irradiance relationship of the LED. For
+example, when the auxiliary voltage is supplied by an amplified photodiode that
+is somewhere indecent to radiation from the LED, or is sampled from the fiber
 transporting LED light, the gate voltage is adjusted such that the measured
 light power matches a DAC-supplied reference voltage.  This is the case in the
 circuit diagram. This configuration is referred to as optical feedback mode.
