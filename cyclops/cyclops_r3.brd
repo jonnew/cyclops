@@ -29,13 +29,13 @@
 <layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -201,9 +201,9 @@ Jon Newman
 <text x="2.794" y="6.858" size="1.016" layer="21" font="vector" ratio="18" align="center">DGND</text>
 <text x="3.175" y="10.541" size="1.016" layer="21" font="vector" ratio="18" align="center">SCL</text>
 <text x="3.175" y="14.224" size="1.016" layer="21" font="vector" ratio="18" align="center">SDA</text>
-<text x="36.83" y="3.175" size="1.016" layer="21" font="vector" ratio="18" rot="R180" align="center">DGND</text>
-<text x="39.243" y="1.905" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">SCL</text>
-<text x="42.799" y="1.778" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">SDA</text>
+<text x="35.687" y="2.286" size="1.016" layer="21" font="vector" ratio="18" rot="R270" align="center">DGND</text>
+<text x="39.37" y="1.905" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">SCL</text>
+<text x="42.926" y="1.778" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">SDA</text>
 <text x="2.667" y="6.858" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">DGND</text>
 <text x="3.175" y="10.541" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">SCL</text>
 <text x="3.175" y="14.224" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">SDA</text>
@@ -212,9 +212,9 @@ Jon Newman
 <text x="75.819" y="4.318" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">GND</text>
 <text x="93.345" y="4.318" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">+12V</text>
 <text x="120.142" y="68.199" size="1.016" layer="22" font="vector" ratio="18" rot="MR270">GND</text>
-<text x="36.703" y="3.175" size="1.016" layer="22" font="vector" ratio="18" rot="MR180" align="center">DGND</text>
-<text x="39.243" y="1.905" size="1.016" layer="22" font="vector" ratio="18" rot="MR90" align="center">SCL</text>
-<text x="42.799" y="1.778" size="1.016" layer="22" font="vector" ratio="18" rot="MR90" align="center">SDA</text>
+<text x="35.687" y="2.286" size="1.016" layer="22" font="vector" ratio="18" rot="MR90" align="center">DGND</text>
+<text x="39.37" y="1.905" size="1.016" layer="22" font="vector" ratio="18" rot="MR90" align="center">SCL</text>
+<text x="42.926" y="1.778" size="1.016" layer="22" font="vector" ratio="18" rot="MR90" align="center">SDA</text>
 <wire x1="30.099" y1="67.437" x2="30.099" y2="67.818" width="0.254" layer="21"/>
 <wire x1="30.099" y1="67.818" x2="38.735" y2="67.818" width="0.254" layer="21"/>
 <wire x1="38.735" y1="67.818" x2="39.497" y2="67.056" width="0.254" layer="21"/>
@@ -23485,8 +23485,8 @@ Modified: 2014.07.10
 <attribute name="MN" value="Panasonic" x="68.199" y="64.135" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="68.199" y="64.135" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="68.199" y="64.135" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
-<attribute name="NAME" x="67.945" y="64.643" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="68.961" y="64.643" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="67.564" y="64.516" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
+<attribute name="VALUE" x="67.564" y="63.373" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
 </element>
 <element name="R11" library="cyclops" package="0603" value="10k" x="73.152" y="62.738" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="73.152" y="62.738" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
