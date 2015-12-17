@@ -10,7 +10,7 @@ and performance documentation for the Cyclops LED driver. This document evolves
 with the repository. To view old revisions, checkout tags or old commits using
 their SHA.
 
-<img src="./images/cyclops_cartoon.png" width="300" />
+<img src="./resources/cyclops_cartoon.png" width="300" />
 
 \newpage
 __Contributors__
@@ -79,15 +79,15 @@ performed a single Osram golden dragon LED.
 
 ![Trigger (yellow), current (pink), and light power (blue) traces during pulsed
 operation in current feedback mode. Input waveform is a 1 kHz 0 to 750 mV, 10%
-duty cycle square wave.](./images/cyclops3.5A_performance-1khz-750mA.png)
+duty cycle square wave.](./resources/cyclops3.5A_performance-1khz-750mA.png)
 
 ![Zoomed traces showing waveform 10-90% rise times. Optical rise time
 statistics are shown at the bottom of the
-image.](./images/cyclops3.5A_performance-750mA-rise.png)
+image.](./resources/cyclops3.5A_performance-750mA-rise.png)
 
 ![Zoomed traces showing waveform 10-90% fall times. Optical fall time
 statistics are shown at the bottom of the
-image.](./images/cyclops3.5A_performance_750mA-fall.png)
+image.](./resources/cyclops3.5A_performance_750mA-fall.png)
 
 The following traces are the same as the previous ones except that the
 amplified photodiode was used to provide optical feedback. The slowdown
@@ -96,15 +96,15 @@ amplified photodiode would provide crisper rise and fall times
 
 ![Trigger (yellow), current (pink), and light power (blue) traces during pulsed
 operation in optical feedback mode. Input waveform is a 1 kHz 0 to 750 mV, 10%
-duty cycle square wave.](./images/cyclops3.5A_performance-1khz-750mA-optical-fb.png)
+duty cycle square wave.](./resources/cyclops3.5A_performance-1khz-750mA-optical-fb.png)
 
 ![Zoomed traces showing waveform 10-90% rise times in optical feedback mode.
 Optical rise time statistics are shown at the bottom of the
-image.](./images/cyclops3.5A_performance-750mA-rise-optical-fb.png)
+image.](./resources/cyclops3.5A_performance-750mA-rise-optical-fb.png)
 
 ![Zoomed traces showing waveform 10-90% fall times in optical feedback mode.
 Optical fall time statistics are shown at the bottom of the
-image.](./images/cyclops3.5A_performance_750mA-fall-optical-fb.png)
+image.](./resources/cyclops3.5A_performance_750mA-fall-optical-fb.png)
 
 The current-feedback mode -3dB bandwidth was determined by applying a flat
 noise signal over 50 MHz with mean = 1.0V and Vpp = 500 mV into the `EXT` port
@@ -112,7 +112,7 @@ with maximal current gain. It occurs at around 2.5 MHz.
 
 ![Optical bandwidth in current feedback mode. -3dBm occurs at ~2.4 MHz. Input
 signal was was noise, flat over 50 MHz, mean = 1.0V, Vpp = 500
-mV.](./images/cyclops3.5A_performance-bw.png)
+mV.](./resources/cyclops3.5A_performance-bw.png)
 
 \FloatBarrier
 \newpage
@@ -129,7 +129,7 @@ voltages. The device can be controlled over a USB interface using its [Arduino
 library](./arduino/cyclops/). The device also can be configured to drive
 commercially available LED modules from Thorlabs and Doric.
 
-![Cyclops physical interface.](./images/device3.5A_io-diagram.png)
+![Cyclops physical interface.](./resources/device3.5A_io-diagram.png)
 
 Below we provide an explanation of the operational modes of the device and the
 different ways it can be used to generate optical stimuli. Refer to the above
@@ -140,7 +140,7 @@ verbal or iconic descriptions device settings.
 
 #### Current Feedback Mode 
 To use current feedback mode, push the `F.B. MODE` slide switch to the `CURR`
-position (![Current feedback mode.](./images/curr_switch_icon.png)). Using the
+position (![Current feedback mode.](./resources/curr_switch_icon.png)). Using the
 circuit in current feedback mode ensures that the forward current across the
 LED is precisely regulated according the voltage at the `VREF` pin. This
 configuration is a standard method for driving LEDs because the relationship
@@ -157,11 +157,11 @@ be clearly documented in the LED's data sheet. With a quality LED and proper
 thermal management, the effects of temperature and static current/irradiance
 nonlinearity are fairly minimal and can be ignored in most situations.
 
-![Current feedback configuration.](./images/current_feedback_diagram.png)
+![Current feedback configuration.](./resources/current_feedback_diagram.png)
 
 #### Auxiliary Feedback Mode 
 To use auxilary feedback mode, push the `F.B. MODE` slide switch to the `AUX`
-position (![Auxilary feedback mode.](./images/aux_switch_icon.png)).  When
+position (![Auxilary feedback mode.](./resources/aux_switch_icon.png)).  When
 extremely stable, linear control of light power is required, the auxiliary
 feedback input can be used to used to compensate for the temperature dependence
 and static nonlinearity of the current/irradiance relationship of the LED. For
@@ -178,7 +178,7 @@ Optical feedback completely linearizes the relationship between a supplied
 reference voltage and the light power produced by the LED by compensating for
 the current/irradiance nonlinearities and temperature dependence.
 
-![Optical feedback configuration.](./images/optical_feedback_diagram.png)
+![Optical feedback configuration.](./resources/optical_feedback_diagram.png)
 
 ### Stimulus Generation Options
 There are three ways to generate light signals using the driver. The behavior
@@ -186,40 +186,40 @@ of each of these options is dependent on the feedback mode being used. The
 behavior of each input option is described in relation to the feedback mode of
 the driver.
 
-1. ![Test button.](./images/test_button_icon.png) The test button is always
+1. ![Test button.](./resources/test_button_icon.png) The test button is always
    available and will override all other input modes. Using the `TEST` button
    the behavior of the circuit is:
 
-  - ![Current feedback mode.](./images/curr_switch_icon.png) Source the current
+  - ![Current feedback mode.](./resources/curr_switch_icon.png) Source the current
     specified by the `MAX CURR.` dial.
-  - ![Auxilary feedback mode.](./images/aux_switch_icon.png) Generate the
+  - ![Auxilary feedback mode.](./resources/aux_switch_icon.png) Generate the
     optical power specified by the h * mW level that is  specified by the `MAX
     POWER` dial. The intensity of the LED will be dependent on the auxiliary
     feedback signal used which defines the 'h' parameter. 
 
-2. ![EXT mode.](./images/ext_toggle_icon.png) External input mode is engaged
+2. ![EXT mode.](./resources/ext_toggle_icon.png) External input mode is engaged
 when the `SOURCE` switch is moved to the `EXT` position and user supplied voltage
 waveforms are present at the `EXT` BNC input.  If the user attempts to supply
 more than 5V to the `EXT` input, the circuit will clamp the input signal to 5V.
 Using `EXT` mode, the behavior of the circuit is:
 
-  - ![Current feedback mode.](./images/curr_switch_icon.png) Source the current
+  - ![Current feedback mode.](./resources/curr_switch_icon.png) Source the current
     specified by (EXT Voltage / 5V) * MAX CURR. 
-  - ![Auxilary feedback mode.](./images/aux_switch_icon.png) Generate the
+  - ![Auxilary feedback mode.](./resources/aux_switch_icon.png) Generate the
     optical power specified by (EXT Voltage/5V) * h  * mW. The intensity of the
     LED will be dependent on the auxiliary feedback signal used which defines
     the 'h' parameter. 
 
-3. ![DAC mode.](./images/dac_toggle_icon.png) The internal digital to analog
+3. ![DAC mode.](./resources/dac_toggle_icon.png) The internal digital to analog
    converter (DAC) is engaged when the `SOURCE` switch is moved to the `DAC`
    position and can be used to generate pre-programmed waveforms and waveform
    sequences triggered by a digital pulse to the `TRIG` input. This feature
    relies on optional Arduino installation and programming the device using its
    API. Using the `DAC` mode, the behavior of the circuit is:
 
-  - ![Current feedback mode.](./images/curr_switch_icon.png) Source the current
+  - ![Current feedback mode.](./resources/curr_switch_icon.png) Source the current
     specified by (DAC Voltage / 5V) * MAX CURR. 
-  - ![Auxilary feedback mode.](./images/aux_switch_icon.png) Generate the
+  - ![Auxilary feedback mode.](./resources/aux_switch_icon.png) Generate the
     optical power specified by (DAC Voltage/5V) * h  * mW. The intensity of the
     LED will be dependent on the auxiliary feedback signal used which defines
     the 'h' parameter. 
@@ -255,7 +255,7 @@ pre-uploaded options:
 - [Seeed Studio]() - made in China, very good quality. Minimum of 5 boards per
   order.
 
-![A bare Cyclops PCB, top side, fabricated by Seeed Studio.](./images/cyclops3.5A_board1.jpg)
+![A bare Cyclops PCB, top side, fabricated by Seeed Studio.](./resources/cyclops3.5A_board1.jpg)
 
 Alternatively, the [gerber files](./cyclops/gerber/) can be uploaded to the PCB
 fabrication service of your choice. The layer of each gerber file is identified
@@ -306,7 +306,7 @@ To assemble a Cyclops board, you will need the following materials
 
     ![A soldering iron can be used to assemble the PCB, but a hot air rework
     station makes things much easier. These can be purchased from
-    [Sparkfun](https://www.sparkfun.com/products/10706).](./images/HeatGun.jpg)
+    [Sparkfun](https://www.sparkfun.com/products/10706).](./resources/HeatGun.jpg)
 
 - Copper braid ('solder wick') for solder removal (e.g
   [this](https://www.sparkfun.com/products/9327))
@@ -317,7 +317,7 @@ To assemble a Cyclops board, you will need the following materials
     ![Wire solder and an soldering iron can be used to construct the PCB, but
     solder paste combined with a hot air rework station or a reflow oven makes
     things much easier. We use [Chipquik
-    291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./images/SolderPaste.jpg)
+    291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./resources/SolderPaste.jpg)
 
 - Stereoscope or loupe (optional but nice for tracking down shorts.) 
 - Isopropyl alcohol for cleaning flux off the board (e.g.
@@ -335,7 +335,7 @@ found [here](https://youtu.be/pdGSFc7VjBE).
 The following steps provide a visual guide to construct your own board. The
 goal is to create a fully populated PCB like this one: 
 
-![Finished device (revision 3.3).](./images/cyclops3.3_both.jpg)
+![Finished device (revision 3.3).](./resources/cyclops3.3_both.jpg)
 
 _Following board construction, you should run through the electrical tests outlined in
 the next section before applying power._
@@ -344,7 +344,7 @@ the next section before applying power._
    dissipative or anti-static. Alternatively, the board can be mounted in a PCB vice. 
 
     ![Instead of populating components on a table, holding the PCB using a
-    PanaVise can be helpful.](./images/Station.jpg)
+    PanaVise can be helpful.](./resources/Station.jpg)
 
 1. The silkscreen layer on the PCB (white text) has almost all the information
    you will need to properly populated the PCB. However, its a good ideal to to
@@ -353,7 +353,7 @@ the next section before applying power._
    allow you to get detailed information on components before placing them on
    the board.
 
-    ![The cyclops PCB design in CadSoft EAGLE](./images/Eagle.JPG)
+    ![The cyclops PCB design in CadSoft EAGLE](./resources/Eagle.JPG)
   
     You can then the `information` tool to get detailed information on each
     component, e.g. to ensure you are placing the correct value resistor or
@@ -361,7 +361,7 @@ the next section before applying power._
   
     ![By selecting the information tool and clicking the cross at the center of
     a component, you can pull up detailed info (e.g. part
-    number)](./images/EagleInfo.JPG)
+    number)](./resources/EagleInfo.JPG)
 
 1. After cleaning the surface of the board with isopropyl acholhol or similar,
    apply solder paste to each of the pads. For an excellent series of tips on
@@ -377,9 +377,9 @@ the next section before applying power._
     envelop the component pad or pin may later result in a short. The following images
     show examples of good and bad solder placement.
   
-    ![Good solder placement.](./images/SolderGoodExample.jpg)
+    ![Good solder placement.](./resources/SolderGoodExample.jpg)
   
-    ![Bad solder placement. Too much paste!](./images/SolderBadExample.jpg)
+    ![Bad solder placement. Too much paste!](./resources/SolderBadExample.jpg)
 
     If you need to pause at any point, you should store place the PCB in the
     fridge to prevent the flux in the solder paste from breaking down. 
@@ -393,17 +393,17 @@ the next section before applying power._
    component alignment is not necessary.  Components will self-align during the
    reflow process.
 
-    ![Ingegrated circuit population.](./images/cyclops3.5A_IC.jpg)
+    ![Ingegrated circuit population.](./resources/cyclops3.5A_IC.jpg)
 
-    ![Zoomed view of ingegrated circuit placement.](./images/cyclops3.5A_IC2.jpg)
+    ![Zoomed view of ingegrated circuit placement.](./resources/cyclops3.5A_IC2.jpg)
 
 1. After placing the ICs, place the passive components (resistors,
    capacitors, inductors, diodes, and ferrite chips).  
 
-    ![Board following resistor and capacitor population.](./images/cyclops3.5A_RnC.jpg)
+    ![Board following resistor and capacitor population.](./resources/cyclops3.5A_RnC.jpg)
 
     ![Board with all top-side surface mount components
-    installed.](./images/cyclops3.5A_otherPassives.jpg)
+    installed.](./resources/cyclops3.5A_otherPassives.jpg)
 
 1. Next, reflow solder the board. We use a homemade reflow oven constructed
    from a toaster oven, Arduino board, [reflow oven control
@@ -413,11 +413,11 @@ the next section before applying power._
    Reflow the solder paste on the board using your oven or hot air gun as
    described in the links above.  
 
-    ![Homemade reflow oven with the populated board inside.](./images/ReflowOven.jpg)
+    ![Homemade reflow oven with the populated board inside.](./resources/ReflowOven.jpg)
 
     ![The board is shown after the reflow temperature has been reached. Reflow
     will occur at different temperatures depending on the specification of the
-    solder paste you are using.](./images/ReflowOven4.jpg)
+    solder paste you are using.](./resources/ReflowOven4.jpg)
 
 1. After the solder has cooled, examine solder pads using the stereoscope of
    loupe for solder bridges between pins, solder that has not melted, or pads
@@ -430,19 +430,19 @@ the next section before applying power._
 
 
     ![Example of a short between IC pins. This must be resolved before moving
-    forward.](./images/ShortExample.jpg)
+    forward.](./resources/ShortExample.jpg)
 
     ![Dipping the copper braid in flux will make the solder wick much more
-    redily.](./images/ShortExample2.jpg)
+    redily.](./resources/ShortExample2.jpg)
 
     ![Place the copper braid over the solder blob and then press with the
     soldering iron. You should see the excess solder wick up the copper
-    braid.](./images/ShortExample3.jpg)
+    braid.](./resources/ShortExample3.jpg)
     
     ![Often you will not have to re-apply solder after this process because
     there will be enough left over to maintain a good electrical
     contact. Once you are satisfied the flux residue can be cleaned using
-    isopropyl alcohol](./images/ShortExample4.jpg)
+    isopropyl alcohol](./resources/ShortExample4.jpg)
 
 1. Each board has an address (0 through 3) that is defined by two solder
    jumpers and the location of a ferrite chip. This allows cyclops boards to be
@@ -458,9 +458,9 @@ the next section before applying power._
 1. Next, populate all electromechanical components. This can be soldered in
    place with a standard soldering iron and a large chisel tip.
 
-    ![Top side of board following electromechanical component installation.](./images/cyclops3.5A_EM1.jpg)
+    ![Top side of board following electromechanical component installation.](./resources/cyclops3.5A_EM1.jpg)
 
-    ![Bottom side of board following electromechanical component installation.](./images/cyclops3.5A_EM2.jpg)
+    ![Bottom side of board following electromechanical component installation.](./resources/cyclops3.5A_EM2.jpg)
 
     __Note:__ The the barrel power jack (name: `POWER`, value: PJ-063BH on the
     schematic) should be mounted on the __bottom__ of the board. It fits on
@@ -474,13 +474,13 @@ the next section before applying power._
    electrical contacts. If you don't want to use the power switch, jumper the
    switch solder points using AWG 20 wire or thicker.
 
-    ![Power switch components.](./images/PowerSwitch.jpg)
+    ![Power switch components.](./resources/PowerSwitch.jpg)
 
-    ![Power switch installation.](./images/cyclops3.5A_PowerSwitch1.jpg)
+    ![Power switch installation.](./resources/cyclops3.5A_PowerSwitch1.jpg)
 
 1. Install the heatsink.
 
-    ![Botton of board with ahesive-backed heatsink in place.](./images/cyclops3.5A_heatsink.jpg)
+    ![Botton of board with ahesive-backed heatsink in place.](./resources/cyclops3.5A_heatsink.jpg)
 
 1. Install the light pipes over the front LEDs. These need to be seated firmly
    for the board to fit inside the enclosure.
