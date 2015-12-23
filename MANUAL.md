@@ -5,10 +5,12 @@ work, which required the delivery of ultra-precise, continuously time-varying
 light waveforms for optogenetic stimulation [1].  This was, and still is, not
 possible with commercial hardware for optogenetic stimulation. Since its first
 use, the circuit has been improved in terms of speed, precision,
-programmability, and ease of use. This document provides construction, usage,
-and performance documentation for the Cyclops LED driver. This document evolves
-with the repository. To view old revisions, checkout tags or old commits using
-their SHA.
+programmability, and ease of use. Furthermore, we have included preliminary
+designs for a bilateral high-powered fiber-coupled LED to complement the 
+Cyclops LED driver. This document provides construction, usage, and 
+performance documentation for the Cyclops LED driver and the bilateral fiber-
+coupled LED. This document evolves with the repository. To view old
+revisions, checkout tags or old commits using their SHA.
 
 <img src="./resources/cyclops_cartoon.png" width="300" />
 
@@ -17,6 +19,7 @@ __Contributors__
 
 - [jonnew](http://www.mit.edu/~jpnewman/)
 - [Sung-Yon Kim](http://www.sungyonkimlab.org/)
+- [andersjasp](https://mndrive.umn.edu/brain/people)
 
 __Table of Contents__
 
@@ -34,6 +37,7 @@ __Table of Contents__
     - [Board Assembly](#board-assembly)
     - [Enclosure](#enclosure)
     - [Circuit testing](#circuit-testing)
+    - [Bilateral fiber-coupled LED](#Bilateral fiber-coupled LED)
 - [License](#license)
     - [Hardware Licensing](#hardware-licensing)
     - [Software Licensing](#software-licensing)
@@ -577,7 +581,12 @@ To perform basic electrical testing, you we will use the following materials
 1. Now you are ready to supply time-varying input, from 0-5 volts, to the V_CTL
    pin to drive the LED or to program the onboard DAC to control the LED output.
 
+### Bilateral fiber-coupled LED
 
+1. follow the link below to view a  .pdf document containing detailed instructions
+   for fabricating a bilateral fiber-couopled LED.
+
+https://github.com/andersjasp/cyclops/files/71028/Open.source.fiber.coupled.bilateral.LED.for.in.vivo.applications.11_09_2015.pdf
 
 \FloatBarrier
 \newpage
