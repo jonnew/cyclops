@@ -6279,7 +6279,7 @@ at 30/07/2012 17:45:58</description>
 <wire x1="4.572" y1="-0.6858" x2="4.445" y2="-0.5588" width="0.127" layer="51"/>
 <rectangle x1="-5.08" y1="0" x2="5.08" y2="9.0932" layer="39"/>
 <wire x1="-5.08" y1="0" x2="5.08" y2="0" width="0.127" layer="51" style="shortdash"/>
-<pad name="1" x="0" y="12.3952" drill="0.9144" shape="octagon"/>
+<pad name="1" x="0" y="12.3952" drill="0.9144" diameter="1.778" shape="octagon"/>
 <wire x1="-5.588" y1="-11.3538" x2="-4.826" y2="-11.3538" width="0.127" layer="21"/>
 <wire x1="-4.826" y1="9.1186" x2="4.826" y2="9.1186" width="0.127" layer="21"/>
 <wire x1="-1.016" y1="9.0932" x2="-1.016" y2="10.3632" width="0.127" layer="21"/>
