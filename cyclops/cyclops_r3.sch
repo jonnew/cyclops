@@ -6499,7 +6499,7 @@ distributor Farnell 149-452</description>
 <part name="R20" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="C27" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="C25" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
-<part name="AUX&lt;&gt;CURR" library="cyclops" deviceset="SPDT" device="_JS" value="JS102"/>
+<part name="AUX&lt;FB&gt;CURR" library="cyclops" deviceset="SPDT" device="_JS" value="JS102"/>
 <part name="FRAME1" library="cyclops" deviceset="FRAME_A_L" device=""/>
 <part name="FRAME2" library="cyclops" deviceset="FRAME_A_L" device=""/>
 <part name="FRAME3" library="cyclops" deviceset="FRAME_A_L" device=""/>
@@ -8253,7 +8253,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="RSENSE" gate="R" x="165.1" y="-5.08" rot="R90"/>
 <instance part="C27" gate="C" x="-17.78" y="20.32"/>
 <instance part="C25" gate="C" x="-25.4" y="20.32"/>
-<instance part="AUX&lt;&gt;CURR" gate="G$1" x="48.26" y="17.78" smashed="yes" rot="MR180">
+<instance part="AUX&lt;FB&gt;CURR" gate="G$1" x="48.26" y="17.78" smashed="yes" rot="MR180">
 <attribute name="NAME" x="38.1" y="13.97" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="43.18" y="16.51" size="1.778" layer="96" rot="MR180"/>
 </instance>
@@ -8473,7 +8473,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="43.18" y1="99.06" x2="43.18" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="AUX&lt;&gt;CURR" gate="G$1" pin="1"/>
+<pinref part="AUX&lt;FB&gt;CURR" gate="G$1" pin="1"/>
 <wire x1="55.88" y1="15.24" x2="55.88" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -8554,7 +8554,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="81.28" y1="38.1" x2="81.28" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="AUX&lt;&gt;CURR" gate="G$1" pin="3"/>
+<pinref part="AUX&lt;FB&gt;CURR" gate="G$1" pin="3"/>
 <wire x1="55.88" y1="20.32" x2="55.88" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="SUPPLY11" gate="G$1" pin="+12V"/>
 </segment>
@@ -8786,7 +8786,7 @@ Max(ILED) ~ 1.5 Amps</text>
 </net>
 <net name="IN" class="0">
 <segment>
-<pinref part="AUX&lt;&gt;CURR" gate="G$1" pin="2"/>
+<pinref part="AUX&lt;FB&gt;CURR" gate="G$1" pin="2"/>
 <wire x1="45.72" y1="17.78" x2="43.18" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="U12" gate="G$1" pin="IN"/>
 <wire x1="43.18" y1="22.86" x2="43.18" y2="17.78" width="0.1524" layer="91"/>
