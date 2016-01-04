@@ -40,26 +40,26 @@ typedef enum
 } Channel;
 
 // Pin Definitions
-#define OC0 				2       	// Over-current switch
-#define OC1 				3       	//
-#define OC2 				4       	//
-#define OC3 				5       	//
+#define OC0 				2     // Over-current switch
+#define OC1 				3     //
+#define OC2 				4     //
+#define OC3 				5     //
 
-#define CS0 				6       	// Chip select pins
-#define CS1 				7       	//
-#define CS2 				8       	//
-#define CS3 				9       	//
-#define LDAC  				10      	// Load DAC line (sync all channels)
+#define CS0 				6     // Chip select pins
+#define CS1 				7     //
+#define CS2 				8     //
+#define CS3 				9     //
+#define LDAC  				10    // Load DAC line (sync all channels)
 
-#define TRIG0 				11     		// Trigger lines
-#define TRIG1				12     		//
-#define TRIG2 				SCL    		//
-#define TRIG3 				SDA    		//
+#define TRIG0 				11    // Trigger lines
+#define TRIG1				12    //
+#define TRIG2 				SCL   //
+#define TRIG3 				SDA   //
 
-#define A0                  0           // Analog input lines
-#define A1                  1           //
-#define A2                  2           //
-#define A3                  3           //
+#define A0                  0     // Analog input lines
+#define A1                  1     //
+#define A2                  2     //
+#define A3                  3     //
 
 //MCP4921 commands
 #define DAC_CONF_ACTIVE 	(0x1000)
@@ -83,29 +83,29 @@ static void isr(void);
 
 class Cyclops {
 
-  public:
+ public:
 
     Cyclops(Channel channel);
 
     // Onboard signal generation
-	void dac_send_test_waveform(void);
+    void dac_send_test_waveform(void);
     void dac_prog_voltage(uint16_t voltage);
     void dac_load(void);
     void dac_generate_waveform(uint16_t voltage[],
-                               uint16_t length,
-                               uint16_t sample_period_us);
-	void dac_shutdown(void);
+            uint16_t length,
+            uint16_t sample_period_us);
+    void dac_shutdown(void);
 
     // Current measurement and OC protection
     float measure_current(void);
     float over_current_protect(float current_limit_mA);
 
-	// Attach/detach interupt
-	void attach_interupt(void (*user_func)(void));
+    // Attach/detach interupt
+    void attach_interupt(void (*user_func)(void));
 
-  private:
+ private:
 
-	// Private properties
+    // Private properties
     Channel _channel = CH0;
 
     // Over current triggred
@@ -116,7 +116,7 @@ class Cyclops {
     static const uint8_t *_cs_lut;
     static const uint8_t *_oc_lut;
     static const uint8_t *_trig_lut;
-	static const uint8_t *_trig_port_pos_lut;
+    static const uint8_t *_trig_port_pos_lut;
 };
 
 #endif
