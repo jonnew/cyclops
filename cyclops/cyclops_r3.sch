@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6695,7 +6695,7 @@ distributor Farnell 149-452</description>
 <part name="P-7" library="cyclops" deviceset="-5V" device="" value="-1.25V"/>
 <part name="U3" library="cyclops" deviceset="MAX4564" device=""/>
 <part name="SUPPLY12" library="cyclops" deviceset="+12V" device=""/>
-<part name="R21" library="cyclops" deviceset="R" device="_0603" value="10k"/>
+<part name="R21" library="cyclops" deviceset="R" device="_0603" value="220k"/>
 <part name="U$62" library="cyclops" deviceset="GND1" device=""/>
 <part name="Q3" library="cyclops" deviceset="BC817*" device="SMD" technology="-16" value="BC817"/>
 <part name="R36" library="cyclops" deviceset="R" device="_0603" value="10k"/>

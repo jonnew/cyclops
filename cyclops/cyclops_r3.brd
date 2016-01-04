@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -23219,6 +23219,9 @@ Modified: 2014.07.10
 <autorouter>
 <pass name="Default">
 <param name="RoutingGrid" value="25mil"/>
+<param name="AutoGrid" value="1"/>
+<param name="Efforts" value="0"/>
+<param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
 <param name="PrefDir.1" value="|"/>
 <param name="PrefDir.2" value="0"/>
@@ -23944,7 +23947,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="37.036" y="63.143" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
 <attribute name="VALUE" x="37.35" y="62.033" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
-<element name="R21" library="cyclops" package="0603" value="10k" x="17.78" y="57.531" smashed="yes" rot="R270">
+<element name="R21" library="cyclops" package="0603" value="220k" x="17.78" y="57.531" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="17.78" y="57.531" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="17.78" y="57.531" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="17.78" y="57.531" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
