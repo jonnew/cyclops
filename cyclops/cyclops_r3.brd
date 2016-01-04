@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -175,12 +175,12 @@ Jon Newman
 </polygon>
 <text x="62.992" y="13.97" size="2.1844" layer="22" font="vector" ratio="18" rot="MR180" align="center">Cyclops
 Rev. 3.5C</text>
-<text x="109.982" y="17.526" size="1.016" layer="21" font="vector" ratio="18" rot="R270" align="center">S1</text>
-<text x="97.028" y="17.526" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">S0</text>
-<wire x1="102.108" y1="17.526" x2="102.616" y2="17.526" width="0.3048" layer="21"/>
+<text x="109.728" y="17.526" size="1.016" layer="21" font="vector" ratio="18" rot="R270" align="center">S1</text>
+<text x="97.282" y="17.526" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">S0</text>
+<wire x1="101.854" y1="17.526" x2="102.616" y2="17.526" width="0.3048" layer="21"/>
 <wire x1="102.616" y1="17.526" x2="104.14" y2="18.415" width="0.3048" layer="21"/>
 <circle x="104.394" y="17.526" radius="0.127" width="0.3048" layer="21"/>
-<wire x1="104.521" y1="17.526" x2="105.029" y2="17.526" width="0.3048" layer="21"/>
+<wire x1="104.521" y1="17.526" x2="105.283" y2="17.526" width="0.3048" layer="21"/>
 <text x="103.886" y="12.954" size="1.016" layer="21" font="vector" ratio="18" align="center">PANEL SWITCH.
 SHORT IF NOT
 IN USE.</text>
@@ -23219,9 +23219,6 @@ Modified: 2014.07.10
 <autorouter>
 <pass name="Default">
 <param name="RoutingGrid" value="25mil"/>
-<param name="AutoGrid" value="1"/>
-<param name="Efforts" value="0"/>
-<param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
 <param name="PrefDir.1" value="|"/>
 <param name="PrefDir.2" value="0"/>
@@ -23947,7 +23944,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="37.036" y="63.143" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
 <attribute name="VALUE" x="37.35" y="62.033" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
-<element name="R21" library="cyclops" package="0603" value="220k" x="17.78" y="57.531" smashed="yes" rot="R270">
+<element name="R21" library="cyclops" package="0603" value="110k" x="17.78" y="57.531" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="17.78" y="57.531" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="17.78" y="57.531" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="17.78" y="57.531" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
@@ -23958,7 +23955,7 @@ Modified: 2014.07.10
 <attribute name="NAME" x="23.876" y="64.389" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="25.146" y="63.119" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="R36" library="cyclops" package="0603" value="10k" x="17.78" y="62.992" smashed="yes" rot="R270">
+<element name="R36" library="cyclops" package="0603" value="2.2k" x="17.78" y="62.992" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="17.78" y="62.992" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="17.78" y="62.992" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="17.78" y="62.992" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
@@ -25061,7 +25058,7 @@ Modified: 2014.07.10
 <contactref element="PWR_DIST" pad="3"/>
 <contactref element="PWR_DIST" pad="2"/>
 <contactref element="PWR_DIST" pad="4"/>
-<via x="107.315" y="17.526" extent="1-16" drill="2.8" diameter="0.3302" shape="octagon"/>
+<via x="107.315" y="17.526" extent="1-16" drill="2.2" diameter="0.3302" shape="octagon"/>
 <wire x1="116.348" y1="53.864" x2="116.348" y2="53.862" width="0.3048" layer="1"/>
 <contactref element="U5" pad="2"/>
 <contactref element="C10" pad="+"/>
@@ -25671,7 +25668,7 @@ Modified: 2014.07.10
 </signal>
 <signal name="POW_IN" class="1">
 <contactref element="POWER" pad="1"/>
-<via x="99.822" y="17.526" extent="1-16" drill="2.8" diameter="0.3302" shape="octagon"/>
+<via x="99.822" y="17.526" extent="1-16" drill="2.2" diameter="0.3302" shape="octagon"/>
 <wire x1="113.224" y1="12" x2="105.348" y2="12" width="4.445" layer="1"/>
 <wire x1="99.822" y1="17.526" x2="105.348" y2="12" width="4.445" layer="1"/>
 </signal>
