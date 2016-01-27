@@ -5,12 +5,9 @@ work, which required the delivery of ultra-precise, continuously time-varying
 light waveforms for optogenetic stimulation [1].  This was, and still is, not
 possible with commercial hardware for optogenetic stimulation. Since its first
 use, the circuit has been improved in terms of speed, precision,
-programmability, and ease of use. Furthermore, we have included preliminary
-designs for a bilateral high-powered fiber-coupled LED to complement the 
-Cyclops LED driver. This document provides construction, usage, and 
-performance documentation for the Cyclops LED driver and the bilateral fiber-
-coupled LED. This document evolves with the repository. To view old
-revisions, checkout tags or old commits using their SHA.
+programmability, and ease of use. This document provides construction, usage, and 
+performance documentation for the Cyclops LED driver. This document evolves 
+with the repository. To view old revisions, checkout tags or old commits using their SHA.
 
 <img src="./resources/cyclops_cartoon.png" width="300" />
 
@@ -583,10 +580,10 @@ To perform basic electrical testing, you we will use the following materials
 
 ### Bilateral fiber-coupled LED
 
-1. follow the link below to view a  .pdf document containing detailed instructions
-   for fabricating a bilateral fiber-couopled LED.
+1. See the following .pdf document containing detailed instructions
+   for fabricating a bilateral fiber-couopled LED to complement the Cyclops LED driver.
 
-https://github.com/andersjasp/cyclops/files/71028/Open.source.fiber.coupled.bilateral.LED.for.in.vivo.applications.11_09_2015.pdf
+(./cyclops/resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
 
 \FloatBarrier
 \newpage
