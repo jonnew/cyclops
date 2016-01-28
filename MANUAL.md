@@ -583,7 +583,7 @@ To perform basic electrical testing, you we will use the following materials
 1. See the following .pdf document containing detailed instructions
    for fabricating a bilateral fiber-couopled LED to complement the Cyclops LED driver.
 
-(./resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
+[Bilateral fiber-coupled LED] (https://github.com/andersjasp/cyclops/blob/master/resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
 
 \FloatBarrier
 \newpage
