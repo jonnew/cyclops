@@ -34,6 +34,7 @@ __Table of Contents__
     - [Board Assembly](#board-assembly)
     - [Enclosure](#enclosure)
     - [Circuit testing](#circuit-testing)
+- [Quality Control Procedure](#quality-control-procedure)
 - [License](#license)
     - [Hardware Licensing](#hardware-licensing)
     - [Software Licensing](#software-licensing)
@@ -393,9 +394,9 @@ the next section before applying power._
    component alignment is not necessary.  Components will self-align during the
    reflow process.
 
-    ![Ingegrated circuit population.](./resources/cyclops3.5A_IC.jpg)
+    ![Integrated circuit population.](./resources/cyclops3.5A_IC.jpg)
 
-    ![Zoomed view of ingegrated circuit placement.](./resources/cyclops3.5A_IC2.jpg)
+    ![Zoomed view of integrated circuit placement.](./resources/cyclops3.5A_IC2.jpg)
 
 1. After placing the ICs, place the passive components (resistors,
    capacitors, inductors, diodes, and ferrite chips).  
@@ -505,7 +506,7 @@ you are using the enclosure)
 ### Circuit testing
 To perform basic electrical testing, you we will use the following materials
 
-- Digital multimeter (DMM). A low cost mulitmeter is available from
+- Digital multimeter (DMM). A low cost multimeter is available from
 [sparkfun](https://www.sparkfun.com/products/12966).
 - Jeweler's flat head screwdriver.
 - Oscilloscope (optional, but recommended for performance verification)
@@ -577,7 +578,52 @@ To perform basic electrical testing, you we will use the following materials
 1. Now you are ready to supply time-varying input, from 0-5 volts, to the V_CTL
    pin to drive the LED or to program the onboard DAC to control the LED output.
 
+### Quality Control Procedure
+The following procedure is to be performed on boards purchased from an external vendor and sold in a kit or fully assembled state.
 
+#### Setup
+- Insert alligator clip across power switch solder points
+- Insert device into PCB clamp
+- Power from 15V, 1.5A capable bench-top power supply.
+
+- [ ] Power indicator LED turns on.
+
+#### DC Levels
+- Using a multimeter, probe the 12V, 2.5V, -5V, and -1.25V test points
+
+- [ ] 12V good
+- [ ] -5V good
+- [ ] -1.25V good
+- [ ] While probing the 2.5V test point, use a ESD-safe screwdriver on the trimpot to get exactly 2.5V. 
+- [ ] Seal the pot with a dab of thread-lock glue.
+
+#### Dynamic characteristics
+- Set MDO3000's AFG to produce 0-5V, 100 Hz, 10% duty cycle square wave.
+- Insert LED/amplified photodiode test fixture into banana sockets and AUX BNC port.
+- Insert AFG output of MDO3000 output into VCTL BNC port of device
+- Bring CURR output of device to Ch1 of MDO3000
+- Bring VREF output to MD3000
+- Triggering on VREF Channel set scope to measure rise and fall times
+- Bring front panel potentiometer to 50% position.
+- Input switch to EXT source
+
+- [ ] Examine wave shape and rise/fall times in __current__ FB mode. Rise/fall times < 200 ns. No ringing on waveform.
+- [ ] Examine wave shape and rise/fall times in __optical__ FB mode. Rise/fall times < 200 ns. No ringing on waveform.
+- [ ] __RETURN FB SWITCH TO CURR POSITION__
+- [ ] Return input switch to OFF (middle) position
+
+#### Overcurrent indication
+- Bring gain potentiometer to full on position
+- Briefly tap on the TEST button.
+
+- [ ] Ensure that the >1A indicator LED turned on during pulse.
+- [ ] __RETURN GAIN POT. TO ZERO POSITION__
+
+#### Finish
+- [ ] Remove all power connectors. 
+- [ ] Remove alligator clip.
+- [ ] Initial and serial number the board using sharpie on the large power trace on the right side of the board.
+- [ ] Enter board serial number into the spreadsheet.
 
 \FloatBarrier
 \newpage
