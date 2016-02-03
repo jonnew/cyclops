@@ -5,10 +5,9 @@ work, which required the delivery of ultra-precise, continuously time-varying
 light waveforms for optogenetic stimulation [1].  This was, and still is, not
 possible with commercial hardware for optogenetic stimulation. Since its first
 use, the circuit has been improved in terms of speed, precision,
-programmability, and ease of use. This document provides construction, usage,
-and performance documentation for the Cyclops LED driver. This document evolves
-with the repository. To view old revisions, checkout tags or old commits using
-their SHA.
+programmability, and ease of use. This document provides construction, usage, and 
+performance documentation for the Cyclops LED driver. This document evolves 
+with the repository. To view old revisions, checkout tags or old commits using their SHA.
 
 <img src="./resources/cyclops_cartoon.png" width="300" />
 
@@ -17,6 +16,7 @@ __Contributors__
 
 - [jonnew](http://www.mit.edu/~jpnewman/)
 - [Sung-Yon Kim](http://www.sungyonkimlab.org/)
+- [andersjasp](https://mndrive.umn.edu/brain/people)
 
 __Table of Contents__
 
@@ -34,6 +34,7 @@ __Table of Contents__
     - [Board Assembly](#board-assembly)
     - [Enclosure](#enclosure)
     - [Circuit testing](#circuit-testing)
+- [Bilateral fiber-coupled LED](#Bilateral fiber-coupled LED)
 - [Quality Control Procedure](#quality-control-procedure)
 - [License](#license)
     - [Hardware Licensing](#hardware-licensing)
@@ -495,91 +496,30 @@ the next section before applying power._
 
 To construct the enclosure, you we will use the following materials
 
-- Phillips head screwdriver (if
-you are using the enclosure) 
-- A white paint pen (e.g. [these](http://amzn.com/B001PLKRZQ))
+- Phillips head screwdriver (if you are using the enclosure) 
 - Conductive coating for EMI suppression (e.g. [this](http://amzn.com/B008OA931A)).
 
 \FloatBarrier
 \newpage
 
-### Circuit testing
-To perform basic electrical testing, you we will use the following materials
+## Bilateral fiber-coupled LED
 
-- Digital multimeter (DMM). A low cost multimeter is available from
-[sparkfun](https://www.sparkfun.com/products/12966).
-- Jeweler's flat head screwdriver.
-- Oscilloscope (optional, but recommended for performance verification)
+Anders Asp has contributed the following .pdf document containing detailed
+instructions for fabricating a bilateral fiber-coupled LED to complement the
+Cyclops LED driver.
 
-1. Before powering on the device, check for shorts between power traces on the
-   board. Put your DMM in continuity mode and check for shorts between
-   GND and the various DC voltage supplies on the board. These include
+[Bilateral fiber-coupled LED] (https://github.com/andersjasp/cyclops/blob/master/resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
 
-    - `+12V`    Positive analog rail
-    - `-5V`     Negative analog analog rail 1
-    - `-1.25V`  Negative analog rail 2
-    - `REF5.0`  5V voltage reference
-    - `REF2.5`  2.5V voltage reference
-    - `5v`      Digital rail
-    
-    TODO: image
+\FloatBarrier
+\newpage
 
-    If there is a short, you must track it down and get rid of it before
-    applying power. If you find a short, test the same contact points on an
-    unpopulated PCB to ensure that it is not due to a PCB fabrication defect. If
-    so, contact your PCB fabricator for a return.
+## Quality Control Procedure
+The following procedure is to be performed on boards purchased from an 
+external vendor and sold in a kit or fully assembled state.
 
-1. Obtain a power supply which can source at least 2 amps at 15 volts. You can
-   use a switching supply, since current sourced to the LED is regulated. The
-   BOM includes a reasonably priced option that is capable of powering a single
-   device. Plug this power supply into the barrel jack and turn the power
-   switch on. You should see the power LED illuminate.
-
-1. Put your DMM in DC voltage measurement mode. Touch the negative probe to the
-   GND test point and measure the voltage on each DC voltage supply. They
-   should have the following approximate values:
-
-    - `+12V`    12 volts
-    - `-5V`     -5 volts
-    - `-1.25V`  -1.25 volts
-    - `REF5.0`  5.0 volts
-    - `REF2.5`  2.5 volts
-    - `5v`      5 volts
-
-1. While measuring the `REF2.5` testpoint, use the jeweler's screwdriver to
-   turn the `REF_ADJ` trimpot until it reads exactly 2.50 volts. `REF2.5`
-   provides an internal reference voltage for the TEST switch. It serves the
-   purpose of the `VCTL` signal, but does not require an external source. It
-   also provides the reference voltage for the onboard DAC if that is used.
-
-1. Next, we need to ensure that upon the first test of our LED driver, we will
-   not accidentally source too much current to the LED and destroy it. Ensure
-   the device is set to current feedback mode using the rear panel slide
-   switch.  Using your DMM in voltage measurement mode, probe the VREF pin pad
-   on the front BNC connector. Depress the `TEST` button and turn the `GAIN`
-   potentiometer until the voltage measurement reads ~100mV. This indicates that
-   the circuit will attempt to drive 100 mA through an LED attached to the LED
-   port. Obtain a high power LED. Ensure that it can handle the 100 mA current
-   that we are about to supply to it. Connect its anode to LED+ and cathode to
-   LED-, respectively. 
-
-1. Use the DMM in voltage measurement mode to probe the voltage at the `VI` BNC
-   connector. Depress the `TEST` button. The LED should light up. __Don't look
-   directly at the LED - your eyes' lenses are very good at focusing light to
-   dangerously high levels at your retina__. In current feedback mode, the
-   voltage at the `VI` port reflects the current through the LED with the scale
-   factor of 1V = 1A.  Examine the voltage at `VI` port, which should read
-   100mV, corresponding to 100 mA through the LED. If the LED does not
-   illuminate, ensure that you switched the device to current feedback mode. If
-   the device is left in AUX mode, and there is a high impedance at the AUX BNC
-   connector (e.g.  nothing is plugged in), the circuit will appear not to
-   function.
-
-1. Now you are ready to supply time-varying input, from 0-5 volts, to the V_CTL
-   pin to drive the LED or to program the onboard DAC to control the LED output.
-
-### Quality Control Procedure
-The following procedure is to be performed on boards purchased from an external vendor and sold in a kit or fully assembled state.
+Board Serial Number:
+Date:
+Initials:
 
 #### Setup
 - Insert alligator clip across power switch solder points
@@ -599,7 +539,7 @@ The following procedure is to be performed on boards purchased from an external 
 - [ ] Seal the pot with a dab of hot-glue.
 
 #### Dynamic characteristics
-- Set MDO3000's AFG to produce 0-5V, 100 Hz, 10% duty cycle square wave.
+- Set MDO3000's AFG to produce 1-5V, 100 Hz, 10% duty cycle square wave.
 - Insert LED/amplified photodiode test fixture into banana sockets, IDC
   connector, and AUX BNC port.
 - Insert AFG output of MDO3000 output into VCTL BNC port of device
@@ -629,10 +569,6 @@ The following procedure is to be performed on boards purchased from an external 
 - [ ] Initial and serial number the board using sharpie on the large power
   trace on the right side of the board.
 - [ ] Enter board serial number into the spreadsheet.
-
-\FloatBarrier
-\newpage
-
 ## License 
 ### Hardware Licensing 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
