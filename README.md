@@ -9,32 +9,12 @@ etc., please direct them toward the [Open Ephys
 forum](https://groups.google.com/forum/#!forum/open-ephys).
 
 ### TODO
-
-**Revision 3.5A**
-- [ ] Get the board on CircuitHub
-- [ ] Get the device on the Open Ephys store
-- [ ] The rear panel holes seems to have slight vertical offsets
-  - LED jacks: 1 mm to low 
-  - Expansion header: 1 mm to low 
-  - Aux/curr switch: 0.25 mm to low
-  - *EDIT* After further inspection it seems like the expansion header might
-    be 90% of the problem. Recheck before making changes.
-- [x] The LED polarity labels on the panel are reversed 
-- [x] Sometimes, because of intrinsic tolerance issues, the 5.1V zener's
-  reverse breakdown is too low and it affects valid signals in the 0-5V range.
-  Get a more reasonable value, e.g. 6V, zener.
-  - *EDIT* This was due to a bad zener. Ignore this change. 
-- [x] Trade out the LT1964A for a LT1764A, which has a 3A output capability and
-  a will allow the circuit to read 1.5A instead of crapping out at 1.25 since
-  the quiescent circuit is current hog.
-- [x] Put some extra through holes in for wire-to-board access to +/- LED,
-  digital GND, and I2C bus for EEPROM on thorlabs leds.
-
 **Revision 3.6**
 - [ ] Get [MANUAL.md](./MANUAL.md) in working order
 - [ ] Create an fiber coupled LED interface with integrated optical power
   measurements
   - [In progress](./experimental/photodiode/)
+  - [Bilateral, commutated LED](./resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
 - [ ] High side current sense
 - [ ] Arduino gets replaced with a
   [Teensy](https://www.pjrc.com/teensy/teensy31.html).
