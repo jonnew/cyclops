@@ -594,12 +594,14 @@ The following procedure is to be performed on boards purchased from an external 
 - [ ] 12V good
 - [ ] -5V good
 - [ ] -1.25V good
-- [ ] While probing the 2.5V test point, use a ESD-safe screwdriver on the trimpot to get exactly 2.5V. 
-- [ ] Seal the pot with a dab of thread-lock glue.
+- [ ] While probing the 2.5V test point, use a ESD-safe screwdriver on the
+  trimpot to get exactly 2.5V. 
+- [ ] Seal the pot with a dab of hot-glue.
 
 #### Dynamic characteristics
 - Set MDO3000's AFG to produce 0-5V, 100 Hz, 10% duty cycle square wave.
-- Insert LED/amplified photodiode test fixture into banana sockets and AUX BNC port.
+- Insert LED/amplified photodiode test fixture into banana sockets, IDC
+  connector, and AUX BNC port.
 - Insert AFG output of MDO3000 output into VCTL BNC port of device
 - Bring CURR output of device to Ch1 of MDO3000
 - Bring VREF output to MD3000
@@ -607,8 +609,10 @@ The following procedure is to be performed on boards purchased from an external 
 - Bring front panel potentiometer to 50% position.
 - Input switch to EXT source
 
-- [ ] Examine wave shape and rise/fall times in __current__ FB mode. Rise/fall times < 200 ns. No ringing on waveform.
-- [ ] Examine wave shape and rise/fall times in __optical__ FB mode. Rise/fall times < 200 ns. No ringing on waveform.
+- [ ] Examine wave shape and rise/fall times in __current__ FB mode. Rise/fall
+  times < 200 ns. No ringing on waveform.
+- [ ] Examine wave shape and rise/fall times in __optical__ FB mode. Rise/fall
+  times < 200 ns. No ringing on waveform.
 - [ ] __RETURN FB SWITCH TO CURR POSITION__
 - [ ] Return input switch to OFF (middle) position
 
@@ -622,7 +626,8 @@ The following procedure is to be performed on boards purchased from an external 
 #### Finish
 - [ ] Remove all power connectors. 
 - [ ] Remove alligator clip.
-- [ ] Initial and serial number the board using sharpie on the large power trace on the right side of the board.
+- [ ] Initial and serial number the board using sharpie on the large power
+  trace on the right side of the board.
 - [ ] Enter board serial number into the spreadsheet.
 
 \FloatBarrier
