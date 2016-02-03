@@ -24,7 +24,7 @@ Intitials:
 - [ ] Seal the pot with a dab of hot-glue.
 
 #### Dynamic characteristics
-- Set MDO3000's AFG to produce 0-5V, 100 Hz, 10% duty cycle square wave.
+- Set MDO3000's AFG to produce 1-5V, 100 Hz, 10% duty cycle square wave.
 - Insert LED/amplified photodiode test fixture into banana sockets, IDC
   connector, and AUX BNC port.
 - Insert AFG output of MDO3000 output into VCTL BNC port of device
@@ -35,9 +35,9 @@ Intitials:
 - Input switch to EXT source
 
 - [ ] Examine wave shape and rise/fall times in __current__ FB mode. Rise/fall
-  times < 200 ns. No ringing on waveform.
+  times < 300 ns. No ringing on waveform.
 - [ ] Examine wave shape and rise/fall times in __optical__ FB mode. Rise/fall
-  times < 200 ns. No ringing on waveform.
+  times < 300 ns. No ringing on waveform.
 - [ ] __RETURN FB SWITCH TO CURR POSITION__
 - [ ] Return input switch to OFF (middle) position
 

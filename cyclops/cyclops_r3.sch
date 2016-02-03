@@ -6468,7 +6468,7 @@ distributor Farnell 149-452</description>
 <attributes>
 <attribute name="DESIGNER" value="JONATHAN P. NEWMAN"/>
 <attribute name="DOC_NUMBER" value="N/A"/>
-<attribute name="REVISION" value="3.5C"/>
+<attribute name="REVISION" value="3.5D"/>
 </attributes>
 <variantdefs>
 </variantdefs>
