@@ -5,8 +5,8 @@ work, which required the delivery of ultra-precise, continuously time-varying
 light waveforms for optogenetic stimulation [1,2].  This was, and still is, not
 possible with commercial hardware for optogenetic stimulation. Since its first
 use, the circuit has been improved in terms of speed, precision,
-programmability, and ease of use. This document provides construction, usage, and 
-performance documentation for the Cyclops LED driver. This document evolves 
+programmability, and ease of use. This document provides construction, usage, and
+performance documentation for the Cyclops LED driver. This document evolves
 with the repository. To view old revisions, checkout tags or old commits using their SHA.
 
 <img src="./resources/cyclops_cartoon.png" width="300" />
@@ -34,7 +34,7 @@ __Table of Contents__
     - [Board Assembly](#board-assembly)
     - [Enclosure](#enclosure)
     - [Circuit testing](#circuit-testing)
-- [Bilateral fiber-coupled LED](#Bilateral fiber-coupled LED)
+- [Fiber coupled LED](#fiber-coupled-led)
 - [Quality Control Procedure](#quality-control-procedure)
 - [License](#license)
     - [Hardware Licensing](#hardware-licensing)
@@ -140,7 +140,7 @@ verbal or iconic descriptions device settings.
 
 ### Feedback modes
 
-#### Current Feedback Mode 
+#### Current Feedback Mode
 To use current feedback mode, push the `F.B. MODE` slide switch to the `CURR`
 position (![Current feedback mode.](./resources/curr_switch_icon.png)). Using the
 circuit in current feedback mode ensures that the forward current across the
@@ -161,7 +161,7 @@ nonlinearity are fairly minimal and can be ignored in most situations.
 
 ![Current feedback configuration.](./resources/current_feedback_diagram.png)
 
-#### Auxiliary Feedback Mode 
+#### Auxiliary Feedback Mode
 To use auxiliary feedback mode, push the `F.B. MODE` slide switch to the `AUX`
 position (![Auxilary feedback mode.](./resources/aux_switch_icon.png)).  When
 extremely stable, linear control of light power is required, the auxiliary
@@ -197,7 +197,7 @@ the driver.
   - ![Auxilary feedback mode.](./resources/aux_switch_icon.png) Generate the
     optical power specified by the h * mW level that is  specified by the `MAX
     POWER` dial. The intensity of the LED will be dependent on the auxiliary
-    feedback signal used which defines the 'h' parameter. 
+    feedback signal used which defines the 'h' parameter.
 
 2. ![EXT mode.](./resources/ext_toggle_icon.png) External input mode is engaged
 when the `SOURCE` switch is moved to the `EXT` position and user supplied voltage
@@ -206,11 +206,11 @@ more than 5V to the `EXT` input, the circuit will clamp the input signal to 5V.
 Using `EXT` mode, the behavior of the circuit is:
 
   - ![Current feedback mode.](./resources/curr_switch_icon.png) Source the current
-    specified by (EXT Voltage / 5V) * MAX CURR. 
+    specified by (EXT Voltage / 5V) * MAX CURR.
   - ![Auxilary feedback mode.](./resources/aux_switch_icon.png) Generate the
     optical power specified by (EXT Voltage/5V) * h  * mW. The intensity of the
     LED will be dependent on the auxiliary feedback signal used which defines
-    the 'h' parameter. 
+    the 'h' parameter.
 
 3. ![DAC mode.](./resources/dac_toggle_icon.png) The internal digital to analog
    converter (DAC) is engaged when the `SOURCE` switch is moved to the `DAC`
@@ -220,11 +220,11 @@ Using `EXT` mode, the behavior of the circuit is:
    API. Using the `DAC` mode, the behavior of the circuit is:
 
   - ![Current feedback mode.](./resources/curr_switch_icon.png) Source the current
-    specified by (DAC Voltage / 5V) * MAX CURR. 
+    specified by (DAC Voltage / 5V) * MAX CURR.
   - ![Auxilary feedback mode.](./resources/aux_switch_icon.png) Generate the
     optical power specified by (DAC Voltage/5V) * h  * mW. The intensity of the
     LED will be dependent on the auxiliary feedback signal used which defines
-    the 'h' parameter. 
+    the 'h' parameter.
 
 \FloatBarrier
 \newpage
@@ -233,12 +233,12 @@ Using `EXT` mode, the behavior of the circuit is:
 
 TODO
 
-## Construction 
+## Construction
 If you have questions during device assembly, please direct them to the
 [open-ephys forum](https://groups.google.com/forum/#!forum/open-ephys) so that
 others may benefit. Pull requests improving this documentation are welcome.
 
-### Components 
+### Components
 
 1. This google sheet contains a reasonably up-to-date parts list. However, it
    is manually managed and therefore prone to errors. It is recommended that
@@ -259,7 +259,7 @@ Most of the parts can be purchased from Digikey, but there are a few components
 that need to be bought from other sources such as Newark, Adafruit, and Samtec.
 All vendor, part number, and quantity information is listed on the BOM. If you
 are having trouble getting a part, check the Google Sheet as there are alternative
-suppliers listed for some parts. 
+suppliers listed for some parts.
 
 The cyclops PCB can be constructed by purchasing from one of the pre-uploaded
 options:
@@ -275,15 +275,15 @@ Alternatively, the [gerber files](./cyclops/gerber/) can be uploaded to the PCB
 fabrication service of your choice. The layer of each gerber file is identified
 by its file extension:
 
-     *.GKO = board outline 
-     *.GTS = top solder mask 
+     *.GKO = board outline
+     *.GTS = top solder mask
      *.GBS = bottom solder mask
-     *.GTO = top silk screen 
-     *.GBO = bottom silk screen 
+     *.GTO = top silk screen
+     *.GBO = bottom silk screen
      *.GTL = top copper
-     *.G2L = inner layer 2 copper 
-     *.G3L = inner layer 3 copper 
-     *.GBL = bottom copper 
+     *.G2L = inner layer 2 copper
+     *.G3L = inner layer 3 copper
+     *.GBL = bottom copper
      *.XLN = drill hits and sizes
 
 PCB stencils, which are useful for applying solder paste to the boards, can be
@@ -306,12 +306,12 @@ pre-populated Digikey cart. These include:
   cyclops to drive [Thorlabs LED
   modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206) or
   [Doric LED modules](http://doriclenses.com/life-sciences/243-led-modules).
-    
-### Board Assembly 
+
+### Board Assembly
 To assemble a Cyclops board, you will need the following materials
 
 - A soldering iron and, if possible, a hot-air reflow device.
-    - At minimum, a soldering iron regulated to ~370 deg.  c) will do the job. 
+    - At minimum, a soldering iron regulated to ~370 deg.  c) will do the job.
     - In addition to the iron, a hot-air rework tool or reflow oven are
       recommended and the assembly instructions below assume you are using one
       of these two options. A low cost, high-quality hot-air rework station can
@@ -333,7 +333,7 @@ To assemble a Cyclops board, you will need the following materials
     things much easier. We use [Chipquik
     291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./resources/SolderPaste.jpg)
 
-- Stereoscope or loupe (optional but nice for tracking down shorts.) 
+- Stereoscope or loupe (optional but nice for tracking down shorts.)
 - Isopropyl alcohol for cleaning flux off the board (e.g.
   [this](http://amzn.com/B0047YB3OW); optional)
 - An anti-static mat (e.g. [this](http://amzn.com/B00009XT3H); optional but
@@ -347,7 +347,7 @@ standard surface mount construction techniques.
 found [here](https://youtu.be/pdGSFc7VjBE).
 
 The following steps provide a visual guide to construct your own board. The
-goal is to create a fully populated PCB like this one: 
+goal is to create a fully populated PCB like this one:
 
 ![Finished device (revision 3.3).](./resources/cyclops3.3_both.jpg)
 
@@ -355,7 +355,7 @@ _Following board construction, you should run through the electrical tests outli
 the next section before applying power._
 
 1. Place the bare PCB on a flat surface, preferably one that is static
-   dissipative or anti-static. Alternatively, the board can be mounted in a PCB vice. 
+   dissipative or anti-static. Alternatively, the board can be mounted in a PCB vice.
 
     ![Instead of populating components on a table, holding the PCB using a
     PanaVise can be helpful.](./resources/Station.jpg)
@@ -368,11 +368,11 @@ the next section before applying power._
    the board.
 
     ![The cyclops PCB design in CadSoft EAGLE](./resources/Eagle.JPG)
-  
+
     You can then the `information` tool to get detailed information on each
     component, e.g. to ensure you are placing the correct value resistor or
     capacitor.
-  
+
     ![By selecting the information tool and clicking the cross at the center of
     a component, you can pull up detailed info (e.g. part
     number)](./resources/EagleInfo.JPG)
@@ -385,18 +385,18 @@ the next section before applying power._
    These will be hand soldered later in the assembly process.
 
     TODO: Image
-  
+
     The correct amount of solder paste to apply is `enough'. Each component
     contact should sit in a small amount of paste, but blobs of paste that
     envelop the component pad or pin may later result in a short. The following images
     show examples of good and bad solder placement.
-  
+
     ![Good solder placement.](./resources/SolderGoodExample.jpg)
-  
+
     ![Bad solder placement. Too much paste!](./resources/SolderBadExample.jpg)
 
     If you need to pause at any point, you should store place the PCB in the
-    fridge to prevent the flux in the solder paste from breaking down. 
+    fridge to prevent the flux in the solder paste from breaking down.
 
 1. Populate all __top-side surface mount__ components on the board. There is a
    single surface mount switch on the back of the board that will be hand
@@ -412,7 +412,7 @@ the next section before applying power._
     ![Zoomed view of integrated circuit placement.](./resources/cyclops3.5A_IC2.jpg)
 
 1. After placing the ICs, place the passive components (resistors,
-   capacitors, inductors, diodes, and ferrite chips).  
+   capacitors, inductors, diodes, and ferrite chips).
 
     ![Board following resistor and capacitor population.](./resources/cyclops3.5A_RnC.jpg)
 
@@ -425,7 +425,7 @@ the next section before applying power._
    and [mains relay](https://www.adafruit.com/products/268). You can make a
    similar one, use a commercial reflow oven, or use the hot air station.
    Reflow the solder paste on the board using your oven or hot air gun as
-   described in the links above.  
+   described in the links above.
 
     ![Homemade reflow oven with the populated board inside.](./resources/ReflowOven.jpg)
 
@@ -452,7 +452,7 @@ the next section before applying power._
     ![Place the copper braid over the solder blob and then press with the
     soldering iron. You should see the excess solder wick up the copper
     braid.](./resources/ShortExample3.jpg)
-    
+
     ![Often you will not have to re-apply solder after this process because
     there will be enough left over to maintain a good electrical
     contact. Once you are satisfied the flux residue can be cleaned using
@@ -508,19 +508,42 @@ the next section before applying power._
 
 To construct the enclosure, you we will use the following materials
 
-- Phillips head screwdriver (if you are using the enclosure) 
+- Phillips head screwdriver (if you are using the enclosure)
 - Conductive coating for EMI suppression (e.g. [this](http://amzn.com/B008OA931A)).
 
 \FloatBarrier
 \newpage
 
-## Bilateral fiber-coupled LED
+## Fiber-Coupled LED
+
+There are several things to consider when determining the type of LED you wish
+to drive with the Cyclops and the configuration of the LED.
+
+- Will optical stimulation be used in-vivo or through a microscope?
+- Will it be performed on freely behaving animals?
+- Do you need to perform bilateral stimulation?
+- Will you need to incorporate an amplified photodiode into your stimulator to
+  measure optical power or use use optical feedback to produce ultra precise
+  light waveforms?
+
+The answers to these questions will determine the type of LED you use and its
+configuration (e.g. collimated for the back aperture of your microscope or
+fiber coupled for in-vivo stimulation).
+
+### Fiber-coupled LEDs
 
 Anders Asp has contributed the following .pdf document containing detailed
 instructions for fabricating a bilateral fiber-coupled LED to complement the
 Cyclops LED driver.
 
 [Bilateral fiber-coupled LED] (https://github.com/andersjasp/cyclops/blob/master/resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
+
+### Microscope mounted LEDs
+The cyclops can be used to Drive [Thorlabs collimated
+LEDs](http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
+for microscope-based stimulation. You will need to install the [M8 4-position
+connector(http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
+in expansion port B to drive these LEDs.
 
 \FloatBarrier
 \newpage
@@ -543,7 +566,7 @@ vendor to ensure functionality.
 - [ ] -5V good
 - [ ] -1.25V good
 - [ ] While probing the 2.5V test point, use a ESD-safe screwdriver on the
-  trimpot to get exactly 2.5V. 
+  trimpot to get exactly 2.5V.
 - [ ] Seal the pot with a dab of hot-glue.
 
 #### Dynamic characteristics
@@ -572,13 +595,13 @@ vendor to ensure functionality.
 - [ ] __RETURN GAIN POT. TO ZERO POSITION__
 
 #### Finish
-- [ ] Remove all power connectors. 
+- [ ] Remove all power connectors.
 - [ ] Remove alligator clip.
 - [ ] Initial and serial number the board using sharpie on the large power
   trace on the right side of the board.
 - [ ] Enter board serial number into the spreadsheet.
-## License 
-### Hardware Licensing 
+## License
+### Hardware Licensing
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
 alt="Creative Commons License" style="border-width:0"
 src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span
@@ -592,7 +615,7 @@ Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br
 href="https://github.com/jonnew/cyclops"
 rel="dct:source">https://github.com/jonnew/cyclops</a>.
 
-### Software Licensing 
+### Software Licensing
 Copyright (c) Jonathan P. Newman All right reserved.
 
 The code associated with the Cyclops project is free software: you can
@@ -611,7 +634,7 @@ this code.  If not, see <http://www.gnu.org/licenses/>.
 \FloatBarrier
 \newpage
 
-## References 
+## References
 [1] J.P. Newman, M.-f. Fong, D.C. Millard, C.J. Whitmire, G.B. Stanley, S.M.
 Potter. S.M. Potter. [Optogenetic feedback control of neural
 activity.](http://elifesciences.org/content/4/e07192v1) _eLife_ (4:e07192) 2015.
