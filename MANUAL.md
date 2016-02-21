@@ -367,7 +367,7 @@ the next section before applying power._
    allow you to get detailed information on components before placing them on
    the board.
 
-    ![The cyclops PCB design in CadSoft EAGLE](./resources/Eagle.JPG)
+    ![The cyclops PCB design in CadSoft EAGLE](./resources/Eagle.jpg)
 
     You can then the `information` tool to get detailed information on each
     component, e.g. to ensure you are placing the correct value resistor or
@@ -375,7 +375,7 @@ the next section before applying power._
 
     ![By selecting the information tool and clicking the cross at the center of
     a component, you can pull up detailed info (e.g. part
-    number)](./resources/EagleInfo.JPG)
+    number)](./resources/EagleInfo.jpg)
 
 1. After cleaning the surface of the board with isopropyl acholhol or similar,
    apply solder paste to each of the pads. For an excellent series of tips on
