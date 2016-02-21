@@ -4,7 +4,7 @@
 
     [Google Doc List](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing)
 
-2. Fully assembled cyclops PCBs can be purchased from circuithub
+2. Fully assembled cyclops PCBs can be purchased from Circuit Hub
 
     [Cyclops on Circuit Hub](https://circuithub.com/projects/jonnew_/cyclops)
 

@@ -2,7 +2,7 @@ __Cyclops__ is a high-power LED driver that enables precise control of light
 power for optogenetic stimulation. The circuit was developed by Jon Newman
 while in Steve Potter's lab at Georgia Tech in order to complete his thesis
 work, which required the delivery of ultra-precise, continuously time-varying
-light waveforms for optogenetic stimulation [1].  This was, and still is, not
+light waveforms for optogenetic stimulation ([1][1],[2][2]).  This was, and still is, not
 possible with commercial hardware for optogenetic stimulation. Since its first
 use, the circuit has been improved in terms of speed, precision,
 programmability, and ease of use. This document provides construction, usage, and 
@@ -162,7 +162,7 @@ nonlinearity are fairly minimal and can be ignored in most situations.
 ![Current feedback configuration.](./resources/current_feedback_diagram.png)
 
 #### Auxiliary Feedback Mode 
-To use auxilary feedback mode, push the `F.B. MODE` slide switch to the `AUX`
+To use auxiliary feedback mode, push the `F.B. MODE` slide switch to the `AUX`
 position (![Auxilary feedback mode.](./resources/aux_switch_icon.png)).  When
 extremely stable, linear control of light power is required, the auxiliary
 feedback input can be used to used to compensate for the temperature dependence
@@ -239,23 +239,35 @@ If you have questions during device assembly, please direct them to the
 others may benefit. Pull requests improving this documentation are welcome.
 
 ### Components 
-The bill of materials (BOM) is available on [this google
-doc](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
+
+1. This google sheet contains a reasonably up-to-date parts list. However, it
+   is manually managed and therefore prone to errors. It is recommended that
+   method 2 be used instead
+
+    [Google Doc List](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing)
+
+2. Fully assembled cyclops PCBs can be purchased from Circuit Hub
+
+    [Cyclops on Circuit Hub](https://circuithub.com/projects/jonnew_/cyclops)
+
+    This also includes an up-to-date parts list for each PCB with optimized prices.
+    _Note that these parts are for a single PCB without the enclosure, power supply,
+    etc_. Those parts can be found on the "Circuit Hub Kit" tab of the Google
+    spreadsheet above.
+
 Most of the parts can be purchased from Digikey, but there are a few components
 that need to be bought from other sources such as Newark, Adafruit, and Samtec.
 All vendor, part number, and quantity information is listed on the BOM. If you
-are having trouble getting a part, check the BOM since there are alternative
-suppliers listed for some parts. As a convenience, the spreadsheet contains
-links to a pre-populated Digikey cart (which are optimized for quantity
-discounts).
+are having trouble getting a part, check the Google Sheet as there are alternative
+suppliers listed for some parts. 
 
-The cyclops PCB can be constructed by purchasing from one of the
-pre-uploaded options:
+The cyclops PCB can be constructed by purchasing from one of the pre-uploaded
+options:
 
-- [OSH Park](https://oshpark.com/shared_projects/N5vW5JmD) - made in America,
+- [OSH Park](https://oshpark.com/shared_projects/fOfw7acB) - made in America,
   excellent quality. Minimum of 3 boards per order
-- [Seeed Studio]() - made in China, very good quality. Minimum of 5 boards per
-  order.
+- [Seeed Studio](http://www.seeedstudio.com/service/index.php?r=pcb) - made in
+  China, very good quality. Minimum of 5 boards per order.
 
 ![A bare Cyclops PCB, top side, fabricated by Seeed Studio.](./resources/cyclops3.5A_board1.jpg)
 
@@ -514,12 +526,8 @@ Cyclops LED driver.
 \newpage
 
 ## Quality Control Procedure
-The following procedure is to be performed on boards purchased from an 
-external vendor and sold in a kit or fully assembled state.
-
-Board Serial Number:
-Date:
-Initials:
+The following procedure can be performed on boards purchased from an external
+vendor to ensure functionality.
 
 #### Setup
 - Insert alligator clip across power switch solder points
@@ -604,8 +612,9 @@ this code.  If not, see <http://www.gnu.org/licenses/>.
 \newpage
 
 ## References 
-[1] T. Tchumatchenko\*, J.P. Newman\*, M.-f. Fong, S.M. Potter.
+[1]: J.P. Newman, M.-f. Fong, D.C. Millard, C.J. Whitmire, G.B. Stanley, S.M. Potter. S.M. Potter. Optogenetic feedback control of neural activity. _eLife_ (4:e07192) 2015. doi: 10.7554/eLife.07192
+[2]: T. Tchumatchenko\*, J.P. Newman\*, M.-f. Fong, S.M. Potter.
 [Delivery of time-varying stimuli using
 ChR2](http://journal.frontiersin.org/article/10.3389/fncir.2013.00184/full#).
-(\* - equal contributions, co-first authors) Front. Neural Circuits (7:184)
+(\* - equal contributions, co-first authors) _Front. Neural Circuits_ (7:184)
 2013.  doi: 10.3389/fncir.2013.00184
