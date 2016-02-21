@@ -2,7 +2,7 @@ __Cyclops__ is a high-power LED driver that enables precise control of light
 power for optogenetic stimulation. The circuit was developed by Jon Newman
 while in Steve Potter's lab at Georgia Tech in order to complete his thesis
 work, which required the delivery of ultra-precise, continuously time-varying
-light waveforms for optogenetic stimulation ([1][1],[2][2]).  This was, and still is, not
+light waveforms for optogenetic stimulation [1,2].  This was, and still is, not
 possible with commercial hardware for optogenetic stimulation. Since its first
 use, the circuit has been improved in terms of speed, precision,
 programmability, and ease of use. This document provides construction, usage, and 
@@ -612,8 +612,12 @@ this code.  If not, see <http://www.gnu.org/licenses/>.
 \newpage
 
 ## References 
-[1]: J.P. Newman, M.-f. Fong, D.C. Millard, C.J. Whitmire, G.B. Stanley, S.M. Potter. S.M. Potter. Optogenetic feedback control of neural activity. _eLife_ (4:e07192) 2015. doi: 10.7554/eLife.07192
-[2]: T. Tchumatchenko\*, J.P. Newman\*, M.-f. Fong, S.M. Potter.
+[1] J.P. Newman, M.-f. Fong, D.C. Millard, C.J. Whitmire, G.B. Stanley, S.M.
+Potter. S.M. Potter. [Optogenetic feedback control of neural
+activity.](http://elifesciences.org/content/4/e07192v1) _eLife_ (4:e07192) 2015.
+doi: 10.7554/eLife.07192
+
+[2] T. Tchumatchenko\*, J.P. Newman\*, M.-f. Fong, S.M. Potter.
 [Delivery of time-varying stimuli using
 ChR2](http://journal.frontiersin.org/article/10.3389/fncir.2013.00184/full#).
 (\* - equal contributions, co-first authors) _Front. Neural Circuits_ (7:184)
