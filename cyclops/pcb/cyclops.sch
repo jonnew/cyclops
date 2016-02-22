@@ -6249,7 +6249,6 @@ at 30/07/2012 17:45:58</description>
 <pad name="3" x="3.81" y="4.5974" drill="1.8034" shape="octagon"/>
 <text x="-5.842" y="1.9812" size="1.016" layer="25" font="vector" ratio="20" rot="R90">&gt;NAME</text>
 <text x="6.731" y="2.1082" size="1.016" layer="27" font="vector" ratio="20" rot="R90">&gt;VALUE</text>
-<wire x1="-5.08" y1="0" x2="5.08" y2="0" width="0.127" layer="21" style="shortdash"/>
 <wire x1="-4.826" y1="9.0932" x2="-4.826" y2="-11.3538" width="0.127" layer="21"/>
 <wire x1="-4.826" y1="-11.3538" x2="-4.826" y2="-12.6238" width="0.127" layer="21"/>
 <wire x1="-4.826" y1="-12.6238" x2="-4.826" y2="-14.9098" width="0.127" layer="21"/>
