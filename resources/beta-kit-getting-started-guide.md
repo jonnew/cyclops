@@ -1,8 +1,8 @@
-## Thank you for purchasing a Cyclops LED driver kit!
-This  guide provides instructions that will allow you to assemble your Cyclops
-kit. For details on performance specifications, usage, and assembly, please have a look
-at the complete manual available in PDF or markdown form on the Cyclops github
-repo.
+## Thank you for purchasing a Cyclops kit!
+This  guide provides instructions that will allow you to assemble your Cyclops.
+For details on performance specifications, usage, and assembly, please have a
+look at the complete manual available in PDF or markdown form on the Cyclops
+github repo.
 
 > https://github.com/jonnew/Cyclops/blob/master/MANUAL.md
 
@@ -50,6 +50,13 @@ assure you (see feature 3), that despite these very neat beta-only
 characteristics, your Cyclops will kick just as much butt as those from the
 next production round.
 
+1. __Rad hidden power switch solder points__
+
+    Somehow the solder resist mask got put over the through-holes where the
+    power switch is soldered to the board.
+
+	![Not equal.](rage_guy_02.jpg)
+    
 1. __Cool manually soldered linear regulator__
 
     It turns out that LT1764AEQ-1.8 is not the same as LT1764AEQ.

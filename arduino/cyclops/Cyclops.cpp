@@ -56,6 +56,10 @@ Cyclops::Cyclops(Channel channel) : _channel(channel)
     SPI.setDataMode(SPI_MODE0);
     SPI.setBitOrder(MSBFIRST);
     SPI.begin();
+
+    // Start DAC at 0V
+    dac_prog_voltage(0);
+    dac_load();
 }
 
 float Cyclops::over_current_protect(float current_limit_mA)
@@ -97,12 +101,13 @@ void Cyclops::dac_send_test_waveform(void)
     }
 }
 
-void Cyclops::dac_generate_waveform(uint16_t voltage[], uint16_t length, uint16_t sample_period_us)
+// TODO: User timer interput for better accuracy
+void Cyclops::dac_generate_waveform(uint16_t voltage[], uint16_t length, uint32_t sample_period_us)
 {
     for (uint16_t i = 0; i < length; i++) {
         dac_prog_voltage(voltage[i]);
         dac_load();
-        delayMicroseconds(sample_period_us);
+        delayMicroseconds(sample_period_us - DAC_UPDATE_DELAY_USEC);
     }
 }
 

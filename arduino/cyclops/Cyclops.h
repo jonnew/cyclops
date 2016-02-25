@@ -61,9 +61,10 @@ typedef enum
 #define A2                  2     //
 #define A3                  3     //
 
-//MCP4921 commands
-#define DAC_CONF_ACTIVE 	(0x1000)
-#define DAC_CONF_SHDN 		(0x1000)
+//MCP4921 stuff
+#define DAC_CONF_ACTIVE 	  (0x1000)
+#define DAC_CONF_SHDN 		  (0x1000)
+#define DAC_UPDATE_DELAY_USEC 54 // LEONARDO SPECIFIC
 
 //Function macros for setting bits in registers
 #define cbi(sfr,bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
@@ -93,7 +94,7 @@ class Cyclops {
     void dac_load(void);
     void dac_generate_waveform(uint16_t voltage[],
             uint16_t length,
-            uint16_t sample_period_us);
+            uint32_t sample_period_us);
     void dac_shutdown(void);
 
     // Current measurement and OC protection
