@@ -1,10 +1,16 @@
+#TODO:
+- Power switch assembly pictures
+- Heatsink install pictures
+- Potentiometer nut and washer pictures
+
 ## Thank you for purchasing a Cyclops kit!
-This  guide provides instructions that will allow you to assemble your Cyclops.
-For details on performance specifications, usage, and assembly, please have a
-look at the complete manual available in PDF or markdown form on the Cyclops
-github repo.
+This guide provides instructions for assembling your Cyclops kit.  For more
+details on performance specifications, usage, and assembly, please have a look
+at the complete manual available in PDF or markdown form on the Github
+repository.
 
 > https://github.com/jonnew/Cyclops/blob/master/MANUAL.md
+> https://github.com/jonnew/Cyclops/blob/master/MANUAL.pdf
 
 If you have any questions, do not hesitate to post them to the open-ephys
 mailing list where I will try to reply with great precision and speed:
@@ -14,19 +20,21 @@ mailing list where I will try to reply with great precision and speed:
 Also, __pull requests and bug reports are welcome__. I would love your help in
 improving this device and its documentation!
 
+> https://github.com/jonnew/cyclops/issues
+
 ### Attribution
 This device is professional-grade scientific equipment. It has been a long road
 to design and test the Cyclops, coordinate the acquisition of materials,
 coordinate the manufacturing processes, and to distribute the device to the
-community. This has been a lot of work but also a tremendous learning experience for me. I am very
+community. This process has been a lot of work but also a tremendous learning experience for me. I am very
 happy that this device may enable your scientific endeavours and I'm sincerely
-grateful to you for your interest in using the device. In general, I hope this
-project will integrate as a small module into a of growing set of __high-quality__,
+grateful to you for your interest in the project. In general, I hope this
+project will eventually be one small module in a of growing set of __high-quality__,
 __open-source__, and __afforable__ tools that facilitate your research and
 enable an __open__, __community-oriented__ approach to science.
 
-All profits from the sale of Cyclops kits go to funding the open-ephys
-non-profit initiative. Since I receive no monetary compensation from the sale
+All profits from the sale of Cyclops kits go to funding the Open Ephys
+non-profit organization. Since I receive no monetary compensation from the sale
 of these devices, it would mean a great deal to me if you would consider
 referencing the following paper (for which the Cyclops was developed) in
 published work that makes use of the Cyclops.
@@ -46,7 +54,7 @@ level. OK, let's get started.
 ### Beta "Features"
 Tricked you. Before we actually get started, I wanted to let you in on a few
 awesome features only available to pioneering beta users like yourself. I
-assure you (see feature 3), that despite these very neat beta-only
+assure you (see feature 4), that despite these very neat beta-only
 characteristics, your Cyclops will kick just as much butt as those from the
 next production round.
 
@@ -55,37 +63,43 @@ next production round.
     Somehow the solder resist mask got put over the through-holes where the
     power switch is soldered to the board.
 
-	![Not equal.](rage_guy_02.jpg)
-    
-1. __Cool manually soldered linear regulator__
+	![Gah.](rage_guy_02.jpg)
+
+   This makes soldering to these points a bit tricky, because you must make
+   sure the solder follows into the hole, where there is exposed copper. If you
+   think you might have trouble with this, take an utility blade and scrape the
+   solder resist layer off the pad in the back of the board, as show in the
+   figure.
+
+2. __Cool manually soldered linear regulator__
 
     It turns out that LT1764AEQ-1.8 is not the same as LT1764AEQ.
-	
+
 	![Not equal.](different-chips.jpg)
-    
+
     For this reason, I had to manually replace every board's linear regulator after
     they had been been professionally assembled (Fig. TODO). Thank goodness for podcasts! The little marker dot on the large power trace at the
     front right corner of the board indicates that the replacement was made, just
     for you.
 
-2. __Awesome minimal silkscreen layer__
+3. __Awesome minimal silkscreen layer__
 
     When I got the boards back from the assembler, I noticed they looked very
     minimal and streamlined. "Must be a result of those super precise pick and
     place machines", I thought to myself. "Amazing how much cleaner a robot can
     solder than......where the f\*\*\* are the component labels?" (Fig. 2)
-    
-    ![Rage Guy 1](rage-guy_01.png)
-    
+
+    ![Come on...](rage-guy_01.png)
+
     This one was my fault. I failed to adequately RTFM. At least the Cyclops
     artwork is still on the back of the PCB. Without that, it doesn't work. If you
     want to know the value of the components and names of solder points on the
     board (e.g. to hack it, which I thoroughly encourage), Figure XX shows the
     complete silkscreen.
-	
+
     ![Beta vs. complete silkscreen](beta-silkscreen.jpg)
-	
-3. __Sweet quality control check__
+
+4. __Sweet quality control check__
 
     Given the aforementioned kinks in the manufacturing process, I wanted to ensure
     the functionality of each board. Therefore, we performed pretty extensive quality
@@ -128,18 +142,20 @@ Your kit does __not__ contain the following items:
     device, it just wont turn on).
   - Look around and see if you have a wall-wart laying around the lab that
     meets the specs. They are pretty common and the jack is likely to fit.
-  - Digikey part number 1470-3096-ND is a good option for those that need to buy a supply.
+  - [Digikey part number 1470-3096-ND](http://www.digikey.com/product-search/en?keywords=1470-3096-ND)
+    or equivalent is a good option for those that need to buy a supply.
 
 1. Arduino [Optional]
 
-  - The Cyclops contains onboard overcurrent protection circuitry and a 12-bit
-    digital to analog converter to generate arbitrary optical patterns. Both of
-    these features require you an Arduino Leonardo or equivalent to be
-    installed, and for the device to be programmed using the Cyclops Arduino
-    Library. 
-  - This is __not__ required to use the Cyclops for optical stimulation: you just
-    need to provide stimulus waveforms or triggers to the EXT IN BNC from some
-    other source.
+  - The Cyclops contains onboard overcurrent protection circuitry, a 12-bit
+    digital to analog converter to generate arbitrary optical patterns, and a
+    trigger input to provide fast waveform generation to an incoming logic
+    signal. These features require an Arduino Leonardo or
+    equivalent to be installed on the cyclops, and for the device to be programmed using the
+    [Cyclops Arduino Library](https://github.com/jonnew/cyclops/tree/master/arduino).
+  - This is __not__ required to use the Cyclops for optical stimulation:
+    without the Arduino, you just need to provide stimulus waveforms or
+    triggers to the EXT IN BNC from some other source.
 
 1. An M8, 4-pin connector [Optional]
 
@@ -159,77 +175,90 @@ Your kit does __not__ contain the following items:
     ![Power switch assembly](PowerSwitch.jpg)
 
   - Strip about 1 cm of insulation from each end of the hookup wires
-  - Solder the hookup wire to the switch
-  - Slide the heat shrink over the solder joints and hit then with a hot air gun
-    or pass a lighter underneath them to shrink them into place.
+  - Thread half of the stripped portion of each wire through each of the
+    switch's solder terminals, and then fold the wire back, so that the
+    stripped part is on both sides of the terminal.
+  - Solder the hookup wire to the switch. Make sure the solder flows into the
+    wires' coper braid and onto the switch terminal.
+  - Slide the heat shrink from the back of each wire, over the solder joints.
+    Hit then with a hot air gun or pass a lighter underneath them to shrink
+    them into place over the solder joints.
 
 1. Prepare the panels
 
     ![Power switch installation](power-switch-install.jpg)
-	
+
   - Pull the paper backing off the panels
-  - Press the the power switch into position on the back panel. The orientation
+  - Press the  power switch into position on the back panel. The orientation
     does not matter. It will snap into place.
 
 1. Install the heatsink on the PCB
 
-  - Flip the PCB so that the bottom is exposed. 
+  - Flip the PCB so that the bottom is exposed.
   - Locate the large white square indicating the silkscreen location
-  - Remove the paper backing from the heatsink to the adhesive surface
+  - Remove the paper backing from the heatsink to expose the adhesive surface
   - Press the heatsink into place on the PCB
-  
-1. Install the power switch on the PCB. 
+
+1. Install the power switch on the PCB.
 
     ![Power switch soldering](power-switch-solder.jpg)
 
   - Solder the power switch in place on the PCB after
-  - The solder points are accidentally covered in solder mask, but there should
-    be plenty of exposed copper on the inner part of the via to get a good
-    joint. Sorry about that. 
+  - The solder points are accidentally covered in solder mask 
+  (see [beta "feature" #1](#beta-"features") above if you are having trouble
+    soldering to these through holes).
 
 1. Install the light pipes on the PCB.
 
     ![Light pipe installation](light-pipe-install.jpg)
-	
-  - Insert the light pipes in the mounting positions in the front of the PCB. 
+
+  - Insert the light pipes in the mounting positions in the front of the PCB.
   - Squeeze them into place firmly using some needle nose pliers or sturdy forceps.
 
 1. Install the front panel on the enclosure
 
     ![Front panel installation](front-panel-install.jpg)
-	
+
   - Using 4 of the 8 mount screws that came in the little plastic bag _outside_
     of the enclosure box, install the front panel on the enclosure.
   - Don't use the screws that came with the box, they are are too tight and too
     weak. I had to petition the box manufacture to send me the replacement
     screws because of this.
 
-1. Install the PCB in the enclosure. 
+1. Install the PCB in the enclosure.
 
     ![Front panel installation](pcb-install.jpg)
 
-  - Slide the PCB into the box using the _middle_ rail
+  - Slide the PCB into the box using the _middle_ rail.
   - When the BNC connectors come through the front panel, you will need to push
     them down a bit, slightly flexing the PCB to get the light pipes through
-    the front panel. This is required to hold the light pipes in place. 
+    the front panel. This is required to hold the light pipes in place.
 
-1. Install the rear panel. 
+1. Install the rear panel.
 
     ![Rear panel installation](rear-panel-install.jpg)
 
-  - Loop the two hook up wires and push them into the enclosure on top of the PCB. 
+  - Loop the two hook up wires and push them into the enclosure on top of the
+    PCB.
   - Use the panel the push the remaining wire into the enclosure.
-  - Use the remaining 4 screws to install the rear panel
+  - Use the remaining 4 screws to install the rear panel.
 
 1. Install gain knob and button cover.
 
     ![Rear panel installation](gain-knob-install.jpg)
-	
-  - Turn the dial on the front panel _fully counter-clockwise_
-  - Slip the gain knob over the dial with the tick mark pointed slightly below the 0 position
-  - Tighten the set screw on the side of the knob to lock it into place using an Allen key.
-  - When you turn the knob fully clockwise, the tick mark should be pointing at the 1.5A position.
-  - Press the red button cover over the `TEST` switch.
+
+  - Slip the toothed washer over the gain dial.
+  - Tighten the jam nut on the gain dial's threads until just past finger
+    tight. Do not over-tighten or you will strip the threads.
+  - Turn the dial on the front panel _fully counter-clockwise_.
+  - Slip the gain knob over the dial with the tick mark pointed slightly below
+    the 0 position.
+  - Tighten the set screw on the side of the knob to lock it into place using
+    an Allen key.
+  - When you turn the knob fully clockwise, the tick mark should be pointing at
+    the 1.5A position.
+  - Press the red button cover over the `TEST` switch until it snaps into
+    place.
 
 Congratulations, you are the proud owner of a high-precision, high-power,
 high-speed LED driver that will make commercial drives feel a bit ridiculous
@@ -239,15 +268,14 @@ operations, etc, etc, please refer to the complete manual located on the
 repository. As stated previously:
 
 1. If you have trouble during the assembly process, please don't hesitate to
-   contact the [open-ephys forum](https://groups.google.com/forum/#!forum/open-ephys), where I will do my best to provide a quick and
-   accurate response.
+   contact the [open-ephys
+   forum](https://groups.google.com/forum/#!forum/open-ephys), where I will do
+   my best to provide a quick and accurate response.
 1. Pull requests and issue submissions are __welcome__ on the github repo and
    open ephys forum. If you have criticisms, fixes, etc, please let us know so
    we can implement them ASAP.
 
 Happy stimulating.
 
-Jon Newman
-MWL@MIT
-2016-02-20
+Jon Newman  MWL@MIT  2016-02-20
 
