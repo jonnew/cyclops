@@ -1,8 +1,3 @@
-#TODO:
-- Power switch assembly pictures
-- Heatsink install pictures
-- Potentiometer nut and washer pictures
-
 ## Thank you for purchasing a Cyclops kit!
 This guide provides instructions for assembling your Cyclops kit.  For more
 details on performance specifications, usage, and assembly, please have a look
@@ -23,13 +18,13 @@ improving this device and its documentation!
 > https://github.com/jonnew/cyclops/issues
 
 ### Attribution
-This device is professional-grade scientific equipment. It has been a long road
-to design and test the Cyclops, coordinate the acquisition of materials,
-coordinate the manufacturing processes, and to distribute the device to the
-community. This process has been a lot of work but also a tremendous learning experience for me. I am very
-happy that this device may enable your scientific endeavours and I'm sincerely
-grateful to you for your interest in the project. In general, I hope this
-project will eventually be one small module in a of growing set of __high-quality__,
+It has been a long road to design and test the Cyclops, coordinate the
+acquisition of materials, coordinate the manufacturing processes, and to
+distribute the device to the community. This process has been a lot of work but
+also a very rewarding learning experience. I am very happy that this
+device may enable your scientific endeavours and I'm sincerely grateful
+for your interest in the project. In general, I hope this project will
+eventually be one small module in a of growing set of __high-quality__,
 __open-source__, and __afforable__ tools that facilitate your research and
 enable an __open__, __community-oriented__ approach to science.
 
@@ -37,7 +32,7 @@ All profits from the sale of Cyclops kits go to funding the Open Ephys
 non-profit organization. Since I receive no monetary compensation from the sale
 of these devices, it would mean a great deal to me if you would consider
 referencing the following paper (for which the Cyclops was developed) in
-published work that makes use of the Cyclops.
+published work that makes use of the device.
 
 > J.P. Newman, M.-f. Fong, D.C. Millard, C.J. Whitmire, G.B. Stanley, S.M.
 > Potter. S.M. Potter. Optogenetic feedback control of neural activity. _eLife_
@@ -77,10 +72,10 @@ next production round.
 
 	![Not equal.](different-chips.jpg)
 
-    For this reason, I had to manually replace every board's linear regulator after
-    they had been been professionally assembled (Fig. TODO). Thank goodness for podcasts! The little marker dot on the large power trace at the
-    front right corner of the board indicates that the replacement was made, just
-    for you.
+    For this reason, I had to manually replace every board's linear regulator
+    after they had been been professionally assembled. Thank goodness for
+    podcasts! The little marker dot on the large power trace at the front right
+    corner of the board indicates that the replacement was made, just for you.
 
 3. __Awesome minimal silkscreen layer__
 
@@ -120,6 +115,8 @@ Your kit contains the following items
 1. Hookup wire (2x)
 1. Shrink tube (2x)
 1. Gain knob (1x)
+1. Toothed washer (1x)
+1. Jam nut (1x)
 1. Light pipes (3x)
 1. Button cover (1x)
 1. Heatsink (1x)
@@ -172,41 +169,48 @@ Your kit does __not__ contain the following items:
 
 1. Assemble the power switch
 
-    ![Power switch assembly](PowerSwitch.jpg)
+    ![Power switch assembly](switch-solder-steps.jpg)
 
   - Strip about 1 cm of insulation from each end of the hookup wires
-  - Thread half of the stripped portion of each wire through each of the
-    switch's solder terminals, and then fold the wire back, so that the
-    stripped part is on both sides of the terminal.
-  - Solder the hookup wire to the switch. Make sure the solder flows into the
-    wires' coper braid and onto the switch terminal.
+  - Thread the stripped portion of the wire halfway through each of the
+    switch's solder terminals. Fold the wire back, so that the stripped part is
+    touching both sides of the terminal.
+  - Solder the hookup wire to the terminals. Make sure the solder flows between the
+    wires' copper braid and the switch terminals.
   - Slide the heat shrink from the back of each wire, over the solder joints.
     Hit then with a hot air gun or pass a lighter underneath them to shrink
     them into place over the solder joints.
 
 1. Prepare the panels
 
-    ![Power switch installation](power-switch-install.jpg)
+    ![Power switch installation](switch-install-steps.jpg)
 
-  - Pull the paper backing off the panels
+  - Pull the paper backing off the panels.
   - Press the  power switch into position on the back panel. The orientation
-    does not matter. It will snap into place.
+    does not matter. Hold the close to hole you are pushing the switch
+    into as the panel material is pretty thin and could break if it is bent too
+    much.
+  - The switch will snap into place.
 
 1. Install the heatsink on the PCB
 
+    ![Heatsink installation](heatsink-install.jpg)
+
   - Flip the PCB so that the bottom is exposed.
-  - Locate the large white square indicating the silkscreen location
+  - Locate the large white square surrounding the exposed copper pad indicating
+    the heatsink mounting location
   - Remove the paper backing from the heatsink to expose the adhesive surface
   - Press the heatsink into place on the PCB
 
-1. Install the power switch on the PCB.
+1. Solder the power switch to the PCB.
 
     ![Power switch soldering](power-switch-solder.jpg)
 
-  - Solder the power switch in place on the PCB after
-  - The solder points are accidentally covered in solder mask 
-  (see [beta "feature" #1](#beta-"features") above if you are having trouble
-    soldering to these through holes).
+  - Solder the power switch to the two indicated terminals on the PCB.
+  - Make sure you do this __after__ you have install the switch in the rear panel.
+  - __Note:__ The solder points are mistakenly covered in solder mask material.
+    See [beta "feature" #1](#beta-"features") above if you are having trouble
+    soldering to these through holes.
 
 1. Install the light pipes on the PCB.
 
@@ -221,18 +225,19 @@ Your kit does __not__ contain the following items:
 
   - Using 4 of the 8 mount screws that came in the little plastic bag _outside_
     of the enclosure box, install the front panel on the enclosure.
-  - Don't use the screws that came with the box, they are are too tight and too
-    weak. I had to petition the box manufacture to send me the replacement
-    screws because of this.
+  - __Note:__ Although they may work, I don't recommend use the screws that
+    came with the box, they are are too tight and weak. I had to get the the
+    enclosure manufacture to send me the replacement screws because of this.
 
 1. Install the PCB in the enclosure.
 
     ![Front panel installation](pcb-install.jpg)
 
-  - Slide the PCB into the box using the _middle_ rail.
-  - When the BNC connectors come through the front panel, you will need to push
-    them down a bit, slightly flexing the PCB to get the light pipes through
-    the front panel. This is required to hold the light pipes in place.
+  - Slide the PCB into the box using the __middle__ mounting rail.
+  - __Note:__ When the BNC connectors come through the front panel, you will
+    need to push them down a bit, slightly flexing the PCB to get the light
+    pipes through the front panel. This is required to hold the light pipes in
+    place.
 
 1. Install the rear panel.
 
@@ -245,20 +250,21 @@ Your kit does __not__ contain the following items:
 
 1. Install gain knob and button cover.
 
-    ![Rear panel installation](gain-knob-install.jpg)
+    ![Gain knob installation](knob-install-steps.jpg)
 
   - Slip the toothed washer over the gain dial.
-  - Tighten the jam nut on the gain dial's threads until just past finger
-    tight. Do not over-tighten or you will strip the threads.
+  - Tighten the jam nut on the gain dial's threads until just past finger tight
+    using a pair of needle nose pliers.
+  - __Note:__ Do not over-tighten using a combination spannner or you will
+    strip the threads.
   - Turn the dial on the front panel _fully counter-clockwise_.
   - Slip the gain knob over the dial with the tick mark pointed slightly below
     the 0 position.
   - Tighten the set screw on the side of the knob to lock it into place using
     an Allen key.
-  - When you turn the knob fully clockwise, the tick mark should be pointing at
-    the 1.5A position.
-  - Press the red button cover over the `TEST` switch until it snaps into
-    place.
+  - When you turn the knob fully clockwise, the tick mark should be pointing
+    close to the 1.5A position.
+  - Press the red cover over the `TEST` switch until it snaps into place.
 
 Congratulations, you are the proud owner of a high-precision, high-power,
 high-speed LED driver that will make commercial drives feel a bit ridiculous

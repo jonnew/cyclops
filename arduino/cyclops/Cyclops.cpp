@@ -101,7 +101,7 @@ void Cyclops::dac_send_test_waveform(void)
     }
 }
 
-// TODO: User timer interput for better accuracy
+// TODO: User timer interupt for better accuracy
 void Cyclops::dac_generate_waveform(uint16_t voltage[], uint16_t length, uint32_t sample_period_us)
 {
     for (uint16_t i = 0; i < length; i++) {
