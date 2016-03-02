@@ -186,10 +186,11 @@ Your kit does __not__ contain the following items:
     ![Power switch installation](switch-install-steps.jpg)
 
   - Pull the paper backing off the panels.
-  - Press the  power switch into position on the back panel. The orientation
-    does not matter. Hold the close to hole you are pushing the switch
-    into as the panel material is pretty thin and could break if it is bent too
-    much.
+  - Press the  power switch into position on the back panel. Orient the switch
+    so that the 'on' symbol (―) is toward the middle of the panel and the 'off'
+    symbol (○) is toward the outside. This will make the panel easier to mount
+    on the enclosure. Hold the close to hole you are pushing the switch into as
+    the panel material is pretty thin and could break if it is bent too much.
   - The switch will snap into place.
 
 1. Install the heatsink on the PCB
@@ -208,9 +209,11 @@ Your kit does __not__ contain the following items:
 
   - Solder the power switch to the two indicated terminals on the PCB.
   - Make sure you do this __after__ you have install the switch in the rear panel.
+  - The wires can be soldered to either solder point, orientation does not
+    matter since this is a SPST switch.
   - __Note:__ The solder points are mistakenly covered in solder mask material.
     See [beta "feature" #1](#beta-"features") above if you are having trouble
-    soldering to these through holes.
+    soldering the wires in these through holes.
 
 1. Install the light pipes on the PCB.
 
@@ -226,8 +229,9 @@ Your kit does __not__ contain the following items:
   - Using 4 of the 8 mount screws that came in the little plastic bag _outside_
     of the enclosure box, install the front panel on the enclosure.
   - __Note:__ Although they may work, I don't recommend use the screws that
-    came with the box, they are are too tight and weak. I had to get the the
-    enclosure manufacture to send me the replacement screws because of this.
+    came with the box: they are are too tight and weak. I had to get the the
+    enclosure manufacturer to send me the replacement screws because of this,
+    which are supplied in the little baggie along with the other hardware.
 
 1. Install the PCB in the enclosure.
 
