@@ -20,6 +20,7 @@ __Contributors__
 
 __Table of Contents__
 
+- [Attribution](#attribution)
 - [Features](#features)
     - [Circuit Features](#circuit-features)
     - [Multiple stimulus generation options](#multiple-stimulus-generation-options)
@@ -34,12 +35,38 @@ __Table of Contents__
     - [Board Assembly](#board-assembly)
     - [Enclosure](#enclosure)
     - [Circuit testing](#circuit-testing)
-- [Fiber coupled LED](#fiber-coupled-led)
+- [LED](#led)
 - [Quality Control Procedure](#quality-control-procedure)
 - [License](#license)
     - [Hardware Licensing](#hardware-licensing)
     - [Software Licensing](#software-licensing)
 - [References](#references)
+
+\newpage
+
+## Attribution
+It has been a long road to design and test the Cyclops to the point where it is
+in active use in many neuroscience labs around the world. This process has been
+a lot of work but also a very rewarding learning experience. I am very happy
+that this device may enable your scientific endeavours and I hope it will
+eventually be one small module in a of growing set of __high-quality__,
+__open-source__, and __afforable__ tools that facilitate your research and
+enable an __open__, __community-oriented__ approach to neuroscience.
+
+I receive no monetary compensation from the sale of these devices. It would
+mean a great deal to me if you would consider referencing the following paper
+(for which the Cyclops was developed) in published work that makes use of the
+Cyclops.
+
+> J.P. Newman, M.-f. Fong, D.C. Millard, C.J. Whitmire, G.B. Stanley, S.M.
+> Potter. S.M. Potter. Optogenetic feedback control of neural activity. _eLife_
+> (4:e07192) 2015. doi: 10.7554/eLife.07192
+> [[link]](http://elifesciences.org/content/4/e07192v1)
+
+For instance, in your methods section:
+
+> Optical stimuli were delivered using the Cyclops LED driver (Newman et al., 2015;
+> www.github.com/jonnew/Cyclops).
 
 \newpage
 ## Features
@@ -125,9 +152,9 @@ sine waves, square pulses, etc.) into optical signals from high-power LEDs.
 Voltage signals to drive the device can be generated internally using an
 on-board digital to analog converter or can be delivered from an external
 source, such as a function generator or stimulus sequencer. The cyclops
-provides numerous measurements of circuit operation that can be measured and
-recorded during an experiment such as LED current and stimulus reference
-voltages. The device can be controlled over a USB interface using its [Arduino
+provides numerous measurements of circuit operation that can be recorded during
+an experiment such as LED current and stimulus reference voltages. The device
+can be controlled over a USB interface using its [Arduino
 library](./arduino/cyclops/). The device also can be configured to drive
 commercially available LED modules from Thorlabs and Doric.
 
@@ -514,8 +541,7 @@ To construct the enclosure, you we will use the following materials
 \FloatBarrier
 \newpage
 
-## Fiber-Coupled LED
-
+## LED
 There are several things to consider when determining the type of LED you wish
 to drive with the Cyclops and the configuration of the LED.
 
@@ -526,24 +552,61 @@ to drive with the Cyclops and the configuration of the LED.
   measure optical power or use use optical feedback to produce ultra precise
   light waveforms?
 
-The answers to these questions will determine the type of LED you use and its
-configuration (e.g. collimated for the back aperture of your microscope or
-fiber coupled for in-vivo stimulation).
+The answers to these questions will determine the type of LED you use, how it
+is coupled to the preparation (e.g. collimated for the back aperture of your
+microscope or, fiber coupled for in-vivo stimulation), and weather or not it
+needs to be commutated in some way. The following provide a few simple options
+for LED configurations, but there are many more to consider for your
+experiments. 
+
+Regardless of which you choose, the following is always true: __keep the
+cabling to the LED as short as possible and 'fat' enough to handle high
+currents (AWG 18 or thicker)__. The currents and voltage used to drive high
+power LEDs are many orders of magnitude (like 6 or more...) greater than those
+recorded during electrophysiology experiments. Also, the Cyclops is a fast
+circuit. Fast circuits hate long cables because they introduce appreciable
+delays and parasitics that can adversely affect operating characteristics. Very
+long cables will introduce ringing into light waveforms with fast edges!
+Ideally, the LED should be right next to the device. I typically mount my fiber
+coupled LEDs directly into the banana sockets on the back of the device using
+copper-clad printed circuit board so that my 'cables' are about 2 cm in length.
+
+TODO: picture of fiber coupled LED.
 
 ### Fiber-coupled LEDs
 
-Anders Asp has contributed the following .pdf document containing detailed
-instructions for fabricating a bilateral fiber-coupled LED to complement the
-Cyclops LED driver.
+#### DIY Solution
+Anders Asp has contributed the following PDF document containing detailed
+instructions for fabricating a bilateral, commutated fiber-coupled LED for use
+in freely moving animals that works with the Cyclops driver:
 
 [Bilateral fiber-coupled LED] (https://github.com/andersjasp/cyclops/blob/master/resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
+
+#### Thorlabs fiber-coupled LED modules
+The cyclops can be used to Drive [Thorlabs fiber-coupled LED
+modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206). You
+will need to install the [M8 4-position
+connector](http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
+in expansion port B to drive these LEDs. 
+
+TODO: Pictures/instructions for M8 installation process in Thorlabs configuration
+
+#### Doric LED fiber-coupled modules
+The cyclops can be used to Drive [Doric fiber-coupled LED
+modules](http://doriclenses.com/life-sciences/home/783-connectorized-single-led.html).
+You will need to install the [M8 4-position
+connector](http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
+in expansion port B to drive these LEDs. 
+
+TODO: Pictures/instructions for M8 installation process in Doric configuration
 
 ### Microscope mounted LEDs
 The cyclops can be used to Drive [Thorlabs collimated
 LEDs](http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
 for microscope-based stimulation. You will need to install the [M8 4-position
-connector(http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
-in expansion port B to drive these LEDs.
+connector](http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
+in expansion port B to drive these LEDs. See [Thorlab fiber-coupled LED
+instructions](#thorlabs-fieber-coupled-led) for instructions.
 
 \FloatBarrier
 \newpage

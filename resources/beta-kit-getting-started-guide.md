@@ -17,12 +17,12 @@ improving this device and its documentation!
 
 > https://github.com/jonnew/cyclops/issues
 
-### Attribution
+## Attribution
 It has been a long road to design and test the Cyclops, coordinate the
 acquisition of materials, coordinate the manufacturing processes, and to
 distribute the device to the community. This process has been a lot of work but
 also a very rewarding learning experience. I am very happy that this
-device may enable your scientific endeavours and I'm sincerely grateful
+device may enable your scientific endeavors and I'm sincerely grateful
 for your interest in the project. In general, I hope this project will
 eventually be one small module in a of growing set of __high-quality__,
 __open-source__, and __afforable__ tools that facilitate your research and
@@ -37,11 +37,12 @@ published work that makes use of the device.
 > J.P. Newman, M.-f. Fong, D.C. Millard, C.J. Whitmire, G.B. Stanley, S.M.
 > Potter. S.M. Potter. Optogenetic feedback control of neural activity. _eLife_
 > (4:e07192) 2015. doi: 10.7554/eLife.07192
+> [[link]](http://elifesciences.org/content/4/e07192v1)
 
 For instance, in your methods section:
 
-> Optical stimuli were delivered using the Cyclops LED driver (Newman, 2015;
-> www.github.com/jonnew/Cyclops).
+> Optical stimuli were delivered using the Cyclops LED driver (Newman et al.,
+> 2015; www.github.com/jonnew/Cyclops).
 
 Thanks again for taking the leap and helping to take this project to the next
 level. OK, let's get started.
@@ -89,7 +90,7 @@ next production round.
     This one was my fault. I failed to adequately RTFM. At least the Cyclops
     artwork is still on the back of the PCB. Without that, it doesn't work. If you
     want to know the value of the components and names of solder points on the
-    board (e.g. to hack it, which I thoroughly encourage), Figure XX shows the
+    board (e.g. to hack it, which I thoroughly encourage), this image shows the
     complete silkscreen.
 
     ![Beta vs. complete silkscreen](beta-silkscreen.jpg)
@@ -109,7 +110,7 @@ OK, for real this time, lets get started.
 Your kit contains the following items
 
 1. Assembled Cyclops PCB (1x)
-1. Extruded aluminium enclosure (1x)
+1. Extruded aluminum enclosure (1x)
 1. Laser-cut enclosure panels (1x front, 1x rear)
 1. Rocker switch (1x)
 1. Hookup wire (2x)
@@ -189,8 +190,9 @@ Your kit does __not__ contain the following items:
   - Press the  power switch into position on the back panel. Orient the switch
     so that the 'on' symbol (―) is toward the middle of the panel and the 'off'
     symbol (○) is toward the outside. This will make the panel easier to mount
-    on the enclosure. Hold the close to hole you are pushing the switch into as
-    the panel material is pretty thin and could break if it is bent too much.
+    on the enclosure. Hold the panel close to hole you are pushing the switch
+    into as the panel material is pretty thin and could break if it is bent too
+    much.
   - The switch will snap into place.
 
 1. Install the heatsink on the PCB
@@ -208,7 +210,8 @@ Your kit does __not__ contain the following items:
     ![Power switch soldering](power-switch-solder.jpg)
 
   - Solder the power switch to the two indicated terminals on the PCB.
-  - Make sure you do this __after__ you have install the switch in the rear panel.
+  - Make sure you do this __after__ you have installed the switch in the rear
+    panel.
   - The wires can be soldered to either solder point, orientation does not
     matter since this is a SPST switch.
   - __Note:__ The solder points are mistakenly covered in solder mask material.
@@ -259,7 +262,7 @@ Your kit does __not__ contain the following items:
   - Slip the toothed washer over the gain dial.
   - Tighten the jam nut on the gain dial's threads until just past finger tight
     using a pair of needle nose pliers.
-  - __Note:__ Do not over-tighten using a combination spannner or you will
+  - __Note:__ Do not over-tighten using a combination spanner or you will
     strip the threads.
   - Turn the dial on the front panel _fully counter-clockwise_.
   - Slip the gain knob over the dial with the tick mark pointed slightly below
@@ -272,7 +275,7 @@ Your kit does __not__ contain the following items:
 
 Congratulations, you are the proud owner of a high-precision, high-power,
 high-speed LED driver that will make commercial drives feel a bit ridiculous
-for costing so much and very self-concious about their performance
+for costing so much and very self-conscious about their performance
 characteristics. For further usage instructions, performance specs, theory of
 operations, etc, etc, please refer to the complete manual located on the
 repository. As stated previously:
@@ -282,8 +285,8 @@ repository. As stated previously:
    forum](https://groups.google.com/forum/#!forum/open-ephys), where I will do
    my best to provide a quick and accurate response.
 1. Pull requests and issue submissions are __welcome__ on the github repo and
-   open ephys forum. If you have criticisms, fixes, etc, please let us know so
-   we can implement them ASAP.
+   open ephys forum. If you have criticisms, fixes, suggestions for improvement
+   in the docs etc, please let us know so we can implement them ASAP.
 
 Happy stimulating.
 
