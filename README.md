@@ -18,6 +18,8 @@ forum](https://groups.google.com/forum/#!forum/open-ephys).
 - [ ] High side current sense
 - [ ] Arduino gets replaced with a
   [Teensy](https://www.pjrc.com/teensy/teensy31.html).
+- [ ] Indication light pipes get replaced with indicator modules, like
+  [these](http://www.digikey.com/product-detail/en/lumex-opto-components-inc/SSF-LXH305ID-TR/67-1374-2-ND/229162)
 
 #### Hardware Licensing
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
@@ -32,6 +34,7 @@ Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br
 />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/"
 href="https://github.com/jonnew/cyclops"
 rel="dct:source">https://github.com/jonnew/cyclops</a>.
+
 
 #### Software Licensing
 Copyright (c) Jonathan P. Newman All right reserved.
