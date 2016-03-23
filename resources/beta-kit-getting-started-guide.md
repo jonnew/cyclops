@@ -235,7 +235,22 @@ Your kit does __not__ contain the following items:
     came with the box: they are are too tight and weak. I had to get the the
     enclosure manufacturer to send me the replacement screws because of this,
     which are supplied in the little baggie along with the other hardware.
-
+  - __Final Note:__ The holes should not have to be tapped. The screws should just
+    kind of jam themselves into the holes. Godspeed.
+  - __The long story__: The reason for all this screw complexity is that the
+    supplier of the enclosures (Box Inc.) was in the middle of replacing the
+    dies used to create extrusions from which the enclosures are cut. If your
+    enclosure happened to be made the with the old die, the screw holes will
+    feel to tight and you should use the screws in the baggie. If those don't
+    work try the ones that actually shipped with the enclosure in the white
+    box. If nothing works, then you might have to drill out the holes with a
+    drill. I have not had to resort to this yet.
+  - __Final Note II:__ The screws that come with the enclosure are what I would
+    call "cheese grade". They are zinc or something. The ones in the baggie are
+    mild steel (I think) so those might be stronger. The reason I'm saying this
+    is that it is possible to break the screws that actually ship with the
+    enclosure (in the white box) so be cautious when turning them in.
+    
 1. Install the PCB in the enclosure.
 
     ![Front panel installation](pcb-install.jpg)
