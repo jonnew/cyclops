@@ -47,6 +47,7 @@ For instance, in your methods section:
 Thanks again for taking the leap and helping to take this project to the next
 level. OK, let's get started.
 
+## Kit Assembly Manual
 ### Beta "Features"
 Tricked you. Before we actually get started, I wanted to let you in on a few
 awesome features only available to pioneering beta users like yourself. I
@@ -62,10 +63,12 @@ next production round.
 	![Gah.](rage_guy_02.jpg)
 
    This makes soldering to these points a bit tricky, because you must make
-   sure the solder follows into the hole, where there is exposed copper. If you
+   sure the solder flows into the hole, where there is exposed copper. If you
    think you might have trouble with this, take an utility blade and scrape the
    solder resist layer off the pad in the back of the board, as show in the
    figure.
+
+   TODO: Figure showing Xacto knife being used to scrape off solder resist.
 
 2. __Cool manually soldered linear regulator__
 
