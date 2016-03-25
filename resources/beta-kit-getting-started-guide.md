@@ -68,7 +68,7 @@ next production round.
    solder resist layer off the pad in the back of the board, as show in the
    figure.
 
-   TODO: Figure showing Xacto knife being used to scrape off solder resist.
+   ![Scrape off solder resist.](cyclops3.5C_remove-resist.png)
 
 2. __Cool manually soldered linear regulator__
 
@@ -86,7 +86,7 @@ next production round.
     When I got the boards back from the assembler, I noticed they looked very
     minimal and streamlined. "Must be a result of those super precise pick and
     place machines", I thought to myself. "Amazing how much cleaner a robot can
-    solder than......where the f\*\*\* are the component labels?" (Fig. 2)
+    solder than......where the f\*\*\* are the component labels?"
 
     ![Come on...](rage-guy_01.png)
 
@@ -253,7 +253,7 @@ Your kit does __not__ contain the following items:
     mild steel (I think) so those might be stronger. The reason I'm saying this
     is that it is possible to break the screws that actually ship with the
     enclosure (in the white box) so be cautious when turning them in.
-    
+
 1. Install the PCB in the enclosure.
 
     ![Front panel installation](pcb-install.jpg)
