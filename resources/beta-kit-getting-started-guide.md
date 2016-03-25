@@ -68,7 +68,7 @@ next production round.
    solder resist layer off the pad in the back of the board, as show in the
    figure.
 
-   ![Scrape off solder resist.](cyclops3.5C_remove-resist.png)
+   ![Scrape off solder resist.](cyclops3.5C_remove-resist.jpg)
 
 2. __Cool manually soldered linear regulator__
 
