@@ -611,18 +611,18 @@ To construct the enclosure, you will use the following materials
 **Parts**
 
 1. Assembled Cyclops PCB (1x)
-1. Extruded aluminum enclosure (1x)
-1. Laser-cut enclosure panels (1x front, 1x rear)
-1. Rocker switch (1x)
-1. Hookup wire (2x, 15 cm lengths, 20 Ga or thicker)
-1. Shrink tube (2x)
-1. Gain knob (1x)
-1. Toothed washer (1x)
-1. Jam nut (1x)
-1. Light pipes (3x)
-1. Button cover (1x)
-1. Screws to install panels (8x)
-1. [optional] Conductive coating for EMI suppression (e.g.[this](http://amzn.com/B008OA931A)).
+2. Extruded aluminum enclosure (1x)
+3. Laser-cut enclosure panels (1x front, 1x rear)
+4. Rocker switch (1x)
+5. Hookup wire (2x, 15 cm lengths, 20 Ga or thicker)
+6. Shrink tube (2x)
+8. Gain knob (1x)
+9. Toothed washer (1x)
+10. Jam nut (1x)
+11. Light pipes (3x)
+12. Button cover (1x)
+13. Screws to install panels (8x)
+14. [optional] Conductive coating for EMI suppression (e.g. [this](http://amzn.com/B008OA931A)).
 
 **Tools**
 
@@ -767,12 +767,12 @@ LED
 There are several things to consider when determining the type of LED
 you wish to drive with the Cyclops and the configuration of the LED.
 
--   Will optical stimulation be used in-vivo or through a microscope?
--   Will it be performed on freely behaving animals?
--   Do you need to perform bilateral stimulation?
--   Will you need to incorporate an amplified photodiode into your
-    stimulator to measure optical power or use use optical feedback to
-    produce ultra precise light waveforms?
+- Will optical stimulation be used in-vivo or through a microscope?
+- Will it be performed on freely behaving animals?
+- Do you need to perform bilateral stimulation?
+- Will you need to incorporate an amplified photodiode into your
+  stimulator to measure optical power or use use optical feedback to
+  produce ultra precise light waveforms?
 
 The answers to these questions will determine the type of LED you use,
 how it is coupled to the preparation (e.g. collimated for the back
@@ -794,7 +794,9 @@ to the device. I typically mount my fiber coupled LEDs directly into the
 banana sockets on the back of the device using copper-clad printed
 circuit board so that my 'cables' are about 2 cm in length.
 
-TODO: picture of fiber coupled LED.
+![A simple 'pigtailed' LED module. A female SMA connector is cemented over a
+lens-free high power LED to form a near optimal butt-coupling between the fiber
+and the LED die.](./resources/fiber-coupled-led.png)
 
 ### Fiber-coupled LED
 
