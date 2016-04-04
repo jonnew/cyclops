@@ -41,7 +41,6 @@ to hover over figures to see their captions.
   - [Components](#components)
   - [Board Assembly](#board-assembly)
   - [Enclosure](#enclosure)
-  - [Circuit testing](#circuit-testing)
 - [LED](#led)
 - [Quality Control Procedure](#quality-control-procedure)
 - [License](#license)
@@ -647,7 +646,7 @@ To construct the enclosure, you will use the following materials
     Hit then with a hot air gun or pass a lighter underneath them to shrink
     them into place over the solder joints.
 
-1. Prepare the panels
+2. Prepare the panels
 
     ![Power switch installation](./resources/switch-install-steps.jpg)
 
@@ -664,7 +663,7 @@ To construct the enclosure, you will use the following materials
     much.
   - The switch will snap into place.
 
-1. Install the heatsink on the PCB if you have not already done so
+3. Install the heatsink on the PCB if you have not already done so
 
     ![Heatsink installation](./resources/heatsink-install.jpg)
 
@@ -674,7 +673,7 @@ To construct the enclosure, you will use the following materials
   - Remove the paper backing from the heatsink to expose the adhesive surface
   - Press the heatsink into place on the PCB
 
-1. Solder the power switch to the PCB.
+4. Solder the power switch to the PCB.
 
     ![Power switch soldering](./resources/power-switch-solder.jpg)
 
@@ -688,14 +687,14 @@ To construct the enclosure, you will use the following materials
     board that you will eventually use to make electrical contact with the
     enclosure.
 
-1. Install the light pipes on the PCB.
+5. Install the light pipes on the PCB.
 
     ![Light pipe installation](./resources/light-pipe-install.jpg)
 
   - Insert the light pipes in the mounting positions in the front of the PCB.
   - Squeeze them into place firmly using some needle nose pliers or sturdy forceps.
 
-1. Install the front panel on the enclosure
+6. Install the front panel on the enclosure
 
     ![Front panel installation](./resources/front-panel-install.jpg)
 
@@ -713,7 +712,7 @@ To construct the enclosure, you will use the following materials
     have to drill out the holes with twist drill to loosen them a bit. I have
     not had to resort to this yet.
 
-1. Install the PCB in the enclosure.
+7. Install the PCB in the enclosure.
 
     ![Front panel installation](./resources/pcb-install.jpg)
 
@@ -727,7 +726,7 @@ To construct the enclosure, you will use the following materials
     leave it on the Arduino, it will press into the floor of the enclosure and
     possibly cause a short.
 
-1. Install the rear panel.
+8. Install the rear panel.
 
     ![Rear panel installation](./resources/rear-panel-install.jpg)
 
@@ -736,7 +735,7 @@ To construct the enclosure, you will use the following materials
   - Use the panel the push the remaining wire into the enclosure.
   - Use the remaining 4 screws to install the rear panel.
 
-1. Install gain knob and button cover.
+9. Install gain knob and button cover.
 
     ![Gain knob installation](./resources/knob-install-steps.jpg)
 
@@ -846,15 +845,14 @@ instructions](#thorlabs-fieber-coupled-led) for instructions.
 Quality Control Procedure
 -------------------------
 
-The following procedure can be performed on boards purchased from an
-external vendor to ensure functionality.
+The following procedure can be performed on assembled boards to ensure
+functionality.
 
 #### Setup
 
 - Insert alligator clip across power switch solder points
 - Insert device into PCB clamp
 - Power from 15V, 1.5A capable bench-top power supply.
-
 - [ ] Power indicator LED turns on.
 
 #### DC Levels
