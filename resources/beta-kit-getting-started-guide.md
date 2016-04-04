@@ -191,8 +191,8 @@ Your kit does __not__ contain the following items:
 
   - Pull the paper backing off the panels.
   - Press the  power switch into position on the back panel. Orient the switch
-    so that the 'on' symbol (―) is toward the middle of the panel and the 'off'
-    symbol (○) is toward the outside. This will make the panel easier to mount
+    so that the 'on' symbol (-) is toward the middle of the panel and the 'off'
+    symbol (o) is toward the outside. This will make the panel easier to mount
     on the enclosure. Hold the panel close to hole you are pushing the switch
     into as the panel material is pretty thin and could break if it is bent too
     much.

@@ -21,34 +21,33 @@ to hover over figures to see their captions.
 
 **Contributors**
 
--   [jonnew](http://www.mit.edu/~jpnewman/)
--   [Sung-Yon Kim](http://www.sungyonkimlab.org/)
--   [andersjasp](https://mndrive.umn.edu/brain/people)
+- [jonnew](http://www.mit.edu/~jpnewman/)
+- [Sung-Yon Kim](http://www.sungyonkimlab.org/)
+- [andersjasp](https://mndrive.umn.edu/brain/people)
 
 **Table of Contents**
 
--   [Attribution](#attribution)
--   [Features](#features)
-    -   [Circuit Features](#circuit-features)
-    -   [Multiple stimulus generation
-        options](#multiple-stimulus-generation-options)
--   [Performance Specifications](#performance-specifications)
--   [Usage](#usage)
-    -   [Feedback modes](#feedback-modes)
-        -   [Current Feedback Mode](#current-feedback-mode)
-        -   [Auxiliary Feedback Mode](#auxiliary-feedback-mode)
-    -   [Stimulus Generation Options](#stimulus-generation-options)
--   [Construction](#construction)
-    -   [Components](#components)
-    -   [Board Assembly](#board-assembly)
-    -   [Enclosure](#enclosure)
-    -   [Circuit testing](#circuit-testing)
--   [LED](#led)
--   [Quality Control Procedure](#quality-control-procedure)
--   [License](#license)
-    -   [Hardware Licensing](#hardware-licensing)
-    -   [Software Licensing](#software-licensing)
--   [References](#references)
+- [Attribution](#attribution)
+- [Features](#features)
+  - [Circuit Features](#circuit-features)
+  - [Multiple stimulus generation options](#multiple-stimulus-generation-options)
+- [Performance Specifications](#performance-specifications)
+- [Usage](#usage)
+  - [Feedback modes](#feedback-modes)
+    - [Current Feedback Mode](#current-feedback-mode)
+    - [Auxiliary Feedback Mode](#auxiliary-feedback-mode)
+  - [Stimulus Generation Options](#stimulus-generation-options)
+- [Construction](#construction)
+  - [Components](#components)
+  - [Board Assembly](#board-assembly)
+  - [Enclosure](#enclosure)
+  - [Circuit testing](#circuit-testing)
+- [LED](#led)
+- [Quality Control Procedure](#quality-control-procedure)
+- [License](#license)
+  - [Hardware Licensing](#hardware-licensing)
+  - [Software Licensing](#software-licensing)
+- [References](#references)
 
 \newpage
 Attribution
@@ -385,6 +384,7 @@ pre-populated Digikey cart. These include:
 
 ### Board Assembly
 
+#### Materials
 To assemble a Cyclops board, you will need the following materials
 
 -   A soldering iron and, if possible, a hot-air reflow device.
@@ -418,6 +418,8 @@ To assemble a Cyclops board, you will need the following materials
 -   An anti-static mat (e.g. [this](http://amzn.com/B00009XT3H);
     optional but recommended to protect your work...)
 
+
+#### Assembly Instructions
 PCB component population and soldering is fairly straightforward and
 requires standard surface mount construction techniques.
 
@@ -441,7 +443,7 @@ tests outlined in the next section before applying power.*
     ![Instead of populating components on a table, holding the PCB using
     a PanaVise can be helpful.](./resources/Station.jpg)
 
-2.  The silkscreen layer on the PCB (white text) has almost all the
+1.  The silkscreen layer on the PCB (white text) has almost all the
     information you will need to properly populated the PCB. However,
     its a good ideal to to open the [cyclops
     design](./cyclops/cyclops_r3.brd) in
@@ -466,8 +468,6 @@ tests outlined in the next section before applying power.*
     apply solder paste to through-holes or the pads shown outlined in
     red in the following image. These will be hand soldered later in the
     assembly process.
-
-    TODO: Image
 
     The correct amount of solder paste to apply is \`enough'. Each
     component contact should sit in a small amount of paste, but blobs
@@ -557,6 +557,8 @@ tests outlined in the next section before applying power.*
     to reflect this address. See the picture below to better understand
     this addressing scheme.
 
+    TODO: Pictures of circled 0 ohm jumpers
+
 9.  Flip the board over and install the final surface mount component,
     the `AUX<>CURR` slide switch, by hand soldering.
 
@@ -577,38 +579,185 @@ tests outlined in the next section before applying power.*
     is mounted on the top side of the board, it will not fit inside
     the enclosure.
 
-11. Install the power switch. You need to use hookup wire capable of
-    handling the currents that the driver requires. AWG 20 (\~1.8
-    mm diameter) braided copper wire or thicker is recommended. Use
-    heat-shrink tubing to cover electrical contacts. If you don't want
-    to use the power switch, jumper the switch solder points using AWG
-    20 wire or thicker.
+11. If you are not planning on putting the PCB in an enclosure, jumper the
+    solder points for the power switch together using AWG 20 (\~1.8 mm
+    diameter) braided copper wire or thicker.
 
-    ![Power switch components.](./resources/PowerSwitch.jpg)
+    TODO: Picture of jumpered switch solder points
 
-    ![Power
-    switch installation.](./resources/cyclops3.5A_PowerSwitch1.jpg)
+12. Install the heatsink on the PCB
 
-12. Install the heatsink.
+    ![Heatsink installation](./resources/heatsink-install.jpg)
 
-    ![Botton of board with ahesive-backed heatsink
-    in place.](./resources/cyclops3.5A_heatsink.jpg)
+    Flip the PCB so that the bottom is exposed.  Locate the large white square
+    surrounding the exposed copper pad indicating the heatsink mounting location.
+    Remove the paper backing from the heatsink to expose the adhesive surface
+    Press the heatsink into place on the PCB.
 
-13. Install the light pipes over the front LEDs. These need to be seated
-    firmly for the board to fit inside the enclosure.
+13. [Optional] Install the Arduino
 
-    TODO: Image
+    TODO: Image of desoldering and mounting
+    
+    Remove the power jack from the Arduino using a hot air gun or desoldering
+    tool. Press the Arduino the dedicated headers.
 
 \FloatBarrier
 \newpage
 
 ### Enclosure
 
-To construct the enclosure, you we will use the following materials
+#### Materials
+To construct the enclosure, you will use the following materials
 
--   Phillips head screwdriver (if you are using the enclosure)
--   Conductive coating for EMI suppression (e.g.
-    [this](http://amzn.com/B008OA931A)).
+**Parts**
+
+1. Assembled Cyclops PCB (1x)
+1. Extruded aluminum enclosure (1x)
+1. Laser-cut enclosure panels (1x front, 1x rear)
+1. Rocker switch (1x)
+1. Hookup wire (2x, 15 cm lengths, 20 Ga or thicker)
+1. Shrink tube (2x)
+1. Gain knob (1x)
+1. Toothed washer (1x)
+1. Jam nut (1x)
+1. Light pipes (3x)
+1. Button cover (1x)
+1. Screws to install panels (8x)
+1. [optional] Conductive coating for EMI suppression (e.g.[this](http://amzn.com/B008OA931A)).
+
+**Tools**
+
+- Soldering iron 
+- Hot air gun or lighter
+- Phillips head screwdriver 
+
+#### Assembly Instructions
+
+1. Assemble the power switch
+
+    ![Power switch assembly](./resources/switch-solder-steps.jpg)
+
+  - Strip about 1 cm of insulation from each end of the hookup wires
+  - Thread the stripped portion of the wire halfway through each of the
+    switch's solder terminals. Fold the wire back, so that the stripped part is
+    touching both sides of the terminal.
+  - Solder the hookup wire to the terminals. Make sure the solder flows between the
+    wires' copper braid and the switch terminals.
+  - Slide the heat shrink from the back of each wire, over the solder joints.
+    Hit then with a hot air gun or pass a lighter underneath them to shrink
+    them into place over the solder joints.
+
+1. Prepare the panels
+
+    ![Power switch installation](./resources/switch-install-steps.jpg)
+
+  - Pull the paper backing off the panels.
+  - __Optional:__ Spray the inside of each panel with conductive EMI suppression.
+    Additionally, you may want to file the inner edge of the enclosure to
+    reveal the bare alumnimum to ensure good contact between the coating the
+    rest of the enclosure. Allow the coating to dry before proceeding.
+  - Press the  power switch into position on the back panel. Orient the switch
+    so that the 'on' symbol (**-**) is toward the middle of the panel and the 'off'
+    symbol (**o**) is toward the outside. This will make the panel easier to mount
+    on the enclosure. Hold the panel close to hole you are pushing the switch
+    into as the panel material is pretty thin and could break if it is bent too
+    much.
+  - The switch will snap into place.
+
+1. Install the heatsink on the PCB if you have not already done so
+
+    ![Heatsink installation](./resources/heatsink-install.jpg)
+
+  - Flip the PCB so that the bottom is exposed.
+  - Locate the large white square surrounding the exposed copper pad indicating
+    the heatsink mounting location
+  - Remove the paper backing from the heatsink to expose the adhesive surface
+  - Press the heatsink into place on the PCB
+
+1. Solder the power switch to the PCB.
+
+    ![Power switch soldering](./resources/power-switch-solder.jpg)
+
+  - Solder the power switch to the two indicated terminals on the PCB.
+  - Make sure you do this __after__ you have installed the switch in the rear
+    panel.
+  - The wires can be soldered to either solder point, orientation does not
+    matter since this is a SPST switch.
+  - __Optional:__ If you are using an EMI suppression coating, you should
+    solder a third, fine gauge hookup wire to one of the GND test points on the
+    board that you will eventually use to make electrical contact with the
+    enclosure.
+
+1. Install the light pipes on the PCB.
+
+    ![Light pipe installation](./resources/light-pipe-install.jpg)
+
+  - Insert the light pipes in the mounting positions in the front of the PCB.
+  - Squeeze them into place firmly using some needle nose pliers or sturdy forceps.
+
+1. Install the front panel on the enclosure
+
+    ![Front panel installation](./resources/front-panel-install.jpg)
+
+  - Using 4 of the 8 mount screws that came in with the enclosure, install the
+    front panel on the enclosure.
+  - __Optional:__ If you are using an EMI suppression coating, strip the end of
+    the fine wire that was soldered to GND and insert it into one of the screw
+    holes before inserting the screws. When the screws are turned in, this will
+    provide electrical contact with the enclosure.
+  - __Note:__ The holes should not have to be tapped. The screws should just
+    kind of jam themselves into the holes. Godspeed.
+  - __Note:__ The screws that come with the enclosure are what I would call
+    "cheese grade". It is possible to break these screws so be cautious when
+    turning them in. If you think you will break the screws,  then you might
+    have to drill out the holes with twist drill to loosen them a bit. I have
+    not had to resort to this yet.
+
+1. Install the PCB in the enclosure.
+
+    ![Front panel installation](./resources/pcb-install.jpg)
+
+  - Slide the PCB into the box using the __middle__ mounting rail.
+  - __Note:__ When the BNC connectors come through the front panel, you will
+    need to push them down a bit, slightly flexing the PCB to get the light
+    pipes through the front panel. This is required to hold the light pipes in
+    place.
+  - __Note:__ If you have installed an Arduino on your board, make sure you
+    have removed the barrel jack power connector on the arduino first. If you
+    leave it on the Arduino, it will press into the floor of the enclosure and
+    possibly cause a short.
+
+1. Install the rear panel.
+
+    ![Rear panel installation](./resources/rear-panel-install.jpg)
+
+  - Loop the two hook up wires and push them into the enclosure on top of the
+    PCB.
+  - Use the panel the push the remaining wire into the enclosure.
+  - Use the remaining 4 screws to install the rear panel.
+
+1. Install gain knob and button cover.
+
+    ![Gain knob installation](./resources/knob-install-steps.jpg)
+
+  - Slip the toothed washer over the gain dial.
+  - Tighten the jam nut on the gain dial's threads until just past finger tight
+    using a pair of needle nose pliers.
+  - __Note:__ Do not over-tighten using a combination spanner or you will
+    strip the threads.
+  - Turn the dial on the front panel _fully counter-clockwise_.
+  - Slip the gain knob over the dial with the tick mark pointed slightly below
+    the 0 position.
+  - Tighten the set screw on the side of the knob to lock it into place using
+    an Allen key.
+  - When you turn the knob fully clockwise, the tick mark should be pointing
+    close to the 1.5A position.
+  - Press the red cover over the `TEST` switch until it snaps into place.
+
+Congratulations, you are the proud owner of a high-precision, high-power,
+high-speed LED driver that will make commercial drives feel a bit ridiculous
+for costing so much and very self-conscious about their performance
+characteristics. 
 
 \FloatBarrier
 \newpage
@@ -648,7 +797,7 @@ circuit board so that my 'cables' are about 2 cm in length.
 
 TODO: picture of fiber coupled LED.
 
-### Fiber-coupled LEDs
+### Fiber-coupled LED
 
 #### DIY Solution
 
@@ -657,8 +806,7 @@ detailed instructions for fabricating a bilateral, commutated
 fiber-coupled LED for use in freely moving animals that works with the
 Cyclops driver:
 
-\[Bilateral fiber-coupled LED\]
-(https://github.com/andersjasp/cyclops/blob/master/resources/Open\_source\_fiber-coupled\_bilateral\_LED\_for\_in\_vivo\_applications.pdf)
+[Bilateral fiber-coupled LED](https://github.com/andersjasp/cyclops/blob/master/resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
 
 #### Thorlabs fiber-coupled LED modules
 
@@ -703,76 +851,76 @@ external vendor to ensure functionality.
 
 #### Setup
 
--   Insert alligator clip across power switch solder points
--   Insert device into PCB clamp
--   Power from 15V, 1.5A capable bench-top power supply.
+- Insert alligator clip across power switch solder points
+- Insert device into PCB clamp
+- Power from 15V, 1.5A capable bench-top power supply.
 
--   \[ \] Power indicator LED turns on.
+- [ ] Power indicator LED turns on.
 
 #### DC Levels
 
--   Using a multimeter, probe the 12V, 2.5V, -5V, and -1.25V test points
-
--   \[ \] 12V good
--   \[ \] -5V good
--   \[ \] -1.25V good
--   \[ \] While probing the 2.5V test point, use a ESD-safe screwdriver
+- Using a multimeter, probe the 12V, 2.5V, -5V, and -1.25V test points
+- [ ] 12V good
+- [ ] -5V good
+- [ ] -1.25V good
+- [ ] While probing the 2.5V test point, use a ESD-safe screwdriver
     on the trimpot to get exactly 2.5V.
--   \[ \] Seal the pot with a dab of hot-glue.
+- [ ] Seal the pot with a dab of hot-glue.
 
 #### Dynamic characteristics
 
--   Set MDO3000's AFG to produce 1-5V, 100 Hz, 10% duty cycle
-    square wave.
--   Insert LED/amplified photodiode test fixture into banana sockets,
-    IDC connector, and AUX BNC port.
--   Insert AFG output of MDO3000 output into VCTL BNC port of device
--   Bring CURR output of device to Ch1 of MDO3000
--   Bring VREF output to MD3000
--   Triggering on VREF Channel set scope to measure rise and fall times
--   Bring front panel potentiometer to 50% position.
--   Input switch to EXT source
-
--   \[ \] Examine wave shape and rise/fall times in **current** FB mode.
-    Rise/fall times &lt; 300 ns. No ringing on waveform.
--   \[ \] Examine wave shape and rise/fall times in **optical** FB mode.
-    Rise/fall times &lt; 300 ns. No ringing on waveform.
--   \[ \] **RETURN FB SWITCH TO CURR POSITION**
--   \[ \] Return input switch to OFF (middle) position
+- Set MDO3000's AFG to produce 1-5V, 100 Hz, 10% duty cycle
+  square wave.
+- Insert LED/amplified photodiode test fixture into banana sockets,
+  IDC connector, and AUX BNC port.
+- Insert AFG output of MDO3000 output into VCTL BNC port of device
+- Bring CURR output of device to Ch1 of MDO3000
+- Bring VREF output to MD3000
+- Triggering on VREF Channel set scope to measure rise and fall times
+- Bring front panel potentiometer to 50% position.
+- Input switch to EXT source
+- [ ] Examine wave shape and rise/fall times in **current** FB mode.
+  Rise/fall times &lt; 300 ns. No ringing on waveform.
+- [ ] Examine wave shape and rise/fall times in **optical** FB mode.
+  Rise/fall times &lt; 300 ns. No ringing on waveform.
+- [ ] **Return FB switch to curr position**
+- [ ] Return input switch to OFF (middle) position
 
 #### Overcurrent indication
 
--   Bring gain potentiometer to full on position
--   Briefly tap on the TEST button.
-
--   \[ \] Ensure that the &gt;1A indicator LED turned on during pulse.
--   \[ \] **RETURN GAIN POT. TO ZERO POSITION**
+- Bring gain potentiometer to full on position
+- Briefly tap on the TEST button.
+- [ ] Ensure that the &gt;1A indicator LED turned on during pulse.
+- [ ] **Return gain potentiometer to zero position**
 
 #### Finish
 
--   \[ \] Remove all power connectors.
--   \[ \] Remove alligator clip.
--   \[ \] Initial and serial number the board using sharpie on the large
-    power trace on the right side of the board.
--   \[ \] Enter board serial number into the spreadsheet. \#\# License
-    \#\#\# Hardware Licensing
-    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
-    alt="Creative Commons License" style="border-width:0"
-    src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span
-    xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Cyclops
-    LED Driver</span> by <a xmlns:cc="http://creativecommons.org/ns#"
-    href="https://github.com/jonnew/cyclops" property="cc:attributionName"
-    rel="cc:attributionURL">Jonathan P. Newman</a> is licensed under a
-    <a
-    rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
-    Commons Attribution-NonCommercial-ShareAlike 4.0 International
-    License</a>.<br
-    />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/"
-    href="https://github.com/jonnew/cyclops"
-    rel="dct:source">https://github.com/jonnew/cyclops</a>.
+- [ ] Remove all power connectors.
+- [ ] Remove alligator clip.
+- [ ] Initial and serial number the board using sharpie on the large
+  power trace on the right side of the board.
+- [ ] Enter board serial number into the spreadsheet. 
+
+License
+-------
+
+### Hardware Licensing
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
+alt="Creative Commons License" style="border-width:0"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span
+xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Cyclops
+LED Driver</span> by <a xmlns:cc="http://creativecommons.org/ns#"
+href="https://github.com/jonnew/cyclops" property="cc:attributionName"
+rel="cc:attributionURL">Jonathan P. Newman</a> is licensed under a
+<a
+rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>.<br
+/>Based on a work at <a xmlns:dct="http://purl.org/dc/terms/"
+href="https://github.com/jonnew/cyclops"
+rel="dct:source">https://github.com/jonnew/cyclops</a>.
 
 ### Software Licensing
-
 Copyright (c) Jonathan P. Newman All right reserved.
 
 The code associated with the Cyclops project is free software: you can
