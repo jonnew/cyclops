@@ -16,7 +16,11 @@
 #define CL_RPC_DEFS_h
 
 #define RPC_HEADER_SZ 1
-#define RPC_CHANNEL   0x60
+#define RPC_CHANNEL_RSHIFT 5
+#define RPC_CHANNEL_MASK   0x03
+#define RPC_COMMAND_RSHIFT 0
+#define RPC_COMMAND_MASK   0x1f
 
-#define _CHANNEL(header_byte) header_byte & RPC_CHANNEL
+#define EXTRACT_CHANNEL(header_byte) (header_byte >> RPC_CHANNEL_RSHIFT) & RPC_CHANNEL_MASK
+#define EXTRACT_COMMAND(header_byte) (header_byte >> RPC_COMMAND_RSHIFT) & RPC_COMMAND_MASK
 #endif
