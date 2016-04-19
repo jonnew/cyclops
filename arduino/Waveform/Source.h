@@ -47,8 +47,8 @@ class gen_Source: public Source{
  private:
     uint8_t cur_ind;
  public:
-    uint16_t (*voltage_data)(uint8_t),
-             (*hold_time_data)(uint8_t);
+    uint16_t (*voltage_data)(uint8_t);
+    uint16_t (*hold_time_data)(uint8_t);
     uint8_t size;
 
     gen_Source(uint16_t (*vdf)(uint8_t), uint16_t (*htdf)(uint8_t), uint8_t sz, _op_mode _mode = LOOPBACK);

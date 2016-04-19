@@ -21,7 +21,7 @@ uint16_t st_Source::nextVoltage(){
 		fetch_index = (cur_ind == size-1)? 0 : cur_ind+1;
 		break;
 	case ONE_SHOT:
-		fetch_index = (cur_ind < size-1)? cur_ind+1 : 0;
+		return (cur_ind < size-1)? voltage_data[cur_ind+1] : 0;
 		break;
 	}
 	return voltage_data[fetch_index];
@@ -82,5 +82,12 @@ uint16_t gen_Source::holdTime(){
 }
 
 void gen_Source::stepForward(uint8_t step_sz){
-	cur_ind = (cur_ind + step_sz) % size;
+	switch (mode){
+	case LOOPBACK:
+		cur_ind = (cur_ind + step_sz) % size;
+		break;
+	case ONE_SHOT:
+		if (cur_ind < size-1) cur_ind++;
+		break;	
+	}
 }

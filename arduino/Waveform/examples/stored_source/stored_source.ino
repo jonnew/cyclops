@@ -1,5 +1,3 @@
-#include <MsTimer2.h>
-
 #include <Waveform.h>
 #include <Source.h>
 

@@ -17,28 +17,41 @@ typedef enum {
     PAUSE
 } _status;
 
+typedef Waveform[] WaveformList;
+
+
+/**
+ * @brief      Each Waveform Object is assigned to a channel. Using the Source object, a Waveform generates or reads signal points.
+ *             It can be in any one of 4 states.
+ */
 class Waveform{
  private:
     uint16_t time_rem;
-    uint8_t step;
-
-    void changeStatus(_status new_status);
+    _status backup;
+    void changeStatus(_status);
  public:
-    Source *src;
+    Source *src;            /**< Pointer to a instantiated object derived from Source.
+                              * @attention Source is an abstract class */
     uint8_t channel_id;
     _status state;
-    _op_mode mode;
+    _op_mode mode;          /**< This is the same as Source::mode, `LOOPBACK` or `ONE_SHOT`. */
 
-    Waveform(uint8_t chid, Source &s);
+    /**
+     * @brief      Creates a Waveform object and assigns the prescribed `channel`.
+     *
+     * @param      Source*     Pointer to a virtual class, any derived class of Source can be used.
+     */
+    Waveform(uint8_t, Source*);
 
-    void stepForward(uint8_t);
-    void markLatched();
-    
+    /**
+     * @brief      Invoked by the ISR
+     */
+    void markLatched();   
     void resume();
     void pause();
-    void useSource(Source &s);
+    void useSource(Source*);
 
-    void changeChannel(uint8_t chid);
+    static void swapChannels(Waveform*, Waveform*);
 };
 
 #endif
