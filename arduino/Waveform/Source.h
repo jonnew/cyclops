@@ -14,12 +14,12 @@ typedef enum {
     ONE_SHOT
 } _op_mode;
 
-#define ONE_SHOT_OVER_HOLD_TIME 500
+#define ONE_SHOT_FINISHED_HOLD_TIME 500 /**< The waveform is completed.
+        The timer would still interrupt for this Waveform, *as we don't "pause" the waveform*. Use a long HOLD_TIME. */
 
 class Source{
- protected:
-    static src_count;
  public:
+    static uint8_t src_count;
     _op_mode mode;
     uint8_t src_id;
 
@@ -56,3 +56,5 @@ class gen_Source: public Source{
     virtual uint16_t holdTime();
     virtual void     stepForward(uint8_t step_sz);
 };
+
+#endif
