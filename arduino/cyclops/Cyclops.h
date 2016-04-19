@@ -29,6 +29,8 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #include <SPI.h>
 #include <Wire.h>
 
+#include "RPC_defs.h"
+
 // Each 'channel' defines a board address.  Corresponding pins numbers can be
 // accessed through the look-up tables (_a_in_lut, _cs_lut, _trig_lut, etc).
 typedef enum
