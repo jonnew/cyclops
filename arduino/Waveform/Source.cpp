@@ -48,6 +48,10 @@ void st_Source::stepForward(uint8_t step_sz){
 	}
 }
 
+void st_Source::reset(){
+	cur_ind = 0;
+}
+
 gen_Source::gen_Source(
 	uint16_t (*vdf)(uint8_t),
 	uint16_t (*htdf)(uint8_t),
@@ -82,4 +86,8 @@ void gen_Source::stepForward(uint8_t step_sz){
 			cur_ind = (cur_ind + step_sz) % size;
 		shift_accumulator = 0;
 	}
+}
+
+void gen_Source::reset(){
+	cur_ind = 0;
 }

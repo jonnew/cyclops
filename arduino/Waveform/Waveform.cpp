@@ -30,6 +30,7 @@ void Waveform::pause(){
 
 void Waveform::useSource(Source *s){
 	src = s;
+	src->reset();
 }
 
 void Waveform::swapChannels(Waveform *w1, Waveform *w2){

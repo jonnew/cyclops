@@ -38,6 +38,7 @@ class Source{
     virtual uint16_t nextVoltage() = 0;
     virtual uint16_t holdTime() = 0;
     virtual void stepForward(uint8_t) = 0;
+    virtual void reset() = 0;
 };
 
 class st_Source: public Source{
@@ -52,6 +53,7 @@ class st_Source: public Source{
     virtual uint16_t nextVoltage();
     virtual uint16_t holdTime();
     virtual void     stepForward(uint8_t step_sz);
+    virtual void reset();
 };
 
 class gen_Source: public Source{
@@ -66,6 +68,7 @@ class gen_Source: public Source{
     virtual uint16_t nextVoltage();
     virtual uint16_t holdTime();
     virtual void     stepForward(uint8_t step_sz);
+    virtual void reset();
 };
 
 #endif
