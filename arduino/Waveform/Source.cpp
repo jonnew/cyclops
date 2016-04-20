@@ -1,7 +1,16 @@
 #include "Source.h"
 
+// static var definition
 uint8_t Source::src_count = 0;
-Source::Source(_op_mode _mode) : mode(_mode), src_id(++Source::src_count) {}
+
+Source::Source(_op_mode _mode, src_status _status /* = ACTIVE */) : 
+	mode(_mode),
+	status(_status)
+{
+	src_id = ++Source::src_count,
+	shift_accumulator = 0;
+}	
+
 
 st_Source::st_Source(
 	uint16_t *vd,
@@ -15,33 +24,28 @@ st_Source::st_Source(
 		size(sz) { /*empty body*/ }
 
 uint16_t st_Source::nextVoltage(){
-	uint8_t fetch_index;
-	switch (mode){
-	case LOOPBACK:
-		fetch_index = (cur_ind == size-1)? 0 : cur_ind+1;
-		break;
-	case ONE_SHOT:
-		return (cur_ind < size-1)? voltage_data[cur_ind+1] : 0;
-		break;
-	}
-	return voltage_data[fetch_index];
+	return voltage_data[cur_ind];
 }
 
 uint16_t st_Source::holdTime(){
-	uint8_t fetch_index;
-	switch (mode){
-	case LOOPBACK:
-		fetch_index = (cur_ind == size-1)? 0 : cur_ind+1;
-		break;
-	case ONE_SHOT:
-		return (cur_ind < size-1)? hold_time_data[cur_ind+1] : ONE_SHOT_FINISHED_HOLD_TIME;
-		break;
-	}
-	return hold_time_data[fetch_index];
+	if (mode == ONE_SHOT && cur_ind == size-1)
+		return ONE_SHOT_FINISHED_HOLD_TIME;
+	else
+		return hold_time_data[cur_ind];
 }
 
 void st_Source::stepForward(uint8_t step_sz){
-	cur_ind = (cur_ind + step_sz) % size;
+	if (status == PAUSED){
+		shift_accumulator += step_sz;
+		return;
+	}
+	else{
+		if (mode == ONE_SHOT && cur_ind + step_sz >= size-1)
+			cur_ind = size-1;
+		else
+			cur_ind = (cur_ind + step_sz + shift_accumulator) % size;
+		shift_accumulator = 0;
+	}
 }
 
 gen_Source::gen_Source(
@@ -56,38 +60,26 @@ gen_Source::gen_Source(
 		size(sz) { /*empty body*/ }
 
 uint16_t gen_Source::nextVoltage(){
-	uint8_t fetch_index;
-	switch (mode){
-	case LOOPBACK:
-		fetch_index = (cur_ind == size-1)? 0 : cur_ind+1;
-		break;
-	case ONE_SHOT:
-		return (cur_ind < size-1)? voltage_data(cur_ind+1) : 0;
-		break;
-	}
-	return voltage_data(fetch_index);
+	return voltage_data(cur_ind);
 }
 
 uint16_t gen_Source::holdTime(){
-	uint8_t fetch_index;
-	switch (mode){
-	case LOOPBACK:
-		fetch_index = (cur_ind == size-1)? 0 : cur_ind+1;
-		break;
-	case ONE_SHOT:
-		return (cur_ind < size-1)? hold_time_data(cur_ind+1) : ONE_SHOT_FINISHED_HOLD_TIME;
-		break;
-	}
-	return hold_time_data(fetch_index);
+	if (mode == ONE_SHOT && cur_ind == size-1)
+		return ONE_SHOT_FINISHED_HOLD_TIME;
+	else
+		return hold_time_data(cur_ind);
 }
 
 void gen_Source::stepForward(uint8_t step_sz){
-	switch (mode){
-	case LOOPBACK:
-		cur_ind = (cur_ind + step_sz) % size;
-		break;
-	case ONE_SHOT:
-		if (cur_ind < size-1) cur_ind++;
-		break;	
+	if (status == PAUSED){
+		shift_accumulator += step_sz;
+		return;
+	}
+	else{
+		if (mode == ONE_SHOT && cur_ind + step_sz >= size-1)
+			cur_ind = size-1;
+		else
+			cur_ind = (cur_ind + step_sz) % size;
+		shift_accumulator = 0;
 	}
 }

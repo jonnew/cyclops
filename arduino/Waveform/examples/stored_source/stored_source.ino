@@ -25,8 +25,8 @@
   uint16_t vd[]  = {0x80, 0x100, 0x180, 0x300, 0x180, 0x100, 0x80, 0x3e};
   uint16_t htd[] = {500, 3000, 500, 3000, 500, 3000, 500, 3000}; // delay in ms
 #else
-  uint16_t vd[]  = {0x20, 0x40, 0x80, 0xa0, 0xc0, 0xa0, 0x80, 0x40};
-  uint16_t htd[] = {500, 200, 200, 200, 200, 1500, 1500, 1500}; // delay in ms
+  uint16_t vd[]  = {0x20, 0x40, 0x80, 0xa0, 0xc0, 0x80, 0x20, 0x04};
+  uint16_t htd[] = {200, 200, 200, 200, 200, 1500, 1500, 1500}; // delay in ms
 #endif
 
 st_Source stored(vd, htd, 8);

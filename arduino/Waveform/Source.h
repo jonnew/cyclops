@@ -9,21 +9,32 @@
 
 #include "Cyclops.h"
 
+/** @typedef _op_mode */
 typedef enum {
     LOOPBACK,
-    ONE_SHOT
+    ONE_SHOT,
 } _op_mode;
 
-#define ONE_SHOT_FINISHED_HOLD_TIME 500 /**< The waveform is completed.
-        The timer would still interrupt for this Waveform, *as we don't "pause" the waveform*. Use a long HOLD_TIME. */
+/** @typedef src_status */
+typedef enum {
+    PAUSED,
+    ACTIVE
+} src_status;
+
+#define ONE_SHOT_FINISHED_HOLD_TIME 1000 /**< The waveform is completed.
+                                          *   The timer would still interrupt for this Waveform, *as we don't "pause" the waveform*. Use a long HOLD_TIME. 
+                                          */
 
 class Source{
+ protected:
+    uint8_t shift_accumulator;
  public:
     static uint8_t src_count;
     _op_mode mode;
+    src_status status;
     uint8_t src_id;
 
-    Source(_op_mode _mode);
+    Source(_op_mode _mode, src_status = ACTIVE);
     virtual uint16_t nextVoltage() = 0;
     virtual uint16_t holdTime() = 0;
     virtual void stepForward(uint8_t) = 0;

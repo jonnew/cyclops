@@ -1,35 +1,39 @@
 #include "Waveform.h"
 
-Waveform::Waveform(uint8_t chid, Source *s) : src(s), state(INIT), backup(INIT){
-	if (chid < 0 || chid > 3); //do something!
-	channel_id = chid;
+Waveform::Waveform(Cyclops *_cyclops, Source *s) : 
+	state(INIT)
+{
 	mode = src->mode;
+	cyclops = _cyclops;
+	src = s;
 	//time_rem = ???
 }
 
-Waveform::changeStatus(_status new_state){
-	state = new_state;
-	// some state transitions might require more work
+Waveform::Waveform(Cyclops *_cyclops, Source *s, _op_mode _mode) : 
+	state(INIT)
+{
+	src->mode = _mode;
+	cyclops = _cyclops;
+	src = s;
+	//time_rem = ???
 }
 
-Waveform::markLatched(){
-	state = LATCHED;
+void Waveform::resume(){
+	state = backup_this;
+	src->status = ACTIVE;
 }
 
-Waveform::resume(){
-	state = backup;
+void Waveform::pause(){
+	backup_this = state;
+	src->status = PAUSED;
 }
 
-Waveform::pause(){
-	backup = state;
-}
-
-Waveform::useSource(Source *s){
+void Waveform::useSource(Source *s){
 	src = s;
 }
 
 void Waveform::swapChannels(Waveform *w1, Waveform *w2){
-	uint8_t t = w1->channel_id;
-	w1->channel_id = w2->channel_id;
-	w2->channel_id = t;
+	Cyclops *t = w1->cyclops;
+	w1->cyclops = w2->cyclops;
+	w2->cyclops = t;
 }
