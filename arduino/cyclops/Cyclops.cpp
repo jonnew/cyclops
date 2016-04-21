@@ -37,13 +37,13 @@ Cyclops::Cyclops(Channel channel) : _channel(channel)
     // Set pin modes
     pinMode(_oc_lut[_channel], OUTPUT);
     pinMode(_cs_lut[_channel], OUTPUT);
-    pinMode(_trig_lut[_channel], INPUT);
+
+    // Trigger default is output
+    pinMode(_trig_lut[_channel], OUTPUT);
+    digitalWrite(_trig_lut[_channel], LOW);
 
     // Load DAC line
     pinMode(LDAC, OUTPUT);
-
-	// Pull the trigger line down weakly
-	digitalWrite(_trig_lut[_channel], LOW);
 
     // Get the CS and load-DAC lines ready
     digitalWrite(_cs_lut[_channel], HIGH);
@@ -153,6 +153,10 @@ void Cyclops::dac_shutdown(void) {
 }
 
 void Cyclops::attach_interupt(void (*user_func)(void)) {
+
+	// Set trigger line as input and down weakly
+    pinMode(_trig_lut[_channel], INPUT);
+	digitalWrite(_trig_lut[_channel], LOW);
 
 	// Enable pin-change interupt on port B, which is the only one
 	// used by the Cyclops for triggering
