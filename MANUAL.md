@@ -812,13 +812,14 @@ Cyclops driver:
 #### Thorlabs fiber-coupled LED modules
 
 The cyclops can be used to Drive [Thorlabs fiber-coupled LED
-modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206).
-You will need to install the [M8 4-position
+modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206).  You
+will need to install the [M8 4-position
 connector](http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
-in expansion port B to drive these LEDs.
+in expansion port B to drive these LEDs. Solder the wires from the connector to
+the cyclops PCB as shown in the following image __after__ you have
+installed the connector into the rear panel of the device.
 
-TODO: Pictures/instructions for M8 installation process in Thorlabs
-configuration
+![Thorlabs LED M8 connector pinout](./resources/thorlabs-m8-connections.png)
 
 #### Doric LED fiber-coupled modules
 
