@@ -3,44 +3,48 @@
 // static var definition
 uint8_t Source::src_count = 0;
 
-Source::Source(_op_mode _mode, src_status _status /* = ACTIVE */) : 
-	mode(_mode),
-	status(_status)
+//========================
+//  Source Abstract Class
+//========================
+Source::Source(operationMode mode, sourceStatus status /* = ACTIVE */) : 
+	opMode(mode),
+	status(status),
+	src_id(++Source::src_count)
 {
-	src_id = ++Source::src_count,
 	shift_accumulator = 0;
 }	
 
-
-st_Source::st_Source(
-	uint16_t *vd,
-	uint16_t *htd,
-	uint8_t  sz,
-	_op_mode _mode /* = LOOPBACK */
-	) :	Source(_mode),
+//========================
+//  storedSource Class
+//========================
+storedSource::storedSource(
+	const uint16_t *voltage_data,
+	const uint16_t *hold_time_data,
+	uint8_t sz,
+	operationMode mode /* = LOOPBACK */
+	) :	Source(mode),
 		cur_ind(0),
-		voltage_data(vd),
-		hold_time_data(htd),
+		voltage_data(voltage_data),
+		hold_time_data(hold_time_data),
 		size(sz) { /*empty body*/ }
 
-uint16_t st_Source::nextVoltage(){
+uint16_t storedSource::nextVoltage(){
 	return voltage_data[cur_ind];
 }
 
-uint16_t st_Source::holdTime(){
-	if (mode == ONE_SHOT && cur_ind == size-1)
+uint16_t storedSource::holdTime(){
+	if (opMode == ONE_SHOT && cur_ind == size-1)
 		return ONE_SHOT_FINISHED_HOLD_TIME;
 	else
 		return hold_time_data[cur_ind];
 }
 
-void st_Source::stepForward(uint8_t step_sz){
-	if (status == PAUSED){
-		shift_accumulator += step_sz;
+void storedSource::stepForward(uint8_t step_sz){
+	if (status == FROZEN){
 		return;
 	}
 	else{
-		if (mode == ONE_SHOT && cur_ind + step_sz >= size-1)
+		if (opMode == ONE_SHOT && cur_ind + step_sz >= size-1)
 			cur_ind = size-1;
 		else
 			cur_ind = (cur_ind + step_sz + shift_accumulator) % size;
@@ -48,39 +52,43 @@ void st_Source::stepForward(uint8_t step_sz){
 	}
 }
 
-void st_Source::reset(){
+void storedSource::reset(){
 	cur_ind = 0;
 }
 
-gen_Source::gen_Source(
-	uint16_t (*vdf)(uint8_t),
-	uint16_t (*htdf)(uint8_t),
+
+//========================
+//  generatedSource Class
+//========================
+
+generatedSource::generatedSource(
+	uint16_t (*voltage_data_fn)(uint8_t),
+	uint16_t (*hold_time_data_fn)(uint8_t),
 	uint8_t sz,
-	_op_mode _mode /* = LOOPBACK */
-	) :	Source(_mode),
+	operationMode mode /* = LOOPBACK */
+	) :	Source(mode),
 		cur_ind(0),
-		voltage_data(vdf),
-		hold_time_data(htdf),
+		voltage_data_fn(voltage_data_fn),
+		hold_time_data_fn(hold_time_data_fn),
 		size(sz) { /*empty body*/ }
 
-uint16_t gen_Source::nextVoltage(){
-	return voltage_data(cur_ind);
+uint16_t generatedSource::nextVoltage(){
+	return voltage_data_fn(cur_ind);
 }
 
-uint16_t gen_Source::holdTime(){
-	if (mode == ONE_SHOT && cur_ind == size-1)
+uint16_t generatedSource::holdTime(){
+	if (opMode == ONE_SHOT && cur_ind == size-1)
 		return ONE_SHOT_FINISHED_HOLD_TIME;
 	else
-		return hold_time_data(cur_ind);
+		return hold_time_data_fn(cur_ind);
 }
 
-void gen_Source::stepForward(uint8_t step_sz){
-	if (status == PAUSED){
-		shift_accumulator += step_sz;
+void generatedSource::stepForward(uint8_t step_sz){
+	if (status == FROZEN){
 		return;
 	}
 	else{
-		if (mode == ONE_SHOT && cur_ind + step_sz >= size-1)
+		if (opMode == ONE_SHOT && cur_ind + step_sz >= size-1)
 			cur_ind = size-1;
 		else
 			cur_ind = (cur_ind + step_sz) % size;
@@ -88,6 +96,6 @@ void gen_Source::stepForward(uint8_t step_sz){
 	}
 }
 
-void gen_Source::reset(){
+void generatedSource::reset(){
 	cur_ind = 0;
 }

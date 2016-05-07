@@ -4,7 +4,7 @@
 
  void Waveform::prepare(){
     if (cyclops->isAvailable()){
-        cyclops->dac_initiate_prog(src->nextVoltage()); // initiate will do chip selection. Non-blocking.
+        cyclops->dac_initiate_prog(source->nextVoltage()); // initiate will do chip selection. Non-blocking.
         status = PREPARED;
     }
 }
@@ -14,9 +14,9 @@ Waveform::latch(uint16_t delta){
         cyclops->dac_load();
         state = LATCHED;
         // time_rem was zero, this channel just got latched.
-        time_rem = src->holdTime() - delta;
+        time_rem = source->holdTime() - delta;
     }
-    src->stepForward(1);
+    source->stepForward(1);
 }
     @endcode
     @author Ananya Bahadur
@@ -33,51 +33,56 @@ Waveform::latch(uint16_t delta){
 #include "Cyclops.h"
 #include "Source.h"
 
-/** @typedef _status */
+/** @typedef waveformStatus */
 typedef enum {
     INIT,
     PREPARED,
     LATCHED,
-    PAUSE
-} _status;
+    PAUSED
+} waveformStatus;
 
 
 /**
- * @brief      Each Waveform Object has a pointer to a Cyclops instance. Using the Source object, a Waveform generates or reads signal points.
- *             It can be in any one of 4 states.
- *             
- *             @see Waveform.h
+ * @brief      Each Waveform Object has pointers to a Cyclops instance and a Source instance, effectively binding them together.
+ * @details    It can be in any one of 4 (waveformStatus) states: {``INIT``, 
+ *             ``PREPARED``, ``LATCHED``, ``PAUSED``} 
  */
 class Waveform{
  private:
-    uint16_t time_rem;
-    _status    backup_this;
-    src_status backup_src;
+    uint16_t       time_rem;
+    waveformStatus backup_myStatus;
+    sourceStatus   backup_sourceStatus;
  public:
-    Source *src;            /**< Pointer to a instantiated object derived from Source.
-                              * @attention Source is an abstract class */
-    Cyclops *cyclops;       /**< Pointer to a Cyclops instance. */
-    _status state;          /**< Current "state" of the object. */
-    _op_mode mode;          /**< This is the same as Source::mode, `LOOPBACK` or `ONE_SHOT`. */
+    Source         *source;  /**< Pointer to a instantiated object derived from
+                              *   Source.
+                              *   @attention Source is an abstract class
+                              */
+    Cyclops        *cyclops; /**< Pointer to a Cyclops instance. */
+    waveformStatus status;   /**< Current "state" of the object. */
+    operationMode  mode;     /**< This is the same as Source::opMode,
+                             *   ``LOOPBACK`` or ``ONE_SHOT``.
+                             */
 
     /**
      * @brief      
-     * Initialises `state` (and `backup_this`) to `INIT`. Copies mode from the Source.
+     * Initialises ``state`` (and ``backup_myStatus``) to `INIT`. Copies 
+     * Source::opMode into Waveform::mode.
      *
      * @param[in]  _cyclops  Pointer to Cyclops
-     * @param[in]  s         Pointer to a *derivation* of Source
+     * @param[in]  _source   Pointer to a *derivation* of Source
      */
-    Waveform(Cyclops *_cyclops, Source* s);
+    Waveform(Cyclops *_cyclops, Source* _source);
 
     /**
      * @brief      
-     * Initialises `state` (and `backup_this`) to `INIT`. Sets the Source::mode to `_mode`.
+     * Initialises ``state`` (and ``backup_myStatus``) to ``INIT``. Sets the 
+     * Source::opMode to ``mode``.
      *
-     * @param[in]  _cyclops  Pointer to Cyclops
-     * @param[in]  s         Pointer to a *derivation* of Source
-     * @param[in] _mode      Ignore mode of src, use 'this' instead.
+     * @param[in] _cyclops  Pointer to Cyclops
+     * @param[in] _source   Pointer to a *derivation* of Source
+     * @param[in] mode     Ignore mode of source, use 'this' instead.
      */
-    Waveform(Cyclops *_cyclops, Source* s, _op_mode _mode);
+    Waveform(Cyclops *_cyclops, Source* _source, operationMode mode);
     
     /* These functions can be included once interrupt based SPI transfer is made
     void latch(uint16_t delta);
@@ -86,27 +91,30 @@ class Waveform{
 
 
     /**
-     * @brief      Loads Waveform::state from Waveform::backup_this and sets
-     *             src::status to ACTIVE.
+     * @brief
+     * Loads Waveform::status from Waveform::backup_myStatus and sets 
+     * source::status to ``ACTIVE``.
      */
     void resume();
 
 
     /**
-     * @brief      Stores Waveform::state into Waveform::backup_this and sets
-     *             src::status to PAUSED.
+     * @brief
+     * Stores Waveform::status into Waveform::backup_myStatus and sets
+     * source::status to ``PAUSED``.
      */
     void pause();
 
     /**
-     * @brief      Replaces Waveform::src with new_src.
+     * @brief      Replaces Waveform::source with new_source.
      *
-     * @param      new_src  Pointer to *derivation* of Source
+     * @param      new_source  Pointer to *derivation* of Source
      */
-    void useSource(Source* new_src);
+    void useSource(Source* new_source);
 
     /**
-     * @brief      Swaps the pointers-to-Cyclops-instances.
+     * @brief      Swaps the pointers to Cyclops-instances,
+     *             w1->cyclops <-> w2->cyclops.
      *
      * @param      w1  Pointer to Waveform
      * @param      w2  Pointer to Waveform

@@ -9,13 +9,15 @@
 
 
 /*
- * Create a single waveform object but 3 source objects
+ * Create a single waveform object but 2 source objects
  * Change source object at runtime.
  * Hence, source objects are like the "stored information" and waveform
  * can just switch between them
  * 
- * Here, there are 2 gen_Source objs. (sin(t))^2 and (sin(2t))^2, the waveform
- * object ping-pongs between them.
+ * Here, there are 2 generatedSource objs: 
+ *     1. (sin(t))^2 and (sin(2t))^2              (for LED)
+ *     2. 2 square waves of different timeperiods (for Serial Debug)
+ * and the waveform object ping-pongs between them.
  * 
  * Open the Serial Monitor before flashing this program.
  * Make sure baud rate is matched!
@@ -29,21 +31,23 @@
 //#define NO_LED
 
 #ifdef NO_LED
+  // square wave of timeperiod 1000ms
   uint16_t vd_g2(uint8_t seq){
     return (1 - seq) * 1023;
   }
   uint16_t htd_g2(uint8_t seq){
     return 250 + 500*seq;
   }
-  gen_Source gen_sin2_wave(vd_g2, htd_g2, 2);
+  generatedSource gen_wave2(vd_g2, htd_g2, 2);
 
+  // square wave of timeperiod 2000ms
   uint16_t vd_g(uint8_t seq){
     return (1 - seq) * 1023;
   }
   uint16_t htd_g(uint8_t seq){
     return 500 + 1000*seq;
   }
-  gen_Source gen_sin_wave(vd_g, htd_g, 2);
+  generatedSource gen_wave1(vd_g, htd_g, 2);
 
   uint16_t vda[]  = {0x80, 0x100, 0x180, 0x300, 0x180, 0x100, 0x80, 0x3e};
   uint16_t htda[] = {500, 3000, 500, 3000, 500, 3000, 500, 3000}; // delay in ms
@@ -57,7 +61,7 @@
   uint16_t htd_g2(uint8_t seq){
     return 15;
   }
-  gen_Source gen_sin2_wave(vd_g2, htd_g2, 100);
+  generatedSource gen_wave2(vd_g2, htd_g2, 100);
 
   uint16_t vd_g(uint8_t seq){
     double t = sin((float)seq/100.0 * PI);
@@ -68,15 +72,11 @@
   uint16_t htd_g(uint8_t seq){
     return 30;
   }
-  gen_Source gen_sin_wave(vd_g, htd_g, 100);
-
-  uint16_t vda[]  = {0x20, 0x40, 0x80, 0xa0, 0xc0, 0x80, 0x20, 0x04};
-  uint16_t htda[] = {200, 200, 200, 200, 200, 1500, 1500, 1500}; // delay in ms
-  st_Source stored(vda, htda, 8);
+  generatedSource gen_wave1(vd_g, htd_g, 100);
 #endif
 
 Cyclops cyclops(CH0);
-Waveform w(&cyclops, &gen_sin2_wave);
+Waveform my_waveform(&cyclops, &gen_wave2);
 
 void setup() {
   Serial.begin(57600);
@@ -98,12 +98,12 @@ void loop() {
   if (i == 4){
  #endif
     if (src_id == 0){
-      w.useSource(&gen_sin_wave);    // switching to slow wave
+      my_waveform.useSource(&gen_wave1);    // switching to slow wave
       Serial.println("sin(t)");
       src_id = 1;
     }
     else{
-      w.useSource(&gen_sin2_wave);   // switching to fast wave
+      my_waveform.useSource(&gen_wave2);   // switching to fast wave
       Serial.println("sin(2t)");
       src_id = 0;
     }
@@ -111,16 +111,19 @@ void loop() {
   }
   
  #ifdef NO_LED
-  Serial.print(w.src->nextVoltage());
+ // Use Serial Monitor to Debug
+  Serial.print(my_waveform.source->nextVoltage());
   Serial.print(" ");
-  Serial.println(w.src->holdTime());
-  w.src->stepForward(1);
-  delay(w.src->holdTime());
+  Serial.println(my_waveform.source->holdTime());
  #else
-  analogWrite(11, w.src->nextVoltage());
-  delay(w.src->holdTime());
-  w.src->stepForward(1);
+
+ // See thw waves on the LED
+  analogWrite(11, my_waveform.source->nextVoltage());
  #endif
+
+ delay(my_waveform.source->holdTime());
+ my_waveform.source->stepForward(1);
+
  i++;
 }
 

@@ -1,36 +1,37 @@
 #include "Waveform.h"
 
-Waveform::Waveform(Cyclops *_cyclops, Source *s) : 
-	state(INIT)
+Waveform::Waveform(Cyclops *_cyclops, Source *_source) : 
+	status(INIT)
 {
-	mode = src->mode;
+	mode = _source->opMode;
 	cyclops = _cyclops;
-	src = s;
+	source = _source;
 	//time_rem = ???
 }
 
-Waveform::Waveform(Cyclops *_cyclops, Source *s, _op_mode _mode) : 
-	state(INIT)
+Waveform::Waveform(Cyclops *_cyclops, Source *_source, operationMode mode) : 
+	status(INIT)
 {
-	src->mode = _mode;
+	_source->opMode = mode;
 	cyclops = _cyclops;
-	src = s;
+	source = _source;
 	//time_rem = ???
 }
 
 void Waveform::resume(){
-	state = backup_this;
-	src->status = ACTIVE;
+	status = backup_myStatus;
+	source->status = ACTIVE;
 }
 
 void Waveform::pause(){
-	backup_this = state;
-	src->status = PAUSED;
+	backup_myStatus = status;
+	status = PAUSED;
+	source->status = FROZEN;
 }
 
-void Waveform::useSource(Source *s){
-	src = s;
-	src->reset();
+void Waveform::useSource(Source *new_source){
+	source = new_source;
+	source->reset();
 }
 
 void Waveform::swapChannels(Waveform *w1, Waveform *w2){

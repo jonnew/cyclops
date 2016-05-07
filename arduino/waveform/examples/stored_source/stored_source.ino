@@ -9,7 +9,13 @@
 
 
 /*
- * Just create a single Task object, test all methods
+ * Sets up a generatedSource to create:
+ *     1. (to use with LED)            a slow ramp-up and fast ramp-down signal
+ *     2. (to use with Serial Monitor) a ramp-up and ramp-down signal
+ * 
+ * In any case, make a storedSource object.
+ * Refer to it using the Base "Source" class.
+ * 
  * Open the Serial Monitor before flashing this program.
  * Make sure baud rate is matched!
  * 
@@ -29,7 +35,8 @@
   uint16_t htd[] = {200, 200, 200, 200, 200, 1500, 1500, 1500}; // delay in ms
 #endif
 
-st_Source stored(vd, htd, 8);
+storedSource stored(vd, htd, 8);
+// Using the abstract base class pointer
 Source *base = &stored;
 
 void setup() {
@@ -45,7 +52,11 @@ void setup() {
 uint8_t i = 0;
 
 void loop() {
+  /*
+   * Notice how methods of the derived class are called using the base class pointer
+   */
   #ifdef NO_LED
+  // Debug using Serial Monitor
     Serial.print(i);
     Serial.print(" ");
     Serial.print(base->nextVoltage());
@@ -55,8 +66,8 @@ void loop() {
     base->stepForward(1);
     i = (i+1)%8;
   #else
+  // See the wave on the LED
     analogWrite(11, base->nextVoltage());
-    //Serial.println(base->nextVoltage());
     delay(base->holdTime());
     base->stepForward(1);
   #endif
