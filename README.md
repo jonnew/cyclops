@@ -20,6 +20,7 @@ forum](https://groups.google.com/forum/#!forum/open-ephys).
   [Teensy](https://www.pjrc.com/teensy/teensy31.html).
 - [ ] Indication light pipes get replaced with indicator modules, like
   [these](http://www.digikey.com/product-detail/en/lumex-opto-components-inc/SSF-LXH305ID-TR/67-1374-2-ND/229162)
+- [ ] Schottky between MCU VIn and board power to prevent LEDs from turning on when USB is plugged in.
 
 #### Hardware Licensing
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
