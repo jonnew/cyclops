@@ -18,6 +18,25 @@ You should have received a copy of the GNU General Public License
 along with CL.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @file Cyclops.h
+ @section FUTURE Future
+    These functions can be included once interrupt based SPI transfer is made
+    @code{.cpp}
+
+void Cyclops::dac_prog_initiate(uint16_t voltage){
+    // obtain resource (set _busy to `true`)
+    // make packet
+    // select chip
+    // intitate the write
+}
+    
+bool Cyclops::isAvailable(){
+    // return _busy?
+    return false;
+}
+    @endcode
+*/
+
 #ifndef Cyclops_h
 #define Cyclops_h
 
@@ -28,6 +47,8 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 #include <SPI.h>
 #include <Wire.h>
+
+#include "RPC_defs.h"
 
 // Each 'channel' defines a board address.  Corresponding pins numbers can be
 // accessed through the look-up tables (_a_in_lut, _cs_lut, _trig_lut, etc).
@@ -91,6 +112,11 @@ class Cyclops {
     // Onboard signal generation
     void dac_send_test_waveform(void);
     void dac_prog_voltage(uint16_t voltage);
+
+    // These functions can be included once interrupt based SPI transfer is made
+    // void dac_prog_initiate(uint16_t voltage);
+    // bool isAvailable();
+
     void dac_load(void);
     void dac_generate_waveform(uint16_t voltage[],
             uint16_t length,

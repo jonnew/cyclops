@@ -1,0 +1,27 @@
+# Syntax highlighting
+
+# Class (KEYWORD1)
+Source           KEYWORD1
+storedSource     KEYWORD1
+generatedSource  KEYWORD1
+Waveform         KEYWORD1
+
+# Public methods(KEYWORD2)
+newVoltage       KEYWORD2
+holdTime         KEYWORD2
+stepForward      KEYWORD2
+resume           KEYWORD2
+pause            KEYWORD2
+useSource        KEYWORD2
+swapChannelss    KEYWORD2
+reset            KEYWORD2
+
+# CONSTANTS
+ACTIVE           LITERAL1
+PAUSED           LITERAL1
+INIT             LITERAL1
+LOOPBACK         LITERAL1
+ONE_SHOT         LITERAL1
+PREPARED         LITERAL1
+FROZEN           LITERAL1
+LATCHED          LITERAL1
