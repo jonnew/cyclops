@@ -36,6 +36,7 @@ Waveform::latch(uint16_t delta){
 /** @typedef waveformStatus */
 typedef enum {
     INIT,
+    PREPARING,
     PREPARED,
     LATCHED,
     PAUSED
@@ -50,6 +51,8 @@ typedef enum {
 class Waveform{
  private:
     uint16_t       time_rem;
+    uint8_t        outFrame[DAC_BLOCK_SIZE]; /**< The SPI frame is temporarily stored here. */
+    uint8_t        outFrame_id;             /**< The index of element in the frame to be written next. */
     waveformStatus backup_myStatus;
     sourceStatus   backup_sourceStatus;
  public:
@@ -59,14 +62,10 @@ class Waveform{
                               */
     Cyclops        *cyclops; /**< Pointer to a Cyclops instance. */
     waveformStatus status;   /**< Current "state" of the object. */
-    operationMode  mode;     /**< This is the same as Source::opMode,
-                             *   ``LOOPBACK`` or ``ONE_SHOT``.
-                             */
 
     /**
      * @brief      
-     * Initialises ``state`` (and ``backup_myStatus``) to `INIT`. Copies 
-     * Source::opMode into Waveform::mode.
+     * Initialises ``state`` (and ``backup_myStatus``) to `INIT`.
      *
      * @param[in]  _cyclops  Pointer to Cyclops
      * @param[in]  _source   Pointer to a *derivation* of Source
@@ -89,6 +88,19 @@ class Waveform{
     void prepare();
     */
 
+    /**
+     * @brief
+     * Moves the state from ``PREPARING`` to ``PREPARED`` and at outermost level.
+     * 
+     * @details
+     * The scheduler calls this function if the waveform is ``PREPARING``. A Single
+     * run might not result in transition to ``PREPARED``.
+     *
+     * @return     Returns ``0`` if state transition to ``PREPARED`` else ``1``.
+     *             If waveform is not in ``PREPARING`` state when invoked, 
+     *             imediately returns ``2``.
+     */
+    uint8_t prepare();
 
     /**
      * @brief
@@ -121,5 +133,21 @@ class Waveform{
      */
     static void swapChannels(Waveform* w1, Waveform* w2);
 };
+
+/**
+ * @brief
+ * Called by the Task scheduler. Maintains waveforms.
+ * @details
+ * Performs SPI write for ``PREPARING`` waveforms (if SPI not ``_busy``)  
+ * If full SPI frame has been written, marks the waveform ``PREPARED``  
+ * Picks the forthcoming ``LATCHED`` and moves it into ``PREPARING``
+ * _The scheduler can poll on this function too._
+ * 
+ * @param[in]  waveList  Array of "pointers to Waveform instances"
+ * @param[in]  sz        Size of array
+ *
+ * @return     1 if any errors else 0
+ */
+uint8_t processWaveforms(Waveform* waveList[], uint8_t sz);
 
 #endif

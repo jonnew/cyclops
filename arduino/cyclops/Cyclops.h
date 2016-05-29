@@ -45,6 +45,7 @@ bool Cyclops::isAvailable(){
 #else
  #include <WProgram.h>
 #endif
+#include <nbSPI.h>
 #include <SPI.h>
 #include <Wire.h>
 
@@ -86,6 +87,7 @@ typedef enum
 #define DAC_CONF_ACTIVE 	  (0x1000)
 #define DAC_CONF_SHDN 		  (0x1000)
 #define DAC_UPDATE_DELAY_USEC 54 // LEONARDO SPECIFIC
+#define DAC_BLOCK_SIZE        2  /**< The no. of bytes for each SPI transfer. HI:LO <=> {Address, 10b Data} */
 
 //Function macros for setting bits in registers
 #define cbi(sfr,bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
@@ -108,6 +110,10 @@ class Cyclops {
  public:
 
     Cyclops(Channel channel);
+
+    // new functions below
+    void selectChip();
+    void deselectChip();    
 
     // Onboard signal generation
     void dac_send_test_waveform(void);

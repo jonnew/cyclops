@@ -62,6 +62,14 @@ Cyclops::Cyclops(Channel channel) : _channel(channel)
     dac_load();
 }
 
+void Cyclops::selectChip(){
+    digitalWrite(_cs_lut[_channel], LOW);
+}
+
+void Cyclops::deselectChip(){
+    digitalWrite(_cs_lut[_channel], HIGH);   
+}
+
 float Cyclops::over_current_protect(float current_limit_mA)
 {
     // Measure the current
