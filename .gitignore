@@ -6,6 +6,7 @@
 *.dri
 *.zip
 *~*
+docs/*
 
 # Vim files
 .*.swp

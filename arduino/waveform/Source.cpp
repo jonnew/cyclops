@@ -28,7 +28,7 @@ storedSource::storedSource(
 		hold_time_data(hold_time_data),
 		size(sz) { /*empty body*/ }
 
-uint16_t storedSource::nextVoltage(){
+uint16_t storedSource::getVoltage(){
 	return voltage_data[cur_ind];
 }
 
@@ -72,7 +72,7 @@ generatedSource::generatedSource(
 		hold_time_data_fn(hold_time_data_fn),
 		size(sz) { /*empty body*/ }
 
-uint16_t generatedSource::nextVoltage(){
+uint16_t generatedSource::getVoltage(){
 	return voltage_data_fn(cur_ind);
 }
 

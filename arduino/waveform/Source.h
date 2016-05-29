@@ -28,9 +28,9 @@ typedef enum {
 
 #define ONE_SHOT_FINISHED_HOLD_TIME 1000 /**< The waveform is completed.  
                                           *   The timer would still interrupt
-                                          *    for this Waveform, as we don't
-                                          *    "pause" the waveform*.
-                                          *    Use a long HOLD_TIME.
+                                          *   for this Waveform, as we don't
+                                          *   "pause" the waveform*. Use a long
+                                          *   HOLD_TIME.
                                           */
 
 /**
@@ -68,17 +68,16 @@ class Source{
      *  In ``FROZEN`` state stepForward() calls do nothing.
     */    
     sourceStatus status;
-    /**< Unique uint ID for this object */
-    const uint8_t src_id;
+    const uint8_t src_id; /**< Unique uint ID for this object */
 
     Source(operationMode opMode, sourceStatus = ACTIVE);
 
     /**
      * @brief      Returns the next data-point's Voltage.
      */
-    virtual uint16_t nextVoltage() = 0;
+    virtual uint16_t getVoltage() = 0;
     /**
-     * @brief      Returns the next data-point's Hold-Time. The voltage will be held on the LED for this much time.
+     * @brief      Returns the next data-point's Hold-Time (in 10μsec). The voltage will be held on the LED for this much time.
      */
     virtual uint16_t holdTime() = 0;
     /**
@@ -88,7 +87,7 @@ class Source{
      */
     virtual void stepForward(uint8_t num_of_steps) = 0;
     /**
-     * @brief      Resets the Source. nextVoltage() will return the Voltage of the first data-point.
+     * @brief      Resets the Source. getVoltage() will return the Voltage of the first data-point.
      */
     virtual void reset() = 0;
 };
@@ -116,7 +115,7 @@ class storedSource: public Source{
                  const uint16_t *hold_time_data,
                  uint8_t sz,
                  operationMode mode = LOOPBACK);
-    virtual uint16_t nextVoltage();
+    virtual uint16_t getVoltage();
     virtual uint16_t holdTime();
     virtual void     stepForward(uint8_t num_of_steps);
     virtual void     reset();
@@ -152,7 +151,7 @@ class generatedSource: public Source{
                     uint16_t (*hold_time_data_fn)(uint8_t),
                     uint8_t sz,
                     operationMode mode = LOOPBACK);
-    virtual uint16_t nextVoltage();
+    virtual uint16_t getVoltage();
     virtual uint16_t holdTime();
     virtual void     stepForward(uint8_t step_sz);
     virtual void     reset();

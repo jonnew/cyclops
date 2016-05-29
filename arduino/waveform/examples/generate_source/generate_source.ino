@@ -74,7 +74,7 @@ void loop() {
   // Debug using Serial Monitor
     Serial.print(i);
     Serial.print(" ");
-    Serial.print(base->nextVoltage());
+    Serial.print(base->getVoltage());
     Serial.print(" ");
     Serial.println(base->holdTime());
     delay(base->holdTime());
@@ -82,7 +82,7 @@ void loop() {
     i = (i+1)%2;
   #else
   // See the wave on the LED
-    analogWrite(11, base->nextVoltage());
+    analogWrite(11, base->getVoltage());
     delay(base->holdTime());
     base->stepForward(1);
   #endif

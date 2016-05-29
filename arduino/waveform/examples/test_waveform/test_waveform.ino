@@ -112,13 +112,13 @@ void loop() {
   
  #ifdef NO_LED
  // Use Serial Monitor to Debug
-  Serial.print(my_waveform.source->nextVoltage());
+  Serial.print(my_waveform.source->getVoltage());
   Serial.print(" ");
   Serial.println(my_waveform.source->holdTime());
  #else
 
  // See thw waves on the LED
-  analogWrite(11, my_waveform.source->nextVoltage());
+  analogWrite(11, my_waveform.source->getVoltage());
  #endif
 
  delay(my_waveform.source->holdTime());
