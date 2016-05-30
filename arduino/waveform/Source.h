@@ -79,7 +79,7 @@ class Source{
     /**
      * @brief      Returns the next data-point's Hold-Time (in 10μsec). The voltage will be held on the LED for this much time.
      */
-    virtual uint16_t holdTime() = 0;
+    virtual double holdTime() = 0;
     /**
      * @brief      Moves to the next data-point.
      * 
@@ -99,8 +99,8 @@ class storedSource: public Source{
  private:
     uint8_t cur_ind;
  public:
-    const uint16_t *voltage_data,
-                   *hold_time_data;
+    const uint16_t *voltage_data;
+    const double   *hold_time_data;
     const uint8_t size;
 
     /**
@@ -112,11 +112,11 @@ class storedSource: public Source{
      * @param[in]  mode            ``LOOPBACK`` by default
      */
     storedSource(const uint16_t *voltage_data,
-                 const uint16_t *hold_time_data,
+                 const double   *hold_time_data,
                  uint8_t sz,
                  operationMode mode = LOOPBACK);
     virtual uint16_t getVoltage();
-    virtual uint16_t holdTime();
+    virtual double   holdTime();
     virtual void     stepForward(uint8_t num_of_steps);
     virtual void     reset();
 };
@@ -134,7 +134,7 @@ class generatedSource: public Source{
     uint8_t cur_ind;
  public:
     uint16_t (*voltage_data_fn)(uint8_t);
-    uint16_t (*hold_time_data_fn)(uint8_t);
+    double   (*hold_time_data_fn)(uint8_t);
     uint8_t size;
     /**
      * @brief      Creates a new generatedSource which uses the provided 
@@ -148,11 +148,11 @@ class generatedSource: public Source{
      * @param[in]  mode               ``LOOPBACK`` by deafult
      */
     generatedSource(uint16_t (*voltage_data_fn)(uint8_t),
-                    uint16_t (*hold_time_data_fn)(uint8_t),
+                    double   (*hold_time_data_fn)(uint8_t),
                     uint8_t sz,
                     operationMode mode = LOOPBACK);
     virtual uint16_t getVoltage();
-    virtual uint16_t holdTime();
+    virtual double   holdTime();
     virtual void     stepForward(uint8_t step_sz);
     virtual void     reset();
 };

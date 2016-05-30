@@ -3,6 +3,7 @@
 
 #include <Wire.h>
 #include <SPI.h>
+#include <nbSPI.h>
 #include <Cyclops.h>
 #include <RPC_defs.h>
 
@@ -35,8 +36,8 @@
   uint16_t vd_g2(uint8_t seq){
     return (1 - seq) * 1023;
   }
-  uint16_t htd_g2(uint8_t seq){
-    return 250 + 500*seq;
+  double htd_g2(uint8_t seq){
+    return 250.0 + 500.0*seq;
   }
   generatedSource gen_wave2(vd_g2, htd_g2, 2);
 
@@ -44,13 +45,13 @@
   uint16_t vd_g(uint8_t seq){
     return (1 - seq) * 1023;
   }
-  uint16_t htd_g(uint8_t seq){
-    return 500 + 1000*seq;
+  double htd_g(uint8_t seq){
+    return 500.0 + 1000.0*seq;
   }
   generatedSource gen_wave1(vd_g, htd_g, 2);
 
   uint16_t vda[]  = {0x80, 0x100, 0x180, 0x300, 0x180, 0x100, 0x80, 0x3e};
-  uint16_t htda[] = {500, 3000, 500, 3000, 500, 3000, 500, 3000}; // delay in ms
+  double htda[] = {500, 3000, 500, 3000, 500, 3000, 500, 3000}; // delay in ms
 #else
   uint16_t vd_g2(uint8_t seq){
     double t = sin((float)seq/100.0 * PI);
@@ -58,8 +59,8 @@
     //Serial.print(t*255);
     return (uint16_t) (t*255);
   }
-  uint16_t htd_g2(uint8_t seq){
-    return 15;
+  double htd_g2(uint8_t seq){
+    return 15.0;
   }
   generatedSource gen_wave2(vd_g2, htd_g2, 100);
 
@@ -69,8 +70,8 @@
     //Serial.print(t*255);
     return (uint16_t) (t*255);
   }
-  uint16_t htd_g(uint8_t seq){
-    return 30;
+  double htd_g(uint8_t seq){
+    return 30.0;
   }
   generatedSource gen_wave1(vd_g, htd_g, 100);
 #endif
@@ -114,14 +115,14 @@ void loop() {
  // Use Serial Monitor to Debug
   Serial.print(my_waveform.source->getVoltage());
   Serial.print(" ");
-  Serial.println(my_waveform.source->holdTime());
+  Serial.println((int)my_waveform.source->holdTime());
  #else
 
  // See thw waves on the LED
   analogWrite(11, my_waveform.source->getVoltage());
  #endif
 
- delay(my_waveform.source->holdTime());
+ delay((int)my_waveform.source->holdTime());
  my_waveform.source->stepForward(1);
 
  i++;

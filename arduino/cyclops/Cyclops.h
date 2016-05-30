@@ -108,8 +108,8 @@ static void isr(void);
 class Cyclops {
 
  public:
-
-    Cyclops(Channel channel);
+    Channel channel;
+    Cyclops(Channel _channel);
 
     // new functions below
     void selectChip();
@@ -137,9 +137,6 @@ class Cyclops {
     void attach_interupt(void (*user_func)(void));
 
  private:
-
-    // Private properties
-    Channel _channel = CH0;
 
     // Over current triggred
     uint8_t _oc_trig = 0;
