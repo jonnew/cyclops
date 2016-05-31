@@ -32,28 +32,25 @@ Waveform::latch(uint16_t delta){
 
 #include "Cyclops.h"
 #include "Source.h"
+#include "TimerOne.h"
 
 /** @typedef waveformStatus */
 typedef enum {
     INIT,
     PREPARING,
     PREPARED,
-    LATCHED,
-    PAUSED
+    LATCHED
 } waveformStatus;
 
 
 /**
  * @brief      Each Waveform Object has pointers to a Cyclops instance and a Source instance, effectively binding them together.
- * @details    It can be in any one of 4 (waveformStatus) states: {``INIT``, 
- *             ``PREPARED``, ``LATCHED``, ``PAUSED``} 
+ * @details    It can be in any one of 4 (waveformStatus) states: {``INIT``, ``PREPARING``, ``PREPARED``, ``LATCHED``} 
  */
 class Waveform{
  private:
-    uint16_t       time_rem;
     uint8_t        outFrame[DAC_BLOCK_SIZE]; /**< The SPI frame is temporarily stored here. */
     uint8_t        outFrame_id;             /**< The index of element in the frame to be written next. */
-    waveformStatus backup_myStatus;
     sourceStatus   backup_sourceStatus;
  public:
     Source         *source;  /**< Pointer to a instantiated object derived from
@@ -62,10 +59,13 @@ class Waveform{
                               */
     Cyclops        *cyclops; /**< Pointer to a Cyclops instance. */
     waveformStatus status;   /**< Current "state" of the object. */
+    double         time_rem;
+
+    Waveform();
 
     /**
      * @brief      
-     * Initialises ``state`` (and ``backup_myStatus``) to `INIT`.
+     * Initialises ``state`` to `INIT`.
      *
      * @param[in]  _cyclops  Pointer to Cyclops
      * @param[in]  _source   Pointer to a *derivation* of Source
@@ -74,19 +74,23 @@ class Waveform{
 
     /**
      * @brief      
-     * Initialises ``state`` (and ``backup_myStatus``) to ``INIT``. Sets the 
-     * Source::opMode to ``mode``.
+     * Initialises ``state`` to ``INIT``. Sets the Source::opMode to ``mode``.
      *
      * @param[in] _cyclops  Pointer to Cyclops
      * @param[in] _source   Pointer to a *derivation* of Source
-     * @param[in] mode     Ignore mode of source, use 'this' instead.
+     * @param[in] mode      Ignore mode of source, use 'this' instead.
      */
     Waveform(Cyclops *_cyclops, Source* _source, operationMode mode);
-    
-    /* These functions can be included once interrupt based SPI transfer is made
-    void latch(uint16_t delta);
-    void prepare();
-    */
+
+    /**
+     * @brief      
+     * Sets the Source::opMode to ``mode`` apart from the obvious.
+     *
+     * @param[in] _cyclops  Pointer to Cyclops
+     * @param[in] _source   Pointer to a *derivation* of Source
+     * @param[in] mode      Ignore mode of source, use 'this' instead.
+     */
+    void setup(Cyclops *_cyclops, Source* _source, operationMode mode=LOOPBACK);
 
     /**
      * @brief
@@ -134,20 +138,37 @@ class Waveform{
     static void swapChannels(Waveform* w1, Waveform* w2);
 };
 
-/**
- * @brief
- * Called by the Task scheduler. Maintains waveforms.
- * @details
- * Performs SPI write for ``PREPARING`` waveforms (if SPI not ``_busy``)  
- * If full SPI frame has been written, marks the waveform ``PREPARED``  
- * Picks the forthcoming ``LATCHED`` and moves it into ``PREPARING``
- * _The scheduler can poll on this function too._
- * 
- * @param[in]  waveList  Array of "pointers to Waveform instances"
- * @param[in]  sz        Size of array
- *
- * @return     1 if any errors else 0
- */
-uint8_t processWaveforms(Waveform* waveList[], uint8_t sz);
+class WaveformList{
+private:
+    Waveform waveList[4];
+    uint8_t _claimedChannels;
+    uint8_t sortedWaveforms[4];
+    uint8_t size;
+
+    void updateSortedSeq() volatile;
+public:
+    WaveformList();
+    void      initialPrep();
+    int8_t    setWaveform(Cyclops *_cyclops, Source *_source, operationMode mode);
+    Waveform* at(uint8_t index);
+
+    int8_t    forthcoming(waveformStatus _status);
+    int8_t    forthcoming(waveformStatus _status) volatile;
+    Waveform* top() volatile;
+    double    update_time_rem() volatile;
+
+    /**
+     * @brief
+     * Called by the Task scheduler. Maintains waveforms.
+     * @details
+     * Performs SPI write for ``PREPARING`` waveforms (if SPI not ``_busy``)  
+     * If full SPI frame has been written, marks the waveform ``PREPARED``  
+     * Picks the forthcoming ``LATCHED`` and moves it into ``PREPARING``
+     * _The scheduler can poll on this function too._
+     *
+     * @return     1 if any errors else 0
+     */
+    uint8_t process();
+};
 
 #endif

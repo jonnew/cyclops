@@ -18,25 +18,6 @@ You should have received a copy of the GNU General Public License
 along with CL.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/** @file Cyclops.h
- @section FUTURE Future
-    These functions can be included once interrupt based SPI transfer is made
-    @code{.cpp}
-
-void Cyclops::dac_prog_initiate(uint16_t voltage){
-    // obtain resource (set _busy to `true`)
-    // make packet
-    // select chip
-    // intitate the write
-}
-    
-bool Cyclops::isAvailable(){
-    // return _busy?
-    return false;
-}
-    @endcode
-*/
-
 #ifndef Cyclops_h
 #define Cyclops_h
 
