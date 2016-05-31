@@ -102,7 +102,7 @@ Waveform* WaveformList::at(uint8_t index){
 	return &waveList[index];
 }
 
-void WaveformList::initialPrep(){
+double WaveformList::initialPrep() volatile{
 	// no need to prepare this. Timer hasn't even been initialised yet!
 	int8_t j; // can be -1!!
 	for (uint8_t i=0; i < size; i++){
@@ -124,7 +124,7 @@ void WaveformList::initialPrep(){
 		waveList[i].cyclops->dac_load();
 	}
 	// enable timer ASAP, DON'T FORGET!
-	
+	return delta;
 	// Now, the first waveform in sortedWaveforms is always going to have time_rem = 0
 	// This first guy may, may not be PREPARED when the ISR comes, and we are "prepared"
 	// both cases. So, bring it on!
@@ -170,7 +170,7 @@ int8_t WaveformList::forthcoming(waveformStatus _status){
 	return -1;
 }
 
-uint8_t WaveformList::process(){
+uint8_t WaveformList::process() volatile {
 	// most of this function should be protected.
 
 	// ignore FROZEN

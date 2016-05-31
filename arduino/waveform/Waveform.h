@@ -1,24 +1,4 @@
 /** @file Waveform.h
-  These functions can be included once interrupt based SPI transfer is available via Cyclops.
-    @code{.cpp}
-
- void Waveform::prepare(){
-    if (cyclops->isAvailable()){
-        cyclops->dac_initiate_prog(source->nextVoltage()); // initiate will do chip selection. Non-blocking.
-        status = PREPARED;
-    }
-}
-  
-Waveform::latch(uint16_t delta){
-    if (state == PREPARED){
-        cyclops->dac_load();
-        state = LATCHED;
-        // time_rem was zero, this channel just got latched.
-        time_rem = source->holdTime() - delta;
-    }
-    source->stepForward(1);
-}
-    @endcode
     @author Ananya Bahadur
 */
 #ifndef CL_WAVEFORM_H
@@ -148,7 +128,7 @@ private:
     void updateSortedSeq() volatile;
 public:
     WaveformList();
-    void      initialPrep();
+    double    initialPrep() volatile;
     int8_t    setWaveform(Cyclops *_cyclops, Source *_source, operationMode mode);
     Waveform* at(uint8_t index);
 
@@ -168,7 +148,11 @@ public:
      *
      * @return     1 if any errors else 0
      */
-    uint8_t process();
+    uint8_t process() volatile;
 };
+
+extern volatile WaveformList waveformList;
+
+void cyclops_timer_ISR();
 
 #endif
