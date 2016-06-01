@@ -7,11 +7,17 @@
  * published by the Free Software Foundation.
  */
 
-#ifndef _CYCLOPS_SPI_H
-#define _CYCLOPS_SPI_H
+#ifndef CL_NB_SPI_H
+#define CL_NB_SPI_H
 
 #include <Arduino.h>
 #include <SPI.h>
+
+//MCP4921 stuff
+#define DAC_CONF_ACTIVE 	  (0x1000)
+#define DAC_CONF_SHDN 		  (0x1000)
+#define DAC_UPDATE_DELAY_USEC 54 // LEONARDO SPECIFIC
+#define DAC_BLOCK_SIZE        2  /**< The no. of bytes for each SPI transfer. HI:LO <=> {Address, 10b Data} */
 
 /*
  * The ISR just toggles the volatile ``_busy_X`` flag.

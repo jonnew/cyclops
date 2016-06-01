@@ -64,12 +64,6 @@ typedef enum
 #define A2                  2     //
 #define A3                  3     //
 
-//MCP4921 stuff
-#define DAC_CONF_ACTIVE 	  (0x1000)
-#define DAC_CONF_SHDN 		  (0x1000)
-#define DAC_UPDATE_DELAY_USEC 54 // LEONARDO SPECIFIC
-#define DAC_BLOCK_SIZE        2  /**< The no. of bytes for each SPI transfer. HI:LO <=> {Address, 10b Data} */
-
 //Function macros for setting bits in registers
 #define cbi(sfr,bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
 #define sbi(sfr,bit) (_SFR_BYTE(sfr) |= _BV(bit))

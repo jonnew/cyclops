@@ -1,7 +1,7 @@
 #include "Waveform.h"
 
 // Pre-instantiate the global list.
-volatile WaveformList waveformList;
+WaveformList waveformList;
 
 //================================================================================================
 //  Waveform Class
@@ -102,7 +102,7 @@ Waveform* WaveformList::at(uint8_t index){
 	return &waveList[index];
 }
 
-double WaveformList::initialPrep() volatile{
+double WaveformList::initialPrep(){
 	// no need to prepare this. Timer hasn't even been initialised yet!
 	int8_t j; // can be -1!!
 	for (uint8_t i=0; i < size; i++){
@@ -130,26 +130,6 @@ double WaveformList::initialPrep() volatile{
 	// both cases. So, bring it on!
 }
 
-int8_t WaveformList::forthcoming(waveformStatus _status) volatile{
-	// this loop can be slightly optimised *******************************************************************
-	// searching for the "forthcoming" ACTIVE && "_status" waveform
-	
-	// Only reads waveList and sortedWaveforms, so it should be protected.
-	uint8_t res;
-	TIMSK1 = 0x00; // disable Timer1 interrupt
-	for (uint8_t i=0; i<size; i++){
-		if (waveList[sortedWaveforms[i]].source->status == ACTIVE &&
-			waveList[sortedWaveforms[i]].status == _status){
-
-			res = sortedWaveforms[i];
-			TIMSK1 = _BV(TOIE1); // enable
-			return res;
-		}
-	}
-	TIMSK1 = _BV(TOIE1); // enable
-	return -1;
-}
-
 int8_t WaveformList::forthcoming(waveformStatus _status){
 	// this loop can be slightly optimised *******************************************************************
 	// searching for the "forthcoming" ACTIVE && "_status" waveform
@@ -170,7 +150,7 @@ int8_t WaveformList::forthcoming(waveformStatus _status){
 	return -1;
 }
 
-uint8_t WaveformList::process() volatile {
+uint8_t WaveformList::process() {
 	// most of this function should be protected.
 
 	// ignore FROZEN
@@ -212,21 +192,21 @@ uint8_t WaveformList::process() volatile {
 //  WaveformList Class :: ISR helper functions
 //================================================================================================
 
-Waveform* WaveformList::top() volatile{
-	return (Waveform* volatile) &waveList[sortedWaveforms[0]];
+Waveform* WaveformList::top(){
+	return &waveList[sortedWaveforms[0]];
 }
 
-double WaveformList::update_time_rem() volatile{
+double WaveformList::update_time_rem(){
 	// No need to protect this function as it is always called inside an ISR.
 	// Sorts, reads waveList, decrements `time_rem`
 	updateSortedSeq();
 	// this waveform is going to be processed in the next interrupt
 	int8_t w_index = forthcoming(PREPARED);
 	// update the time_rems
-	double delta;
+	double delta = -1;
 	if (w_index > 0){
 		delta = waveList[w_index].time_rem; // this should be the smallest time_rem anyways
-		for (uint8_t i; i < size; i++){
+		for (uint8_t i=0; i < size; i++){
 			waveList[i].time_rem -= delta;
 		}
 	}
@@ -237,7 +217,7 @@ double WaveformList::update_time_rem() volatile{
 	return delta;
 }
 
-void WaveformList::updateSortedSeq() volatile{
+void WaveformList::updateSortedSeq(){
 	// this loop can be slightly optimised *******************************************************************
 	// PRIVATE function. Always called by `update_time_rem` which is pseudo-protected
 	// Hence this is also pseudo protected.

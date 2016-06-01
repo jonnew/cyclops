@@ -12,8 +12,6 @@
  #include <WProgram.h>
 #endif
 
-#include "Cyclops.h"
-
 /** @typedef operationMode */
 typedef enum {
     LOOPBACK,

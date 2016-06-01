@@ -10,9 +10,12 @@
  #include <WProgram.h>
 #endif
 
-#include "Cyclops.h"
+//#include "Cyclops.h"
 #include "Source.h"
 #include "TimerOne.h"
+#include "Cyclops.h"
+
+class Cyclops;
 
 /** @typedef waveformStatus */
 typedef enum {
@@ -22,6 +25,7 @@ typedef enum {
     LATCHED
 } waveformStatus;
 
+class WaveformList;
 
 /**
  * @brief      Each Waveform Object has pointers to a Cyclops instance and a Source instance, effectively binding them together.
@@ -125,17 +129,16 @@ private:
     uint8_t sortedWaveforms[4];
     uint8_t size;
 
-    void updateSortedSeq() volatile;
+    void updateSortedSeq();
 public:
     WaveformList();
-    double    initialPrep() volatile;
+    double    initialPrep();
     int8_t    setWaveform(Cyclops *_cyclops, Source *_source, operationMode mode);
     Waveform* at(uint8_t index);
 
     int8_t    forthcoming(waveformStatus _status);
-    int8_t    forthcoming(waveformStatus _status) volatile;
-    Waveform* top() volatile;
-    double    update_time_rem() volatile;
+    Waveform* top();
+    double    update_time_rem();
 
     /**
      * @brief
@@ -148,10 +151,10 @@ public:
      *
      * @return     1 if any errors else 0
      */
-    uint8_t process() volatile;
+    uint8_t process();
 };
 
-extern volatile WaveformList waveformList;
+extern WaveformList waveformList;
 
 void cyclops_timer_ISR();
 
