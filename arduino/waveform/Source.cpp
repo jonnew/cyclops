@@ -19,7 +19,7 @@ Source::Source(operationMode mode, sourceStatus status /* = ACTIVE */) :
 //========================
 storedSource::storedSource(
 	const uint16_t *voltage_data,
-	const uint16_t *hold_time_data,
+	const double *hold_time_data,
 	uint8_t sz,
 	operationMode mode /* = LOOPBACK */
 	) :	Source(mode),
@@ -28,11 +28,11 @@ storedSource::storedSource(
 		hold_time_data(hold_time_data),
 		size(sz) { /*empty body*/ }
 
-uint16_t storedSource::nextVoltage(){
+uint16_t storedSource::getVoltage(){
 	return voltage_data[cur_ind];
 }
 
-uint16_t storedSource::holdTime(){
+double storedSource::holdTime(){
 	if (opMode == ONE_SHOT && cur_ind == size-1)
 		return ONE_SHOT_FINISHED_HOLD_TIME;
 	else
@@ -63,7 +63,7 @@ void storedSource::reset(){
 
 generatedSource::generatedSource(
 	uint16_t (*voltage_data_fn)(uint8_t),
-	uint16_t (*hold_time_data_fn)(uint8_t),
+	double (*hold_time_data_fn)(uint8_t),
 	uint8_t sz,
 	operationMode mode /* = LOOPBACK */
 	) :	Source(mode),
@@ -72,11 +72,11 @@ generatedSource::generatedSource(
 		hold_time_data_fn(hold_time_data_fn),
 		size(sz) { /*empty body*/ }
 
-uint16_t generatedSource::nextVoltage(){
+uint16_t generatedSource::getVoltage(){
 	return voltage_data_fn(cur_ind);
 }
 
-uint16_t generatedSource::holdTime(){
+double generatedSource::holdTime(){
 	if (opMode == ONE_SHOT && cur_ind == size-1)
 		return ONE_SHOT_FINISHED_HOLD_TIME;
 	else

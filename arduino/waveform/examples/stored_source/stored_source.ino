@@ -3,6 +3,7 @@
 
 #include <Wire.h>
 #include <SPI.h>
+#include <nbSPI.h>
 #include <Cyclops.h>
 #include <RPC_defs.h>
 
@@ -29,10 +30,10 @@
 
 #ifdef NO_LED
   uint16_t vd[]  = {0x80, 0x100, 0x180, 0x300, 0x180, 0x100, 0x80, 0x3e};
-  uint16_t htd[] = {500, 3000, 500, 3000, 500, 3000, 500, 3000}; // delay in ms
+  double   htd[] = {500, 3000, 500, 3000, 500, 3000, 500, 3000}; // delay in ms
 #else
   uint16_t vd[]  = {0x20, 0x40, 0x80, 0xa0, 0xc0, 0x80, 0x20, 0x04};
-  uint16_t htd[] = {200, 200, 200, 200, 200, 1500, 1500, 1500}; // delay in ms
+  double   htd[] = {200, 200, 200, 200, 200, 1500, 1500, 1500}; // delay in ms
 #endif
 
 storedSource stored(vd, htd, 8);
@@ -59,16 +60,16 @@ void loop() {
   // Debug using Serial Monitor
     Serial.print(i);
     Serial.print(" ");
-    Serial.print(base->nextVoltage());
+    Serial.print(base->getVoltage());
     Serial.print(" ");
     Serial.println(base->holdTime());
-    delay(base->holdTime());
+    delay((int)base->holdTime());
     base->stepForward(1);
     i = (i+1)%8;
   #else
   // See the wave on the LED
-    analogWrite(11, base->nextVoltage());
-    delay(base->holdTime());
+    analogWrite(11, base->getVoltage());
+    delay((int)base->holdTime());
     base->stepForward(1);
   #endif
 }

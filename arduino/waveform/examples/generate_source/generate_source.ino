@@ -3,6 +3,7 @@
 
 #include <Wire.h>
 #include <SPI.h>
+#include <nbSPI.h>
 #include <Cyclops.h>
 #include <RPC_defs.h>
 
@@ -32,8 +33,8 @@
   uint16_t vd(uint8_t seq){
     return (1 - seq) * 1023;
   }
-  uint16_t htd(uint8_t seq){
-    return 500 + 1000*seq;
+  double htd(uint8_t seq){
+    return 500.0 + 1000.0*seq;
   }
   generatedSource generator_wave(vd, htd, 2);
 #else
@@ -45,8 +46,8 @@
     //Serial.print(t*255);
     return (uint16_t) (t*255);
   }
-  uint16_t htd(uint8_t seq){
-    return 25;
+  double htd(uint8_t seq){
+    return 25.0;
   }
   generatedSource generator_wave(vd, htd, 100);
 #endif
@@ -74,16 +75,16 @@ void loop() {
   // Debug using Serial Monitor
     Serial.print(i);
     Serial.print(" ");
-    Serial.print(base->nextVoltage());
+    Serial.print(base->getVoltage());
     Serial.print(" ");
     Serial.println(base->holdTime());
-    delay(base->holdTime());
+    delay((int)base->holdTime());
     base->stepForward(1);
     i = (i+1)%2;
   #else
   // See the wave on the LED
-    analogWrite(11, base->nextVoltage());
-    delay(base->holdTime());
+    analogWrite(11, base->getVoltage());
+    delay((int)base->holdTime());
     base->stepForward(1);
   #endif
 }

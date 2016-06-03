@@ -1,5 +1,6 @@
 #include <Wire.h>
 #include <SPI.h>
+#include <nbSPI.h>
 #include <Cyclops.h>
 #include <RPC_defs.h>
 

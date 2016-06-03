@@ -18,25 +18,6 @@ You should have received a copy of the GNU General Public License
 along with CL.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/** @file Cyclops.h
- @section FUTURE Future
-    These functions can be included once interrupt based SPI transfer is made
-    @code{.cpp}
-
-void Cyclops::dac_prog_initiate(uint16_t voltage){
-    // obtain resource (set _busy to `true`)
-    // make packet
-    // select chip
-    // intitate the write
-}
-    
-bool Cyclops::isAvailable(){
-    // return _busy?
-    return false;
-}
-    @endcode
-*/
-
 #ifndef Cyclops_h
 #define Cyclops_h
 
@@ -45,6 +26,7 @@ bool Cyclops::isAvailable(){
 #else
  #include <WProgram.h>
 #endif
+#include <nbSPI.h>
 #include <SPI.h>
 #include <Wire.h>
 
@@ -82,11 +64,6 @@ typedef enum
 #define A2                  2     //
 #define A3                  3     //
 
-//MCP4921 stuff
-#define DAC_CONF_ACTIVE 	  (0x1000)
-#define DAC_CONF_SHDN 		  (0x1000)
-#define DAC_UPDATE_DELAY_USEC 54 // LEONARDO SPECIFIC
-
 //Function macros for setting bits in registers
 #define cbi(sfr,bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
 #define sbi(sfr,bit) (_SFR_BYTE(sfr) |= _BV(bit))
@@ -106,8 +83,12 @@ static void isr(void);
 class Cyclops {
 
  public:
+    Channel channel;
+    Cyclops(Channel _channel);
 
-    Cyclops(Channel channel);
+    // new functions below
+    void selectChip();
+    void deselectChip();    
 
     // Onboard signal generation
     void dac_send_test_waveform(void);
@@ -131,9 +112,6 @@ class Cyclops {
     void attach_interupt(void (*user_func)(void));
 
  private:
-
-    // Private properties
-    Channel _channel = CH0;
 
     // Over current triggred
     uint8_t _oc_trig = 0;
