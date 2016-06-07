@@ -9,6 +9,7 @@ WaveformList waveformList;
 
 Waveform::Waveform() : status(INIT) {
 	time_rem = 0;
+	outFrame_id = DAC_BLOCK_SIZE;
 }
 
 Waveform::Waveform(Cyclops *_cyclops, Source *_source) : 
@@ -29,19 +30,20 @@ void Waveform::setup(Cyclops *_cyclops, Source *_source, operationMode mode){
 	cyclops = _cyclops;
 	source = _source;
 	source->opMode = mode;
+	outFrame_id = DAC_BLOCK_SIZE;
 }
 
 uint8_t Waveform::prepare(){
 	if (status != PREPARING)
 		return 2;
 	if (outFrame_id == DAC_BLOCK_SIZE){
-		uint16_t voltage = source->getVoltage();
-		outFrame[0] = DAC_CONF_ACTIVE | ((voltage >> 8) & 0x0f);
-		outFrame[1] = (voltage & 0xff);
+		uint16_t voltage = DAC_CONF_ACTIVE | (source->getVoltage() & 0x0fff);
+		outFrame[0] = (uint8_t)(voltage >> 8);
+		outFrame[1] = (uint8_t)(voltage & 0xff);
 		outFrame_id = 0;
 		cyclops->selectChip();
 	}
-	if (send(0, outFrame[outFrame_id]) == 1){
+	if (sendSPI(0, outFrame[outFrame_id]) == 0){
 		outFrame_id++;
 		if (outFrame_id == DAC_BLOCK_SIZE){
 			status = PREPARED;
@@ -168,6 +170,8 @@ uint8_t WaveformList::process() {
 		// If not preparing any more, ie, either it got PREPARED or no PREPARING was found,
 		// then service LATCHED / INIT
 		int8_t w_index = forthcoming(LATCHED);
+
+    	//branching is a bit tricky here, pay attention!		
 		if (w_index < 0){ // non latched even once!
 			int8_t w_index = forthcoming(INIT);
 			if (w_index < 0){ // Do nothing, all waveforms in PREPARED / PREPARING

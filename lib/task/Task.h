@@ -37,7 +37,6 @@ class Task{
     /**
      * @brief
      * Parses the recieved "packet" which conforms to the Cyclops-RPC format into a Task instance.
-     * @param      t       Target Task object
      * @param      packet  Pointer to `uint8_t` array, this array lies in the Serial buffer. It's contents need to be copied into the `Task.args`
      * @param[in]  length  length in bytes of the packet
      */

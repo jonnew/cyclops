@@ -1,7 +1,7 @@
 #include "nbSPI.h"
 
 // Global definitions
-volatile bool _busy_0;
+static volatile bool _busy_0;
 
 void initSPI() {
 #if defined(__MK20DX128__) || defined(__MK20DX256__)
@@ -14,11 +14,11 @@ void initSPI() {
     SPCR |= _BV(SPIE);
 }
 
-uint8_t send(uint8_t device_id, uint8_t data){
+uint8_t sendSPI(uint8_t device_id, uint8_t data){
     if (device_id == 0 && !_busy_0){
         _busy_0 = true;
         SPDR = data;
-        return 1;
+        return 0;
     }
     /*
     else if (device_id == 1 && !_busy_1){
@@ -27,7 +27,7 @@ uint8_t send(uint8_t device_id, uint8_t data){
         return 1;
     }
     */
-    return 0;
+    return 1;
 }
 
 /*

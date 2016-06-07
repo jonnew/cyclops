@@ -7,6 +7,17 @@
  * published by the Free Software Foundation.
  */
 
+/** @file nbSPI.h
+ * @section spi_speed_ups Practical Findings
+ * See the example in ``nbSPI/examples/basic_test.ino``.
+ * @subsection nbspi_arduino_uno Arduino Uno
+ * Params      | Value | Unit
+ * ------      | ----- | ----
+ * ``FCPU``    | 16    | MHz
+ * ``SPI_CLK`` | 8     | MHz
+ * @author Ananya Bahadur
+ */
+
 #ifndef CL_NB_SPI_H
 #define CL_NB_SPI_H
 
@@ -14,32 +25,60 @@
 #include <SPI.h>
 
 //MCP4921 stuff
-#define DAC_CONF_ACTIVE 	  (0x1000)
+#define DAC_CONF_ACTIVE 	  (0x1000) // 0101
 #define DAC_CONF_SHDN 		  (0x1000)
 #define DAC_UPDATE_DELAY_USEC 54 // LEONARDO SPECIFIC
-#define DAC_BLOCK_SIZE        2  /**< The no. of bytes for each SPI transfer. HI:LO <=> {Address, 10b Data} */
+#define DAC_BLOCK_SIZE        2  /**< The no. of bytes for each SPI transfer. HI:LO <=> {Command, 12b Data} */
 
 /*
  * The ISR just toggles the volatile ``_busy_X`` flag.
  */
- 
-extern volatile bool _busy_0; /**< ``true`` if the SPI0 device is busy in a transfer. */
-// volatile bool _pending_1;
 
 /**
  * @brief      Sets up the SPI registers.
+ * @details
+ * Strives to use the fastest CLK freq. as possible.
+ * 
+ * For Teensy, MAX = 20MHz or ``CPU_freq/2``, _whichever is smaller!_
+ * For Arduino, MAX = 8MHz
  */
 void initSPI();
 
 /**
  * @brief
- * Begins a SPI transfer. Uses ``_busy_X`` to determine if SPI is available.
+ * Begins a SPI transfer.
+ * @details
+ * Uses ``_busy_X`` to determine if SPI is available. ``_busy_X`` is not accessible to user-code.
  * 
+ * Recommended usage:
+ * \code{.cpp}
+ * // This will busy wait till a write is done. Defeats the purpose of
+ * // interrupts, and also of this library.
+ * while (sendSPI(X, <data>) == 1){
+ *     //device busy... abort OR
+ *     //do something about it OR
+ *     //do nothing, just wait!
+ * }
+ * 
+ * OR
+ * 
+ * if (sendSPI(X, <data>) == 0){
+ *     //device was available, write is complete
+ *     .
+ *     do something about that...
+ *     .
+ * }
+ * else{
+ *     //device busy... abort (or do something about it)
+ *     .
+ *     .
+ * }
+ * \endcode
  * @param[in]  device_id  The SPI device to use (incase of multiple SPI devices on Teensy)
  * @param[in]  data       1 Byte of data
  *
  * @return     0 if transfer was started (i.e., SPI device was available), 1 otherwise.
  */
-uint8_t send(uint8_t device_id, uint8_t data);
+uint8_t sendSPI(uint8_t device_id, uint8_t data);
 
 #endif
