@@ -15,6 +15,20 @@
  * ------      | ----- | ----
  * ``FCPU``    | 16    | MHz
  * ``SPI_CLK`` | 8     | MHz
+ * 
+ * We can see clearly that the CPU can perform atmost 16 instructions
+ * between initiation and completion of 1B SPI transfer. In the above
+ * mentioned example, a counter is incremented _during_ the SPI transfer.
+ * For back-to-back \\(n\\) transmissions, counter was incremented just \\(n-1\\)
+ * times!
+ * 
+ * @remark
+ * There was significant overhead in the busy-check-condition, which cannot
+ * be neglected! This overhead will exist in real implementations also but
+ * it's effect is decreased if there _really exist other tasks to perform_.
+ *
+ * **Clearly, non-blocking SPI provides little performance gain for these devices.
+ * But, it can be no slower than blocking SPI transfers.**
  * @author Ananya Bahadur
  */
 

@@ -109,8 +109,9 @@ double WaveformList::initialPrep(){
 	int8_t j; // can be -1!!
 	for (uint8_t i=0; i < size; i++){
 		waveList[i].status = PREPARING;
-		while (waveList[i].prepare() > 0);
+		while (waveList[i].prepare() > 0); // busy wait till transfered.
 		waveList[i].time_rem = waveList[i].source->holdTime();
+		// insertion-sort
 		for (j=i-1; j >= 0; j--){
 			if (waveList[sortedWaveforms[j]].time_rem > waveList[i].time_rem){
 				sortedWaveforms[j+1] = sortedWaveforms[j];
@@ -124,12 +125,13 @@ double WaveformList::initialPrep(){
 	for (uint8_t i=0; i < size; i++){
 		waveList[i].time_rem -= delta;
 		waveList[i].cyclops->dac_load();
+		waveList[i].status = LATCHED;
 	}
 	// enable timer ASAP, DON'T FORGET!
 	return delta;
 	// Now, the first waveform in sortedWaveforms is always going to have time_rem = 0
 	// This first guy may, may not be PREPARED when the ISR comes, and we are "prepared"
-	// both cases. So, bring it on!
+	// to handle even that case, so bring it on!
 }
 
 int8_t WaveformList::forthcoming(waveformStatus _status){
@@ -204,19 +206,11 @@ double WaveformList::update_time_rem(){
 	// No need to protect this function as it is always called inside an ISR.
 	// Sorts, reads waveList, decrements `time_rem`
 	updateSortedSeq();
-	// this waveform is going to be processed in the next interrupt
-	int8_t w_index = forthcoming(PREPARED);
-	// update the time_rems
-	double delta = -1;
-	if (w_index > 0){
-		delta = waveList[w_index].time_rem; // this should be the smallest time_rem anyways
-		for (uint8_t i=0; i < size; i++){
-			waveList[i].time_rem -= delta;
-		}
-	}
-	else{
-		// stop timer? who will restart it?
-		// for now, keeping the same period as "before"
+	// the top() waveform is going to be processed in the next interrupt
+	delta = top()->time_rem; // this should be the smallest time_rem anyways
+	for (uint8_t i=0; i < size; i++){
+		// update the time_rems
+		waveList[i].time_rem -= delta;
 	}
 	return delta;
 }
@@ -228,16 +222,17 @@ void WaveformList::updateSortedSeq(){
 	
 	// The top-of-sorted-seq has been serviced, now move it behind.
 	// Assuming that this elem has been "stepForward"ed.
-	uint8_t temp = sortedWaveforms[0], i;
-	double target = waveList[sortedWaveforms[0]].time_rem;
+	uint8_t topper_index = sortedWaveforms[0], i;
+	double target = top()->time_rem;
 	for (i=0; i < size-1; i++){
 		if (waveList[sortedWaveforms[i+1]].time_rem <= target){
 			sortedWaveforms[i] = sortedWaveforms[i+1];
 		}
 		else
+			// found the emplace point
 			break;
 	}
-	sortedWaveforms[i] = temp;
+	sortedWaveforms[i] = topper_index;
 }
 
 //================================================================================================
@@ -258,6 +253,7 @@ void cyclops_timer_ISR(){
 			target_waveform->cyclops->dac_load();
 		}
 		// Must stepForward even if not ready...
+		target_waveform->status = LATCHED;
 		target_waveform->source->stepForward(1);
 		target_waveform->time_rem = target_waveform->source->holdTime();
 	}
