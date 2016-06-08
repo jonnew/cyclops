@@ -122,9 +122,11 @@ double WaveformList::initialPrep(){
 	}
 	// all have been PREPARED and sortedWaveforms is also ready.
 	double delta = waveList[sortedWaveforms[0]].time_rem;
+	// this loop must be very fast
 	for (uint8_t i=0; i < size; i++){
 		waveList[i].time_rem -= delta;
 		waveList[i].cyclops->dac_load();
+		waveList[i].source->stepForward(1); // can be moved into upper loop
 		waveList[i].status = LATCHED;
 	}
 	// enable timer ASAP, DON'T FORGET!
@@ -161,7 +163,7 @@ uint8_t WaveformList::process() {
 	// service PREPARING
 	uint8_t _preparing = 0;
 	TIMSK1 = 0x00; // disable Timer1 interrupt
-	for (uint8_t i=1; i < size; i++){
+	for (uint8_t i=0; i < size; i++){
 		if (waveList[i].status == PREPARING && waveList[i].source->status == ACTIVE){
 			_preparing = waveList[i].prepare();
 			// there's atmost one PREPARING, so just break out if we found it.
