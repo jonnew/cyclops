@@ -21,12 +21,21 @@
 void timer_one_isr();
 
 uint16_t vd[]  = {0x80, 0x200, 0x80, 0x400, 0x80, 0x800, 0x80, 0xf00, 0x80, 0x800, 0x80, 0x400, 0x80, 0x200, 0x80};
-double   htd[] = {5e5, 3e5, 5e5, 3e5, 5e5, 3e5, 5e5, 3e5, 5e5, 3e5, 5e5, 3e5, 5e5, 3e5, 5e5}; // delay in us
-
+double   htd[] = {5e5, 3e5, 5e5, 3e5, 5e5, 3e5, 5e5, 3e5, 5e5, 3e5, 5e5, 3e5, 5e5, 3e5, 8e5}; // delay in us
 storedSource stored(vd, htd, 15);
-// Using the abstract base class pointer
+
+uint16_t triangle_wave(uint8_t seq){
+  return (abs(20 - seq)/40.0)*4095;
+}
+
+double triangle_update_period(uint8_t seq){
+  return 15000;
+}
+
+generatedSource generated(triangle_wave, triangle_update_period, 40);
+
 Cyclops ch0(CH0);
-Waveform W0(&ch0, &stored);
+Waveform W0(&ch0, &generated);
 
 void setup() {
   #ifdef SERIAL_DBG
@@ -106,28 +115,5 @@ void timer_one_isr(){
   Timer1.setPeriod(W0.source->holdTime());
   SREG = sreg;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

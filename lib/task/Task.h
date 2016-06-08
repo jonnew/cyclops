@@ -1,3 +1,9 @@
+/**
+ * @file Task.h
+ * 
+ * @author Ananya Bahadur
+ */
+
 #ifndef CL_TASKS_H
 #define CL_TASKS_H
 
@@ -13,7 +19,9 @@
  * @brief      Task objects reside in the Process Queue, waiting to be popped and executed by the CPU.
  *             They are created *exclusively* from  RPC packets recieved from the Open Ephys GUI.
  *             
- * @attention  Not all RPC packets are transformed into a Task and placed on a Queue. Some RPC commands have an *immediate effect*, so to say.
+ * @attention
+ * Not all RPC packets are transformed into a Task and placed on a Queue.
+ * Some RPC commands have an *immediate effect*, so to say.
  */
 class Task{
  public:
@@ -57,14 +65,23 @@ class Task{
     void computePriority();
 };
 
-#define QUEUE_CAPACITY 8
+#define QUEUE_CAPACITY 8 /**< Hard coded Queue container Size */
 
+/**
+ * @brief      This is the (_circular_) RPC Task Queue.
+ * @details
+ * The RPC lib will pushTask() on the instance and Cyclops main-loop would pop-
+ * and-service the incoming Tasks.
+ */
 class Queue{
 private:
-    
     Task container[QUEUE_CAPACITY];
 public:
     uint8_t head;
+
+    /**
+     * @brief      Creates an empty Queue of capacity QUEUE_CAPACITY
+     */
     Queue();
 
     uint8_t size; /**< No. of elements in Queue. */

@@ -207,7 +207,7 @@ double WaveformList::update_time_rem(){
 	// Sorts, reads waveList, decrements `time_rem`
 	updateSortedSeq();
 	// the top() waveform is going to be processed in the next interrupt
-	delta = top()->time_rem; // this should be the smallest time_rem anyways
+	double delta = top()->time_rem; // this should be the smallest time_rem anyways
 	for (uint8_t i=0; i < size; i++){
 		// update the time_rems
 		waveList[i].time_rem -= delta;
@@ -253,7 +253,9 @@ void cyclops_timer_ISR(){
 			target_waveform->cyclops->dac_load();
 		}
 		// Must stepForward even if not ready...
-		target_waveform->status = LATCHED;
+		if (target_waveform->status != PREPARING){
+			target_waveform->status = LATCHED;
+		}
 		target_waveform->source->stepForward(1);
 		target_waveform->time_rem = target_waveform->source->holdTime();
 	}
