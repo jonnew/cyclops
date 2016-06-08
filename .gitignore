@@ -7,6 +7,8 @@
 *.zip
 *~*
 docs/*
+!docs/cd.css
+!docs/Doxyfile
 
 # Vim files
 .*.swp

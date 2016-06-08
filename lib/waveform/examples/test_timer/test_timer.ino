@@ -9,7 +9,7 @@
 #include <TimerOne.h>
 
 /*
- * Sets up a generatedSource to create:
+ * Sets up a storedSource to create:
  * (to use with Serial Monitor) a ramp-up and ramp-down signal
  * Uses Timer1 for scheduling. The count printed in angle brackets <> was incremented
  * from 0 till that between 2 IRQs.
@@ -19,9 +19,6 @@
  * 
  * Open the Serial Monitor before flashing this program.
  * Make sure baud rate is matched!
- * 
- * If you want to see waveform on Serial monitor,
- * uncomment the #define below
  */
 
 void timer_one_isr();
