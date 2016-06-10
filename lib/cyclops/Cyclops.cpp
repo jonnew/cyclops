@@ -159,7 +159,7 @@ void Cyclops::dac_shutdown(void) {
     // Take the CS pin high to de-select the chip:
     digitalWrite(_cs_lut[channel], HIGH);
 }
-
+/*
 void Cyclops::attach_interupt(void (*user_func)(void)) {
 
 	// Enable pin-change interupt on port B, which is the only one
@@ -225,3 +225,4 @@ SIGNAL(PCINT0_vect) {
     isr();
     SREG = sreg_bak;
 }
+*/

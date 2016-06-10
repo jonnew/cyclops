@@ -4,7 +4,7 @@
 static volatile bool _busy_0;
 
 void initSPI() {
-#if defined(__MK20DX128__) || defined(__MK20DX256__)
+#if defined(CORE_TEENSY)
     // for teensy. The Cyclops DAC can communicate @ 20MHz max.
     SPI.beginTransaction(SPISettings(20000000, MSBFIRST, SPI_MODE0));
 #else
@@ -33,8 +33,10 @@ uint8_t sendSPI(uint8_t device_id, uint8_t data){
 /*
  * The ISR just toggles the volatile ``_busy_X`` flag.
  */
-ISR(SPI_STC_vect){
-    uint8_t sreg = SREG;
-    _busy_0 = false;
-    SREG = sreg;
-}
+#ifndef CORE_TEENSY
+    ISR(SPI_STC_vect){
+        uint8_t sreg = SREG;
+        _busy_0 = false;
+        SREG = sreg;
+    }
+#endif

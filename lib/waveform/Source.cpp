@@ -44,8 +44,10 @@ void storedSource::stepForward(uint8_t step_sz){
 		return;
 	}
 	else{
-		if (opMode == ONE_SHOT && cur_ind + step_sz >= size-1)
+		if (opMode == ONE_SHOT && cur_ind + step_sz >= size-1){
 			cur_ind = size-1;
+			status = FROZEN;
+		}
 		else
 			cur_ind = (cur_ind + step_sz + shift_accumulator) % size;
 		shift_accumulator = 0;
@@ -88,8 +90,10 @@ void generatedSource::stepForward(uint8_t step_sz){
 		return;
 	}
 	else{
-		if (opMode == ONE_SHOT && cur_ind + step_sz >= size-1)
+		if (opMode == ONE_SHOT && cur_ind + step_sz >= size-1){
 			cur_ind = size-1;
+			status = FROZEN;
+		}
 		else
 			cur_ind = (cur_ind + step_sz) % size;
 		shift_accumulator = 0;

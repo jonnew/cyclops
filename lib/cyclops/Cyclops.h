@@ -78,7 +78,7 @@ volatile static voidFuncPtr interupt_func[8] = { NULL };
 volatile static uint8_t interupt_last;
 
 // Global interupt service routine
-static void isr(void);
+//static void isr(void);
 
 class Cyclops {
 
@@ -109,7 +109,7 @@ class Cyclops {
     float over_current_protect(float current_limit_mA);
 
     // Attach/detach interupt
-    void attach_interupt(void (*user_func)(void));
+    //void attach_interupt(void (*user_func)(void));
 
  private:
 

@@ -91,10 +91,10 @@ int8_t WaveformList::setWaveform(Cyclops *_cyclops, Source *_source, operationMo
 		return -1; // the cyclops channel has already been claimed
 	}
 	_claimedChannels |= _BV(_cyclops->channel);
-	TIMSK1 = 0x00; // disable Timer1 interrupt
+	Timer1.detachInterrupt(); // disable Timer1 interrupt
 	waveList[size++].setup(_cyclops, _source, mode);
 	// return the index of this waveform in the waveformList
-	TIMSK1 = _BV(TOIE1); // enable
+	Timer1.attachInterrupt(cyclops_timer_ISR); // enable
 	return size-1;
 }
 
@@ -142,17 +142,17 @@ int8_t WaveformList::forthcoming(waveformStatus _status){
 	
 	// Only reads waveList and sortedWaveforms, so it should be protected.
 	uint8_t res;
-	TIMSK1 = 0x00; // disable Timer1 interrupt
+	Timer1.detachInterrupt(); // disable Timer1 interrupt
 	for (uint8_t i=0; i<size; i++){
 		if (waveList[sortedWaveforms[i]].source->status == ACTIVE &&
 			waveList[sortedWaveforms[i]].status == _status){
 
 			res = sortedWaveforms[i];
-			TIMSK1 = _BV(TOIE1); // enable
+			Timer1.attachInterrupt(cyclops_timer_ISR); // enable
 			return res;
 		}
 	}
-	TIMSK1 = _BV(TOIE1); // enable
+	Timer1.attachInterrupt(cyclops_timer_ISR); // enable
 	return -1;
 }
 
@@ -162,7 +162,7 @@ uint8_t WaveformList::process() {
 	// ignore FROZEN
 	// service PREPARING
 	uint8_t _preparing = 0;
-	TIMSK1 = 0x00; // disable Timer1 interrupt
+	Timer1.detachInterrupt(); // disable Timer1 interrupt
 	for (uint8_t i=0; i < size; i++){
 		if (waveList[i].status == PREPARING && waveList[i].source->status == ACTIVE){
 			_preparing = waveList[i].prepare();
@@ -179,7 +179,7 @@ uint8_t WaveformList::process() {
 		if (w_index < 0){ // non latched even once!
 			int8_t w_index = forthcoming(INIT);
 			if (w_index < 0){ // Do nothing, all waveforms in PREPARED / PREPARING
-				TIMSK1 = _BV(TOIE1); // enable
+				Timer1.attachInterrupt(cyclops_timer_ISR); // enable
 				return 1;
 			}
 		}
@@ -192,7 +192,7 @@ uint8_t WaveformList::process() {
 		// This is perfectly fine.
 		;
 	}
-	TIMSK1 = _BV(TOIE1); // enable
+	Timer1.attachInterrupt(cyclops_timer_ISR); // enable
 	return 0;
 }
 
