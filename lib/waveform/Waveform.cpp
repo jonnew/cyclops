@@ -255,7 +255,7 @@ void cyclops_timer_ISR(){
 			target_waveform->cyclops->dac_load();
 		}
 		// Must stepForward even if not ready...
-		if (target_waveform->status != PREPARING){
+		if (target_waveform->status != PREPARING){ // PREPARED INIT LATCHED -> LATCHED
 			target_waveform->status = LATCHED;
 		}
 		target_waveform->source->stepForward(1);

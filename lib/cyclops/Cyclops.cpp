@@ -21,7 +21,7 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #include "Cyclops.h"
 
 // Populate the LUTs
-static const uint8_t a_in_lut_data[] = {(uint8_t)A0, (uint8_t)A1, (uint8_t)A2, (uint8_t)A3};
+static const uint8_t a_in_lut_data[] = {(uint8_t)ADC0, (uint8_t)ADC1, (uint8_t)ADC2, (uint8_t)ADC3};
 const uint8_t *Cyclops::_a_in_lut = a_in_lut_data;
 static const uint8_t cs_lut_data[] = {(uint8_t)CS0, (uint8_t)CS1, (uint8_t)CS2, (uint8_t)CS3};
 const uint8_t *Cyclops::_cs_lut = cs_lut_data;
@@ -29,37 +29,33 @@ static const uint8_t oc_lut_data[] = {(uint8_t)OC0, (uint8_t)OC1, (uint8_t)OC2, 
 const uint8_t *Cyclops::_oc_lut = oc_lut_data;
 static const uint8_t trig_lut_data[] = {(uint8_t)TRIG0, (uint8_t)TRIG1, (uint8_t)TRIG2, (uint8_t)TRIG3};
 const uint8_t *Cyclops::_trig_lut = trig_lut_data;
+static const uint8_t ldac_lut_data[] = {(uint8_t)LDAC0, (uint8_t)LDAC1, (uint8_t)LDAC2, (uint8_t)LDAC3};
+const uint8_t *Cyclops::_ldac_lut = ldac_lut_data;
 static const uint8_t trig_port_pos_lut_data[] = {7, 255, 255, 255};  // TODO: see note at ISR below
 const uint8_t *Cyclops::_trig_port_pos_lut = trig_port_pos_lut_data;
 
-Cyclops::Cyclops(Channel _channel) : channel(_channel)
+Cyclops::Cyclops(Channel _channel) : channel(_channel), _oc_trig(0)
 {
     // Set pin modes
     pinMode(_oc_lut[channel], OUTPUT);
     pinMode(_cs_lut[channel], OUTPUT);
+    pinMode(_ldac_lut[channel], OUTPUT);
     pinMode(_trig_lut[channel], INPUT);
 
+    #ifndef CORE_TEENSY
     // Load DAC line
     pinMode(LDAC, OUTPUT);
+    #endif
 
 	// Pull the trigger line down weakly
 	digitalWrite(_trig_lut[channel], LOW);
 
     // Get the CS and load-DAC lines ready
     digitalWrite(_cs_lut[channel], HIGH);
-    digitalWrite(LDAC, HIGH);
+    digitalWrite(_ldac_lut[channel], HIGH);
 
     // Initialize the OC pin
     digitalWrite(_oc_lut[channel], LOW);
-
-	// Initialize SPI bus
-    SPI.setDataMode(SPI_MODE0);
-    SPI.setBitOrder(MSBFIRST);
-    SPI.begin();
-
-    // Start DAC at 0V
-    dac_prog_voltage(0);
-    dac_load();
 }
 
 void Cyclops::selectChip(){
@@ -126,11 +122,11 @@ void Cyclops::dac_prog_voltage(uint16_t voltage)
 
     // take the SS pin low to select the chip
     digitalWrite(_cs_lut[channel], LOW);
-
+    #ifndef CORE_TEENSY
     //  send in the address and value via SPI:
     SPI.transfer(spi_out >> 8 & 0xff);
     SPI.transfer(spi_out >> 0 & 0xff);
-
+    #endif
     // take the SS pin high to de-select the chip:
     digitalWrite(_cs_lut[channel], HIGH);
 
@@ -138,10 +134,10 @@ void Cyclops::dac_prog_voltage(uint16_t voltage)
 
 void Cyclops::dac_load(void) {
 
-    digitalWrite(LDAC, LOW);
+    digitalWrite(_ldac_lut[channel], LOW);
     __asm__("nop\n\t");
     __asm__("nop\n\t");
-    digitalWrite(LDAC, HIGH);
+    digitalWrite(_ldac_lut[channel], HIGH);
 }
 
 void Cyclops::dac_shutdown(void) {
@@ -151,11 +147,11 @@ void Cyclops::dac_shutdown(void) {
 
     // Take the CS pin low to select the chip
     digitalWrite(_cs_lut[channel], LOW);
-
+    #ifndef CORE_TEENSY
     // Send in the config and data via SPI:
     SPI.transfer(spi_out >> 8 & 0xff);
     SPI.transfer(spi_out >> 0 & 0xff);
-
+    #endif
     // Take the CS pin high to de-select the chip:
     digitalWrite(_cs_lut[channel], HIGH);
 }

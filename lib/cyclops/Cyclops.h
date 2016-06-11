@@ -26,9 +26,11 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #else
  #include <WProgram.h>
 #endif
-#include <nbSPI.h>
-#include <SPI.h>
-#include <Wire.h>
+#ifdef CORE_TEENSY
+    #include <SPIFIFO.h>
+#else
+    #include <nbSPI.h>
+#endif
 
 #include "RPC_defs.h"
 
@@ -42,28 +44,63 @@ typedef enum
     CH3
 } Channel;
 
+#define DAC_CONF_ACTIVE       (0x1000)
+#define DAC_CONF_SHDN         (0x1000)
+#define DAC_UPDATE_DELAY_USEC 54 // LEONARDO SPECIFIC
+#define DAC_BLOCK_SIZE        2  /**< The no. of bytes for each SPI transfer. HI:LO <=> {Command, 12b Data} */
+
 // Pin Definitions
-#define OC0 				2     // Over-current switch
-#define OC1 				3     //
-#define OC2 				4     //
-#define OC3 				5     //
+#ifndef CORE_TEENSY
+  #define OC0               2     // Over-current switch
+  #define OC1               3     //
+  #define OC2               4     //
+  #define OC3               5     //
 
-#define CS0 				6     // Chip select pins
-#define CS1 				7     //
-#define CS2 				8     //
-#define CS3 				9     //
-#define LDAC  				10    // Load DAC line (sync all channels)
+  #define CS0               6     // Chip select pins
+  #define CS1               7     //
+  #define CS2               8     //
+  #define CS3               9     //
+ 
+  #define LDAC              10    // Load DAC line (sync all channels)
 
-#define TRIG0 				11    // Trigger lines
-#define TRIG1				12    //
-#define TRIG2 				SCL   //
-#define TRIG3 				SDA   //
+  #define TRIG0             11
+  #define TRIG1             12
+  #define TRIG2             SCL
+  #define TRIG3             SDA
 
-#define A0                  0     // Analog input lines
-#define A1                  1     //
-#define A2                  2     //
-#define A3                  3     //
+  #define ADC0              0     // Analog input lines
+  #define ADC1              1     //
+  #define ADC2              2     //
+  #define ADC3              3     //
 
+#else
+  #define OC0               A10   // Over-current switch
+  #define OC1               A11   //
+  #define OC2               A12   //
+  #define OC3               A13   //
+
+  #define CS0               10    // Chip select pins
+  #define CS1               9     //
+  #define CS2               6     //
+  #define CS3               2     //
+  
+  //#define LDAC0             24    // Load DAC line for CH0
+  #define LDAC0             9     // Load DAC line (for Ananya's test rig only)
+  #define LDAC1             25    // Load DAC line for CH1
+  #define LDAC2             26    // Load DAC line for CH2
+  #define LDAC3             27    // Load DAC line for CH3
+
+  #define TRIG0             29    // Trigger lines
+  #define TRIG1				30    //
+  #define TRIG2 			32    //
+  #define TRIG3 			33    //
+  
+  #define ADC0              A1    // Analog input lines
+  #define ADC1              A2    //
+  #define ADC2              A3    //
+  #define ADC3              A6    //
+
+#endif
 //Function macros for setting bits in registers
 #define cbi(sfr,bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
 #define sbi(sfr,bit) (_SFR_BYTE(sfr) |= _BV(bit))
@@ -86,8 +123,16 @@ class Cyclops {
     Channel channel;
     Cyclops(Channel _channel);
 
-    // new functions below
+    /**
+     * @brief      Activate the CS line
+     * @deprecated CS is managed automatically by the Teensy SPI
+     */
     void selectChip();
+
+    /**
+     * @brief      Deactivate the CS line
+     * @deprecated CS is managed automatically by the Teensy SPI
+     */
     void deselectChip();    
 
     // Onboard signal generation
@@ -114,13 +159,14 @@ class Cyclops {
  private:
 
     // Over current triggred
-    uint8_t _oc_trig = 0;
+    uint8_t _oc_trig;
 
     // Channel --> physical pin LUTs
     static const uint8_t *_a_in_lut;
     static const uint8_t *_cs_lut;
     static const uint8_t *_oc_lut;
     static const uint8_t *_trig_lut;
+    static const uint8_t *_ldac_lut;
     static const uint8_t *_trig_port_pos_lut;
 };
 

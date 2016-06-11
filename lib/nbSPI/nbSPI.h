@@ -39,7 +39,7 @@
 #include <SPI.h>
 
 //MCP4921 stuff
-#define DAC_CONF_ACTIVE 	  (0x1000) // 0101
+#define DAC_CONF_ACTIVE 	  (0x1000)
 #define DAC_CONF_SHDN 		  (0x1000)
 #define DAC_UPDATE_DELAY_USEC 54 // LEONARDO SPECIFIC
 #define DAC_BLOCK_SIZE        2  /**< The no. of bytes for each SPI transfer. HI:LO <=> {Command, 12b Data} */
@@ -53,7 +53,7 @@
  * @details
  * Strives to use the fastest CLK freq. as possible.
  * 
- * For Teensy, MAX = 20MHz or ``CPU_freq/2``, _whichever is smaller!_
+ * For Teensy, MAX = 20MHz or ``BUS_freq/2``, _whichever is smaller!_
  * For Arduino, MAX = 8MHz
  */
 void initSPI();
