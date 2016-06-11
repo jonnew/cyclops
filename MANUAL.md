@@ -32,6 +32,7 @@ to hover over figures to see their captions.
   - [Circuit Features](#circuit-features)
   - [Multiple stimulus generation options](#multiple-stimulus-generation-options)
 - [Performance Specifications](#performance-specifications)
+  - [Head to Head Comparison](#head-to-head-comparison)
 - [Usage](#usage)
   - [Feedback modes](#feedback-modes)
     - [Current Feedback Mode](#current-feedback-mode)
@@ -164,6 +165,225 @@ mV.](./resources/cyclops3.5A_performance-bw.png)
 
 \FloatBarrier
 \newpage
+
+### Head to Head Comparison
+The table below provides a comparisons between Cyclops Rev. 3C and various
+commercially available  LED drivers. Measurements were performed using the same
+signal generator and LED across drivers. Optical characteristics and optical
+feedback signal for the Cyclops driver were provided by a [Thorlabs PDA36 amplified photodiode](http://www.thorlabs.com/thorproduct.cfm?partnumber=PDA36A-EC) 
+set to 0 dB of transimpedance gain.
+
+<table border="1" bordercolor="transparent" style="background-color:"transparent" width="100%" cellpadding="3" cellspacing="3">
+    <tr>
+    	<td></td>
+        <td align="center"><b><a href="http://www.plexon.com/products/plexbright-ld-1-single-channel-led-driver">Plexon LD-1</a></b></td>
+        <td align="center"><b><a href="http://www.plexon.com/products/plexbright-4-channel-controller-radiant-20">Plexon PlexBright</a><sup>1</sup></b></td>
+        <td align="center"><b><a href="http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=3832&pn=DC4100">Thorlabs DC4100</a></b></td>
+        <td align="center"><b>Cyclops (Current FB)</b></td>
+        <td align="center"><b>Cyclops (Optical FB)</b></td>
+   	</tr>
+
+    <tr>
+    	<td colspan="6"><b>Speed</b></td>
+    </tr>
+    <tr>
+    	<td>10-90% rise time<sup>2</sup> (&#x3bcs)</td>
+        <td align="center">49</td>
+        <td align="center">76</td>
+        <td align="center">?</td>
+        <td align="center">0.1</td>
+        <td align="center">0.53</td>
+    </tr>
+    <tr>
+    	<td>90-10% fall time<sup>2</sup> (&#x3bcs)</td>
+        <td align="center">39</td>
+        <td align="center">89</td>
+        <td align="center">?</td>
+        <td align="center">0.4</td>
+        <td align="center">0.46</td>
+    </tr>
+    <tr>
+    	<td>Dead time, worst case<sup>2</sup> (&#x3bcs)</td>
+        <td align="center">140</td>
+        <td align="center">160</td>
+        <td align="center">?</td>
+        <td align="center">3.0</td>
+        <td align="center">3.0</td>
+    </tr>
+    <tr>
+    	<td>Small signal -3dB bandwidth<sup>4</sup> (kHz)</td>
+        <td align="center">10.5</td>
+        <td align="center">?</td>
+        <td align="center">100 kHz<sup>3,5</sup></td>
+        <td align="center">2.5 MHz</td>
+        <td align="center">2.5 MHz</td>
+    </tr>
+
+    <tr>
+    	<td colspan="6"><b>Accuracy</b></td>
+    </tr>
+    <tr>
+    	<td>Overshoot<sup>2</sup> (%)</td>
+        <td align="center">0</td>
+        <td align="center">0</td>
+        <td align="center">?</td>
+        <td align="center">7 (Depends on LED cabling) </td>
+        <td align="center">3 (Depends on LED and photodetector cabling)</td>
+    </tr>
+    <tr>
+    	<td>THD<sup>6</sup> (%)</td>
+        <td align="center">8.29</td>
+        <td align="center">?</td>
+        <td align="center">?</td>
+        <td align="center">8.2</td>
+        <td align="center">0.41</td>
+    </tr>
+    <tr>
+    	<td colspan="6"><b>Power</b></td>
+    </tr>
+    <tr>
+    	<td>Max current drive (mA)</td>
+        <td align="center">1200</td>
+        <td align="center">1100</td>
+        <td align="center">1000</td>
+        <td colspan="2" align="center">1500</td>
+    </tr>
+
+    <tr>
+    	<td colspan="6"><b>Features</b></td>
+    </tr>
+    <tr>
+    	<td>Independent LED channels</td>
+        <td align="center">1</td>
+        <td align="center">4</td>
+        <td align="center">4</td>
+        <td align="center" colspan="2"> 1 (modular; can stack up to 4 devices)</td>
+    </tr>
+	<tr>
+    	<td>Regulated current output</td>
+        <td align="center"><font color="green">&#x2713</font></td>
+        <td align="center"><font color="green">&#x2713</font></td>
+        <td align="center"><font color="green">&#x2713</font></td>
+        <td align="center"><font color="green">&#x2713</font></td>
+        <td align="center">N/A</td>
+    </tr>
+	<tr>
+    	<td>Regulated optical output</td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center">N/A</td>
+        <td align="center"><font color="green">&#x2713</font></td>
+    </tr>
+    <tr>
+    	<td>Programmable, hardware-based overcurrent protection</td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center"><font color="green">&#x2713</font></td>
+        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
+    </tr>
+    <tr>
+    	<td>Internal arbitrary waveform generation</td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center"><font color="green">&#x2713</font></td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
+    </tr>
+    <tr>
+    	<td>Independent DAC for each LED</td>
+        <td align="center">N/A</td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center">N/A</td>
+        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
+    </tr>
+    <tr>
+    	<td>Modular design</td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
+    </tr>
+    <tr>
+    	<td>Manual pulse</td>
+        <td align="center"><font color="green">&#x2713</font></td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
+    </tr>
+    <tr>
+    	<td>Outputs</td>
+        <td align="center">None</td>
+        <td align="center">None</td>
+        <td align="center">None</td>
+        <td colspan="2" align="center">Reference voltage, LED current, optical power (if measured)</td>
+    </tr>
+    <tr>
+    	<td>LCD display</td>
+        <td align="center"><font color="green">&#x2713</font></td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center"><font color="green">&#x2713</font></td>
+        <td colspan="2" align="center"><font color="red">&#x2717</font></td>
+    </tr>
+
+    <tr>
+    	<td colspan="6"><b>Programmability</b></td>
+    </tr>
+	<tr>
+    	<td>Open-source</td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td align="center"><font color="red">&#x2717</font></td>
+        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
+    </tr>
+    <tr>
+    	<td>Driver</td>
+        <td align="center">N/A</td>
+        <td align="center">"Radiant" software</td>
+        <td align="center"><a href="http://www.ni.com/visa/">NI-VISA</a> based GUI and API</td>
+        <td colspan="2" align="center">Arduino compabile</td>
+    </tr>
+    <tr>
+    	<td>Interface</td>
+        <td align="center">N/A</td>
+        <td align="center">GUI/USB cable</td>
+        <td align="center">GUI or API/USB cable</td>
+        <td colspan="2" align="center">Arduino IDE/USB cable</td>
+    </tr>
+    <tr>
+    	<td>Waveform generation performance</td>
+        <td align="center">N/A</td>
+        <td align="center">10 kHz aggregate update across channels</td>
+        <td align="center">N/A</td>
+        <td colspan="2" align="center">100 kHz/channel update; evolves with Arduino tools</td>
+    </tr>
+    <tr>
+    	<td>OS compatibility</td>
+        <td align="center">N/A</td>
+        <td align="center">Windows</td>
+        <td align="center">Windows</td>
+        <td colspan="2" align="center">Windows, Linux, Mac</td>
+    </tr>
+
+    <tr>
+    	<td><b>Cost</b></td>
+        <td align="center"><b>$700.00</b></td>
+        <td align="center"><b>$5300.00</b></td>
+        <td align="center"><b>$3059.0<sup>7</sup></b></td>
+        <td align="center"><b>~$160.00</b><sup>8</sup></td>
+        <td align="center"><b>~$200.00<sup>8,9</sup></b></td>
+    </tr>
+</table>
+
+1. Essential drive circuit consists of an [Opal-Kelly XEM6001 FPGA Dev board](http://www.opalkelly.com/products/xem6001/) tied to 4 commercially available [buck converters from Recon](http://www.recom-power.com/pdf/Lightline/RCD-24.pdf).
+2. Test signal: 500 Hz, 50% duty-cycle square wave resulting in 1A peak to peak through LED.
+3. Test signal: 1 kHz 500 mA offset, 100 mA peak-to-peak sine wave.
+4. Not measured on the bench top. Taken from manufacturer's specifications.
+5. Bandwidth threshold (e.g. -3 dB) was not specified. Applies to sine wave only.
+6. Test signal: 1 kHz 500 mA offset, 1A peak-to-peak sine wave.
+7. Includes the cost of the [DC4100-HUB](http://www.thorlabs.com/thorproduct.cfm?partnumber=DC4100-HUB) which is required to drive four LEDs.
+8. Approximate materials cost.
+9. Increased cost compared to current feedback mode is due to amplified photodiode (design included with Cyclops repository).
+
 
 Usage
 -----
@@ -596,7 +816,7 @@ tests outlined in the next section before applying power.*
 13. [Optional] Install the Arduino
 
     TODO: Image of desoldering and mounting
-    
+
     Remove the power jack from the Arduino using a hot air gun or desoldering
     tool. Press the Arduino the dedicated headers.
 
@@ -626,9 +846,9 @@ To construct the enclosure, you will use the following materials
 
 **Tools**
 
-- Soldering iron 
+- Soldering iron
 - Hot air gun or lighter
-- Phillips head screwdriver 
+- Phillips head screwdriver
 
 #### Assembly Instructions
 
@@ -756,7 +976,7 @@ To construct the enclosure, you will use the following materials
 Congratulations, you are the proud owner of a high-precision, high-power,
 high-speed LED driver that will make commercial drives feel a bit ridiculous
 for costing so much and very self-conscious about their performance
-characteristics. 
+characteristics.
 
 \FloatBarrier
 \newpage
@@ -900,7 +1120,7 @@ functionality.
 - [ ] Remove alligator clip.
 - [ ] Initial and serial number the board using sharpie on the large
   power trace on the right side of the board.
-- [ ] Enter board serial number into the spreadsheet. 
+- [ ] Enter board serial number into the spreadsheet.
 
 License
 -------
