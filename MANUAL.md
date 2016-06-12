@@ -214,9 +214,9 @@ set to 0 dB of transimpedance gain.
     	<td>Small signal -3dB bandwidth<sup>4</sup> (kHz)</td>
         <td align="center">10.5</td>
         <td align="center">?</td>
-        <td align="center">100 kHz<sup>3,5</sup></td>
-        <td align="center">2.5 MHz</td>
-        <td align="center">2.5 MHz</td>
+        <td align="center">100<sup>3,5</sup></td>
+        <td align="center">2500</td>
+        <td align="center">2500</td>
     </tr>
 
     <tr>
@@ -375,7 +375,7 @@ set to 0 dB of transimpedance gain.
 </table>
 
 1. Essential drive circuit consists of an [Opal-Kelly XEM6001 FPGA Dev board](http://www.opalkelly.com/products/xem6001/) tied to 4 commercially available [buck converters from Recon](http://www.recom-power.com/pdf/Lightline/RCD-24.pdf).
-2. Test signal: 500 Hz, 50% duty-cycle square wave resulting in 1A peak to peak through LED.
+2. Test signal: 500 Hz, fully off to on, 50% duty-cycle square wave resulting in 1A peak to peak through LED.
 3. Test signal: 1 kHz 500 mA offset, 100 mA peak-to-peak sine wave.
 4. Not measured on the bench top. Taken from manufacturer's specifications.
 5. Bandwidth threshold (e.g. -3 dB) was not specified. Applies to sine wave only.
