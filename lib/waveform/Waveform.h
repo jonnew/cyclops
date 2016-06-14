@@ -256,7 +256,7 @@ public:
      * @see architecture
      * @note       This funtion is called **only from ISR context!**
      *
-     * @return     The time period (in \f$\mu sec\f$) after which the next IRQ
+     * @return     The time period (in \f$\μ sec\f$) after which the next IRQ
      *             should occur.<br>
      */
     double    update_time_rem();

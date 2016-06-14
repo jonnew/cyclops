@@ -4,28 +4,20 @@
 //  Waveform Class
 //================================================================================================
 
-Waveform::Waveform() : status(INIT) {
-  time_rem = 0;
-}
+uint8_t Waveform::size = 0;
+Waveform* Waveform::_list[4];
 
-Waveform::Waveform(Cyclops *_cyclops, Source *_source) : 
+Waveform::Waveform(Cyclops *_cyclops, Source *_source, operationMode mode /* = LOOPBACK */) : 
   status(INIT)
 {
-  setup(_cyclops, _source, _source->opMode);
-  time_rem = 0;
-}
-
-Waveform::Waveform(Cyclops *_cyclops, Source *_source, operationMode mode) : 
-  status(INIT)
-{
-  setup(_cyclops, _source, mode);
-  time_rem = 0;
-}
-
-void Waveform::setup(Cyclops *_cyclops, Source *_source, operationMode mode){
   cyclops = _cyclops;
   source = _source;
   source->opMode = mode;
+  if (size < 4){
+    // do not add to _list if it is full, silently drop.
+    _list[size++] = this;
+  }
+  time_rem = 0;
 }
 
 uint8_t Waveform::prepare(){
@@ -62,6 +54,70 @@ void Waveform::swapChannels(Waveform *w1, Waveform *w2){
   w2->cyclops = t;
 }
 
-void cyclops_timer_ISR(){
-  return;
+double Waveform::initAll(){
+  double min_hold_time = 9e12; // arbit, 9 mega sec
+  uint8_t forthcoming_index;
+  for (uint8_t i=0; i<size; i++){
+    _list[i]->prepare();
+    _list[i]->time_rem = _list[i]->source->holdTime();
+    _list[i]->source->stepForward(1);
+    if (_list[i]->time_rem < min_hold_time){
+      min_hold_time = _list[i]->time_rem;
+      forthcoming_index = i;
+    }
+  }
+  for (uint8_t i=0; i<Waveform::size; i++){
+    Waveform::_list[i]->time_rem -= min_hold_time;
+  }
+  while (((SPI0_SR) & (15 << 12)) > 0); // wait till FIFO is empty
+  for (uint8_t i=0; i<Waveform::size; i++){
+    Waveform::_list[i]->cyclops->dac_load();
+  }
+  return min_hold_time;
+}
+
+void Waveform::processAll(){
+  Timer1.disableInterrupt();
+  for (uint8_t i=0; i<size; i++){
+    // Since we use only SPI0 (for now?)
+    // which has a 4 level FIFO, we can repeatedly write into SPI TX_FIFO
+    if (_list[i]->status != PREPARED && _list[i]->source->status == ACTIVE){
+      // guaranteed non-blocking call
+      // Compiler will optimise away the branching if body is empty
+      if (_list[i]->prepare() == 1) {;} // FIFO had no space...
+      else                          {;} // Pushed frame to FIFO
+    }
+  }
+  Timer1.enableInterrupt();
+}
+
+void cyclops_timer_isr(){
+  // protect sreg??
+  Waveform* wf_ptr;
+  double min_hold_time = 9e12; // arbit, 9 mega-sec
+  uint8_t forthcoming_index, _size = Waveform::size;
+
+  for (uint8_t i=0; i < _size; i++){
+    wf_ptr = Waveform::_list[i];
+    // @jonathan: Is the fuzzy 2us window small enough?
+    if (wf_ptr->time_rem < 2){
+      if (wf_ptr->status == PREPARED){
+        wf_ptr->cyclops->dac_load();
+      }
+      wf_ptr->status = LATCHED;
+      wf_ptr->source->stepForward(1);
+      wf_ptr->time_rem = wf_ptr->source->holdTime();
+    }
+    // check if this has min_hold_time
+    if (wf_ptr->time_rem < min_hold_time){
+      min_hold_time = wf_ptr->time_rem;
+      forthcoming_index = i;
+    }
+  }
+  // if (min_hold_time < 1) // something is wrong
+  for (uint8_t i=0; i < _size; i++){
+    Waveform::_list[i]->time_rem -= min_hold_time;
+  }
+  Timer1.setPeriod(min_hold_time, 1);
+  // protect sreg?
 }

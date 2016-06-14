@@ -69,7 +69,9 @@ typedef enum {
  */
 class Waveform{
  private:
-    sourceStatus   backup_sourceStatus;
+    static Waveform* _list[4];
+    static uint8_t   size;
+    sourceStatus     backup_sourceStatus;
  public:
     Source         *source;  /**< Pointer to a instantiated object derived from
                               *   Source.
@@ -79,36 +81,16 @@ class Waveform{
     waveformStatus status;   /**< Current "state" of the object. */
     double         time_rem;
 
-    Waveform();
-
-    /**
-     * @brief      
-     * Initialises ``state`` to `INIT`.
-     *
-     * @param[in]  _cyclops  Pointer to Cyclops
-     * @param[in]  _source   Pointer to a *derivation* of Source
-     */
-    Waveform(Cyclops *_cyclops, Source* _source);
-
     /**
      * @brief      
      * Initialises ``state`` to ``INIT``. Sets the Source::opMode to ``mode``.
      *
      * @param[in] _cyclops  Pointer to Cyclops
      * @param[in] _source   Pointer to a *derivation* of Source
-     * @param[in] mode      Ignore mode of source, use 'this' instead.
+     * @param[in] mode      Optional arg., LOOPBACK by default. Set Source::mode
+     *                      as 'this'.
      */
-    Waveform(Cyclops *_cyclops, Source* _source, operationMode mode);
-
-    /**
-     * @brief      
-     * Sets the Source::opMode to ``mode`` apart from the obvious.
-     *
-     * @param[in] _cyclops  Pointer to Cyclops
-     * @param[in] _source   Pointer to a *derivation* of Source
-     * @param[in] mode      Ignore mode of source, use 'this' instead.
-     */
-    void setup(Cyclops *_cyclops, Source* _source, operationMode mode=LOOPBACK);
+    Waveform(Cyclops *_cyclops, Source* _source, operationMode mode=LOOPBACK);
 
     /**
      * @brief
@@ -154,8 +136,40 @@ class Waveform{
      * @param      w2  Pointer to Waveform
      */
     static void swapChannels(Waveform* w1, Waveform* w2);
+
+    /**
+     * @brief      Agressively PREPAREs Waveforms which have been latched.
+     * @details
+     * Non-blocking function. Just consists of <#-of-channels> no. of
+     * ``Waveform::prepare()`` calls.
+     * 
+     * @note       This function is protected against Timer1 Interrupts.
+     */
+    static void processAll();
+
+    /**
+     * @brief      Perform the first SPI write and latching for all channels
+     * 
+     * @return     ``holdTime`` of the Waveform with least ``holdTime``.
+     */
+    static double initAll();
+
+    friend void cyclops_timer_isr();
 };
 
+/**
+ * @brief      Latches the DAC and sets Timer1 period for next IRQ
+ * @details
+ * 
+ * status   | source::status | time_rem       | Action
+ * ------   | -------------- | --------       | -------
+ * PREPARED | ACTIVE         | < 2 \f$μsec\f$ | LDAC               latch
+ * <any>    | <any>          | < 2 \f$μsec\f$ | ``stepForward(1)`` <br>``time_rem = holdTime();``
+ * 
+ * Also computes the next timer period and updates all ``time_rem`` fields
+ * 
+ * @note       Sets the new Timer1 period.
+ */
 void cyclops_timer_isr();
 
 #endif
