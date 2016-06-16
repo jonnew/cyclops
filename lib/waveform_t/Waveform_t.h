@@ -111,7 +111,7 @@ class Waveform{
      * Loads Waveform::status from Waveform::backup_myStatus and sets 
      * source::status to ``ACTIVE``.
      */
-    void resume();
+    inline void resume() __attribute__((always_inline));
 
 
     /**
@@ -119,14 +119,14 @@ class Waveform{
      * Stores Waveform::status into Waveform::backup_myStatus and sets
      * source::status to ``PAUSED``.
      */
-    void pause();
+    inline void pause() __attribute__((always_inline));
 
     /**
      * @brief      Replaces Waveform::source with new_source.
      *
      * @param      new_source  Pointer to *derivation* of Source
      */
-    void useSource(Source* new_source);
+    inline void useSource(Source* new_source) __attribute__((always_inline));
 
     /**
      * @brief      Swaps the pointers to Cyclops-instances,
@@ -135,7 +135,7 @@ class Waveform{
      * @param      w1  Pointer to Waveform
      * @param      w2  Pointer to Waveform
      */
-    static void swapChannels(Waveform* w1, Waveform* w2);
+    inline static void swapChannels(Waveform* w1, Waveform* w2) __attribute__((always_inline));
 
     /**
      * @brief      Agressively PREPAREs Waveforms which have been latched.
@@ -163,7 +163,7 @@ class Waveform{
  * 
  * status   | source::status | time_rem       | Action
  * ------   | -------------- | --------       | -------
- * PREPARED | ACTIVE         | < 2 \f$μsec\f$ | LDAC               latch
+ * PREPARED | ACTIVE         | < 2 \f$μsec\f$ | LDAC latch
  * <any>    | <any>          | < 2 \f$μsec\f$ | ``stepForward(1)`` <br>``time_rem = holdTime();``
  * 
  * Also computes the next timer period and updates all ``time_rem`` fields

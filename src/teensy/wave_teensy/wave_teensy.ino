@@ -6,7 +6,7 @@ uint16_t triangle_wave(uint8_t seq){
 }
 
 double triangle_update_period(uint8_t seq){
-  return 10000;
+  return 150000;
 }
 
 generatedSource gen(triangle_wave, triangle_update_period, 40);
@@ -20,7 +20,7 @@ void setup()
   pinMode(9, OUTPUT); // LDAC pin
   digitalWrite(9, HIGH);
   digitalWrite(14, LOW);
-  SPIFIFO.begin(10, SPI_CLOCK_16MHz); // 16MHz SPI clock, using pin 10 as CS
+  SPI_fifo.begin(CH0, SPI_CLOCK_16MHz); // 16MHz SPI clock, using pin 10 as CS
   waveform.prepare();
   waveform.cyclops->dac_load();
   waveform.source->stepForward(1);
@@ -58,7 +58,7 @@ void timer_isr(){
   }
   double delta = waveform.source->holdTime();
   waveform.time_rem = delta;
-  //Timer1.setPeriod(delta); // try putting a const value here, like 10000
+  Timer1.setPeriod(delta, 1); // try putting a const value here, like 10000
   waveform.source->stepForward(1);
   digitalWrite(16, LOW);
 }

@@ -21,7 +21,7 @@ void setup()
   digitalWrite(14, LOW);
   
   //Serial.begin(57600);
-  SPIFIFO.begin(10, SPI_CLOCK_6MHz); // 16MHz SPI clock, using pin 10 as CS
+  SPI_fifo.begin(SPI_CLOCK_6MHz); // 16MHz SPI clock, using pin 10 as CS
   
   double delta = Waveform::initAll();
   Timer1.initialize(delta);

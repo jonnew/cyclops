@@ -27,9 +27,9 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
  #include <WProgram.h>
 #endif
 #ifdef CORE_TEENSY
-    #include <SPIFIFO.h>
+    #include <SPI_fifo.h>
 #else
-    #include <nbSPI.h>
+    #include <SPI.h>
 #endif
 
 #include "RPC_defs.h"
@@ -51,6 +51,7 @@ typedef enum
 
 // Pin Definitions
 #ifndef CORE_TEENSY
+  // For Arduino
   #define OC0               2     // Over-current switch
   #define OC1               3     //
   #define OC2               4     //
@@ -73,7 +74,8 @@ typedef enum
   #define ADC2              2     //
   #define ADC3              3     //
 
-#else
+#else // For Teensy
+
   #define OC0               A10   // Over-current switch
   #define OC1               A11   //
   #define OC2               A12   //
@@ -81,8 +83,8 @@ typedef enum
 
   #define CS0               10    // Chip select pins
   #define CS1               9     //
-  #define CS2               6     //
-  #define CS3               2     //
+  #define CS2               20    //
+  #define CS3               21    //
   
   //#define LDAC0             24    // Load DAC line for CH0
   #define LDAC0             9     // Load DAC line (for Ananya's test rig only)
@@ -90,15 +92,15 @@ typedef enum
   #define LDAC2             26    // Load DAC line for CH2
   #define LDAC3             27    // Load DAC line for CH3
 
-  #define TRIG0             29    // Trigger lines
-  #define TRIG1				30    //
-  #define TRIG2 			32    //
-  #define TRIG3 			33    //
+  #define TRIG0             30    // Trigger lines
+  #define TRIG1			      	31    //
+  #define TRIG2 	       		32    //
+  #define TRIG3             33    //
   
   #define ADC0              A1    // Analog input lines
   #define ADC1              A2    //
   #define ADC2              A3    //
-  #define ADC3              A6    //
+  #define ADC3              A8    //
 
 #endif
 //Function macros for setting bits in registers
@@ -123,17 +125,19 @@ class Cyclops {
     Channel channel;
     Cyclops(Channel _channel);
 
-    /**
-     * @brief      Activate the CS line
-     * @deprecated CS is managed automatically by the Teensy SPI
-     */
-    void selectChip();
+    #ifndef CORE_TEENSY
+      /**
+       * @brief      Activate the CS line
+       * @deprecated CS is managed automatically by the Teensy SPI
+       */
+      void selectChip() __attribute__((always_inline));
 
-    /**
-     * @brief      Deactivate the CS line
-     * @deprecated CS is managed automatically by the Teensy SPI
-     */
-    void deselectChip();    
+      /**
+       * @brief      Deactivate the CS line
+       * @deprecated CS is managed automatically by the Teensy SPI
+       */
+      void deselectChip() __attribute__((always_inline));
+    #endif
 
     // Onboard signal generation
     void dac_send_test_waveform(void);
@@ -150,11 +154,11 @@ class Cyclops {
     void dac_shutdown(void);
 
     // Current measurement and OC protection
-    float measure_current(void);
-    float over_current_protect(float current_limit_mA);
+    float measureCurrent(void) __attribute__((always_inline));
+    float overCurrentProtect(float current_limit_mA);
 
     // Attach/detach interupt
-    //void attach_interupt(void (*user_func)(void));
+    void attach_interrupt(void (*user_func)(void), int mode);
 
  private:
 

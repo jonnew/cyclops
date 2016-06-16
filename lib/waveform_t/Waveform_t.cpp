@@ -24,8 +24,8 @@ uint8_t Waveform::prepare(){
   if (status == PREPARED)
     return 2; // already prepared
   if (SPI0_SR & SPI_SR_TFFF){
-    uint16_t spi_frame = 0x1000 | (source->getVoltage() & 0x0fff);
-    SPIFIFO.write16(spi_frame); // non blocking
+    uint16_t spi_frame = DAC_CONF_ACTIVE | (source->getVoltage() & 0x0fff);
+    SPI_fifo.write16(cyclops->channel, spi_frame); // non blocking
     status = PREPARED;
   }
   else{
@@ -35,20 +35,20 @@ uint8_t Waveform::prepare(){
   return 0;
 }
 
-void Waveform::resume(){
+inline void Waveform::resume(){
   source->status = ACTIVE;
 }
 
-void Waveform::pause(){
+inline void Waveform::pause(){
   source->status = FROZEN;
 }
 
-void Waveform::useSource(Source *new_source){
+inline void Waveform::useSource(Source *new_source){
   source = new_source;
   source->reset();
 }
 
-void Waveform::swapChannels(Waveform *w1, Waveform *w2){
+inline void Waveform::swapChannels(Waveform *w1, Waveform *w2){
   Cyclops *t = w1->cyclops;
   w1->cyclops = w2->cyclops;
   w2->cyclops = t;
@@ -56,14 +56,12 @@ void Waveform::swapChannels(Waveform *w1, Waveform *w2){
 
 double Waveform::initAll(){
   double min_hold_time = 9e12; // arbit, 9 mega sec
-  uint8_t forthcoming_index;
   for (uint8_t i=0; i<size; i++){
     _list[i]->prepare();
     _list[i]->time_rem = _list[i]->source->holdTime();
     _list[i]->source->stepForward(1);
     if (_list[i]->time_rem < min_hold_time){
       min_hold_time = _list[i]->time_rem;
-      forthcoming_index = i;
     }
   }
   for (uint8_t i=0; i<Waveform::size; i++){
@@ -95,8 +93,8 @@ void cyclops_timer_isr(){
   // protect sreg??
   Waveform* wf_ptr;
   double min_hold_time = 9e12; // arbit, 9 mega-sec
-  uint8_t forthcoming_index, _size = Waveform::size;
-
+  uint8_t _size = Waveform::size;
+  // loop through all Waveforms and Latch those which need to be LATCHED
   for (uint8_t i=0; i < _size; i++){
     wf_ptr = Waveform::_list[i];
     // @jonathan: Is the fuzzy 2us window small enough?
@@ -111,7 +109,6 @@ void cyclops_timer_isr(){
     // check if this has min_hold_time
     if (wf_ptr->time_rem < min_hold_time){
       min_hold_time = wf_ptr->time_rem;
-      forthcoming_index = i;
     }
   }
   // if (min_hold_time < 1) // something is wrong
