@@ -6722,6 +6722,15 @@ denoising jumper</text>
 <wire x1="-2.54" y1="60.96" x2="15.24" y2="60.96" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="15.24" y1="60.96" x2="15.24" y2="99.06" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="15.24" y1="99.06" x2="-7.62" y2="99.06" width="0.4064" layer="97" style="shortdash"/>
+<text x="76.2" y="200.66" size="2.54" layer="97">TODO:
+1. Replace arduino headers with teensy headers (male and female since ttensy comes without them)
+2. Are the LED arrays mounted at correct distance from board edge?
+3. Is teensy at correct distance from board edge?
+4. Is there adequare clearance b/w rear panel mount components
+5. Rearrange panels to fit changes in front and back
+6. +5V regulator layout
+7. Test LED ON circuit. You will at least have to replace the N BJT with an P BJT since LED ON is inverted.
+8. </text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="185.42" y="45.72"/>
@@ -8044,6 +8053,10 @@ denoising jumper</text>
 <pinref part="U69" gate="G$2" pin="V-"/>
 <wire x1="-30.48" y1="-40.64" x2="-30.48" y2="-45.72" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="Q4" gate="G$1" pin="E"/>
+<wire x1="38.1" y1="-38.1" x2="38.1" y2="-60.96" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$5" class="0">
 <segment>
@@ -8134,12 +8147,6 @@ denoising jumper</text>
 <pinref part="Q3" gate="G$1" pin="C"/>
 <wire x1="81.28" y1="86.36" x2="81.28" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="OC" gate="2" pin="C"/>
-</segment>
-</net>
-<net name="GND1" class="0">
-<segment>
-<pinref part="Q4" gate="G$1" pin="E"/>
-<wire x1="38.1" y1="-38.1" x2="38.1" y2="-60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$46" class="0">
