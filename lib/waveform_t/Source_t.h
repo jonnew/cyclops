@@ -66,7 +66,11 @@ class Source{
      *  In ``FROZEN`` state stepForward() calls do nothing.
     */    
     sourceStatus status;
-    const uint8_t src_id; /**< Unique uint ID for this object */
+    /** @brief Unique uint ID for this object
+     *  @details
+     *  The order in which _derivations_ of Source instances determines the ID
+     */
+    const uint8_t src_id;
 
     Source(operationMode opMode, sourceStatus = ACTIVE);
 

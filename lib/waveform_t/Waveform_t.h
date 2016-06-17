@@ -1,38 +1,41 @@
 /** @file Waveform.h
   
-  This library pre-instantiates a WaveformList object (``waveformList``). It is
-  possible to use the library _without_ a WaveformList instance, see
-  ``examples/pseudo_loop.ino``.
-  
-  See ``examples/main_loop.ino`` for intended usage. The basic idea is to:
+  @page teensy-waveform Using the Waveform Object
+
+  @tableofcontents
+
+  This library can be used as is (in cusom sketches) or with the Open Ephys GUI
+  plugin.
+  @sa Waveform
+
+  @section t-waveform-intended-usage Intended Usage
+  See ``src/teensy/wave2_teensy.ino`` for intended usage. The basic idea is to:
   
   1. Create Source derivative instances, how many ever the application might
-  require.
+     require.
   2. Create as many Cyclops instances as the no. of LEDs to be controlled.
+  @note       A Cyclops instance cannot drive the LED on it's own.
+  3. Create as many Waveform Objects as the no. of LEDs. Each Waveform instance
+     binds Cyclops and Source instances.
 
   @note Do the following inside ``setup()``!
   
-  3. [Prepare the _waveform list_]
-    - Use ``setWaveform()`` to bind the Cyclops and Source insances.
-  
-  4. Initialise ``nbSPI`` _(or even normal blocking SPI)_
-  5. Call ``WaveformList::initialPrep()`` to write and latch the very first sample
-  points
-  6. Initialise ``Timer1`` with the return-value of ``initialPrep()``.
+  4. Initialise ``SPI_fifo`` with upto 16MHz SPI bus speed.
+  5. Call ``Waveform::initAll()`` to write and latch the very first sample
+     points
+  6. Initialise ``Timer1`` with the return-value of ``initAll()``.
   7. Attach the **cyclops_timer_isr** to the Timer1 interrupt.
   
-  @note Do the following inside ``loop()``!
+  @note       Do the following inside ``loop()``!
   
-  8. Call ``WaveformList::process()`` and forget about waveforms!
+  8. Call ``Waveform::processAll()`` and forget about waveforms!
   
   @section spi_magic How does it work!?
-  The **cyclops_timer_isr** and ``WaveformList::process()`` work together to deliver
+  The **cyclops_timer_isr** and ``Waveform::processAll()`` work together to deliver
   waveform updates with least possible jitter and highest possible accuracy.
   
-  ``process()`` maintains an ordering of waveform instances based on the _time
-  remaining for next update_. It aggressively issues SPI transfers, whenever the SPI
-  device is available, to _PREPARE_ the waveforms.
-  
+  ``processAll()`` aggressively issues SPI transfers, whenever the SPI device is 
+  available, to _PREPARE_ the waveforms.    
   The ISR just latches the DAC programmed value at the right moment and marks the
   waveform LATCHED.
   
@@ -52,7 +55,6 @@
 #include "Cyclops.h"
 
 class Cyclops;
-
 /** @typedef waveformStatus */
 typedef enum {
     INIT,
