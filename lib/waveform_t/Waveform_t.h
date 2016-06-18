@@ -54,7 +54,6 @@
 #include "TimerOne.h"
 #include "Cyclops.h"
 
-class Cyclops;
 /** @typedef waveformStatus */
 typedef enum {
     INIT,
@@ -62,7 +61,7 @@ typedef enum {
     LATCHED
 } waveformStatus;
 
-
+class Task;
 /**
  * @brief      Each Waveform Object has pointers to a Cyclops instance and a Source
  *             instance, effectively binding them together.
@@ -81,18 +80,31 @@ class Waveform{
                               */
     Cyclops        *cyclops; /**< Pointer to a Cyclops instance. */
     waveformStatus status;   /**< Current "state" of the object. */
-    double         time_rem;
+    uint32_t       time_rem;
 
     /**
-     * @brief      
-     * Initialises ``state`` to ``INIT``. Sets the Source::opMode to ``mode``.
+     * @brief      Initialises ``state`` to ``INIT``. Sets the Source::opMode to
+     *             ``mode``.
      *
-     * @param[in] _cyclops  Pointer to Cyclops
-     * @param[in] _source   Pointer to a *derivation* of Source
-     * @param[in] mode      Optional arg., LOOPBACK by default. Set Source::mode
-     *                      as 'this'.
+     * @param[in]  _cyclops  Pointer to Cyclops
+     * @param[in]  _source   Pointer to a *derivation* of Source
+     * @param[in]  mode      Optional arg., LOOPBACK by default. Set
+     *                       Source::mode as 'this'.
+     * @param[in]  _cycles   The cycles for N_SHOT
      */
-    Waveform(Cyclops *_cyclops, Source* _source, operationMode mode=LOOPBACK);
+    Waveform(Cyclops *_cyclops, Source* _source, operationMode mode, uint8_t _cycles);
+
+    /**
+     * @brief      Initialises ``state`` to ``INIT``. Sets the Source::opMode to
+     *             ``mode``.
+     *
+     * @param[in]  _cyclops  Pointer to Cyclops
+     * @param[in]  _source   Pointer to a *derivation* of Source
+     * 
+     * @details
+     * Source::operationMode is set to LOOPBACK.
+     */
+    Waveform(Cyclops *_cyclops, Source* _source);
 
     /**
      * @brief
@@ -113,7 +125,7 @@ class Waveform{
      * Loads Waveform::status from Waveform::backup_myStatus and sets 
      * source::status to ``ACTIVE``.
      */
-    inline void resume() __attribute__((always_inline));
+    void resume();
 
 
     /**
@@ -121,14 +133,14 @@ class Waveform{
      * Stores Waveform::status into Waveform::backup_myStatus and sets
      * source::status to ``PAUSED``.
      */
-    inline void pause() __attribute__((always_inline));
+    void pause();
 
     /**
      * @brief      Replaces Waveform::source with new_source.
      *
      * @param      new_source  Pointer to *derivation* of Source
      */
-    inline void useSource(Source* new_source) __attribute__((always_inline));
+    void useSource(Source* new_source, operationMode _mode, uint8_t shot_cycles=0);
 
     /**
      * @brief      Swaps the pointers to Cyclops-instances,
@@ -137,7 +149,7 @@ class Waveform{
      * @param      w1  Pointer to Waveform
      * @param      w2  Pointer to Waveform
      */
-    inline static void swapChannels(Waveform* w1, Waveform* w2) __attribute__((always_inline));
+    static void swapChannels(Waveform* w1, Waveform* w2);
 
     /**
      * @brief      Agressively PREPAREs Waveforms which have been latched.
@@ -157,6 +169,7 @@ class Waveform{
     static double initAll();
 
     friend void cyclops_timer_isr();
+    friend Task;
 };
 
 /**

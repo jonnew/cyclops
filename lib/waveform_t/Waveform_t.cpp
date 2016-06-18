@@ -7,12 +7,26 @@
 uint8_t Waveform::size = 0;
 Waveform* Waveform::_list[4];
 
-Waveform::Waveform(Cyclops *_cyclops, Source *_source, operationMode mode /* = LOOPBACK */) : 
+Waveform::Waveform(Cyclops *_cyclops, Source *_source) : 
+  status(INIT)
+{
+  cyclops = _cyclops;
+  source = _source;
+  source->opMode = LOOPBACK;
+  if (size < 4){
+    // do not add to _list if it is full, silently drop.
+    _list[size++] = this;
+  }
+  time_rem = 0;
+}
+
+Waveform::Waveform(Cyclops *_cyclops, Source *_source, operationMode mode, uint8_t _cycles) : 
   status(INIT)
 {
   cyclops = _cyclops;
   source = _source;
   source->opMode = mode;
+  source->cycles = _cycles;
   if (size < 4){
     // do not add to _list if it is full, silently drop.
     _list[size++] = this;
@@ -35,20 +49,22 @@ uint8_t Waveform::prepare(){
   return 0;
 }
 
-inline void Waveform::resume(){
+void Waveform::resume(){
   source->status = ACTIVE;
 }
 
-inline void Waveform::pause(){
+void Waveform::pause(){
   source->status = FROZEN;
 }
 
-inline void Waveform::useSource(Source *new_source){
+void Waveform::useSource(Source *new_source, operationMode _mode, uint8_t shot_cycle /* = 0 */){
   source = new_source;
+  source->opMode = _mode;
+  source->cycles = shot_cycle;
   source->reset();
 }
 
-inline void Waveform::swapChannels(Waveform *w1, Waveform *w2){
+void Waveform::swapChannels(Waveform *w1, Waveform *w2){
   Cyclops *t = w1->cyclops;
   w1->cyclops = w2->cyclops;
   w2->cyclops = t;
@@ -93,9 +109,8 @@ void cyclops_timer_isr(){
   // protect sreg??
   Waveform* wf_ptr;
   double min_hold_time = 9e12; // arbit, 9 mega-sec
-  uint8_t _size = Waveform::size;
   // loop through all Waveforms and Latch those which need to be LATCHED
-  for (uint8_t i=0; i < _size; i++){
+  for (uint8_t i=0; i < Waveform::size; i++){
     wf_ptr = Waveform::_list[i];
     // @jonathan: Is the fuzzy 2us window small enough?
     if (wf_ptr->time_rem < 2){
@@ -112,7 +127,7 @@ void cyclops_timer_isr(){
     }
   }
   // if (min_hold_time < 1) // something is wrong
-  for (uint8_t i=0; i < _size; i++){
+  for (uint8_t i=0; i < Waveform::size; i++){
     Waveform::_list[i]->time_rem -= min_hold_time;
   }
   Timer1.setPeriod(min_hold_time, 1);

@@ -14,6 +14,7 @@
 #endif
 
 #include "Cyclops.h"
+#include "Waveform_t.h"
 
 /**
  * @brief      Task objects reside in the Process Queue, waiting to be popped and executed by the CPU.
@@ -28,32 +29,24 @@ class Task{
     uint8_t taskID,
             channelID,
             commandID,
-            argsLength;   /**< length of args array in "bytes" */
-    void *args;           /**< pointer to arguments of this command */
+            argsLength;          /**< length of args array in "bytes" */
+    char    args[RPC_MAX_ARGS];  /**< Space for arguments of any command */
 
     Task();
 
     /**
-     * @brief      Creates a Task instance using an RPC packet.
-     * @warning    There is no need to construct new Task objects. The Process_Queue Task elements should be modified using Task::set() instead.
-     * 
-     * @param[in]  packet  Passed to Task::set()
-     * @param[in]  length  Passed to Task::set()
+     * @brief      Sets the args
+     *
+     * @param[in]  arg_len  The argument length
      */
-    Task (uint8_t *packet, uint8_t length);
+    void setArgs(uint8_t arg_len);
 
     /**
-     * @brief
-     * Parses the recieved "packet" which conforms to the Cyclops-RPC format into a Task instance.
-     * @param      packet  Pointer to `uint8_t` array, this array lies in the Serial buffer. It's contents need to be copied into the `Task.args`
-     * @param[in]  length  length in bytes of the packet
+     * @brief      Executes the Task.
+     *
+     * @return     ``0`` if successful, else ``1``
      */
-    void set(uint8_t *packet, uint8_t length);
-
-    /**
-     * @brief      `free`s the `args` member.
-     */
-    ~Task();
+    uint8_t compute();
 
  private:
     uint8_t _priority;         /**< Not needed now */
@@ -94,7 +87,7 @@ public:
      *
      * @return     0 if success else 1.
      */
-    uint8_t pushTask(uint8_t *packet, uint8_t length);
+    uint8_t pushTask(uint8_t packet, uint8_t length);
 
     /**
      * @return     Pointer to top-of-queue Task.
@@ -106,6 +99,8 @@ public:
      */
     void pop();
 };
+
+void readSerial(Queue *q);
 
 /*
 class PriorityQueue{

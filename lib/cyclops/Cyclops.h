@@ -26,13 +26,12 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #else
  #include <WProgram.h>
 #endif
+#include "RPC_defs.h"
 #ifdef CORE_TEENSY
     #include <SPI_fifo.h>
 #else
     #include <SPI.h>
 #endif
-
-#include "RPC_defs.h"
 
 // Each 'channel' defines a board address.  Corresponding pins numbers can be
 // accessed through the look-up tables (_a_in_lut, _cs_lut, _trig_lut, etc).
@@ -154,7 +153,7 @@ class Cyclops {
     void dac_shutdown(void);
 
     // Current measurement and OC protection
-    float measureCurrent(void) __attribute__((always_inline));
+    float measureCurrent(void);
     float overCurrentProtect(float current_limit_mA);
 
     // Attach/detach interupt

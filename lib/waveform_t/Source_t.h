@@ -1,6 +1,40 @@
 /** @file Source.h
-  
-    @author Ananya Bahadur
+ * 
+ * @page source-page Source Objects
+ * 
+ * @tableofcontents
+ * 
+ * @section source-overview Overview
+ * Source objects are responsible for computing or fetching from a look-up table,
+ * the sample point voltages and hold-times. Specialised Source classes, namely
+ * 1. squareSource
+ * 2. generatedSource
+ * 3. storedSource
+ * are optimised for generation of specific waveforms. These objects "store" your
+ * stimulation signals. The siganls sample points are read off one-by-one to make 
+ * a control signal which is fed to the analog circuitry on Cyclops.
+ * Details of the timing scheme can be found @ref waveform-timing "here".
+ * 
+ * @note
+ * Multiple _(possibly same)_ instances of a derived class can co-exist, they will 
+ * be completely independent apart from the shared data source or technique. 
+ * 
+ * @section source-ranges The Control Signal
+ * This is a voltage signal and the LED current is directly proportional to the 
+ * amplitude of this signal. The Source objects encode the amplitude as an integer
+ * between 0 and 4095 (2<sup>12</sup>).
+ * 
+ * The hold-time is the period for which the corresponding voltage level is held and is
+ * encoded in ``μsec``. The allowed range is \f$\in [20, 174762] μsec\f$.
+ * 
+ * @section source-tolerance Fault Tolerant Waveform generation 
+ * Source objects keep track of the number of SPI updates missed. When updates are
+ * missed, the waveform (and LED current) remains stagnant at the previous level. Since
+ * "time" doesn't stop, Waveform behaves as if it performed the SPI write. If this is not
+ * done, this waveform would "lag" behind the intended waveform, and this 
+ * lag would accumulate until the Source is FROZEN or reset.
+ * 
+ * @author Ananya Bahadur
 */
 
 #ifndef CL_SOURCE_H
@@ -16,6 +50,7 @@
 typedef enum {
     LOOPBACK,
     ONE_SHOT,
+    N_SHOT
 } operationMode;
 
 /** @typedef sourceStatus */
@@ -34,22 +69,14 @@ typedef enum {
 /**
  * @brief 
  * Source is an abstract class, representing a source of Voltage Data (as a 
- * number between 0 and 4095) and the corresponding Time Data (as msec) for 
+ * number between 0 and 4095) and the corresponding Time Data (as μsec) for 
  * which the Voltage should be held.
  * 
- * @details
- * Multiple instances of a derived class can co-exist, they will be completely
- * independent apart from the shared data source or technique.             
+ * @sa         source-page       
  */
 class Source{
  protected:
-    /** Keeps track of the number of SPI updates missed. When updates are
-     *  missed, the waveform remains stagnant. Since "time" doesn't stop,
-     *  Cyclops should behave as if it performed the SPI write. If this is not
-     *  done, this waveform would "lag" behind the intended waveform, and this 
-     *  lag would accumulate until FROZEN or reset.
-    */
-    uint8_t shift_accumulator;
+    uint8_t cycle_index;
  public:
     static uint8_t src_count;
     /** @brief
@@ -72,16 +99,26 @@ class Source{
      */
     const uint8_t src_id;
 
-    Source(operationMode opMode, sourceStatus = ACTIVE);
+    uint8_t cycles; /**< Used in N_SHOT opMode */
+
+    Source(operationMode opMode, uint8_t _cycles);
 
     /**
-     * @brief      Returns the next data-point's Voltage.
+     * @brief      Returns the data-point's Voltage.
+     * @details
+     * The voltage is computed by fetching the Source's true voltage and multiplying
+     * with the configured Source::VScale.
+     * Automatically clamps output to the \f$[0, 4095]\f$ range.
      */
     virtual uint16_t getVoltage() = 0;
     /**
-     * @brief      Returns the next data-point's Hold-Time (in 10μsec). The voltage will be held on the LED for this much time.
+     * @brief      Returns the data-point's Hold-Time (in 1μsec). The voltage will be held on the LED for this much time.
+     * @details
+     * The hold-time is computed by fetching the Source's true hold-time and multiplying
+     * with the configured Source::TScale.
+     * Automatically clamps output to the \f$[0, 174]\f$ range.
      */
-    virtual double holdTime() = 0;
+    virtual uint32_t holdTime() = 0;
     /**
      * @brief      Moves to the next data-point.
      * 
@@ -94,6 +131,8 @@ class Source{
     virtual void reset() = 0;
 };
 
+extern Source** globalSourceList_ptr;
+
 /**
  * @brief      storedSource reads from an array of data-points.
  */
@@ -102,7 +141,7 @@ class storedSource: public Source{
     uint8_t cur_ind;
  public:
     const uint16_t *voltage_data;
-    const double   *hold_time_data;
+    const uint32_t *hold_time_data;
     const uint8_t size;
 
     /**
@@ -114,11 +153,24 @@ class storedSource: public Source{
      * @param[in]  mode            ``LOOPBACK`` by default
      */
     storedSource(const uint16_t *voltage_data,
-                 const double   *hold_time_data,
-                 uint8_t sz,
-                 operationMode mode = LOOPBACK);
+                 const uint32_t *hold_time_data,
+                        uint8_t sz,
+                 operationMode  mode,
+                        uint8_t _cycles = 1);
     virtual uint16_t getVoltage();
-    virtual double   holdTime();
+    virtual uint32_t holdTime();
+    /**
+     * @brief      Increments cur_ind if Source::sourceStatus is ACTIVE
+     * @details
+     * Maintains cycle_index for N_SHOT mode. It is guaranteed that each call
+     * will result in increase of cur_ind if sourceStatus is ACTIVE.
+     * Upon _completion_ all cycles, the sourceStatus is set to FROZEN. *To reuse
+     * the instance it must be reset atleast once.*
+     * 
+     * Nothing happens if sourceStatus is FROZEN.
+     *
+     * @param[in]  num_of_steps  The number of steps
+     */
     virtual void     stepForward(uint8_t num_of_steps);
     virtual void     reset();
 };
@@ -136,7 +188,7 @@ class generatedSource: public Source{
     uint8_t cur_ind;
  public:
     uint16_t (*voltage_data_fn)(uint8_t);
-    double   (*hold_time_data_fn)(uint8_t);
+    uint32_t (*hold_time_data_fn)(uint8_t);
     uint8_t size;
     /**
      * @brief      Creates a new generatedSource which uses the provided 
@@ -149,12 +201,25 @@ class generatedSource: public Source{
      * @param[in]  sz                 Length of one cycle of the waveform
      * @param[in]  mode               ``LOOPBACK`` by deafult
      */
-    generatedSource(uint16_t (*voltage_data_fn)(uint8_t),
-                    double   (*hold_time_data_fn)(uint8_t),
-                    uint8_t sz,
-                    operationMode mode = LOOPBACK);
+    generatedSource(uint16_t      (*voltage_data_fn)(uint8_t),
+                    uint32_t      (*hold_time_data_fn)(uint8_t),
+                    uint8_t       sz,
+                    operationMode mode,
+                    uint8_t       _cycles = 1);
     virtual uint16_t getVoltage();
-    virtual double   holdTime();
+    virtual uint32_t holdTime();
+    /**
+     * @brief      Increments cur_ind if Source::sourceStatus is ACTIVE
+     * @details
+     * Maintains cycle_index for N_SHOT mode. It is guaranteed that each call
+     * will result in increase of cur_ind if sourceStatus is ACTIVE.
+     * Upon _completion_ all cycles, the sourceStatus is set to FROZEN. *To reuse
+     * the instance it must be reset atleast once.*
+     * 
+     * Nothing happens if sourceStatus is FROZEN.
+     *
+     * @param[in]  num_of_steps  The number of steps
+     */
     virtual void     stepForward(uint8_t step_sz);
     virtual void     reset();
 };
