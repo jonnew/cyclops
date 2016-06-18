@@ -140,7 +140,7 @@ class Waveform{
      *
      * @param      new_source  Pointer to *derivation* of Source
      */
-    void useSource(Source* new_source, operationMode _mode, uint8_t shot_cycles=0);
+    void useSource(Source* new_source, operationMode _mode, uint8_t shot_cycles=1);
 
     /**
      * @brief      Swaps the pointers to Cyclops-instances,

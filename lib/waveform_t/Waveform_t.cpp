@@ -57,7 +57,7 @@ void Waveform::pause(){
   source->status = FROZEN;
 }
 
-void Waveform::useSource(Source *new_source, operationMode _mode, uint8_t shot_cycle /* = 0 */){
+void Waveform::useSource(Source *new_source, operationMode _mode, uint8_t shot_cycle /* = 1 */){
   source = new_source;
   source->opMode = _mode;
   source->cycles = shot_cycle;

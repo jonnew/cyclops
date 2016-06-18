@@ -61,6 +61,7 @@ void storedSource::stepForward(uint8_t step_sz){
 void storedSource::reset(){
 	cur_ind = 0;
 	cycle_index = 0;
+	status = ACTIVE;
 }
 
 
@@ -113,4 +114,5 @@ void generatedSource::stepForward(uint8_t step_sz){
 void generatedSource::reset(){
 	cur_ind = 0;
 	cycle_index = 0;
+	status = ACTIVE;
 }

@@ -44,9 +44,10 @@ void loop()
   readSerial(&processQueue);
   digitalWrite(14, HIGH);
   if (processQueue.size > 0){
-    //Task* t = processQueue.peek();
-    //t->compute();
+    Task* t = processQueue.peek();
+    t->compute();
     processQueue.pop();
+    ;
   }
   
 }

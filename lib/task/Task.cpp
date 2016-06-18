@@ -47,7 +47,7 @@ uint8_t Task::compute(){
         }
         chs >>= 1;
       }
-      //Serial.write(Waveform::_list[0]->source->status);
+      Serial.write(Waveform::_list[0]->source->status);
       //Serial.write('\n');
       //Serial.write(0xf0);
       return 0;
@@ -65,17 +65,14 @@ uint8_t Task::compute(){
     case 0:
       // change_source_l
       Waveform::_list[channelID]->useSource(globalSourceList_ptr[(uint8_t)args[0]], LOOPBACK);
-      //Serial.write(args[0]);
       break;
     case 1:
       // change_source_o
       Waveform::_list[channelID]->useSource(globalSourceList_ptr[(uint8_t)args[0]], ONE_SHOT);
-      //Serial.write(args[0]);
       break;
     case 2:
       // change_source_n
       Waveform::_list[channelID]->useSource(globalSourceList_ptr[(uint8_t)args[0]], N_SHOT, (uint8_t)args[1]);
-      //Serial.write(args[0]);
       break;
     case 3:
       // change_time_period
@@ -94,6 +91,8 @@ uint8_t Task::compute(){
       // square_off_time
       break;
     }
+    Serial.write(Waveform::_list[channelID]->source->opMode);
+    //Serial.write('\n');
     //Serial.write(0xf0);
     return 0;
   }
@@ -122,11 +121,13 @@ uint8_t Queue::pushTask(uint8_t header, uint8_t arg_len){
     else{
       container[insert].channelID = EXTRACT_MB_CHANNEL(header);
       container[insert].commandID = EXTRACT_MB_CMD(header);
-    }/*
+    }
+    /*
     Serial.print("p");
     Serial.write(container[insert].commandID);
     Serial.write(container[insert].channelID);
-    Serial.print("P");*/
+    Serial.print("P");
+    */
     size++;
     return 0;
   }
@@ -152,17 +153,17 @@ void readSerial(Queue *q){
   uint8_t avl;
   avl = Serial.available();
   while (avl){
-    //Serial.print("~");
+    //Serial.print("q");
     if (arg_len == 0){
       header_byte = Serial.read();
       arg_len = getPacketSize(header_byte)-1;
+      Serial.write(header_byte);
       avl--;
     }
     //Serial.print(q->size);
     if (arg_len <= avl){
-      q->pushTask(header_byte, arg_len-1);
-      //Serial.print(q->size);
-      //Serial.write(arg_len);
+      q->pushTask(header_byte, arg_len);
+      //Serial.write(q->size);
       //Serial.write('\n');
       avl -= arg_len;
       arg_len = 0;

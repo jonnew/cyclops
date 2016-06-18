@@ -89,15 +89,19 @@
 #define SB_NUM_CMD      5
 #define SB_CHANNEL_MASK 0x78 // channel[6:3]
 #define SB_CMD_MASK     0x07 // command[2:0]
-#define EXTRACT_SB_CHANNELS(m_header_byte) (m_header_byte & SB_CHANNEL_MASK)
-#define EXTRACT_SB_CMD(s_header_byte) (s_header_byte & SB_CMD_MASK)
+#define SB_CHANNEL_SHIFT 0x3
+#define SB_CMD_SHIFT     0x0
+#define EXTRACT_SB_CHANNELS(s_header_byte) (((uint8_t)s_header_byte & SB_CHANNEL_MASK) >> SB_CHANNEL_SHIFT)
+#define EXTRACT_SB_CMD(s_header_byte) (((uint8_t)s_header_byte & SB_CMD_MASK) >> SB_CMD_SHIFT)
 
 // Multi Byte Definitions
-#define MB_NUM_CMD      8
+#define MB_NUM_CMD      9
 #define MB_CHANNEL_MASK 0x60 // channel[6:5]
 #define MB_CMD_MASK     0x1f // command[4:0]
-#define EXTRACT_MB_CHANNEL(m_header_byte) (m_header_byte & MB_CHANNEL_MASK)
-#define EXTRACT_MB_CMD(m_header_byte) (m_header_byte & MB_CMD_MASK)     
+#define MB_CHANNEL_SHIFT 0x5
+#define MB_CMD_SHIFT     0x0
+#define EXTRACT_MB_CHANNEL(m_header_byte) ((m_header_byte & MB_CHANNEL_MASK) >> MB_CHANNEL_SHIFT)
+#define EXTRACT_MB_CMD(m_header_byte) ((m_header_byte & MB_CMD_MASK) >> MB_CMD_SHIFT)
 
 const static uint8_t multi_sz_map[MB_NUM_CMD] = {
   2, 2, 3, 5,

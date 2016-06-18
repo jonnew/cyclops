@@ -5,7 +5,7 @@ uint16_t triangle_wave(uint8_t seq){
   return (abs(20 - seq)/40.0)*4095;
 }
 
-double triangle_update_period(uint8_t seq){
+uint32_t triangle_update_period(uint8_t seq){
   return 150000;
 }
 

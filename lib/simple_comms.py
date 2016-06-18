@@ -40,15 +40,13 @@ packets = [
   make_sb([3,2,1,0], 1), #stop
   make_sb([3,2,1,0], 0), #start
   make_mb_pkt(0, 1, [0]), #one_shot -- reset and blink once
-  make_mb_pkt(0, 2, [0, 2]), #n_shot -- reset and blibk twice
+  make_mb_pkt(0, 2, [0, 2]), #n_shot -- reset and blink twice
   make_mb_pkt(0, 0, [0]), #loopback
 ]
 
 for i in range(0, len(packets)):
-  input()
+  input("send next?")
   ser.write(packets[i])
   print("sent", i)
-  ch = b'.'
-  while ch != b'\n':
-    ch = ser.read(1)
-    print(ch)
+  print("header =", ser.read(1))
+  print("<", ser.read(1))
