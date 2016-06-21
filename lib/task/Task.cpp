@@ -47,7 +47,7 @@ uint8_t Task::compute(){
         }
         chs >>= 1;
       }
-      Serial.write(Waveform::_list[0]->source->status);
+      Serial.write(Waveform::_list[0]->source->opMode);
       //Serial.write('\n');
       //Serial.write(0xf0);
       return 0;

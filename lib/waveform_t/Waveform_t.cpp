@@ -12,7 +12,6 @@ Waveform::Waveform(Cyclops *_cyclops, Source *_source) :
 {
   cyclops = _cyclops;
   source = _source;
-  source->opMode = LOOPBACK;
   if (size < 4){
     // do not add to _list if it is full, silently drop.
     _list[size++] = this;
