@@ -6,7 +6,7 @@ uint16_t triangle_wave(uint8_t seq){
 }
 
 uint32_t triangle_update_period(uint8_t seq){
-  return 25;
+  return 30;
 }
 
 uint16_t triangle_wave_s(uint8_t seq){
@@ -14,14 +14,14 @@ uint16_t triangle_wave_s(uint8_t seq){
 }
 
 uint32_t triangle_update_period_s(uint8_t seq){
-  return 25;
+  return 30;
 }
 
 uint16_t vd_1[] = {1, 2048};
 uint16_t vd_2[] = {1, 4095};
 
-uint32_t ht_1[] = {25, 25};
-uint32_t ht_2[] = {25, 25};
+uint32_t ht_1[] = {30, 30};
+uint32_t ht_2[] = {30, 30};
 
 generatedSource gen_f(triangle_wave, triangle_update_period, 40, LOOPBACK);
 
@@ -69,7 +69,6 @@ void loop()
   digitalWrite(14, LOW);
   
   readSerial(&processQueue);
-  digitalWrite(14, HIGH);
   if (processQueue.size > 0){
     Task* t = processQueue.peek();
     t->compute();

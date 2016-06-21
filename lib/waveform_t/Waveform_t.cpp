@@ -107,12 +107,12 @@ void Waveform::processAll(){
 void cyclops_timer_isr(){
   // protect sreg??
   Waveform* wf_ptr;
-  double min_hold_time = 9e12; // arbit, 9 mega-sec
+  uint32_t min_hold_time = 0xffffffff; // arbit
   // loop through all Waveforms and Latch those which need to be LATCHED
   for (uint8_t i=0; i < Waveform::size; i++){
     wf_ptr = Waveform::_list[i];
-    // @jonathan: Is the fuzzy 2us window small enough?
-    if (wf_ptr->time_rem < 2){
+    // @jonathan: Is the fuzzy 10us window fine?
+    if (wf_ptr->time_rem < 10){
       if (wf_ptr->status == PREPARED){
         wf_ptr->cyclops->dac_load();
       }

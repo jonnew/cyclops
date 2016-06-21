@@ -84,12 +84,17 @@ typedef enum
   #define CS1               9     //
   #define CS2               20    //
   #define CS3               21    //
-  
+/*  
   //#define LDAC0             24    // Load DAC line for CH0
   #define LDAC0             9     // Load DAC line (for Ananya's test rig only)
   #define LDAC1             25    // Load DAC line for CH1
   #define LDAC2             26    // Load DAC line for CH2
   #define LDAC3             27    // Load DAC line for CH3
+*/
+  #define LDAC0             16 
+  #define LDAC1             17
+  #define LDAC2             22
+  #define LDAC3             23
 
   #define TRIG0             30    // Trigger lines
   #define TRIG1			      	31    //

@@ -9,9 +9,14 @@ uint32_t triangle_update_period(uint8_t seq){
   return 15000 + seq;
 }
 
-generatedSource gen(triangle_wave, triangle_update_period, 40, LOOPBACK);
+uint16_t vd_1[] = {1, 2048};
+uint32_t ht_1[] = {70000, 70000};
 
-Source* globalSourceList[] = {&gen};
+generatedSource gen(triangle_wave, triangle_update_period, 40, LOOPBACK);
+storedSource sto_1(vd_1, ht_1, 2, LOOPBACK);
+squareSource square(LOOPBACK);
+  
+Source* globalSourceList[] = {&gen, &sto_1, &square};
 
 Source **globalSourceList_ptr = globalSourceList;
 Cyclops cyclops(CH0);
@@ -20,14 +25,12 @@ Queue processQueue;
 
 void setup()
 {
-  pinMode(14, OUTPUT); // prepare
-  pinMode(16, OUTPUT); // isr
-  //pinMode(9, OUTPUT); // LDAC pin
-  digitalWrite(9, HIGH);
-  digitalWrite(14, LOW);
+  pinMode(17, OUTPUT); // isr
+  pinMode(16, OUTPUT); // LDAC pin
+  digitalWrite(17, LOW);
   
   Serial.begin(57600);
-  SPI_fifo.begin(SPI_CLOCK_6MHz); // 16MHz SPI clock, using pin 10 as CS
+  SPI_fifo.begin(SPI_CLOCK_16MHz); // 16MHz SPI clock, using pin 10 as CS
 
   double delta = Waveform::initAll();
   Timer1.initialize(delta);

@@ -50,9 +50,11 @@
     ``00100``     | time_factor        | 5           | Scale Source::holdTime values by this factor. \f$\in [0, \infty)\f$.
     ``00101``     | voltage_factor     | 5           | Scale Source::getVoltage values by this factor. \f$\in [0, \infty)\f$.
     ``00110``     | voltage_offset     | 3           | Add this DC offset level to Source::getVoltage values. \f$\in [0, \infty)\f$.
-    ``00111``     | square_on_time     | 5           | Set squareSource::onTime.
-    ``01000``     | square_off_time    | 5           | Set squareSource::offTime.
-
+    ``00111``     | square_on_time     | 5           | Set squareSource pulse "ON" time.
+    ``01000``     | square_off_time    | 5           | Set squareSource pulse "OFF" time.
+    ``01001``     | square_on_level    | 3           | Set squareSource pulse "ON" voltage.
+    ``01010``     | square_off_level   | 3           | Set squareSource pulse "OFF" voltage.
+    
     @note       Voltage scaling can also be manually accomplished by the
                 tweaking the GAIN knob on Cyclops Front Panel.
 
@@ -73,6 +75,8 @@
     | voltage_offset     | uint16 val    |                  |
     | square_on_time     | uint32 val    |                  |
     | square_off_time    | uint32 val    |                  |
+    | square_on_level    | uint16 val    |                  |
+    | square_off_level   | uint16 val    |                  |
 
     @sa Task
 
@@ -95,7 +99,7 @@
 #define EXTRACT_SB_CMD(s_header_byte) (((uint8_t)s_header_byte & SB_CMD_MASK) >> SB_CMD_SHIFT)
 
 // Multi Byte Definitions
-#define MB_NUM_CMD      9
+#define MB_NUM_CMD      11
 #define MB_CHANNEL_MASK 0x60 // channel[6:5]
 #define MB_CMD_MASK     0x1f // command[4:0]
 #define MB_CHANNEL_SHIFT 0x5
@@ -106,7 +110,7 @@
 const static uint8_t multi_sz_map[MB_NUM_CMD] = {
   2, 2, 3, 5,
   5, 5, 3, 5,
-  5
+  5, 3, 3
 };
 
 inline uint8_t getPacketSize(uint8_t header_byte){

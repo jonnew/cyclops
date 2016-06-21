@@ -14,17 +14,17 @@ def make_mb_header(channel, command):
   return res.to_bytes(1, byteorder="little")
 
 def make_args(command, args_list):
+  print(args_list)
   if (command in [0, 1]):
-    # 1 arg, 
-    res = struct.pack('<c', args_list[0].to_bytes(1, byteorder="little"))
+    res = struct.pack('<c', int(args_list[0]).to_bytes(1, byteorder='little'))
   elif (command in [2]):
-    res = struct.pack('<cc', args_list[0].to_bytes(1, byteorder="little"), args_list[1].to_bytes(1, byteorder="little"))
+    res = struct.pack('<cc', int(args_list[0]).to_bytes(1, byteorder='little'), int(args_list[1]).to_bytes(1, byteorder='little'))
   elif (command in [3, 7, 8]):
-    res = struct.pack('<i', args_list[0].to_bytes(4, byteorder="little"))
+    res = struct.pack('<i', int(args_list[0]))
   elif (command in [4, 5]):
-    res = struct.pack('<f', args_list[0])
-  elif (command in [6]):
-    res = struct.pack('<h', args_list[0].to_bytes(2, byteorder="little"))
+    res = struct.pack('<f', float(args_list[0]))
+  elif (command in [6, 9, 10]):
+    res = struct.pack('<h', int(args_list[0]))
   return res
 
 def make_mb_pkt(channel, command, args_list):
@@ -65,4 +65,6 @@ voltage_factor     | m, , 5,
 voltage_offset     | m, , 6, 
 square_on_time     | m, , 7, 
 square_off_time    | m, , 8, 
+square_on_level    | m, , 9, 
+square_off_level   | m, , 10, 
 """

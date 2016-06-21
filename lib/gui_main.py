@@ -61,7 +61,7 @@ def do_user_command(user_command):
     print(channel, command, args)
     if 0 <= int(channel) < 4:
       if 0 <= int(command) < 32:
-        return packet_gen.make_mb_pkt(int(channel), int(command), [int(x) for x in args])
+        return packet_gen.make_mb_pkt(int(channel), int(command), args)
     return -1
 
   else:
