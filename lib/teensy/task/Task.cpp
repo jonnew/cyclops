@@ -65,15 +65,15 @@ uint8_t Task::compute(){
     switch (commandID){
     case 0:
       // change_source_l
-      target_waveform->useSource(globalSourceList_ptr[(uint8_t)args[0]], LOOPBACK);
+      target_waveform->useSource(CyclopsLib::globalSourceList_ptr[(uint8_t)args[0]], LOOPBACK);
       break;
     case  1:
       // change_source_o
-      target_waveform->useSource(globalSourceList_ptr[(uint8_t)args[0]], ONE_SHOT);
+      target_waveform->useSource(CyclopsLib::globalSourceList_ptr[(uint8_t)args[0]], ONE_SHOT);
       break;
     case  2:
       // change_source_n
-      target_waveform->useSource(globalSourceList_ptr[(uint8_t)args[0]], N_SHOT, (uint8_t)args[1]);
+      target_waveform->useSource(CyclopsLib::globalSourceList_ptr[(uint8_t)args[0]], N_SHOT, (uint8_t)args[1]);
       break;
     case  3:
       // change_time_period
@@ -170,7 +170,7 @@ void Queue::pop(){
  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
  */
 
-void readSerial(Queue *q){
+void CyclopsLib::readSerialAndPush(Queue *q){
   static uint8_t arg_len = 0, header_byte = 0;
   uint8_t avl;
   avl = Serial.available();
