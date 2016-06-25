@@ -1,5 +1,5 @@
 /**
- * @file Task.h
+ * @file CLTask.h
  * 
  * @page howto-serial Using the Serial RPC Interface
  * 
@@ -29,13 +29,13 @@
  * to the instances created in (2).
  * @attention  You must fill the array with the pointers in the *exact order* in
  * which they were declared!
- * 4. Assign the array to CyclopsLib::globalSourceList_ptr. The program will 
+ * 4. Assign the array to cyclops::source::globalSourceList_ptr. The program will 
  * not compile unless this assignment is made.
  * 5. Create a Queue instance, (say myQueue).
  * @note       Now, do the following in ```loop()``...
  * 6. Apart form the normal waveform stuff, add a snippet as following:
  * @code
- *  CyclopsLib::readSerialAndPush(&myQueue);
+ *  cyclops::readSerialAndPush(&myQueue);
  *  if (myQueue.size > 0){
         Task* t = myQueue.peek();
         t->compute();
@@ -61,11 +61,15 @@
 #endif
 
 #include "Cyclops.h"
-#include "Waveform_t.h"
 
+#define QUEUE_CAPACITY 8 /**< Hard coded Queue container Size */
+
+namespace cyclops{
 /**
- * @brief      Task objects reside in the Process Queue, waiting to be popped and executed by the CPU.
- *             They are created *exclusively* from  RPC packets recieved from the Open Ephys GUI.
+ * @brief      Task objects reside in the Process Queue, waiting to be popped and
+ * executed by the CPU. They are created *exclusively* from  RPC packets recieved
+ * from the Open Ephys GUI.
+ * @ingroup    ns-cyclops
  *             
  * @attention
  * Not all RPC packets are transformed into a Task and placed on a Queue.
@@ -74,7 +78,9 @@
 class Task{
  public:
     uint8_t taskID,             /**< Not used */
-            channelID,          /**< The channel _(or channels, as a bitmask)_ on which the Task applies */
+            channelID,          /**< The channel _(or channels, as a bitmask)_ on
+                                 * which the Task applies
+                                 */
             commandID,          /**< @ref rpc-desc "RPC Description" */
             argsLength;         /**< length of args array in "bytes" */
     char    args[RPC_MAX_ARGS]; /**< Space for arguments of any command */
@@ -97,21 +103,22 @@ class Task{
 
  private:
     uint8_t _priority;         /**< Not needed now */
-    static uint8_t _taskCount; /**< To create a different* `task_id` for all instances.
-                                    @warning Will roll-over, and there is no guarantee of uniqueness! */
+    static uint8_t _taskCount; /**< To create a different* `task_id` for all 
+                                    instances.
+                                    @warning Will roll-over, and there is no 
+                                    guarantee of uniqueness! */
     /**
      * @brief      determines priority of this task using information in RPC_defs.h?
      */
     void computePriority();
 };
 
-#define QUEUE_CAPACITY 8 /**< Hard coded Queue container Size */
-
 /**
  * @brief      This is the (_circular_) RPC Task Queue.
  * @details
  * The RPC lib will pushTask() on the instance and Cyclops main-loop would pop-
  * and-service the incoming Tasks.
+ * @ingroup    ns-cyclops
  */
 class Queue{
 private:
@@ -147,20 +154,20 @@ public:
     void pop();
 };
 
-namespace CyclopsLib{
-    /**
-     * @ingroup    ns-CyclopsLib
-     * @brief      Reads the device serial buffer and parses the packets into
-     *             Task objects.
-     * @details
-     * This function does not busy wait on partially recieved packets, it will
-     * return immediately if a packet cannot be formed, _yet_. If many packets
-     * are waiting in the buffer, all of them would be converted into Task
-     * objects.
-     * @param      q     The Queue object which will be populated.
-     */
-    void readSerialAndPush(Queue *q);
-}
+/**
+ * @ingroup    ns-cyclops
+ * @brief      Reads the device serial buffer and parses the packets into
+ *             Task objects.
+ * @details
+ * This function does not busy wait on partially recieved packets, it will
+ * return immediately if a packet cannot be formed, _yet_. If many packets
+ * are waiting in the buffer, all of them would be converted into Task
+ * objects.
+ * @param      q     The Queue object which will be populated.
+ */
+void readSerialAndPush(Queue *q);
+} // NAMESPACE cyclops
+
 /*
 class PriorityQueue{
 };

@@ -1,4 +1,7 @@
-#include "Source_t.h"
+#include "Source.h"
+
+namespace cyclops{
+using namespace source;
 
 // static var definition
 uint8_t Source::src_count = 0;
@@ -113,7 +116,7 @@ generatedSource::generatedSource(
 			voltage_data_fn(voltage_data_fn),
 			size(sz)
 {
-	hold_time_data_fn = NULL;
+	hold_time_data_fn = nullptr;
 	if (c_holdTime > 174762)
 		constHoldTime = 174762;
 	else
@@ -133,7 +136,7 @@ void generatedSource::setTimePeriod(uint32_t new_period){
 
 uint32_t generatedSource::holdTime(){
 	return
-	min( ((hold_time_data_fn == NULL)? constHoldTime : hold_time_data_fn(cur_ind)) * TScale,	174762 );
+	min( ((hold_time_data_fn == nullptr)? constHoldTime : hold_time_data_fn(cur_ind)) * TScale,	174762 );
 }
 
 void generatedSource::stepForward(uint8_t step_sz){
@@ -221,3 +224,5 @@ void squareSource::reset(){
 	cycle_index = 0;
 	status = ACTIVE;
 }
+
+} // NAMESPACE cyclops

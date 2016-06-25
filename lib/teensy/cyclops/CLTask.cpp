@@ -1,10 +1,10 @@
-#include "Task.h"
+#include "CLTask.h"
 
+namespace cyclops{
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
  *                         Task Class                           |
  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
  */
-class Waveform;
 
 uint8_t Task::_taskCount = 0;
 
@@ -42,12 +42,12 @@ uint8_t Task::compute(){
           break;
         case 2:
         // reset
-          Waveform::_list[i]->source->reset();
+          Waveform::_list[i]->source_ptr->reset();
           break;
         }
         chs >>= 1;
       }
-      Serial.write(Waveform::_list[0]->source->opMode);
+      Serial.write(Waveform::_list[0]->source_ptr->opMode);
       //Serial.write('\n');
       //Serial.write(0xf0);
       return 0;
@@ -65,52 +65,52 @@ uint8_t Task::compute(){
     switch (commandID){
     case 0:
       // change_source_l
-      target_waveform->useSource(CyclopsLib::globalSourceList_ptr[(uint8_t)args[0]], LOOPBACK);
+      target_waveform->useSource(cyclops::source::globalSourceList_ptr[(uint8_t)args[0]], LOOPBACK);
       break;
     case  1:
       // change_source_o
-      target_waveform->useSource(CyclopsLib::globalSourceList_ptr[(uint8_t)args[0]], ONE_SHOT);
+      target_waveform->useSource(cyclops::source::globalSourceList_ptr[(uint8_t)args[0]], ONE_SHOT);
       break;
     case  2:
       // change_source_n
-      target_waveform->useSource(CyclopsLib::globalSourceList_ptr[(uint8_t)args[0]], N_SHOT, (uint8_t)args[1]);
+      target_waveform->useSource(cyclops::source::globalSourceList_ptr[(uint8_t)args[0]], N_SHOT, (uint8_t)args[1]);
       break;
     case  3:
       // change_time_period
-      if (target_waveform->source->name == GENERATED)
-        ((generatedSource*)(target_waveform->source))->setTimePeriod(*(uint32_t*)args);
+      if (target_waveform->source_ptr->name == GENERATED)
+        ((generatedSource*)(target_waveform->source_ptr))->setTimePeriod(*(uint32_t*)args);
       break;
     case  4:
       // time_factor
-      target_waveform->source->setTScale(*(float*)args);
+      target_waveform->source_ptr->setTScale(*(float*)args);
       break;
     case  5:
       // voltage_factor
-      target_waveform->source->setVScale(*(float*)args);
+      target_waveform->source_ptr->setVScale(*(float*)args);
       break;
     case  6:
       // voltage_offset
-      target_waveform->source->setOffset(*(uint16_t*)args);
+      target_waveform->source_ptr->setOffset(*(uint16_t*)args);
       break;
     case  7:
       // square_on_time
-      if (target_waveform->source->name == SQUARE)
-        ((squareSource*)(target_waveform->source))->level_time[1] = *(uint32_t*)args;
+      if (target_waveform->source_ptr->name == SQUARE)
+        ((squareSource*)(target_waveform->source_ptr))->level_time[1] = *(uint32_t*)args;
       break;
     case  8:
       // square_off_time
-      if (target_waveform->source->name == SQUARE)
-        ((squareSource*)(target_waveform->source))->level_time[0] = *(uint32_t*)args;
+      if (target_waveform->source_ptr->name == SQUARE)
+        ((squareSource*)(target_waveform->source_ptr))->level_time[0] = *(uint32_t*)args;
       break;
     case  9:
       // square_on_level
-      if (target_waveform->source->name == SQUARE)
-        ((squareSource*)(target_waveform->source))->voltage_level[1] = *(uint16_t*)args;
+      if (target_waveform->source_ptr->name == SQUARE)
+        ((squareSource*)(target_waveform->source_ptr))->voltage_level[1] = *(uint16_t*)args;
       break;
     case 10:
       // square_off_level
-      if (target_waveform->source->name == SQUARE)
-        ((squareSource*)(target_waveform->source))->voltage_level[0] = *(uint16_t*)args;
+      if (target_waveform->source_ptr->name == SQUARE)
+        ((squareSource*)(target_waveform->source_ptr))->voltage_level[0] = *(uint16_t*)args;
       break;
     }
     Serial.write('@');
@@ -157,7 +157,7 @@ uint8_t Queue::pushTask(uint8_t header, uint8_t arg_len){
 }
 
 Task* Queue::peek(){
-  return (size > 0)? &container[head] : NULL;
+  return (size > 0)? &container[head] : nullptr;
 }
 
 void Queue::pop(){
@@ -170,7 +170,8 @@ void Queue::pop(){
  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
  */
 
-void CyclopsLib::readSerialAndPush(Queue *q){
+} // NAMESPACE cyclops
+void cyclops::readSerialAndPush(Queue *q){
   static uint8_t arg_len = 0, header_byte = 0;
   uint8_t avl;
   avl = Serial.available();

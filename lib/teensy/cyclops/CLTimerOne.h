@@ -14,8 +14,8 @@
  *
  */
 
-#ifndef TimerOne_h_
-#define TimerOne_h_
+#ifndef CL_TIMER_ONE_H
+#define CL_TIMER_ONE_H
 
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
@@ -34,7 +34,7 @@
 // to the hardware registers (for example, setPeriod).
 
 
-class TimerOne
+class CLTimerOne
 {
 
 
@@ -298,7 +298,7 @@ class TimerOne
   // }
   // This configuration might help in powerful multi-channel PWM synchronisation. But it
   // would require a lot more thinking on how to present all this power in a simple
-  // interface from TimerOne.
+  // interface from CLTimerOne.
     }
 
     //****************************
@@ -392,7 +392,7 @@ class TimerOne
 #endif
 };
 
-extern TimerOne Timer1;
+extern CLTimerOne Timer1;
 
 #endif
 

@@ -1,7 +1,0 @@
-# Syntax highlighting
-
-# Class (KEYWORD1)
-Task	KEYWORD1
-
-# Public methods(KEYWORD2)
-computePriority	KEYWORD2

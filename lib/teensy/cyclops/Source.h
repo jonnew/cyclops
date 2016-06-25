@@ -27,7 +27,7 @@
  * between 0 and 4095 (2<sup>12</sup>).
  * 
  * The hold-time is the period for which the corresponding voltage level is held and is
- * encoded in ``μsec``. The allowed range is \f$\in [20, 174762] μsec\f$.
+ * encoded in \f$μsec\f$. The allowed range is \f$\in [20, 174762] μsec\f$.
  * 
  * @section source-tolerance Fault Tolerant Waveform generation 
  * Source objects keep track of the number of SPI updates missed. When updates are
@@ -49,54 +49,58 @@
  #include <WProgram.h>
 #endif
 
-/**
- * @typedef operationMode
- */
-typedef enum {
-    LOOPBACK,
-    ONE_SHOT,
-    N_SHOT
-} operationMode;
+namespace cyclops{
+  /**
+   * @defgroup   ns-source source
+   */
+  namespace source{
+  /**
+   * @ingroup    ns-source
+   */
+  enum operationMode{
+      LOOPBACK,  /**< Run forever. */
+      ONE_SHOT,  /**< Run one *sequence*, and then FREEZE. */
+      N_SHOT     /**< Run \f$N\f$ *sequences*, and then FREEZE. */
+  };
+  }
+using namespace source;
 
 /**
- * @typedef sourceStatus
+ * @brief      Status of the *derivation* of Source.
+ * @ingroup    ns-cyclops
  */
-typedef enum {
-    FROZEN,
-    ACTIVE
-} sourceStatus;
+enum sourceStatus{
+    FROZEN,   /**< stepForward calls will have no effect */
+    ACTIVE    /**< *vice versa* */
+};
 
 /**
- * @typedef sourceStatus
+ * @brief      The type of *derivation*.
+ * @ingroup    ns-cyclops
  */
-typedef enum {
+enum sourceType{
     STORED,
     GENERATED,
     SQUARE
-} sourceType;
-
-#define ONE_SHOT_FINISHED_HOLD_TIME 1000 /**< The waveform is completed.  
-                                          *   The timer would still interrupt
-                                          *   for this Waveform, as we don't
-                                          *   "pause" the waveform*. Use a long
-                                          *   HOLD_TIME.
-                                          */
+};
 
 /**
  * @brief 
  * Source is an abstract class, representing a source of Voltage Data (as a 
  * number between 0 and 4095) and the corresponding Time Data (as μsec) for 
  * which the Voltage should be held.
- * 
- * @sa         source-page       
+ * @ingroup    ns-cyclops
+ * See the @ref source-page "Source documentation".
  */
 class Source{
+ private:
+    static uint8_t src_count; /**< Used to keep count of Source objects. */
  protected:
-    uint8_t cycle_index;
-    uint16_t DCoffset;
-    float VScale, TScale;
+    uint8_t cycle_index;  /**< The no. of cycles completed. */
+    uint16_t DCoffset;    /**< DC voltage offset from zero for any source. @sa Source::getVoltage*/
+    float VScale,         /**< Voltage scaling factor. */
+          TScale;         /**< Time scaling factor. */
  public:
-    static uint8_t src_count;
     /** @brief
      *  Mode of operation. All derived sources support all variants.
      *  @details
@@ -178,8 +182,6 @@ class Source{
      */
     virtual void reset() = 0;
 };
-
-extern Source** globalSourceList_ptr;
 
 /**
  * @brief      storedSource reads from an array of data-points.
@@ -264,7 +266,10 @@ class generatedSource: public Source{
      * @brief      Creates a new generatedSource which uses the provided 
      *             function pointer to generate data-points which are a
      *             fixed-interval apart, the ``constHoldTime``.
-     *
+     * @todo 
+     * The class can possibly be redesigned so that there is no function call
+     * in (this) case of ``constHoldTime``.
+     * 
      * @param[in]  voltage_data_fn  Pointer to function which generates
      *                              Voltage of data-point
      * @param[in]  c_holdTime       The constHoldTime interval for each voltage
@@ -294,7 +299,7 @@ class generatedSource: public Source{
      *
      * @param[in]  num_of_steps  The number of steps
      */
-    virtual void     stepForward(uint8_t step_sz);
+    virtual void     stepForward(uint8_t num_of_steps);
     virtual void     reset();
 };
 
@@ -337,5 +342,19 @@ class squareSource: public Source{
     virtual void     stepForward(uint8_t num_of_steps);
     virtual void     reset();
 };
+
+namespace source{
+/**
+ * @ingroup    ns-source
+ * @brief      The array of pointers to *derivations* of Source instances.
+ * @attention
+ * If RPC is to be used, this pointer must by defined (ie, initialised) in a 
+ * user sketch. This array is used by Task::compute to access and modify the
+ * Source attributes.
+ */
+extern cyclops::Source** globalSourceList_ptr;
+}
+
+} // NAMESPACE cyclops
 
 #endif

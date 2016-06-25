@@ -1,3 +1,11 @@
+/**
+ * @file SPI_fifo.h
+ * This file is a modification of the SPIFIFO.h that is distributed with the
+ * Teensy3 Cores available here: https://github.com/PaulStoffregen/cores/
+ * 
+ * Also see the PR here: https://github.com/PaulStoffregen/TimerOne/pull/14
+ */
+
 #ifndef CL_SPIFIFO_H
 #define CL_SPIFIFO_H
 
@@ -130,6 +138,10 @@ for $i (2, 3, 5, 7) {
 
 #define SPI_CONTINUE 1
 
+/**
+ * @brief      This interface to the SPI device exposes the hardware FIFO, enabling (almost) non-
+ * blocking ``write`` calls.
+ */
 class CL_SPIFIFOclass
 {
 public:
