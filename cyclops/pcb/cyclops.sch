@@ -6699,6 +6699,9 @@ distributor Farnell 149-452</description>
 <part name="J_LDAC1" library="cyclops" deviceset="R" device="_0603" value="0"/>
 <part name="P+6" library="cyclops" deviceset="+5V" device="" value="+3V3"/>
 <part name="L1" library="cyclops" deviceset="L" device="_0603" value="MPZ1608"/>
+<part name="R41" library="cyclops" deviceset="R" device="_0603" value="0"/>
+<part name="R45" library="cyclops" deviceset="R" device="_0603"/>
+<part name="U$28" library="cyclops" deviceset="GND2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6730,7 +6733,8 @@ denoising jumper</text>
 5. Rearrange panels to fit changes in front and back
 6. +5V regulator layout
 7. Test LED ON circuit. You will at least have to replace the N BJT with an P BJT since LED ON is inverted.
-8. </text>
+8. Teensy itself will need to be modified with cut trace and schottky diode to work with external power
+9. Replace SMD VREF/TTL switch with vertical slide like 360‑3344‑ND</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="185.42" y="45.72"/>
@@ -7093,9 +7097,6 @@ denoising jumper</text>
 </net>
 <net name="VI" class="0">
 <segment>
-<pinref part="R3" gate="R" pin="1"/>
-<wire x1="101.6" y1="-2.54" x2="116.84" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="-2.54" x2="116.84" y2="-38.1" width="0.1524" layer="91"/>
 <pinref part="VI" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="-38.1" x2="116.84" y2="-38.1" width="0.1524" layer="91"/>
 <label x="106.68" y="-38.1" size="1.778" layer="95"/>
@@ -7594,6 +7595,13 @@ denoising jumper</text>
 <wire x1="167.64" y1="93.98" x2="167.64" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="VI_INTERNAL" class="0">
+<segment>
+<pinref part="R3" gate="R" pin="1"/>
+<wire x1="101.6" y1="-2.54" x2="116.84" y2="-2.54" width="0.1524" layer="91"/>
+<label x="111.76" y="-2.54" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -8072,13 +8080,6 @@ denoising jumper</text>
 <wire x1="-73.66" y1="60.96" x2="-73.66" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="VI" class="0">
-<segment>
-<pinref part="R11" gate="R" pin="2"/>
-<wire x1="-99.06" y1="99.06" x2="-106.68" y2="99.06" width="0.1524" layer="91"/>
-<label x="-106.68" y="99.06" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="COMP+" class="0">
 <segment>
 <pinref part="U7" gate="A" pin="IN+"/>
@@ -8197,13 +8198,6 @@ denoising jumper</text>
 <wire x1="-22.86" y1="-33.02" x2="-10.16" y2="-33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="LED-" class="0">
-<segment>
-<label x="-78.74" y="-35.56" size="1.778" layer="95"/>
-<wire x1="-78.74" y1="-35.56" x2="-38.1" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="U69" gate="G$1" pin="-IN"/>
-</segment>
-</net>
 <net name="N$42" class="0">
 <segment>
 <pinref part="R40" gate="R" pin="1"/>
@@ -8218,6 +8212,18 @@ denoising jumper</text>
 <junction x="-58.42" y="-2.54"/>
 <wire x1="-58.42" y1="-30.48" x2="-38.1" y2="-30.48" width="0.1524" layer="91"/>
 <pinref part="U69" gate="G$1" pin="+IN"/>
+</segment>
+</net>
+<net name="VI_INTERNAL" class="0">
+<segment>
+<pinref part="R11" gate="R" pin="2"/>
+<wire x1="-99.06" y1="99.06" x2="-106.68" y2="99.06" width="0.1524" layer="91"/>
+<label x="-116.84" y="99.06" size="1.778" layer="95"/>
+</segment>
+<segment>
+<label x="-78.74" y="-35.56" size="1.778" layer="95"/>
+<wire x1="-78.74" y1="-35.56" x2="-38.1" y2="-35.56" width="0.1524" layer="91"/>
+<pinref part="U69" gate="G$1" pin="-IN"/>
 </segment>
 </net>
 </nets>
@@ -8441,13 +8447,14 @@ Max(ILED) ~ 1.5 Amps</text>
 <text x="-81.28" y="-40.64" size="1.6764" layer="97">VI = 1A/1V</text>
 <text x="144.78" y="144.78" size="3.81" layer="97">DRIVETRAIN</text>
 <text x="71.12" y="-27.94" size="1.6764" layer="97" rot="R90">DNP</text>
+<text x="137.16" y="-27.94" size="1.6764" layer="97" rot="R90">DNP</text>
 </plain>
 <instances>
 <instance part="U10" gate="C" x="60.96" y="-5.08" rot="MR0"/>
 <instance part="U10" gate="D" x="-40.64" y="144.78" rot="MR0"/>
 <instance part="U10" gate="P" x="-35.56" y="2.54"/>
 <instance part="R29" gate="R" x="60.96" y="-15.24" rot="R180"/>
-<instance part="R30" gate="R" x="73.66" y="-25.4" rot="R270"/>
+<instance part="R30" gate="R" x="73.66" y="-22.86" rot="R270"/>
 <instance part="RSENSE" gate="R" x="165.1" y="-5.08" rot="R90"/>
 <instance part="C27" gate="C" x="-17.78" y="20.32"/>
 <instance part="C25" gate="C" x="-25.4" y="20.32"/>
@@ -8467,7 +8474,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="U$23" gate="G$1" x="-17.78" y="-20.32"/>
 <instance part="U$24" gate="G$1" x="-25.4" y="10.16"/>
 <instance part="U$25" gate="G$1" x="-17.78" y="10.16"/>
-<instance part="U$27" gate="G$1" x="73.66" y="-38.1"/>
+<instance part="U$27" gate="G$1" x="73.66" y="-33.02"/>
 <instance part="U$29" gate="G$1" x="165.1" y="-38.1"/>
 <instance part="P-1" gate="1" x="-35.56" y="-20.32"/>
 <instance part="R23" gate="R" x="-53.34" y="81.28" rot="R90"/>
@@ -8534,6 +8541,10 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="U3" gate="G$1" x="-55.88" y="111.76" rot="R270"/>
 <instance part="SUPPLY12" gate="G$1" x="-35.56" y="99.06"/>
 <instance part="R37" gate="R" x="-22.86" y="86.36" rot="R90"/>
+<instance part="U10" gate="A" x="127" y="-5.08" rot="MR0"/>
+<instance part="R41" gate="R" x="127" y="-15.24" rot="R180"/>
+<instance part="R45" gate="R" x="139.7" y="-22.86" rot="R270"/>
+<instance part="U$28" gate="G$1" x="139.7" y="-33.02"/>
 </instances>
 <busses>
 </busses>
@@ -8545,7 +8556,8 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="73.66" y1="-2.54" x2="73.66" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="U10" gate="C" pin="+IN"/>
 <pinref part="RSENSE" gate="R" pin="2"/>
-<wire x1="73.66" y1="20.32" x2="165.1" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="20.32" x2="139.7" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="20.32" x2="165.1" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="165.1" y1="20.32" x2="165.1" y2="33.02" width="0.1524" layer="91"/>
 <junction x="165.1" y="20.32"/>
 <pinref part="LED-" gate="G$1" pin="1"/>
@@ -8553,6 +8565,10 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="73.66" y1="33.02" x2="73.66" y2="20.32" width="0.1524" layer="91"/>
 <junction x="73.66" y="20.32"/>
 <pinref part="U12" gate="G$1" pin="NC"/>
+<wire x1="134.62" y1="-2.54" x2="139.7" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="-2.54" x2="139.7" y2="20.32" width="0.1524" layer="91"/>
+<junction x="139.7" y="20.32"/>
+<pinref part="U10" gate="A" pin="+IN"/>
 </segment>
 </net>
 <net name="VI" class="0">
@@ -8595,7 +8611,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <pinref part="R29" gate="R" pin="1"/>
 <wire x1="66.04" y1="-15.24" x2="73.66" y2="-15.24" width="0.1524" layer="91"/>
 <pinref part="R30" gate="R" pin="1"/>
-<wire x1="73.66" y1="-20.32" x2="73.66" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="-17.78" x2="73.66" y2="-15.24" width="0.1524" layer="91"/>
 <junction x="73.66" y="-15.24"/>
 </segment>
 </net>
@@ -8626,7 +8642,7 @@ Max(ILED) ~ 1.5 Amps</text>
 </segment>
 <segment>
 <pinref part="R30" gate="R" pin="2"/>
-<wire x1="73.66" y1="-30.48" x2="73.66" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="-27.94" x2="73.66" y2="-30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R26" gate="R" pin="2"/>
@@ -8695,6 +8711,10 @@ Max(ILED) ~ 1.5 Amps</text>
 <segment>
 <pinref part="C36" gate="C" pin="2"/>
 <wire x1="-35.56" y1="86.36" x2="-35.56" y2="83.82" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R45" gate="R" pin="2"/>
+<wire x1="139.7" y1="-27.94" x2="139.7" y2="-30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+12V" class="1">
@@ -9049,6 +9069,30 @@ Max(ILED) ~ 1.5 Amps</text>
 <pinref part="R37" gate="R" pin="2"/>
 <wire x1="-35.56" y1="106.68" x2="-22.86" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="-22.86" y1="106.68" x2="-22.86" y2="91.44" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="VI_INTERNAL" class="0">
+<segment>
+<wire x1="119.38" y1="-5.08" x2="114.3" y2="-5.08" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="-5.08" x2="93.98" y2="-5.08" width="0.1524" layer="91"/>
+<junction x="114.3" y="-5.08"/>
+<wire x1="114.3" y1="-5.08" x2="114.3" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="R41" gate="R" pin="2"/>
+<wire x1="114.3" y1="-15.24" x2="121.92" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="U10" gate="A" pin="OUT"/>
+<label x="93.98" y="-5.08" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$11" class="0">
+<segment>
+<wire x1="139.7" y1="-7.62" x2="139.7" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="-7.62" x2="134.62" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="R41" gate="R" pin="1"/>
+<wire x1="132.08" y1="-15.24" x2="139.7" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="R45" gate="R" pin="1"/>
+<wire x1="139.7" y1="-17.78" x2="139.7" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="139.7" y="-15.24"/>
+<pinref part="U10" gate="A" pin="-IN"/>
 </segment>
 </net>
 </nets>
