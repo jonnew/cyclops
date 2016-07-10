@@ -207,9 +207,9 @@ Jon Newman
 <text x="-6.096" y="10.033" size="1.016" layer="21" font="vector" ratio="18" align="center">DGND</text>
 <text x="-6.35" y="11.811" size="1.016" layer="21" font="vector" ratio="18" align="center">SCL</text>
 <text x="-6.985" y="13.589" size="1.016" layer="21" font="vector" ratio="18" align="center">SDA</text>
-<text x="35.687" y="2.286" size="1.016" layer="21" font="vector" ratio="18" rot="R270" align="center">DGND</text>
-<text x="39.37" y="1.905" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">SCL</text>
-<text x="42.926" y="1.778" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">SDA</text>
+<text x="-12.065" y="11.938" size="1.016" layer="21" font="vector" ratio="18" rot="R270" align="center">DGND</text>
+<text x="-12.192" y="5.207" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">SCL</text>
+<text x="-11.176" y="7.874" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">SDA</text>
 <text x="2.667" y="6.858" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">DGND</text>
 <text x="3.175" y="10.541" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">SCL</text>
 <text x="3.175" y="14.224" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">SDA</text>
@@ -23311,9 +23311,9 @@ Modified: 2014.07.10
 <attribute name="NAME" x="89.662" y="25.654" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="86.36" y="24.384" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="VAUX_OUT" library="jonnew" package="0731000105" value="0731000105" x="82.55" y="79.883" smashed="yes" rot="R180">
-<attribute name="NAME" x="84.0105" y="69.215" size="1.016" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="87.249" y="79.629" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<element name="VAUX_OUT" library="jonnew" package="0731000105" value="0731000105" x="82.042" y="79.883" smashed="yes" rot="R180">
+<attribute name="NAME" x="83.5025" y="69.215" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="86.741" y="79.629" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="REF2.1" library="cyclops" package="TP16R" value="TPTP16R" x="64.636" y="26.67" smashed="yes" rot="R90">
 <attribute name="TP_SIGNAL_NAME" value="" x="66.541" y="26.67" size="1" layer="37" rot="R90"/>
@@ -23385,17 +23385,17 @@ Modified: 2014.07.10
 <attribute name="NAME" x="11.811" y="56.134" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
 <attribute name="VALUE" x="11.811" y="57.39" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
 </element>
-<element name="VI" library="jonnew" package="0731000105" value="0731000105" x="99.06" y="79.883" smashed="yes" rot="R180">
-<attribute name="NAME" x="100.711" y="69.215" size="1.016" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="103.759" y="79.629" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<element name="VI" library="jonnew" package="0731000105" value="0731000105" x="98.806" y="79.883" smashed="yes" rot="R180">
+<attribute name="NAME" x="100.457" y="69.215" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="103.505" y="79.629" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="VREF" library="jonnew" package="0731000105" value="0731000105" x="115.57" y="79.883" smashed="yes" rot="R180">
 <attribute name="NAME" x="117.221" y="69.215" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="120.269" y="79.629" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
-<element name="VCTL" library="jonnew" package="0731000105" value="0731000105" x="66.04" y="79.883" smashed="yes" rot="R180">
-<attribute name="NAME" x="67.564" y="69.215" size="1.016" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="70.739" y="79.629" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<element name="VCTL" library="jonnew" package="0731000105" value="0731000105" x="65.278" y="79.883" smashed="yes" rot="R180">
+<attribute name="NAME" x="66.802" y="69.215" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="69.977" y="79.629" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="PWR_DIST" library="cyclops" package="2X04-BIG" value="PINH2X4" x="115.796" y="56.954" smashed="yes" rot="R90">
 <attribute name="NAME" x="119.703" y="52.169" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
@@ -23417,9 +23417,9 @@ Modified: 2014.07.10
 <attribute name="NAME" x="45.085" y="11.684" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="53.086" y="5.588" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
-<element name="VAUX_IN" library="jonnew" package="0731000105" value="0731000105" x="31.115" y="0" smashed="yes">
-<attribute name="NAME" x="32.512" y="9.652" size="1.016" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="35.814" y="1.524" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<element name="VAUX_IN" library="jonnew" package="0731000105" value="0731000105" x="30.861" y="0" smashed="yes">
+<attribute name="NAME" x="32.258" y="9.652" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="35.56" y="1.524" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="R38" library="cyclops" package="0603" value="2.2k" x="40.513" y="69.469" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="40.513" y="69.469" size="1.778" layer="27" rot="R270" display="off"/>
@@ -23487,9 +23487,9 @@ Modified: 2014.07.10
 <attribute name="NAME" x="42.799" y="-5.588" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="42.799" y="-6.858" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="TRIG" library="jonnew" package="0731000105" value="0731000105" x="14.605" y="0" smashed="yes">
-<attribute name="NAME" x="16.002" y="9.652" size="1.016" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="19.304" y="1.27" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<element name="TRIG" library="jonnew" package="0731000105" value="0731000105" x="13.843" y="0" smashed="yes">
+<attribute name="NAME" x="15.24" y="9.652" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="18.542" y="1.27" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="R30" library="cyclops" package="0603" value="1k" x="12.446" y="62.484" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="28.956" y="61.214" size="1.778" layer="27" rot="R270" display="off"/>
@@ -24490,7 +24490,7 @@ Modified: 2014.07.10
 <via x="82.804" y="51.308" extent="1-16" drill="0.3302"/>
 <via x="85.344" y="52.578" extent="1-16" drill="0.3302"/>
 <via x="85.344" y="51.308" extent="1-16" drill="0.3302"/>
-<via x="40.005" y="1.397" extent="1-16" drill="1.3" shape="octagon" alwaysstop="yes"/>
+<via x="45.085" y="-18.415" extent="1-16" drill="1.3" shape="octagon" alwaysstop="yes"/>
 <polygon width="0.1778" layer="1" thermals="no">
 <vertex x="98.806" y="63.5"/>
 <vertex x="98.806" y="50.8"/>
@@ -24581,7 +24581,7 @@ Modified: 2014.07.10
 <wire x1="25.8064" y1="25.4" x2="25.8064" y2="22.86" width="0" layer="19" extent="1-1"/>
 <wire x1="25.8064" y1="27.94" x2="25.8064" y2="25.4" width="0" layer="19" extent="1-1"/>
 <wire x1="-6.604" y1="8.255" x2="6.35" y2="1.524" width="0" layer="19" extent="1-1"/>
-<wire x1="54.737" y1="-26.416" x2="40.005" y2="1.397" width="0" layer="19" extent="1-1"/>
+<wire x1="54.737" y1="-26.416" x2="45.085" y2="-18.415" width="0" layer="19" extent="1-1"/>
 <wire x1="58.039" y1="-36.068" x2="54.737" y2="-26.416" width="0" layer="19" extent="1-1"/>
 <wire x1="-60.96" y1="-76.2" x2="-6.604" y2="8.255" width="0" layer="19" extent="1-1"/>
 <wire x1="-63.4238" y1="-76.835" x2="-60.96" y2="-76.2" width="0" layer="19" extent="1-1"/>
@@ -24782,8 +24782,8 @@ Modified: 2014.07.10
 <contactref element="VCTL" pad="1"/>
 <contactref element="VCTL&lt;OFF&gt;DAC" pad="3"/>
 <wire x1="64.77" y1="79.121" x2="68.326" y2="75.565" width="0.3048" layer="1"/>
-<wire x1="66.04" y1="67.4878" x2="68.326" y2="75.565" width="0" layer="19" extent="1-1"/>
-<wire x1="17.3482" y1="64.77" x2="66.04" y2="67.4878" width="0" layer="19" extent="1-1"/>
+<wire x1="65.278" y1="67.4878" x2="68.326" y2="75.565" width="0" layer="19" extent="1-1"/>
+<wire x1="17.3482" y1="64.77" x2="65.278" y2="67.4878" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="5V">
 </signal>
@@ -24894,7 +24894,7 @@ Modified: 2014.07.10
 <wire x1="18.1864" y1="16.51" x2="18.1864" y2="18.415" width="0" layer="19" extent="1-1"/>
 <wire x1="18.1864" y1="14.605" x2="18.1864" y2="16.51" width="0" layer="19" extent="1-1"/>
 <wire x1="18.1864" y1="12.7" x2="18.1864" y2="14.605" width="0" layer="19" extent="1-1"/>
-<wire x1="14.605" y1="12.3952" x2="18.1864" y2="12.7" width="0" layer="19" extent="1-1"/>
+<wire x1="13.843" y1="12.3952" x2="18.1864" y2="12.7" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="T0">
 <contactref element="UC" pad="3"/>
@@ -25849,17 +25849,17 @@ Modified: 2014.07.10
 <signal name="N$52">
 <contactref element="VAUX_OUT" pad="1"/>
 <contactref element="R4" pad="1"/>
-<wire x1="-55.753" y1="-60.452" x2="82.55" y2="67.4878" width="0" layer="19" extent="1-1"/>
+<wire x1="-55.753" y1="-60.452" x2="82.042" y2="67.4878" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$53">
 <contactref element="VAUX_IN" pad="1"/>
 <contactref element="R5" pad="1"/>
-<wire x1="31.115" y1="12.3952" x2="-55.753" y2="-72.644" width="0" layer="19" extent="1-1"/>
+<wire x1="30.861" y1="12.3952" x2="-55.753" y2="-72.644" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$54">
 <contactref element="VI" pad="1"/>
 <contactref element="R6" pad="1"/>
-<wire x1="-55.753" y1="-66.548" x2="99.06" y2="67.4878" width="0" layer="19" extent="1-1"/>
+<wire x1="-55.753" y1="-66.548" x2="98.806" y2="67.4878" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$55">
 <contactref element="VREF" pad="1"/>
