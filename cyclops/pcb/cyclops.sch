@@ -8028,13 +8028,6 @@ distributor Farnell 149-452</description>
 <label x="50.8" y="-17.78" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="+13.3V" class="1">
-<segment>
-<pinref part="EXPANSION" gate="G$1" pin="7"/>
-<wire x1="60.96" y1="7.62" x2="71.12" y2="7.62" width="0.1524" layer="91"/>
-<label x="71.12" y="7.62" size="1.778" layer="95" rot="R180"/>
-</segment>
-</net>
 <net name="VAUX_OUT" class="0">
 <segment>
 <label x="68.58" y="-50.8" size="1.778" layer="95"/>
@@ -8318,6 +8311,11 @@ distributor Farnell 149-452</description>
 <segment>
 <pinref part="D5" gate="G$1" pin="C"/>
 <wire x1="20.32" y1="-40.64" x2="20.32" y2="-38.1" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="EXPANSION" gate="G$1" pin="7"/>
+<wire x1="60.96" y1="7.62" x2="71.12" y2="7.62" width="0.1524" layer="91"/>
+<label x="71.12" y="7.62" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="TEENSY_VIN" class="0">
