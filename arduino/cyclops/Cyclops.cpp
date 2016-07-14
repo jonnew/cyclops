@@ -29,11 +29,12 @@ static const uint8_t oc_lut_data[] = {(uint8_t)OC0, (uint8_t)OC1, (uint8_t)OC2, 
 const uint8_t *Cyclops::_oc_lut = oc_lut_data;
 static const uint8_t trig_lut_data[] = {(uint8_t)TRIG0, (uint8_t)TRIG1, (uint8_t)TRIG2, (uint8_t)TRIG3};
 const uint8_t *Cyclops::_trig_lut = trig_lut_data;
-static const uint8_t trig_port_pos_lut_data[] = {7, 255, 255, 255};  // TODO: see note at ISR below
-const uint8_t *Cyclops::_trig_port_pos_lut = trig_port_pos_lut_data;
 
 Cyclops::Cyclops(Channel channel) : _channel(channel)
 {
+    // For ISR
+    channel_copy = _channel;
+
     // Set pin modes
     pinMode(_oc_lut[_channel], OUTPUT);
     pinMode(_cs_lut[_channel], OUTPUT);
@@ -152,9 +153,11 @@ void Cyclops::dac_shutdown(void) {
     digitalWrite(_cs_lut[_channel], HIGH);
 }
 
+// Only works with first channel if using Arudino Leonardo (Rev 3.5x of
+// Cyclops)
 void Cyclops::attach_interupt(void (*user_func)(void)) {
 
-	// Set trigger line as input and down weakly
+	// Set trigger line as input and pull down weakly
     pinMode(_trig_lut[_channel], INPUT);
 	digitalWrite(_trig_lut[_channel], LOW);
 
@@ -181,37 +184,17 @@ void Cyclops::attach_interupt(void (*user_func)(void)) {
 	}
 
 	// Assign function pointer for the interput handler to execute
-	interupt_func[_trig_port_pos_lut[_channel]] = user_func;
+	interupt_func[_channel] = user_func;
 }
 
-// TODO: Way too much going on here.
 // Interupt handler
 void isr(void) {
-	uint8_t bit;
-	uint8_t curr;
-	uint8_t mask;
-	uint8_t pin;
+
+    Serial.println(PINB);
 
 	// get the pin states for the indicated port.
-	curr = PINB;
-	mask = curr ^ interupt_last; // Bitwise xor for change detection
-	interupt_last = curr;
-
-	// mask is pins that have changed. screen out non pcint pins.
-	if ((mask &= PCMSK0) == 0)
-		return;
-
-	// mask is pcint pins that have changed.
-	for (uint8_t i = 0; i < 8; i++) {
-		bit = 0x01 << i;
-		pin = i;
-		if (bit & mask) {
-			// Trigger interrupt if bit is currently high.
-			if ((interupt_func[pin] != NULL)) { // (curr & bit) &&
-				interupt_func[pin]();
-			}
-		}
-	}
+	if (PINB & PCMSK0 && interupt_func[channel_copy] != NULL)
+        interupt_func[channel_copy]();
 }
 
 SIGNAL(PCINT0_vect) {

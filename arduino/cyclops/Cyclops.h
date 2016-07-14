@@ -71,13 +71,10 @@ typedef enum
 #define sbi(sfr,bit) (_SFR_BYTE(sfr) |= _BV(bit))
 
 // Interupt handling stuff
+// One function pointer for each channel
 typedef void (*voidFuncPtr)(void);
-
-// One function pointer for each bit on PORTB
-volatile static voidFuncPtr interupt_func[8] = { NULL };
-
-// Last port state
-volatile static uint8_t interupt_last;
+volatile static voidFuncPtr interupt_func[4] = { NULL };
+volatile static size_t channel_copy = 0;
 
 // Global interupt service routine
 static void isr(void);
