@@ -6,10 +6,10 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
 <layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
@@ -22,22 +22,22 @@
 <layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
@@ -151,20 +151,16 @@
 <rectangle x1="0" y1="0" x2="2.54" y2="80.01" layer="39"/>
 <rectangle x1="122.428" y1="0" x2="124.968" y2="80.01" layer="39"/>
 <rectangle x1="122.428" y1="0" x2="124.968" y2="80.01" layer="40" rot="R180"/>
-<text x="63.5" y="7.874" size="1.27" layer="22" font="vector" ratio="18" rot="MR180" align="center">CC BY-SA-NC 4.0
+<text x="74.676" y="6.35" size="1.27" layer="22" font="vector" ratio="18" rot="MR180" align="center">CC BY-SA-NC 4.0
 Jon Newman
 2015</text>
-<hole x="-3.175" y="-15.24" drill="3.302"/>
-<hole x="-13.589" y="-18.034" drill="3.302"/>
-<hole x="-2.794" y="-21.082" drill="3.302"/>
-<hole x="-5.461" y="-19.939" drill="3.302"/>
 <dimension x1="1.27" y1="0" x2="1.27" y2="80.01" x3="-16.002" y3="40.005" textsize="1.016" textratio="18" layer="51" dtype="vertical" unit="inch" visible="yes"/>
 <dimension x1="0" y1="78.74" x2="125.095" y2="78.74" x3="62.5475" y3="102.87" textsize="1.016" textratio="18" layer="51" dtype="horizontal" unit="inch"/>
-<text x="80.137" y="-6.858" size="1.016" layer="21" font="vector" ratio="18" align="center">GND</text>
-<text x="93.853" y="-6.096" size="1.016" layer="21" font="vector" ratio="18" align="center">+13.3V</text>
-<text x="13.081" y="87.503" size="1.016" layer="51" font="vector" ratio="18">VCTL</text>
-<text x="5.461" y="87.503" size="1.016" layer="51" font="vector" ratio="18">DAC</text>
-<text x="10.541" y="91.313" size="1.016" layer="51" font="vector" ratio="18" rot="R90">DISABLE</text>
+<text x="115.697" y="-7.874" size="1.016" layer="21" font="vector" ratio="18" align="center">GND</text>
+<text x="116.967" y="-11.938" size="1.016" layer="21" font="vector" ratio="18" align="center">+13.3V</text>
+<text x="25.146" y="88.646" size="1.016" layer="21" font="vector" ratio="18">VCTL</text>
+<text x="17.526" y="88.646" size="1.016" layer="21" font="vector" ratio="18">DAC</text>
+<text x="22.606" y="92.456" size="1.016" layer="21" font="vector" ratio="18" rot="R90">DISABLE</text>
 <polygon width="0.254" layer="30">
 <vertex x="66.802" y="65.913"/>
 <vertex x="112.522" y="65.913"/>
@@ -179,7 +175,7 @@ Jon Newman
 <vertex x="67.056" y="62.992"/>
 <vertex x="66.802" y="62.992"/>
 </polygon>
-<text x="62.992" y="14.224" size="2.1844" layer="22" font="vector" ratio="18" rot="MR180" align="center">Cyclops
+<text x="74.168" y="13.716" size="2.1844" layer="22" font="vector" ratio="18" rot="MR180" align="center">Cyclops
 Rev. 3.6</text>
 <text x="109.728" y="17.526" size="1.016" layer="21" font="vector" ratio="18" rot="R270" align="center">S1</text>
 <text x="97.282" y="17.526" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">S0</text>
@@ -193,16 +189,16 @@ IN USE.</text>
 <text x="100.203" y="-10.16" size="1.016" layer="21" font="vector" ratio="18" rot="R180">(DNP)</text>
 <text x="76.581" y="38.862" size="1.016" layer="21" font="vector" ratio="18">(DNP)</text>
 <text x="118.745" y="63.119" size="1.016" layer="21" font="vector" ratio="18" rot="R90">GND</text>
-<text x="-77.724" y="0.508" size="1.27" layer="21" font="vector" ratio="18" rot="R180" align="center">Cyclops Rev. 3.6
+<text x="51.308" y="19.431" size="1.27" layer="21" font="vector" ratio="18" rot="R180" align="center">Cyclops Rev. 3.6
 CC BY-SA-NC 4.0
 Jon Newman
 2016</text>
-<wire x1="-87.63" y1="4.953" x2="-87.63" y2="-3.937" width="0.4064" layer="21"/>
-<wire x1="-87.63" y1="-3.937" x2="-67.818" y2="-3.937" width="0.4064" layer="21"/>
-<wire x1="-67.818" y1="-3.937" x2="-67.818" y2="4.953" width="0.4064" layer="21"/>
-<wire x1="-67.818" y1="4.953" x2="-87.63" y2="4.953" width="0.4064" layer="21"/>
-<text x="82.296" y="46.482" size="1.016" layer="21" font="vector" ratio="18">(DNP)</text>
-<text x="59.436" y="11.684" size="1.016" layer="21" font="vector" ratio="18" align="center">LED-</text>
+<wire x1="41.402" y1="23.876" x2="41.402" y2="14.986" width="0.4064" layer="21"/>
+<wire x1="41.402" y1="14.986" x2="61.214" y2="14.986" width="0.4064" layer="21"/>
+<wire x1="61.214" y1="14.986" x2="61.214" y2="23.876" width="0.4064" layer="21"/>
+<wire x1="61.214" y1="23.876" x2="41.402" y2="23.876" width="0.4064" layer="21"/>
+<text x="81.915" y="46.355" size="1.016" layer="21" font="vector" ratio="18">(DNP)</text>
+<text x="59.436" y="11.557" size="1.016" layer="21" font="vector" ratio="18" align="center">LED-</text>
 <text x="59.436" y="9.271" size="1.016" layer="21" font="vector" ratio="18" align="center">LED+</text>
 <text x="61.595" y="1.397" size="1.016" layer="21" font="vector" ratio="18" rot="R180" align="center">DGND</text>
 <text x="92.583" y="-8.763" size="1.016" layer="21" font="vector" ratio="18" align="center">SCL</text>
@@ -213,29 +209,55 @@ Jon Newman
 <text x="2.667" y="6.858" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">DGND</text>
 <text x="3.175" y="10.541" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">SCL</text>
 <text x="3.175" y="14.224" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">SDA</text>
-<text x="54.864" y="6.223" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">LED+</text>
-<text x="54.864" y="2.413" size="1.016" layer="22" font="vector" ratio="18" rot="MR180" align="center">LED-</text>
-<text x="75.819" y="4.318" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">GND</text>
-<text x="93.345" y="4.318" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">+12V</text>
+<text x="58.801" y="9.144" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">LED+</text>
+<text x="58.801" y="11.557" size="1.016" layer="22" font="vector" ratio="18" rot="MR180" align="center">LED-</text>
+<text x="115.824" y="-7.874" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">GND</text>
+<text x="116.967" y="-11.938" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">+13.3V</text>
 <text x="118.745" y="65.913" size="1.016" layer="22" font="vector" ratio="18" rot="MR270">GND</text>
-<text x="35.687" y="2.286" size="1.016" layer="22" font="vector" ratio="18" rot="MR90" align="center">DGND</text>
-<text x="39.37" y="1.905" size="1.016" layer="22" font="vector" ratio="18" rot="MR90" align="center">SCL</text>
-<text x="42.926" y="1.778" size="1.016" layer="22" font="vector" ratio="18" rot="MR90" align="center">SDA</text>
-<text x="42.037" y="57.531" size="1.016" layer="21" font="vector" ratio="18" rot="R180">(DNP)</text>
-<hole x="-13.208" y="-23.622" drill="3.302"/>
-<hole x="-10.668" y="-17.526" drill="3.302"/>
-<text x="14.986" y="72.009" size="1.016" layer="22" font="vector" ratio="18" rot="MR0">DAC&lt;OFF&gt;VCTL</text>
-<wire x1="40.25898125" y1="6.223" x2="114.45183125" y2="6.223" width="0.4064" layer="21" style="shortdash"/>
-<wire x1="114.45183125" y1="6.223" x2="116.713" y2="8.48416875" width="0.4064" layer="21" style="shortdash"/>
-<wire x1="116.713" y1="8.48416875" x2="116.713" y2="15.494" width="0.4064" layer="21" style="shortdash"/>
-<wire x1="40.25898125" y1="6.223" x2="37.084" y2="2.667" width="0.4064" layer="21" style="shortdash"/>
-<wire x1="37.084" y1="2.667" x2="24.384" y2="2.667" width="0.4064" layer="21" style="shortdash"/>
-<wire x1="24.384" y1="2.667" x2="24.384" y2="10.98094375" width="0.4064" layer="21" style="shortdash"/>
-<wire x1="24.384" y1="10.98094375" x2="29.4825125" y2="16.07945625" width="0.4064" layer="21" style="shortdash"/>
-<wire x1="29.4825125" y1="16.07945625" x2="32.889465625" y2="16.07945625" width="0.4064" layer="21" style="shortdash"/>
-<wire x1="32.889465625" y1="16.07945625" x2="43.434" y2="26.623990625" width="0.4064" layer="21" style="shortdash"/>
-<wire x1="43.434" y1="26.623990625" x2="43.434" y2="51.435" width="0.4064" layer="21" style="shortdash"/>
+<text x="55.245" y="1.397" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">DGND</text>
+<text x="58.42" y="3.175" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">SCL</text>
+<text x="55.499" y="4.953" size="1.016" layer="22" font="vector" ratio="18" rot="MR0" align="center">SDA</text>
+<text x="99.822" y="-8.128" size="1.016" layer="21" font="vector" ratio="18" rot="R180">(DNP)</text>
+<text x="42.672" y="77.089" size="1.016" layer="22" font="vector" ratio="18" rot="MR0">DAC&lt;OFF&gt;VCTL</text>
 <text x="91.059" y="-18.542" size="1.778" layer="21" font="vector" ratio="18" align="center">TEST/SOLDER POINT SINKSCREEN GO ON TOP AND BOTTOM!</text>
+<text x="8.382" y="45.339" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center-left">CS</text>
+<text x="11.43" y="45.339" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center-left">LDAC</text>
+<text x="14.478" y="45.339" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center-left">SENSE</text>
+<text x="17.526" y="45.339" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center-left">OC</text>
+<text x="20.701" y="45.339" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center-left">VI</text>
+<text x="5.207" y="45.212" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center-left">TRIG</text>
+<text x="2.921" y="43.942" size="1.016" layer="21" font="vector" ratio="18" align="center">0</text>
+<text x="2.921" y="42.418" size="1.016" layer="21" font="vector" ratio="18" align="center">1</text>
+<text x="2.921" y="40.894" size="1.016" layer="21" font="vector" ratio="18" align="center">2</text>
+<text x="2.921" y="39.37" size="1.016" layer="21" font="vector" ratio="18" align="center">3</text>
+<text x="2.794" y="45.212" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center-left">BRD-ADDR</text>
+<wire x1="3.937" y1="50.038" x2="3.937" y2="38.1" width="0.127" layer="21"/>
+<wire x1="3.937" y1="38.1" x2="12.827" y2="38.1" width="0.127" layer="21"/>
+<wire x1="12.827" y1="38.1" x2="16.637" y2="38.1" width="0.127" layer="21"/>
+<wire x1="18.923" y1="38.1" x2="21.971" y2="38.1" width="0.127" layer="21"/>
+<wire x1="12.827" y1="38.1" x2="12.827" y2="37.592" width="0.127" layer="21"/>
+<text x="11.049" y="36.83" size="1.016" layer="21" font="vector" ratio="18" align="center-left">0 Ohm</text>
+<wire x1="3.937" y1="50.038" x2="21.971" y2="50.038" width="0.127" layer="21"/>
+<wire x1="21.971" y1="50.038" x2="21.971" y2="38.1" width="0.127" layer="21"/>
+<wire x1="30.353" y1="55.245" x2="30.353" y2="61.468" width="0.127" layer="21"/>
+<wire x1="30.353" y1="61.468" x2="29.972" y2="61.849" width="0.127" layer="21"/>
+<wire x1="29.972" y1="61.849" x2="29.972" y2="63.119" width="0.127" layer="21"/>
+<wire x1="29.972" y1="63.119" x2="37.465" y2="63.119" width="0.127" layer="21"/>
+<wire x1="37.465" y1="63.119" x2="37.465" y2="67.945" width="0.127" layer="21"/>
+<wire x1="37.465" y1="67.945" x2="29.972" y2="67.945" width="0.127" layer="21"/>
+<wire x1="29.972" y1="67.945" x2="29.972" y2="63.119" width="0.127" layer="21"/>
+<wire x1="42.164" y1="60.452" x2="42.164" y2="51.943" width="0.127" layer="21"/>
+<wire x1="42.164" y1="51.943" x2="39.497" y2="51.943" width="0.127" layer="21"/>
+<wire x1="39.497" y1="51.943" x2="39.497" y2="47.371" width="0.127" layer="21"/>
+<wire x1="39.497" y1="47.371" x2="46.101" y2="47.371" width="0.127" layer="21"/>
+<wire x1="46.101" y1="47.371" x2="46.101" y2="51.943" width="0.127" layer="21"/>
+<wire x1="46.101" y1="51.943" x2="42.164" y2="51.943" width="0.127" layer="21"/>
+<wire x1="42.164" y1="60.452" x2="43.053" y2="60.452" width="0.127" layer="21"/>
+<text x="51.054" y="87.503" size="1.016" layer="21" font="vector" ratio="18" rot="R90">TEST</text>
+<text x="37.338" y="94.615" size="1.016" layer="21" font="vector" ratio="18" rot="R90">GAIN</text>
+<text x="97.79" y="-2.921" size="1.016" layer="21" font="vector" ratio="18" rot="R180">AUX</text>
+<text x="105.41" y="-2.921" size="1.016" layer="21" font="vector" ratio="18" rot="R180">CURR</text>
+<text x="90.424" y="6.858" size="1.27" layer="22" font="fixed" align="center">ヽ(´ー｀)ノ</text>
 </plain>
 <libraries>
 <library name="cyclops">
@@ -22963,20 +22985,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-1.397" y="1.902" size="1.016" layer="25" font="vector" ratio="19">&gt;NAME</text>
 <wire x1="-1.397" y1="0.254" x2="-1.397" y2="-0.254" width="0.1524" layer="21" curve="-180"/>
 </package>
-<package name="0805">
-<wire x1="-0.9652" y1="0.635" x2="0.9652" y2="0.635" width="0.1016" layer="51"/>
-<wire x1="0.9652" y1="-0.635" x2="-0.9652" y2="-0.635" width="0.1016" layer="51"/>
-<wire x1="-1.778" y1="1.016" x2="1.778" y2="1.016" width="0.127" layer="21"/>
-<wire x1="1.778" y1="1.016" x2="1.778" y2="-1.016" width="0.127" layer="21"/>
-<wire x1="1.778" y1="-1.016" x2="-1.778" y2="-1.016" width="0.127" layer="21"/>
-<wire x1="-1.778" y1="-1.016" x2="-1.778" y2="1.016" width="0.127" layer="21"/>
-<smd name="1" x="-1.0414" y="0" dx="0.9652" dy="1.524" layer="1"/>
-<smd name="2" x="1.0414" y="0" dx="0.9652" dy="1.524" layer="1"/>
-<text x="-1.778" y="1.27" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
-<text x="-2.032" y="-2.286" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
-<rectangle x1="-1.016" y1="-0.635" x2="-0.6096" y2="0.635" layer="51"/>
-<rectangle x1="0.6096" y1="-0.635" x2="1.016" y2="0.635" layer="51"/>
-</package>
 <package name="1206">
 <wire x1="-1.5494" y1="0.8128" x2="1.5494" y2="0.8128" width="0.1016" layer="51"/>
 <wire x1="1.5494" y1="-0.8128" x2="-1.5494" y2="-0.8128" width="0.1016" layer="51"/>
@@ -23340,32 +23348,32 @@ einem neuen Namen ab.</description>
 </element>
 <element name="U1" library="cyclops" package="SO08" value="MCP4921" x="25.654" y="55.118" smashed="yes">
 <attribute name="NAME" x="27.432" y="54.61" size="1.016" layer="25" font="vector" ratio="18" rot="SR90"/>
-<attribute name="VALUE" x="29.591" y="52.197" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="29.337" y="52.07" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="C3" library="cyclops" package="1206" value="10uF" x="26.797" y="60.586" smashed="yes" rot="R180">
-<attribute name="NAME" x="29.337" y="63.112" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="29.337" y="64.509" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="23.876" y="62.11" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="26.035" y="62.11" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="C4" library="cyclops" package="0603" value=".1uF" x="21.456" y="53.975" smashed="yes" rot="R270">
-<attribute name="NAME" x="22.225" y="51.936" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="22.225" y="50.793" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="20.701" y="56.268" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="20.066" y="50.807" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="C5" library="cyclops" package="0805" value="1uF" x="19.424" y="53.975" smashed="yes" rot="R270">
 <attribute name="MN" value="TDK Corp." x="19.424" y="53.975" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="19.424" y="53.975" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DK" value="" x="19.424" y="53.975" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VID" value="DK" x="19.424" y="53.975" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="17.526" y="55.746" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="17.526" y="54.603" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="16.884" y="53.086" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="17.9" y="53.086" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="C2" library="cyclops" package="0603" value="" x="21.47" y="58.293" smashed="yes" rot="R180">
-<attribute name="NAME" x="21.463" y="57.27" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="19.558" y="58.921" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="R9" library="cyclops" package="0603" value="" x="21.47" y="60.198" smashed="yes">
 <attribute name="MN" value="Panasonic" x="21.47" y="60.198" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="21.47" y="60.198" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="21.47" y="60.198" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="20.828" y="59.175" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="19.558" y="60.572" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="R43" library="cyclops" package="0603" value="0" x="78.225" y="36.195" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="76.955" y="36.195" size="1.778" layer="27" rot="R180" display="off"/>
@@ -23378,7 +23386,7 @@ einem neuen Namen ab.</description>
 <attribute name="MN" value="Panasonic" x="78.225" y="38.1" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="78.225" y="38.1" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="78.225" y="38.1" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="75.819" y="37.084" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="NAME" x="75.819" y="36.449" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
 <attribute name="VALUE" x="75.438" y="39.37" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="RSENSE" library="cyclops" package="2512" value="1R0,2W" x="70.224" y="26.289" smashed="yes" rot="R180">
@@ -23391,8 +23399,8 @@ einem neuen Namen ab.</description>
 <attribute name="MPN" value="ADR03AKSZ-REEL7" x="55.499" y="55.76" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="SUPPLIER" value="Analog Devices" x="55.499" y="55.76" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="OC_FARNELL" value="1838919" x="55.499" y="55.76" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="52.9266" y="58.928" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
-<attribute name="VALUE" x="52.959" y="57.792" size="1.016" layer="27" font="vector" ratio="18" rot="SR0"/>
+<attribute name="NAME" x="57.531" y="54.9586" size="1.016" layer="25" font="vector" ratio="18" rot="SR90"/>
+<attribute name="VALUE" x="52.959" y="57.919" size="1.016" layer="27" font="vector" ratio="18" rot="SR0"/>
 </element>
 <element name="C22" library="cyclops" package="0805" value="1uF" x="60.833" y="52.19" smashed="yes">
 <attribute name="MN" value="TDK Corp." x="60.833" y="52.19" size="1.778" layer="27" display="off"/>
@@ -23410,8 +23418,8 @@ einem neuen Namen ab.</description>
 <attribute name="MN" value="Panasonic" x="52.832" y="53.728" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="52.832" y="53.728" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="52.832" y="53.728" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="50.927" y="57.651" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
-<attribute name="VALUE" x="49.784" y="57.651" size="1.016" layer="27" font="vector" ratio="18" rot="R270"/>
+<attribute name="NAME" x="50.927" y="55.252" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="52.07" y="55.125" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="R32" library="cyclops" package="0603" value="1k" x="58.547" y="62.364" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="56.007" y="62.364" size="1.778" layer="27" rot="R180" display="off"/>
@@ -23429,8 +23437,8 @@ einem neuen Namen ab.</description>
 <attribute name="VALUE" x="63.874" y="44.323" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="C29" library="cyclops" package="0603" value=".1uF" x="65.659" y="41.529" smashed="yes" rot="R90">
-<attribute name="NAME" x="65.151" y="44.323" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
-<attribute name="VALUE" x="66.167" y="44.323" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
+<attribute name="NAME" x="64.262" y="38.735" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="64.262" y="37.592" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="AUX&lt;FB&gt;CURR" library="cyclops" package="JS102011SAQN" value="JS102" x="100.584" y="1.778" smashed="yes" rot="MR0">
 <attribute name="NAME" x="100.598" y="4.064" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="bottom-center"/>
@@ -23470,56 +23478,56 @@ einem neuen Namen ab.</description>
 <attribute name="MN" value="Panasonic" x="21.844" y="60.96" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="21.844" y="60.96" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="21.844" y="60.96" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
-<attribute name="NAME" x="4.431" y="64.262" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="5.574" y="64.262" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="3.542" y="60.325" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="3.542" y="63.754" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="R20" library="cyclops" package="0603" value="10k" x="36.449" y="57.785" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="35.052" y="57.531" size="1.6764" layer="27" ratio="18" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="35.052" y="57.531" size="1.6764" layer="27" ratio="18" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="35.052" y="57.531" size="1.6764" layer="27" ratio="18" rot="R180" display="off"/>
-<attribute name="NAME" x="34.544" y="57.277" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="34.544" y="58.293" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
+<attribute name="NAME" x="34.29" y="53.975" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="34.29" y="57.023" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="R17" library="cyclops" package="0603" value="40k" x="39.497" y="56.388" smashed="yes" rot="R90">
 <attribute name="MN" value="Panasonic" x="39.116" y="57.785" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="39.116" y="57.785" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="39.116" y="57.785" size="1.6764" layer="27" ratio="18" rot="R90" display="off"/>
-<attribute name="NAME" x="38.481" y="58.166" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="38.481" y="57.023" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
+<attribute name="NAME" x="38.862" y="54.102" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="38.862" y="52.959" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="R16" library="cyclops" package="0603" value="10k" x="32.258" y="58.293" smashed="yes">
 <attribute name="MN" value="Panasonic" x="32.258" y="58.293" size="1.6764" layer="27" ratio="18" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="32.258" y="58.293" size="1.6764" layer="27" ratio="18" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="32.258" y="58.293" size="1.6764" layer="27" ratio="18" display="off"/>
-<attribute name="NAME" x="34.163" y="58.801" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="34.163" y="57.785" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+<attribute name="NAME" x="30.353" y="65.532" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="33.655" y="65.532" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="C19" library="cyclops" package="0603" value=".1uF" x="39.497" y="60.833" smashed="yes" rot="R270">
 <attribute name="NAME" x="42.164" y="62.357" size="1.016" layer="25" font="vector" ratio="18" rot="R90" align="center-right"/>
-<attribute name="VALUE" x="41.148" y="62.357" size="1.016" layer="27" font="vector" ratio="18" rot="R270" align="center-left"/>
+<attribute name="VALUE" x="41.021" y="60.833" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="R26" library="cyclops" package="0603" value="1k" x="10.414" y="62.484" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="17.018" y="61.087" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="17.018" y="61.087" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="17.018" y="61.087" size="1.6764" layer="27" ratio="18" rot="R270" display="off"/>
-<attribute name="NAME" x="10.033" y="64.516" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="11.049" y="64.262" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="8.763" y="59.944" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="9.398" y="60.452" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="C17" library="cyclops" package="0603" value=".1uF" x="32.258" y="60.579" smashed="yes" rot="R180">
-<attribute name="NAME" x="30.353" y="60.198" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="30.353" y="61.214" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
+<attribute name="NAME" x="30.353" y="67.056" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="33.655" y="67.056" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="C32" library="cyclops" package="0805" value="1uF" x="78.74" y="41.783" smashed="yes" rot="R90">
 <attribute name="MN" value="TDK Corp." x="78.74" y="41.783" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="78.74" y="41.783" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="" x="78.74" y="41.783" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VID" value="DK" x="78.74" y="41.783" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="77.724" y="45.212" size="1.016" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="77.724" y="44.069" size="1.016" layer="27" font="vector" ratio="18"/>
+<attribute name="NAME" x="77.724" y="44.704" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="77.724" y="43.688" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="C30" library="cyclops" package="0603" value=".1uF" x="76.708" y="41.529" smashed="yes" rot="R90">
-<attribute name="NAME" x="75.819" y="43.815" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="76.835" y="43.815" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="75.692" y="43.307" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="76.835" y="43.053" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="R22" library="cyclops" package="0603" value="1k" x="6.096" y="53.975" smashed="yes">
 <attribute name="MN" value="Panasonic" x="6.096" y="53.975" size="1.778" layer="27" display="off"/>
@@ -23545,27 +23553,27 @@ einem neuen Namen ab.</description>
 <attribute name="VALUE" x="120.973" y="52.169" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="GAIN" library="cyclops" package="3310C-001" value="1k" x="37.084" y="75.184" smashed="yes" rot="R90">
-<attribute name="NAME" x="33.655" y="73.025" size="1.016" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="38.481" y="73.025" size="1.016" layer="27" font="vector" ratio="18"/>
+<attribute name="NAME" x="33.655" y="72.898" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="38.481" y="72.898" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="VCTL&lt;OFF&gt;DAC" library="cyclops" package="2M1-SP1-T2-B4-M6RE" value="100-SP3" x="22.0472" y="76.962" smashed="yes" rot="R270">
 <attribute name="NAME" x="16.4592" y="72.009" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="19.3802" y="74.676" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="EXPANSION" library="cyclops" package="2X05-IDC" value="PINH2X5_ICD-H" x="48.387" y="7.874" smashed="yes" rot="R180">
-<attribute name="NAME" x="45.085" y="11.684" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="NAME" x="45.085" y="11.811" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="53.086" y="5.588" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="VAUX_IN" library="jonnew" package="0731000105" value="0731000105" x="30.861" y="0" smashed="yes">
-<attribute name="NAME" x="32.258" y="9.652" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="NAME" x="23.114" y="9.525" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="35.56" y="1.524" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="R38" library="cyclops" package="0603" value="2.2k" x="44.069" y="54.61" smashed="yes">
 <attribute name="MN" value="Panasonic" x="44.069" y="54.61" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="44.069" y="54.61" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="44.069" y="54.61" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="42.672" y="55.88" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="43.815" y="55.88" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="39.878" y="48.26" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="42.926" y="48.26" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="LED-" library="cyclops" package="A-2107" value="24.243.2" x="67.564" y="2.54" smashed="yes" rot="R90">
 <attribute name="NAME" x="64.389" y="9.525" size="1.016" layer="25" font="vector" ratio="18"/>
@@ -23593,23 +23601,23 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="60.96" y="66.294" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="60.96" y="65.151" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="U$30" library="open-ephys" package="OPEN_EPHYS_LOGO" value="OPEN_EPHYS_LOGO" x="97.826446875" y="11.64475625" smashed="yes" rot="MR0"/>
+<element name="U$30" library="open-ephys" package="OPEN_EPHYS_LOGO" value="OPEN_EPHYS_LOGO" x="65.568446875" y="24.59875625" smashed="yes" rot="MR315"/>
 <element name="HEATSINK" library="cyclops" package="BDN18" value="BDN18" x="112.522" y="20.193" smashed="yes" rot="MR0">
 <attribute name="NAME" x="111.379" y="66.294" size="1.016" layer="26" font="vector" ratio="18" rot="MR0"/>
-<attribute name="VALUE" x="103.378" y="66.294" size="1.016" layer="28" font="vector" ratio="18" rot="MR0"/>
+<attribute name="VALUE" x="104.902" y="66.548" size="1.016" layer="28" font="vector" ratio="18" rot="MR0"/>
 </element>
 <element name="R36" library="cyclops" package="0603" value="0" x="76.2" y="46.482" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="74.295" y="45.847" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="74.295" y="45.847" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="74.295" y="45.847" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="78.105" y="47.879" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="78.105" y="46.863" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+<attribute name="NAME" x="74.041" y="47.752" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="77.47" y="47.752" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="R39" library="cyclops" package="0603" value="" x="79.756" y="46.482" smashed="yes">
 <attribute name="MN" value="Panasonic" x="81.661" y="47.752" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="81.661" y="47.752" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="81.661" y="47.752" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="81.788" y="47.244" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="NAME" x="78.867" y="47.879" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="81.788" y="46.228" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="R41" library="cyclops" package="0603" value="220k" x="82.931" y="44.196" smashed="yes" rot="R90">
@@ -23623,61 +23631,52 @@ einem neuen Namen ab.</description>
 <attribute name="MN" value="Panasonic" x="34.798" y="11.557" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="34.798" y="11.557" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="34.798" y="11.557" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="37.465" y="12.954" size="1.016" layer="25" font="vector" ratio="18" rot="R90" align="center-right"/>
-<attribute name="VALUE" x="36.195" y="12.954" size="1.016" layer="27" font="vector" ratio="18" rot="R270" align="center-left"/>
+<attribute name="NAME" x="34.036" y="13.97" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="35.179" y="13.97" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="TRIG" library="jonnew" package="0731000105" value="0731000105" x="12.827" y="0" smashed="yes">
-<attribute name="NAME" x="14.224" y="9.652" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="NAME" x="7.747" y="9.652" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="17.526" y="1.27" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="R30" library="cyclops" package="0603" value="1k" x="12.446" y="62.484" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="28.956" y="61.214" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="28.956" y="61.214" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="28.956" y="61.214" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="13.843" y="63.5" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="13.843" y="66.548" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="13.97" y="60.579" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="13.97" y="64.135" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="J_VI3" library="jonnew" package="0402" value="0" x="20.574" y="39.37" smashed="yes">
-<attribute name="NAME" x="22.352" y="39.37" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_VI2" library="jonnew" package="0402" value="0" x="20.574" y="40.894" smashed="yes">
-<attribute name="NAME" x="22.352" y="41.656" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_VI1" library="jonnew" package="0402" value="0" x="20.574" y="42.418" smashed="yes">
-<attribute name="NAME" x="22.352" y="40.64" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_VI0" library="jonnew" package="0402" value="0" x="20.574" y="43.942" smashed="yes">
-<attribute name="NAME" x="22.352" y="43.307" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="20.574" y="52.705" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
-</element>
+<element name="J_VI3" library="jonnew" package="0402" value="0" x="20.574" y="39.37" smashed="yes"/>
+<element name="J_VI2" library="jonnew" package="0402" value="0" x="20.574" y="40.894" smashed="yes"/>
+<element name="J_VI1" library="jonnew" package="0402" value="0" x="20.574" y="42.418" smashed="yes"/>
+<element name="J_VI0" library="jonnew" package="0402" value="0" x="20.574" y="43.942" smashed="yes"/>
 <element name="R1" library="cyclops" package="0603" value="110k" x="32.258" y="56.134" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="32.258" y="56.134" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="32.258" y="56.134" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="32.258" y="56.134" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="33.909" y="56.769" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="33.909" y="55.753" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+<attribute name="NAME" x="30.353" y="64.008" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="33.655" y="64.008" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="C1" library="cyclops" package="0805" value="1uF" x="32.131" y="53.848" smashed="yes">
-<attribute name="NAME" x="28.829" y="54.991" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="30.099" y="54.991" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="30.353" y="52.197" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="32.385" y="52.197" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 <attribute name="MN" value="TDK Corp." x="32.131" y="53.848" size="1.778" layer="27" display="off"/>
 <attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="32.131" y="53.848" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="" x="32.131" y="53.848" size="1.778" layer="27" display="off"/>
 <attribute name="VID" value="DK" x="32.131" y="53.848" size="1.778" layer="27" display="off"/>
 </element>
-<element name="R2" library="cyclops" package="0603" value="10k" x="25.4" y="18.542" smashed="yes" rot="R180">
-<attribute name="MN" value="Panasonic" x="25.4" y="18.542" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="DK" value="PxxxxHTR-ND" x="25.4" y="18.542" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="ERJ-3EKFxxxxV" x="25.4" y="18.542" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="27.686" y="19.558" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="27.686" y="18.415" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+<element name="R2" library="cyclops" package="0603" value="10k" x="25.4" y="17.78" smashed="yes" rot="R180">
+<attribute name="MN" value="Panasonic" x="25.4" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DK" value="PxxxxHTR-ND" x="25.4" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="ERJ-3EKFxxxxV" x="25.4" y="17.78" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="23.114" y="15.24" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="23.114" y="17.526" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="R3" library="cyclops" package="0603" value="10k" x="25.4" y="16.256" smashed="yes" rot="R180">
-<attribute name="MN" value="Panasonic" x="25.4" y="16.256" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="DK" value="PxxxxHTR-ND" x="25.4" y="16.256" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="ERJ-3EKFxxxxV" x="25.4" y="16.256" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="27.686" y="17.145" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="27.686" y="16.002" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+<element name="R3" library="cyclops" package="0603" value="10k" x="25.4" y="15.494" smashed="yes" rot="R180">
+<attribute name="MN" value="Panasonic" x="25.4" y="15.494" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DK" value="PxxxxHTR-ND" x="25.4" y="15.494" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="ERJ-3EKFxxxxV" x="25.4" y="15.494" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="23.622" y="13.97" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="23.622" y="12.7" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="U11" library="jonnew" package="SOT95P310X175-5N" value="THS4281" x="97.536" y="43.688" smashed="yes">
 <attribute name="NAME" x="98.044" y="42.418" size="1.016" layer="25" font="vector" ratio="18" rot="SR90"/>
@@ -23727,12 +23726,12 @@ einem neuen Namen ab.</description>
 <attribute name="VALUE" x="93.98" y="35.179" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="U2" library="cyclops" package="SOT95P310X175-5N" value="LT1931" x="31.115" y="32.258" smashed="yes" rot="R270">
-<attribute name="NAME" x="31.242" y="29.845" size="1.016" layer="25" font="vector" ratio="18" rot="SR270"/>
-<attribute name="VALUE" x="30.099" y="29.845" size="1.016" layer="27" font="vector" ratio="18" rot="SR270"/>
+<attribute name="NAME" x="30.226" y="31.75" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
+<attribute name="VALUE" x="29.337" y="29.972" size="1.016" layer="27" font="vector" ratio="18" rot="SR90"/>
 </element>
 <element name="C8" library="cyclops" package="1206" value="1uF" x="33.147" y="37.084" smashed="yes" rot="R90">
-<attribute name="NAME" x="31.623" y="37.973" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="31.623" y="39.243" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="31.623" y="39.37" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
+<attribute name="VALUE" x="31.623" y="38.227" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="C11" library="cyclops" package="1210" value="22uF" x="31.623" y="44.45" smashed="yes" rot="R180">
 <attribute name="NAME" x="27.051" y="44.085" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
@@ -23746,27 +23745,27 @@ einem neuen Namen ab.</description>
 <attribute name="MN" value="Panasonic" x="27.178" y="34.29" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="27.178" y="34.29" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="27.178" y="34.29" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="27.686" y="36.576" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="27.686" y="37.719" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
+<attribute name="NAME" x="26.162" y="36.703" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="26.162" y="37.846" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="R11" library="cyclops" package="0603" value="29.4k" x="24.892" y="33.274" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="24.892" y="33.274" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="24.892" y="33.274" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="24.892" y="33.274" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="25.654" y="34.671" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="25.654" y="35.814" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
+<attribute name="NAME" x="22.352" y="36.068" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="22.352" y="34.798" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="C9" library="cyclops" package="0603" value="220pF" x="24.892" y="31.75" smashed="yes">
-<attribute name="NAME" x="27.178" y="28.956" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="27.178" y="30.226" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
+<attribute name="NAME" x="27.178" y="30.861" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="23.368" y="30.099" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="L3" library="cyclops" package="CLS62" value="10uH" x="38.227" y="37.084" smashed="yes">
 <attribute name="NAME" x="40.513" y="41.275" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
 <attribute name="VALUE" x="40.513" y="42.418" size="1.016" layer="21" font="vector" ratio="18" rot="R180" align="center-left"/>
 </element>
 <element name="L4" library="cyclops" package="0603" value="MPZ1608" x="43.434" y="38.227" smashed="yes">
-<attribute name="NAME" x="42.672" y="39.243" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="44.196" y="39.243" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="42.672" y="39.37" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="44.196" y="39.37" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="POWER" library="cyclops" package="PJ-063BH" value="PJ-063BH" x="113.224" y="0" smashed="yes" rot="MR180">
 <attribute name="NAME" x="115.636" y="1.462" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
@@ -23781,8 +23780,8 @@ einem neuen Namen ab.</description>
 <attribute name="VALUE" x="81.661" y="40.894" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="C6" library="cyclops" package="1206" value="4.7uF" x="34.544" y="29.718" smashed="yes" rot="R90">
-<attribute name="NAME" x="35.56" y="25.527" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="35.56" y="26.67" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="36.322" y="31.369" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="36.322" y="30.099" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="U12" library="cyclops" package="SOT65P300X175-N" value="MAX4564" x="84.836" y="36.195" smashed="yes" rot="R270">
 <attribute name="NAME" x="81.685" y="34.211" size="1.016" layer="25" font="vector" ratio="18" rot="SR90"/>
@@ -23813,15 +23812,15 @@ einem neuen Namen ab.</description>
 <attribute name="VALUE" x="112.776" y="47.244" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="C10" library="cyclops" package="153CLV-0807" value="100uF" x="107.569" y="59.817" smashed="yes" rot="R180">
-<attribute name="NAME" x="103.632" y="54.229" size="1.016" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="107.188" y="54.229" size="1.016" layer="27" font="vector" ratio="18"/>
+<attribute name="NAME" x="109.093" y="64.389" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="113.03" y="61.087" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="R14" library="cyclops" package="0603" value="1k" x="97.028" y="64.389" smashed="yes">
 <attribute name="MN" value="Panasonic" x="97.028" y="64.389" size="1.016" layer="27" ratio="18" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="97.028" y="64.389" size="1.016" layer="27" ratio="18" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="97.028" y="64.389" size="1.016" layer="27" ratio="18" display="off"/>
-<attribute name="NAME" x="95.25" y="65.405" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="96.393" y="65.405" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="97.155" y="65.405" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="97.155" y="68.58" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="R13" library="cyclops" package="0603" value="10k" x="100.838" y="64.389" smashed="yes">
 <attribute name="MN" value="Panasonic" x="100.838" y="64.389" size="1.016" layer="27" ratio="18" display="off"/>
@@ -23830,7 +23829,7 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="101.6" y="65.405" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
 <attribute name="VALUE" x="102.743" y="65.405" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
-<element name="U$60" library="SparkFun-Aesthetics" package="OSHW-LOGO-L" value="" x="88.519" y="8.128" rot="MR0"/>
+<element name="U$60" library="SparkFun-Aesthetics" package="OSHW-LOGO-L" value="" x="90.424" y="12.192" rot="MR0"/>
 <element name="U13" library="cyclops" package="SOT23-6" value="ZXTD" x="92.456" y="43.688" smashed="yes" rot="R90">
 <attribute name="VALUE" x="95.301" y="41.91" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 <attribute name="NAME" x="90.681" y="42.418" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
@@ -23840,100 +23839,76 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="86.487" y="46.479" size="1.016" layer="25" font="vector" ratio="18"/>
 </element>
 <element name="R10" library="jonnew" package="0603" value="100" x="44.069" y="59.309" smashed="yes">
-<attribute name="NAME" x="42.418" y="60.579" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="43.434" y="60.579" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="39.878" y="51.054" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="43.053" y="51.054" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 <attribute name="MN" value="Panasonic" x="44.069" y="59.309" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="44.069" y="59.309" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="44.069" y="59.309" size="1.778" layer="27" display="off"/>
 </element>
 <element name="D3" library="cyclops" package="SOD-323" value="MM3Z5V1" x="44.196" y="61.722" smashed="yes">
-<attribute name="NAME" x="44.45" y="63.627" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="46.355" y="64.77" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="44.069" y="62.992" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="45.339" y="62.992" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="R40" library="cyclops" package="0603" value="1k" x="71.882" y="46.482" smashed="yes">
 <attribute name="MN" value="Panasonic" x="71.882" y="46.482" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="71.882" y="46.482" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="71.882" y="46.482" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="70.358" y="47.879" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="70.485" y="45.085" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+<attribute name="NAME" x="70.104" y="47.879" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="73.914" y="45.72" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="C36" library="cyclops" package="0603" value="220pF" x="100.965" y="43.688" smashed="yes" rot="R90">
 <attribute name="NAME" x="102.108" y="43.942" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="102.108" y="42.799" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="-5V" library="jonnew" package="RC0603" value="RCU-0C" x="47.244" y="38.227" smashed="yes" rot="R90">
-<attribute name="NAME" x="45.8089" y="36.2829" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="NAME" x="45.6819" y="36.2829" size="1.016" layer="25" font="vector" ratio="18"/>
 </element>
 <element name="-2.5V" library="jonnew" package="RC0603" value="RCU-0C" x="60.325" y="28.194" smashed="yes" rot="R180">
 <attribute name="NAME" x="61.1759" y="27.5199" size="1.016" layer="25" font="vector" ratio="18"/>
 </element>
 <element name="VPRE" library="jonnew" package="RC0603" value="TPTP16R" x="48.133" y="61.722" smashed="yes" rot="R90">
-<attribute name="NAME" x="48.6801" y="63.0809" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="NAME" x="48.8071" y="62.8269" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="C27" library="cyclops" package="0603" value="0.1uF" x="48.133" y="59.182" smashed="yes" rot="R180">
-<attribute name="NAME" x="45.974" y="59.563" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="45.974" y="58.42" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
+<attribute name="NAME" x="46.482" y="60.071" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="46.482" y="63.119" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="C28" library="cyclops" package="0603" value="0.1uF" x="48.26" y="53.848" smashed="yes" rot="R180">
-<attribute name="NAME" x="46.101" y="54.483" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="46.101" y="53.34" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
+<attribute name="NAME" x="46.609" y="52.324" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="46.609" y="51.181" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="R8" library="cyclops" package="0603" value="110k" x="17.78" y="36.703" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="17.78" y="36.703" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="17.78" y="36.703" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="17.78" y="36.703" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
-<attribute name="NAME" x="19.05" y="35.941" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="19.05" y="34.671" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+<attribute name="NAME" x="16.891" y="34.417" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="16.891" y="33.401" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="R28" library="cyclops" package="0603" value="1k" x="11.43" y="53.975" smashed="yes">
 <attribute name="MN" value="Panasonic" x="11.43" y="53.975" size="1.016" layer="27" font="vector" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="11.43" y="53.975" size="1.016" layer="27" font="vector" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="11.43" y="53.975" size="1.016" layer="27" font="vector" display="off"/>
-<attribute name="NAME" x="12.573" y="52.705" size="1.016" layer="25" font="vector" ratio="18" rot="R90" align="center-right"/>
-<attribute name="VALUE" x="13.716" y="52.705" size="1.016" layer="27" font="vector" ratio="18" rot="R270" align="center-left"/>
+<attribute name="NAME" x="9.779" y="52.451" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="9.779" y="51.181" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="J_CS2" library="jonnew" package="0402" value="0" x="8.382" y="40.894" smashed="yes">
-<attribute name="NAME" x="6.477" y="40.894" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-</element>
-<element name="J_CS3" library="jonnew" package="0402" value="0" x="8.382" y="39.243" smashed="yes">
-<attribute name="NAME" x="6.477" y="39.243" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-</element>
-<element name="J_CS1" library="jonnew" package="0402" value="0" x="8.382" y="42.418" smashed="yes" rot="R180">
-<attribute name="NAME" x="10.287" y="42.418" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_CS0" library="jonnew" package="0402" value="0" x="8.382" y="43.942" smashed="yes" rot="R180">
-<attribute name="NAME" x="10.287" y="43.942" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_T0" library="jonnew" package="0402" value="0" x="5.334" y="43.942" smashed="yes">
-<attribute name="NAME" x="8.001" y="43.942" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_T1" library="jonnew" package="0402" value="0" x="5.334" y="42.418" smashed="yes">
-<attribute name="NAME" x="8.001" y="42.418" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_T2" library="jonnew" package="0402" value="0" x="5.334" y="40.894" smashed="yes">
-<attribute name="NAME" x="8.001" y="40.894" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_T3" library="jonnew" package="0402" value="0" x="5.334" y="39.37" smashed="yes">
-<attribute name="NAME" x="8.001" y="39.37" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_OC1" library="jonnew" package="0402" value="0" x="17.526" y="42.418" smashed="yes" rot="R180">
-<attribute name="NAME" x="19.558" y="42.418" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_OC3" library="jonnew" package="0402" value="0" x="17.526" y="39.37" smashed="yes" rot="R180">
-<attribute name="NAME" x="19.558" y="39.37" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_OC2" library="jonnew" package="0402" value="0" x="17.526" y="40.894" smashed="yes" rot="R180">
-<attribute name="NAME" x="19.431" y="40.894" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
-<element name="J_OC0" library="jonnew" package="0402" value="0" x="17.526" y="43.942" smashed="yes" rot="R180">
-<attribute name="NAME" x="19.431" y="43.942" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-</element>
+<element name="J_CS2" library="jonnew" package="0402" value="0" x="8.382" y="40.894" smashed="yes"/>
+<element name="J_CS3" library="jonnew" package="0402" value="0" x="8.382" y="39.243" smashed="yes"/>
+<element name="J_CS1" library="jonnew" package="0402" value="0" x="8.382" y="42.418" smashed="yes" rot="R180"/>
+<element name="J_CS0" library="jonnew" package="0402" value="0" x="8.382" y="43.942" smashed="yes" rot="R180"/>
+<element name="J_T0" library="jonnew" package="0402" value="0" x="5.334" y="43.942" smashed="yes"/>
+<element name="J_T1" library="jonnew" package="0402" value="0" x="5.334" y="42.418" smashed="yes"/>
+<element name="J_T2" library="jonnew" package="0402" value="0" x="5.334" y="40.894" smashed="yes"/>
+<element name="J_T3" library="jonnew" package="0402" value="0" x="5.334" y="39.37" smashed="yes"/>
+<element name="J_OC1" library="jonnew" package="0402" value="0" x="17.526" y="42.418" smashed="yes" rot="R180"/>
+<element name="J_OC3" library="jonnew" package="0402" value="0" x="17.526" y="39.37" smashed="yes" rot="R180"/>
+<element name="J_OC2" library="jonnew" package="0402" value="0" x="17.526" y="40.894" smashed="yes" rot="R180"/>
+<element name="J_OC0" library="jonnew" package="0402" value="0" x="17.526" y="43.942" smashed="yes" rot="R180"/>
 <element name="R37" library="cyclops" package="0603" value="0" x="44.069" y="57.023" smashed="yes">
 <attribute name="MN" value="Panasonic" x="44.069" y="57.023" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="44.069" y="57.023" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="44.069" y="57.023" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="42.672" y="57.912" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="42.672" y="60.96" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="39.878" y="49.657" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="43.053" y="49.784" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="IND" library="jonnew" package="569-011X-X00_LED_ARRAY" value="569-0112-200" x="6.096" y="64.77" smashed="yes" rot="R270">
 <attribute name="NAME" x="6.096" y="77.343" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center"/>
@@ -23943,9 +23918,9 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="11.303" y="77.47" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center"/>
 <attribute name="VALUE" x="8.89" y="73.66" size="1.016" layer="27" font="vector" ratio="18" rot="R270" align="center"/>
 </element>
-<element name="D2" library="jonnew" package="SOD123" value="1N5819" x="30.734" y="18.542" smashed="yes" rot="R180">
-<attribute name="NAME" x="33.274" y="17.272" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="33.274" y="21.082" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<element name="D2" library="jonnew" package="SOD123" value="1N5819" x="30.734" y="17.78" smashed="yes" rot="R180">
+<attribute name="NAME" x="33.274" y="16.51" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
+<attribute name="VALUE" x="33.401" y="14.478" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="VREF&lt;&gt;TTL" library="jonnew" package="AS12A*_SPDT" value="JS102" x="107.315" y="64.77" rot="MR270"/>
 <element name="C20" library="cyclops" package="0603" value=".1uF" x="57.912" y="45.212" smashed="yes" rot="R270">
@@ -23956,8 +23931,8 @@ einem neuen Namen ab.</description>
 <attribute name="MN" value="Panasonic" x="0" y="62.484" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="0" y="62.484" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="0" y="62.484" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="8.636" y="60.833" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="8.636" y="64.262" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="8.763" y="63.119" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="6.604" y="60.325" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="R23" library="cyclops" package="0603" value="1k" x="52.832" y="40.513" smashed="yes">
 <attribute name="MN" value="Panasonic" x="49.022" y="16.891" size="1.778" layer="27" display="off"/>
@@ -23967,8 +23942,8 @@ einem neuen Namen ab.</description>
 <attribute name="VALUE" x="51.054" y="39.116" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="C14" library="jonnew" package="1206" value="10uF" x="75.184" y="49.403" smashed="yes">
-<attribute name="NAME" x="72.644" y="49.53" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="72.644" y="50.8" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="72.517" y="48.387" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="77.978" y="48.895" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="C12" library="jonnew" package="1206" value="10uF" x="74.676" y="61.976" smashed="yes">
 <attribute name="NAME" x="72.136" y="64.77" size="1.016" layer="25" font="vector" ratio="18"/>
@@ -23978,15 +23953,15 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="68.58" y="56.007" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
 </element>
 <element name="C18" library="cyclops" package="0603" value=".1uF" x="36.449" y="55.499" smashed="yes" rot="R180">
-<attribute name="NAME" x="37.846" y="54.102" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="37.846" y="56.896" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
+<attribute name="NAME" x="35.306" y="53.975" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="35.306" y="52.959" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="R21" library="cyclops" package="0603" value="100k" x="58.674" y="38.481" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="58.674" y="38.481" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="58.674" y="38.481" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="58.674" y="38.481" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="60.706" y="38.735" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="60.706" y="37.465" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+<attribute name="NAME" x="59.436" y="37.084" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="59.436" y="35.814" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="R18" library="cyclops" package="0603" value="100k" x="58.674" y="40.513" smashed="yes">
 <attribute name="MN" value="Panasonic" x="58.674" y="40.513" size="1.778" layer="27" display="off"/>
@@ -24003,60 +23978,36 @@ einem neuen Namen ab.</description>
 <attribute name="VALUE" x="54.229" y="37.084" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="UC" library="jonnew" package="TEENSY_3.1_CYCLOPS" value="TEENSY_3.2" x="13.97" y="0.254" rot="MR0"/>
-<element name="J_LDAC0" library="jonnew" package="0402" value="0" x="11.43" y="43.942" smashed="yes">
-<attribute name="NAME" x="10.287" y="44.704" size="1.016" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="10.16" y="42.164" size="1.016" layer="27" font="vector" ratio="18"/>
-</element>
-<element name="J_LDAC3" library="jonnew" package="0402" value="0" x="11.43" y="39.37" smashed="yes" rot="R180">
-<attribute name="NAME" x="12.573" y="38.608" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="12.7" y="41.148" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
-</element>
-<element name="J_LDAC2" library="jonnew" package="0402" value="0" x="11.43" y="40.894" smashed="yes" rot="R180">
-<attribute name="NAME" x="12.573" y="40.132" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="12.7" y="42.672" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
-</element>
-<element name="J_LDAC1" library="jonnew" package="0402" value="0" x="11.43" y="42.418" smashed="yes" rot="R180">
-<attribute name="NAME" x="12.573" y="41.656" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="12.7" y="44.196" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
-</element>
+<element name="J_LDAC0" library="jonnew" package="0402" value="0" x="11.43" y="43.942" smashed="yes"/>
+<element name="J_LDAC3" library="jonnew" package="0402" value="0" x="11.43" y="39.37" smashed="yes" rot="R180"/>
+<element name="J_LDAC2" library="jonnew" package="0402" value="0" x="11.43" y="40.894" smashed="yes" rot="R180"/>
+<element name="J_LDAC1" library="jonnew" package="0402" value="0" x="11.43" y="42.418" smashed="yes" rot="R180"/>
 <element name="L2" library="cyclops" package="0603" value="MPZ1608" x="32.893" y="49.657" smashed="yes" rot="R270">
-<attribute name="NAME" x="34.29" y="51.054" size="1.016" layer="25" font="vector" ratio="18" rot="R90" align="center-right"/>
-<attribute name="VALUE" x="31.496" y="51.054" size="1.016" layer="27" font="vector" ratio="18" rot="R270" align="center-left"/>
+<attribute name="NAME" x="32.131" y="47.244" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="29.337" y="49.53" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
 </element>
 <element name="R49" library="cyclops" package="0603" value="0" x="67.818" y="46.482" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="67.818" y="46.482" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="67.818" y="46.482" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="67.818" y="46.482" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="69.215" y="45.085" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="69.215" y="47.879" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
+<attribute name="NAME" x="64.643" y="45.466" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="65.659" y="47.117" size="1.016" layer="27" font="vector" ratio="18" rot="R270" align="center-left"/>
 </element>
 <element name="R50" library="cyclops" package="0603" value="" x="67.818" y="48.641" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="67.818" y="48.641" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="67.818" y="48.641" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="67.818" y="48.641" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="69.215" y="47.244" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
+<attribute name="NAME" x="69.215" y="50.292" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
 <attribute name="VALUE" x="69.215" y="50.038" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
 </element>
 <element name="D1" library="jonnew" package="SOD123" value="1N5819" x="38.862" y="152.4"/>
-<element name="J_ADDR0" library="jonnew" package="0402" value="0" x="14.478" y="43.942" smashed="yes" rot="R180">
-<attribute name="NAME" x="15.621" y="43.18" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="15.748" y="45.72" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
-</element>
-<element name="J_ADDR1" library="jonnew" package="0402" value="0" x="14.478" y="42.418" smashed="yes" rot="R180">
-<attribute name="NAME" x="15.621" y="41.656" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="15.748" y="44.196" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
-</element>
-<element name="J_ADDR2" library="jonnew" package="0402" value="0" x="14.478" y="40.894" smashed="yes" rot="R180">
-<attribute name="NAME" x="15.621" y="40.132" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="15.748" y="42.672" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
-</element>
-<element name="J_ADDR3" library="jonnew" package="0402" value="0" x="14.478" y="39.37" smashed="yes" rot="R180">
-<attribute name="NAME" x="15.621" y="38.608" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="15.748" y="41.148" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
-</element>
+<element name="J_ADDR0" library="jonnew" package="0402" value="0" x="14.478" y="43.942" smashed="yes" rot="R180"/>
+<element name="J_ADDR1" library="jonnew" package="0402" value="0" x="14.478" y="42.418" smashed="yes" rot="R180"/>
+<element name="J_ADDR2" library="jonnew" package="0402" value="0" x="14.478" y="40.894" smashed="yes" rot="R180"/>
+<element name="J_ADDR3" library="jonnew" package="0402" value="0" x="14.478" y="39.37" smashed="yes" rot="R180"/>
 <element name="Q1" library="jonnew" package="SOT23-GSD" value="SSM3K324" x="6.096" y="59.563" smashed="yes">
-<attribute name="NAME" x="7.874" y="58.928" size="1.016" layer="25" font="vector" ratio="18"/>
-<attribute name="VALUE" x="9.017" y="51.308" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
+<attribute name="NAME" x="4.064" y="57.912" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="2.794" y="57.912" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="Q3" library="jonnew" package="SOT23-GSD" value="SSM3K324" x="11.43" y="59.563" smashed="yes">
 <attribute name="NAME" x="14.351" y="57.023" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
@@ -24074,42 +24025,42 @@ einem neuen Namen ab.</description>
 <attribute name="MN" value="Panasonic" x="49.149" y="40.513" size="1.778" layer="27" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="49.149" y="40.513" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="49.149" y="40.513" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="45.72" y="39.624" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="46.863" y="39.243" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="45.72" y="39.751" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="46.863" y="39.37" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="R24" library="cyclops" package="0603" value="100k" x="6.096" y="55.753" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="6.096" y="55.753" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="6.096" y="55.753" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="6.096" y="55.753" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="2.667" y="55.118" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="3.81" y="55.118" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="2.667" y="54.61" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="3.81" y="53.975" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="R29" library="cyclops" package="0603" value="100k" x="11.43" y="55.753" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="11.43" y="55.753" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="11.43" y="55.753" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="11.43" y="55.753" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="12.827" y="54.356" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="13.335" y="55.245" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+<attribute name="NAME" x="13.843" y="53.975" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
+<attribute name="VALUE" x="15.113" y="53.34" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="U7" library="jonnew" package="SOT-23-5" value="TLV3701" x="36.322" y="60.833" smashed="yes" rot="R270">
-<attribute name="NAME" x="38.3286" y="62.538" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
-<attribute name="VALUE" x="33.2486" y="62.538" size="1.016" layer="27" font="vector" ratio="18" rot="R270"/>
+<attribute name="NAME" x="35.9156" y="61.776" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
+<attribute name="VALUE" x="38.8874" y="62.938" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="U6" library="jonnew" package="SOP65P490X110-8N" value="LT1711" x="54.991" y="45.212" smashed="yes" rot="R270">
 <attribute name="NAME" x="56.709" y="48.305" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
 <attribute name="VALUE" x="56.709" y="47.169" size="1.016" layer="27" font="vector" ratio="18" rot="SR0"/>
 </element>
 <element name="U10" library="jonnew" package="SOT23-6" value="ADG1201" x="48.133" y="56.515" smashed="yes" rot="R90">
-<attribute name="VALUE" x="51.105" y="55.118" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
-<attribute name="NAME" x="46.231" y="55.118" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="50.851" y="58.166" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
+<attribute name="NAME" x="46.612" y="55.245" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="U5" library="jonnew" package="SOT-23-5" value="TPS72325" x="51.435" y="30.988" smashed="yes" rot="R180">
 <attribute name="NAME" x="52.378" y="31.3944" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
 <attribute name="VALUE" x="48.6156" y="32.693" size="1.016" layer="27" font="vector" ratio="18" rot="R270"/>
 </element>
 <element name="C15" library="jonnew" package="0603" value="10nF" x="51.435" y="27.686" smashed="yes">
-<attribute name="NAME" x="51.943" y="23.876" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="53.213" y="23.114" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="51.435" y="26.035" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="51.435" y="24.892" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="C13" library="jonnew" package="1206" value="10uF" x="50.419" y="34.29" smashed="yes">
 <attribute name="NAME" x="53.086" y="37.973" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
@@ -24120,16 +24071,16 @@ einem neuen Namen ab.</description>
 <attribute name="VALUE" x="51.943" y="33.528" size="1.016" layer="27" font="vector" ratio="18" rot="R270"/>
 </element>
 <element name="R4" library="jonnew" package="1206" value="50" x="77.089" y="67.437" smashed="yes" rot="R180">
-<attribute name="NAME" x="79.629" y="65.913" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="79.629" y="69.977" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="75.184" y="68.961" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="77.724" y="68.961" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="R6" library="jonnew" package="1206" value="50" x="93.853" y="67.437" smashed="yes" rot="R180">
-<attribute name="NAME" x="96.393" y="65.913" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="96.393" y="69.977" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="91.821" y="68.961" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="94.488" y="68.961" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="R7" library="jonnew" package="1206" value="50" x="110.998" y="67.437" smashed="yes" rot="R180">
-<attribute name="NAME" x="113.538" y="65.913" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="113.538" y="69.977" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="108.966" y="68.834" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="111.379" y="68.834" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="U4" library="jonnew" package="SOIC127P600X175-9N" value="BD00IA5WEFJ" x="74.676" y="56.896" smashed="yes" rot="R90">
 <attribute name="NAME" x="71.501" y="56.134" size="1.016" layer="25" font="vector" ratio="18" rot="SR90"/>
@@ -24140,31 +24091,23 @@ einem neuen Namen ab.</description>
 <attribute name="VALUE" x="57.912" y="54.991" size="1.016" layer="27" font="vector" ratio="18" rot="SR270"/>
 </element>
 <element name="U31" library="jonnew" package="VQFN16" value="TPS62153" x="29.591" y="25.146" smashed="yes" rot="R180">
-<attribute name="NAME" x="31.234" y="22.984" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="31.361" y="28.224" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="31.758" y="26.165" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="31.758" y="25.116" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="L5" library="jonnew" package="4020" value="XFL4020-222ME" x="34.163" y="22.479" smashed="yes" rot="R90">
-<attribute name="NAME" x="31.877" y="20.447" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
-<attribute name="VALUE" x="37.465" y="20.447" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
+<element name="L5" library="jonnew" package="4020" value="XFL4020-222ME" x="34.925" y="22.479" smashed="yes" rot="R90">
+<attribute name="NAME" x="37.211" y="22.987" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="37.084" y="24.13" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="C41" library="jonnew" package="1206" value="10uF" x="25.146" y="23.114" smashed="yes" rot="R270">
-<attribute name="NAME" x="26.67" y="25.654" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
-<attribute name="VALUE" x="22.606" y="25.654" size="1.016" layer="27" font="vector" ratio="18" rot="R270"/>
+<attribute name="NAME" x="23.622" y="20.447" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="23.622" y="23.622" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="C42" library="jonnew" package="0603" value="3.3nF" x="26.035" y="26.924" smashed="yes" rot="R180">
-<attribute name="NAME" x="27.432" y="25.527" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
-<attribute name="VALUE" x="27.432" y="28.321" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
+<attribute name="NAME" x="22.352" y="28.448" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="25.781" y="28.448" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="C43" library="jonnew" package="0805" value="22uF" x="30.099" y="21.463" smashed="yes" rot="R180">
-<attribute name="MN" value="TDK Corp." x="30.099" y="21.463" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="PARTNO" value="C2012X5R1Cxxxxxxx" x="30.099" y="21.463" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="DK" value="" x="30.099" y="21.463" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="VID" value="DK" x="30.099" y="21.463" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="31.877" y="20.193" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
-<attribute name="VALUE" x="32.131" y="23.749" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
-</element>
-<element name="+5V" library="jonnew" package="RC0603" value="RCU-0C" x="37.719" y="22.733" smashed="yes">
-<attribute name="NAME" x="36.957" y="24.003" size="1.016" layer="25" font="vector" ratio="18"/>
+<element name="+5V" library="jonnew" package="RC0603" value="RCU-0C" x="40.132" y="27.813" smashed="yes">
+<attribute name="NAME" x="38.989" y="26.67" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="R5" library="cyclops" package="0603" value="33k" x="73.406" y="51.943" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="73.406" y="51.943" size="1.778" layer="27" rot="R180" display="off"/>
@@ -24181,22 +24124,24 @@ einem neuen Namen ab.</description>
 <attribute name="VALUE" x="78.867" y="51.181" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
 <element name="D5" library="jonnew" package="SOD123" value="STPS0560Z" x="37.211" y="12.573" smashed="yes" rot="R90">
-<attribute name="NAME" x="35.941" y="10.033" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
-<attribute name="VALUE" x="39.751" y="10.033" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
+<attribute name="NAME" x="37.465" y="16.129" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="33.782" y="8.636" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
 <element name="D6" library="jonnew" package="SOD123" value="STPS0560Z" x="39.624" y="12.573" smashed="yes" rot="R270">
-<attribute name="NAME" x="40.894" y="15.113" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
-<attribute name="VALUE" x="37.084" y="15.113" size="1.016" layer="27" font="vector" ratio="18" rot="R270"/>
+<attribute name="NAME" x="39.878" y="16.129" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="L1" library="cyclops" package="0603" value="MPZ1608" x="30.226" y="49.657" smashed="yes" rot="R90">
-<attribute name="NAME" x="28.829" y="48.26" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="31.623" y="48.26" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="NAME" x="29.464" y="47.371" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 </element>
 <element name="GND" library="jonnew" package="RC0603" value="RCU-0C" x="81.915" y="49.276" smashed="yes" rot="R270">
-<attribute name="NAME" x="83.185" y="50.038" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
+<attribute name="NAME" x="83.439" y="50.8" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
 </element>
 <element name="+13.3V" library="jonnew" package="RC0603" value="RCU-0C" x="87.503" y="49.276" smashed="yes" rot="R90">
 <attribute name="NAME" x="86.233" y="48.514" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+</element>
+<element name="C40" library="cyclops" package="1210" value="22uF" x="30.353" y="21.082" smashed="yes" rot="R180">
+<attribute name="NAME" x="25.146" y="19.288" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="27.67" y="20.701" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 </elements>
 <signals>
@@ -24231,12 +24176,12 @@ einem neuen Namen ab.</description>
 <wire x1="16.51" y1="19.304" x2="17.653" y2="20.447" width="0.254" layer="16"/>
 <wire x1="17.653" y1="20.447" x2="22.733" y2="20.447" width="0.254" layer="16"/>
 <via x="22.733" y="20.447" extent="1-16" drill="0.3302"/>
-<wire x1="26.2636" y1="18.542" x2="26.2636" y2="18.8214" width="0.254" layer="1"/>
-<wire x1="26.2636" y1="18.8214" x2="25.527" y2="19.558" width="0.254" layer="1"/>
-<wire x1="25.527" y1="19.558" x2="23.622" y2="19.558" width="0.254" layer="1"/>
-<wire x1="23.622" y1="19.558" x2="22.733" y2="20.447" width="0.254" layer="1"/>
-<wire x1="26.2636" y1="18.542" x2="26.2636" y2="16.256" width="0.254" layer="1"/>
-<wire x1="21.59" y1="6.604" x2="26.2636" y2="16.256" width="0" layer="19" extent="1-1"/>
+<wire x1="26.2636" y1="17.78" x2="26.2636" y2="18.0594" width="0.254" layer="1"/>
+<wire x1="26.2636" y1="18.0594" x2="25.527" y2="18.796" width="0.254" layer="1"/>
+<wire x1="24.384" y1="18.796" x2="22.733" y2="20.447" width="0.254" layer="1"/>
+<wire x1="26.2636" y1="17.78" x2="26.2636" y2="15.494" width="0.254" layer="1"/>
+<wire x1="25.527" y1="18.796" x2="24.384" y2="18.796" width="0.254" layer="1"/>
+<wire x1="21.59" y1="6.604" x2="26.2636" y2="15.494" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCLK">
 <contactref element="U1" pad="3"/>
@@ -24339,7 +24284,6 @@ einem neuen Namen ab.</description>
 <wire x1="56.2064" y1="58.627" x2="56.1594" y2="58.674" width="0.6096" layer="1"/>
 <wire x1="45.593" y1="64.262" x2="33.655" y2="64.262" width="0.6096" layer="16"/>
 <wire x1="45.593" y1="64.262" x2="51.188" y2="64.262" width="0.6096" layer="1"/>
-<wire x1="52.578" y1="64.262" x2="52.832" y2="64.262" width="0.6096" layer="1"/>
 <wire x1="52.832" y1="64.262" x2="54.229" y2="62.865" width="0.6096" layer="1"/>
 <wire x1="54.229" y1="62.865" x2="54.229" y2="61.087" width="0.6096" layer="1"/>
 <via x="33.655" y="64.262" extent="1-16" drill="0.8" diameter="0.3048"/>
@@ -24347,7 +24291,7 @@ einem neuen Namen ab.</description>
 <wire x1="31.362" y1="64.262" x2="28.448" y2="61.348" width="0.6096" layer="1"/>
 <wire x1="28.448" y1="61.348" x2="28.448" y2="60.586" width="0.6096" layer="1"/>
 <wire x1="51.181" y1="64.269" x2="51.188" y2="64.262" width="0.6096" layer="1"/>
-<wire x1="51.188" y1="64.262" x2="52.578" y2="64.262" width="0.6096" layer="1"/>
+<wire x1="51.188" y1="64.262" x2="52.832" y2="64.262" width="0.6096" layer="1"/>
 </signal>
 <signal name="VAUX">
 <contactref element="R35" pad="1"/>
@@ -24540,7 +24484,7 @@ einem neuen Namen ab.</description>
 <wire x1="61.8744" y1="52.19" x2="61.856" y2="52.19" width="0.3048" layer="1"/>
 <wire x1="61.856" y1="52.19" x2="61.849" y2="52.197" width="0.3048" layer="1"/>
 <wire x1="79.0886" y1="38.1" x2="80.137" y2="38.1" width="0.4064" layer="1"/>
-<via x="94.107" y="12.954" extent="1-16" drill="2" shape="octagon" alwaysstop="yes"/>
+<via x="112.395" y="-7.874" extent="1-16" drill="2" shape="octagon" alwaysstop="yes"/>
 <contactref element="R39" pad="2"/>
 <via x="81.534" y="46.482" extent="1-16" drill="0.3302"/>
 <wire x1="80.6196" y1="46.482" x2="81.534" y2="46.482" width="0.3048" layer="1"/>
@@ -24872,7 +24816,6 @@ einem neuen Namen ab.</description>
 <contactref element="U31" pad="PAD"/>
 <contactref element="U31" pad="16"/>
 <contactref element="U31" pad="15"/>
-<via x="24.003" y="26.924" extent="1-16" drill="0.6"/>
 <via x="27.559" y="22.352" extent="1-16" drill="0.1524"/>
 <via x="27.559" y="21.082" extent="1-16" drill="0.1524"/>
 <via x="26.924" y="22.352" extent="1-16" drill="0.1524"/>
@@ -24902,8 +24845,9 @@ einem neuen Namen ab.</description>
 </polygon>
 <polygon width="0.127" layer="1" thermals="no">
 <vertex x="23.876" y="22.733"/>
-<vertex x="23.876" y="20.066"/>
-<vertex x="30.099" y="20.066"/>
+<vertex x="23.876" y="20.37119375"/>
+<vertex x="24.68919375" y="19.558"/>
+<vertex x="30.099" y="19.558"/>
 <vertex x="30.099" y="22.352"/>
 <vertex x="30.48" y="23.114"/>
 <vertex x="30.48" y="24.003"/>
@@ -24913,7 +24857,6 @@ einem neuen Namen ab.</description>
 </polygon>
 <contactref element="C41" pad="2"/>
 <contactref element="C42" pad="2"/>
-<contactref element="C43" pad="2"/>
 <contactref element="R52" pad="1"/>
 <via x="78.74" y="53.848" extent="1-16" drill="0.3302"/>
 <via x="78.74" y="55.118" extent="1-16" drill="0.3302"/>
@@ -25063,12 +25006,14 @@ einem neuen Namen ab.</description>
 <wire x1="81.915" y1="49.276" x2="83.439" y2="49.276" width="0.2794" layer="1"/>
 <contactref element="UC" pad="AGND"/>
 <contactref element="C24" pad="2"/>
+<contactref element="C40" pad="2"/>
+<via x="23.876" y="26.924" extent="1-16" drill="0.6" diameter="1.016"/>
+<wire x1="23.876" y1="26.924" x2="25.1714" y2="26.924" width="0.8128" layer="1"/>
 <wire x1="98.044" y1="57.658" x2="100.965" y2="57.15" width="0" layer="19" extent="1-1"/>
 <wire x1="54.6354" y1="52.966" x2="54.61" y2="52.966" width="0" layer="19" extent="1-1"/>
 <wire x1="21.456" y1="53.1114" x2="21.463" y2="53.086" width="0" layer="19" extent="1-1"/>
 <wire x1="19.424" y1="52.9336" x2="19.431" y2="52.832" width="0" layer="19" extent="1-1"/>
 <wire x1="15.0114" y1="39.37" x2="14.986" y2="38.227" width="0" layer="19" extent="1-1"/>
-<wire x1="25.1714" y1="26.924" x2="24.003" y2="26.924" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="R9" pad="1"/>
@@ -25191,9 +25136,9 @@ einem neuen Namen ab.</description>
 <wire x1="50.927" y1="35.814" x2="50.927" y2="25.781" width="0.4064" layer="16"/>
 <via x="50.927" y="25.781" extent="1-16" drill="0.6"/>
 <wire x1="50.927" y1="25.781" x2="50.927" y2="20.193" width="0.4064" layer="1"/>
-<wire x1="50.927" y1="20.193" x2="-80.772" y2="-0.635" width="0.4064" layer="1"/>
-<via x="-80.772" y="-0.635" extent="1-16" drill="0.6"/>
-<wire x1="-80.772" y1="-0.635" x2="48.387" y2="10.414" width="0.4064" layer="16"/>
+<wire x1="50.927" y1="20.193" x2="48.387" y2="17.653" width="0.4064" layer="1"/>
+<via x="48.387" y="17.653" extent="1-16" drill="0.6"/>
+<wire x1="48.387" y1="17.653" x2="48.387" y2="10.414" width="0.4064" layer="16"/>
 </signal>
 <signal name="+15V" class="1">
 <contactref element="PWR_DIST" pad="1"/>
@@ -25267,7 +25212,9 @@ einem neuen Namen ab.</description>
 <vertex x="28.321" y="24.003"/>
 </polygon>
 <wire x1="27.187" y1="24.765" x2="23.495" y2="24.765" width="1.27" layer="15"/>
-<wire x1="28.191" y1="24.396" x2="28.841" y2="23.746" width="0" layer="19" extent="1-1"/>
+<wire x1="28.841" y1="23.746" x2="28.47900625" y2="23.746" width="0.254" layer="1"/>
+<wire x1="28.47900625" y1="23.746" x2="28.191" y2="24.03400625" width="0.254" layer="1"/>
+<wire x1="28.191" y1="24.03400625" x2="28.191" y2="24.396" width="0.254" layer="1"/>
 <wire x1="27.187" y1="24.765" x2="27.178" y2="24.765" width="0" layer="19" extent="1-15"/>
 </signal>
 <signal name="LED+">
@@ -25537,18 +25484,18 @@ einem neuen Namen ab.</description>
 <wire x1="20.447" y1="20.701" x2="20.447" y2="18.669" width="0.127" layer="1"/>
 <wire x1="20.447" y1="18.669" x2="21.082" y2="18.034" width="0.127" layer="1"/>
 <wire x1="21.082" y1="18.034" x2="22.110765625" y2="18.034" width="0.127" layer="1"/>
-<wire x1="22.110765625" y1="18.034" x2="23.368" y2="16.776765625" width="0.127" layer="1"/>
-<wire x1="23.368" y1="16.776765625" x2="23.368" y2="16.256" width="0.127" layer="1"/>
-<wire x1="24.5364" y1="16.256" x2="23.368" y2="16.256" width="0.127" layer="1"/>
-<wire x1="23.368" y1="16.256" x2="23.368" y2="2.347628125" width="0.127" layer="1"/>
+<wire x1="24.5364" y1="15.494" x2="23.368" y2="15.494" width="0.127" layer="1"/>
+<wire x1="23.368" y1="15.494" x2="23.368" y2="2.347628125" width="0.127" layer="1"/>
 <wire x1="23.368" y1="2.347628125" x2="24.445628125" y2="1.27" width="0.127" layer="1"/>
 <wire x1="24.445628125" y1="1.27" x2="47.117" y2="1.27" width="0.127" layer="1"/>
 <wire x1="47.117" y1="1.27" x2="48.387" y2="2.54" width="0.127" layer="1"/>
 <wire x1="48.387" y1="2.54" x2="48.387" y2="4.826" width="0.127" layer="1"/>
-<via x="58.547" y="4.953" extent="1-16" drill="1.1" shape="octagon"/>
+<via x="58.547" y="4.953" extent="1-16" drill="1.1" shape="octagon" alwaysstop="yes"/>
 <wire x1="48.387" y1="4.826" x2="48.387" y2="7.874" width="0.127" layer="1"/>
 <wire x1="58.547" y1="4.953" x2="58.42" y2="4.826" width="0.127" layer="1"/>
 <wire x1="58.42" y1="4.826" x2="48.387" y2="4.826" width="0.127" layer="1"/>
+<wire x1="22.110765625" y1="18.034" x2="23.368" y2="16.776765625" width="0.127" layer="1"/>
+<wire x1="23.368" y1="16.776765625" x2="23.368" y2="15.494" width="0.127" layer="1"/>
 </signal>
 <signal name="SCL">
 <contactref element="EXPANSION" pad="8"/>
@@ -25556,13 +25503,11 @@ einem neuen Namen ab.</description>
 <contactref element="UC" pad="19/A5"/>
 <wire x1="45.847" y1="1.905" x2="24.511" y2="1.905" width="0.127" layer="1"/>
 <wire x1="24.511" y1="1.905" x2="23.876" y2="2.54" width="0.127" layer="1"/>
-<wire x1="23.876" y1="2.54" x2="23.876" y2="13.208" width="0.127" layer="1"/>
-<wire x1="23.876" y1="13.208" x2="25.4" y2="14.732" width="0.127" layer="1"/>
-<wire x1="25.4" y1="14.732" x2="25.4" y2="17.6784" width="0.127" layer="1"/>
-<wire x1="25.4" y1="17.6784" x2="24.5364" y2="18.542" width="0.127" layer="1"/>
-<wire x1="24.5364" y1="18.542" x2="22.352" y2="18.542" width="0.127" layer="1"/>
-<wire x1="22.352" y1="18.542" x2="21.59" y2="19.304" width="0.127" layer="1"/>
-<via x="61.341" y="3.429" extent="1-16" drill="1.1" shape="octagon"/>
+<wire x1="23.876" y1="2.54" x2="23.876" y2="12.446" width="0.127" layer="1"/>
+<wire x1="23.876" y1="12.446" x2="25.4" y2="13.97" width="0.127" layer="1"/>
+<wire x1="25.4" y1="13.97" x2="25.4" y2="16.9164" width="0.127" layer="1"/>
+<wire x1="25.4" y1="16.9164" x2="24.5364" y2="17.78" width="0.127" layer="1"/>
+<via x="61.341" y="3.429" extent="1-16" drill="1.1" shape="octagon" alwaysstop="yes"/>
 <wire x1="45.847" y1="1.905" x2="45.847" y2="7.874" width="0.127" layer="1"/>
 <wire x1="45.847" y1="1.905" x2="48.641" y2="1.905" width="0.127" layer="16"/>
 <wire x1="48.641" y1="1.905" x2="56.769" y2="1.905" width="0.127" layer="1"/>
@@ -25570,6 +25515,8 @@ einem neuen Namen ab.</description>
 <wire x1="58.293" y1="3.429" x2="61.341" y2="3.429" width="0.127" layer="1"/>
 <via x="45.847" y="1.905" extent="1-16" drill="0.1778"/>
 <via x="48.641" y="1.905" extent="1-16" drill="0.1778"/>
+<wire x1="21.59" y1="19.304" x2="23.114" y2="17.78" width="0.127" layer="1"/>
+<wire x1="23.114" y1="17.78" x2="24.5364" y2="17.78" width="0.127" layer="1"/>
 </signal>
 <signal name="N$4">
 <contactref element="R45" pad="2"/>
@@ -25875,9 +25822,7 @@ einem neuen Namen ab.</description>
 <contactref element="U31" pad="14"/>
 <contactref element="L5" pad="1"/>
 <contactref element="+5V" pad="1"/>
-<contactref element="C43" pad="1"/>
 <wire x1="30.875" y1="29.718" x2="32.065" y2="30.908" width="1.016" layer="1"/>
-<wire x1="31.1404" y1="21.463" x2="31.115" y2="21.463" width="0.1778" layer="1"/>
 <wire x1="31.115" y1="21.463" x2="31.115" y2="22.987" width="0.1778" layer="1"/>
 <via x="31.115" y="22.987" extent="1-16" drill="0.1778"/>
 <wire x1="31.115" y1="22.987" x2="28.956" y2="22.987" width="0.1778" layer="16"/>
@@ -25886,9 +25831,10 @@ einem neuen Namen ab.</description>
 <wire x1="29.341" y1="23.368" x2="29.341" y2="23.746" width="0.1778" layer="1"/>
 <polygon width="0.127" layer="1" thermals="no">
 <vertex x="30.607" y="22.479"/>
-<vertex x="30.607" y="20.066"/>
-<vertex x="36.195" y="20.066"/>
-<vertex x="36.195" y="22.479"/>
+<vertex x="30.607" y="19.685"/>
+<vertex x="35.88980625" y="19.685"/>
+<vertex x="36.703" y="20.49819375"/>
+<vertex x="36.703" y="22.479"/>
 </polygon>
 <polygon width="0.127" layer="1" thermals="no">
 <vertex x="37.338" y="36.83"/>
@@ -25917,12 +25863,12 @@ einem neuen Namen ab.</description>
 <vertex x="-1.27" y="-1.27"/>
 <vertex x="-1.27" y="50.8"/>
 </polygon>
-<wire x1="32.534" y1="18.542" x2="32.534" y2="21.2979" width="1.016" layer="1"/>
-<wire x1="32.534" y1="21.2979" x2="34.163" y2="21.2979" width="0.8128" layer="1"/>
-<wire x1="34.163" y1="21.2979" x2="36.2839" y2="21.2979" width="1.016" layer="1"/>
-<wire x1="36.2839" y1="21.2979" x2="37.719" y2="22.733" width="1.016" layer="1"/>
-<wire x1="37.719" y1="22.733" x2="37.719" y2="28.067" width="1.016" layer="1"/>
-<wire x1="37.719" y1="28.067" x2="34.544" y2="28.067" width="0.8128" layer="1"/>
+<wire x1="32.534" y1="17.78" x2="32.534" y2="21.2979" width="1.016" layer="1"/>
+<wire x1="32.534" y1="21.2979" x2="34.925" y2="21.2979" width="0.8128" layer="1"/>
+<contactref element="C40" pad="1"/>
+<wire x1="34.925" y1="21.2979" x2="36.889971875" y2="21.2979" width="1.016" layer="1"/>
+<wire x1="36.889971875" y1="21.2979" x2="38.354" y2="22.761928125" width="1.016" layer="1"/>
+<wire x1="38.354" y1="22.761928125" x2="38.354" y2="28.067" width="1.016" layer="1"/>
 </signal>
 <signal name="VREF/TTL">
 <contactref element="VREF&lt;&gt;TTL" pad="P2"/>
@@ -26000,12 +25946,12 @@ einem neuen Namen ab.</description>
 <signal name="TEENSY_VIN">
 <contactref element="D2" pad="C"/>
 <contactref element="UC" pad="VIN"/>
-<wire x1="28.934" y1="18.542" x2="28.934" y2="17.377" width="1.016" layer="1"/>
-<wire x1="28.934" y1="17.377" x2="28.067" y2="16.51" width="1.016" layer="1"/>
-<via x="28.067" y="16.51" extent="1-16" drill="1"/>
-<wire x1="28.067" y1="16.51" x2="23.495" y2="11.938" width="1.016" layer="16"/>
-<wire x1="23.495" y1="11.938" x2="23.495" y2="3.429" width="1.016" layer="16"/>
+<wire x1="28.934" y1="17.78" x2="28.934" y2="16.615" width="1.016" layer="1"/>
+<wire x1="28.934" y1="16.615" x2="28.067" y2="15.748" width="1.016" layer="1"/>
+<via x="28.067" y="15.748" extent="1-16" drill="1"/>
+<wire x1="23.495" y1="11.176" x2="23.495" y2="3.429" width="1.016" layer="16"/>
 <wire x1="23.495" y1="3.429" x2="21.59" y2="1.524" width="1.016" layer="16"/>
+<wire x1="28.067" y1="15.748" x2="23.495" y2="11.176" width="1.016" layer="16"/>
 </signal>
 <signal name="VBAT">
 </signal>
@@ -26331,7 +26277,7 @@ einem neuen Namen ab.</description>
 <via x="95.504" y="22.606" extent="1-16" drill="0.3302"/>
 <via x="96.774" y="22.606" extent="1-16" drill="0.3302"/>
 <via x="96.774" y="23.876" extent="1-16" drill="0.3302"/>
-<via x="94.107" y="8.89" extent="1-16" drill="2" shape="octagon" alwaysstop="yes"/>
+<via x="112.395" y="-11.938" extent="1-16" drill="2" shape="octagon" alwaysstop="yes"/>
 <contactref element="C34" pad="1"/>
 <contactref element="Q4" pad="D"/>
 <contactref element="R45" pad="1"/>
@@ -26486,7 +26432,7 @@ einem neuen Namen ab.</description>
 <wire x1="76.581" y1="59.3598" x2="76.454" y2="59.2328" width="0.2794" layer="1"/>
 <wire x1="76.454" y1="59.2328" x2="76.454" y2="57.658" width="0.2794" layer="1"/>
 <wire x1="92.5576" y1="46.228" x2="92.5576" y2="46.228" width="0" layer="19" extent="1-16"/>
-<wire x1="94.107" y1="8.89" x2="94.234" y2="21.336" width="0" layer="19" extent="1-1"/>
+<wire x1="112.395" y1="-11.938" x2="94.234" y2="21.336" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="-2.5V">
 <contactref element="-2.5V" pad="1"/>
@@ -26815,15 +26761,23 @@ einem neuen Namen ab.</description>
 <polygon width="0.127" layer="1" thermals="no">
 <vertex x="30.734" y="24.257"/>
 <vertex x="31.877" y="23.114"/>
-<vertex x="36.195" y="23.114"/>
-<vertex x="36.195" y="25.527"/>
+<vertex x="36.703" y="23.114"/>
+<vertex x="36.703" y="25.527"/>
 <vertex x="30.734" y="25.527"/>
 </polygon>
 </signal>
 <signal name="N$56">
 <contactref element="C42" pad="1"/>
 <contactref element="U31" pad="9"/>
-<wire x1="26.8986" y1="26.924" x2="28.191" y2="25.896" width="0" layer="19" extent="1-1"/>
+<wire x1="27.163" y1="26.924" x2="26.8986" y2="26.924" width="0.254" layer="1"/>
+<wire x1="27.163" y1="26.924" x2="28.067" y2="26.924" width="0.8128" layer="1"/>
+<wire x1="28.067" y1="26.924" x2="28.067" y2="26.416" width="0.8128" layer="1"/>
+<polygon width="0.127" layer="1" thermals="no">
+<vertex x="27.813" y="25.781"/>
+<vertex x="27.813" y="26.543"/>
+<vertex x="28.448" y="26.543"/>
+<vertex x="28.448" y="25.781"/>
+</polygon>
 </signal>
 <signal name="N$43">
 <contactref element="R52" pad="2"/>
@@ -26999,12 +26953,12 @@ einem neuen Namen ab.</description>
 <approved hash="19,1,5f2ac9da732d096c"/>
 <approved hash="19,1,707f8f43342b2a0e"/>
 <approved hash="19,1,9a783528cbce6760"/>
-<approved hash="19,1,581244e445f25904"/>
-<approved hash="19,1,2aba6031aa65c0ec"/>
 <approved hash="19,1,4f0ea18767d3a958"/>
+<approved hash="19,1,2aba6031aa65c0ec"/>
+<approved hash="19,1,581244e445f25904"/>
 <approved hash="19,1,b17115b608410a35"/>
-<approved hash="19,1,f91373b06fda4e62"/>
 <approved hash="19,1,ba1e0f34f3d04504"/>
+<approved hash="19,1,f91373b06fda4e62"/>
 </errors>
 </board>
 </drawing>

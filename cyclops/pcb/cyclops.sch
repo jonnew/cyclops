@@ -7583,7 +7583,6 @@ distributor Farnell 149-452</description>
 <part name="L5" library="jonnew" deviceset="L" device="_4020" value="XFL4020-222ME"/>
 <part name="C41" library="jonnew" deviceset="C" device="_1206" value="10uF"/>
 <part name="C42" library="jonnew" deviceset="C" device="_0603" value="3.3nF"/>
-<part name="C43" library="jonnew" deviceset="C" device="_0805" value="22uF"/>
 <part name="U$31" library="cyclops" deviceset="GND1" device=""/>
 <part name="U$74" library="cyclops" deviceset="GND1" device=""/>
 <part name="U$75" library="cyclops" deviceset="GND1" device=""/>
@@ -7599,6 +7598,7 @@ distributor Farnell 149-452</description>
 <part name="GND" library="jonnew" deviceset="TP" device="_RC0603" value="RCU-0C"/>
 <part name="U$79" library="cyclops" deviceset="GND2" device=""/>
 <part name="+13.3V" library="jonnew" deviceset="TP" device="_RC0603" value="RCU-0C"/>
+<part name="C40" library="cyclops" deviceset="C" device="_1210" value="22uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -8677,7 +8677,6 @@ distributor Farnell 149-452</description>
 <instance part="L5" gate="L" x="0" y="-38.1" rot="R270"/>
 <instance part="C41" gate="C" x="-78.74" y="-50.8"/>
 <instance part="C42" gate="C" x="-58.42" y="-58.42"/>
-<instance part="C43" gate="C" x="30.48" y="-48.26"/>
 <instance part="U$31" gate="G$1" x="-5.08" y="-71.12"/>
 <instance part="U$74" gate="G$1" x="-45.72" y="-71.12"/>
 <instance part="U$75" gate="G$1" x="-78.74" y="-71.12"/>
@@ -8686,6 +8685,7 @@ distributor Farnell 149-452</description>
 <instance part="R5" gate="R" x="114.3" y="27.94" rot="R90"/>
 <instance part="R52" gate="R" x="114.3" y="10.16" rot="R90"/>
 <instance part="+13.3V" gate="G$1" x="7.62" y="43.18"/>
+<instance part="C40" gate="C" x="30.48" y="-48.26"/>
 </instances>
 <busses>
 </busses>
@@ -8796,8 +8796,8 @@ distributor Farnell 149-452</description>
 <wire x1="-78.74" y1="-66.04" x2="-78.74" y2="-68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C43" gate="C" pin="2"/>
 <wire x1="30.48" y1="-53.34" x2="30.48" y2="-68.58" width="0.1524" layer="91"/>
+<pinref part="C40" gate="C" pin="2"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -9051,8 +9051,8 @@ distributor Farnell 149-452</description>
 <junction x="40.64" y="-38.1"/>
 <pinref part="+5V" gate="G$1" pin="TP"/>
 <junction x="30.48" y="-38.1"/>
-<pinref part="C43" gate="C" pin="1"/>
 <wire x1="30.48" y1="-38.1" x2="30.48" y2="-45.72" width="0.1524" layer="91"/>
+<pinref part="C40" gate="C" pin="1"/>
 </segment>
 </net>
 <net name="N$43" class="0">
