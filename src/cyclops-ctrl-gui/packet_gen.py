@@ -54,7 +54,7 @@ start    | s, , 0
 stop     | s, , 1
 reset    | s, , 2
 swap     | s, , 3
-identity | s, , 4
+identity | s, , 7
 
 change_source_l    | m, , 0, 
 change_source_o    | m, , 1, 

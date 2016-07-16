@@ -24,11 +24,11 @@
     
     command[2:0] | Name     | Effect
     ------------ | -------  | -------------
-    ``0000``     | start    | Launch Waveform generation.
-    ``0001``     | stop     | Pause Waveform generation.
-    ``0010``     | reset    | Reset selected sources. @attention The system is *not* reset to _initial configuration_!
-    ``0011``     | swap     | Swap the Cyclops instances of the 2 high ``channel`` bits.
-    ``1111``     | identity | Send device description.
+    ``000``      | start    | Launch Waveform generation.
+    ``001``      | stop     | Pause Waveform generation.
+    ``010``      | reset    | Reset selected sources. @attention The system is *not* reset to _initial configuration_!
+    ``011``      | swap     | Swap the Cyclops instances of the 2 high ``channel`` bits.
+    ``111``      | identity | Send device description.
     
     @section M-header-desc Multi Byte Packets
     Packet is formed by concatenating the header with argument bytes.
@@ -72,7 +72,7 @@
     | change_time_period | uint32 val    |                  |
     | time_factor        | float  val    |                  |
     | voltage_factor     | float  val    |                  |
-    | voltage_offset     | uint16 val    |                  |
+    | voltage_offset     | int16  val    |                  |
     | square_on_time     | uint32 val    |                  |
     | square_off_time    | uint32 val    |                  |
     | square_on_level    | uint16 val    |                  |

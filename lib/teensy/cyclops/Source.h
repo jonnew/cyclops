@@ -146,9 +146,9 @@ class Source{
     /**
      * @brief      Sets the DC offset for the control signal.
      * @sa         Source::getVoltage
-     * @param[in]  dc_offset  The offset should be \f$\in [0, 4095]\f$ range
+     * @param[in]  dc_offset  The offset should be \f$\in [-4095, 4095]\f$ range
      */
-    void setOffset(uint16_t dc_offset);
+    void setOffset(int16_t dc_offset);
 
     /**
      * @brief      Returns the data-point's Voltage.

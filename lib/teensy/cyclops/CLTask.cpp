@@ -28,7 +28,7 @@ uint8_t Task::compute(){
       //Serial.write(0xf0);
       return 0;
     }
-    else if (commandID < 3){
+    else if (commandID < 7){
       for (uint8_t i=0; i<Waveform::size; i++){
         if ((chs & 1) == 0) continue;
         switch (commandID){
@@ -52,7 +52,7 @@ uint8_t Task::compute(){
       //Serial.write(0xf0);
       return 0;
     }
-    // commandID > 3
+    // commandID == 7
     else{
       Serial.print(F("Teensy 3.2 on Cyclops rev3.6\n"));
       Serial.print(Waveform::size);
@@ -90,7 +90,7 @@ uint8_t Task::compute(){
       break;
     case  6:
       // voltage_offset
-      target_waveform->source_ptr->setOffset(*(uint16_t*)args);
+      target_waveform->source_ptr->setOffset(*(int16_t*)args);
       break;
     case  7:
       // square_on_time
