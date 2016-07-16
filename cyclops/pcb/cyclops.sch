@@ -4695,8 +4695,8 @@ distributor Farnell 149-452</description>
 <wire x1="-8.89" y1="0" x2="-8.89" y2="35.56" width="0.2032" layer="21"/>
 <wire x1="-8.89" y1="35.56" x2="8.89" y2="35.56" width="0.2032" layer="21"/>
 <wire x1="8.89" y1="35.56" x2="8.89" y2="0" width="0.2032" layer="21"/>
-<text x="2.54" y="6.35" size="1.016" layer="25" font="vector" ratio="18" rot="R90">&gt;NAME</text>
-<text x="3.81" y="6.35" size="1.016" layer="27" font="vector" ratio="18" rot="R90">&gt;VALUE</text>
+<text x="-8.89" y="37.592" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="-8.89" y="36.068" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 <pad name="AREF" x="-5.08" y="8.89" drill="0.9652" rot="R180"/>
 <pad name="A10" x="-5.08" y="11.43" drill="0.9652" rot="R180"/>
 <pad name="A11" x="-5.08" y="13.97" drill="0.9652" rot="R180"/>
@@ -4734,50 +4734,50 @@ distributor Farnell 149-452</description>
 <rectangle x1="6.35" y1="0" x2="8.89" y2="35.56" layer="40" rot="R180"/>
 <rectangle x1="-3.81" y1="15.24" x2="1.27" y2="33.02" layer="40" rot="R180"/>
 <text x="-9.525" y="1.27" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="3.81" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="6.35" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="8.89" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="11.43" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="13.97" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="16.51" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="19.05" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="21.59" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="24.13" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="26.67" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="29.21" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="31.75" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-9.525" y="34.29" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="9.525" y="3.81" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="6.35" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="8.89" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="11.43" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="13.97" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="16.51" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="19.05" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="21.59" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="24.13" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="26.67" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="29.21" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="31.75" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="34.29" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="-3.81" y="16.51" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-3.81" y="19.05" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-3.81" y="21.59" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-3.81" y="24.13" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-3.81" y="26.67" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-3.81" y="29.21" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="-3.81" y="31.75" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
-<text x="1.905" y="16.51" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="1.905" y="19.05" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="1.905" y="21.59" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="1.905" y="24.13" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="1.905" y="26.67" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="1.905" y="29.21" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="1.905" y="31.75" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="-3.175" y="13.97" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="-3.175" y="11.43" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="-3.175" y="8.89" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
-<text x="9.525" y="1.27" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">VIN</text>
+<text x="-9.525" y="3.81" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">AGND</text>
+<text x="-9.525" y="6.35" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">3v3</text>
+<text x="-9.525" y="8.89" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">23</text>
+<text x="-9.525" y="11.43" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">22</text>
+<text x="-9.525" y="13.97" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">21</text>
+<text x="-9.525" y="16.51" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">20</text>
+<text x="-9.525" y="19.05" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">19</text>
+<text x="-9.525" y="21.59" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">18</text>
+<text x="-9.525" y="26.67" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">17</text>
+<text x="-9.525" y="29.21" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">15</text>
+<text x="-9.525" y="31.75" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">14</text>
+<text x="-9.525" y="34.29" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">13</text>
+<text x="-9.525" y="24.13" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">16</text>
+<text x="9.525" y="3.81" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">0</text>
+<text x="9.525" y="6.35" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">1</text>
+<text x="9.525" y="8.89" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">2</text>
+<text x="9.525" y="11.43" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">3</text>
+<text x="9.525" y="13.97" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">4</text>
+<text x="9.525" y="16.51" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">5</text>
+<text x="9.525" y="19.05" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">6</text>
+<text x="9.525" y="21.59" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">7</text>
+<text x="9.525" y="24.13" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">8</text>
+<text x="9.525" y="26.67" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">9</text>
+<text x="9.525" y="29.21" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">10</text>
+<text x="9.525" y="31.75" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">11</text>
+<text x="9.525" y="34.29" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">12</text>
+<text x="-3.81" y="16.51" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">A13</text>
+<text x="-3.81" y="19.05" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">3v3</text>
+<text x="-3.81" y="21.59" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">33</text>
+<text x="-3.81" y="24.13" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">32</text>
+<text x="-3.81" y="26.67" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">31</text>
+<text x="-3.81" y="29.21" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">30</text>
+<text x="-3.81" y="31.75" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">29</text>
+<text x="1.905" y="16.51" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">A12</text>
+<text x="1.905" y="19.05" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">GND</text>
+<text x="1.905" y="21.59" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">24</text>
+<text x="1.905" y="24.13" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">25</text>
+<text x="1.905" y="26.67" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">26</text>
+<text x="1.905" y="29.21" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">27</text>
+<text x="1.905" y="31.75" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">28</text>
+<text x="-3.175" y="13.97" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">A11</text>
+<text x="-3.175" y="11.43" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">A10</text>
+<text x="-3.175" y="8.89" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">AREF</text>
+<text x="9.525" y="1.27" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">GND</text>
 </package>
 <package name="AS12A*_SPDT">
 <pad name="MECH1" x="-10.16" y="0.9906" drill="0.8" shape="octagon"/>
@@ -4805,6 +4805,8 @@ distributor Farnell 149-452</description>
 <wire x1="-12.446" y1="-2.54" x2="-8.89" y2="-2.54" width="0.127" layer="21"/>
 <wire x1="-8.89" y1="-2.54" x2="-8.89" y2="-2.794" width="0.127" layer="21"/>
 <rectangle x1="-15.0368" y1="-2.921" x2="-6.35" y2="2.921" layer="39"/>
+<text x="-13.97" y="4.572" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="-13.97" y="3.302" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 </package>
 <package name="PCM12">
 <hole x="1.5" y="0" drill="0.9"/>
@@ -5801,7 +5803,7 @@ grid 2.54 mm</description>
 <pin name="GND" x="22.86" y="22.86" visible="pin" length="middle" direction="pwr" rot="R180"/>
 <pin name="VIN" x="22.86" y="30.48" visible="pin" length="middle" direction="pwr" rot="R180"/>
 <pin name="AGND" x="22.86" y="10.16" visible="pin" length="middle" direction="pwr" rot="R180"/>
-<pin name="3.3V" x="22.86" y="27.94" visible="pin" length="middle" direction="out" rot="R180"/>
+<pin name="3.3V" x="22.86" y="27.94" visible="pin" length="middle" direction="pwr" rot="R180"/>
 <pin name="23/A9/T/PWM" x="-22.86" y="-27.94" visible="pin" length="middle"/>
 <pin name="22/A8/T/PWM" x="-22.86" y="-25.4" visible="pin" length="middle"/>
 <pin name="21/A7/PWM" x="-22.86" y="-22.86" visible="pin" length="middle"/>
@@ -7501,7 +7503,7 @@ distributor Farnell 149-452</description>
 <part name="IND" library="jonnew" deviceset="LED_2X" device="_VERTICAL" value="569-0112-200"/>
 <part name="OC" library="jonnew" deviceset="LED_2X" device="_VERTICAL" value="569-0112-200"/>
 <part name="D2" library="jonnew" deviceset="S-DIODE" device="SOD-123" value="1N5819"/>
-<part name="VREF&lt;&gt;TTL" library="jonnew" deviceset="SPDT" device="_AS12A*" value="JS102"/>
+<part name="VREF&lt;&gt;TTL" library="jonnew" deviceset="SPDT" device="_AS12A*" value="AS12AC"/>
 <part name="C20" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="R27" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="R23" library="cyclops" deviceset="R" device="_0603" value="1k"/>
@@ -7615,21 +7617,23 @@ distributor Farnell 149-452</description>
 <text x="160.02" y="114.3" size="3.81" layer="97">DGND</text>
 <wire x1="17.78" y1="17.78" x2="17.78" y2="99.06" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="17.78" y1="99.06" x2="-7.62" y2="99.06" width="0.4064" layer="97" style="shortdash"/>
-<text x="76.2" y="162.56" size="2.54" layer="97">TODO:
+<text x="76.2" y="149.86" size="2.54" layer="97">TODO:
 1. ~~Replace arduino headers with teensy headers (male and female since teensy comes without them)~~
 2. ~~Are the LED arrays mounted at correct distance from board edge?~~
 3.~~ Is teensy at correct distance from board edge?~~
-4. Is there adequare clearance b/w rear panel mount components
+4. ~~Is there adequare clearance b/w rear panel mount components~~
 5. Rearrange panels to fit changes in front and back
-6. +5V regulator layout
+6. ~~+5V regulator layou EDIT: +6V~~
 7. ~~Test LED ON circuit. You will at least have to replace the N BJT with an P BJT since LED ON is inverted.~~
 8. ~~Teensy itself will need to be modified with cut trace and schottky diode to work with external power~~
 9. ~~Replace SMD VREF/TTL switch with vertical slide like 360‑3344‑ND~~
 10. ~~Bring +12V up to +13.5 and -1.5 to -2.5V if possible. Examine components to see what is limiting the positive/negative rails.~~
-11. Stripline calculations and proper terminations for new high-side analog drive train and new analog switch (thinking about replacing drive train MAX4564 with ADV3220 which provides 800 MHz -3dB and 2x gain hardcoded). EDIT: 11 mil is good when using top layer and 2nd layer ground for circuit hub PCBs
-12. Rename jumper resistors
-13. Replace +6V LDO with something that can actually handle +13.3V input. Place close to 13.3V LDO. Add buck converter to digital power supply to provide fixed 5V for teensy and to power inverter. 15V should be routed to digital section on bottom layer of board along the bottom edge of board. Ground should be cut along the top edge of this trace to force digital power return back to 15V jack along this trace, away from analog stuff.
-14. ~~Protect inputs of opa1664 with schottkys~~</text>
+11. ~~Stripline calculations and proper terminations for new high-side analog drive train and new analog switch (thinking about replacing drive train MAX4564 with ADV3220 which provides 800 MHz -3dB and 2x gain hardcoded). EDIT: 11 mil is good when using top layer and 2nd layer ground for circuit hub PCBs~~
+12. ~~Rename jumper resistors~~
+13. ~~Replace +6V LDO with something that can actually handle +13.3V input. Place close to 13.3V LDO. Add buck converter to digital power supply to provide fixed 5V for teensy and to power inverter. 15V should be routed to digital section on bottom layer of board along the bottom edge of board. Ground should be cut along the top edge of this trace to force digital power return back to 15V jack along this trace, away from analog stuff.~~
+14. ~~Protect inputs of opa1664 with schottkys~~
+15. TTL/VREF switch pin overlaps with heatsink.
+16. Remove unused vref pin from teensy so that thta TRIG BNC has plenty of room. Update the headers to be 2 pin instead of 3</text>
 <wire x1="-12.7" y1="190.5" x2="71.12" y2="190.5" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="71.12" y1="190.5" x2="71.12" y2="149.86" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="71.12" y1="149.86" x2="-12.7" y2="149.86" width="0.4064" layer="97" style="shortdash"/>
@@ -9128,9 +9132,9 @@ distributor Farnell 149-452</description>
 <instance part="Q1" gate="G$1" x="17.78" y="71.12"/>
 <instance part="Q3" gate="G$1" x="78.74" y="71.12"/>
 <instance part="Q2" gate="G$1" x="17.78" y="-30.48"/>
-<instance part="P-8" gate="1" x="-35.56" y="-53.34"/>
+<instance part="P-8" gate="1" x="-35.56" y="-60.96"/>
 <instance part="C21" gate="C" x="-30.48" y="-43.18" rot="MR270"/>
-<instance part="U$71" gate="G$1" x="-22.86" y="-50.8" rot="MR0"/>
+<instance part="U$71" gate="G$1" x="-22.86" y="-60.96" rot="MR0"/>
 <instance part="R25" gate="R" x="10.16" y="-40.64" smashed="yes" rot="R90">
 <attribute name="NAME" x="8.6614" y="-44.45" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="13.462" y="-44.45" size="1.778" layer="96" rot="R90"/>
@@ -9147,7 +9151,7 @@ distributor Farnell 149-452</description>
 <instance part="U7" gate="G$2" x="-35.56" y="68.58"/>
 <instance part="U6" gate="G$1" x="-40.64" y="-30.48"/>
 <instance part="U6" gate="G$2" x="-38.1" y="-30.48"/>
-<instance part="U$77" gate="G$1" x="-43.18" y="-50.8" rot="MR0"/>
+<instance part="U$77" gate="G$1" x="-43.18" y="-60.96" rot="MR0"/>
 <instance part="P+9" gate="1" x="20.32" y="111.76"/>
 <instance part="P+10" gate="1" x="81.28" y="111.76"/>
 <instance part="P+11" gate="1" x="20.32" y="10.16"/>
@@ -9209,7 +9213,7 @@ distributor Farnell 149-452</description>
 <segment>
 <pinref part="C21" gate="C" pin="2"/>
 <wire x1="-25.4" y1="-43.18" x2="-22.86" y2="-43.18" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-43.18" x2="-22.86" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="-22.86" y1="-43.18" x2="-22.86" y2="-58.42" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U6" gate="G$1" pin="GND"/>
@@ -9218,7 +9222,7 @@ distributor Farnell 149-452</description>
 <pinref part="U6" gate="G$1" pin="LATCH"/>
 <wire x1="-43.18" y1="-45.72" x2="-43.18" y2="-43.18" width="0.1524" layer="91"/>
 <junction x="-43.18" y="-45.72"/>
-<wire x1="-43.18" y1="-45.72" x2="-43.18" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="-45.72" x2="-43.18" y2="-58.42" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U7" gate="G$2" pin="V-"/>
@@ -9414,7 +9418,7 @@ distributor Farnell 149-452</description>
 <pinref part="U6" gate="G$2" pin="V-"/>
 <wire x1="-35.56" y1="-38.1" x2="-35.56" y2="-43.18" width="0.1524" layer="91"/>
 <pinref part="C21" gate="C" pin="1"/>
-<wire x1="-35.56" y1="-43.18" x2="-35.56" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="-35.56" y1="-43.18" x2="-35.56" y2="-58.42" width="0.1524" layer="91"/>
 <wire x1="-33.02" y1="-43.18" x2="-35.56" y2="-43.18" width="0.1524" layer="91"/>
 <junction x="-35.56" y="-43.18"/>
 </segment>
@@ -10308,8 +10312,6 @@ Max(ILED) ~ 1.5 Amps</text>
 <approved hash="113,5,55.88,10.795,U$52,,,,,"/>
 <approved hash="113,2,-38.1,-12.065,U$10,,,,,"/>
 <approved hash="115,1,154.94,101.6,OVER_CURR_PRE,,,,,"/>
-<approved hash="115,5,165.1,91.44,LED+,,,,,"/>
-<approved hash="115,5,165.1,10.16,LED-,,,,,"/>
 <approved hash="115,1,147.32,129.54,+5V,,,,,"/>
 <approved hash="115,5,-72.39,96.52,-2.5V,,,,,"/>
 <approved hash="115,5,0,21.59,-2.5V,,,,,"/>
@@ -10390,7 +10392,6 @@ Max(ILED) ~ 1.5 Amps</text>
 <approved hash="115,1,53.34,-55.88,GND,,,,,"/>
 <approved hash="115,1,203.2,26.67,GND,,,,,"/>
 <approved hash="115,1,226.06,31.75,GND,,,,,"/>
-<approved hash="115,4,-20.32,-17.78,REF2.5,,,,,"/>
 </errors>
 </schematic>
 </drawing>
