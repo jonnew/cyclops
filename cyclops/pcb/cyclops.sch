@@ -2388,15 +2388,6 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <rectangle x1="0" y1="-1.905" x2="10.16" y2="1.905" layer="39"/>
 <text x="0" y="-3.556" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 </package>
-<package name="BDN18">
-<wire x1="0" y1="0" x2="0" y2="45.72" width="0.1524" layer="21"/>
-<wire x1="0" y1="45.72" x2="45.72" y2="45.72" width="0.1524" layer="21"/>
-<wire x1="45.72" y1="45.72" x2="45.72" y2="0" width="0.1524" layer="21"/>
-<wire x1="45.72" y1="0" x2="0" y2="0" width="0.1524" layer="21"/>
-<rectangle x1="0" y1="0" x2="45.72" y2="45.72" layer="39"/>
-<text x="0" y="47.752" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
-<text x="0" y="-3.556" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
-</package>
 <package name="2M1-SP1-T2-B4-M6RE">
 <pad name="2" x="12.192" y="0" drill="1.8542" shape="octagon"/>
 <pad name="1" x="12.192" y="4.699" drill="1.8542" shape="octagon"/>
@@ -3018,30 +3009,6 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <wire x1="10.16" y1="-2.54" x2="10.16" y2="2.54" width="0.254" layer="94"/>
 <wire x1="10.16" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
 <text x="0" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
-<symbol name="HEATSINK">
-<wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="1.27" y2="5.08" width="0.254" layer="94"/>
-<wire x1="1.27" y1="5.08" x2="1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="2.54" y2="1.27" width="0.254" layer="94"/>
-<wire x1="2.54" y1="1.27" x2="2.54" y2="5.08" width="0.254" layer="94"/>
-<wire x1="2.54" y1="5.08" x2="3.81" y2="5.08" width="0.254" layer="94"/>
-<wire x1="3.81" y1="5.08" x2="3.81" y2="1.27" width="0.254" layer="94"/>
-<wire x1="3.81" y1="1.27" x2="5.08" y2="1.27" width="0.254" layer="94"/>
-<wire x1="5.08" y1="1.27" x2="5.08" y2="5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="5.08" x2="6.35" y2="5.08" width="0.254" layer="94"/>
-<wire x1="6.35" y1="5.08" x2="6.35" y2="1.27" width="0.254" layer="94"/>
-<wire x1="6.35" y1="1.27" x2="7.62" y2="1.27" width="0.254" layer="94"/>
-<wire x1="7.62" y1="1.27" x2="7.62" y2="5.08" width="0.254" layer="94"/>
-<wire x1="7.62" y1="5.08" x2="8.89" y2="5.08" width="0.254" layer="94"/>
-<wire x1="8.89" y1="5.08" x2="8.89" y2="1.27" width="0.254" layer="94"/>
-<wire x1="8.89" y1="1.27" x2="10.16" y2="1.27" width="0.254" layer="94"/>
-<wire x1="10.16" y1="1.27" x2="10.16" y2="5.08" width="0.254" layer="94"/>
-<wire x1="10.16" y1="5.08" x2="11.43" y2="5.08" width="0.254" layer="94"/>
-<wire x1="11.43" y1="5.08" x2="11.43" y2="0" width="0.254" layer="94"/>
-<wire x1="11.43" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<text x="0" y="6.35" size="1.27" layer="95">&gt;NAME</text>
-<text x="7.62" y="6.35" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="LT1611">
 <pin name="~SHDN" x="-12.7" y="-5.08" length="short"/>
@@ -4271,18 +4238,6 @@ Digikey part: J111-ND (or similar).</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="HEATSINK">
-<gates>
-<gate name="G$1" symbol="HEATSINK" x="0" y="0"/>
-</gates>
-<devices>
-<device name="_BDN18" package="BDN18">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="LT1611">
 <gates>
 <gate name="G$1" symbol="LT1611" x="0" y="0"/>
@@ -4697,7 +4652,6 @@ distributor Farnell 149-452</description>
 <wire x1="8.89" y1="35.56" x2="8.89" y2="0" width="0.2032" layer="21"/>
 <text x="-8.89" y="37.592" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
 <text x="-8.89" y="36.068" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
-<pad name="AREF" x="-5.08" y="8.89" drill="0.9652" rot="R180"/>
 <pad name="A10" x="-5.08" y="11.43" drill="0.9652" rot="R180"/>
 <pad name="A11" x="-5.08" y="13.97" drill="0.9652" rot="R180"/>
 <pad name="28" x="0" y="31.75" drill="0.9652" rot="R180"/>
@@ -4724,13 +4678,10 @@ distributor Farnell 149-452</description>
 <wire x1="3.81" y1="0" x2="8.89" y2="0" width="0.2032" layer="21"/>
 <wire x1="-12.7" y1="0" x2="11.43" y2="0" width="0.2032" layer="51" style="shortdash"/>
 <text x="0" y="1.27" size="1.016" layer="51" font="vector" ratio="18" align="center">PCB Edge</text>
-<rectangle x1="-8.89" y1="0" x2="-6.35" y2="35.56" layer="39"/>
 <rectangle x1="6.35" y1="0" x2="8.89" y2="35.56" layer="39"/>
 <rectangle x1="-3.81" y1="15.24" x2="1.27" y2="33.02" layer="39"/>
-<rectangle x1="-6.35" y1="7.62" x2="-3.81" y2="15.24" layer="39"/>
 <rectangle x1="-8.89" y1="0" x2="-6.35" y2="35.56" layer="39"/>
 <rectangle x1="-8.89" y1="0" x2="-6.35" y2="35.56" layer="40" rot="R180"/>
-<rectangle x1="-6.35" y1="7.62" x2="-3.81" y2="15.24" layer="40" rot="R180"/>
 <rectangle x1="6.35" y1="0" x2="8.89" y2="35.56" layer="40" rot="R180"/>
 <rectangle x1="-3.81" y1="15.24" x2="1.27" y2="33.02" layer="40" rot="R180"/>
 <text x="-9.525" y="1.27" size="0.8128" layer="21" font="vector" ratio="18" align="center-right">VIN</text>
@@ -4776,8 +4727,9 @@ distributor Farnell 149-452</description>
 <text x="1.905" y="31.75" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">28</text>
 <text x="-3.175" y="13.97" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">A11</text>
 <text x="-3.175" y="11.43" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">A10</text>
-<text x="-3.175" y="8.89" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">AREF</text>
 <text x="9.525" y="1.27" size="0.8128" layer="21" font="vector" ratio="18" align="center-left">GND</text>
+<rectangle x1="-6.35" y1="10.16" x2="-3.81" y2="15.24" layer="39"/>
+<rectangle x1="-6.35" y1="10.16" x2="-3.81" y2="15.24" layer="40"/>
 </package>
 <package name="AS12A*_SPDT">
 <pad name="MECH1" x="-10.16" y="0.9906" drill="0.8" shape="octagon"/>
@@ -5702,6 +5654,24 @@ grid 2.54 mm</description>
 <package name="4-40_PLATED">
 <pad name="P$1" x="0" y="0" drill="3.2639" diameter="6.35"/>
 </package>
+<package name="BDN17">
+<wire x1="0" y1="0" x2="0" y2="43.434" width="0.1524" layer="21"/>
+<wire x1="0" y1="43.434" x2="43.434" y2="43.434" width="0.1524" layer="21"/>
+<wire x1="43.434" y1="43.434" x2="43.434" y2="0" width="0.1524" layer="21"/>
+<wire x1="43.434" y1="0" x2="0" y2="0" width="0.1524" layer="21"/>
+<rectangle x1="0" y1="0" x2="43.434" y2="43.434" layer="39"/>
+<text x="0" y="44.45" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="0" y="-3.556" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
+</package>
+<package name="BDN18">
+<wire x1="0" y1="0" x2="0" y2="45.72" width="0.1524" layer="21"/>
+<wire x1="0" y1="45.72" x2="45.72" y2="45.72" width="0.1524" layer="21"/>
+<wire x1="45.72" y1="45.72" x2="45.72" y2="0" width="0.1524" layer="21"/>
+<wire x1="45.72" y1="0" x2="0" y2="0" width="0.1524" layer="21"/>
+<rectangle x1="0" y1="0" x2="45.72" y2="45.72" layer="39"/>
+<text x="0" y="47.752" size="1.016" layer="25" font="vector" ratio="18">&gt;NAME</text>
+<text x="0" y="-3.556" size="1.016" layer="27" font="vector" ratio="18">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BU-BNC-1">
@@ -5819,7 +5789,6 @@ grid 2.54 mm</description>
 <text x="-2.794" y="-35.56" size="1.27" layer="96" font="vector" ratio="15">&gt;VALUE</text>
 <pin name="A10" x="22.86" y="-5.08" visible="pin" length="middle" rot="R180"/>
 <pin name="A11" x="22.86" y="-2.54" visible="pin" length="middle" rot="R180"/>
-<pin name="AREF" x="22.86" y="12.7" visible="pin" length="middle" direction="in" rot="R180"/>
 <pin name="24" x="-22.86" y="-30.48" visible="pin" length="middle"/>
 <pin name="25/T/PWM" x="22.86" y="-30.48" visible="pin" length="middle" rot="R180"/>
 <pin name="26/A15" x="22.86" y="-27.94" visible="pin" length="middle" rot="R180"/>
@@ -6088,6 +6057,30 @@ grid 2.54 mm</description>
 <text x="0" y="1.27" size="1.778" layer="95" rot="R90" align="center-left">&gt;NAME</text>
 <pin name="TP" x="0" y="-2.54" visible="off" length="short" direction="in" rot="R90"/>
 </symbol>
+<symbol name="HEATSINK">
+<wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="5.08" x2="1.27" y2="5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="2.54" y1="1.27" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="5.08" x2="3.81" y2="5.08" width="0.254" layer="94"/>
+<wire x1="3.81" y1="5.08" x2="3.81" y2="1.27" width="0.254" layer="94"/>
+<wire x1="3.81" y1="1.27" x2="5.08" y2="1.27" width="0.254" layer="94"/>
+<wire x1="5.08" y1="1.27" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="6.35" y2="5.08" width="0.254" layer="94"/>
+<wire x1="6.35" y1="5.08" x2="6.35" y2="1.27" width="0.254" layer="94"/>
+<wire x1="6.35" y1="1.27" x2="7.62" y2="1.27" width="0.254" layer="94"/>
+<wire x1="7.62" y1="1.27" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="8.89" y2="5.08" width="0.254" layer="94"/>
+<wire x1="8.89" y1="5.08" x2="8.89" y2="1.27" width="0.254" layer="94"/>
+<wire x1="8.89" y1="1.27" x2="10.16" y2="1.27" width="0.254" layer="94"/>
+<wire x1="10.16" y1="1.27" x2="10.16" y2="5.08" width="0.254" layer="94"/>
+<wire x1="10.16" y1="5.08" x2="11.43" y2="5.08" width="0.254" layer="94"/>
+<wire x1="11.43" y1="5.08" x2="11.43" y2="0" width="0.254" layer="94"/>
+<wire x1="11.43" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<text x="0" y="6.35" size="1.27" layer="95">&gt;NAME</text>
+<text x="7.62" y="6.35" size="1.27" layer="96">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="BNC" prefix="X" uservalue="yes">
@@ -6270,7 +6263,6 @@ distributor Farnell 149-452</description>
 <connect gate="G$1" pin="A12" pad="A12"/>
 <connect gate="G$1" pin="A13" pad="A13"/>
 <connect gate="G$1" pin="AGND" pad="AGND"/>
-<connect gate="G$1" pin="AREF" pad="AREF"/>
 <connect gate="G$1" pin="GND" pad="GND GND2"/>
 <connect gate="G$1" pin="VIN" pad="VIN"/>
 </connects>
@@ -7292,6 +7284,23 @@ distributor Farnell 149-452</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="HEATSINK" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="HEATSINK" x="0" y="0"/>
+</gates>
+<devices>
+<device name="_BDN18" package="BDN18">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_BDN17" package="BDN17">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -7396,7 +7405,7 @@ distributor Farnell 149-452</description>
 <part name="C26" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="U$44" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$46" library="cyclops" deviceset="GND2" device=""/>
-<part name="HEATSINK" library="cyclops" deviceset="HEATSINK" device="_BDN18" value="BDN18"/>
+<part name="HEATSINK" library="jonnew" deviceset="HEATSINK" device="_BDN17" value="BDN17"/>
 <part name="R36" library="cyclops" deviceset="R" device="_0603" value="0"/>
 <part name="R39" library="cyclops" deviceset="R" device="_0603"/>
 <part name="U$26" library="cyclops" deviceset="GND2" device=""/>
@@ -7632,7 +7641,7 @@ distributor Farnell 149-452</description>
 12. ~~Rename jumper resistors~~
 13. ~~Replace +6V LDO with something that can actually handle +13.3V input. Place close to 13.3V LDO. Add buck converter to digital power supply to provide fixed 5V for teensy and to power inverter. 15V should be routed to digital section on bottom layer of board along the bottom edge of board. Ground should be cut along the top edge of this trace to force digital power return back to 15V jack along this trace, away from analog stuff.~~
 14. ~~Protect inputs of opa1664 with schottkys~~
-15. TTL/VREF switch pin overlaps with heatsink.
+15. ~~TTL/VREF switch pin overlaps with heatsink.~~
 16. Remove unused vref pin from teensy so that thta TRIG BNC has plenty of room. Update the headers to be 2 pin instead of 3</text>
 <wire x1="-12.7" y1="190.5" x2="71.12" y2="190.5" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="71.12" y1="190.5" x2="71.12" y2="149.86" width="0.4064" layer="97" style="shortdash"/>
