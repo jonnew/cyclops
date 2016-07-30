@@ -81,13 +81,19 @@ def parse(event):
   cmd = gui.cmd.get()
   if not cmd=='':
     gui.cmd.delete('0', 'end')
-    print(do_user_command(cmd))
+    serial_out = do_user_command(cmd)
     if gui.serUP:
-      ser.write(do_user_command(cmd))
+      if serial_out != -1:
+        print(serial_out)
+        ser.write(serial_out)
+        show_on_right = cmd + " := " + bytesToStr(serial_out)
+      else:
+        print ("invalid:", cmd)
+        show_on_right = "invalid " + cmd
     else:
       gui.right_put('*_* First connect to the Serial Port!')
     cmd = cmd.replace(" ", "")
-    gui.right_put(cmd + " := " + bytesToStr(do_user_command(cmd)))
+    gui.right_put(show_on_right)
 
 ###################################
 gui.setup(connect, disconnect, parse)

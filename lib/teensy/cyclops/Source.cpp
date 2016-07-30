@@ -3,6 +3,10 @@
 namespace cyclops{
 using namespace source;
 
+// global definitions
+//Source** source::globalSourceList_ptr  = nullptr;
+//uint8_t  source::globalSourceList_size = 0;
+
 // static var definition
 uint8_t Source::src_count = 0;
 
@@ -32,8 +36,26 @@ void Source::setTScale(float tscale){
 		TScale = tscale;
 }
 
-void Source::setOffset(uint16_t offset){
-	DCoffset = offset;
+void Source::setOffset(int16_t offset){
+	// Constrain DCoffset into correct range.
+	if (offset < -4095)
+		DCoffset = -4095;
+	else if (offset > 4095){
+		DCoffset = 4095;
+	}
+	else{
+		DCoffset = offset;
+	}
+}
+
+uint8_t Source::resetAll(){
+	if (globalSourceList_ptr != nullptr){
+		for (uint8_t i=0; i<globalSourceList_size; i++){
+			globalSourceList_ptr[i]->reset();
+		}
+		return 0;
+	}
+	return 1;
 }
 
 //================================================================================================
@@ -53,9 +75,13 @@ storedSource::storedSource(
 { /*empty body*/ }
 
 uint16_t storedSource::getVoltage(){
-	// no need to clamp it here, that will happen automatically when the value is
-	// bitmasked into 12bits.
-	return (voltage_data[cur_ind] * VScale) + DCoffset;
+	// DCoffset might make the whole expression negative, so compute signed value 
+	int16_t voltage = (int16_t) (voltage_data[cur_ind] * VScale) + DCoffset;
+	
+	// need to clamp to 0 if voltage is negative.
+	return (voltage < 0)? 0 : (uint16_t) voltage;
+	// no need to clamp if it's positive, that will happen automatically when the value is
+	// bitmasked into 12bits in Waveform::prepare.
 }
 
 uint32_t storedSource::holdTime(){

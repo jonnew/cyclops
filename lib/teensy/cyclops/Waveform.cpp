@@ -40,6 +40,7 @@ uint8_t Waveform::prepare(){
   if (status == PREPARED)
     return 2; // already prepared
   if (SPI0_SR & SPI_SR_TFFF){
+    // clamp votage to corect range (0, 4095)
     uint16_t spi_frame = DAC_CONF_ACTIVE | (source_ptr->getVoltage() & 0x0fff);
     SPI_fifo.write16(board_ptr->channel, spi_frame); // non blocking
     status = PREPARED;
@@ -108,6 +109,16 @@ void Waveform::processAll(){
     }
   }
   Timer1.enableInterrupt();
+}
+
+void Waveform::groundAll(){
+  for (uint8_t i=0; i<size; i++){
+    _list[i]->board_ptr->dac_prog_voltage(0);
+  }
+  while (((SPI0_SR) & (15 << 12)) > 0); // wait till FIFO is empty
+  for (uint8_t i=0; i<size; i++){
+    _list[i]->board_ptr->dac_load();
+  }
 }
 
 } // NAMESPACE cyclops

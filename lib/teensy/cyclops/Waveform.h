@@ -44,12 +44,6 @@
 #ifndef CL_TEENSY_WAVEFORM_H
 #define CL_TEENSY_WAVEFORM_H
 
-#if ARDUINO >= 100
- #include <Arduino.h>
-#else
- #include <WProgram.h>
-#endif
-
 #include "Source.h"
 #include "CLTimerOne.h"
 #include "Board.h"
@@ -195,6 +189,15 @@ class Waveform{
      * @return     ``holdTime`` of the Waveform with least ``holdTime``.
      */
     static uint32_t initAll();
+
+    /**
+     * @brief      Grounds all the signals.
+     * @attention  There's no point in calling this during aquisition, because
+     *             the DACs will be refreshed eventually. Call this after
+     *             aquisition is stopped (and the Timer is stopped) to reliably
+     *             turn off all LEDs.
+     */
+    static void groundAll();
 
     /**
      * @brief      The ISR routine which must be attached to Timer1 interrupt to

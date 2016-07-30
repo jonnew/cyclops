@@ -44,27 +44,34 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #define CS1               9     //
 #define CS2               20    //
 #define CS3               21    //
-/*  
-//#define LDAC0             24    // Load DAC line for CH0
-#define LDAC0             9     // Load DAC line (for Ananya's test rig only)
+/* The Real LDAC pins:  
+#define LDAC0             24    // Load DAC line for CH0
 #define LDAC1             25    // Load DAC line for CH1
 #define LDAC2             26    // Load DAC line for CH2
 #define LDAC3             27    // Load DAC line for CH3
 */
+
+/* LDAC pins for Ananya's Test Rig */
 #define LDAC0             16 
 #define LDAC1             17
 #define LDAC2             22
 #define LDAC3             23
 
-#define TRIG0             30    // Trigger lines
-#define TRIG1             31    //
-#define TRIG2             32    //
-#define TRIG3             33    //
+#define TRIG0             3     // Trigger lines
+#define TRIG1             4     //
+#define TRIG2             5     //
+#define TRIG3             6     //
 
 #define ADC0              A1    // Analog input lines
 #define ADC1              A2    //
 #define ADC2              A3    //
 #define ADC3              A8    //
+
+#define BOARD_ADDR0       30    // Board Identification pins
+#define BOARD_ADDR1       31    //
+#define BOARD_ADDR2       32    // When this pin is high, Teensy "knows" that a Channel #2 Cyclops has
+                                // been connected.
+#define BOARD_ADDR3       33    //
 
 namespace cyclops{
   /**
@@ -175,6 +182,9 @@ class Board {
      */
     void setSoftwareHook(void (*user_func)(void), triggerConfig tr_cfg);
 
+    static const uint8_t* getBoardAddressPins();
+    static bool           isConnectedAtChannel(uint8_t channel_id);
+
  private:
 
     // Over current triggred
@@ -186,6 +196,7 @@ class Board {
     static const uint8_t *_oc_lut;
     static const uint8_t *_trig_lut;
     static const uint8_t *_ldac_lut;
+    static const uint8_t *_boardID_lut;
 };
 
 } // NAMESPACE cyclops

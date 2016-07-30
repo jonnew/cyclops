@@ -376,6 +376,7 @@ class CLTimerOne
   NVIC_ENABLE_IRQ(IRQ_FTM1);
     }
     void disableInterrupt() __attribute__((always_inline)) {
+  // Identical to detachInterrupt !!
   FTM1_SC &= ~FTM_SC_TOIE;
   NVIC_DISABLE_IRQ(IRQ_FTM1);
     }

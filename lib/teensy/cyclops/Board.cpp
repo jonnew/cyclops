@@ -35,11 +35,14 @@ static const uint8_t trig_lut_data[] = {(uint8_t)TRIG0, (uint8_t)TRIG1, (uint8_t
 const uint8_t *Board::_trig_lut = trig_lut_data;
 static const uint8_t ldac_lut_data[] = {(uint8_t)LDAC0, (uint8_t)LDAC1, (uint8_t)LDAC2, (uint8_t)LDAC3};
 const uint8_t *Board::_ldac_lut = ldac_lut_data;
+static const uint8_t board_id_data[] = {(uint8_t)BOARD_ADDR0, (uint8_t)BOARD_ADDR1, (uint8_t)BOARD_ADDR2, (uint8_t)BOARD_ADDR3};
+const uint8_t *Board::_boardID_lut = board_id_data;
 
 Board::Board(Channel _channel): channel(_channel),                                    
                                     trig_config(NO_TRIG),
                                     software_hook_fn(nullptr)
 {
+    // hopefully, the BOARD_ADDR<channle> pin is high...
     _oc_trig = 0;
     // Set pin modes
     pinMode(_oc_lut[channel], OUTPUT);
@@ -111,6 +114,15 @@ void Board::setSoftwareHook(void (*user_func)(void), triggerConfig tr_cfg){
     detachInterrupt(_trig_lut[channel]); // test this!
     trig_config = tr_cfg;
     software_hook_fn = user_func;
+}
+
+
+const uint8_t* Board::getBoardAddressPins(){
+    return _boardID_lut;
+}
+
+bool Board::isConnectedAtChannel(uint8_t channel_id){
+    return digitalRead(_boardID_lut[channel_id]) == LOW;
 }
 
 } // NAMESPACE cyclops
