@@ -181,6 +181,8 @@ class Source{
      * @brief      Resets the Source. getVoltage() will return the Voltage of the first data-point.
      */
     virtual void reset() = 0;
+
+    static  uint8_t resetAll();
 };
 
 /**
@@ -346,13 +348,25 @@ class squareSource: public Source{
 namespace source{
 /**
  * @ingroup    ns-source
- * @brief      The array of pointers to *derivations* of Source instances.
- * @attention
- * If RPC is to be used, this pointer must by defined (ie, initialised) in a 
- * user sketch. This array is used by Task::compute to access and modify the
- * Source attributes.
+ * @brief      The pointer to the global array of pointers to *derivations* of
+ *             Source instances.
+ * @details    This array is used by Task::compute to access and modify the
+ *             Source attributes. Use the REGISTER_SOURCE_LIST() macro to
+ *             initialize this variable.
+ * @attention  If RPC is to be used, this pointer must by set to (and
+ *             initialised) in a user sketch -- using the macro. Also, don't
+ *             forget the semi-colon after the macro!
  */
 extern cyclops::Source** globalSourceList_ptr;
+/**
+ * @ingroup    ns-source
+ * @brief      The size of the global array of pointers to *derivations* of
+ *             Source instances.
+ * @attention  If RPC is to be used, this int must by set to (and
+ *             initialised) in a user sketch -- using the macro. Also, don't
+ *             forget the semi-colon after the macro!
+ */
+extern uint8_t globalSourceList_size;
 }
 
 } // NAMESPACE cyclops

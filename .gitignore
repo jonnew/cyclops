@@ -7,6 +7,7 @@
 *.zip
 *~*
 *__pycache__*
+*pyc
 docs/teensy/*
 docs/arduino/*
 !docs/teensy/cd.css

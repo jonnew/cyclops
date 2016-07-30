@@ -29,10 +29,12 @@
  * to the instances created in (2).
  * @attention  You must fill the array with the pointers in the *exact order* in
  * which they were declared!
- * 4. Assign the array to cyclops::source::globalSourceList_ptr. The program will 
- * not compile unless this assignment is made.
+ * 4. Assign the array to ``cyclops::source::globalSourceList_ptr``, and intitalise 
+ * ``cyclops::source::globalSourceList_size``. The program will (sometimes) not compile
+ * unless this assignment is made. Use the @ref ns-source "REGISTER_SOURCE_LIST" macro
+ * for this.
  * 5. Create a Queue instance, (say myQueue).
- * @note       Now, do the following in ```loop()``...
+ * @note       Now, do the following in ``loop()``...
  * 6. Apart form the normal waveform stuff, add a snippet as following:
  * @code
  *  cyclops::readSerialAndPush(&myQueue);
@@ -95,11 +97,20 @@ class Task{
     void setArgs(uint8_t arg_len);
 
     /**
-     * @brief      Executes the Task.
+     * @brief      Executes the Task, only if it can be performed when
+     *             aquisition _IS_ Active.
      *
-     * @return     ``0`` if successful, else ``1``
+     * @return     ``0`` if successful, else ``1``.
      */
     uint8_t compute();
+
+    /**
+     * @brief      Executes the Task, only if it can be performed when
+     *             aquisition _IS NOT_ active.
+     *
+     * @return     ``0`` is successful, else ``1``.
+     */
+    uint8_t checkAndCompute();
 
  private:
     uint8_t _priority;         /**< Not needed now */
@@ -107,6 +118,7 @@ class Task{
                                     instances.
                                     @warning Will roll-over, and there is no 
                                     guarantee of uniqueness! */
+    
     /**
      * @brief      determines priority of this task using information in RPC_defs.h?
      */
@@ -166,6 +178,7 @@ public:
  * @param      q     The Queue object which will be populated.
  */
 void readSerialAndPush(Queue *q);
+
 } // NAMESPACE cyclops
 
 /*

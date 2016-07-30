@@ -3,6 +3,10 @@
 namespace cyclops{
 using namespace source;
 
+// global definitions
+//Source** source::globalSourceList_ptr  = nullptr;
+//uint8_t  source::globalSourceList_size = 0;
+
 // static var definition
 uint8_t Source::src_count = 0;
 
@@ -42,6 +46,16 @@ void Source::setOffset(int16_t offset){
 	else{
 		DCoffset = offset;
 	}
+}
+
+uint8_t Source::resetAll(){
+	if (globalSourceList_ptr != nullptr){
+		for (uint8_t i=0; i<globalSourceList_size; i++){
+			globalSourceList_ptr[i]->reset();
+		}
+		return 0;
+	}
+	return 1;
 }
 
 //================================================================================================

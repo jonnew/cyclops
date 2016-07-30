@@ -10,6 +10,8 @@
     There are two kinds of Serial packets, single byte and multi byte.
     The size of a packet is determined by MSB of header and the ``command`` field.
 
+    The teensy will respond to all serial commands that it reads, see the section on @ref return-codes "Return Codes"
+
     @section S-header-desc Single Byte Packets
     Single byte Headers are distinguished from other headers by the MSB bit. For
     Single byte headers, this bit is always set.
@@ -28,6 +30,8 @@
     ``001``      | stop     | Pause Waveform generation.
     ``010``      | reset    | Reset selected sources. @attention The system is *not* reset to _initial configuration_!
     ``011``      | swap     | Swap the Cyclops instances of the 2 high ``channel`` bits.
+    ``100``      | launch   | Launch the experiment main-loop.
+    ``101``      | end      | Stop the experiment main-loop. The teensy will enter a restricted mode, responding only to some Single byte commands: [launch, identity]. For all commands, an error code will be returned.
     ``111``      | identity | Send device description.
     
     @section M-header-desc Multi Byte Packets
@@ -77,6 +81,35 @@
     | square_off_time    | uint32 val    |                  |
     | square_on_level    | uint16 val    |                  |
     | square_off_level   | uint16 val    |                  |
+
+    @subsection return-codes Error and Success Codes
+
+    These are the _codes_ which will be returned by the teensy when an RPC command is recieved by it.
+
+    ``EA`` _stands for_ **Experiment is Active**
+
+    ``notEA`` _stands for_ **Experiment is Inactive**
+
+    @subsubsection RC-success Success Codes
+
+    Success codes never start with first nibble HIGH ``~(0xFX)``
+
+    | Name     | Upon recieving...                                                  | ...while in state              | Action when ``EA``                                             | Action when ``notEA``                                  | Code     |
+    | -------- | ------------------------------------------------------------------ | ------------------------------ | ------------------------------------------------------------- | ------------------------------------------------------ | -------- |
+    | LAUNCH   | ``SB.launch``                                                      | both ``EA`` and ``notEA``      | **No Effect**                                                 | **Starts main-loop**, thereby starting the experiment. | ``0x00`` |
+    | END      | ``SB.end``                                                         | only when ``EA``               | **Breaks out of mainloop**, resets sources, grounds all LEDs. | **NA**                                                 | ``0x01`` |
+    | SB.DONE  | ``SB.*`` (except ``SB.launch``, ``SB.end`` and ``SB.identity``)    | only when ``EA``               | Suitable action is performed.                                 | **NA**                                                 | ``0x10`` |
+    | IDENTITY | ``SB.identity``                                                    | both ``EA`` and ``notEA``      | Identification Info is returned.                              | **NA**                                                 | ``0x11`` |
+    | MB.DONE  | ``MB.*``                                                           | only when ``EA``               | Suitable action is performed.                                 | **NA**                                                 | ``0x20`` |
+    
+    @subsubsection RC-error Error Codes
+    
+    Error codes generally start with first nibble HIGH ``(0xFX)``
+
+    | Name           | Reason                                                                                                                     | ...while in state   | Code     |
+    | -------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------- |
+    | EA_RPC_FAIL    | ``SB.*`` or ``MB.*`` failed due to either inability to perform task, or task cannot be done when experiment is _Live_.     | only when ``EA``    | ``0xf0`` |
+    | notEA_RPC_FAIL | ``SB.*`` or ``MB.*`` failed due to either inability to perform task, or task cannot be done when experiment is _Not Live_. | only when ``notEA`` | ``0xf1`` |
 
     @sa Task
 

@@ -111,6 +111,16 @@ void Waveform::processAll(){
   Timer1.enableInterrupt();
 }
 
+void Waveform::groundAll(){
+  for (uint8_t i=0; i<size; i++){
+    _list[i]->board_ptr->dac_prog_voltage(0);
+  }
+  while (((SPI0_SR) & (15 << 12)) > 0); // wait till FIFO is empty
+  for (uint8_t i=0; i<size; i++){
+    _list[i]->board_ptr->dac_load();
+  }
+}
+
 } // NAMESPACE cyclops
 
 void cyclops::cyclops_timer_isr(){

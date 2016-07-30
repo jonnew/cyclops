@@ -172,6 +172,7 @@ public:
    * @param[in]  cs_pin   The CS pin for channel
    */
   void setup_pcs_pin(uint8_t channel, uint8_t cs_pin){
+    // CS0
     if (cs_pin == 10){  // PTC4
       CORE_PIN10_CONFIG = PORT_PCR_MUX(2);
       PCS_BITS_TABLE[channel] = (1 << 16);
@@ -180,6 +181,8 @@ public:
       CORE_PIN2_CONFIG = PORT_PCR_MUX(2);
       PCS_BITS_TABLE[channel] = (1 << 16);
     }
+
+    // CS1
     if (cs_pin == 9){   // PTC3
       CORE_PIN9_CONFIG = PORT_PCR_MUX(2);
       PCS_BITS_TABLE[channel] = (2 << 16);
@@ -188,6 +191,8 @@ public:
       CORE_PIN6_CONFIG = PORT_PCR_MUX(2);
       PCS_BITS_TABLE[channel] = (2 << 16);
     }
+
+    // CS2
     if (cs_pin == 20){  // PTD5
       CORE_PIN20_CONFIG = PORT_PCR_MUX(2);
       PCS_BITS_TABLE[channel] = (4 << 16);
@@ -196,6 +201,8 @@ public:
       CORE_PIN23_CONFIG = PORT_PCR_MUX(2);
       PCS_BITS_TABLE[channel] = (4 << 16);
     }
+
+    // CS3
     if (cs_pin == 21){  // PTD6
       CORE_PIN21_CONFIG = PORT_PCR_MUX(2);
       PCS_BITS_TABLE[channel] = (8 << 16);
@@ -204,6 +211,8 @@ public:
       CORE_PIN22_CONFIG = PORT_PCR_MUX(2);
       PCS_BITS_TABLE[channel] = (8 << 16);
     }
+
+    // Weird
     if (cs_pin == 15){  // PTC0
       CORE_PIN15_CONFIG = PORT_PCR_MUX(2);
       PCS_BITS_TABLE[channel] = (16 << 16);

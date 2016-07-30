@@ -1,6 +1,7 @@
 #include "CLTask.h"
 
 namespace cyclops{
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
  *                         Task Class                           |
  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
@@ -28,7 +29,7 @@ uint8_t Task::compute(){
       //Serial.write(0xf0);
       return 0;
     }
-    else if (commandID < 7){
+    else if (commandID < 3){
       for (uint8_t i=0; i<Waveform::size; i++){
         if ((chs & 1) == 0) continue;
         switch (commandID){
@@ -47,15 +48,40 @@ uint8_t Task::compute(){
         }
         chs >>= 1;
       }
-      Serial.write(Waveform::_list[0]->source_ptr->opMode);
+      //Serial.write(Waveform::_list[0]->source_ptr->opMode);
       //Serial.write('\n');
-      //Serial.write(0xf0);
+      Serial.write(0x10); // SUCCESS::task::single_byte
       return 0;
     }
-    // commandID == 7
+    // commandID == 7 (identity)
     else{
-      Serial.print(F("Teensy 3.2 on Cyclops rev3.6\n"));
-      Serial.print(Waveform::size);
+      switch (commandID){
+      case 4:
+        // LAUNCH All sources are reset already.
+        // The system is ready, just get into the loop.
+        AquisitionStatus = true;
+        Serial.write(0x00); // SUCCESS::task::single_byte::launch
+        break;
+      case 5:
+        // LAND (land the rocket after a launch, no?)
+        AquisitionStatus = false;
+        Serial.write(0x01); // SUCCESS::task::single_byte::stop
+        break;
+      case 6:
+        // NOT_USED_RIGHT_NOW
+        Serial.write(0xf1); // ERROR::task::aquisition_inactive
+        break;
+      case 7:
+        Serial.print(F("Teensy 3.2 running CLv1 on Cyclops rev3.6\n"));
+        Serial.print(F("# Waveforms: "));
+        Serial.println(Waveform::size);
+        Serial.println(F("Channel State:"));
+        for (uint8_t chID=0; chID < 4; chID++){
+          Serial.println( (Board::isConnectedAtChannel(chID))? "1" : "0" );
+        }
+        Serial.write(0x11); // SUCCESS::task::identity
+        break;
+      }
       return 0;
     }
   }
@@ -113,11 +139,22 @@ uint8_t Task::compute(){
         ((squareSource*)(target_waveform->source_ptr))->voltage_level[0] = *(uint16_t*)args;
       break;
     }
-    Serial.write('@');
+    //Serial.write('@');
     //Serial.write('\n');
-    //Serial.write(0xf0);
+    Serial.write(0x20); // SUCCESS::task::multi_byte
     return 0;
   }
+  Serial.write(0xf0); // ERROR::task::aquisition_active
+  return 1;
+}
+
+uint8_t Task::checkAndCompute(){
+  if (argsLength == 0){
+    if (commandID == 4 || commandID == 7)
+      // 4:LAUNCH, 7:IDENTITY
+      return compute();
+  }
+  Serial.write(0xf1); // ERROR::task::aquisition_inactive
   return 1;
 }
 
@@ -180,7 +217,7 @@ void cyclops::readSerialAndPush(Queue *q){
     if (arg_len == 0){
       header_byte = Serial.read();
       arg_len = getPacketSize(header_byte)-1;
-      Serial.write(header_byte);
+      //Serial.write(header_byte);
       avl--;
     }
     //Serial.print(q->size);
