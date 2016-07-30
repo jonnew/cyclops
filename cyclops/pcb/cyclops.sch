@@ -5823,14 +5823,6 @@ grid 2.54 mm</description>
 <text x="1.1176" y="1.905" size="1.27" layer="94">2x7-Pin</text>
 <text x="-2.54" y="5.08" size="1.27" layer="96" rot="R270">&gt;VALUE</text>
 </symbol>
-<symbol name="TEENSY-3-PIN-HEADER">
-<wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
-<wire x1="7.62" y1="5.08" x2="7.62" y2="0" width="0.254" layer="94"/>
-<wire x1="7.62" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<text x="1.905" y="1.905" size="1.27" layer="94">3-Pin</text>
-<text x="-2.54" y="5.08" size="1.27" layer="96" rot="R270">&gt;VALUE</text>
-</symbol>
 <symbol name="TEENSY-14-PIN-HEADER">
 <wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
 <wire x1="0" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
@@ -6080,6 +6072,14 @@ grid 2.54 mm</description>
 <wire x1="11.43" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
 <text x="0" y="6.35" size="1.27" layer="95">&gt;NAME</text>
 <text x="7.62" y="6.35" size="1.27" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="TEENSY-2-PIN-HEADER">
+<wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="7.62" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<text x="1.905" y="1.905" size="1.27" layer="94">2-Pin</text>
+<text x="-2.54" y="5.08" size="1.27" layer="96" rot="R270">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -6343,18 +6343,6 @@ distributor Farnell 149-452</description>
 <deviceset name="TEENSY-2X7-PIN-HEADER" uservalue="yes">
 <gates>
 <gate name="G$1" symbol="TEENSY-2X7-PIN-HEADER" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="TEENSY-3-PIN-HEADER" uservalue="yes">
-<gates>
-<gate name="G$1" symbol="TEENSY-3-PIN-HEADER" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -7301,13 +7289,25 @@ distributor Farnell 149-452</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="TEENSY-2-PIN-HEADER" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="TEENSY-2-PIN-HEADER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
 <attributes>
 <attribute name="DESIGNER" value="JONATHAN P. NEWMAN"/>
 <attribute name="DOC_NUMBER" value="N/A"/>
-<attribute name="REVISION" value="3.5D"/>
+<attribute name="REVISION" value="3.6"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -7496,8 +7496,8 @@ distributor Farnell 149-452</description>
 <part name="R8" library="cyclops" deviceset="R" device="_0603" value="110k"/>
 <part name="U$62" library="cyclops" deviceset="GND1" device=""/>
 <part name="R28" library="cyclops" deviceset="R" device="_0603" value="1k"/>
-<part name="J_CS2" library="jonnew" deviceset="R" device="_0402" value="0"/>
 <part name="J_CS3" library="jonnew" deviceset="R" device="_0402" value="0"/>
+<part name="J_CS2" library="jonnew" deviceset="R" device="_0402" value="0"/>
 <part name="J_CS1" library="jonnew" deviceset="R" device="_0402" value="0"/>
 <part name="J_CS0" library="jonnew" deviceset="R" device="_0402" value="0"/>
 <part name="J_T0" library="jonnew" deviceset="R" device="_0402" value="0"/>
@@ -7541,12 +7541,11 @@ distributor Farnell 149-452</description>
 <part name="R50" library="cyclops" deviceset="R" device="_0603"/>
 <part name="U$28" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$48" library="jonnew" deviceset="TEENSY-2X7-PIN-HEADER" device="" value="SSQ-107-03-G-D"/>
-<part name="U$54" library="jonnew" deviceset="TEENSY-3-PIN-HEADER" device="" value="SSQ-103-03-G-S"/>
+<part name="U$54" library="jonnew" deviceset="TEENSY-2-PIN-HEADER" device="" value="SSQ-102-03-G-S"/>
 <part name="U$55" library="jonnew" deviceset="TEENSY-14-PIN-HEADER" device="" value="SSQ-114-03-G-S"/>
 <part name="U$63" library="jonnew" deviceset="TEENSY-14-PIN-HEADER" device="" value="SSQ-114-03-G-S"/>
 <part name="D1" library="jonnew" deviceset="S-DIODE" device="SOD-123" value="1N5819"/>
 <part name="U$66" library="jonnew" deviceset="TEENSY-2X7-PIN-HEADER" device="" value="NPTC072KFMS-RC"/>
-<part name="U$69" library="jonnew" deviceset="TEENSY-3-PIN-HEADER" device="" value="PPPC031LFBN-RC"/>
 <part name="U$72" library="jonnew" deviceset="TEENSY-14-PIN-HEADER" device="" value="PPPC141LFBN-RC"/>
 <part name="U$73" library="jonnew" deviceset="TEENSY-14-PIN-HEADER" device="" value="PPPC141LFBN-RC"/>
 <part name="TEENSY-3.2" library="jonnew" deviceset="TEENSY_SYMBOL" device="" value="NO-HEADERS"/>
@@ -7610,6 +7609,7 @@ distributor Farnell 149-452</description>
 <part name="U$79" library="cyclops" deviceset="GND2" device=""/>
 <part name="+13.3V" library="jonnew" deviceset="TP" device="_RC0603" value="RCU-0C"/>
 <part name="C40" library="cyclops" deviceset="C" device="_1210" value="22uF"/>
+<part name="U$80" library="jonnew" deviceset="TEENSY-2-PIN-HEADER" device="" value="PPPC021LFBN-RC"/>
 </parts>
 <sheets>
 <sheet>
@@ -7626,23 +7626,6 @@ distributor Farnell 149-452</description>
 <text x="160.02" y="114.3" size="3.81" layer="97">DGND</text>
 <wire x1="17.78" y1="17.78" x2="17.78" y2="99.06" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="17.78" y1="99.06" x2="-7.62" y2="99.06" width="0.4064" layer="97" style="shortdash"/>
-<text x="76.2" y="149.86" size="2.54" layer="97">TODO:
-1. ~~Replace arduino headers with teensy headers (male and female since teensy comes without them)~~
-2. ~~Are the LED arrays mounted at correct distance from board edge?~~
-3.~~ Is teensy at correct distance from board edge?~~
-4. ~~Is there adequare clearance b/w rear panel mount components~~
-5. Rearrange panels to fit changes in front and back
-6. ~~+5V regulator layou EDIT: +6V~~
-7. ~~Test LED ON circuit. You will at least have to replace the N BJT with an P BJT since LED ON is inverted.~~
-8. ~~Teensy itself will need to be modified with cut trace and schottky diode to work with external power~~
-9. ~~Replace SMD VREF/TTL switch with vertical slide like 360‑3344‑ND~~
-10. ~~Bring +12V up to +13.5 and -1.5 to -2.5V if possible. Examine components to see what is limiting the positive/negative rails.~~
-11. ~~Stripline calculations and proper terminations for new high-side analog drive train and new analog switch (thinking about replacing drive train MAX4564 with ADV3220 which provides 800 MHz -3dB and 2x gain hardcoded). EDIT: 11 mil is good when using top layer and 2nd layer ground for circuit hub PCBs~~
-12. ~~Rename jumper resistors~~
-13. ~~Replace +6V LDO with something that can actually handle +13.3V input. Place close to 13.3V LDO. Add buck converter to digital power supply to provide fixed 5V for teensy and to power inverter. 15V should be routed to digital section on bottom layer of board along the bottom edge of board. Ground should be cut along the top edge of this trace to force digital power return back to 15V jack along this trace, away from analog stuff.~~
-14. ~~Protect inputs of opa1664 with schottkys~~
-15. ~~TTL/VREF switch pin overlaps with heatsink.~~
-16. Remove unused vref pin from teensy so that thta TRIG BNC has plenty of room. Update the headers to be 2 pin instead of 3</text>
 <wire x1="-12.7" y1="190.5" x2="71.12" y2="190.5" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="71.12" y1="190.5" x2="71.12" y2="149.86" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="71.12" y1="149.86" x2="-12.7" y2="149.86" width="0.4064" layer="97" style="shortdash"/>
@@ -7731,10 +7714,10 @@ distributor Farnell 149-452</description>
 <attribute name="VALUE" x="157.48" y="93.98" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="U$62" gate="G$1" x="160.02" y="76.2"/>
-<instance part="J_CS2" gate="R" x="43.18" y="76.2" smashed="yes" rot="R180">
+<instance part="J_CS3" gate="R" x="43.18" y="76.2" smashed="yes" rot="R180">
 <attribute name="NAME" x="46.99" y="76.4286" size="1.778" layer="95"/>
 </instance>
-<instance part="J_CS3" gate="R" x="43.18" y="78.74" smashed="yes" rot="R180">
+<instance part="J_CS2" gate="R" x="43.18" y="78.74" smashed="yes" rot="R180">
 <attribute name="NAME" x="46.99" y="78.9686" size="1.778" layer="95"/>
 </instance>
 <instance part="J_CS1" gate="R" x="43.18" y="106.68" smashed="yes">
@@ -7800,7 +7783,6 @@ distributor Farnell 149-452</description>
 <instance part="U$63" gate="G$1" x="55.88" y="134.62"/>
 <instance part="D1" gate="G$1" x="7.62" y="160.02" rot="R180"/>
 <instance part="U$66" gate="G$1" x="50.8" y="177.8" rot="R270"/>
-<instance part="U$69" gate="G$1" x="50.8" y="165.1" rot="R270"/>
 <instance part="U$72" gate="G$1" x="33.02" y="177.8" rot="R270"/>
 <instance part="U$73" gate="G$1" x="33.02" y="165.1" rot="R270"/>
 <instance part="TEENSY-3.2" gate="G$1" x="-2.54" y="167.64"/>
@@ -7837,6 +7819,7 @@ distributor Farnell 149-452</description>
 </instance>
 <instance part="GND" gate="G$1" x="68.58" y="-22.86"/>
 <instance part="U$79" gate="G$1" x="68.58" y="-33.02"/>
+<instance part="U$80" gate="G$1" x="50.8" y="165.1" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -7897,12 +7880,12 @@ distributor Farnell 149-452</description>
 <pinref part="J_CS1" gate="R" pin="1"/>
 <wire x1="38.1" y1="106.68" x2="33.02" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="104.14" x2="33.02" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="J_CS3" gate="R" pin="2"/>
+<pinref part="J_CS2" gate="R" pin="2"/>
 <wire x1="33.02" y1="78.74" x2="38.1" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="104.14" x2="33.02" y2="78.74" width="0.1524" layer="91"/>
 <junction x="33.02" y="104.14"/>
 <junction x="33.02" y="78.74"/>
-<pinref part="J_CS2" gate="R" pin="2"/>
+<pinref part="J_CS3" gate="R" pin="2"/>
 <wire x1="33.02" y1="76.2" x2="38.1" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="78.74" x2="33.02" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="76.2" x2="33.02" y2="53.34" width="0.1524" layer="91"/>
@@ -8389,9 +8372,9 @@ distributor Farnell 149-452</description>
 <net name="CS3" class="0">
 <segment>
 <pinref part="J_CS3" gate="R" pin="1"/>
-<wire x1="48.26" y1="78.74" x2="71.12" y2="78.74" width="0.1524" layer="91"/>
-<label x="60.96" y="78.74" size="1.778" layer="95"/>
-<pinref part="UC" gate="G$1" pin="20/A6/PWM"/>
+<wire x1="48.26" y1="76.2" x2="71.12" y2="76.2" width="0.1524" layer="91"/>
+<label x="60.96" y="76.2" size="1.778" layer="95"/>
+<pinref part="UC" gate="G$1" pin="21/A7/PWM"/>
 </segment>
 </net>
 <net name="VI_LP" class="0">
@@ -8626,9 +8609,9 @@ distributor Farnell 149-452</description>
 <net name="CS2" class="0">
 <segment>
 <pinref part="J_CS2" gate="R" pin="1"/>
-<wire x1="48.26" y1="76.2" x2="71.12" y2="76.2" width="0.1524" layer="91"/>
-<label x="60.96" y="76.2" size="1.778" layer="95"/>
-<pinref part="UC" gate="G$1" pin="21/A7/PWM"/>
+<wire x1="48.26" y1="78.74" x2="71.12" y2="78.74" width="0.1524" layer="91"/>
+<label x="60.96" y="78.74" size="1.778" layer="95"/>
+<pinref part="UC" gate="G$1" pin="20/A6/PWM"/>
 </segment>
 </net>
 </nets>
