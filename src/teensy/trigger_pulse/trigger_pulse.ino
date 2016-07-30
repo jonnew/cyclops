@@ -20,15 +20,8 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <Cyclops.h>
 
-uint16_t triangle_wave(uint8_t seq){
-  return (abs(20 - seq)/40.0)*2048;
-}
+#include "MySources.h"
 
-uint32_t triangle_update_period(uint8_t seq){
-  return 10;
-}
-
-cyclops::generatedSource gen(triangle_wave, triangle_update_period, 40, cyclops::source::ONE_SHOT);
 cyclops::Board myb(cyclops::board::CH0);
 cyclops::Waveform waveform(&myb, &gen);
 
@@ -41,7 +34,11 @@ void on_trigger() {
 
 void setup()
 {
-  
+  pinMode(30, INPUT_PULLUP);
+  pinMode(31, INPUT_PULLUP);
+  pinMode(32, INPUT_PULLUP);
+  pinMode(33, INPUT_PULLUP);
+
   Serial.begin(57600);
   SPI_fifo.begin(SPI_CLOCK_16MHz); // 16MHz SPI clock, using pin 10 as CS
   
