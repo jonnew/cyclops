@@ -7,6 +7,5 @@ mv ./pcb/cyclops.GTL ./pcb/cyclops.GTS ./pcb/cyclops.GTO ./pcb/cyclops.G2L ./pcb
 zip gerber.zip ./gerber/*
 
 mkdir stencil 
-rm cyclops.SST
-mv ./pcb/cyclops.CST stencil
+mv ./pcb/cyclops.CST ./pcb/cyclops.SST stencil
 zip stencil.zip ./stencil/*
