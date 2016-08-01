@@ -7361,7 +7361,7 @@ distributor Farnell 149-452</description>
 <part name="VI" library="jonnew" deviceset="BNC" device="_0731000105" value="0731000105"/>
 <part name="VREF" library="jonnew" deviceset="BNC" device="_0731000105" value="0731000105"/>
 <part name="VCTL" library="jonnew" deviceset="BNC" device="_0731000105" value="0731000105"/>
-<part name="PWR_DIST" library="cyclops" deviceset="PINH2X4" device=""/>
+<part name="PWR_DIST" library="cyclops" deviceset="PINH2X4" device="" value="SSQ-104-03-G-D"/>
 <part name="GAIN" library="cyclops" deviceset="POT_US" device="_3310" value="1k"/>
 <part name="VCTL&lt;OFF&gt;DAC" library="cyclops" deviceset="SPDT" device="_2M-WITHOFF" value="100-SP3"/>
 <part name="EXPANSION_A" library="cyclops" deviceset="PINH2X5" device="_ICD-H"/>
