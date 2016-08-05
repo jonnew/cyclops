@@ -728,7 +728,7 @@ tests outlined in the next section before applying power.*
 
 6.  Next, reflow solder the board. We use a homemade reflow oven
     constructed from a toaster oven, Arduino board, [reflow oven control
-    shield](http://www.rocketscream.com/shop/reflow-oven-controller-shield-arduino-compatiblee),
+    shield](http://www.rocketscream.com/shop/reflow-oven-controller-shield-arduino-compatible),
     and [mains relay](https://www.adafruit.com/products/268). You can
     make a similar one, use a commercial reflow oven, or use the hot
     air station. Reflow the solder paste on the board using your oven or
@@ -748,9 +748,8 @@ tests outlined in the next section before applying power.*
     issues using a standard soldering iron If there are solder bridges
     present, get rid of them using some solder wick before moving on.
     Solder through-hole components in place using a standard
-    soldering iron. A low cost reflow oven can be made form a toaster
-    oven as shown here. This link also contains useful information on
-    the basics of the reflow soldering process,
+    soldering iron. A low cost reflow oven can be made from a toaster
+    oven as shown [here](http://whizoo.com/reflowoven).
 
     ![Example of a short between IC pins. This must be resolved before
     moving forward.](./resources/ShortExample.jpg)
