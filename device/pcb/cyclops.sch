@@ -7421,7 +7421,7 @@ distributor Farnell 149-452</description>
 <part name="J_VI2" library="jonnew" deviceset="R" device="_0402" value="0"/>
 <part name="J_VI1" library="jonnew" deviceset="R" device="_0402" value="0"/>
 <part name="J_VI0" library="jonnew" deviceset="R" device="_0402" value="0"/>
-<part name="R1" library="cyclops" deviceset="R" device="_0603" value="110k"/>
+<part name="R1" library="cyclops" deviceset="R" device="_0603" value="100k"/>
 <part name="C1" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="U$50" library="cyclops" deviceset="GND2" device=""/>
 <part name="R2" library="cyclops" deviceset="R" device="_0603" value="10k"/>
@@ -7481,7 +7481,7 @@ distributor Farnell 149-452</description>
 <part name="U14" library="cyclops" deviceset="ZXTD4591E6" device="" value="ZXTD"/>
 <part name="SUPPLY14" library="cyclops" deviceset="+12V" device=""/>
 <part name="R10" library="jonnew" deviceset="R" device="_0603" value="100"/>
-<part name="D3" library="cyclops" deviceset="Z-DIODE" device="_SOD-323" value="MM3Z5V1"/>
+<part name="D3" library="cyclops" deviceset="Z-DIODE" device="_SOD-323" value="SZMM3Z5V1"/>
 <part name="U$21" library="cyclops" deviceset="GND2" device=""/>
 <part name="R40" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="P-6" library="cyclops" deviceset="-5V" device="" value="-2.5V"/>
@@ -7493,7 +7493,7 @@ distributor Farnell 149-452</description>
 <part name="C28" library="cyclops" deviceset="C" device="_0603" value="0.1uF"/>
 <part name="U$61" library="cyclops" deviceset="GND2" device=""/>
 <part name="P-7" library="cyclops" deviceset="-5V" device="" value="-1.25V"/>
-<part name="R8" library="cyclops" deviceset="R" device="_0603" value="110k"/>
+<part name="R8" library="cyclops" deviceset="R" device="_0603" value="10k"/>
 <part name="U$62" library="cyclops" deviceset="GND1" device=""/>
 <part name="R28" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="J_CS3" library="jonnew" deviceset="R" device="_0402" value="0"/>
@@ -7567,7 +7567,7 @@ distributor Farnell 149-452</description>
 <part name="U$77" library="cyclops" deviceset="GND2" device=""/>
 <part name="P+1" library="jonnew" deviceset="+5V" device="" value="+6V"/>
 <part name="P+5" library="jonnew" deviceset="+5V" device="" value="+6V"/>
-<part name="U10" library="jonnew" deviceset="SPST_IC" device="_SOT23-6" value="ADG1201"/>
+<part name="U10" library="jonnew" deviceset="SPST_IC" device="_SOT23-6" value="ADG1202"/>
 <part name="P+9" library="jonnew" deviceset="+5V" device="" value="+6V"/>
 <part name="P+10" library="jonnew" deviceset="+5V" device="" value="+6V"/>
 <part name="P+11" library="jonnew" deviceset="+5V" device="" value="+6V"/>
@@ -7610,6 +7610,7 @@ distributor Farnell 149-452</description>
 <part name="+13.3V" library="jonnew" deviceset="TP" device="_RC0603" value="RCU-0C"/>
 <part name="C40" library="cyclops" deviceset="C" device="_1210" value="22uF"/>
 <part name="U$80" library="jonnew" deviceset="TEENSY-2-PIN-HEADER" device="" value="PPPC021LFBN-RC"/>
+<part name="P+20" library="cyclops" deviceset="+5V" device="" value="+3V3"/>
 </parts>
 <sheets>
 <sheet>
@@ -7622,8 +7623,8 @@ distributor Farnell 149-452</description>
 <text x="45.72" y="-22.86" size="1.778" layer="97">Panel switch</text>
 <wire x1="177.8" y1="142.24" x2="177.8" y2="17.78" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="177.8" y1="17.78" x2="17.78" y2="17.78" width="0.4064" layer="97" style="shortdash"/>
-<text x="180.34" y="114.3" size="3.81" layer="97">AGND</text>
-<text x="160.02" y="114.3" size="3.81" layer="97">DGND</text>
+<text x="180.34" y="121.92" size="3.81" layer="97">AGND</text>
+<text x="160.02" y="121.92" size="3.81" layer="97">DGND</text>
 <wire x1="17.78" y1="17.78" x2="17.78" y2="99.06" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="17.78" y1="99.06" x2="-7.62" y2="99.06" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="-12.7" y1="190.5" x2="71.12" y2="190.5" width="0.4064" layer="97" style="shortdash"/>
@@ -7709,9 +7710,9 @@ distributor Farnell 149-452</description>
 <instance part="D3" gate="G$1" x="231.14" y="-7.62" rot="R90"/>
 <instance part="U$21" gate="G$1" x="231.14" y="-17.78"/>
 <instance part="VPRE" gate="G$1" x="223.52" y="0"/>
-<instance part="R8" gate="R" x="160.02" y="93.98" smashed="yes" rot="R270">
-<attribute name="NAME" x="157.48" y="88.9" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="157.48" y="93.98" size="1.778" layer="96" rot="R90"/>
+<instance part="R8" gate="R" x="160.02" y="109.22" smashed="yes" rot="R90">
+<attribute name="NAME" x="162.56" y="116.84" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="162.56" y="109.22" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="U$62" gate="G$1" x="160.02" y="76.2"/>
 <instance part="J_CS3" gate="R" x="43.18" y="76.2" smashed="yes" rot="R180">
@@ -7820,6 +7821,7 @@ distributor Farnell 149-452</description>
 <instance part="GND" gate="G$1" x="68.58" y="-22.86"/>
 <instance part="U$79" gate="G$1" x="68.58" y="-33.02"/>
 <instance part="U$80" gate="G$1" x="50.8" y="165.1" rot="R270"/>
+<instance part="P+20" gate="1" x="160.02" y="119.38"/>
 </instances>
 <busses>
 </busses>
@@ -8010,10 +8012,8 @@ distributor Farnell 149-452</description>
 <wire x1="231.14" y1="-12.7" x2="231.14" y2="-15.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R8" gate="R" pin="2"/>
 <wire x1="160.02" y1="78.74" x2="160.02" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="J_ADDR3" gate="R" pin="1"/>
-<wire x1="160.02" y1="86.36" x2="160.02" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="81.28" x2="149.86" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="81.28" x2="149.86" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="J_ADDR0" gate="R" pin="1"/>
@@ -8027,7 +8027,6 @@ distributor Farnell 149-452</description>
 <wire x1="142.24" y1="83.82" x2="149.86" y2="83.82" width="0.1524" layer="91"/>
 <junction x="149.86" y="83.82"/>
 <wire x1="149.86" y1="86.36" x2="160.02" y2="86.36" width="0.1524" layer="91"/>
-<junction x="160.02" y="86.36"/>
 </segment>
 <segment>
 <pinref part="D6" gate="G$1" pin="A"/>
@@ -8157,6 +8156,10 @@ distributor Farnell 149-452</description>
 <pinref part="UC" gate="G$1" pin="3.3V"/>
 <wire x1="116.84" y1="127" x2="160.02" y2="127" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="127" x2="160.02" y2="137.16" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R8" gate="R" pin="2"/>
+<wire x1="160.02" y1="116.84" x2="160.02" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED-" class="0">
@@ -8316,14 +8319,7 @@ distributor Farnell 149-452</description>
 <label x="243.84" y="-2.54" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="OVER_CURR" class="0">
-<segment>
-<pinref part="L2" gate="L" pin="1"/>
-<wire x1="185.42" y1="101.6" x2="200.66" y2="101.6" width="0.1524" layer="91"/>
-<label x="190.5" y="101.6" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="OC3" class="0">
+<net name="~OC3" class="0">
 <segment>
 <pinref part="J_OC3" gate="R" pin="2"/>
 <wire x1="116.84" y1="96.52" x2="132.08" y2="96.52" width="0.1524" layer="91"/>
@@ -8442,7 +8438,7 @@ distributor Farnell 149-452</description>
 <label x="119.38" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="OC1" class="0">
+<net name="~OC1" class="0">
 <segment>
 <pinref part="J_OC1" gate="R" pin="2"/>
 <wire x1="116.84" y1="99.06" x2="132.08" y2="99.06" width="0.1524" layer="91"/>
@@ -8455,7 +8451,7 @@ distributor Farnell 149-452</description>
 <wire x1="149.86" y1="101.6" x2="160.02" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="101.6" x2="170.18" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="R8" gate="R" pin="1"/>
-<wire x1="160.02" y1="99.06" x2="160.02" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="104.14" x2="160.02" y2="101.6" width="0.1524" layer="91"/>
 <junction x="160.02" y="101.6"/>
 <pinref part="J_OC1" gate="R" pin="1"/>
 <wire x1="142.24" y1="99.06" x2="149.86" y2="99.06" width="0.1524" layer="91"/>
@@ -8590,7 +8586,7 @@ distributor Farnell 149-452</description>
 <label x="119.38" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="OC2" class="0">
+<net name="~OC2" class="0">
 <segment>
 <pinref part="J_OC2" gate="R" pin="2"/>
 <wire x1="116.84" y1="93.98" x2="132.08" y2="93.98" width="0.1524" layer="91"/>
@@ -8598,7 +8594,7 @@ distributor Farnell 149-452</description>
 <label x="119.38" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="OC0" class="0">
+<net name="~OC0" class="0">
 <segment>
 <pinref part="J_OC0" gate="R" pin="2"/>
 <wire x1="116.84" y1="101.6" x2="132.08" y2="101.6" width="0.1524" layer="91"/>
@@ -8612,6 +8608,13 @@ distributor Farnell 149-452</description>
 <wire x1="48.26" y1="78.74" x2="71.12" y2="78.74" width="0.1524" layer="91"/>
 <label x="60.96" y="78.74" size="1.778" layer="95"/>
 <pinref part="UC" gate="G$1" pin="20/A6/PWM"/>
+</segment>
+</net>
+<net name="~OVER_CURR" class="0">
+<segment>
+<pinref part="L2" gate="L" pin="1"/>
+<wire x1="185.42" y1="101.6" x2="200.66" y2="101.6" width="0.1524" layer="91"/>
+<label x="190.5" y="101.6" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -8640,9 +8643,7 @@ distributor Farnell 149-452</description>
 <instance part="L3" gate="G$1" x="25.4" y="-88.9" rot="MR270"/>
 <instance part="L3" gate="G$2" x="-48.26" y="-88.9" rot="R270"/>
 <instance part="U$8" gate="G$1" x="-27.94" y="-142.24"/>
-<instance part="L4" gate="L" x="50.8" y="-96.52" smashed="yes" rot="R90">
-<attribute name="NAME" x="58.42" y="-95.25" size="1.778" layer="95" rot="R180"/>
-</instance>
+<instance part="L4" gate="L" x="50.8" y="-96.52" rot="R90"/>
 <instance part="C6" gate="C" x="-78.74" y="-111.76"/>
 <instance part="U3" gate="G$1" x="-38.1" y="38.1"/>
 <instance part="C7" gate="C" x="-68.58" y="27.94"/>
@@ -8664,7 +8665,7 @@ distributor Farnell 149-452</description>
 <instance part="C12" gate="C" x="58.42" y="30.48"/>
 <instance part="+6V" gate="G$1" x="124.46" y="40.64"/>
 <instance part="U5" gate="G$1" x="96.52" y="-124.46" rot="MR180"/>
-<instance part="C15" gate="C" x="111.76" y="-124.46"/>
+<instance part="C15" gate="C" x="111.76" y="-111.76" rot="R180"/>
 <instance part="C13" gate="C" x="76.2" y="-111.76"/>
 <instance part="C16" gate="C" x="121.92" y="-111.76"/>
 <instance part="U4" gate="G$1" x="86.36" y="30.48"/>
@@ -8754,11 +8755,15 @@ distributor Farnell 149-452</description>
 <wire x1="76.2" y1="-109.22" x2="76.2" y2="-88.9" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="-88.9" x2="96.52" y2="-88.9" width="0.1524" layer="91"/>
 <junction x="96.52" y="-88.9"/>
-<wire x1="96.52" y1="-88.9" x2="121.92" y2="-88.9" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="-88.9" x2="111.76" y2="-88.9" width="0.1524" layer="91"/>
 <pinref part="C16" gate="C" pin="1"/>
+<wire x1="111.76" y1="-88.9" x2="121.92" y2="-88.9" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="-88.9" x2="132.08" y2="-88.9" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="-109.22" x2="121.92" y2="-88.9" width="0.1524" layer="91"/>
 <junction x="121.92" y="-88.9"/>
+<pinref part="C15" gate="C" pin="2"/>
+<wire x1="111.76" y1="-106.68" x2="111.76" y2="-88.9" width="0.1524" layer="91"/>
+<junction x="111.76" y="-88.9"/>
 </segment>
 <segment>
 <pinref part="U31" gate="G$1" pin="FB"/>
@@ -8982,13 +8987,9 @@ distributor Farnell 149-452</description>
 <label x="142.24" y="-132.08" size="1.778" layer="95"/>
 <pinref part="-2.5V" gate="G$1" pin="TP"/>
 <pinref part="U5" gate="G$1" pin="VO"/>
-<wire x1="109.22" y1="-132.08" x2="111.76" y2="-132.08" width="0.1524" layer="91"/>
 <junction x="134.62" y="-132.08"/>
-<pinref part="C15" gate="C" pin="2"/>
-<wire x1="111.76" y1="-132.08" x2="121.92" y2="-132.08" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-132.08" x2="121.92" y2="-132.08" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="-132.08" x2="134.62" y2="-132.08" width="0.1524" layer="91"/>
-<wire x1="111.76" y1="-129.54" x2="111.76" y2="-132.08" width="0.1524" layer="91"/>
-<junction x="111.76" y="-132.08"/>
 <pinref part="C16" gate="C" pin="2"/>
 <wire x1="121.92" y1="-116.84" x2="121.92" y2="-132.08" width="0.1524" layer="91"/>
 <junction x="121.92" y="-132.08"/>
@@ -8999,6 +9000,8 @@ distributor Farnell 149-452</description>
 <pinref part="U5" gate="G$1" pin="ADJ/NR"/>
 <pinref part="C15" gate="C" pin="1"/>
 <wire x1="109.22" y1="-121.92" x2="111.76" y2="-121.92" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="-121.92" x2="111.76" y2="-119.38" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="-119.38" x2="111.76" y2="-114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SW" class="0">

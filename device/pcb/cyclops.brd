@@ -32,11 +32,11 @@
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
@@ -23392,7 +23392,7 @@ einem neuen Namen ab.</description>
 <attribute name="SUPPLIER" value="Analog Devices" x="55.499" y="55.76" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="OC_FARNELL" value="1838919" x="55.499" y="55.76" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="54.0696" y="57.531" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
-<attribute name="VALUE" x="57.411" y="54.229" size="1.016" layer="27" font="vector" ratio="18" rot="SR270"/>
+<attribute name="VALUE" x="56.5855" y="58.166" size="1.016" layer="27" font="vector" ratio="18" rot="SR270"/>
 </element>
 <element name="C22" library="cyclops" package="0805" value="1uF" x="60.833" y="52.19" smashed="yes">
 <attribute name="MN" value="TDK Corp." x="60.833" y="52.19" size="1.778" layer="27" display="off"/>
@@ -23641,7 +23641,7 @@ einem neuen Namen ab.</description>
 <element name="J_VI2" library="jonnew" package="0402" value="0" x="20.574" y="40.894" smashed="yes"/>
 <element name="J_VI1" library="jonnew" package="0402" value="0" x="20.574" y="42.418" smashed="yes"/>
 <element name="J_VI0" library="jonnew" package="0402" value="0" x="20.574" y="43.942" smashed="yes"/>
-<element name="R1" library="cyclops" package="0603" value="110k" x="32.258" y="56.134" smashed="yes" rot="R180">
+<element name="R1" library="cyclops" package="0603" value="100k" x="32.258" y="56.134" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="32.258" y="56.134" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="32.258" y="56.134" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="32.258" y="56.134" size="1.778" layer="27" rot="R180" display="off"/>
@@ -23837,7 +23837,7 @@ einem neuen Namen ab.</description>
 <attribute name="DK" value="PxxxxHTR-ND" x="44.069" y="59.309" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="44.069" y="59.309" size="1.778" layer="27" display="off"/>
 </element>
-<element name="D3" library="cyclops" package="SOD-323" value="MM3Z5V1" x="44.196" y="61.722" smashed="yes">
+<element name="D3" library="cyclops" package="SOD-323" value="SZMM3Z5V1" x="44.196" y="61.722" smashed="yes">
 <attribute name="NAME" x="43.688" y="62.992" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 <attribute name="VALUE" x="44.831" y="62.992" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
@@ -23869,7 +23869,7 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="46.609" y="52.324" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="46.609" y="51.181" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
 </element>
-<element name="R8" library="cyclops" package="0603" value="110k" x="17.78" y="36.703" smashed="yes" rot="R270">
+<element name="R8" library="cyclops" package="0603" value="10k" x="17.78" y="36.703" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="17.78" y="36.703" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="17.78" y="36.703" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="17.78" y="36.703" size="1.016" layer="27" font="vector" rot="R270" display="off"/>
@@ -24047,7 +24047,7 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="56.709" y="48.305" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
 <attribute name="VALUE" x="56.709" y="47.169" size="1.016" layer="27" font="vector" ratio="18" rot="SR0"/>
 </element>
-<element name="U10" library="jonnew" package="SOT23-6" value="ADG1201" x="48.133" y="56.515" smashed="yes" rot="R90">
+<element name="U10" library="jonnew" package="SOT23-6" value="ADG1202" x="48.133" y="56.515" smashed="yes" rot="R90">
 <attribute name="VALUE" x="45.085" y="53.594" size="1.016" layer="27" font="vector" ratio="18" rot="R270"/>
 <attribute name="NAME" x="43.688" y="53.467" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
 </element>
@@ -24178,6 +24178,8 @@ einem neuen Namen ab.</description>
 <wire x1="24.384" y1="18.796" x2="22.733" y2="20.447" width="0.254" layer="1"/>
 <wire x1="26.2636" y1="17.78" x2="26.2636" y2="15.494" width="0.254" layer="1"/>
 <wire x1="25.527" y1="18.796" x2="24.384" y2="18.796" width="0.254" layer="1"/>
+<contactref element="R8" pad="2"/>
+<wire x1="17.653" y1="20.447" x2="17.78" y2="35.8394" width="0" layer="19" extent="1-16"/>
 <wire x1="21.59" y1="6.604" x2="26.2636" y2="15.494" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCLK">
@@ -24672,8 +24674,6 @@ einem neuen Namen ab.</description>
 <contactref element="C28" pad="2"/>
 <via x="46.355" y="53.848" extent="1-16" drill="0.3302"/>
 <wire x1="43.0784" y1="61.722" x2="42.037" y2="61.722" width="0.3048" layer="1"/>
-<contactref element="R8" pad="2"/>
-<via x="18.034" y="34.8615" extent="1-16" drill="0.3302"/>
 <contactref element="IND" pad="C1"/>
 <contactref element="C12" pad="2"/>
 <contactref element="C14" pad="2"/>
@@ -25028,10 +25028,10 @@ einem neuen Namen ab.</description>
 <via x="73.914" y="56.134" extent="1-16" drill="0.3302"/>
 <via x="74.676" y="56.134" extent="1-16" drill="0.3302"/>
 <via x="75.438" y="56.134" extent="1-16" drill="0.3302"/>
-<wire x1="18.034" y1="34.8615" x2="17.78" y2="35.1155" width="0.1778" layer="1"/>
-<wire x1="17.78" y1="35.1155" x2="17.78" y2="35.8394" width="0.1778" layer="1"/>
 <wire x1="58.928" y1="43.3705" x2="57.9755" y2="44.323" width="0.4064" layer="1"/>
 <wire x1="57.9755" y1="44.323" x2="57.912" y2="44.323" width="0.4064" layer="1"/>
+<contactref element="C15" pad="2"/>
+<wire x1="53.721" y1="30.988" x2="52.2986" y2="27.686" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="R9" pad="1"/>
@@ -25784,7 +25784,6 @@ einem neuen Namen ab.</description>
 <wire x1="45.0215" y1="54.6989" x2="44.9326" y2="54.61" width="0.2794" layer="1"/>
 </signal>
 <signal name="OVER_CURR">
-<contactref element="L2" pad="1"/>
 <contactref element="U10" pad="6"/>
 <via x="34.29" y="51.562" extent="1-16" drill="0.3302"/>
 <wire x1="44.069" y1="51.562" x2="45.593" y2="53.086" width="0.1778" layer="16"/>
@@ -25795,7 +25794,6 @@ einem neuen Namen ab.</description>
 <wire x1="47.033" y1="55.4785" x2="46.2915" y2="54.737" width="0.1778" layer="1"/>
 <wire x1="44.069" y1="51.562" x2="34.29" y2="51.562" width="0.1778" layer="16"/>
 <wire x1="34.29" y1="51.5366" x2="33.909" y2="51.5366" width="0.1778" layer="1"/>
-<wire x1="33.909" y1="51.5366" x2="32.893" y2="50.5206" width="0.1778" layer="1"/>
 <wire x1="34.29" y1="51.5366" x2="34.29" y2="51.562" width="0.1778" layer="1"/>
 </signal>
 <signal name="N$39">
@@ -25815,7 +25813,7 @@ einem neuen Namen ab.</description>
 <wire x1="13.081" y1="59.563" x2="13.843" y2="60.325" width="0.2794" layer="1"/>
 <wire x1="13.843" y1="60.325" x2="13.843" y2="66.167" width="0.2794" layer="1"/>
 </signal>
-<signal name="OC3">
+<signal name="~OC3">
 <contactref element="J_OC3" pad="2"/>
 <contactref element="UC" pad="A11"/>
 <wire x1="19.05" y1="14.224" x2="19.05" y2="33.02" width="0.1778" layer="1"/>
@@ -26041,7 +26039,7 @@ einem neuen Namen ab.</description>
 <wire x1="10.8966" y1="32.5374" x2="13.97" y2="29.464" width="0.1778" layer="1"/>
 <wire x1="10.8966" y1="39.37" x2="10.8966" y2="32.5374" width="0.1778" layer="1"/>
 </signal>
-<signal name="OC1">
+<signal name="~OC1">
 <contactref element="J_OC1" pad="2"/>
 <contactref element="UC" pad="A12"/>
 <wire x1="16.9926" y1="42.418" x2="16.764" y2="42.418" width="0.1778" layer="1"/>
@@ -26444,7 +26442,6 @@ einem neuen Namen ab.</description>
 <signal name="-2.5V">
 <contactref element="-2.5V" pad="1"/>
 <contactref element="U5" pad="5"/>
-<contactref element="C15" pad="2"/>
 <contactref element="C16" pad="2"/>
 <contactref element="U15" pad="11"/>
 <contactref element="C32" pad="1"/>
@@ -26851,7 +26848,7 @@ einem neuen Namen ab.</description>
 <wire x1="17.526" y1="32.512" x2="13.9446" y2="36.0934" width="0.1778" layer="1"/>
 <wire x1="13.9446" y1="36.0934" x2="13.9446" y2="39.37" width="0.1778" layer="1"/>
 </signal>
-<signal name="OC2">
+<signal name="~OC2">
 <contactref element="J_OC2" pad="2"/>
 <contactref element="UC" pad="A10"/>
 <wire x1="16.9926" y1="40.894" x2="16.764" y2="40.894" width="0.1778" layer="1"/>
@@ -26863,7 +26860,7 @@ einem neuen Namen ab.</description>
 <wire x1="17.526" y1="14.732" x2="17.526" y2="13.208" width="0.1778" layer="1"/>
 <wire x1="17.526" y1="13.208" x2="19.05" y2="11.684" width="0.1778" layer="1"/>
 </signal>
-<signal name="OC0">
+<signal name="~OC0">
 <contactref element="J_OC0" pad="2"/>
 <contactref element="UC" pad="A13"/>
 <wire x1="16.9926" y1="43.942" x2="16.764" y2="43.942" width="0.1778" layer="1"/>
@@ -26945,6 +26942,9 @@ einem neuen Namen ab.</description>
 <wire x1="8.509" y1="38.735" x2="8.382" y2="38.862" width="0.1778" layer="1"/>
 <wire x1="8.382" y1="38.862" x2="8.382" y2="40.3606" width="0.127" layer="1"/>
 <wire x1="8.382" y1="40.3606" x2="7.8486" y2="40.894" width="0.1778" layer="1"/>
+</signal>
+<signal name="~OVER_CURR">
+<contactref element="L2" pad="1"/>
 </signal>
 </signals>
 <errors>
