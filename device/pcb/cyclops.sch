@@ -7510,7 +7510,7 @@ distributor Farnell 149-452</description>
 <part name="J_OC0" library="jonnew" deviceset="R" device="_0402" value="0"/>
 <part name="R37" library="cyclops" deviceset="R" device="_0603" value="0"/>
 <part name="IND" library="jonnew" deviceset="LED_2X" device="_VERTICAL" value="569-0112-200"/>
-<part name="OC" library="jonnew" deviceset="LED_2X" device="_VERTICAL" value="569-0112-200"/>
+<part name="OC" library="jonnew" deviceset="LED_2X" device="_VERTICAL" value="569-0111-100"/>
 <part name="D2" library="jonnew" deviceset="S-DIODE" device="SOD-123" value="1N5819"/>
 <part name="VREF&lt;&gt;TTL" library="jonnew" deviceset="SPDT" device="_AS12A*" value="AS12CV"/>
 <part name="C20" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
@@ -7611,6 +7611,8 @@ distributor Farnell 149-452</description>
 <part name="C40" library="cyclops" deviceset="C" device="_1210" value="22uF"/>
 <part name="U$80" library="jonnew" deviceset="TEENSY-2-PIN-HEADER" device="" value="PPPC021LFBN-RC"/>
 <part name="P+20" library="cyclops" deviceset="+5V" device="" value="+3V3"/>
+<part name="C43" library="cyclops" deviceset="C" device="_0603"/>
+<part name="R53" library="cyclops" deviceset="R" device="_0603" value="0"/>
 </parts>
 <sheets>
 <sheet>
@@ -9074,6 +9076,7 @@ distributor Farnell 149-452</description>
 <plain>
 <text x="-109.22" y="22.86" size="3.81" layer="97">LED ACTIVE (I_LED &gt;10 mA)</text>
 <text x="-109.22" y="121.92" size="3.81" layer="97">OVERCURRENT</text>
+<text x="-63.5" y="-53.34" size="1.6764" layer="97" rot="R90">DNP</text>
 </plain>
 <instances>
 <instance part="R20" gate="R" x="-63.5" y="58.42" smashed="yes">
@@ -9151,6 +9154,11 @@ distributor Farnell 149-452</description>
 <instance part="P+10" gate="1" x="81.28" y="111.76"/>
 <instance part="P+11" gate="1" x="20.32" y="10.16"/>
 <instance part="P+14" gate="1" x="-63.5" y="109.22"/>
+<instance part="C43" gate="C" x="-60.96" y="-48.26"/>
+<instance part="R53" gate="R" x="-68.58" y="-35.56" smashed="yes">
+<attribute name="NAME" x="-72.39" y="-34.0614" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-72.39" y="-38.862" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -9217,7 +9225,12 @@ distributor Farnell 149-452</description>
 <pinref part="U6" gate="G$1" pin="LATCH"/>
 <wire x1="-43.18" y1="-45.72" x2="-43.18" y2="-43.18" width="0.1524" layer="91"/>
 <junction x="-43.18" y="-45.72"/>
-<wire x1="-43.18" y1="-45.72" x2="-43.18" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="-45.72" x2="-43.18" y2="-55.88" width="0.1524" layer="91"/>
+<pinref part="C43" gate="C" pin="2"/>
+<wire x1="-43.18" y1="-55.88" x2="-43.18" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="-60.96" y1="-53.34" x2="-60.96" y2="-55.88" width="0.1524" layer="91"/>
+<wire x1="-60.96" y1="-55.88" x2="-43.18" y2="-55.88" width="0.1524" layer="91"/>
+<junction x="-43.18" y="-55.88"/>
 </segment>
 <segment>
 <pinref part="U7" gate="G$2" pin="V-"/>
@@ -9403,9 +9416,9 @@ distributor Farnell 149-452</description>
 <label x="-116.84" y="99.06" size="1.778" layer="95"/>
 </segment>
 <segment>
-<label x="-88.9" y="-35.56" size="1.778" layer="95"/>
-<wire x1="-88.9" y1="-35.56" x2="-50.8" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="U6" gate="G$1" pin="-IN"/>
+<label x="-99.06" y="-35.56" size="1.778" layer="95"/>
+<pinref part="R53" gate="R" pin="1"/>
+<wire x1="-73.66" y1="-35.56" x2="-99.06" y2="-35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="-2.5V" class="0">
@@ -9444,6 +9457,17 @@ distributor Farnell 149-452</description>
 <pinref part="R28" gate="R" pin="2"/>
 <wire x1="38.1" y1="68.58" x2="58.42" y2="68.58" width="0.1524" layer="91"/>
 <label x="38.1" y="68.58" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="R53" gate="R" pin="2"/>
+<pinref part="C43" gate="C" pin="1"/>
+<wire x1="-63.5" y1="-35.56" x2="-60.96" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="-60.96" y1="-35.56" x2="-60.96" y2="-45.72" width="0.1524" layer="91"/>
+<pinref part="U6" gate="G$1" pin="-IN"/>
+<wire x1="-60.96" y1="-35.56" x2="-50.8" y2="-35.56" width="0.1524" layer="91"/>
+<junction x="-60.96" y="-35.56"/>
 </segment>
 </net>
 </nets>
