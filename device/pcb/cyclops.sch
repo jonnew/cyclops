@@ -6061,7 +6061,7 @@ grid 2.54 mm</description>
 <symbol name="LTM8020IVPBF">
 <pin name="VIN_2" x="-17.78" y="17.78" length="middle" direction="pwr"/>
 <pin name="VIN" x="-17.78" y="15.24" length="middle" direction="pwr"/>
-<pin name="BIAS" x="-17.78" y="10.16" length="middle" direction="in"/>
+<pin name="BIAS" x="17.78" y="0" length="middle" direction="in" rot="R180"/>
 <pin name="~SHDN" x="-17.78" y="7.62" length="middle" direction="in"/>
 <pin name="ADJ" x="-17.78" y="2.54" length="middle" direction="in"/>
 <pin name="GND_2" x="-17.78" y="-2.54" length="middle" direction="pas"/>
@@ -6084,8 +6084,8 @@ grid 2.54 mm</description>
 <wire x1="-12.7" y1="-30.48" x2="12.7" y2="-30.48" width="0.4064" layer="94"/>
 <wire x1="12.7" y1="-30.48" x2="12.7" y2="22.86" width="0.4064" layer="94"/>
 <wire x1="12.7" y1="22.86" x2="-12.7" y2="22.86" width="0.4064" layer="94"/>
-<text x="-5.9182" y="25.4254" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
-<text x="-4.0132" y="-33.5534" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
+<text x="-12.7" y="25.4" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-12.7" y="-33.02" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -7518,7 +7518,7 @@ distributor Farnell 149-452</description>
 <part name="U$77" library="cyclops" deviceset="GND2" device=""/>
 <part name="P+1" library="jonnew" deviceset="+5V" device="" value="+6V"/>
 <part name="P+5" library="jonnew" deviceset="+5V" device="" value="+6V"/>
-<part name="U10" library="jonnew" deviceset="SPST_IC" device="_SOT23-6" value="ADG1202"/>
+<part name="U10" library="jonnew" deviceset="SPST_IC" device="_SOT23-6" value="ADG1201"/>
 <part name="P+9" library="jonnew" deviceset="+5V" device="" value="+6V"/>
 <part name="P+10" library="jonnew" deviceset="+5V" device="" value="+6V"/>
 <part name="P+11" library="jonnew" deviceset="+5V" device="" value="+6V"/>
@@ -7559,7 +7559,7 @@ distributor Farnell 149-452</description>
 <part name="P+20" library="cyclops" deviceset="+5V" device="" value="+3V3"/>
 <part name="C43" library="cyclops" deviceset="C" device="_0603" value="10nF"/>
 <part name="R53" library="cyclops" deviceset="R" device="_0603" value="100"/>
-<part name="U16" library="jonnew" deviceset="LTM8020IVPBF" device=""/>
+<part name="U16" library="jonnew" deviceset="LTM8020IVPBF" device="" value="LTM8020"/>
 <part name="D7" library="jonnew" deviceset="S-DIODE" device="SOD-123" value="1N5819"/>
 <part name="R54" library="cyclops" deviceset="R" device="_0603" value="100k"/>
 <part name="R55" library="cyclops" deviceset="R" device="_0603" value="1M"/>
@@ -9037,11 +9037,7 @@ distributor Farnell 149-452</description>
 <junction x="-2.54" y="-27.94"/>
 <wire x1="-2.54" y1="-27.94" x2="12.7" y2="-27.94" width="0.1524" layer="91"/>
 <pinref part="U16" gate="A" pin="BIAS"/>
-<wire x1="-43.18" y1="-35.56" x2="-45.72" y2="-35.56" width="0.1524" layer="91"/>
-<wire x1="-45.72" y1="-35.56" x2="-45.72" y2="-33.02" width="0.1524" layer="91"/>
-<wire x1="-45.72" y1="-33.02" x2="-25.4" y2="-33.02" width="0.1524" layer="91"/>
-<wire x1="-25.4" y1="-33.02" x2="-25.4" y2="-45.72" width="0.1524" layer="91"/>
-<wire x1="-25.4" y1="-45.72" x2="-2.54" y2="-45.72" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="-45.72" x2="-2.54" y2="-45.72" width="0.1524" layer="91"/>
 <wire x1="-2.54" y1="-45.72" x2="-2.54" y2="-40.64" width="0.1524" layer="91"/>
 <junction x="-2.54" y="-40.64"/>
 </segment>
