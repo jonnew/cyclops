@@ -1,0 +1,50 @@
+********************** 2SC5964 SPICE PARAMETER *************************
+*.LIB 2SC5964                                                                  
+* DATE : 2010/10/28                                                           
+* Temp = 27 deg                                                               
+                                                                              
+.MODEL 2SC5964 NPN (       
++IS       = 460.0f         
++BF       = 358           
++NF       = 1              
++VAF      = 11             
++IKF      = 700.0m        
++ISE      = 40.00p         
++NE       = 2              
++BR       = 105           
++NR       = 1              
++VAR      = 50             
++IKR      =1.6            
++ISC      = 720.0p         
++NC       = 2              
++RB       = 1.28          
++IRB      = 100.0m         
++RBM      = 35.20m         
++RE       = 36.00m        
++RC       = 27.50m         
++XTB      = 1.35           
++EG       = 1.11          
++XTI      = 3              
++CJE      = 295.0p         
++VJE      = 680.0m        
++MJE      = 350.0m         
++TF       = 350p           
++XTF      = 20            
++VTF      =  1.000K        
++ITF      = 30             
++PTF      = 0             
++CJC      = 45.00p         
++VJC      = 500.0m         
++MJC      = 380.0m        
++XCJC     = 1              
++TR       =  1.000n        
++FC       = 500.0m        
++KF       = 0              
++AF       = 1)                        
+*                                                                             
+*.ENDL 2SC5964                                                                 
+                                                                              
+*  Information herein is for example only;                                    
+*  it is not guaranteed for volume production.                                
+                                                                              
+* ON Semiconductor                        

@@ -1,0 +1,50 @@
+******
+* Spice Model
+* Item: CM5160
+* Date: 8/19/10
+* Revision History: A
+* ==========================================================
+* This model was developed by: 
+* Central Semiconductor Corp.
+* 145 Adams Avenue
+* Hauppauge, NY 11788
+*
+* These models are subject to change without notice.
+* Users may not directly or indirectly re-sell or 
+* re-distribute this model. This model may not 
+* be modified, or altered without the consent of Central Semiconductor Corp. 
+*
+* For more information on this model contact
+* Central Semiconductor Corp. at:
+* (631) 435-1110 or Engineering@centralsemi.com
+* http://www.centralsemi.com
+* ==========================================================
+******
+*SRC=CM5160;CM5160;BJTs PNP; Si;  60.0V  0.40A  500MHz   Central Semi Central Semi
+.MODEL CM5160  PNP (
++ IS=4.1802E-15
++ BF=71.467
++ VAF=100
++ IKF=3.9990
++ ISE=4.1869E-15
++ NE=1.2996
++ BR=.44876
++ VAR=100
++ IKR=.90522
++ ISC=775.19E-15
++ NC=1.7430
++ NK=2.0566
++ RB=3.0617
++ RC=.35185
++ CJE=13.679E-12
++ VJE=1.5000
++ MJE=.57793
++ CJC=18.020E-12
++ VJC=.67844
++ MJC=.5779
++ TF=190.26E-12
++ XTF=325.86
++ VTF=112.07
++ ITF=9.1737
++ TR=10.000E-9 )
+******
