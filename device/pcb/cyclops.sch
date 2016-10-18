@@ -7409,14 +7409,12 @@ distributor Farnell 149-452</description>
 <part name="C35" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="U$57" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$59" library="cyclops" deviceset="GND2" device=""/>
-<part name="R46" library="cyclops" deviceset="R" device="_0603" value="2.2k"/>
-<part name="R45" library="cyclops" deviceset="R" device="_0603" value="2.2k"/>
+<part name="R46" library="cyclops" deviceset="R" device="_0603" value="1k"/>
+<part name="R45" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="R47" library="cyclops" deviceset="R" device="_0603" value="0.5"/>
 <part name="R48" library="cyclops" deviceset="R" device="_0603" value="0.5"/>
-<part name="R51" library="cyclops" deviceset="R" device="_0603" value="10k"/>
-<part name="U$45" library="cyclops" deviceset="GND2" device=""/>
 <part name="P-5" library="cyclops" deviceset="-5V" device="" value="-2.5V"/>
-<part name="P-3" library="cyclops" deviceset="-5V" device="" value="-1.25V"/>
+<part name="P-3" library="cyclops" deviceset="-5V" device="" value="-2.5V"/>
 <part name="FRAME5" library="cyclops" deviceset="FRAME_A_L" device=""/>
 <part name="U2" library="cyclops" deviceset="LT1611" device="" value="LT1931"/>
 <part name="C8" library="cyclops" deviceset="C" device="_1206" value="1uF"/>
@@ -7437,9 +7435,7 @@ distributor Farnell 149-452</description>
 <part name="U$14" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$52" library="cyclops" deviceset="GND2" device=""/>
 <part name="C6" library="cyclops" deviceset="C" device="_1206" value="4.7uF"/>
-<part name="U$9" library="cyclops" deviceset="GND2" device=""/>
 <part name="U12" library="cyclops" deviceset="MAX4564" device=""/>
-<part name="R42" library="cyclops" deviceset="R" device="_0603" value="2.2k"/>
 <part name="C38" library="cyclops" deviceset="C" device="_1206" value="10uF"/>
 <part name="C37" library="cyclops" deviceset="C" device="_1206" value="10uF"/>
 <part name="U$51" library="cyclops" deviceset="GND2" device=""/>
@@ -7591,6 +7587,9 @@ distributor Farnell 149-452</description>
 <part name="R56" library="cyclops" deviceset="R" device="_0603" value="165k"/>
 <part name="VCTL&lt;&gt;CONT" library="jonnew" deviceset="SPDT" device="_AS12A*" value="AS12CV"/>
 <part name="Q3" library="jonnew" deviceset="N-MOSFET" device="_SOT23-GSD" value="NDS351AN"/>
+<part name="R42" library="cyclops" deviceset="R" device="_0603" value="50"/>
+<part name="C42" library="cyclops" deviceset="C" device="_0603" value="100pF"/>
+<part name="C44" library="cyclops" deviceset="C" device="_0603" value="220pF"/>
 </parts>
 <sheets>
 <sheet>
@@ -9719,30 +9718,30 @@ powered both by USB and the Cyclops
 <sheet>
 <description>Driver</description>
 <plain>
-<text x="170.18" y="111.76" size="1.778" layer="97" rot="R270">LED Terminals</text>
-<wire x1="167.64" y1="104.14" x2="165.1" y2="104.14" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="165.1" y1="104.14" x2="162.56" y2="104.14" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="162.56" y1="104.14" x2="165.1" y2="100.33" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="165.1" y1="100.33" x2="167.64" y2="104.14" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="167.64" y1="100.33" x2="165.1" y2="100.33" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="165.1" y1="100.33" x2="162.56" y2="100.33" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="165.1" y1="100.33" x2="165.1" y2="91.44" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="165.1" y1="104.14" x2="165.1" y2="111.76" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="161.29" y1="102.87" x2="160.02" y2="101.6" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="160.02" y1="101.6" x2="160.02" y2="102.87" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="160.02" y1="102.87" x2="158.75" y2="101.6" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="161.29" y1="100.33" x2="160.02" y2="99.06" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="160.02" y1="99.06" x2="160.02" y2="100.33" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="160.02" y1="100.33" x2="158.75" y2="99.06" width="0.1524" layer="97" style="shortdash"/>
+<text x="170.18" y="124.46" size="1.778" layer="97" rot="R270">LED Terminals</text>
+<wire x1="167.64" y1="116.84" x2="165.1" y2="116.84" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="165.1" y1="116.84" x2="162.56" y2="116.84" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="162.56" y1="116.84" x2="165.1" y2="113.03" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="165.1" y1="113.03" x2="167.64" y2="116.84" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="167.64" y1="113.03" x2="165.1" y2="113.03" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="165.1" y1="113.03" x2="162.56" y2="113.03" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="165.1" y1="113.03" x2="165.1" y2="104.14" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="165.1" y1="116.84" x2="165.1" y2="124.46" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="161.29" y1="115.57" x2="160.02" y2="114.3" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="160.02" y1="114.3" x2="160.02" y2="115.57" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="160.02" y1="115.57" x2="158.75" y2="114.3" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="161.29" y1="113.03" x2="160.02" y2="111.76" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="160.02" y1="111.76" x2="160.02" y2="113.03" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="160.02" y1="113.03" x2="158.75" y2="111.76" width="0.1524" layer="97" style="shortdash"/>
 <polygon width="0.1524" layer="97">
-<vertex x="158.496" y="101.854"/>
-<vertex x="159.004" y="101.346"/>
-<vertex x="158.496" y="101.346"/>
+<vertex x="158.496" y="114.554"/>
+<vertex x="159.004" y="114.046"/>
+<vertex x="158.496" y="114.046"/>
 </polygon>
 <polygon width="0.1524" layer="97">
-<vertex x="158.496" y="99.314"/>
-<vertex x="159.004" y="98.806"/>
-<vertex x="158.496" y="98.806"/>
+<vertex x="158.496" y="112.014"/>
+<vertex x="159.004" y="111.506"/>
+<vertex x="158.496" y="111.506"/>
 </polygon>
 <text x="-58.42" y="63.5" size="1.6764" layer="97">MAX(VCTL) = 5.0V
 -- implies --
@@ -9754,6 +9753,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <text x="144.78" y="-22.86" size="1.6764" layer="97" rot="R90">DNP</text>
 <text x="-7.62" y="124.46" size="1.6764" layer="97" rot="R90">DNP</text>
 <text x="-20.32" y="119.38" size="1.6764" layer="97" rot="R90">DNP</text>
+<text x="35.56" y="48.26" size="1.6764" layer="97">DNP</text>
 </plain>
 <instances>
 <instance part="U15" gate="C" x="60.96" y="-5.08" rot="MR0"/>
@@ -9769,9 +9769,9 @@ Max(ILED) ~ 1.5 Amps</text>
 <attribute name="VALUE" x="43.18" y="16.51" size="1.778" layer="96" rot="MR180"/>
 </instance>
 <instance part="FRAME4" gate="G$1" x="-91.44" y="-58.42"/>
-<instance part="Q4" gate="G$1" x="162.56" y="60.96" smashed="yes">
-<attribute name="NAME" x="167.64" y="55.88" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="167.64" y="60.96" size="1.778" layer="96" rot="R90"/>
+<instance part="Q4" gate="G$1" x="162.56" y="73.66" smashed="yes">
+<attribute name="NAME" x="167.64" y="68.58" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="167.64" y="73.66" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="C32" gate="C" x="-17.78" y="-10.16"/>
 <instance part="C30" gate="C" x="-25.4" y="-10.16"/>
@@ -9784,9 +9784,9 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="U$29" gate="G$1" x="165.1" y="-38.1"/>
 <instance part="P-1" gate="1" x="-38.1" y="-20.32"/>
 <instance part="R38" gate="R" x="-22.86" y="88.9" rot="R90"/>
-<instance part="HEATSINK" gate="G$1" x="170.18" y="66.04" smashed="yes" rot="R270">
-<attribute name="NAME" x="170.18" y="67.31" size="1.27" layer="95"/>
-<attribute name="VALUE" x="170.18" y="52.07" size="1.27" layer="96"/>
+<instance part="HEATSINK" gate="G$1" x="170.18" y="78.74" smashed="yes" rot="R270">
+<attribute name="NAME" x="170.18" y="80.01" size="1.27" layer="95"/>
+<attribute name="VALUE" x="170.18" y="64.77" size="1.27" layer="96"/>
 </instance>
 <instance part="R36" gate="R" x="-25.4" y="134.62" rot="R180"/>
 <instance part="R39" gate="R" x="-12.7" y="124.46" rot="R270"/>
@@ -9805,12 +9805,10 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="R45" gate="R" x="78.74" y="129.54" rot="R270"/>
 <instance part="R47" gate="R" x="127" y="104.14"/>
 <instance part="R48" gate="R" x="127" y="93.98"/>
-<instance part="R51" gate="R" x="144.78" y="55.88" rot="R90"/>
-<instance part="U$45" gate="G$1" x="144.78" y="40.64"/>
 <instance part="P-5" gate="1" x="91.44" y="58.42"/>
 <instance part="P-3" gate="1" x="78.74" y="104.14"/>
-<instance part="LED-" gate="G$1" x="165.1" y="81.28" rot="R90"/>
-<instance part="LED+" gate="G$1" x="165.1" y="121.92" rot="R270"/>
+<instance part="LED-" gate="G$1" x="165.1" y="93.98" rot="R90"/>
+<instance part="LED+" gate="G$1" x="165.1" y="134.62" rot="R270"/>
 <instance part="C33" gate="C" x="5.08" y="22.86"/>
 <instance part="C39" gate="C" x="81.28" y="33.02"/>
 <instance part="U$12" gate="G$1" x="81.28" y="22.86"/>
@@ -9818,9 +9816,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="P-4" gate="1" x="0" y="12.7"/>
 <instance part="U$14" gate="G$1" x="5.08" y="12.7"/>
 <instance part="U$52" gate="G$1" x="55.88" y="10.16"/>
-<instance part="U$9" gate="G$1" x="55.88" y="76.2"/>
 <instance part="U12" gate="G$1" x="30.48" y="30.48"/>
-<instance part="R42" gate="R" x="55.88" y="88.9" rot="R270"/>
 <instance part="U15" gate="B" x="-38.1" y="2.54" rot="MR0"/>
 <instance part="C38" gate="C" x="43.18" y="116.84"/>
 <instance part="C37" gate="C" x="40.64" y="86.36"/>
@@ -9850,6 +9846,9 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="P+12" gate="1" x="55.88" y="25.4"/>
 <instance part="P+13" gate="1" x="-35.56" y="53.34"/>
 <instance part="P+15" gate="1" x="-38.1" y="30.48"/>
+<instance part="R42" gate="R" x="55.88" y="99.06"/>
+<instance part="C42" gate="C" x="55.88" y="106.68" rot="R90"/>
+<instance part="C44" gate="C" x="30.48" y="50.8" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -9932,10 +9931,6 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="-12.7" y1="119.38" x2="-12.7" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R51" gate="R" pin="1"/>
-<wire x1="144.78" y1="50.8" x2="144.78" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="C35" gate="C" pin="2"/>
 <wire x1="30.48" y1="78.74" x2="30.48" y2="81.28" width="0.1524" layer="91"/>
 </segment>
@@ -9959,10 +9954,6 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="15.24" y1="33.02" x2="17.78" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="U12" gate="G$1" pin="GND"/>
 <pinref part="U12" gate="G$1" pin="~EN"/>
-</segment>
-<segment>
-<wire x1="55.88" y1="83.82" x2="55.88" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="R42" gate="R" pin="2"/>
 </segment>
 <segment>
 <pinref part="C37" gate="C" pin="2"/>
@@ -10020,7 +10011,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="101.6" y1="127" x2="101.6" y2="137.16" width="0.1524" layer="91"/>
 <junction x="101.6" y="137.16"/>
 <pinref part="LED+" gate="G$1" pin="1"/>
-<wire x1="165.1" y1="137.16" x2="165.1" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="137.16" x2="165.1" y2="134.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U13" gate="G$1" pin="C"/>
@@ -10176,22 +10167,19 @@ Max(ILED) ~ 1.5 Amps</text>
 <segment>
 <pinref part="U11" gate="G$1" pin="OUT"/>
 <wire x1="33.02" y1="99.06" x2="48.26" y2="99.06" width="0.1524" layer="91"/>
-<junction x="55.88" y="99.06"/>
-<wire x1="48.26" y1="99.06" x2="55.88" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="93.98" x2="55.88" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="R42" gate="R" pin="1"/>
-<wire x1="55.88" y1="99.06" x2="66.04" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="99.06" x2="66.04" y2="114.3" width="0.1524" layer="91"/>
-<pinref part="U13" gate="G$2" pin="B"/>
-<wire x1="66.04" y1="114.3" x2="73.66" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="99.06" x2="66.04" y2="88.9" width="0.1524" layer="91"/>
-<junction x="66.04" y="99.06"/>
-<pinref part="U13" gate="G$1" pin="B"/>
-<wire x1="66.04" y1="88.9" x2="73.66" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="C36" gate="C" pin="2"/>
 <wire x1="35.56" y1="60.96" x2="48.26" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="60.96" x2="48.26" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="R42" gate="R" pin="1"/>
+<wire x1="48.26" y1="99.06" x2="50.8" y2="99.06" width="0.1524" layer="91"/>
 <junction x="48.26" y="99.06"/>
+<wire x1="48.26" y1="99.06" x2="48.26" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="C42" gate="C" pin="1"/>
+<wire x1="48.26" y1="106.68" x2="53.34" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="C44" gate="C" pin="2"/>
+<wire x1="35.56" y1="50.8" x2="48.26" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="50.8" x2="48.26" y2="60.96" width="0.1524" layer="91"/>
+<junction x="48.26" y="60.96"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -10215,17 +10203,12 @@ Max(ILED) ~ 1.5 Amps</text>
 <pinref part="R47" gate="R" pin="2"/>
 <wire x1="132.08" y1="104.14" x2="144.78" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="Q4" gate="G$1" pin="G"/>
-<wire x1="152.4" y1="71.12" x2="152.4" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="58.42" x2="160.02" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="71.12" x2="160.02" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="104.14" x2="144.78" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="R48" gate="R" pin="2"/>
 <wire x1="144.78" y1="93.98" x2="132.08" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="R51" gate="R" pin="2"/>
-<wire x1="144.78" y1="60.96" x2="144.78" y2="71.12" width="0.1524" layer="91"/>
 <junction x="144.78" y="93.98"/>
 <wire x1="144.78" y1="71.12" x2="144.78" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="144.78" y1="71.12" x2="152.4" y2="71.12" width="0.1524" layer="91"/>
-<junction x="144.78" y="71.12"/>
 </segment>
 </net>
 <net name="IN" class="0">
@@ -10242,11 +10225,15 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="17.78" y1="96.52" x2="12.7" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="96.52" x2="12.7" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="U12" gate="G$1" pin="COM"/>
-<wire x1="12.7" y1="60.96" x2="12.7" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="60.96" x2="12.7" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="50.8" x2="12.7" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="38.1" x2="17.78" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="C36" gate="C" pin="1"/>
 <wire x1="27.94" y1="60.96" x2="12.7" y2="60.96" width="0.1524" layer="91"/>
 <junction x="12.7" y="60.96"/>
+<pinref part="C44" gate="C" pin="1"/>
+<wire x1="27.94" y1="50.8" x2="12.7" y2="50.8" width="0.1524" layer="91"/>
+<junction x="12.7" y="50.8"/>
 </segment>
 </net>
 <net name="N$37" class="0">
@@ -10354,8 +10341,8 @@ Max(ILED) ~ 1.5 Amps</text>
 <segment>
 <pinref part="LED-" gate="G$1" pin="1"/>
 <pinref part="Q4" gate="G$1" pin="D"/>
-<wire x1="165.1" y1="81.28" x2="165.1" y2="66.04" width="0.1524" layer="91"/>
-<label x="165.1" y="73.66" size="1.778" layer="95"/>
+<wire x1="165.1" y1="93.98" x2="165.1" y2="78.74" width="0.1524" layer="91"/>
+<label x="165.1" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="ISENSE" class="0">
@@ -10375,10 +10362,27 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="139.7" y1="-2.54" x2="139.7" y2="20.32" width="0.1524" layer="91"/>
 <junction x="139.7" y="20.32"/>
 <pinref part="U15" gate="A" pin="+IN"/>
-<label x="165.1" y="40.64" size="1.778" layer="95"/>
+<label x="139.7" y="20.32" size="1.778" layer="95"/>
 <pinref part="Q4" gate="G$1" pin="S"/>
-<wire x1="165.1" y1="55.88" x2="165.1" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="68.58" x2="165.1" y2="20.32" width="0.1524" layer="91"/>
 <junction x="165.1" y="20.32"/>
+</segment>
+</net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="U13" gate="G$1" pin="B"/>
+<pinref part="U13" gate="G$2" pin="B"/>
+<wire x1="66.04" y1="114.3" x2="73.66" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="88.9" x2="66.04" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="99.06" x2="66.04" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="106.68" x2="66.04" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="88.9" x2="73.66" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="R42" gate="R" pin="2"/>
+<wire x1="60.96" y1="99.06" x2="66.04" y2="99.06" width="0.1524" layer="91"/>
+<junction x="66.04" y="99.06"/>
+<pinref part="C42" gate="C" pin="2"/>
+<wire x1="60.96" y1="106.68" x2="66.04" y2="106.68" width="0.1524" layer="91"/>
+<junction x="66.04" y="106.68"/>
 </segment>
 </net>
 </nets>
