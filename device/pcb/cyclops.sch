@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -7379,9 +7379,7 @@ distributor Farnell 149-452</description>
 <part name="LED+" library="cyclops" deviceset="BANANA_TO_BOARD" device="_A2107" value="24.243.1"/>
 <part name="R33" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="R34" library="cyclops" deviceset="R" device="_0603" value="1k"/>
-<part name="C26" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="U$44" library="cyclops" deviceset="GND2" device=""/>
-<part name="U$46" library="cyclops" deviceset="GND2" device=""/>
 <part name="HEATSINK" library="jonnew" deviceset="HEATSINK" device="_BDN17" value="BDN17"/>
 <part name="R36" library="cyclops" deviceset="R" device="_0603" value="0"/>
 <part name="R39" library="cyclops" deviceset="R" device="_0603"/>
@@ -9569,9 +9567,7 @@ powered both by USB and the Cyclops
 <instance part="U$7" gate="G$1" x="-91.44" y="-38.1"/>
 <instance part="R33" gate="R" x="-15.24" y="-55.88" rot="R270"/>
 <instance part="R34" gate="R" x="5.08" y="-45.72" rot="R180"/>
-<instance part="C26" gate="C" x="53.34" y="-27.94"/>
 <instance part="U$44" gate="G$1" x="-15.24" y="-76.2"/>
-<instance part="U$46" gate="G$1" x="53.34" y="-76.2"/>
 <instance part="P+16" gate="1" x="25.4" y="15.24" rot="MR0"/>
 <instance part="P+17" gate="1" x="-139.7" y="-10.16"/>
 <instance part="U9" gate="G$1" x="5.08" y="-20.32"/>
@@ -9637,10 +9633,6 @@ powered both by USB and the Cyclops
 <wire x1="-15.24" y1="-73.66" x2="-15.24" y2="-60.96" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C26" gate="C" pin="2"/>
-<wire x1="53.34" y1="-33.02" x2="53.34" y2="-73.66" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="U9" gate="G$2" pin="V-"/>
 <wire x1="5.08" y1="-35.56" x2="5.08" y2="-27.94" width="0.1524" layer="91"/>
 </segment>
@@ -9674,8 +9666,6 @@ powered both by USB and the Cyclops
 <wire x1="10.16" y1="-45.72" x2="22.86" y2="-45.72" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="-45.72" x2="22.86" y2="-20.32" width="0.1524" layer="91"/>
 <junction x="22.86" y="-20.32"/>
-<pinref part="C26" gate="C" pin="1"/>
-<wire x1="53.34" y1="-20.32" x2="53.34" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="-20.32" x2="83.82" y2="-20.32" width="0.1524" layer="91"/>
 <junction x="53.34" y="-20.32"/>
 <label x="73.66" y="-20.32" size="1.778" layer="95"/>

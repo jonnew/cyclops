@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8,8 +8,8 @@
 </settings>
 <grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
 <layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
@@ -22,22 +22,22 @@
 <layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
@@ -256,6 +256,12 @@ Jon Newman
 <text x="107.442" y="84.709" size="1.016" layer="21" font="vector" ratio="18" rot="R90">VREF or LED_ACTIVE</text>
 <text x="74.295" y="83.566" size="1.016" layer="21" font="vector" ratio="18" rot="R90">VCTL or CONT</text>
 <text x="106.934" y="40.894" size="1.016" layer="21" font="vector" ratio="18" rot="R90">(DNP)</text>
+<text x="3.429" y="4.572" size="1.016" layer="21" font="vector" ratio="18" rot="R270" align="center">DGND</text>
+<text x="33.909" y="69.977" size="1.016" layer="21" font="vector" ratio="18" rot="R180" align="center">GND</text>
+<text x="73.152" y="33.909" size="1.016" layer="21" font="vector" ratio="18" rot="R180" align="center">GND</text>
+<text x="88.773" y="67.691" size="1.016" layer="21" font="vector" ratio="18" rot="R180" align="center">GND</text>
+<text x="58.039" y="67.437" size="1.016" layer="21" font="vector" ratio="18" rot="R180" align="center">GND</text>
+<text x="14.351" y="70.866" size="1.016" layer="21" font="vector" ratio="18" rot="R270" align="center">GND</text>
 </plain>
 <libraries>
 <library name="cyclops">
@@ -23620,10 +23626,6 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="60.706" y="60.833" size="1.016" layer="25" font="vector" ratio="18" align="center-right"/>
 <attribute name="VALUE" x="60.452" y="59.944" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center-left"/>
 </element>
-<element name="C26" library="cyclops" package="0603" value=".1uF" x="62.23" y="63.5" smashed="yes">
-<attribute name="NAME" x="60.96" y="66.294" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="60.96" y="65.151" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
-</element>
 <element name="U$30" library="open-ephys" package="OPEN_EPHYS_LOGO" value="OPEN_EPHYS_LOGO" x="65.568446875" y="24.59875625" smashed="yes" rot="MR315"/>
 <element name="HEATSINK" library="jonnew" package="BDN17" value="BDN17" x="112.522" y="20.193" smashed="yes" rot="MR0">
 <attribute name="NAME" x="91.059" y="67.818" size="1.016" layer="26" font="vector" ratio="18" rot="MR0"/>
@@ -23873,7 +23875,7 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="45.6819" y="36.2829" size="1.016" layer="25" font="vector" ratio="18"/>
 </element>
 <element name="-2.5V" library="jonnew" package="RC0603" value="RCU-0C" x="60.325" y="28.194" smashed="yes" rot="R180">
-<attribute name="NAME" x="61.1759" y="27.5199" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="NAME" x="62.7771" y="25.8699" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="VPRE" library="jonnew" package="RC0603" value="TPTP16R" x="48.133" y="61.722" smashed="yes" rot="R90">
 <attribute name="NAME" x="48.6801" y="62.8269" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
@@ -24567,8 +24569,6 @@ einem neuen Namen ab.</description>
 <contactref element="U1" pad="7"/>
 <via x="25.019" y="56.007" extent="1-16" drill="0.6"/>
 <contactref element="R33" pad="2"/>
-<contactref element="C26" pad="2"/>
-<via x="62.738" y="62.357" extent="1-16" drill="0.3302"/>
 <contactref element="R44" pad="2"/>
 <wire x1="61.8744" y1="52.19" x2="61.856" y2="52.19" width="0.3048" layer="1"/>
 <wire x1="61.856" y1="52.19" x2="61.849" y2="52.197" width="0.3048" layer="1"/>
@@ -25020,7 +25020,6 @@ einem neuen Namen ab.</description>
 <contactref element="D6" pad="A"/>
 <via x="39.624" y="15.494" extent="1-16" drill="0.3302"/>
 <wire x1="39.624" y1="14.373" x2="39.624" y2="15.494" width="0.2794" layer="1"/>
-<wire x1="63.0936" y1="63.5" x2="63.119" y2="63.4746" width="0.2794" layer="1"/>
 <via x="50.927" y="42.545" extent="1-16" drill="0.3302"/>
 <wire x1="49.972" y1="42.477" x2="50.859" y2="42.477" width="0.2794" layer="1"/>
 <wire x1="50.859" y1="42.477" x2="50.927" y2="42.545" width="0.2794" layer="1"/>
@@ -25166,7 +25165,6 @@ einem neuen Namen ab.</description>
 <via x="19.812" y="2.794" extent="1-16" drill="0.3302"/>
 <via x="16.764" y="1.524" extent="1-16" drill="0.3302"/>
 <via x="11.303" y="1.016" extent="1-16" drill="0.3302"/>
-<via x="3.429" y="1.905" extent="1-16" drill="0.3302"/>
 <via x="4.318" y="6.35" extent="1-16" drill="0.3302"/>
 <via x="2.413" y="8.763" extent="1-16" drill="0.3302"/>
 <via x="4.445" y="10.922" extent="1-16" drill="0.3302"/>
@@ -25268,8 +25266,6 @@ einem neuen Namen ab.</description>
 <via x="28.829" y="29.972" extent="1-16" drill="0.3302"/>
 <via x="28.702" y="31.623" extent="1-16" drill="0.3302"/>
 <via x="27.813" y="30.607" extent="1-16" drill="0.3302"/>
-<wire x1="63.119" y1="63.4746" x2="62.738" y2="63.0936" width="0.2794" layer="1"/>
-<wire x1="62.738" y1="63.0936" x2="62.738" y2="62.357" width="0.2794" layer="1"/>
 <contactref element="OC" pad="C2"/>
 <contactref element="R29" pad="1"/>
 <contactref element="Q3" pad="S"/>
@@ -25296,9 +25292,7 @@ einem neuen Namen ab.</description>
 <contactref element="TEST" pad="1"/>
 <wire x1="52.707" y1="72.388" x2="52.707" y2="72.223" width="0.3048" layer="1"/>
 <contactref element="R34" pad="1"/>
-<contactref element="C26" pad="1"/>
 <contactref element="REF5V0" pad="1"/>
-<wire x1="61.3664" y1="63.5" x2="61.3664" y2="63.4746" width="0.3048" layer="1"/>
 <contactref element="R18" pad="2"/>
 <contactref element="R17" pad="1"/>
 <contactref element="U9" pad="1"/>
@@ -25323,9 +25317,7 @@ einem neuen Namen ab.</description>
 <via x="51.435" y="57.023" extent="1-16" drill="0.3302"/>
 <wire x1="51.435" y1="57.023" x2="51.435" y2="52.832" width="0.2794" layer="1"/>
 <wire x1="61.468" y1="61.3156" x2="61.3664" y2="61.3156" width="0.6096" layer="1"/>
-<wire x1="61.3664" y1="61.3156" x2="61.3664" y2="63.5" width="0.6096" layer="1"/>
 <wire x1="52.707" y1="72.223" x2="52.707" y2="72.1594" width="0.6096" layer="1"/>
-<wire x1="52.707" y1="72.1594" x2="61.3664" y2="63.5" width="0.6096" layer="1"/>
 <wire x1="59.5376" y1="40.513" x2="59.817" y2="40.7924" width="0.6096" layer="1"/>
 <wire x1="59.817" y1="40.7924" x2="59.817" y2="46.1251" width="0.6096" layer="1"/>
 <wire x1="63.881" y1="50.1891" x2="59.817" y2="46.1251" width="0.6096" layer="1"/>
@@ -25333,6 +25325,9 @@ einem neuen Namen ab.</description>
 <wire x1="63.881" y1="61.3156" x2="63.881" y2="62.611" width="0.6096" layer="1"/>
 <wire x1="63.881" y1="62.611" x2="71.12" y2="69.85" width="0.6096" layer="1"/>
 <wire x1="71.12" y1="69.85" x2="72.6694" y2="69.85" width="0.6096" layer="1"/>
+<wire x1="52.707" y1="72.1594" x2="53.3166" y2="72.1594" width="0.6096" layer="1"/>
+<wire x1="53.3166" y1="72.1594" x2="61.468" y2="64.008" width="0.6096" layer="1"/>
+<wire x1="61.468" y1="64.008" x2="61.468" y2="61.3156" width="0.6096" layer="1"/>
 </signal>
 <signal name="N$3">
 <contactref element="R15" pad="1"/>
@@ -27244,17 +27239,35 @@ einem neuen Namen ab.</description>
 <wire x1="94.6404" y1="46.228" x2="94.6404" y2="43.9674" width="0.2794" layer="1"/>
 <wire x1="94.6404" y1="43.9674" x2="94.361" y2="43.688" width="0.2794" layer="1"/>
 </signal>
+<signal name="GND1">
+<via x="3.429" y="1.524" extent="1-16" drill="1.1" shape="octagon" alwaysstop="yes"/>
+</signal>
+<signal name="GND2">
+<via x="31.242" y="69.977" extent="1-16" drill="1.1" shape="octagon" alwaysstop="yes"/>
+</signal>
+<signal name="GND3">
+<via x="70.485" y="33.909" extent="1-16" drill="1.1" shape="octagon" alwaysstop="yes"/>
+</signal>
+<signal name="GND4">
+<via x="86.106" y="67.691" extent="1-16" drill="1.1" shape="octagon" alwaysstop="yes"/>
+</signal>
+<signal name="GND5">
+<via x="55.499" y="67.437" extent="1-16" drill="1.1" shape="octagon" alwaysstop="yes"/>
+</signal>
+<signal name="GND6">
+<via x="14.351" y="68.199" extent="1-16" drill="1.1" shape="octagon" alwaysstop="yes"/>
+</signal>
 </signals>
 <errors>
+<approved hash="19,1,59b3494f49a3595f"/>
 <approved hash="19,1,5d334dcf42e3521f"/>
 <approved hash="19,1,5e394ec54a825a7e"/>
-<approved hash="19,1,59b3494f49a3595f"/>
-<approved hash="19,1,7e361fca10e6711a"/>
 <approved hash="19,1,7d3c1cc01887797b"/>
 <approved hash="19,1,7ab61b4a1ba67a5a"/>
-<approved hash="19,1,ba39c2c5c69fbe63"/>
-<approved hash="19,1,bdb3c54fc5bebd42"/>
+<approved hash="19,1,7e361fca10e6711a"/>
 <approved hash="19,1,b933c1cfcefeb602"/>
+<approved hash="19,1,bdb3c54fc5bebd42"/>
+<approved hash="19,1,ba39c2c5c69fbe63"/>
 </errors>
 </board>
 </drawing>
