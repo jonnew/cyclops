@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.005" unitdist="inch" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -295,6 +295,8 @@ Jon Newman
 <wire x1="106.172" y1="43.815" x2="106.172" y2="43.561" width="0.2032" layer="21"/>
 <wire x1="106.172" y1="43.561" x2="106.045" y2="43.561" width="0.2032" layer="21"/>
 <wire x1="106.172" y1="43.815" x2="106.045" y2="43.815" width="0.2032" layer="21"/>
+<text x="14.478" y="74.803" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">GND</text>
+<text x="90.17" y="74.803" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center">GND</text>
 </plain>
 <libraries>
 <library name="cyclops">
@@ -27363,6 +27365,12 @@ einem neuen Namen ab.</description>
 <via x="91.948" y="22.225" extent="1-16" drill="0.3302"/>
 <wire x1="91.948" y1="22.225" x2="91.948" y2="15.494" width="0.2794" layer="16"/>
 <via x="91.948" y="15.494" extent="1-16" drill="0.3302"/>
+</signal>
+<signal name="GND7">
+<via x="14.478" y="77.47" extent="1-16" drill="1.1" shape="octagon" alwaysstop="yes"/>
+</signal>
+<signal name="GND8">
+<via x="90.17" y="77.47" extent="1-16" drill="1.1" shape="octagon" alwaysstop="yes"/>
 </signal>
 </signals>
 <errors>
