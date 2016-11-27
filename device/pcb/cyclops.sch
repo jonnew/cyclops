@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -7325,7 +7325,7 @@ distributor Farnell 149-452</description>
 <part name="VAUX_OUT" library="jonnew" deviceset="BNC" device="_0731000105" value="0731000105"/>
 <part name="REF2V1" library="jonnew" deviceset="TP" device="_RC0603" value="RCU-0C"/>
 <part name="REF5V1" library="jonnew" deviceset="TP" device="_RC0603" value="RCU-0C"/>
-<part name="R12" library="cyclops" deviceset="R" device="_0603" value="2.2k"/>
+<part name="R12" library="cyclops" deviceset="R" device="_0603" value="2.1k"/>
 <part name="R28" library="cyclops" deviceset="R" device="_0603" value="10k"/>
 <part name="R27" library="cyclops" deviceset="R" device="_0603" value="40k"/>
 <part name="R20" library="cyclops" deviceset="R" device="_0603" value="10k"/>
@@ -7644,7 +7644,7 @@ powered both by USB and the Cyclops
 <instance part="VAUX_OUT" gate="G$1" x="50.8" y="-50.8"/>
 <instance part="VI" gate="G$1" x="96.52" y="-33.02"/>
 <instance part="VREF" gate="G$1" x="96.52" y="-50.8"/>
-<instance part="VCTL" gate="G$1" x="129.54" y="-17.78"/>
+<instance part="VCTL" gate="G$1" x="129.54" y="-33.02"/>
 <instance part="PWR_DIST" gate="G$1" x="88.9" y="5.08"/>
 <instance part="VCTL&lt;OFF&gt;DAC" gate="G$1" x="187.96" y="-5.08" smashed="yes" rot="MR0">
 <attribute name="NAME" x="180.34" y="-8.89" size="1.778" layer="95" rot="MR180"/>
@@ -7658,7 +7658,7 @@ powered both by USB and the Cyclops
 <instance part="U$34" gate="G$1" x="241.3" y="22.86"/>
 <instance part="U$35" gate="G$1" x="251.46" y="22.86"/>
 <instance part="U$36" gate="G$1" x="53.34" y="-60.96"/>
-<instance part="U$37" gate="G$1" x="132.08" y="-27.94"/>
+<instance part="U$37" gate="G$1" x="132.08" y="-40.64"/>
 <instance part="U$38" gate="G$1" x="7.62" y="-60.96"/>
 <instance part="U$39" gate="G$1" x="99.06" y="-43.18"/>
 <instance part="U$40" gate="G$1" x="99.06" y="-60.96"/>
@@ -7929,7 +7929,7 @@ powered both by USB and the Cyclops
 </segment>
 <segment>
 <pinref part="VCTL" gate="G$1" pin="2"/>
-<wire x1="132.08" y1="-20.32" x2="132.08" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="-35.56" x2="132.08" y2="-38.1" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="VAUX_IN" gate="G$1" pin="2"/>
@@ -8094,11 +8094,9 @@ powered both by USB and the Cyclops
 <label x="187.96" y="0" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="VCTL&lt;&gt;CONT" gate="G$1" pin="3"/>
-<wire x1="147.32" y1="-22.86" x2="144.78" y2="-22.86" width="0.1524" layer="91"/>
-<wire x1="144.78" y1="-22.86" x2="144.78" y2="-30.48" width="0.1524" layer="91"/>
-<wire x1="144.78" y1="-30.48" x2="137.16" y2="-30.48" width="0.1524" layer="91"/>
-<label x="134.62" y="-30.48" size="1.778" layer="95"/>
+<wire x1="147.32" y1="-17.78" x2="127" y2="-17.78" width="0.1524" layer="91"/>
+<label x="127" y="-17.78" size="1.778" layer="95"/>
+<pinref part="VCTL&lt;&gt;CONT" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="-5V" class="0">
@@ -8619,9 +8617,10 @@ powered both by USB and the Cyclops
 <net name="N$19" class="0">
 <segment>
 <pinref part="VCTL" gate="G$1" pin="1"/>
-<label x="137.16" y="-17.78" size="1.778" layer="95"/>
-<pinref part="VCTL&lt;&gt;CONT" gate="G$1" pin="1"/>
-<wire x1="147.32" y1="-17.78" x2="132.08" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="-33.02" x2="142.24" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="-33.02" x2="142.24" y2="-22.86" width="0.1524" layer="91"/>
+<pinref part="VCTL&lt;&gt;CONT" gate="G$1" pin="3"/>
+<wire x1="142.24" y1="-22.86" x2="147.32" y2="-22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
