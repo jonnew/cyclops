@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.127" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -52,7 +52,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
@@ -25651,10 +25651,10 @@ einem neuen Namen ab.</description>
 <vertex x="90.424" y="19.685"/>
 <vertex x="90.912934375" y="20.15909375"/>
 <vertex x="92.71" y="21.990384375"/>
-<vertex x="92.71" y="31.877"/>
-<vertex x="94.615" y="31.877"/>
+<vertex x="92.71" y="34.163"/>
 <vertex x="94.615" y="36.068"/>
-<vertex x="102.743" y="36.068"/>
+<vertex x="101.116609375" y="36.068"/>
+<vertex x="102.743" y="37.694390625"/>
 <vertex x="102.743" y="39.497"/>
 <vertex x="105.156" y="39.497"/>
 <vertex x="105.156" y="45.974"/>
