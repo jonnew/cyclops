@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -5694,6 +5694,20 @@ grid 2.54 mm</description>
 <text x="1.016" y="-0.4826" size="0.8128" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 <text x="1.016" y="0.5334" size="0.8128" layer="25" font="vector" ratio="18">&gt;NAME</text>
 </package>
+<package name="DA-T263-201E-TR">
+<smd name="1" x="0" y="7.86891875" dx="13.716" dy="1.524" layer="1"/>
+<smd name="2" x="0" y="-7.86891875" dx="13.716" dy="1.524" layer="1"/>
+<wire x1="-6.35" y1="-12.7" x2="6.35" y2="-12.7" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="12.7" x2="6.35" y2="12.7" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="6.35" x2="6.35" y2="-6.35" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="6.35" x2="-6.35" y2="-6.35" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="12.7" x2="-6.35" y2="9.525" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="12.7" x2="6.35" y2="9.525" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="-9.525" x2="-6.35" y2="-12.7" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="-9.525" x2="6.35" y2="-12.7" width="0.1524" layer="21"/>
+<text x="8.255" y="-6.35" size="1.016" layer="25" font="vector" ratio="18" rot="R90">&gt;NAME</text>
+<text x="8.255" y="1.27" size="1.016" layer="27" font="vector" ratio="18" rot="R90">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BU-BNC-1">
@@ -6096,6 +6110,32 @@ grid 2.54 mm</description>
 <wire x1="12.7" y1="22.86" x2="-12.7" y2="22.86" width="0.4064" layer="94"/>
 <text x="-12.7" y="25.4" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
 <text x="-12.7" y="-33.02" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
+</symbol>
+<symbol name="D-SERIES-HEATSINK">
+<wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="5.08" x2="1.27" y2="5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="2.54" y1="1.27" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="5.08" x2="3.81" y2="5.08" width="0.254" layer="94"/>
+<wire x1="3.81" y1="5.08" x2="3.81" y2="1.27" width="0.254" layer="94"/>
+<wire x1="3.81" y1="1.27" x2="5.08" y2="1.27" width="0.254" layer="94"/>
+<wire x1="5.08" y1="1.27" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="6.35" y2="5.08" width="0.254" layer="94"/>
+<wire x1="6.35" y1="5.08" x2="6.35" y2="1.27" width="0.254" layer="94"/>
+<wire x1="6.35" y1="1.27" x2="7.62" y2="1.27" width="0.254" layer="94"/>
+<wire x1="7.62" y1="1.27" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="8.89" y2="5.08" width="0.254" layer="94"/>
+<wire x1="8.89" y1="5.08" x2="8.89" y2="1.27" width="0.254" layer="94"/>
+<wire x1="8.89" y1="1.27" x2="10.16" y2="1.27" width="0.254" layer="94"/>
+<wire x1="10.16" y1="1.27" x2="10.16" y2="5.08" width="0.254" layer="94"/>
+<wire x1="10.16" y1="5.08" x2="11.43" y2="5.08" width="0.254" layer="94"/>
+<wire x1="11.43" y1="5.08" x2="11.43" y2="0" width="0.254" layer="94"/>
+<wire x1="11.43" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<text x="0" y="6.35" size="1.27" layer="95">&gt;NAME</text>
+<text x="7.62" y="6.35" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="P$1" x="0" y="-2.54" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="P$3" x="10.16" y="-2.54" visible="pad" length="short" direction="pas" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -7278,6 +7318,22 @@ distributor Farnell 149-452</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="D-SERIES-HEATSINK" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="D-SERIES-HEATSINK" x="-5.08" y="0"/>
+</gates>
+<devices>
+<device name="_DA-T263-201E-TR" package="DA-T263-201E-TR">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$3" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -7380,7 +7436,7 @@ distributor Farnell 149-452</description>
 <part name="R38" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="R37" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="U$44" library="cyclops" deviceset="GND2" device=""/>
-<part name="HEATSINK" library="jonnew" deviceset="HEATSINK" device="_BDN17" value="BDN17"/>
+<part name="HS1" library="jonnew" deviceset="HEATSINK" device="_BDN17" value="BDN17"/>
 <part name="R40" library="cyclops" deviceset="R" device="_0603" value="0"/>
 <part name="R42" library="cyclops" deviceset="R" device="_0603"/>
 <part name="U$26" library="cyclops" deviceset="GND2" device=""/>
@@ -7601,6 +7657,7 @@ distributor Farnell 149-452</description>
 <part name="C38" library="jonnew" deviceset="C" device="_0603" value=".1uF"/>
 <part name="U$46" library="cyclops" deviceset="GND2" device=""/>
 <part name="U$69" library="cyclops" deviceset="GND2" device=""/>
+<part name="HS0" library="jonnew" deviceset="D-SERIES-HEATSINK" device="_DA-T263-201E-TR" value="DA-T263-201E-TR"/>
 </parts>
 <sheets>
 <sheet>
@@ -9770,9 +9827,9 @@ Max(ILED) ~ 1.5 Amps</text>
 <attribute name="VALUE" x="43.18" y="16.51" size="1.778" layer="96" rot="MR180"/>
 </instance>
 <instance part="FRAME4" gate="G$1" x="-91.44" y="-58.42"/>
-<instance part="Q4" gate="G$1" x="162.56" y="73.66" smashed="yes">
-<attribute name="NAME" x="167.64" y="68.58" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="167.64" y="73.66" size="1.778" layer="96" rot="R90"/>
+<instance part="Q4" gate="G$1" x="162.56" y="58.42" smashed="yes">
+<attribute name="NAME" x="167.64" y="53.34" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="167.64" y="58.42" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="C46" gate="C" x="-17.78" y="-10.16"/>
 <instance part="C45" gate="C" x="-25.4" y="-10.16"/>
@@ -9785,9 +9842,9 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="U$29" gate="G$1" x="165.1" y="-38.1"/>
 <instance part="P-1" gate="1" x="-38.1" y="-20.32"/>
 <instance part="R50" gate="R" x="-22.86" y="88.9" rot="R90"/>
-<instance part="HEATSINK" gate="G$1" x="170.18" y="78.74" smashed="yes" rot="R270">
-<attribute name="NAME" x="170.18" y="80.01" size="1.27" layer="95"/>
-<attribute name="VALUE" x="170.18" y="64.77" size="1.27" layer="96"/>
+<instance part="HS1" gate="G$1" x="170.18" y="53.34" smashed="yes" rot="R270">
+<attribute name="NAME" x="170.18" y="54.61" size="1.27" layer="95"/>
+<attribute name="VALUE" x="170.18" y="39.37" size="1.27" layer="96"/>
 </instance>
 <instance part="R40" gate="R" x="-25.4" y="134.62" rot="R180"/>
 <instance part="R42" gate="R" x="-12.7" y="124.46" rot="R270"/>
@@ -9866,6 +9923,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="C38" gate="C" x="139.7" y="68.58"/>
 <instance part="U$46" gate="G$1" x="139.7" y="58.42" rot="MR0"/>
 <instance part="U$69" gate="G$1" x="139.7" y="119.38" rot="MR0"/>
+<instance part="HS0" gate="G$1" x="175.26" y="91.44" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -10258,12 +10316,12 @@ Max(ILED) ~ 1.5 Amps</text>
 <pinref part="R46" gate="R" pin="2"/>
 <wire x1="142.24" y1="104.14" x2="149.86" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="Q4" gate="G$1" pin="G"/>
-<wire x1="149.86" y1="71.12" x2="160.02" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="55.88" x2="160.02" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="104.14" x2="149.86" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="R49" gate="R" pin="2"/>
 <wire x1="149.86" y1="93.98" x2="142.24" y2="93.98" width="0.1524" layer="91"/>
 <junction x="149.86" y="93.98"/>
-<wire x1="149.86" y1="71.12" x2="149.86" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="55.88" x2="149.86" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="IN" class="0">
@@ -10396,8 +10454,16 @@ Max(ILED) ~ 1.5 Amps</text>
 <segment>
 <pinref part="LED-" gate="G$1" pin="1"/>
 <pinref part="Q4" gate="G$1" pin="D"/>
-<wire x1="165.1" y1="93.98" x2="165.1" y2="78.74" width="0.1524" layer="91"/>
-<label x="165.1" y="86.36" size="1.778" layer="95"/>
+<wire x1="165.1" y1="93.98" x2="165.1" y2="91.44" width="0.1524" layer="91"/>
+<label x="165.1" y="68.58" size="1.778" layer="95" rot="R90"/>
+<pinref part="HS0" gate="G$1" pin="P$1"/>
+<wire x1="165.1" y1="91.44" x2="165.1" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="81.28" x2="165.1" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="91.44" x2="165.1" y2="91.44" width="0.1524" layer="91"/>
+<junction x="165.1" y="91.44"/>
+<pinref part="HS0" gate="G$1" pin="P$3"/>
+<wire x1="172.72" y1="81.28" x2="165.1" y2="81.28" width="0.1524" layer="91"/>
+<junction x="165.1" y="81.28"/>
 </segment>
 </net>
 <net name="ISENSE" class="0">
@@ -10419,7 +10485,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <pinref part="U16" gate="A" pin="+IN"/>
 <label x="139.7" y="12.7" size="1.778" layer="95"/>
 <pinref part="Q4" gate="G$1" pin="S"/>
-<wire x1="165.1" y1="68.58" x2="165.1" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="53.34" x2="165.1" y2="12.7" width="0.1524" layer="91"/>
 <junction x="165.1" y="12.7"/>
 </segment>
 </net>
