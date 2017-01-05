@@ -1,5 +1,5 @@
 [Eagle]
-Version="06 06 00"
+Version="06 05 00"
 Platform="Linux"
 Serial="6E23A2A2B2-LSR-WLM-1EP"
 Globals="Globals"
@@ -9,12 +9,64 @@ Desktop="Desktop"
 AutoSaveProject=1
 
 [Win_1]
+Type="Control Panel"
+Loc="0 27 2559 1439"
+State=0
+Number=0
+
+[Win_2]
+Type="Board Editor"
+Loc="1280 27 2555 1435"
+State=2
+Number=1
+File="cyclops.brd"
+View="17.553 -12.4972 122.379 80.798"
+WireWidths=" 0 1.4224 1.6764 1.778 2.1844 2.54 3.81 6.4516 0.4064 0.2794 1.27 0.1778 1.9304 0.6096 0.254 0.3048"
+PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
+PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
+ViaDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
+ViaDrills=" 0.7 0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.6 0.3302"
+HoleDrills=" 0.5 0.7 0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.6"
+TextSizes=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.9304 2.1844 2.54 3.81 5.08 6.4516 1.778"
+PolygonSpacings=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 5.08 6.4516 1.27"
+PolygonIsolates=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
+MiterRadiuss=" 0.254 0.3175 1.27 2.54 1 2 2.5 5 7.5 10 0.635 0"
+DimensionWidths=" 0 0.127 0.254 0.1 0.26 0.13"
+DimensionExtWidths=" 0.127 0.254 0.1 0.13 0.26 0"
+DimensionExtLengths=" 1.27 2.54 1 2 3 0"
+DimensionExtOffsets=" 1.27 2.54 1 2 3 0"
+SmdSizes=" 0.3048 0.1524 0.4064 0.2032 0.6096 0.3048 0.8128 0.4064 1.016 0.508 1.27 0.6604 1.4224 0.7112 1.6764 0.8128 1.778 0.9144 1.9304 0.9652 2.1844 1.0668 2.54 1.27 3.81 1.9304 5.08 2.54 6.4516 3.2512 1.27 0.635"
+WireBend=3
+WireBendSet=0
+WireCap=1
+MiterStyle=1
+PadShape=0
+ViaShape=1
+PolygonPour=0
+PolygonRank=1
+PolygonThermals=1
+PolygonOrphans=0
+TextRatio=8
+DimensionUnit=1
+DimensionPrecision=2
+DimensionShowUnit=0
+PinDirection=3
+PinFunction=0
+PinLength=2
+PinVisible=3
+SwapLevel=0
+ArcDirection=0
+AddLevel=2
+PadsSameType=0
+Layer=16
+
+[Win_3]
 Type="Schematic Editor"
-Loc="0 0 599 399"
-State=3
+Loc="0 27 1275 1435"
+State=2
 Number=2
 File="cyclops.sch"
-View="126.453 -77.6365 266.99 52.66"
+View="-98.9653 -192.421 320.676 196.642"
 WireWidths=" 0 0.3048 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.4064 0.1524"
 PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
 PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
@@ -53,63 +105,11 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=91
-Views=" 1: 126.453 -77.6365 266.99 52.66 3: -3.87053 16.9093 136.666 125.598 5: 113.894 -57.1031 405.31 168.273"
+Views=" 1: -98.9653 -192.421 320.676 196.642 2: -139.419 -207.486 210.281 62.9657 3: -172.776 -129.852 176.924 140.6 4: -87.8566 -90.5598 29.2571 0.0138906 5: -139.6 -94.4182 210.099 176.033"
 Sheet=1
 
-[Win_2]
-Type="Board Editor"
-Loc="0 0 599 399"
-State=1
-Number=1
-File="cyclops.brd"
-View="3.05059 47.8456 32.3058 72.0042"
-WireWidths=" 0 1.4224 1.6764 1.778 2.1844 2.54 3.81 6.4516 0.4064 0.2794 1.27 0.1778 1.9304 0.6096 0.254 0.3048"
-PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
-PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
-ViaDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
-ViaDrills=" 0.7 0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.6 0.3302"
-HoleDrills=" 0.5 0.7 0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.6"
-TextSizes=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.9304 2.1844 2.54 3.81 5.08 6.4516 1.778"
-PolygonSpacings=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 5.08 6.4516 1.27"
-PolygonIsolates=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
-MiterRadiuss=" 0.254 0.3175 1.27 2.54 1 2 2.5 5 7.5 10 0.635 0"
-DimensionWidths=" 0 0.127 0.254 0.1 0.26 0.13"
-DimensionExtWidths=" 0.127 0.254 0.1 0.13 0.26 0"
-DimensionExtLengths=" 1.27 2.54 1 2 3 0"
-DimensionExtOffsets=" 1.27 2.54 1 2 3 0"
-SmdSizes=" 0.3048 0.1524 0.4064 0.2032 0.6096 0.3048 0.8128 0.4064 1.016 0.508 1.27 0.6604 1.4224 0.7112 1.6764 0.8128 1.778 0.9144 1.9304 0.9652 2.1844 1.0668 2.54 1.27 3.81 1.9304 5.08 2.54 6.4516 3.2512 1.27 0.635"
-WireBend=3
-WireBendSet=0
-WireCap=1
-MiterStyle=1
-PadShape=0
-ViaShape=1
-PolygonPour=0
-PolygonRank=1
-PolygonThermals=1
-PolygonOrphans=0
-TextRatio=8
-DimensionUnit=1
-DimensionPrecision=2
-DimensionShowUnit=0
-PinDirection=3
-PinFunction=0
-PinLength=2
-PinVisible=3
-SwapLevel=0
-ArcDirection=0
-AddLevel=2
-PadsSameType=0
-Layer=1
-
-[Win_3]
-Type="Control Panel"
-Loc="0 0 599 399"
-State=2
-Number=0
-
 [Desktop]
-Screen="3840 1080"
+Screen="2560 1440"
 Window="Win_1"
 Window="Win_2"
 Window="Win_3"

@@ -23526,10 +23526,10 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="83.5025" y="69.215" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="86.741" y="79.629" size="1.016" layer="27" font="vector" ratio="18" rot="R180"/>
 </element>
-<element name="REF2V1" library="jonnew" package="RC0603" value="RCU-0C" x="51.181" y="64.269" smashed="yes">
+<element name="REF2V5" library="jonnew" package="RC0603" value="RCU-0C" x="51.181" y="64.269" smashed="yes">
 <attribute name="NAME" x="51.5359" y="65.74" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
-<element name="REF5V1" library="jonnew" package="RC0603" value="RCU-0C" x="63.881" y="60.699" smashed="yes" rot="R180">
+<element name="REF5V0" library="jonnew" package="RC0603" value="RCU-0C" x="63.881" y="60.699" smashed="yes" rot="R180">
 <attribute name="NAME" x="66.0139" y="58.12" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="R12" library="cyclops" package="0603" value="2.1k" x="5.08" y="62.484" smashed="yes" rot="R270">
@@ -24439,7 +24439,7 @@ einem neuen Namen ab.</description>
 <contactref element="U10" pad="3"/>
 <contactref element="U9" pad="4"/>
 <contactref element="REF_ADJ" pad="1"/>
-<contactref element="REF2V1" pad="1"/>
+<contactref element="REF2V5" pad="1"/>
 <wire x1="56.1594" y1="56.8014" x2="56.1594" y2="58.674" width="0.6096" layer="1"/>
 <wire x1="56.1594" y1="58.674" x2="56.1594" y2="59.3436" width="0.6096" layer="1"/>
 <wire x1="56.1594" y1="59.3436" x2="55.679" y2="59.824" width="0.3048" layer="1"/>
@@ -25385,7 +25385,7 @@ einem neuen Namen ab.</description>
 <contactref element="TEST" pad="1"/>
 <wire x1="52.707" y1="72.388" x2="52.707" y2="72.223" width="0.3048" layer="1"/>
 <contactref element="R37" pad="1"/>
-<contactref element="REF5V1" pad="1"/>
+<contactref element="REF5V0" pad="1"/>
 <contactref element="R29" pad="2"/>
 <contactref element="R27" pad="1"/>
 <contactref element="U10" pad="1"/>
