@@ -11,14 +11,14 @@ UsedLibrary="/home/jon/public/jonnew-lbr/eagle/lib/jonnew.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="1280 27 2555 1435"
-State=0
+Loc="1280 27 2555 493"
+State=2
 Number=0
 
 [Win_2]
 Type="Schematic Editor"
-Loc="0 27 1275 1435"
-State=0
+Loc="0 27 1275 493"
+State=2
 Number=2
 File="cyclops.sch"
 View="-11.2459 -83.2398 157.398 47.1864"
@@ -65,11 +65,11 @@ Sheet=5
 
 [Win_3]
 Type="Board Editor"
-Loc="0 27 2559 1439"
+Loc="0 27 1275 1435"
 State=2
 Number=1
 File="cyclops.brd"
-View="12.2324 16.1034 99.5879 93.8496"
+View="4.10948 -16.4732 129.901 95.4813"
 WireWidths=" 0 1.9304 2.1844 2.54 3.81 6.4516 2.794 0.6096 0.1778 4.445 1.6764 0.4064 0.8128 0.2794 2.032 0.2032"
 PadDiameters=" 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.3302 0"
 PadDrills=" 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8 0.3302"
