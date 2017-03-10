@@ -5576,16 +5576,16 @@ grid 2.54 mm</description>
 <text x="1.016" y="0.5334" size="0.8128" layer="25" font="vector" ratio="18">&gt;NAME</text>
 </package>
 <package name="DA-T263-201E-TR">
-<smd name="1" x="0" y="7.86891875" dx="13.716" dy="1.524" layer="1"/>
-<smd name="2" x="0" y="-7.86891875" dx="13.716" dy="1.524" layer="1"/>
+<smd name="1" x="0" y="6.75" dx="13.716" dy="1.524" layer="1"/>
+<smd name="2" x="0" y="-6.75" dx="13.716" dy="1.524" layer="1"/>
 <wire x1="-6.35" y1="-12.7" x2="6.35" y2="-12.7" width="0.1524" layer="21"/>
 <wire x1="-6.35" y1="12.7" x2="6.35" y2="12.7" width="0.1524" layer="21"/>
-<wire x1="6.35" y1="6.35" x2="6.35" y2="-6.35" width="0.1524" layer="21"/>
-<wire x1="-6.35" y1="6.35" x2="-6.35" y2="-6.35" width="0.1524" layer="21"/>
-<wire x1="-6.35" y1="12.7" x2="-6.35" y2="9.525" width="0.1524" layer="21"/>
-<wire x1="6.35" y1="12.7" x2="6.35" y2="9.525" width="0.1524" layer="21"/>
-<wire x1="-6.35" y1="-9.525" x2="-6.35" y2="-12.7" width="0.1524" layer="21"/>
-<wire x1="6.35" y1="-9.525" x2="6.35" y2="-12.7" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="5.45" x2="6.35" y2="-5.55" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="5.35" x2="-6.35" y2="-5.55" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="12.7" x2="-6.35" y2="8.125" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="12.7" x2="6.35" y2="8.025" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="-7.925" x2="-6.35" y2="-12.7" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="-7.925" x2="6.35" y2="-12.7" width="0.1524" layer="21"/>
 <text x="8.255" y="-6.35" size="1.016" layer="25" font="vector" ratio="18" rot="R90">&gt;NAME</text>
 <text x="8.255" y="1.27" size="1.016" layer="27" font="vector" ratio="18" rot="R90">&gt;VALUE</text>
 </package>
@@ -7569,7 +7569,7 @@ distributor Farnell 149-452</description>
 <part name="P-3" library="cyclops" deviceset="-5V" device="" value="-2.5V"/>
 <part name="FRAME5" library="cyclops" deviceset="FRAME_A_L" device=""/>
 <part name="U5" library="cyclops" deviceset="LT1611" device="" value="LT1931"/>
-<part name="C12" library="cyclops" deviceset="C" device="_1206" value="1uF"/>
+<part name="C12" library="jonnew" deviceset="C" device="_0805" value="1uF"/>
 <part name="C18" library="cyclops" deviceset="C" device="_1210" value="22uF"/>
 <part name="D6" library="cyclops" deviceset="S-DIODE" device="SOD-123" value="MBR0520L"/>
 <part name="R19" library="cyclops" deviceset="R" device="_0603" value="10k"/>
@@ -7731,7 +7731,7 @@ distributor Farnell 149-452</description>
 <part name="R17" library="cyclops" deviceset="R" device="_0603" value="165k"/>
 <part name="VCTL&lt;&gt;CONT" library="jonnew" deviceset="SPDT" device="_AS12A*" value="AS12CV"/>
 <part name="Q1" library="jonnew" deviceset="N-MOSFET" device="_SOT23-GSD" value="NDS351AN"/>
-<part name="R48" library="cyclops" deviceset="R" device="_0603" value="0"/>
+<part name="R48" library="cyclops" deviceset="R" device="_0603" value="200"/>
 <part name="C40" library="cyclops" deviceset="C" device="_0603" value="6.8nF"/>
 <part name="C35" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
 <part name="C33" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
@@ -7762,6 +7762,8 @@ distributor Farnell 149-452</description>
 <part name="R62" library="cyclops" deviceset="R" device="_0603" value="47"/>
 <part name="D7" library="jonnew" deviceset="S-DIODE" device="SOD-123" value="1N5819"/>
 <part name="U$13" library="cyclops" deviceset="GND2" device=""/>
+<part name="C41" library="cyclops" deviceset="C" device="_0603" value="470pF"/>
+<part name="U$12" library="cyclops" deviceset="GND2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10039,6 +10041,7 @@ Max(ILED) ~ 1.5 Amps</text>
 <text x="144.78" y="-22.86" size="1.6764" layer="97" rot="R90">DNP</text>
 <text x="-7.62" y="124.46" size="1.6764" layer="97" rot="R90">DNP</text>
 <text x="-20.32" y="119.38" size="1.6764" layer="97" rot="R90">DNP</text>
+<text x="73.66" y="73.66" size="1.6764" layer="97" rot="R90">DNP</text>
 </plain>
 <instances>
 <instance part="U16" gate="C" x="66.04" y="-5.08" rot="MR0"/>
@@ -10148,6 +10151,8 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="R62" gate="R" x="78.74" y="20.32" rot="R270"/>
 <instance part="D7" gate="G$1" x="15.24" y="20.32" rot="R90"/>
 <instance part="U$13" gate="G$1" x="17.78" y="7.62"/>
+<instance part="C41" gate="C" x="63.5" y="78.74"/>
+<instance part="U$12" gate="G$1" x="63.5" y="68.58" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -10294,6 +10299,10 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="20.32" y1="20.32" x2="22.86" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="12.7" x2="17.78" y2="10.16" width="0.1524" layer="91"/>
 <junction x="17.78" y="12.7"/>
+</segment>
+<segment>
+<pinref part="C41" gate="C" pin="2"/>
+<wire x1="63.5" y1="73.66" x2="63.5" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+13.3V" class="1">
@@ -10495,11 +10504,16 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="63.5" y1="60.96" x2="48.26" y2="60.96" width="0.1524" layer="91"/>
 <junction x="48.26" y="60.96"/>
 <pinref part="R53" gate="R" pin="2"/>
-<wire x1="53.34" y1="83.82" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="83.82" x2="53.34" y2="88.9" width="0.1524" layer="91"/>
 <junction x="53.34" y="99.06"/>
 <pinref part="LIM&lt;BW&gt;FULL" gate="G$1" pin="3"/>
+<wire x1="53.34" y1="88.9" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="50.8" x2="63.5" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="50.8" x2="63.5" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="88.9" x2="63.5" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="88.9" x2="63.5" y2="81.28" width="0.1524" layer="91"/>
+<junction x="53.34" y="88.9"/>
+<pinref part="C41" gate="C" pin="1"/>
 </segment>
 </net>
 <net name="N$24" class="0">
