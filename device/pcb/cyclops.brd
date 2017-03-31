@@ -23467,7 +23467,7 @@ einem neuen Namen ab.</description>
 <attribute name="DK" value="PxxxxHTR-ND" x="52.832" y="53.728" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="52.832" y="53.728" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="50.927" y="55.252" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
-<attribute name="VALUE" x="52.07" y="55.125" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="52.07" y="54.998" size="1.016" layer="27" font="vector" ratio="18" rot="R90"/>
 </element>
 <element name="R39" library="cyclops" package="0603" value="1k" x="58.547" y="62.364" smashed="yes" rot="R180">
 <attribute name="MN" value="Panasonic" x="56.007" y="62.364" size="1.778" layer="27" rot="R180" display="off"/>
@@ -23889,7 +23889,7 @@ einem neuen Namen ab.</description>
 </element>
 <element name="C34" library="cyclops" package="0603" value="0.1uF" x="48.133" y="59.182" smashed="yes" rot="R180">
 <attribute name="NAME" x="50.292" y="58.293" size="1.016" layer="25" font="vector" ratio="18" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="51.308" y="58.293" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
+<attribute name="VALUE" x="51.308" y="58.42" size="1.016" layer="27" font="vector" ratio="18" rot="R90" align="center-left"/>
 </element>
 <element name="C32" library="cyclops" package="0603" value="0.1uF" x="48.26" y="53.848" smashed="yes" rot="R180">
 <attribute name="NAME" x="46.609" y="52.324" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
@@ -24068,7 +24068,7 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="54.169" y="44.876" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
 <attribute name="VALUE" x="56.709" y="47.169" size="1.016" layer="27" font="vector" ratio="18" rot="SR0"/>
 </element>
-<element name="U12" library="jonnew" package="SOT23-6" value="DG9421" x="48.133" y="56.515" smashed="yes" rot="R90">
+<element name="U12" library="jonnew" package="SOT23-6" value="ADG1201" x="48.133" y="56.515" smashed="yes" rot="R90">
 <attribute name="VALUE" x="45.085" y="53.594" size="1.016" layer="27" font="vector" ratio="18" rot="R270"/>
 <attribute name="NAME" x="43.688" y="53.467" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
 </element>

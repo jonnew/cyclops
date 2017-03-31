@@ -7682,7 +7682,7 @@ distributor Farnell 149-452</description>
 <part name="U8" library="jonnew" deviceset="LT1711" device="" value="LT1711"/>
 <part name="U$77" library="cyclops" deviceset="GND2" device=""/>
 <part name="P+1" library="jonnew" deviceset="+5V" device="" value="+6V"/>
-<part name="U12" library="jonnew" deviceset="SPST_IC" device="_SOT23-6" value="DG9421"/>
+<part name="U12" library="jonnew" deviceset="SPST_IC" device="_SOT23-6" value="ADG1201"/>
 <part name="P+9" library="jonnew" deviceset="+5V" device="" value="+6V"/>
 <part name="P+10" library="jonnew" deviceset="+5V" device="" value="+6V"/>
 <part name="P+11" library="jonnew" deviceset="+5V" device="" value="+6V"/>
