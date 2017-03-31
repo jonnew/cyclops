@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -23462,7 +23462,7 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="62.865" y="54.617" size="1.016" layer="25" font="vector" ratio="18"/>
 <attribute name="VALUE" x="62.865" y="53.474" size="1.016" layer="27" font="vector" ratio="18"/>
 </element>
-<element name="R36" library="cyclops" package="0603" value="470" x="52.832" y="56.268" smashed="yes" rot="R270">
+<element name="R36" library="cyclops" package="0603" value="470k" x="52.832" y="56.268" smashed="yes" rot="R270">
 <attribute name="MN" value="Panasonic" x="52.832" y="53.728" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DK" value="PxxxxHTR-ND" x="52.832" y="53.728" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="ERJ-3EKFxxxxV" x="52.832" y="53.728" size="1.778" layer="27" rot="R270" display="off"/>

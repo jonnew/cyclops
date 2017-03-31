@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -7463,7 +7463,7 @@ distributor Farnell 149-452</description>
 <part name="U9" library="cyclops" deviceset="ADR03AKSZ-REEL7" device="" value="ADR03"/>
 <part name="C27" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="C28" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
-<part name="R36" library="cyclops" deviceset="R" device="_0603" value="470"/>
+<part name="R36" library="cyclops" deviceset="R" device="_0603" value="470k"/>
 <part name="R39" library="cyclops" deviceset="R" device="_0603" value="1k"/>
 <part name="C44" library="cyclops" deviceset="C" device="_0805" value="1uF"/>
 <part name="C43" library="cyclops" deviceset="C" device="_0603" value=".1uF"/>
