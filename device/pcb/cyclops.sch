@@ -7780,21 +7780,17 @@ distributor Farnell 149-452</description>
 <wire x1="124.46" y1="2.54" x2="114.3" y2="2.54" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="114.3" y1="2.54" x2="114.3" y2="17.78" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="114.3" y1="17.78" x2="17.78" y2="17.78" width="0.4064" layer="97" style="shortdash"/>
-<text x="180.34" y="121.92" size="3.81" layer="97">AGND</text>
-<text x="160.02" y="121.92" size="3.81" layer="97">DGND</text>
+<text x="182.88" y="124.46" size="3.81" layer="97" rot="R90">AGND</text>
+<text x="175.26" y="124.46" size="3.81" layer="97" rot="R90">DGND</text>
 <wire x1="17.78" y1="17.78" x2="17.78" y2="99.06" width="0.4064" layer="97" style="shortdash"/>
 <wire x1="17.78" y1="99.06" x2="-7.62" y2="99.06" width="0.4064" layer="97" style="shortdash"/>
-<wire x1="-12.7" y1="190.5" x2="71.12" y2="190.5" width="0.4064" layer="97" style="shortdash"/>
-<wire x1="71.12" y1="190.5" x2="71.12" y2="149.86" width="0.4064" layer="97" style="shortdash"/>
-<wire x1="71.12" y1="149.86" x2="-12.7" y2="149.86" width="0.4064" layer="97" style="shortdash"/>
-<wire x1="-12.7" y1="149.86" x2="-12.7" y2="190.5" width="0.4064" layer="97" style="shortdash"/>
-<text x="-7.62" y="185.42" size="3.81" layer="97">Teensy components</text>
+<wire x1="190.5" y1="139.7" x2="259.08" y2="139.7" width="0.4064" layer="97" style="shortdash"/>
+<wire x1="259.08" y1="139.7" x2="259.08" y2="106.68" width="0.4064" layer="97" style="shortdash"/>
+<wire x1="259.08" y1="106.68" x2="190.5" y2="106.68" width="0.4064" layer="97" style="shortdash"/>
+<wire x1="190.5" y1="106.68" x2="190.5" y2="139.7" width="0.4064" layer="97" style="shortdash"/>
+<text x="200.66" y="134.62" size="3.81" layer="97">Teensy components</text>
 <text x="208.28" y="40.64" size="1.6764" layer="97" rot="R90">DNP</text>
 <text x="208.28" y="30.48" size="1.6764" layer="97" rot="R90">DNP</text>
-<text x="-10.16" y="152.4" size="1.778" layer="97">NOTE: 1N5818 S Diode and cut trace
-needed on the teensy to allow it to be
-powered both by USB and the Cyclops
-5V rail.</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="185.42" y="45.72"/>
@@ -7946,10 +7942,10 @@ powered both by USB and the Cyclops
 <instance part="U$54" gate="G$1" x="30.48" y="134.62"/>
 <instance part="U$55" gate="G$1" x="43.18" y="134.62"/>
 <instance part="U$63" gate="G$1" x="55.88" y="134.62"/>
-<instance part="U$66" gate="G$1" x="50.8" y="177.8" rot="R270"/>
-<instance part="U$72" gate="G$1" x="33.02" y="177.8" rot="R270"/>
-<instance part="U$73" gate="G$1" x="33.02" y="165.1" rot="R270"/>
-<instance part="TEENSY-3.2" gate="G$1" x="-2.54" y="167.64"/>
+<instance part="U$66" gate="G$1" x="248.92" y="129.54" rot="R270"/>
+<instance part="U$72" gate="G$1" x="231.14" y="129.54" rot="R270"/>
+<instance part="U$73" gate="G$1" x="231.14" y="116.84" rot="R270"/>
+<instance part="TEENSY-3.2" gate="G$1" x="195.58" y="111.76"/>
 <instance part="J_ADDR1" gate="R" x="137.16" y="88.9" smashed="yes" rot="R180">
 <attribute name="NAME" x="140.97" y="89.1286" size="1.778" layer="95"/>
 </instance>
@@ -7983,7 +7979,7 @@ powered both by USB and the Cyclops
 </instance>
 <instance part="GND" gate="G$1" x="68.58" y="-22.86"/>
 <instance part="U$79" gate="G$1" x="68.58" y="-33.02"/>
-<instance part="U$80" gate="G$1" x="50.8" y="165.1" rot="R270"/>
+<instance part="U$80" gate="G$1" x="248.92" y="116.84" rot="R270"/>
 <instance part="P+20" gate="1" x="160.02" y="119.38"/>
 <instance part="VCTL&lt;&gt;CONT" gate="G$1" x="154.94" y="-20.32" smashed="yes" rot="MR0">
 <attribute name="NAME" x="144.78" y="-11.43" size="1.778" layer="95" rot="MR180"/>
@@ -8851,8 +8847,10 @@ powered both by USB and the Cyclops
 <net name="~OVER_CURR" class="0">
 <segment>
 <pinref part="L1" gate="L" pin="1"/>
-<wire x1="185.42" y1="101.6" x2="190.5" y2="101.6" width="0.1524" layer="91"/>
-<label x="190.5" y="101.6" size="1.778" layer="95" xref="yes"/>
+<wire x1="185.42" y1="101.6" x2="187.96" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="101.6" x2="187.96" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="86.36" x2="198.12" y2="86.36" width="0.1524" layer="91"/>
+<label x="198.12" y="86.36" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$19" class="0">
