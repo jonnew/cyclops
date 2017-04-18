@@ -21,14 +21,15 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
   Ported CL::Cyclops.h to the Teenst 3.X device
 */
 
-#ifndef CL_CYCLOPS_H
-#define CL_CYCLOPS_H
+#ifndef CL_BOARD_H
+#define CL_BOARD_H
 
 #if ARDUINO >= 100
  #include <Arduino.h>
 #else
  #include <WProgram.h>
 #endif
+
 #include "SPI_fifo.h"
 
 #define DAC_CONF_ACTIVE       (0x1000)
@@ -44,18 +45,17 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #define CS1               9     //
 #define CS2               20    //
 #define CS3               21    //
-/* The Real LDAC pins:  
-#define LDAC0             24    // Load DAC line for CH0
-#define LDAC1             25    // Load DAC line for CH1
-#define LDAC2             26    // Load DAC line for CH2
-#define LDAC3             27    // Load DAC line for CH3
-*/
+
+#define LDAC0             24    // Load DAC lines
+#define LDAC1             25    //
+#define LDAC2             26    //
+#define LDAC3             27    //
 
 /* LDAC pins for Ananya's Test Rig */
-#define LDAC0             16 
-#define LDAC1             17
-#define LDAC2             22
-#define LDAC3             23
+//#define LDAC0             16
+//#define LDAC1             17
+//#define LDAC2             22
+//#define LDAC3             23
 
 #define TRIG0             3     // Trigger lines
 #define TRIG1             4     //
@@ -135,7 +135,7 @@ class Board {
     void dac_prog_voltage(uint16_t voltage);
 
     // Current measurement and OC protection
-    
+
     /**
      * @brief      Returns the current flowing through the LED.
      *
@@ -157,7 +157,7 @@ class Board {
      *             [External Interrupt modes](http://playground.arduino.cc/Code/Interrupts)
      * @details
      * When the configured interrupt occurs, the ``user_func()`` will be invoked.
-     * 
+     *
      * @todo
      * Testing required!
      *
@@ -172,9 +172,9 @@ class Board {
      * @warning
      * The ``user_func`` will block time-critical operations of the library and
      * must finish within few (1-3 μsec) of time. You are advised to check the
-     * disassembly of the function.  
+     * disassembly of the function.
      * *Even innocent functions like ``digitalWrite()`` are decievingly slow!*
-     * 
+     *
      * @details    Also @ref spi-fifo-nb "see" notes on SPI writes.
      *
      * @param[in]  user_func  The user function

@@ -1,23 +1,22 @@
 /*
-   Copyright (c) Jon Newman (jpnewman ~at~ mit <dot> edu)
-   All right reserved.
+Copyright (c) Jon Newman (jpnewman ~at~ mit <dot> edu)
+All right reserved.
 
-   This file is part of the Cyclops Library (CL) for Arduino.
+This file is part of the Cyclops Library (CL) for Arduino.
 
-   CL is free software: you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, either version 3 of the License, or
-   (at your option) any later version.
+CL is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-   CL is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
+CL is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-   You should have received a copy of the GNU General Public License
-   along with CL.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with CL.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 
 // Set the DC voltage of the onboard DAC for LED power testing, e.g. <4095>
 // < = Start Character
@@ -25,11 +24,6 @@
 // > = End character
 
 #include <Cyclops.h>
-
-// Unfortunately, when using the arudino IDE, these need to be
-// re-included here even though they are included in Cyclops.h
-#include <SPI.h>
-#include <Wire.h>
 
 // Create a single cyclops object. CH0 corresponds to a physical board with
 // jumper pads soldered so that OC0, CS0, TRIG0, and A0 are used.
@@ -40,7 +34,14 @@ uint16_t dac_level = 0;
 
 void setup()
 {
-    Serial.begin(115200);
+    // Start the device
+    Cyclops::begin();
+
+    // Zero out the DAC
+    cyclops0.dac_load_voltage(0);
+
+    // Start serial port
+    Serial.begin(9600);
 }
 
 void loop()
@@ -67,8 +68,7 @@ uint16_t processInput()
 
         byte c = Serial.read();
 
-        switch (c)
-        {
+        switch (c) {
             case '<':
                 receivedNumber = 0;
                 break;
@@ -82,6 +82,6 @@ uint16_t processInput()
                 break;
         }
     }
-    
+
     return 0;
 }

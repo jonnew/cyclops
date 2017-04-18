@@ -1,5 +1,5 @@
 /*
-Copyright (c) Jon Newman (jpnewman ~at~ mit <dot> edu)
+Copyright (c) 2014 Jon Newman (jpnewman ~at~ mit <dot> edu)
 All right reserved.
 
 This file is part of the Cyclops Library (CL) for Arduino.
@@ -16,42 +16,38 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with CL.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 #include <Cyclops.h>
-
-// Unfortunately, when using the arudino IDE, these need to be
-// re-included here even though they are included in Cyclops.h
-#include <SPI.h>
-#include <Wire.h>
 
 // Create a single cyclops object. CH0 corresponds to a physical board with
 // jumper pads soldered so that OC0, CS0, TRIG0, and A0 are used.
 Cyclops cyclops0(CH0);
 
-// 1 msec, full-scale pulse
-uint16_t pulse_width_us = 1000;
-uint16_t pulse_seq_length = 2;
-uint16_t output_pulse[] = {4095, 0};
-
 void setup()
 {
-    //Serial.begin(9600);
+    // Start the device
+    Cyclops::begin();
 
-    // Enter user-defined function to run on TRIG HIGH
-    cyclops0.attach_interupt(send_pulse);
+    // Zero out the DAC
+    cyclops0.dac_load_voltage(0);
 }
 
+// Each board includes an onboard 12-bit (4095 position) DAC spanning 0-5
+// volts. The code function generates a triangle wave ranging fro 0 to full
+// scale. The peak brightness of this triangle waveform can be scaled using the
+// dial on the front of the device.
 void loop()
 {
-    // Nothing to do, all action in the interrupt handler
-}
+    uint16_t v_out = 0;
 
-// Type signature should be void function(void)
-void send_pulse()
-{
-    //Serial.print(F("Handled interrupt. Sending output."));
-    //Serial.print("\n");
+    while (v_out < 4085) {
+        v_out += 10;
+        cyclops0.dac_load_voltage(v_out);
+    }
 
-    cyclops0.dac_generate_waveform(output_pulse, pulse_seq_length, pulse_width_us);
+    while (v_out > 10) {
+        v_out -= 10;
+        cyclops0.dac_load_voltage(v_out);
+    }
 }

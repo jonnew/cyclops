@@ -20,11 +20,6 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <Cyclops.h>
 
-// Unfortunately, when using the arudino IDE, these need to be 
-// re-included here even though they are included in Cyclops.h
-#include <SPI.h>
-#include <Wire.h>
-
 // Create 2 cyclops objects. These correspond to physical boards that are
 // stacked on top of one another and share a common arduino. They should have
 // their jumper pads soldered so that the first board uses OC0, CS0, TRIG0, and
@@ -32,29 +27,34 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 Cyclops cyclops0(CH0);
 Cyclops cyclops1(CH1);
 
-void setup() 
+void setup()
 {
-    // Nothing  
+    // Start the devices
+    Cyclops::begin();
+
+    // Zero out the DAC
+    cyclops0.dac_load_voltage(0);
+    cyclops1.dac_load_voltage(0);
 }
 
-void loop() 
+void loop()
 {
     // Each board includes an onboard 12-bit (4095 position)
     // DAC spanning 0-5 volts.
 
-    // Bring both boards data registers to full scale and 
+    // Bring both boards data registers to full scale and
     // synchronously update the DACs
     cyclops0.dac_prog_voltage(4095);
     cyclops1.dac_prog_voltage(4095);
-    cyclops0.dac_load(); // dac_load is tied to both devices
+    Cyclops::dac_load(); // dac_load is tied to both devices
 
     delayMicroseconds(100);
 
-    // Bring both boards data registers to 0 scale and 
+    // Bring both boards data registers to 0 scale and
     // synchronously update the DACs
     cyclops0.dac_prog_voltage(0);
     cyclops1.dac_prog_voltage(0);
-    cyclops0.dac_load(); // dac_load is tied to both devices
+    Cyclops::dac_load(); // dac_load is tied to both devices
 
     delayMicroseconds(100);
 }
