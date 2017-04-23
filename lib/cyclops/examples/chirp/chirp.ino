@@ -28,8 +28,9 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #define FREQ_END 30.0f     // End frequency in Hz
 
 // Create a single cyclops object. CH0 corresponds to a physical board with
-// jumper pads soldered so that OC0, CS0, TRIG0, and A0 are used.
-Cyclops cyclops0(CH0);
+// jumper pads soldered so that OC0, CS0, TRIG0, and A0 are used. Set the
+// current limit to 1A on this channel.
+Cyclops cyclops0(CH0, 1000);
 
 // Chirp frequency ramp parameter
 float beta = 1.0;
@@ -38,16 +39,16 @@ void setup()
 {
     // Chirp parameter
     beta = (FREQ_END - FREQ_START) / (((float)CHIRP_TIME_MS) / 1000.0);
-    Cyclops::begin();
 
-    // Zero out the DAC
+    // Start the device and zero out its DAC
+    Cyclops::begin();
     cyclops0.dac_load_voltage(0);
 }
 
 void loop()
 {
+    // Calculate current chirp amplitude
     float now = ((float)(millis() % CHIRP_TIME_MS)) / 1000.0;
-
     float freq
         = 2.0 * PI_CONST * (FREQ_START * now + (beta / 2.0) * pow(now, 2));
     unsigned int voltage = (unsigned int)(4095.0 * (sin(freq) / 2.0 + 0.5));

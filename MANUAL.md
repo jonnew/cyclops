@@ -37,6 +37,7 @@ to hover over figures to see their captions.
         - [Full Bandwidth Modee](#full-bandwidth-mode)
         - [Limited Bandwidth Mode](#Limited-bandwidth-mode)
     - [Stimulus Generation Options](#stimulus-generation-options)
+    - [Using the onboard MCU](#using-the-onboard-microcontroller)
 - [Construction](#construction)
     - [Board Assembly Manual](#board-assembly-manual)
     - [Device Assembly](#device-assembly-manual)
@@ -170,7 +171,9 @@ mV.](./resources/cyclops3.5A_performance-bw.png)
 \FloatBarrier
 \newpage
 
-#Usage
+# Usage
+
+![Cyclops physical interface (Rev. 3.6).](./resources/device3.6_io-diagram.png)
 
 The cyclops is a device that is capable of transforming voltage signals (e.g.
 sine waves, square pulses, etc.) into optical signals from high-power LEDs.
@@ -179,18 +182,17 @@ on-board digital to analog converter or can be delivered from an external
 source, such as a function generator or stimulus sequencer. The cyclops
 provides numerous measurements of circuit operation that can be recorded during
 an experiment such as LED current and stimulus reference voltages. The device
-can be controlled over a USB interface using its [Arduino
-library](./arduino/cyclops/).  The device also can be configured to drive
-commercially available LED modules from Thorlabs and Doric.
-
-<!--
-![TODO: Cyclops physical interface (Rev. 3.6).](./resources/3.6_io-diagram.png)
--->
+can be controlled over a USB interface using its onboard, Arduino-compatible
+[Teensy 3.2](https://www.pjrc.com/teensy/teensy31.html#specs) microcontroller
+board in combination with the [Cyclops Arduino library](./lib/cyclops/).  The
+device also can be configured to drive commercially available LED modules from
+Thorlabs and Doric using its expansion ports.
 
 Below we provide an explanation of the operational modes of the device and the
 different ways it can be used to generate optical stimuli. Refer to the above
 diagram to locate the physical switches, dials, and connectors corresponding to
 verbal or iconic descriptions device settings.
+\FloatBarrier
 
 ## Feedback modes
 
@@ -246,37 +248,38 @@ on/off.
 
 ### Full Bandwidth Mode
 To operate the device in full bandwidth mode, move the `B.W. SELECT` switch to
-the `FULL` position. When the device is operated at full bandwidth, the user
-can take advantage very short turn on/off times (1.0 A in about 100 ns
-rise/fall times). Additionally, continuously varying optical signals are
-accurately represented up to about 2 MHz. That said, Cyclops is a fairly
-high-power circuit. The currents and voltage used to drive high power LEDs are
-many orders of magnitude (like 6 or more...) greater than those recorded during
-electrophysiology experiments.  Also, the Cyclops is a fast circuit. Fast
-circuits hate long cables because they introduce appreciable delays and
-parasitics that can adversely affect operating characteristics. Very long
-cables will introduce ringing into light waveforms with fast edges!  Ideally,
-the LED should be right next to the device. I typically mount my fiber coupled
-LEDs directly into the banana sockets on the back of the device using
-copper-clad printed circuit board so that my 'cables' are about 2 cm in length.
-In any case, the following is allways good advice: **keep the cabling to the
-LED as short as possible and 'fat' enough to handle high currents (AWG 18 or
-thicker)**.
+the `FULL` position (![Full bandwidth mode.](./resources/full_switch_icon.png)).
+When the device is operated at full bandwidth, the user can take advantage very
+short turn on/off times (1.0 A in about 100 ns rise/fall times). Additionally,
+continuously varying optical signals are accurately represented up to about 2
+MHz. That said, Cyclops is a fairly high-power circuit. The currents and
+voltage used to drive high power LEDs are many orders of magnitude (like 6 or
+more...) greater than those recorded during electrophysiology experiments.
+Also, the Cyclops is a fast circuit. Fast circuits hate long cables because
+they introduce appreciable delays and parasitics that can adversely affect
+operating characteristics. Very long cables will introduce ringing into light
+waveforms with fast edges!  Ideally, the LED should be right next to the
+device. I typically mount my fiber coupled LEDs directly into the banana
+sockets on the back of the device using copper-clad printed circuit board so
+that my 'cables' are about 2 cm in length.  In any case, the following is
+allways good advice: **keep the cabling to the LED as short as possible and
+'fat' enough to handle high currents (AWG 18 or thicker)**.
 
 ### Limited Bandwidth Mode
 To operate the device in full bandwidth mode, move the `B.W. SELECT` switch to
-the `LIM.` position. In this mode, the feedback circuit within the cyclops will
-operate at lower speeds. This is useful in situations where the use wishes to
-place the Cyclops device far away from the LED being driven (e.g. when it is
-mounted on the head of an animal rather than light being transmitted via optic
-fiber).  In this case, the bandwidth of the device can be lowered to avoid
-ringing and instability when a long, potentially thin cable is used. I have
-driven LEDs at 1.5A over AWG 30 cable that is several meters long without issue
-in bandwidth limit mode. This would cause the device to oscillate wildy in full
-bandwidth operation. When the device is operated in bandwidth limit mode, the
-rise and fall times of LED pulse will increase to about 1.5 microseconds, and
-the -3 dB bandwidth will degrade to ~200 kHz or so. This is plenty fast for
-almost all neuroscience applications.
+the `LIM.` position (![Limited bandwidth bandwidth mode.](./resources/lim_switch_icon.png)).
+In this mode, the feedback circuit within the cyclops will operate at lower
+speeds. This is useful in situations where the use wishes to place the Cyclops
+device far away from the LED being driven (e.g. when it is mounted on the head
+of an animal rather than light being transmitted via optic fiber).  In this
+case, the bandwidth of the device can be lowered to avoid ringing and
+instability when a long, potentially thin cable is used. I have driven LEDs at
+1.5A over AWG 30 cable that is several meters long without issue in bandwidth
+limit mode. This would cause the device to oscillate wildy in full bandwidth
+operation. When the device is operated in bandwidth limit mode, the rise and
+fall times of LED pulse will increase to about 1.5 microseconds, and the -3 dB
+bandwidth will degrade to ~200 kHz or so. This is plenty fast for almost all
+neuroscience applications.
 
 ## Stimulus Generation Options
 
@@ -329,9 +332,141 @@ to the feedback mode of the driver.
 \FloatBarrier
 \newpage
 
-## Programming the onboard microcontroller
+## Using the onboard microcontroller
+Cyclops devices include an onboard, Arudino-compatible microcontroller board
+(Teensy 3.2) that can:
 
-TODO
+- Generate custom waveforms
+- Respond to trigger input
+- Provide background over-current protection
+
+The Teensy can be programmed and uploaded to the device using the [Arduino
+IDE](https://www.arduino.cc/en/Main/Software) in combination with [Cyclops
+Arduino library](./lib/cyclops). _Note that you will need to add the
+[Teensyduino add-on](https://www.pjrc.com/teensy/teensyduino.html) to to the
+Arduino IDE to program the Teensy_. The Cyclops library contains several
+examples to help you get started. The relevant public programming interface is
+shown here:
+
+``` c++
+// Each 'channel' defines a board address. A single microcontroller supports up
+// to 4 stacked Cyclops boards.
+typedef enum
+{
+    CH0 = 0,
+    CH1,
+    CH2,
+    CH3,
+} Channel;
+
+// One Cyclops object should be created for each LED channel. For single LED
+// devices (most cases) only CH0 is used.
+class Cyclops {
+
+public:
+    // Construct a Cyclops object
+    //   chan:             Cyclops channel to control
+    //   current_limit_mA: Optional current limit for this Cyclops channel
+    Cyclops(Channel chan, float current_limit_mA = 1500);
+
+    // Program the DAC output register
+    //    voltage: 12-bit integer (0-4095) specify the voltage to program the
+    //             DAC with. Voltage is scaled into a 0-5V range.
+    //    returns: 0 on success, 1 otherwise.
+    int dac_prog_voltage(const uint16_t voltage) const;
+
+    // Load the DAC output register to affect a voltage change on the output
+    // pin. This function affects all running cyclops devices that have had
+    // their DAC's programmed using the dac_prog_voltage() function.
+    static void dac_load(void);
+
+    // Convenience method for programming and loading a DAC voltage. Equivalent
+    // to calling dac_prog_voltage() followed by dac_load()
+    //    voltage: 12-bit integer (0-4095) specify the voltage to program the
+    //             DAC with. Voltage is scaled into a 0-5V range.
+    //    returns: 0 on success, 1 otherwise.
+    int dac_load_voltage(const uint16_t voltage) const;
+
+    // Use the DAC to generate a period waveform
+    //    voltage:          Pointer to array of 12-bit integers (0-4095)
+    //                      specifying the voltage sequence to program the DAC
+    //                      with. Output voltage is scaled into a 0-5V range.
+    //    length:           Length of voltage sequence.
+    //    sample_period_us: Sample period of voltage sequence in microseconds.
+    void dac_generate_waveform(const uint16_t voltage[],
+                               const uint16_t length,
+                               const uint32_t sample_period_us) const;
+
+    // Get an LED current measurement in milliamps
+    //    returns: LED current measurement in milliamps.
+    inline float measure_current(void) const;
+
+    // Attach/detach user provided interrupt function to TRIG pin
+    // mode indicates the pin trasition state at which the function is called,
+    // RISING, FALLING or CHANGED
+    //    user_func: User define function specifying action to take when the
+    //               TRIG pin transtions according the the mode arguement. e.g.
+    //               can be a function that generates a wavefomr using
+    //               dac_load_voltage() or similar.
+    //    mode:      Indicates the TRIG trasition state at which the user_func
+    //               is called. Can be either RISING, FALLING, CHANGED, HIGH,
+    //               or LOW. See AttachInterput() Arduino function for more
+    //               detail.
+    void set_trigger(void (*user_func)(void), const int mode);
+
+    // Call this static method after creating all cyclops channels to start the
+    // internal overcurent protection engine and waveform generation machinery.
+    // This funciton is used to start all channels.
+    static void begin(void);
+
+    // *this's channel ID
+    const Channel channel;
+};
+```
+
+\newpage
+A simple example Arduino sketch, which uses the Cyclops to produce a [sinusodal chirp](https://en.wikipedia.org/wiki/Chirp), is shown here:
+
+```c++
+#include <Cyclops.h>
+
+#define PI_CONST 3.14159265358979323846
+
+// Parameters of the chirp waveform
+#define CHIRP_TIME_MS 5000 // Length of chirp waveform in msec
+#define FREQ_START 0.5f    // Start frequency in Hz
+#define FREQ_END 30.0f     // End frequency in Hz
+
+// Create a single cyclops object. CH0 corresponds to a physical board with
+// jumper pads soldered so that OC0, CS0, TRIG0, and A0 are used. Set the
+// current limit to 1A on this channel.
+Cyclops cyclops0(CH0, 1000);
+
+// Chirp frequency ramp parameter
+float beta = 1.0;
+
+void setup()
+{
+    // Chirp parameter
+    beta = (FREQ_END - FREQ_START) / (((float)CHIRP_TIME_MS) / 1000.0);
+
+    // Start the device and zero out its DAC
+    Cyclops::begin();
+    cyclops0.dac_load_voltage(0);
+}
+
+void loop()
+{
+    // Calculate current chirp amplitude
+    float now = ((float)(millis() % CHIRP_TIME_MS)) / 1000.0;
+    float freq
+        = 2.0 * PI_CONST * (FREQ_START * now + (beta / 2.0) * pow(now, 2));
+    unsigned int voltage = (unsigned int)(4095.0 * (sin(freq) / 2.0 + 0.5));
+
+    // Program the DAC and load the voltage
+    cyclops0.dac_load_voltage(voltage);
+}
+```
 
 \FloatBarrier
 \newpage
