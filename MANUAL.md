@@ -498,16 +498,8 @@ improving this device and its documentation!
 
 ## Components
 
-Fully assembled cyclops PCBs can be purchased from Circuit Hub
-
-    [Cyclops on Circuit
-    Hub](https://circuithub.com/projects/jonnew_/cyclops)
-
-This also includes an up-to-date parts list for each PCB with optimized prices.
-*Note that these parts are for a single PCB without the enclosure, power
-supply, etc*.
-
-Unpopulated Cyclops PCBs can be fabriated by uploading the [gerber
+### PCB
+Unpopulated Cyclops PCBs can be fabricated by uploading the [gerber
 files](./cyclops/pcb/gerber/) to the PCB fabrication service of your choice. I have
 had success with:
 
@@ -539,8 +531,18 @@ gerber files located in [./cyclops/device/stencil/](./cyclops/stencil/). If you
 plan to hand solder the board, or don't mind dispensing solder paste yourself,
 then you do not need to purchase these stencils.
 
-A complete device requires several optional components, which are not in the
-pre-populated Digikey cart. These include:
+### TODO: PCB Bill of Materials 
+TODO: Google doc update!
+
+Fully assembled cyclops PCBs can be purchased from Circuit Hub [Cyclops on
+Circuit Hub](https://circuithub.com/projects/jonnew_/cyclops). This also
+includes an up-to-date parts list for each PCB with optimized prices.
+*Note that these parts are for a single PCB without the enclosure, power
+supply, etc*. Also, this may be out of date.
+
+### Other Materials
+A complete device requires several additional components aside from the PCB itself. These
+pre-populated Digikey cart. These can be found on the [device kit bill of materials] (https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
 
 -   An **extruded aluminum enclosure**, which houses the
     completed board. The enclosure is recommended because the large
@@ -550,6 +552,10 @@ pre-populated Digikey cart. These include:
     from Ponoko using the links supplied in the BOM. The instructions
     below show how these plastic pieces are modified to provide proper
     electrical shielding.
+-   **Custom heatsink**, a waterjet-cut aluminum heatsink. Designs can be found
+    in the [heatsink](heatsink/alu-heatsink.PDF) folder.
+-   **Teensy 3.2 MCU**, a 32-bit microcontroller development board. Can be
+    purchased [here](https://www.pjrc.com/store/teensy32.html)
 -   An **M8-4 connector** (Optional). This is a rather expensive connector that
     allows cyclops to drive [Thorlabs LED
     modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206)
@@ -764,9 +770,8 @@ tests outlined in the next section before applying power.*
 
 ### Required Parts and Tools
 
-
-Before starting, please ensure you have the following components. Suggested part numbers
-and suppliers are provided on this [google
+Before starting, please ensure you have the following components. Suggested
+part numbers and suppliers are provided on this [google
 spreadsheet](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
 In the lists below, numbers (#XX) correspond to the labels on the image below.
 
