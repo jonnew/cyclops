@@ -1,0 +1,255 @@
+* ADG1211 MACROMODEL
+* Description: Converter
+* Generic Desc: +/- 15V Quad Switch/Mux with Low Cap I.C
+* Developed by: Y.WONG 
+* Revision History: 08/10/2012 - Updated to new header style
+* 1.0 (08/2008)
+* Copyright 2012 by Analog Devices, Inc.
+*
+* Refer to http://www.analog.com/Analog_Root/static/techSupport/designTools/spiceModels/license/spice_general.html for License Statement. Use of this model 
+* indicates your acceptance of the terms and provisions in the License Statement.
+*
+* BEGIN Notes:
+*
+* Not Modeled:
+*    
+* Parameters modeled include: 
+*
+* END Notes
+*
+* Connections
+*      1  = IN1
+*      2  = D1
+*      3  = S1
+*      4  = VSS 
+*      5  = GND
+*      6  = S4
+*      7  = D4
+*      8  = IN4
+*      9  = IN3
+*      10 = D3
+*      11 = S3
+*      12 = NC
+*      13 = VDD
+*      14 = S2
+*      15 = D2
+*      16 = IN2
+*****************
+
+.SUBCKT ADG1211 1 2 3 4 5 6 7 8 9 10 11 13 14 15 16
+
+X1 3 2 1 13 5 4 LOWONSWITCH
+X2 14 15 16 13 5 4 LOWONSWITCH
+X3 11 10 9 13 5 4 LOWONSWITCH
+X4 6 7 8 13 5 4 LOWONSWITCH
+DINA1 1 13 DX
+DINB1 5 1 DX 
+DINA2 16 13 DX
+DINB2 5 16 DX 
+DINA3 9 13 DX
+DINB3 5 9 DX 
+DINA4 8 13 DX
+DINB4 5 8 DX
+CIN1 1 5 2.5p
+CIN2 16 5 2.5p
+CIN3 9 5 2.5p
+CIN4 8 5 2.5p
+RC1 3 14 1.283E6
+RC2 14 11 1.283E6
+RC3 11 6 1.283E6
+CC1 3 14 0.039p
+CC2 14 11 0.039p
+CC3 11 6 0.039p
+*MODELS USED
+.MODEL DX D(IS=1E-12 N=0.5 RS=0.1)
+.ENDS
+
+****************
+* Logic Low On Switch
+*
+* Connections
+*      101 = S
+*      102 = D
+*      103 = VIN
+*      104 = VDD 
+*      105 = GND
+*      106 = VSS
+*****************
+
+.SUBCKT LOWONSWITCH  101 102 103 104 105 106
+
+x1 103 104 105 107 NOTGATE
+X2 107 108 104 106 105 VSENSE
+X3 108 105 109 ENABLEDELAY
+X4 101 102 109 104 105 106 SWITCH
+
+*MODELS USED
+.ENDS
+
+*****************
+* NOT LOGIC
+*
+* Connections
+*      201 = INPUT
+*      202 = VDD
+*      203 = GND
+*      204 = OUTPUT
+*****************
+.SUBCKT NOTGATE 201 202 203 204
+
+SNOT 205 203 201 203 SMOD2
+RNOT 205 202 5G
+EBUFFER 204 203 205 203 1
+
+*MODELS USED
+.MODEL SMOD2 VSWITCH(RON=1E-3 ROFF=1E11 VON=2.0 VOFF=0.8)
+.ENDS
+
+****************
+* Switch
+*
+* Connections
+*      201 = S
+*      202 = D
+*      203 = VIN
+*      204 = VDD 
+*      205 = GND
+*      206 = VSS
+*****************
+.SUBCKT SWITCH  201 202 203 204 205 206
+
+*ANALOG SWITCH
+EBuffer 214 205 201 205 1
+S1 210 222 203 205 SMOD1
+Vo2 214 219 0
+EVDD 219 220 204 205 1
+SN 210 209 205 220 SMOD5
+Vo1 205 218 0
+EVSS 217 218 206 205 1
+SP 210 208 214 217 SMOD6 
+Xn 215 209 214 205 204 206 VCRN
+Xp 207 208 214 205 204 206 VCRP
+RS1 201 207 1
+RS2 201 215 1
+S2 204 221 203 205 SMOD2
+S3 204 223 201 205 SMOD3 
+S4 204 224 202 205 SMOD3
+S5 223 221 201 205 SMOD7
+S6 224 221 202 205 SMOD7
+RD 221 205 5G
+S7 222 202 221 205 SMOD4
+DS1 201 204 DX 
+DS2 206 201 DX
+DD1 202 204 DX
+DD2 206 202 DX
+
+*ON OFF ISOLATION*
+CSD 201 202 0.637p
+
+*ESTIMATE BANDWIDTH  
+CSB 201 204 1p
+CDB 202 204 1p
+
+*CHARGE INJECTION
+CGS 201 203 0.03p
+CGD 202 203 0.03p
+
+*MODELS USED
+.MODEL SMOD1 VSWITCH(RON=1E-3 ROFF=7.905E5 VON=2 VOFF=0.8)
+.MODEL SMOD2 VSWITCH(RON=1E-3 ROFF=1E11 VON=2 VOFF=0.8)
+.MODEL SMOD3 VSWITCH(RON=1E-3 ROFF=1E11 VON=0.8 VOFF=1.0)
+.MODEL SMOD4 VSWITCH(RON=1E-3 ROFF=10E11 VON=4 VOFF=3)
+.MODEL SMOD5 VSWITCH(RON=1E-3 ROFF=1E11 VON=9.01 VOFF=8.99)
+.MODEL SMOD6 VSWITCH(RON=1E-3 ROFF=1E11 VON=6.01 VOFF=5.99)
+.MODEL SMOD7 VSWITCH(RON=1E-3 ROFF=1E11 VON=-0.8 VOFF=-1.0)
+.MODEL DX D(IS=1E-12 N=0.5 RS=0.1)
+.ENDS
+
+*****************
+* ENABLE DELAY
+*
+* Connections
+*      301 = INPUT
+*      302 = COM
+*      303 = OUTPUT
+*****************
+.SUBCKT ENABLEDELAY 301 302 303
+
+EENBUFFER 304 302 301 302 1
+RFEN 304 306 192k
+CFEN 306 302 5p
+DBREAKEN 306 305 DZ
+RBEN 305 304 5.6k
+EENBUFFEROUT 303 302 306 302 1 
+
+*MODELS USED
+.MODEL DZ D(IS=1E-14 N=0.04)
+.ENDS
+
+*****************
+* OPERATING VOLTAGE 
+*
+* Connections
+*      601 = INPUT
+*      602 = OUTPUT
+*      603 = VDD
+*      604 = VSS
+*      605 = GND
+*****************
+.SUBCKT VSENSE 601 602 603 604 605
+SD1 601 606 603 605 SMOD3
+SD2 606 607 603 605 SMOD4
+SD3 607 608 605 604 SMOD5
+SD4 608 609 605 604 SMOD6
+RD0 609 605 5G
+EBUFFER 602 605 609 605 1
+
+*MODELS USED
+.MODEL SMOD3 VSWITCH(RON=1E-3 ROFF=1E11 VON=12.0 VOFF=11.9)
+.MODEL SMOD4 VSWITCH(RON=1E-3 ROFF=1E11 VON=16.5 VOFF=16.6)
+.MODEL SMOD5 VSWITCH(RON=1E-3 ROFF=1E11 VON=0 VOFF=-0.1)
+.MODEL SMOD6 VSWITCH(RON=1E-3 ROFF=1E11 VON=16.5 VOFF=16.6)
+.ENDS
+
+*****************
+* Voltage Controlled Resistance n-channel
+*
+* Connections
+*      701 = R+
+*      702 = R-
+*      704 = V+
+*      705 = V-
+*      707 = VDD
+*      711 = VSS
+*****************
+.SUBCKT VCRN 701 702 704 705 707 711
+vtn 708 0 9
+ERES 701 703 VALUE={2.25E3*V(706,0)*(1/(V(707,0)-V(704,705)-V(708,0)))}
+VSENSE 703 702 0
+FCOPY 0 706 VSENSE 1
+RRES 706 0 1
+.ENDS
+
+*****************
+* Voltage Controlled Resistance p-channel
+*
+* Connections
+*      701 = R+
+*      702 = R-
+*      704 = V+
+*      705 = V-
+*      707 = VDD
+*      711 = VSS
+*****************
+.SUBCKT VCRP 701 702 704 705 707 711
+vtp 708 0 6
+ERES 701 703 VALUE={2.4E3*V(706,0)*(1/(V(704,705)-V(711,0)-V(708,0)))}
+VSENSE 703 702 0
+FCOPY 0 706 VSENSE 1
+RRES 706 0 1
+.ENDS
+
+
+
+
+

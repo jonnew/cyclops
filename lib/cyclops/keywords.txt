@@ -1,0 +1,23 @@
+# Syntax highlighting
+
+# Class (KEYWORD1)
+Cyclops	KEYWORD1
+
+# Public methods(KEYWORD2)
+channel	KEYWORD2
+chip_select_pin	KEYWORD2
+trigger_pin	KEYWORD2
+analog_pin	KEYWORD2
+dac_prog_voltage	KEYWORD2
+dac_load	KEYWORD2
+dac_load_voltage	KEYWORD2
+dac_generate_waveform	KEYWORD2
+measure_current	KEYWORD2
+over_current_protect	KEYWORD2
+set_trigger	KEYWORD2
+
+# Constants (LITERAL1)
+CH0	LITERAL1
+CH1	LITERAL1
+CH2	LITERAL1
+CH3	LITERAL1

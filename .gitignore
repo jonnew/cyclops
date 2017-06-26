@@ -6,6 +6,14 @@
 *.dri
 *.zip
 *~*
+*__pycache__*
+*pyc
+docs/teensy/*
+docs/arduino/*
+!docs/teensy/cd.css
+!docs/arduino/cd.css
+!docs/teensy/Doxyfile
+!docs/arduino/Doxyfile
 
 # Vim files
 .*.swp

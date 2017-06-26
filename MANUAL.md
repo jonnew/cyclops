@@ -1,14 +1,13 @@
-**Cyclops** is a high-power LED driver that enables precise control of
-light power for optogenetic stimulation. The circuit was developed by
-Jon Newman while in Steve Potter's lab at Georgia Tech in order to
-complete his thesis work, which required the delivery of ultra-precise,
-continuously time-varying light waveforms for optogenetic stimulation
-\[1,2\]. This was, and still is, not possible with commercial hardware
-for optogenetic stimulation. Since its first use, the circuit has been
-improved in terms of speed, precision, programmability, and ease of use.
-This document provides construction, usage, and performance
-documentation for the Cyclops LED driver. This document evolves with the
-repository. To view old revisions, checkout tags or old commits using
+**Cyclops** is a high-power LED driver that enables precise control of light
+power for optogenetic stimulation. The circuit was developed by Jon Newman
+while in Steve Potter's lab at Georgia Tech in order to complete his thesis
+work, which required the delivery of ultra-precise, continuously time-varying
+light waveforms for optogenetic stimulation \[1,2\]. This was, and still is,
+not possible with commercial hardware for optogenetic stimulation. Since its
+first use, the circuit has been improved in terms of speed, precision,
+programmability, and ease of use.  This document provides construction, usage,
+and performance documentation for the Cyclops LED driver. This document evolves
+with the repository. To view old revisions, checkout tags or old commits using
 their SHA.
 
 <img src="./resources/cyclops_cartoon.png" width="300" />
@@ -19,110 +18,117 @@ to hover over figures to see their captions.
 
 \newpage
 
-**Contributors**
+**Maintainer**
 
 - [jonnew](http://www.mit.edu/~jpnewman/)
-- [Sung-Yon Kim](http://www.sungyonkimlab.org/)
-- [andersjasp](https://mndrive.umn.edu/brain/people)
 
 **Table of Contents**
 
-- [Attribution](#attribution)
+- [Note](#note-from-the-maintainer)
 - [Features](#features)
-  - [Circuit Features](#circuit-features)
-  - [Multiple stimulus generation options](#multiple-stimulus-generation-options)
+    - [Circuit Features](#circuit-features)
+    - [Multiple stimulus generation options](#multiple-stimulus-generation-options)
 - [Performance Specifications](#performance-specifications)
   - [Head to Head Comparison](#head-to-head-comparison)
 - [Usage](#usage)
-  - [Feedback modes](#feedback-modes)
-    - [Current Feedback Mode](#current-feedback-mode)
-    - [Auxiliary Feedback Mode](#auxiliary-feedback-mode)
-  - [Stimulus Generation Options](#stimulus-generation-options)
+    - [Feedback modes](#feedback-modes)
+        - [Current Feedback Mode](#current-feedback-mode)
+        - [Auxiliary Feedback Mode](#auxiliary-feedback-mode)
+    - [Bandwidth selection](#bandwidth-selection)
+        - [Full Bandwidth Modee](#full-bandwidth-mode)
+        - [Limited Bandwidth Mode](#Limited-bandwidth-mode)
+    - [Stimulus Generation Options](#stimulus-generation-options)
+    - [Using the onboard MCU](#using-the-onboard-microcontroller)
 - [Construction](#construction)
-  - [Components](#components)
-  - [Board Assembly](#board-assembly)
-  - [Enclosure](#enclosure)
+    - [Board Assembly Manual](#board-assembly-manual)
+    - [Device Assembly](#device-assembly-manual)
+    - [Enclosure](#enclosure)
 - [LED](#led)
 - [Quality Control Procedure](#quality-control-procedure)
 - [License](#license)
-  - [Hardware Licensing](#hardware-licensing)
-  - [Software Licensing](#software-licensing)
+    - [Hardware Licensing](#hardware-licensing)
+    - [Software Licensing](#software-licensing)
 - [References](#references)
 
 \newpage
-Attribution
------------
 
-It has been a long road to design and test the Cyclops to the point
-where it is in active use in many neuroscience labs around the world.
-This process has been a lot of work but also a very rewarding learning
-experience. I am very happy that this device may enable your scientific
-endeavours and I hope it will eventually be one small module in a of
-growing set of **high-quality**, **open-source**, and **afforable**
-tools that facilitate your research and enable an **open**,
-**community-oriented** approach to neuroscience.
+# Note From the Maintainer
 
-I receive no monetary compensation from the sale of these devices. It
-would mean a great deal to me if you would consider referencing the
-following paper (for which the Cyclops was developed) in published work
-that makes use of the Cyclops.
+It has been a long road to design and test the Cyclops, coordinate the
+acquisition of materials, coordinate the manufacturing processes, and to
+distribute the device to the community. This process has been a lot of work but
+also a very rewarding learning experience. I am very happy that this
+device may enable your scientific endeavors and I'm sincerely grateful
+for your interest in the project. In general, I hope this project will
+eventually be one small module in a of growing set of __high-quality__,
+__open-source__, and __afforable__ tools that facilitate your research and
+enable an __open__, __community-oriented__ approach to science.
 
-> J.P. Newman, M.-f. Fong, D.C. Millard, C.J. Whitmire, G.B. Stanley,
-> S.M. Potter. S.M. Potter. Optogenetic feedback control of neural
-> activity. *eLife* (4:e07192) 2015. doi: 10.7554/eLife.07192
-> [\[link\]](http://elifesciences.org/content/4/e07192v1)
+Profits from the sale of Cyclops kits go to funding the Open Ephys non-profit
+organization. Since I receive no monetary compensation from the sale of these
+devices, it would mean a great deal to me if you would consider referencing the
+following paper (for which the Cyclops was developed) in published work that
+makes use of the device.
+
+> J.P. Newman, M.-f. Fong, D.C. Millard, C.J. Whitmire, G.B. Stanley, S.M.
+> Potter. S.M. Potter. Optogenetic feedback control of neural activity. _eLife_
+> (4:e07192) 2015. doi: 10.7554/eLife.07192
+> [[link]](http://elifesciences.org/content/4/e07192v1)
 
 For instance, in your methods section:
 
-> Optical stimuli were delivered using the Cyclops LED driver (Newman et
-> al., 2015; www.github.com/jonnew/Cyclops).
+> Optical stimuli were delivered using the open-source Cyclops LED driver
+> (Newman et al., 2015; www.github.com/jonnew/Cyclops).
+
+Pull requests and issue submissions are __welcome__ on the github repo and
+open ephys forum. If you have criticisms, fixes, suggestions for improvement
+in the docs etc, please let us know so we can implement them ASAP.
+
+Happy stimulating.
+
+Jon Newman  MWL@MIT  2017-03
+\newpage
+
+# Features
+
+## Circuit Features
+
+- Ultra-precise
+- High power
+- Up to 1.5A per LED
+- Wide bandwidth
+    - \~2.5 MHz -3 dB bandwidth
+    - Maximum 100 ns 1.0A rise and fall times
+- Current and optical feedback modes
+- Built-in waveform generation
+- Over-current protection
+- Modular
+    - Arduino compatible
+    - Accepts external analog, gate, or trigger inputs
+
+## Multiple stimulus generation options
+
+- External stimulus sequencer
+- External digital trigger
+  - TTL logic level
+- External analog waveform generator
+  - 0-5V analog signals
+- Internal 12-bit DAC
+  - Synchronized across up to 4 drivers
+  - Arduino library
+  - Programmable triggering logic
+  - Respond to USB input
 
 \newpage
 
-Features
---------
+# Performance Specifications
 
-### Circuit Features
-
--   Ultra-precise
--   High power
--   Up to 1.5A per LED
--   Wide bandwidth
-    -   \~2.5 MHz -3 dB bandwidth
-    -   Maximum 200 ns 1.0A rise-time
--   Current and optical feedback modes
--   Built-in waveform generation
--   Over-current protection
--   Modular
-    -   Arduino compatible
-    -   4 synchronizable optical channels
-    -   Accepts external analog, gate, or trigger inputs
-
-### Multiple stimulus generation options
-
--   External stimulus sequencer
--   External digital trigger
-    -   TTL logic level
--   External analog waveform generator
-    -   0-5V analog signals
--   Internal 12-bit DAC
-    -   Synchronized across up to 4 drivers
-    -   Powerful Arduino library
-    -   Programmable triggering logic
-    -   Respond to USB input
-
-\newpage
-
-Performance Specifications
---------------------------
-
-The following oscilloscope traces give indicates of the circuit's
-precision and speed. Note that time series traces are **not** averaged -
-these traces display per-pulse temporal characteristics. Optical
-characteristics and optical feedback signal for the Cyclops driver were
-provided by a Thorlabs PDA36 amplified photodiode set to 0 dB of
-transimpedance gain. Measurements were performed a single Osram golden
-dragon LED.
+The following oscilloscope traces give indicates of the circuit's precision and
+speed (Rev. 3.5c) . Note that time series traces are **not** averaged - these
+traces display per-pulse temporal characteristics. Optical characteristics and
+optical feedback signal for the Cyclops driver were provided by a Thorlabs
+PDA36 amplified photodiode set to 0 dB of transimpedance gain. Measurements
+were performed a single Osram golden dragon LED.
 
 ![Trigger (yellow), current (pink), and light power (blue) traces during
 pulsed operation in current feedback mode. Input waveform is a 1 kHz 0
@@ -166,303 +172,117 @@ mV.](./resources/cyclops3.5A_performance-bw.png)
 \FloatBarrier
 \newpage
 
-### Head to Head Comparison
-The table below provides a comparisons between Cyclops Rev. 3C and various
-commercially available  LED drivers. Measurements were performed using the same
-signal generator and LED across drivers. Optical characteristics and optical
-feedback signal for the Cyclops driver were provided by a [Thorlabs PDA36 amplified photodiode](http://www.thorlabs.com/thorproduct.cfm?partnumber=PDA36A-EC) 
-set to 0 dB of transimpedance gain.
+# Usage
 
-<table border="1" bordercolor="transparent" style="background-color:"transparent" width="100%" cellpadding="3" cellspacing="3">
-    <tr>
-    	<td></td>
-        <td align="center"><b><a href="http://www.plexon.com/products/plexbright-ld-1-single-channel-led-driver">Plexon LD-1</a></b></td>
-        <td align="center"><b><a href="http://www.plexon.com/products/plexbright-4-channel-controller-radiant-20">Plexon PlexBright</a><sup>1</sup></b></td>
-        <td align="center"><b><a href="http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=3832&pn=DC4100">Thorlabs DC4100</a></b></td>
-        <td align="center"><b>Cyclops (Current FB)</b></td>
-        <td align="center"><b>Cyclops (Optical FB)</b></td>
-   	</tr>
+![Cyclops physical interface (Rev. 3.6).](./resources/device3.6_io-diagram.png)
 
-    <tr>
-    	<td colspan="6"><b>Speed</b></td>
-    </tr>
-    <tr>
-    	<td>10-90% rise time<sup>2</sup> (&#x3bcs)</td>
-        <td align="center">49</td>
-        <td align="center">76</td>
-        <td align="center">?</td>
-        <td align="center">0.1</td>
-        <td align="center">0.53</td>
-    </tr>
-    <tr>
-    	<td>90-10% fall time<sup>2</sup> (&#x3bcs)</td>
-        <td align="center">39</td>
-        <td align="center">89</td>
-        <td align="center">?</td>
-        <td align="center">0.4</td>
-        <td align="center">0.46</td>
-    </tr>
-    <tr>
-    	<td>Dead time, worst case<sup>2</sup> (&#x3bcs)</td>
-        <td align="center">140</td>
-        <td align="center">160</td>
-        <td align="center">?</td>
-        <td align="center">3.0</td>
-        <td align="center">3.0</td>
-    </tr>
-    <tr>
-    	<td>Small signal -3dB bandwidth<sup>4</sup> (kHz)</td>
-        <td align="center">10.5</td>
-        <td align="center">?</td>
-        <td align="center">100<sup>3,5</sup></td>
-        <td align="center">2500</td>
-        <td align="center">2500</td>
-    </tr>
+The cyclops is a device that is capable of transforming voltage signals (e.g.
+sine waves, square pulses, etc.) into optical signals from high-power LEDs.
+Voltage signals to drive the device can be generated internally using an
+on-board digital to analog converter or can be delivered from an external
+source, such as a function generator or stimulus sequencer. The cyclops
+provides numerous measurements of circuit operation that can be recorded during
+an experiment such as LED current and stimulus reference voltages. The device
+can be controlled over a USB interface using its onboard, Arduino-compatible
+[Teensy 3.2](https://www.pjrc.com/teensy/teensy31.html#specs) microcontroller
+board in combination with the [Cyclops Arduino library](./lib/cyclops/).  The
+device also can be configured to drive commercially available LED modules from
+Thorlabs and Doric using its expansion ports.
 
-    <tr>
-    	<td colspan="6"><b>Accuracy</b></td>
-    </tr>
-    <tr>
-    	<td>Overshoot<sup>2</sup> (%)</td>
-        <td align="center">0</td>
-        <td align="center">0</td>
-        <td align="center">?</td>
-        <td align="center">7 (Depends on LED cabling) </td>
-        <td align="center">3 (Depends on LED and photodetector cabling)</td>
-    </tr>
-    <tr>
-    	<td>THD<sup>6</sup> (%)</td>
-        <td align="center">8.29</td>
-        <td align="center">?</td>
-        <td align="center">?</td>
-        <td align="center">8.2</td>
-        <td align="center">0.41</td>
-    </tr>
-    <tr>
-    	<td colspan="6"><b>Power</b></td>
-    </tr>
-    <tr>
-    	<td>Max current drive (mA)</td>
-        <td align="center">1200</td>
-        <td align="center">1100</td>
-        <td align="center">1000</td>
-        <td colspan="2" align="center">1500</td>
-    </tr>
+Below we provide an explanation of the operational modes of the device and the
+different ways it can be used to generate optical stimuli. Refer to the above
+diagram to locate the physical switches, dials, and connectors corresponding to
+verbal or iconic descriptions device settings.
+\FloatBarrier
 
-    <tr>
-    	<td colspan="6"><b>Features</b></td>
-    </tr>
-    <tr>
-    	<td>Independent LED channels</td>
-        <td align="center">1</td>
-        <td align="center">4</td>
-        <td align="center">4</td>
-        <td align="center" colspan="2"> 1 (modular; can stack up to 4 devices)</td>
-    </tr>
-	<tr>
-    	<td>Regulated current output</td>
-        <td align="center"><font color="green">&#x2713</font></td>
-        <td align="center"><font color="green">&#x2713</font></td>
-        <td align="center"><font color="green">&#x2713</font></td>
-        <td align="center"><font color="green">&#x2713</font></td>
-        <td align="center">N/A</td>
-    </tr>
-	<tr>
-    	<td>Regulated optical output</td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center">N/A</td>
-        <td align="center"><font color="green">&#x2713</font></td>
-    </tr>
-    <tr>
-    	<td>Programmable, hardware-based overcurrent protection</td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center"><font color="green">&#x2713</font></td>
-        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
-    </tr>
-    <tr>
-    	<td>Internal arbitrary waveform generation</td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center"><font color="green">&#x2713</font></td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
-    </tr>
-    <tr>
-    	<td>Independent DAC for each LED</td>
-        <td align="center">N/A</td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center">N/A</td>
-        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
-    </tr>
-    <tr>
-    	<td>Modular design</td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
-    </tr>
-    <tr>
-    	<td>Manual pulse</td>
-        <td align="center"><font color="green">&#x2713</font></td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
-    </tr>
-    <tr>
-    	<td>Outputs</td>
-        <td align="center">None</td>
-        <td align="center">None</td>
-        <td align="center">None</td>
-        <td colspan="2" align="center">Reference voltage, LED current, optical power (if measured)</td>
-    </tr>
-    <tr>
-    	<td>LCD display</td>
-        <td align="center"><font color="green">&#x2713</font></td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center"><font color="green">&#x2713</font></td>
-        <td colspan="2" align="center"><font color="red">&#x2717</font></td>
-    </tr>
+## Feedback modes
 
-    <tr>
-    	<td colspan="6"><b>Programmability</b></td>
-    </tr>
-	<tr>
-    	<td>Open-source</td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td align="center"><font color="red">&#x2717</font></td>
-        <td colspan="2" align="center"><font color="green">&#x2713</font></td>
-    </tr>
-    <tr>
-    	<td>Driver</td>
-        <td align="center">N/A</td>
-        <td align="center">"Radiant" software</td>
-        <td align="center"><a href="http://www.ni.com/visa/">NI-VISA</a> based GUI and API</td>
-        <td colspan="2" align="center">Arduino compabile</td>
-    </tr>
-    <tr>
-    	<td>Interface</td>
-        <td align="center">N/A</td>
-        <td align="center">GUI/USB cable</td>
-        <td align="center">GUI or API/USB cable</td>
-        <td colspan="2" align="center">Arduino IDE/USB cable</td>
-    </tr>
-    <tr>
-    	<td>Waveform generation performance</td>
-        <td align="center">N/A</td>
-        <td align="center">10 kHz aggregate update across channels</td>
-        <td align="center">N/A</td>
-        <td colspan="2" align="center">100 kHz/channel update; evolves with Arduino tools</td>
-    </tr>
-    <tr>
-    	<td>OS compatibility</td>
-        <td align="center">N/A</td>
-        <td align="center">Windows</td>
-        <td align="center">Windows</td>
-        <td colspan="2" align="center">Windows, Linux, Mac</td>
-    </tr>
+### Current Feedback Mode
 
-    <tr>
-    	<td><b>Cost</b></td>
-        <td align="center"><b>$700.00</b></td>
-        <td align="center"><b>$5300.00</b></td>
-        <td align="center"><b>$3059.0<sup>7</sup></b></td>
-        <td align="center"><b>~$160.00</b><sup>8</sup></td>
-        <td align="center"><b>~$200.00<sup>8,9</sup></b></td>
-    </tr>
-</table>
-
-1. Essential drive circuit consists of an [Opal-Kelly XEM6001 FPGA Dev board](http://www.opalkelly.com/products/xem6001/) tied to 4 commercially available [buck converters from Recon](http://www.recom-power.com/pdf/Lightline/RCD-24.pdf).
-2. Test signal: 500 Hz, fully off to on, 50% duty-cycle square wave resulting in 1A peak to peak through LED.
-3. Test signal: 1 kHz 500 mA offset, 100 mA peak-to-peak sine wave.
-4. Not measured on the bench top. Taken from manufacturer's specifications.
-5. Bandwidth threshold (e.g. -3 dB) was not specified. Applies to sine wave only.
-6. Test signal: 1 kHz 500 mA offset, 1A peak-to-peak sine wave.
-7. Includes the cost of the [DC4100-HUB](http://www.thorlabs.com/thorproduct.cfm?partnumber=DC4100-HUB) which is required to drive four LEDs.
-8. Approximate materials cost.
-9. Increased cost compared to current feedback mode is due to amplified photodiode (design included with Cyclops repository).
-
-
-Usage
------
-
-The cyclops is a device that is capable of transforming voltage signals
-(e.g. sine waves, square pulses, etc.) into optical signals from
-high-power LEDs. Voltage signals to drive the device can be generated
-internally using an on-board digital to analog converter or can be
-delivered from an external source, such as a function generator or
-stimulus sequencer. The cyclops provides numerous measurements of
-circuit operation that can be recorded during an experiment such as LED
-current and stimulus reference voltages. The device can be controlled
-over a USB interface using its [Arduino library](./arduino/cyclops/).
-The device also can be configured to drive commercially available LED
-modules from Thorlabs and Doric.
-
-![Cyclops physical interface.](./resources/device3.5A_io-diagram.png)
-
-Below we provide an explanation of the operational modes of the device
-and the different ways it can be used to generate optical stimuli. Refer
-to the above diagram to locate the physical switches, dials, and
-connectors corresponding to verbal or iconic descriptions device
-settings.
-
-### Feedback modes
-
-#### Current Feedback Mode
-
-To use current feedback mode, push the `F.B. MODE` slide switch to the
-`CURR` position (![Current feedback
-mode.](./resources/curr_switch_icon.png)). Using the circuit in current
-feedback mode ensures that the forward current across the LED is
-precisely regulated according the voltage at the `VREF` pin. This
-configuration is a standard method for driving LEDs because the
-relationship between current and LED irradiance is smooth and monotonic.
-This means that more current across the LED will generate more light
-power (while staying within the LED's maximum ratings, of course).
-However, the relationship between current and irradiance is not linear.
-For most LEDs, it looks like a logarithmic function. Additionally, the
-efficiency of the LED is inversely related to its temperature. So, as
-the LED operates and heats up, the amount of light it produces drops
-even when the current is held constant. The severity of an LED's
-temperature dependence and current/irradiance nonlinearity depend on the
-type of LED (roughly, the color and who made it). These properties
-should be clearly documented in the LED's data sheet. With a quality LED
-and proper thermal management, the effects of temperature and static
-current/irradiance nonlinearity are fairly minimal and can be ignored in
-most situations.
+To use current feedback mode, push the `F.B. MODE` slide switch to the `CURR`
+position (![Current feedback mode.](./resources/curr_switch_icon.png)). Using
+the circuit in current feedback mode ensures that the forward current across
+the LED is precisely regulated according the voltage at the `VREF` pin. This
+configuration is a standard method for driving LEDs because the relationship
+between current and LED irradiance is smooth and monotonic.  This means that
+more current across the LED will generate more light power (while staying
+within the LED's maximum ratings, of course).  However, the relationship
+between current and irradiance is not linear.  For most LEDs, it looks like a
+logarithmic function. Additionally, the efficiency of the LED is inversely
+related to its temperature. So, as the LED operates and heats up, the amount of
+light it produces drops even when the current is held constant. The severity of
+an LED's temperature dependence and current/irradiance nonlinearity depend on
+the type of LED (roughly, the color and who made it). These properties should
+be clearly documented in the LED's data sheet. With a quality LED and proper
+thermal management, the effects of temperature and static current/irradiance
+nonlinearity are fairly minimal and can be ignored in most situations.
 
 ![Current feedback
 configuration.](./resources/current_feedback_diagram.png)
 
-#### Auxiliary Feedback Mode
+### Auxiliary Feedback Mode
 
-To use auxiliary feedback mode, push the `F.B. MODE` slide switch to the
-`AUX` position (![Auxilary feedback
-mode.](./resources/aux_switch_icon.png)). When extremely stable, linear
-control of light power is required, the auxiliary feedback input can be
-used to used to compensate for the temperature dependence and static
-nonlinearity of the current/irradiance relationship of the LED. For
-example, when the auxiliary voltage is supplied by an amplified
-photodiode that is somewhere indecent to radiation from the LED, or is
-sampled from the fiber transporting LED light, the gate voltage is
-adjusted such that the measured light power matches a DAC-supplied
-reference voltage. This is the case in the circuit diagram. This
-configuration is referred to as optical feedback mode. The
-[PDA36A](https://www.thorlabs.com/thorProduct.cfm?partNumber=PDA36A)
-adjustable amplified photodiode from Thorlabs is a good option for
-supplying optical feedback. However, you can make your own amplified
-photodiode for a fraction of the price, and a design is included within
-the cyclops repository. Optical feedback completely linearizes the
-relationship between a supplied reference voltage and the light power
-produced by the LED by compensating for the current/irradiance
-nonlinearities and temperature dependence.
+To use auxiliary feedback mode, push the `F.B. MODE` slide switch to the `AUX`
+position (![Auxilary feedback mode.](./resources/aux_switch_icon.png)). When
+extremely stable, linear control of light power is required, the auxiliary
+feedback input can be used to used to compensate for the temperature dependence
+and static nonlinearity of the current/irradiance relationship of the LED. For
+example, when the auxiliary voltage is supplied by an amplified photodiode that
+is somewhere indecent to radiation from the LED, or is sampled from the fiber
+transporting LED light, the gate voltage is adjusted such that the measured
+light power matches a DAC-supplied reference voltage. This is the case in the
+circuit diagram. This configuration is referred to as optical feedback mode.
+The [PDA36A](https://www.thorlabs.com/thorProduct.cfm?partNumber=PDA36A)
+adjustable amplified photodiode from Thorlabs is a good option for supplying
+optical feedback. However, you can make your own amplified photodiode for a
+fraction of the price, and a design is included within the cyclops repository.
+Optical feedback completely linearizes the relationship between a supplied
+reference voltage and the light power produced by the LED by compensating for
+the current/irradiance nonlinearities and temperature dependence.
 
-![Optical feedback
-configuration.](./resources/optical_feedback_diagram.png)
+![Optical feedback configuration.](./resources/optical_feedback_diagram.png)
 
-### Stimulus Generation Options
+## Bandwidth Selection
+The Cyclops can be operated in two bandwidth modes: `FULL` and `LIM`. This
+provides user-selectable control over the speed at which the LED can be turned
+on/off.
+
+### Full Bandwidth Mode
+To operate the device in full bandwidth mode, move the `B.W. SELECT` switch to
+the `FULL` position (![Full bandwidth mode.](./resources/full_switch_icon.png)).
+When the device is operated at full bandwidth, the user can take advantage very
+short turn on/off times (1.0 A in about 100 ns rise/fall times). Additionally,
+continuously varying optical signals are accurately represented up to about 2
+MHz. That said, Cyclops is a fairly high-power circuit. The currents and
+voltage used to drive high power LEDs are many orders of magnitude (like 6 or
+more...) greater than those recorded during electrophysiology experiments.
+Also, the Cyclops is a fast circuit. Fast circuits hate long cables because
+they introduce appreciable delays and parasitics that can adversely affect
+operating characteristics. Very long cables will introduce ringing into light
+waveforms with fast edges!  Ideally, the LED should be right next to the
+device. I typically mount my fiber coupled LEDs directly into the banana
+sockets on the back of the device using copper-clad printed circuit board so
+that my 'cables' are about 2 cm in length.  In any case, the following is
+allways good advice: **keep the cabling to the LED as short as possible and
+'fat' enough to handle high currents (AWG 18 or thicker)**.
+
+### Limited Bandwidth Mode
+To operate the device in full bandwidth mode, move the `B.W. SELECT` switch to
+the `LIM.` position (![Limited bandwidth bandwidth mode.](./resources/lim_switch_icon.png)).
+In this mode, the feedback circuit within the cyclops will operate at lower
+speeds. This is useful in situations where the use wishes to place the Cyclops
+device far away from the LED being driven (e.g. when it is mounted on the head
+of an animal rather than light being transmitted via optic fiber).  In this
+case, the bandwidth of the device can be lowered to avoid ringing and
+instability when a long, potentially thin cable is used. I have driven LEDs at
+1.5A over AWG 30 cable that is several meters long without issue in bandwidth
+limit mode. This would cause the device to oscillate wildy in full bandwidth
+operation. When the device is operated in bandwidth limit mode, the rise and
+fall times of LED pulse will increase to about 1.5 microseconds, and the -3 dB
+bandwidth will degrade to ~200 kHz or so. This is plenty fast for almost all
+neuroscience applications.
+
+## Stimulus Generation Options
 
 There are three ways to generate light signals using the driver. The
 behavior of each of these options is dependent on the feedback mode
@@ -513,58 +333,186 @@ to the feedback mode of the driver.
 \FloatBarrier
 \newpage
 
-### Programming the onboard microcontroller
+## Using the onboard microcontroller
+Cyclops devices include an onboard, Arudino-compatible microcontroller board
+(Teensy 3.2) that can:
 
-TODO
+- Generate custom waveforms
+- Respond to trigger input
+- Provide background over-current protection
 
-Construction
-------------
+The Teensy can be programmed and uploaded to the device using the [Arduino
+IDE](https://www.arduino.cc/en/Main/Software) in combination with [Cyclops
+Arduino library](./lib/cyclops). _Note that you will need to add the
+[Teensyduino add-on](https://www.pjrc.com/teensy/teensyduino.html) to to the
+Arduino IDE to program the Teensy_. The Cyclops library contains several
+examples to help you get started. The relevant public programming interface is
+shown here:
+
+``` c++
+// Each 'channel' defines a board address. A single microcontroller supports up
+// to 4 stacked Cyclops boards.
+typedef enum
+{
+    CH0 = 0,
+    CH1,
+    CH2,
+    CH3,
+} Channel;
+
+// One Cyclops object should be created for each LED channel. For single LED
+// devices (most cases) only CH0 is used.
+class Cyclops {
+
+public:
+    // Construct a Cyclops object
+    //   chan:             Cyclops channel to control
+    //   current_limit_mA: Optional current limit for this Cyclops channel
+    Cyclops(Channel chan, float current_limit_mA = 1500);
+
+    // Program the DAC output register
+    //    voltage: 12-bit integer (0-4095) specify the voltage to program the
+    //             DAC with. Voltage is scaled into a 0-5V range.
+    //    returns: 0 on success, 1 otherwise.
+    int dac_prog_voltage(const uint16_t voltage) const;
+
+    // Load the DAC output register to affect a voltage change on the output
+    // pin. This function affects all running cyclops devices that have had
+    // their DAC's programmed using the dac_prog_voltage() function.
+    static void dac_load(void);
+
+    // Convenience method for programming and loading a DAC voltage. Equivalent
+    // to calling dac_prog_voltage() followed by dac_load()
+    //    voltage: 12-bit integer (0-4095) specify the voltage to program the
+    //             DAC with. Voltage is scaled into a 0-5V range.
+    //    returns: 0 on success, 1 otherwise.
+    int dac_load_voltage(const uint16_t voltage) const;
+
+    // Use the DAC to generate a period waveform
+    //    voltage:          Pointer to array of 12-bit integers (0-4095)
+    //                      specifying the voltage sequence to program the DAC
+    //                      with. Output voltage is scaled into a 0-5V range.
+    //    length:           Length of voltage sequence.
+    //    sample_period_us: Sample period of voltage sequence in microseconds.
+    void dac_generate_waveform(const uint16_t voltage[],
+                               const uint16_t length,
+                               const uint32_t sample_period_us) const;
+
+    // Get an LED current measurement in milliamps
+    //    returns: LED current measurement in milliamps.
+    inline float measure_current(void) const;
+
+    // Attach/detach user provided interrupt function to TRIG pin
+    // mode indicates the pin trasition state at which the function is called,
+    // RISING, FALLING or CHANGED
+    //    user_func: User define function specifying action to take when the
+    //               TRIG pin transtions according the the mode arguement. e.g.
+    //               can be a function that generates a wavefomr using
+    //               dac_load_voltage() or similar.
+    //    mode:      Indicates the TRIG trasition state at which the user_func
+    //               is called. Can be either RISING, FALLING, CHANGED, HIGH,
+    //               or LOW. See AttachInterput() Arduino function for more
+    //               detail.
+    void set_trigger(void (*user_func)(void), const int mode);
+
+    // Call this static method after creating all cyclops channels to start the
+    // internal overcurent protection engine and waveform generation machinery.
+    // This funciton is used to start all channels.
+    static void begin(void);
+
+    // *this's channel ID
+    const Channel channel;
+};
+```
+
+\newpage
+A simple example Arduino sketch, which uses the Cyclops to produce a [sinusodal chirp](https://en.wikipedia.org/wiki/Chirp), is shown here:
+
+```c++
+#include <Cyclops.h>
+
+#define PI_CONST 3.14159265358979323846
+
+// Parameters of the chirp waveform
+#define CHIRP_TIME_MS 5000 // Length of chirp waveform in msec
+#define FREQ_START 0.5f    // Start frequency in Hz
+#define FREQ_END 30.0f     // End frequency in Hz
+
+// Create a single cyclops object. CH0 corresponds to a physical board with
+// jumper pads soldered so that OC0, CS0, TRIG0, and A0 are used. Set the
+// current limit to 1A on this channel.
+Cyclops cyclops0(CH0, 1000);
+
+// Chirp frequency ramp parameter
+float beta = 1.0;
+
+void setup()
+{
+    // Chirp parameter
+    beta = (FREQ_END - FREQ_START) / (((float)CHIRP_TIME_MS) / 1000.0);
+
+    // Start the device and zero out its DAC
+    Cyclops::begin();
+    cyclops0.dac_load_voltage(0);
+}
+
+void loop()
+{
+    // Calculate current chirp amplitude
+    float now = ((float)(millis() % CHIRP_TIME_MS)) / 1000.0;
+    float freq
+        = 2.0 * PI_CONST * (FREQ_START * now + (beta / 2.0) * pow(now, 2));
+    unsigned int voltage = (unsigned int)(4095.0 * (sin(freq) / 2.0 + 0.5));
+
+    // Program the DAC and load the voltage
+    cyclops0.dac_load_voltage(voltage);
+}
+```
+
+\FloatBarrier
+\newpage
+
+# Construction
 
 If you have questions during device assembly, please direct them to the
 [open-ephys forum](https://groups.google.com/forum/#!forum/open-ephys)
 so that others may benefit. Pull requests improving this documentation
 are welcome.
 
-### Components
+This guide provides instructions for assembling a Cyclops device  For more
+details on performance specifications and usage, please have a look
+at the complete manual available in PDF or markdown form on the Github
+repository.
 
-1.  This google sheet contains a reasonably up-to-date parts list.
-    However, it is manually managed and therefore prone to errors. It is
-    recommended that method 2 be used instead
+> https://github.com/jonnew/Cyclops/blob/master/MANUAL.md
+> https://github.com/jonnew/Cyclops/blob/master/MANUAL.pdf
 
-    [Google Doc
-    List](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing)
+If you have any questions, do not hesitate to post them to the open-ephys
+mailing list:
 
-2.  Fully assembled cyclops PCBs can be purchased from Circuit Hub
+> https://groups.google.com/forum/#!forum/open-ephys
 
-    [Cyclops on Circuit
-    Hub](https://circuithub.com/projects/jonnew_/cyclops)
+Also, __pull requests and bug reports are welcome__. I would love your help in
+improving this device and its documentation!
 
-    This also includes an up-to-date parts list for each PCB with
-    optimized prices. *Note that these parts are for a single PCB
-    without the enclosure, power supply, etc*. Those parts can be found
-    on the "Circuit Hub Kit" tab of the Google spreadsheet above.
+> https://github.com/jonnew/cyclops/issues
 
-Most of the parts can be purchased from Digikey, but there are a few
-components that need to be bought from other sources such as Newark,
-Adafruit, and Samtec. All vendor, part number, and quantity information
-is listed on the BOM. If you are having trouble getting a part, check
-the Google Sheet as there are alternative suppliers listed for some
-parts.
+## Components
 
-The cyclops PCB can be constructed by purchasing from one of the
-pre-uploaded options:
+### PCB
+Unpopulated Cyclops PCBs can be fabricated by uploading the [gerber
+files](./cyclops/pcb/gerber/) to the PCB fabrication service of your choice. I have
+had success with:
 
--   [OSH Park](https://oshpark.com/shared_projects/fOfw7acB) - made in
-    America, excellent quality. Minimum of 3 boards per order
--   [Seeed Studio](http://www.seeedstudio.com/service/index.php?r=pcb) -
-    made in China, very good quality. Minimum of 5 boards per order.
+-   [OSH Park](https://oshpark.com) - made in America, excellent quality.
+    Minimum of 3 boards per order
+-   [Seeed Studio](http://www.seeedstudio.com/service/index.php?r=pcb) - made
+    in China, very good quality. Minimum of 5 boards per order.
 
 ![A bare Cyclops PCB, top side, fabricated by Seeed
 Studio.](./resources/cyclops3.5A_board1.jpg)
 
-Alternatively, the [gerber files](./cyclops/gerber/) can be uploaded to
-the PCB fabrication service of your choice. The layer of each gerber
-file is identified by its file extension:
+The layer of each gerber file is identified by its file extension:
 
      *.GKO = board outline
      *.GTS = top solder mask
@@ -577,15 +525,25 @@ file is identified by its file extension:
      *.GBL = bottom copper
      *.XLN = drill hits and sizes
 
-PCB stencils, which are useful for applying solder paste to the boards,
-can be purchased from a service like [OSH
-stencils](https://www.oshstencils.com) using the gerber files located in
-[./cyclops/stencil/](./cyclops/stencil/). If you plan to hand solder the
-board, or don't mind dispensing solder paste yourself, then you do not
-need to purchase these stencils.
+PCB stencils, which are useful for applying solder paste to the boards, can be
+purchased from a service like [Seeed
+Studio](http://www.seeedstudio.com/service/index.php?r=stencil) using the
+gerber files located in [./cyclops/device/stencil/](./cyclops/stencil/). If you
+plan to hand solder the board, or don't mind dispensing solder paste yourself,
+then you do not need to purchase these stencils.
 
-The BOM includes several optional components, which are not in the
-pre-populated Digikey cart. These include:
+### TODO: PCB Bill of Materials 
+TODO: Google doc update!
+
+Fully assembled cyclops PCBs can be purchased from Circuit Hub [Cyclops on
+Circuit Hub](https://circuithub.com/projects/jonnew_/cyclops). This also
+includes an up-to-date parts list for each PCB with optimized prices.
+*Note that these parts are for a single PCB without the enclosure, power
+supply, etc*. Also, this may be out of date.
+
+### Other Materials
+A complete device requires several additional components aside from the PCB itself. These
+pre-populated Digikey cart. These can be found on the [device kit bill of materials] (https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
 
 -   An **extruded aluminum enclosure**, which houses the
     completed board. The enclosure is recommended because the large
@@ -595,15 +553,19 @@ pre-populated Digikey cart. These include:
     from Ponoko using the links supplied in the BOM. The instructions
     below show how these plastic pieces are modified to provide proper
     electrical shielding.
--   An **M8-4 connector**. This is a rather expensive connector that
+-   **Custom heatsink**, a waterjet-cut aluminum heatsink. Designs can be found
+    in the [heatsink](heatsink/alu-heatsink.PDF) folder.
+-   **Teensy 3.2 MCU**, a 32-bit microcontroller development board. Can be
+    purchased [here](https://www.pjrc.com/store/teensy32.html)
+-   An **M8-4 connector** (Optional). This is a rather expensive connector that
     allows cyclops to drive [Thorlabs LED
     modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206)
     or [Doric LED
     modules](http://doriclenses.com/life-sciences/243-led-modules).
 
-### Board Assembly
+## Board Assembly Manual
 
-#### Materials
+### Board Assembly Materials
 To assemble a Cyclops board, you will need the following materials
 
 -   A soldering iron and, if possible, a hot-air reflow device.
@@ -638,7 +600,7 @@ To assemble a Cyclops board, you will need the following materials
     optional but recommended to protect your work...)
 
 
-#### Assembly Instructions
+### Board Assembly Instructions
 PCB component population and soldering is fairly straightforward and
 requires standard surface mount construction techniques.
 
@@ -726,13 +688,13 @@ tests outlined in the next section before applying power.*
     ![Board with all top-side surface mount
     components installed.](./resources/cyclops3.5A_otherPassives.jpg)
 
-6.  Next, reflow solder the board. We use a homemade reflow oven
-    constructed from a toaster oven, Arduino board, [reflow oven control
-    shield](http://www.rocketscream.com/shop/reflow-oven-controller-shield-arduino-compatible),
-    and [mains relay](https://www.adafruit.com/products/268). You can
-    make a similar one, use a commercial reflow oven, or use the hot
-    air station. Reflow the solder paste on the board using your oven or
-    hot air gun as described in the links above.
+6.  Next, reflow solder the board. We use a homemade reflow oven constructed
+    from a toaster oven, Arduino board, [reflow oven control
+    shield](http://www.rocketscream.com/shop/reflow-oven-controller-shield-arduino-compatiblee),
+    and [mains relay](https://www.adafruit.com/products/268). You can make a
+    similar one, use a commercial reflow oven, or use the hot air station.
+    Reflow the solder paste on the board using your oven or hot air gun as
+    described in the links above.
 
     ![Homemade reflow oven with the populated
     board inside.](./resources/ReflowOven.jpg)
@@ -778,7 +740,7 @@ tests outlined in the next section before applying power.*
     TODO: Pictures of circled 0 ohm jumpers
 
 9.  Flip the board over and install the final surface mount component,
-    the `AUX<>CURR` slide switch, by hand soldering.
+    the `AUX<>CURR` and `BW LIM` slide switches, by hand soldering.
 
 10. Next, populate all electromechanical components. This can be
     soldered in place with a standard soldering iron and a large
@@ -801,57 +763,92 @@ tests outlined in the next section before applying power.*
     solder points for the power switch together using AWG 20 (\~1.8 mm
     diameter) braided copper wire or thicker.
 
-    TODO: Picture of jumpered switch solder points
-
-12. Install the heatsink on the PCB
-
-    ![Heatsink installation](./resources/heatsink-install.jpg)
-
-    Flip the PCB so that the bottom is exposed.  Locate the large white square
-    surrounding the exposed copper pad indicating the heatsink mounting location.
-    Remove the paper backing from the heatsink to expose the adhesive surface
-    Press the heatsink into place on the PCB.
-
-13. [Optional] Install the Arduino
-
-    TODO: Image of desoldering and mounting
-
-    Remove the power jack from the Arduino using a hot air gun or desoldering
-    tool. Press the Arduino the dedicated headers.
-
 \FloatBarrier
 \newpage
 
-### Enclosure
+## Device Assembly Manual
 
-#### Materials
-To construct the enclosure, you will use the following materials
+### Required Parts and Tools
 
-**Parts**
+Before starting, please ensure you have the following components. Suggested
+part numbers and suppliers are provided on this [google
+spreadsheet](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
+In the lists below, numbers (#XX) correspond to the labels on the image below.
 
-1. Assembled Cyclops PCB (1x)
-2. Extruded aluminum enclosure (1x)
-3. Laser-cut enclosure panels (1x front, 1x rear)
-4. Rocker switch (1x)
-5. Hookup wire (2x, 15 cm lengths, 20 Ga or thicker)
-6. Shrink tube (2x)
-8. Gain knob (1x)
-9. Toothed washer (1x)
-10. Jam nut (1x)
-11. Light pipes (3x)
-12. Button cover (1x)
-13. Screws to install panels (8x)
-14. [optional] Conductive coating for EMI suppression (e.g. [this](http://amzn.com/B008OA931A)).
+1. Assembled Cyclops PCB (#6, 1x)
+2. Extruded aluminum enclosure (#1,1x)
+3. Enclosure panels (front: #20, 1x; rear: #21, 1x)
+4. Rocker switch (#18, 1x)
+5. 18 AWG silicone insulated hookup wire (#17, 2x)
+6. Shrink tube (#19, 2x)
+7. Gain knob (#7, 1x), jam nut (#8, 1x), and toothed washer (#9, 1x)
+10. Button cover (#10, 1x)
+11. Waterjet-cut aluminum heatsink (#13, 1x)
+12. 6mm length, M3 thread-forming screws (#11, 11x)
+13. Nylon washers (#12, 3x)
+14. Silicon thermal compound (#4)
+15. Thermal tape (#5)
+16. Teensy 3.2 MCU board (#15, 1x)
+17. 0.1" sockets for Teensy 3.1 (#16, 2x 1x14 pin; 1x 1x2 pin; 1x 2x7 pin SMD)
 
-**Tools**
+You will also need the following tools.
 
-- Soldering iron
-- Hot air gun or lighter
-- Phillips head screwdriver
+1. Scissors
+2. Soldering iron
+3. Hot air gun or lighter
+4. T10 Torx key or driver (#2)
+5. XX Allen key or driver (#3)
+6. Teensy soldering jig made from breadboard with male headers (#14)
 
-#### Assembly Instructions
 
-1. Assemble the power switch
+Additionally, to use your device once it is assembled, you will need:
+
+1. An LED to drive [Required]
+
+  - See the [LED section](LED) for options.
+
+1. A power supply [Required]
+
+  - Any wall-wart, battery pack, or bench-top power supply providing 15-20 VDC
+    that can source >=2A will work.
+  - The power jack is __center positive__ (but reversing this will not ruin the
+    device, it just wont turn on).
+  - Look around and see if you have a wall-wart laying around the lab that
+    meets the specs. They are pretty common and the jack is likely to fit.
+  - [Digikey part number
+    1470-3096-ND](http://www.digikey.com/product-search/en?keywords=1470-3096-ND)
+    or equivalent is a good option for those that need to buy a supply.
+
+1. An M8, 4-pin connector [Optional]
+
+  - An inexpensive, standard, non-insane, 2x5 header (`EXPANSION A`) provides
+    access to most of the internal signals on the Cyclops board, e.g. for
+    driving an LED or providing auxiliary feedback using an amplified
+    photodiode etc.
+  - An expensive, strange, moderately insane, M8 expansion connector that is
+    used by two major companies in the optics space (`EXPANSION B`) is left
+    unpopulated. You can populate this port if you wish to drive Thorlabs or
+    Doric LED modules using the Cyclops. For instructions, see this the
+    complete manual.
+
+    ![Cyclops device parts and tools](./resources/device-components-labeled.png)
+
+\FloatBarrier
+
+### Device Assembly Instructions
+
+1. Assemble the teensy 3.2
+
+    ![Teensy MCU assembly](./resources/teensy-assembly-steps.png)
+
+  - Solder the surface mount, 2x7 pin header to the bottom of the teensy. It is
+    important to do this first because its very hard to get to after the other
+    headers are installed.
+  - Put the single row headers on the soldering jig (panel 2, above), followed by the Teensy (panel 3, above).
+    The microcontroller chip should be facing up.
+  - Solder the headers in place.
+
+2. Assemble the power switch
 
     ![Power switch assembly](./resources/switch-solder-steps.jpg)
 
@@ -859,40 +856,51 @@ To construct the enclosure, you will use the following materials
   - Thread the stripped portion of the wire halfway through each of the
     switch's solder terminals. Fold the wire back, so that the stripped part is
     touching both sides of the terminal.
-  - Solder the hookup wire to the terminals. Make sure the solder flows between the
-    wires' copper braid and the switch terminals.
+  - Solder the hookup wire to the terminals. Make sure the solder flows between
+    the wires' copper braid and the switch terminals.
   - Slide the heat shrink from the back of each wire, over the solder joints.
     Hit then with a hot air gun or pass a lighter underneath them to shrink
     them into place over the solder joints.
 
-2. Prepare the panels
+3. Prepare the back panel
 
     ![Power switch installation](./resources/switch-install-steps.jpg)
 
-  - Pull the paper backing off the panels.
-  - __Optional:__ Spray the inside of each panel with conductive EMI suppression.
-    Additionally, you may want to file the inner edge of the enclosure to
-    reveal the bare alumnimum to ensure good contact between the coating the
-    rest of the enclosure. Allow the coating to dry before proceeding.
   - Press the  power switch into position on the back panel. Orient the switch
-    so that the 'on' symbol (**-**) is toward the middle of the panel and the 'off'
-    symbol (**o**) is toward the outside. This will make the panel easier to mount
-    on the enclosure. Hold the panel close to hole you are pushing the switch
-    into as the panel material is pretty thin and could break if it is bent too
-    much.
+    so that the 'on' symbol (-) is toward the middle of the panel and the 'off'
+    symbol (o) is toward the outside. This will make the panel easier to mount
+    on the enclosure.
   - The switch will snap into place.
 
-3. Install the heatsink on the PCB if you have not already done so
+4. Install the teensy on the cyclops
 
-    ![Heatsink installation](./resources/heatsink-install.jpg)
+  - Press the previously assembed teensy onto the 0.1" pitch male headers. It
+    should be _upside down_ on the bottom of the cyclops PCB.
+
+5. Put thermally conductive tape on the heatsink
+
+  - Cut a square of thermal tape from the roll
+  - Peal off the backing and press the tape on the back of the heatsink.
+  - Poke holes through the tape to expose the bolt holes in the heatsink.
+
+6. Install the heatsink on the PCB
+
+    ![Heatsink installation](./resources/heatsink-install.png)
 
   - Flip the PCB so that the bottom is exposed.
   - Locate the large white square surrounding the exposed copper pad indicating
     the heatsink mounting location
-  - Remove the paper backing from the heatsink to expose the adhesive surface
+  - Apply an even layer of thermal paste to the area.
+  - Remove the paper backing from the tape on the heatsink to expose the adhesive surface
   - Press the heatsink into place on the PCB
+  - Filp the PCB so the top is up and locate the three holes used to mount the
+    heatsink to the PCB. Thead three self-tapping screws through a nylon washer
+    and then into the heatsink itself. Hand tighten until the heat sink is
+    firmly head against the back of the PCB. You should see thermal compount
+    coming through the numerious vias in the PCB. This is disired because it
+    provides a low thermal resistance path between the PCB and the heatsink.
 
-4. Solder the power switch to the PCB.
+6. Solder the power switch to the PCB.
 
     ![Power switch soldering](./resources/power-switch-solder.jpg)
 
@@ -901,62 +909,38 @@ To construct the enclosure, you will use the following materials
     panel.
   - The wires can be soldered to either solder point, orientation does not
     matter since this is a SPST switch.
-  - __Optional:__ If you are using an EMI suppression coating, you should
-    solder a third, fine gauge hookup wire to one of the GND test points on the
-    board that you will eventually use to make electrical contact with the
-    enclosure.
 
-5. Install the light pipes on the PCB.
-
-    ![Light pipe installation](./resources/light-pipe-install.jpg)
-
-  - Insert the light pipes in the mounting positions in the front of the PCB.
-  - Squeeze them into place firmly using some needle nose pliers or sturdy forceps.
-
-6. Install the front panel on the enclosure
+7. Install the front panel on the enclosure
 
     ![Front panel installation](./resources/front-panel-install.jpg)
 
-  - Using 4 of the 8 mount screws that came in with the enclosure, install the
-    front panel on the enclosure.
-  - __Optional:__ If you are using an EMI suppression coating, strip the end of
-    the fine wire that was soldered to GND and insert it into one of the screw
-    holes before inserting the screws. When the screws are turned in, this will
-    provide electrical contact with the enclosure.
-  - __Note:__ The holes should not have to be tapped. The screws should just
-    kind of jam themselves into the holes. Godspeed.
-  - __Note:__ The screws that come with the enclosure are what I would call
-    "cheese grade". It is possible to break these screws so be cautious when
-    turning them in. If you think you will break the screws,  then you might
-    have to drill out the holes with twist drill to loosen them a bit. I have
-    not had to resort to this yet.
+  - Using 4 of the 11 self-trapping screws, install the front panel on the enclosure.
+  - __Note:__ The orientation of the enclosure matters. The top of the
+    enclosure is indicated by rows of decorative lines as indicated in the
+    above figure.
 
-7. Install the PCB in the enclosure.
+8. Install the PCB in the enclosure.
 
-    ![Front panel installation](./resources/pcb-install.jpg)
+    ![Front panel installation](./resources/pcb-install-steps.png)
 
   - Slide the PCB into the box using the __middle__ mounting rail.
+  - __Note:__ The heatsink should be making firm contact with the bottom of
+    the enclosure. If it is not, you should add thermal paste to the bottom of
+    the heatsink to fill the gap. The heatsink must have a low thermal
+    resistance path to the enclosure to dissipate heat during operation.
   - __Note:__ When the BNC connectors come through the front panel, you will
-    need to push them down a bit, slightly flexing the PCB to get the light
-    pipes through the front panel. This is required to hold the light pipes in
-    place.
-  - __Note:__ If you have installed an Arduino on your board, make sure you
-    have removed the barrel jack power connector on the arduino first. If you
-    leave it on the Arduino, it will press into the floor of the enclosure and
-    possibly cause a short.
+    need to push them down a bit, slightly flexing the PCB to get the panel mount controls through the front panel.
 
-8. Install the rear panel.
-
-    ![Rear panel installation](./resources/rear-panel-install.jpg)
+9. Install the rear panel.
 
   - Loop the two hook up wires and push them into the enclosure on top of the
     PCB.
   - Use the panel the push the remaining wire into the enclosure.
   - Use the remaining 4 screws to install the rear panel.
 
-9. Install gain knob and button cover.
+10. Install gain knob and button cover.
 
-    ![Gain knob installation](./resources/knob-install-steps.jpg)
+    ![Gain knob installation](./resources/gain-knob-install-steps.png)
 
   - Slip the toothed washer over the gain dial.
   - Tighten the jam nut on the gain dial's threads until just past finger tight
@@ -975,13 +959,14 @@ To construct the enclosure, you will use the following materials
 Congratulations, you are the proud owner of a high-precision, high-power,
 high-speed LED driver that will make commercial drives feel a bit ridiculous
 for costing so much and very self-conscious about their performance
-characteristics.
+characteristics. For further usage instructions, performance specs, theory of
+operations, etc, etc, please refer to the complete manual located on the
+repository. As stated previously:
 
 \FloatBarrier
 \newpage
 
-LED
----
+# LED
 
 There are several things to consider when determining the type of LED
 you wish to drive with the Cyclops and the configuration of the LED.
@@ -1000,39 +985,25 @@ and weather or not it needs to be commutated in some way. The following
 provide a few simple options for LED configurations, but there are many
 more to consider for your experiments.
 
-Regardless of which you choose, the following is always true: **keep the
-cabling to the LED as short as possible and 'fat' enough to handle high
-currents (AWG 18 or thicker)**. The currents and voltage used to drive
-high power LEDs are many orders of magnitude (like 6 or more...) greater
-than those recorded during electrophysiology experiments. Also, the
-Cyclops is a fast circuit. Fast circuits hate long cables because they
-introduce appreciable delays and parasitics that can adversely affect
-operating characteristics. Very long cables will introduce ringing into
-light waveforms with fast edges! Ideally, the LED should be right next
-to the device. I typically mount my fiber coupled LEDs directly into the
-banana sockets on the back of the device using copper-clad printed
-circuit board so that my 'cables' are about 2 cm in length.
-
 ![A simple 'pigtailed' LED module. A female SMA connector is cemented over a
 lens-free high power LED to form a near optimal butt-coupling between the fiber
 and the LED die.](./resources/fiber-coupled-led.png)
 
-### Fiber-coupled LED
+## Fiber-coupled LED
 
-#### DIY Solution
+### DIY Solution
+Anders Asp has contributed the following PDF document containing detailed
+instructions for fabricating a bilateral, commutated fiber-coupled LED for use
+in freely moving animals that works with the Cyclops driver:
 
-Anders Asp has contributed the following PDF document containing
-detailed instructions for fabricating a bilateral, commutated
-fiber-coupled LED for use in freely moving animals that works with the
-Cyclops driver:
+[Bilateral fiber-coupled
+LED](https://github.com/andersjasp/cyclops/blob/master/resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
 
-[Bilateral fiber-coupled LED](https://github.com/andersjasp/cyclops/blob/master/resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
+### Thorlabs fiber-coupled LED modules
 
-#### Thorlabs fiber-coupled LED modules
-
-The cyclops can be used to Drive [Thorlabs fiber-coupled LED
-modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206).  You
-will need to install the [M8 4-position
+The cyclops can be used to drive [Thorlabs fiber-coupled LED
+modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206).
+You will need to install the [M8 4-position
 connector](http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
 in expansion port B to drive these LEDs. Solder the wires from the connector to
 the cyclops PCB as shown in the following image __after__ you have
@@ -1040,7 +1011,7 @@ installed the connector into the rear panel of the device.
 
 ![Thorlabs LED M8 connector pinout](./resources/thorlabs-m8-connections.png)
 
-#### Doric LED fiber-coupled modules
+### Doric LED fiber-coupled modules
 
 The cyclops can be used to Drive [Doric fiber-coupled LED
 modules](http://doriclenses.com/life-sciences/home/783-connectorized-single-led.html).
@@ -1051,7 +1022,7 @@ in expansion port B to drive these LEDs.
 TODO: Pictures/instructions for M8 installation process in Doric
 configuration
 
-### Microscope mounted LEDs
+## Microscope mounted LEDs
 
 The cyclops can be used to Drive [Thorlabs collimated
 LEDs](http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
@@ -1064,20 +1035,19 @@ instructions](#thorlabs-fieber-coupled-led) for instructions.
 \FloatBarrier
 \newpage
 
-Quality Control Procedure
--------------------------
+# Quality Control Procedure
 
 The following procedure can be performed on assembled boards to ensure
 functionality.
 
-#### Setup
+## Setup
 
 - Insert alligator clip across power switch solder points
 - Insert device into PCB clamp
 - Power from 15V, 1.5A capable bench-top power supply.
 - [ ] Power indicator LED turns on.
 
-#### DC Levels
+## DC Levels
 
 - Using a multimeter, probe the 12V, 2.5V, -5V, and -1.25V test points
 - [ ] 12V good
@@ -1087,7 +1057,7 @@ functionality.
     on the trimpot to get exactly 2.5V.
 - [ ] Seal the pot with a dab of hot-glue.
 
-#### Dynamic characteristics
+## Dynamic characteristics
 
 - Set MDO3000's AFG to produce 1-5V, 100 Hz, 10% duty cycle
   square wave.
@@ -1106,14 +1076,14 @@ functionality.
 - [ ] **Return FB switch to curr position**
 - [ ] Return input switch to OFF (middle) position
 
-#### Overcurrent indication
+## Overcurrent indication
 
 - Bring gain potentiometer to full on position
 - Briefly tap on the TEST button.
 - [ ] Ensure that the &gt;1A indicator LED turned on during pulse.
 - [ ] **Return gain potentiometer to zero position**
 
-#### Finish
+## Finish
 
 - [ ] Remove all power connectors.
 - [ ] Remove alligator clip.
@@ -1121,10 +1091,12 @@ functionality.
   power trace on the right side of the board.
 - [ ] Enter board serial number into the spreadsheet.
 
-License
--------
+\FloatBarrier
+\newpage
 
-### Hardware Licensing
+# License
+
+## Hardware Licensing
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
 alt="Creative Commons License" style="border-width:0"
 src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span
@@ -1140,7 +1112,7 @@ License</a>.<br
 href="https://github.com/jonnew/cyclops"
 rel="dct:source">https://github.com/jonnew/cyclops</a>.
 
-### Software Licensing
+## Software Licensing
 Copyright (c) Jonathan P. Newman All right reserved.
 
 The code associated with the Cyclops project is free software: you can
@@ -1159,8 +1131,7 @@ with this code. If not, see <http://www.gnu.org/licenses/>.
 \FloatBarrier
 \newpage
 
-References
-----------
+# References
 
 \[1\] J.P. Newman, M.-f. Fong, D.C. Millard, C.J. Whitmire, G.B.
 Stanley, S.M. Potter. S.M. Potter. [Optogenetic feedback control of
