@@ -7741,7 +7741,7 @@ distributor Farnell 149-452</description>
 <part name="R52" library="cyclops" deviceset="R" device="_0603" value="0"/>
 <part name="R45" library="cyclops" deviceset="R" device="_0603" value="100"/>
 <part name="R51" library="cyclops" deviceset="R" device="_0603" value="10"/>
-<part name="R53" library="cyclops" deviceset="R" device="_0603" value="1k"/>
+<part name="R53" library="cyclops" deviceset="R" device="_0603" value="470"/>
 <part name="U$45" library="cyclops" deviceset="GND2" device=""/>
 <part name="C29" library="jonnew" deviceset="C" device="_0603" value=".1uF"/>
 <part name="C38" library="jonnew" deviceset="C" device="_0603" value=".1uF"/>
@@ -7762,7 +7762,7 @@ distributor Farnell 149-452</description>
 <part name="R62" library="cyclops" deviceset="R" device="_0603" value="47"/>
 <part name="D7" library="jonnew" deviceset="S-DIODE" device="SOD-123" value="1N5819"/>
 <part name="U$13" library="cyclops" deviceset="GND2" device=""/>
-<part name="C41" library="cyclops" deviceset="C" device="_0603" value="470pF"/>
+<part name="C41" library="cyclops" deviceset="C" device="_0603" value="24pF"/>
 <part name="U$12" library="cyclops" deviceset="GND2" device=""/>
 </parts>
 <sheets>
@@ -10038,7 +10038,6 @@ Max(ILED) ~ 1.5 Amps</text>
 <text x="144.78" y="-22.86" size="1.6764" layer="97" rot="R90">DNP</text>
 <text x="-7.62" y="124.46" size="1.6764" layer="97" rot="R90">DNP</text>
 <text x="-20.32" y="119.38" size="1.6764" layer="97" rot="R90">DNP</text>
-<text x="73.66" y="73.66" size="1.6764" layer="97" rot="R90">DNP</text>
 </plain>
 <instances>
 <instance part="U16" gate="C" x="66.04" y="-5.08" rot="MR0"/>
@@ -10148,8 +10147,8 @@ Max(ILED) ~ 1.5 Amps</text>
 <instance part="R62" gate="R" x="78.74" y="20.32" rot="R270"/>
 <instance part="D7" gate="G$1" x="15.24" y="20.32" rot="R90"/>
 <instance part="U$13" gate="G$1" x="17.78" y="7.62"/>
-<instance part="C41" gate="C" x="63.5" y="78.74"/>
-<instance part="U$12" gate="G$1" x="63.5" y="68.58" rot="MR0"/>
+<instance part="C41" gate="C" x="66.04" y="78.74"/>
+<instance part="U$12" gate="G$1" x="66.04" y="68.58" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -10299,7 +10298,7 @@ Max(ILED) ~ 1.5 Amps</text>
 </segment>
 <segment>
 <pinref part="C41" gate="C" pin="2"/>
-<wire x1="63.5" y1="73.66" x2="63.5" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="73.66" x2="66.04" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+13.3V" class="1">
@@ -10501,16 +10500,11 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="63.5" y1="60.96" x2="48.26" y2="60.96" width="0.1524" layer="91"/>
 <junction x="48.26" y="60.96"/>
 <pinref part="R53" gate="R" pin="2"/>
-<wire x1="53.34" y1="83.82" x2="53.34" y2="88.9" width="0.1524" layer="91"/>
 <junction x="53.34" y="99.06"/>
 <pinref part="LIM&lt;BW&gt;FULL" gate="G$1" pin="3"/>
-<wire x1="53.34" y1="88.9" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="83.82" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="50.8" x2="63.5" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="50.8" x2="63.5" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="88.9" x2="63.5" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="88.9" x2="63.5" y2="81.28" width="0.1524" layer="91"/>
-<junction x="53.34" y="88.9"/>
-<pinref part="C41" gate="C" pin="1"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -10684,19 +10678,6 @@ Max(ILED) ~ 1.5 Amps</text>
 <pinref part="R62" gate="R" pin="2"/>
 </segment>
 </net>
-<net name="N$16" class="0">
-<segment>
-<pinref part="R48" gate="R" pin="2"/>
-<wire x1="63.5" y1="99.06" x2="66.04" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="R45" gate="R" pin="1"/>
-<wire x1="71.12" y1="114.3" x2="66.04" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="114.3" x2="66.04" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="R51" gate="R" pin="1"/>
-<wire x1="71.12" y1="88.9" x2="66.04" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="88.9" x2="66.04" y2="99.06" width="0.1524" layer="91"/>
-<junction x="66.04" y="99.06"/>
-</segment>
-</net>
 <net name="N$40" class="0">
 <segment>
 <pinref part="C40" gate="C" pin="2"/>
@@ -10766,6 +10747,22 @@ Max(ILED) ~ 1.5 Amps</text>
 <wire x1="78.74" y1="30.48" x2="78.74" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="S1" gate="G$1" pin="NC"/>
 <wire x1="58.42" y1="30.48" x2="78.74" y2="30.48" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$58" class="0">
+<segment>
+<wire x1="66.04" y1="88.9" x2="66.04" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="C41" gate="C" pin="1"/>
+<pinref part="R48" gate="R" pin="2"/>
+<wire x1="63.5" y1="99.06" x2="66.04" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="R45" gate="R" pin="1"/>
+<wire x1="71.12" y1="114.3" x2="66.04" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="114.3" x2="66.04" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="R51" gate="R" pin="1"/>
+<wire x1="71.12" y1="88.9" x2="66.04" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="88.9" x2="66.04" y2="99.06" width="0.1524" layer="91"/>
+<junction x="66.04" y="99.06"/>
+<junction x="66.04" y="88.9"/>
 </segment>
 </net>
 </nets>
