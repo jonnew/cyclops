@@ -222,23 +222,27 @@ configuration.](./resources/current_feedback_diagram.png)
 
 ### Auxiliary Feedback Mode
 
-To use auxiliary feedback mode, push the `F.B. MODE` slide switch to the `AUX`
-position (![Auxilary feedback mode.](./resources/aux_switch_icon.png)). When
-extremely stable, linear control of light power is required, the auxiliary
-feedback input can be used to used to compensate for the temperature dependence
-and static nonlinearity of the current/irradiance relationship of the LED. For
-example, when the auxiliary voltage is supplied by an amplified photodiode that
-is somewhere indecent to radiation from the LED, or is sampled from the fiber
-transporting LED light, the gate voltage is adjusted such that the measured
-light power matches a DAC-supplied reference voltage. This is the case in the
-circuit diagram. This configuration is referred to as optical feedback mode.
-The [PDA36A](https://www.thorlabs.com/thorProduct.cfm?partNumber=PDA36A)
-adjustable amplified photodiode from Thorlabs is a good option for supplying
-optical feedback. However, you can make your own amplified photodiode for a
-fraction of the price, and a design is included within the cyclops repository.
-Optical feedback completely linearizes the relationship between a supplied
-reference voltage and the light power produced by the LED by compensating for
-the current/irradiance nonlinearities and temperature dependence.
+To use auxiliary feedback mode, push the F.B. MODE slide switch to the AUX 
+position). When extremely stable, linear control of light power is required,
+the auxiliary feedback input can be used to used to compensate for the 
+temperature dependence and static nonlinearity of the current/irradiance 
+relationship of the LED. For example, when the auxiliary voltage is supplied
+by an amplified photodiode that is somewhere indecent to radiation from the LED, 
+or is sampled from the fiber transporting LED light, the gate voltage is adjusted
+such that the measured light power matches a DAC-supplied reference voltage. This
+is the case in the circuit diagram. This configuration is referred to as optical
+feedback mode.  The PDA36A adjustable amplified photodiode from Thorlabs  is a 
+good option for supplying optical feedback. However, you can make your own 
+amplified photodiode for a fraction of the price, and a design is included within
+the cyclops repository. For directions on how to build your own photodiode, see
+later section in manual.  Optical feedback completely linearizes the relationship
+between a supplied reference voltage and the light power produced by the LED by 
+compensating for the current/irradiance nonlinearities and temperature dependence.
+The easiest way to connect the photodiode is through a fiber coupled led (many
+different kinds available through ThorLabs) connected to a 1x2 fiber coupler
+(something along the lines of this [splitter]
+(https://www.thorlabs.com/thorproduct.cfm?partnumber=TM105R2S1A) ) and use an 
+opaque epoxy to attach the 10% end of the splitter to the photodiode.
 
 ![Optical feedback configuration.](./resources/optical_feedback_diagram.png)
 
@@ -539,11 +543,18 @@ Fully assembled cyclops PCBs can be purchased from Circuit Hub [Cyclops on
 Circuit Hub](https://circuithub.com/projects/jonnew_/cyclops). This also
 includes an up-to-date parts list for each PCB with optimized prices.
 *Note that these parts are for a single PCB without the enclosure, power
-supply, etc*. Also, this may be out of date.
+supply, etc*. Also, this may be out of date. 
+
+EDIT: LINK IS OUT OF DATE
+
+To get the newest version of the bill of materials, download AutoDesk Eagle
+and open up the schematic in cyclops-master\device\pcb\cyclops.sch, click
+the yellow ULP button and run the bom.ulp file.  You can then save this list
+as a text or an XLS file.  
 
 ### Other Materials
 A complete device requires several additional components aside from the PCB itself. These
-pre-populated Digikey cart. These can be found on the [device kit bill of materials] (https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
+pre-populated Digikey cart. These can be found on the [device kit bill of materials] (https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit#gid=1723140815).
 
 -   An **extruded aluminum enclosure**, which houses the
     completed board. The enclosure is recommended because the large
@@ -964,6 +975,9 @@ operations, etc, etc, please refer to the complete manual located on the
 repository. As stated previously:
 
 \FloatBarrier
+
+### Construction of Photodiode1. Obtain the necessary materials  - Use ULP BOM trick listed earlier in the manual to get the complete bill of materials  - You will also need a lens cap (such as this one http://www.m12lenses.com/M12-Lens-Holder-Plastic-p/pt-lh001p.htm) to block out the surrounding light2. Assemble the board   - Using similar methods to assembling the Cyclops, use solder paste to put together the photodiode PCB. (Make sure you don’t miss the components on the back!)3. Bake the board using preferred method.4. Solder the BNC connector and the power header onto the board.5. Epoxy a SMA905 female to female connector directly onto the main photodiode. (We do this so that the fiber can be disconnected from the photodiode if need be)6. Put a small amount of opaque epoxy on the photodiode on the back.	Note: this secondary photodiode is a dark current compensator.  It essentially obtains a baseline signal from when there is no light going to the photodiode and this noise is then subtracted from the other PD signal.7. Connect the BNC Out port on the photodiode to the Aux In port on the cyclops.
+
 \newpage
 
 # LED
