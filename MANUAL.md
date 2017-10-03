@@ -543,7 +543,7 @@ supply, etc*. Also, this may be out of date.
 
 ### Other Materials
 A complete device requires several additional components aside from the PCB itself. These
-pre-populated Digikey cart. These can be found on the [device kit bill of materials] (https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
+pre-populated Digikey cart. These can be found on the [device kit bill of materials](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
 
 -   An **extruded aluminum enclosure**, which houses the
     completed board. The enclosure is recommended because the large
@@ -771,8 +771,7 @@ tests outlined in the next section before applying power.*
 ### Required Parts and Tools
 
 Before starting, please ensure you have the following components. Suggested
-part numbers and suppliers are provided on this [google
-spreadsheet](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
+part numbers and suppliers are provided on this [google spreadsheet](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
 In the lists below, numbers (#XX) correspond to the labels on the image below.
 
 1. Assembled Cyclops PCB (#6, 1x)
