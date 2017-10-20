@@ -43,9 +43,9 @@ along with CL.  If not, see <http://www.gnu.org/licenses/>.
 #define CS3               21        //
 
 #define LDAC              24        // Load DAC lines
-//#define LDAC1             25        //
-//#define LDAC2             26        //
-//#define LDAC3             27        //
+#define LDAC1             25        //
+#define LDAC2             26        //
+#define LDAC3             27        //
 
 #define TRIG0             3         // Trigger pins
 #define TRIG1             4         //
@@ -92,15 +92,15 @@ typedef enum
 class Cyclops {
 
 public:
-    // Construct a Cyclops object 
+    // Construct a Cyclops object
     //   chan: Cyclops channel to control
-    //   current_limit_mA: optional current limit for this Cyclops channel 
+    //   current_limit_mA: optional current limit for this Cyclops channel
     Cyclops(Channel chan, float current_limit_mA = 1500);
 
     // Program the DAC output register
     //    voltage: 12-bit integer (0-4095) specify the voltage to program the
     //              DAC with. Voltage is scaled into a 0-5V range.
-    //    returns: 0 on success, 1 otherwise. 
+    //    returns: 0 on success, 1 otherwise.
     int dac_prog_voltage(const uint16_t voltage) const;
 
     // Load the DAC output register to affect a voltage change on the output
@@ -112,7 +112,7 @@ public:
     // to calling dac_prog_voltage() followed by dac_load()
     //    voltage: 12-bit integer (0-4095) specify the voltage to program the
     //              DAC with. Voltage is scaled into a 0-5V range.
-    //    returns: 0 on success, 1 otherwise. 
+    //    returns: 0 on success, 1 otherwise.
     int dac_load_voltage(const uint16_t voltage) const;
 
     // Use the DAC to generate a period waveform

@@ -1,0 +1,40 @@
+The creation of commercial products using the hardware documentation in this
+repository is granted in accordance with the CERN OHL v.1.2, available in the
+top level licenses folder. The licensed (Jonathan P. Newman) requests a good
+faith effort on the part of licensees who sell products based upon cyclops
+hardware documentation to comply with the following actions.
+
+1. Inform the licensor (Jonathan P. Newman) via email of information about the
+type, quantity and dates of production of Products the Licensee has (had)
+manufactured and will sell.  (see section 4.1 of the CERN OHL v.1.2)
+ 
+2. Include the following text, in physical form, along with the shipment of
+products to end users:
+
+Dear Cyclops User,
+
+Profits from the sale of Cyclops kits go to funding the Open Ephys non-profit
+organization. Since I receive no monetary compensation from the sale of these
+devices, it would mean a lot to me if you would consider referencing the
+following paper (for which the Cyclops was developed) in published work that
+makes use of the device:
+
+J.P. Newman, et al. Optogenetic feedback control of neural activity. eLife
+(4:e07192) 2015. doi: 10.7554/eLife.07192
+
+For instance, in your methods section:
+
+"Optical stimuli were delivered using the open-source Cyclops LED driver
+(Newman et al., 2015; www.github.com/jonnew/Cyclops)."
+
+Pull requests and issue submissions are welcome on the github repo
+(https://github.com/jonnew/cyclops) and open ephys forum
+(https://groups.google.com/forum/#!forum/open-ephys). If you have criticisms,
+fixes, suggestions for improvement in the docs etc, please let us know so we
+can implement them ASAP.
+
+Happy stimulating.
+
+Jon Newman MWL@MIT 
+
+

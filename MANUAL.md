@@ -1,14 +1,14 @@
-**Cyclops** is a high-power LED driver that enables precise control of light
-power for optogenetic stimulation. The circuit was developed by Jon Newman
-while in Steve Potter's lab at Georgia Tech in order to complete his thesis
-work, which required the delivery of ultra-precise, continuously time-varying
-light waveforms for optogenetic stimulation \[1,2\]. This was, and still is,
-not possible with commercial hardware for optogenetic stimulation. Since its
-first use, the circuit has been improved in terms of speed, precision,
-programmability, and ease of use.  This document provides construction, usage,
-and performance documentation for the Cyclops LED driver. This document evolves
-with the repository. To view old revisions, checkout tags or old commits using
-their SHA.
+**Cyclops** is a high-power LED/laser diode driver that enables precise control
+of light power. The circuit was developed by Jon Newman while in Steve Potter's
+lab at Georgia Tech in order to complete his thesis work, which required the
+delivery of ultra-precise, continuously time-varying light waveforms for
+optogenetic stimulation \[1,2\]. This was, and still is, not possible with
+commercial hardware for optogenetic stimulation.  Since its first use, the
+circuit has been improved in terms of speed, precision, programmability, and
+ease of use. This document provides construction, usage, and performance
+documentation for the Cyclops LED driver. This document evolves with the
+repository. To view old revisions, checkout tags or old commits using their
+SHA.
 
 <img src="./resources/cyclops_cartoon.png" width="300" />
 
@@ -53,7 +53,6 @@ to hover over figures to see their captions.
 \newpage
 
 # Note From the Maintainer
-
 It has been a long road to design and test the Cyclops, coordinate the
 acquisition of materials, coordinate the manufacturing processes, and to
 distribute the device to the community. This process has been a lot of work but
@@ -70,8 +69,7 @@ devices, it would mean a great deal to me if you would consider referencing the
 following paper (for which the Cyclops was developed) in published work that
 makes use of the device.
 
-> J.P. Newman, M.-f. Fong, D.C. Millard, C.J. Whitmire, G.B. Stanley, S.M.
-> Potter. S.M. Potter. Optogenetic feedback control of neural activity. _eLife_
+> J.P. Newman, et. al. Optogenetic feedback control of neural activity. _eLife_
 > (4:e07192) 2015. doi: 10.7554/eLife.07192
 > [[link]](http://elifesciences.org/content/4/e07192v1)
 
@@ -86,7 +84,7 @@ in the docs etc, please let us know so we can implement them ASAP.
 
 Happy stimulating.
 
-Jon Newman  MWL@MIT  2017-03
+Jon Newman MWL@MIT
 \newpage
 
 # Features
@@ -123,12 +121,14 @@ Jon Newman  MWL@MIT  2017-03
 
 # Performance Specifications
 
+## Dynamic Characteristics
 The following oscilloscope traces give indicates of the circuit's precision and
-speed (Rev. 3.5c) . Note that time series traces are **not** averaged - these
-traces display per-pulse temporal characteristics. Optical characteristics and
-optical feedback signal for the Cyclops driver were provided by a Thorlabs
-PDA36 amplified photodiode set to 0 dB of transimpedance gain. Measurements
-were performed a single Osram golden dragon LED.
+speed. These traces are taken from Rev. 3.5c. Rev 3.6 provides considerable
+improvements but I have not had time to update. Note that time series traces are
+**not** averaged - these traces display per-pulse temporal characteristics.
+Optical characteristics and optical feedback signal for the Cyclops driver were
+provided by a Thorlabs PDA36 amplified photodiode set to 0 dB of transimpedance
+gain. Measurements were performed a single Osram golden dragon LED.
 
 ![Trigger (yellow), current (pink), and light power (blue) traces during
 pulsed operation in current feedback mode. Input waveform is a 1 kHz 0
@@ -169,6 +169,221 @@ flat noise signal over 50 MHz with mean = 1.0V and Vpp = 500 mV into the
 Input signal was was noise, flat over 50 MHz, mean = 1.0V, Vpp = 500
 mV.](./resources/cyclops3.5A_performance-bw.png)
 
+## Head to Head Comparison
+Comparison of Cyclops 3.6 to commercial LED drivers.
+
+<table border="1" width="100%" cellpadding="3" cellspacing="3">
+    <tbody><tr>
+        <td></td>
+        <td align="center"><b><a href="http://www.plexon.com/products/plexbright-ld-1-single-channel-led-driver">Plexon LD-1</a></b></td>
+        <td align="center"><b><a href="http://www.plexon.com/products/plexbright-4-channel-controller-radiant-20">Plexon PlexBright</a><sup>1</sup></b></td>
+        <td align="center"><b><a href="http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=3832&amp;pn=DC4100">Thorlabs DC4100</a></b></td>
+        <td align="center"><b>Cyclops (Current FB)</b></td>
+        <td align="center"><b>Cyclops (Optical FB)</b></td>
+    </tr>
+
+    <tr>
+        <td colspan="6"><b>Speed</b></td>
+    </tr>
+    <tr>
+        <td>10-90% rise time<sup>2</sup> (μs)</td>
+        <td align="center">49</td>
+        <td align="center">76</td>
+        <td align="center">?</td>
+        <td align="center">&#60 0.1</td>
+        <td align="center">0.53</td>
+    </tr>
+    <tr>
+        <td>90-10% fall time<sup>2</sup> (μs)</td>
+        <td align="center">39</td>
+        <td align="center">89</td>
+        <td align="center">?</td>
+        <td align="center">&#60 0.1</td>
+        <td align="center">0.46</td>
+    </tr>
+    <tr>
+        <td>Dead time, worst case<sup>2</sup> (μs)</td>
+        <td align="center">140</td>
+        <td align="center">160</td>
+        <td align="center">?</td>
+        <td align="center">1.0</td>
+        <td align="center">1.0</td>
+    </tr>
+    <tr>
+        <td>Small signal -3dB bandwidth<sup>4</sup> (kHz)</td>
+        <td align="center">10.5</td>
+        <td align="center">?</td>
+        <td align="center">100<sup>3,5</sup></td>
+        <td align="center">&#62 2500</td>
+        <td align="center">&#62 2500</td>
+    </tr>
+
+    <tr>
+        <td colspan="6"><b>Accuracy</b></td>
+    </tr>
+    <tr>
+        <td>Overshoot<sup>2</sup> (%)</td>
+        <td align="center">0</td>
+        <td align="center">0</td>
+        <td align="center">?</td>
+        <td align="center">1 (Depends on LED cabling) </td>
+        <td align="center">1 (Depends on LED and photodetector cabling)</td>
+    </tr>
+    <tr>
+        <td>THD<sup>6</sup> (%)</td>
+        <td align="center">8.29</td>
+        <td align="center">?</td>
+        <td align="center">?</td>
+        <td align="center">8.2</td>
+        <td align="center">0.41</td>
+    </tr>
+    <tr>
+        <td colspan="6"><b>Power</b></td>
+    </tr>
+    <tr>
+        <td>Max current drive (mA)</td>
+        <td align="center">1200</td>
+        <td align="center">1100</td>
+        <td align="center">1000</td>
+        <td colspan="2" align="center">1500</td>
+    </tr>
+
+    <tr>
+        <td colspan="6"><b>Features</b></td>
+    </tr>
+    <tr>
+        <td>Independent LED channels</td>
+        <td align="center">1</td>
+        <td align="center">4</td>
+        <td align="center">4</td>
+        <td align="center" colspan="2"> 1 (modular; can stack up to 4 devices)</td>
+    </tr>
+    <tr>
+        <td>Regulated current output</td>
+        <td align="center">✓</td>
+        <td align="center">✓</td>
+        <td align="center">✓</td>
+        <td align="center">✓</td>
+        <td align="center">N/A</td>
+    </tr>
+    <tr>
+        <td>Regulated optical output</td>
+        <td align="center">✗</td>
+        <td align="center">✗</td>
+        <td align="center">✗</td>
+        <td align="center">N/A</td>
+        <td align="center">✓</td>
+    </tr>
+    <tr>
+        <td>Programmable, hardware-based overcurrent protection</td>
+        <td align="center">✗</td>
+        <td align="center">✗</td>
+        <td align="center">✓</td>
+        <td colspan="2" align="center">✓</td>
+    </tr>
+    <tr>
+        <td>Internal arbitrary waveform generation</td>
+        <td align="center">✗</td>
+        <td align="center">✓</td>
+        <td align="center">✗</td>
+        <td colspan="2" align="center">✓</td>
+    </tr>
+    <tr>
+        <td>Independent DAC for each LED</td>
+        <td align="center">N/A</td>
+        <td align="center">✗</td>
+        <td align="center">N/A</td>
+        <td colspan="2" align="center">✓</td>
+    </tr>
+    <tr>
+        <td>Modular design</td>
+        <td align="center">✗</td>
+        <td align="center">✗</td>
+        <td align="center">✗</td>
+        <td colspan="2" align="center">✓</td>
+    </tr>
+    <tr>
+        <td>Manual pulse</td>
+        <td align="center">✓</td>
+        <td align="center">✗</td>
+        <td align="center">✗</td>
+        <td colspan="2" align="center">✓</td>
+    </tr>
+    <tr>
+        <td>Outputs</td>
+        <td align="center">None</td>
+        <td align="center">None</td>
+        <td align="center">None</td>
+        <td colspan="2" align="center">Reference voltage, LED current, optical power (if measured)</td>
+    </tr>
+    <tr>
+        <td>LCD display</td>
+        <td align="center">✓</td>
+        <td align="center">✗</td>
+        <td align="center">✓</td>
+        <td colspan="2" align="center">✗</td>
+    </tr>
+
+    <tr>
+        <td colspan="6"><b>Programmability</b></td>
+    </tr>
+    <tr>
+        <td>Open-source</td>
+        <td align="center">✗</td>
+        <td align="center">✗</td>
+        <td align="center">✗</td>
+        <td colspan="2" align="center">✓</td>
+    </tr>
+    <tr>
+        <td>Driver</td>
+        <td align="center">N/A</td>
+        <td align="center">"Radiant" software</td>
+        <td align="center"><a href="http://www.ni.com/visa/">NI-VISA</a> based GUI and API</td>
+        <td colspan="2" align="center">Arduino compabile</td>
+    </tr>
+    <tr>
+        <td>Interface</td>
+        <td align="center">N/A</td>
+        <td align="center">GUI/USB cable</td>
+        <td align="center">GUI or API/USB cable</td>
+        <td colspan="2" align="center">Arduino IDE/USB cable</td>
+    </tr>
+    <tr>
+        <td>Waveform generation performance</td>
+        <td align="center">N/A</td>
+        <td align="center">10 kHz aggregate update across channels</td>
+        <td align="center">N/A</td>
+        <td colspan="2" align="center">100 kHz/channel update; evolves with Arduino tools</td>
+    </tr>
+    <tr>
+        <td>OS compatibility</td>
+        <td align="center">N/A</td>
+        <td align="center">Windows</td>
+        <td align="center">Windows</td>
+        <td colspan="2" align="center">Windows, Linux, Mac</td>
+    </tr>
+
+    <tr>
+        <td><b>Cost</b></td>
+        <td align="center"><b>$700.00</b></td>
+        <td align="center"><b>$5300.00</b></td>
+        <td align="center"><b>$3059.0<sup>7</sup></b></td>
+        <td align="center"><b>~$160.00</b><sup>8</sup></td>
+        <td align="center"><b>~$200.00<sup>8,9</sup></b></td>
+    </tr>
+</tbody></table>
+
+<ol>
+<li>Essential drive circuit consists of an <a href="http://www.opalkelly.com/products/xem6001/">Opal-Kelly XEM6001 FPGA Dev board</a> tied to 4 commercially available <a href="http://www.recom-power.com/pdf/Lightline/RCD-24.pdf">buck converters from Recon</a>.</li>
+<li>Test signal: 500 Hz, fully off to on 50% duty-cycle square wave resulting in 1A peak to peak through LED.</li>
+<li>Test signal: 1 kHz 500 mA offset, 100 mA peak-to-peak sine wave.</li>
+<li>Not measured on the bench top. Taken from manufacturer's specifications.</li>
+<li>Bandwidth threshold (e.g. -3 dB) was not specified. Applies to sine wave only.</li>
+<li>Test signal: 1 kHz 500 mA offset, 1A peak-to-peak sine wave.</li>
+<li>Includes the cost of the <a href="http://www.thorlabs.com/thorproduct.cfm?partnumber=DC4100-HUB">DC4100-HUB</a> which is required to drive four LEDs.</li>
+<li>Approximate materials cost.</li>
+<li>Increased cost compared to current feedback mode is due to amplified photodiode (design included with Cyclops repository).</li>
+</ol>
 \FloatBarrier
 \newpage
 
@@ -532,7 +747,7 @@ gerber files located in [./cyclops/device/stencil/](./cyclops/stencil/). If you
 plan to hand solder the board, or don't mind dispensing solder paste yourself,
 then you do not need to purchase these stencils.
 
-### TODO: PCB Bill of Materials 
+### TODO: PCB Bill of Materials
 TODO: Google doc update!
 
 Fully assembled cyclops PCBs can be purchased from Circuit Hub [Cyclops on
@@ -1093,39 +1308,54 @@ functionality.
 \FloatBarrier
 \newpage
 
+# Future Improvements
+Some ideas for potential future improvements:
+
+- [ ] Create an fiber coupled LED interface with integrated optical power
+  measurements
+  - [In progress](./experimental/photodiode/)
+  - [Bilateral, commutated LED](./resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
+- [ ] High side current sense
+
+\FloatBarrier
+\newpage
+
 # License
 
 ## Hardware Licensing
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
-alt="Creative Commons License" style="border-width:0"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span
-xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Cyclops
-LED Driver</span> by <a xmlns:cc="http://creativecommons.org/ns#"
-href="https://github.com/jonnew/cyclops" property="cc:attributionName"
-rel="cc:attributionURL">Jonathan P. Newman</a> is licensed under a
-<a
-rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
-Commons Attribution-NonCommercial-ShareAlike 4.0 International
-License</a>.<br
-/>Based on a work at <a xmlns:dct="http://purl.org/dc/terms/"
-href="https://github.com/jonnew/cyclops"
-rel="dct:source">https://github.com/jonnew/cyclops</a>.
+Copyright Jonathan P. Newman 2017.
+
+This documentation describes Open Hardware and is licensed under the
+CERN OHL v. 1.2.
+
+You may redistribute and modify this documentation under the terms of the CERN
+OHL v.1.2. (http://ohwr.org/cernohl). This documentation is distributed WITHOUT
+ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY
+QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN OHL v.1.2 for
+applicable conditions
+
+__Note__: This license applies to hardware designs and documentation which reside
+in the 'device', 'experimental', 'resources' folders of this repository along
+with information in 'MANUAL.md' and 'MANUAL.pdf'
 
 ## Software Licensing
-Copyright (c) Jonathan P. Newman All right reserved.
+Copyright (c) Jonathan P. Newman 2017. All right reserved.
 
 The code associated with the Cyclops project is free software: you can
-redistribute it and/or modify it under the terms of the GNU General
-Public License as published by the Free Software Foundation, either
-version 3 of the License, or (at your option) any later version.
+redistribute it and/or modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
 
-The code associated with the Cyclops project is distributed in the hope
-that it will be useful, but WITHOUT ANY WARRANTY; without even the
-implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-See the GNU General Public License for more details.
+The code associated with the Cyclops project is distributed in the hope that it
+will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+Public License for more details.
 
-You should have received a copy of the GNU General Public License along
-with this code. If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License along with
+this code.  If not, see <http://www.gnu.org/licenses/>.
+
+__Note__: This license applies to software/fireware source code which resides in in
+the 'lib' folder of this repository
 
 \FloatBarrier
 \newpage

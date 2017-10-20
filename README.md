@@ -1,6 +1,6 @@
 ## Cyclops LED Driver
 Precision, wide-bandwidth current source with optional optical feedback mode
-for driving high-power LEDs.
+for driving high-power LEDs and laser diodes.
 
 ### Documentation
 Documentation and usage information are maintained within this repository in
@@ -8,37 +8,25 @@ Documentation and usage information are maintained within this repository in
 etc., please direct them toward the [Open Ephys
 forum](https://groups.google.com/forum/#!forum/open-ephys).
 
-### TODO
-**Revision 3.6**
-- [ ] Get [MANUAL.md](./MANUAL.md) in working order
-- [ ] Create an fiber coupled LED interface with integrated optical power
-  measurements
-  - [In progress](./experimental/photodiode/)
-  - [Bilateral, commutated LED](./resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
-- [ ] High side current sense
-- [ ] Arduino gets replaced with a
-  [Teensy](https://www.pjrc.com/teensy/teensy31.html).
-- [ ] Indication light pipes get replaced with indicator modules, like
-  [these](http://www.digikey.com/product-detail/en/lumex-opto-components-inc/SSF-LXH305ID-TR/67-1374-2-ND/229162)
-- [ ] Schottky between MCU VIn and board power to prevent LEDs from turning on when USB is plugged in.
 
 #### Hardware Licensing
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img
-alt="Creative Commons License" style="border-width:0"
-src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span
-xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Cyclops LED
-Driver</span> by <a xmlns:cc="http://creativecommons.org/ns#"
-href="https://github.com/jonnew/cyclops" property="cc:attributionName"
-rel="cc:attributionURL">Jonathan P. Newman</a> is licensed under a <a
-rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-Commons Attribution-ShareAlike 4.0 International License</a>.<br
-/>Based on a work at <a xmlns:dct="http://purl.org/dc/terms/"
-href="https://github.com/jonnew/cyclops"
-rel="dct:source">https://github.com/jonnew/cyclops</a>.
+Copyright Jonathan P. Newman 2017.
 
+This documentation describes Open Hardware and is licensed under the
+CERN OHL v. 1.2.
+
+You may redistribute and modify this documentation under the terms of the CERN
+OHL v.1.2. (http://ohwr.org/cernohl). This documentation is distributed WITHOUT
+ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY
+QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN OHL v.1.2 for
+applicable conditions
+
+__Note__: This license applies to hardware designs and documentation which reside
+in the 'device', 'experimental', 'resources' folders of this repository along
+with information in 'MANUAL.md' and 'MANUAL.pdf'
 
 #### Software Licensing
-Copyright (c) Jonathan P. Newman All right reserved.
+Copyright (c) Jonathan P. Newman 2017. All right reserved.
 
 The code associated with the Cyclops project is free software: you can
 redistribute it and/or modify it under the terms of the GNU General Public
@@ -52,3 +40,6 @@ Public License for more details.
 
 You should have received a copy of the GNU General Public License along with
 this code.  If not, see <http://www.gnu.org/licenses/>.
+
+__Note__: This license applies to software/fireware source code which resides in in
+the 'lib' folder of this repository 
