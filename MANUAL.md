@@ -181,7 +181,6 @@ Comparison of Cyclops 3.6 to commercial LED drivers.
         <td align="center"><b>Cyclops (Current FB)</b></td>
         <td align="center"><b>Cyclops (Optical FB)</b></td>
     </tr>
-
     <tr>
         <td colspan="6"><b>Speed</b></td>
     </tr>
@@ -217,7 +216,6 @@ Comparison of Cyclops 3.6 to commercial LED drivers.
         <td align="center">&#62 2500</td>
         <td align="center">&#62 2500</td>
     </tr>
-
     <tr>
         <td colspan="6"><b>Accuracy</b></td>
     </tr>
@@ -247,7 +245,6 @@ Comparison of Cyclops 3.6 to commercial LED drivers.
         <td align="center">1000</td>
         <td colspan="2" align="center">1500</td>
     </tr>
-
     <tr>
         <td colspan="6"><b>Features</b></td>
     </tr>
@@ -323,7 +320,6 @@ Comparison of Cyclops 3.6 to commercial LED drivers.
         <td align="center">✓</td>
         <td colspan="2" align="center">✗</td>
     </tr>
-
     <tr>
         <td colspan="6"><b>Programmability</b></td>
     </tr>
@@ -362,7 +358,6 @@ Comparison of Cyclops 3.6 to commercial LED drivers.
         <td align="center">Windows</td>
         <td colspan="2" align="center">Windows, Linux, Mac</td>
     </tr>
-
     <tr>
         <td><b>Cost</b></td>
         <td align="center"><b>$700.00</b></td>
