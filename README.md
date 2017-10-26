@@ -9,7 +9,7 @@ etc., please direct them toward the [Open Ephys
 forum](https://groups.google.com/forum/#!forum/open-ephys).
 
 
-#### Hardware Licensing
+### Hardware Licensing
 Copyright Jonathan P. Newman 2017.
 
 This documentation describes Open Hardware and is licensed under the
@@ -25,7 +25,7 @@ __Note__: This license applies to hardware designs and documentation which resid
 in the 'device', 'experimental', 'resources' folders of this repository along
 with information in 'MANUAL.md' and 'MANUAL.pdf'
 
-#### Software Licensing
+### Software Licensing
 Copyright (c) Jonathan P. Newman 2017. All right reserved.
 
 The code associated with the Cyclops project is free software: you can
