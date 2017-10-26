@@ -689,16 +689,9 @@ If you have questions during device assembly, please direct them to the
 so that others may benefit. Pull requests improving this documentation
 are welcome.
 
-This guide provides instructions for assembling a Cyclops device  For more
-details on performance specifications and usage, please have a look
-at the complete manual available in PDF or markdown form on the Github
-repository.
-
-> https://github.com/jonnew/Cyclops/blob/master/MANUAL.md
-> https://github.com/jonnew/Cyclops/blob/master/MANUAL.pdf
-
-If you have any questions, do not hesitate to post them to the open-ephys
-mailing list:
+This portion of the manual provides instructions for assembling a Cyclops
+device. If you have any questions, do not hesitate to post them to the 
+open-ephys mailing list:
 
 > https://groups.google.com/forum/#!forum/open-ephys
 
