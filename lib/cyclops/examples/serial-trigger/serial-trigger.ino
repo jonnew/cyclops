@@ -64,7 +64,7 @@ void loop()
         while (n < num_pulses) {
 
             cyclops0.dac_generate_waveform(
-                output_pulse, pulse_seq_length, 1000 * pulse_width_msec);
+                1000 * pulse_width_msec, output_pulse, pulse_seq_length);
             delay(pulse_period_msec - pulse_width_msec);
             n++;
         }

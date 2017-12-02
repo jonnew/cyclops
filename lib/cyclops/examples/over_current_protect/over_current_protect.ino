@@ -57,11 +57,12 @@ void loop()
     float now = ((float)millis()) / 1000.0;
     unsigned int sine_volt
         = (unsigned int)(4095.0 * (0.5 * sin(freq_rad * now) + 0.5));
-    const int rand_volt = random(0, 4096);
 
-    // Program the DAC registers with the random voltages
+    // Cyclops0 produces slow sine wave
     cyclops0.dac_prog_voltage(sine_volt);
-    cyclops1.dac_prog_voltage(rand_volt);
+    
+    // Cyclops1 produces random output
+    cyclops1.dac_prog_voltage(random(0, 4095));
 
     // Update the outputs simulateously.
     Cyclops::dac_load();

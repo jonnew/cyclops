@@ -31,8 +31,14 @@ uint16_t output_pulse[] = {4095, 0};
 
 void setup()
 {
+    // Start the device
+    Cyclops::begin();
+
+    // Zero out the DAC
+    cyclops0.dac_load_voltage(0);
+
     // Enter user-defined function to run on TRIG HIGH
-    cyclops0.set_trigger(send_pulse);
+    cyclops0.set_trigger(send_pulse, RISING);
 }
 
 void loop()
@@ -44,5 +50,5 @@ void loop()
 void send_pulse()
 {
     cyclops0.dac_generate_waveform(
-        output_pulse, pulse_seq_length, pulse_width_us);
+        pulse_width_us, output_pulse, pulse_seq_length);
 }

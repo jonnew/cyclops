@@ -599,14 +599,14 @@ public:
     int dac_load_voltage(const uint16_t voltage) const;
 
     // Use the DAC to generate a period waveform
-    //    voltage:          Pointer to array of 12-bit integers (0-4095)
-    //                      specifying the voltage sequence to program the DAC
-    //                      with. Output voltage is scaled into a 0-5V range.
-    //    length:           Length of voltage sequence.
     //    sample_period_us: Sample period of voltage sequence in microseconds.
-    void dac_generate_waveform(const uint16_t voltage[],
-                               const uint16_t length,
-                               const uint32_t sample_period_us) const;
+    //    voltage: Pointer to array of 12-bit integers (0-4095) specify the
+    //             voltage sequence to program the DAC with. Voltage is scaled
+    //             into a 0-5V range.
+    //    length: Length of voltage sequence.
+    void dac_generate_waveform(const uint32_t sample_period_us,
+                               const uint16_t *voltage,
+                               uint16_t length) const;
 
     // Get an LED current measurement in milliamps
     //    returns: LED current measurement in milliamps.

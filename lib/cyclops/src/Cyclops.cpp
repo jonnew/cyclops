@@ -52,9 +52,9 @@ void Cyclops::check_current()
         const float mA = mA_conv_coeff * (float)v;
 
         if (mA > _oc_limit_lut[i]) {
-            digitalWrite(_oc_lut[i], LOW); // Switch off the input
+            digitalWriteFast(_oc_lut[i], LOW); // Switch off the input
         } else
-            digitalWrite(_oc_lut[i], HIGH); // Allow input
+            digitalWriteFast(_oc_lut[i], HIGH); // Allow input
     }
 }
 
@@ -63,19 +63,19 @@ Cyclops::Cyclops(Channel chan, float current_limit_mA)
 {
     // Over current
     pinMode(_oc_lut[channel], OUTPUT);
-    digitalWrite(_oc_lut[channel], HIGH);
+    digitalWriteFast(_oc_lut[channel], HIGH);
 
     // Trigger input
     pinMode(_trig_lut[channel], INPUT);
-    digitalWrite(_trig_lut[channel], LOW); // Pull down
+    digitalWriteFast(_trig_lut[channel], LOW); // Pull down
 
     // CS
     pinMode(_cs_lut[channel], OUTPUT);
-    digitalWrite(_cs_lut[channel], HIGH);
+    digitalWriteFast(_cs_lut[channel], HIGH);
 
     // Configure load-DAC line
     pinMode(LDAC, OUTPUT);
-    digitalWrite(LDAC, HIGH);
+    digitalWriteFast(LDAC, HIGH);
 
     // Current read analog input
     pinMode(_vi_lut[channel], INPUT);
@@ -108,12 +108,13 @@ float Cyclops::measure_current(void) const
 }
 
 // TODO: User timer interupt for better accuracy
-void Cyclops::dac_generate_waveform(const uint16_t voltage[],
-                                    const uint16_t length,
-                                    const uint32_t sample_period_us) const
+void Cyclops::dac_generate_waveform(const uint32_t sample_period_us,
+                                    const uint16_t *voltage,
+                                    uint16_t length) const
+
 {
     for (uint16_t i = 0; i < length; i++) {
-        dac_load_voltage(voltage[i]);
+        dac_load_voltage(*(voltage + i));
         delayMicroseconds(sample_period_us);
     }
 }
@@ -125,20 +126,20 @@ int Cyclops::dac_prog_voltage(const uint16_t voltage) const
 
     // Create data packet and send
     uint16_t spi_out = DAC_CONF_ACTIVE | (voltage & 0x0fff);
-    digitalWrite(_cs_lut[channel], LOW);
+    digitalWriteFast(_cs_lut[channel], LOW);
     SPI.transfer(spi_out >> 8 & 0xff);
     SPI.transfer(spi_out >> 0 & 0xff);
-    digitalWrite(_cs_lut[channel], HIGH);
+    digitalWriteFast(_cs_lut[channel], HIGH);
 
     return 0;
 }
 
 void Cyclops::dac_load(void)
 {
-    digitalWrite(LDAC, LOW);
+    digitalWriteFast(LDAC, LOW);
     __asm__("nop\n\t");
     __asm__("nop\n\t");
-    digitalWrite(LDAC, HIGH);
+    digitalWriteFast(LDAC, HIGH);
 }
 
 int Cyclops::dac_load_voltage(const uint16_t voltage) const
