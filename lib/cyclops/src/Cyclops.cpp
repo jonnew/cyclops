@@ -113,10 +113,12 @@ void Cyclops::dac_generate_waveform(const uint32_t sample_period_us,
                                     uint16_t length) const
 
 {
-    for (uint16_t i = 0; i < length; i++) {
+	uint16_t i;
+    for (i = 0; i < length - 1; i++) {
         dac_load_voltage(*(voltage + i));
         delayMicroseconds(sample_period_us);
     }
+	dac_load_voltage(*(voltage + i));
 }
 
 int Cyclops::dac_prog_voltage(const uint16_t voltage) const
