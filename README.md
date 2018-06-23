@@ -4,10 +4,9 @@ for driving high-power LEDs and laser diodes.
 
 ### Documentation
 Documentation and usage information are maintained within this repository in
-[MANUAL.md](./MANUAL.md). If you have questions concerning usage, performance,
+[MANUAL.pdf](./MANUAL.pdf). If you have questions concerning usage, performance,
 etc., please direct them toward the [Open Ephys
 forum](https://groups.google.com/forum/#!forum/open-ephys).
-
 
 ### Hardware Licensing
 Copyright Jonathan P. Newman 2017.
@@ -42,4 +41,4 @@ You should have received a copy of the GNU General Public License along with
 this code.  If not, see <http://www.gnu.org/licenses/>.
 
 __Note__: This license applies to software/fireware source code which resides in in
-the 'lib' folder of this repository 
+the 'lib' folder of this repository
