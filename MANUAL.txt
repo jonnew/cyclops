@@ -125,14 +125,14 @@ the 'lib' folder of this repository
 ## Multiple stimulus generation options
 - External stimulus sequencer
 - External digital trigger
-  - TTL logic level
+    - TTL logic level
 - External analog waveform generator
-  - 0-5V analog signals
+    - 0-5V analog signals
 - Internal 12-bit DAC
-  - Synchronized across up to 4 drivers
-  - Arduino library
-  - Programmable triggering logic
-  - Respond to USB input
+    - Synchronized across up to 4 drivers
+    - Arduino library
+    - Programmable triggering logic
+    - Respond to USB input
 
 \newpage
 
@@ -292,14 +292,12 @@ commercial LED drivers.
 13. Includes the cost of the
     [DC4100-HUB](http://www.thorlabs.com/thorproduct.cfm?partnumber=DC4100-HUB)
     which is required to drive four LEDs.
-14. Cost of fully assembed device from [Open Ephys Store](http://www.open-ephys.org/store/cyclops-led-driver).
-    Parts cost is USD~\$170.00.
+14. Cost of fully assembed device from [Open Ephys
+    Store](http://www.open-ephys.org/store/cyclops-led-driver). Parts cost is
+    ~\$170.00.
 \newpage
 
 # Usage {#usage}
-
-![Cyclops physical interface (Rev. 3.6).](./resources/device3.6_io-diagram.png){#fig-panels}
-\FloatBarrier
 
 The cyclops is a device that is capable of transforming voltage signals (e.g.
 sine waves, square pulses, etc.) into optical signals from high-power LEDs.
@@ -321,25 +319,24 @@ switches, dials, and connectors corresponding to verbal or iconic descriptions
 device settings.
 
 ## Control and IO Definitions
-Please refer to the above [control panel diagram](#fig-panels) while reading
-this definitions.
+Please refer to the [IO diagram](#fig-io) while reading these definitions.
 
-### `REF OUT`
+**`REF OUT`: **
 When the switch is set to SYNC, this output is set to 5V when the LED is on
 (>10 mA) and 0 volts when off. When the switch is set to V. REF, this output
 will copy the reference target signal that the current source is attempts to
 follow _after_ it has been subjected to the GAIN setting. In constant current
 mode, this means that the voltage at this pin specifies 1 A/V.
 
-### `LED CURR.`
+**`LED CURR.`: **
 The voltage on this output reflects to the current passed by
 the load (LED or laser diode) at 1 V/A.
 
-### `AUX. OUT`
+**`AUX. OUT`: **
 This output provides a buffered version of the signal at the
 AUX. IN connector.
 
-### `SIGNAL IN`
+**`SIGNAL IN`: **
 When the INPUT SELECT toggle switch is set to SIG. IN, and the
 local switch is set to the square, triangle, sine icon this input is can be
 used to provide a target voltage to drive current through the load. This
@@ -347,78 +344,84 @@ voltage is always subject to the position of the GAIN dial. When the local
 switch is set to 5V CONT, 5V is generated internally and constantly as a
 reference to drive the load and, again, is subject to the GAIN setting.
 
-### `TEST`
+**`TEST`: **
 This push button can be used to temporarly tie the SIGNAL IN line to
 an internal 5V reference. This reference is then subject to the current GAIN
 setting.
 
-### `GAIN`
+**`GAIN`: **
 Specifies the transimpedance gain between the reference voltage at
 SIGNAL IN or produced by the DAC and the current sourced to the load. During
 constant current operation, the gain is given by:
 
 $$
-Load\ Current = Dial\ Position * \frac{Signal\ in\ Voltage }{5V}
+Load\ Current = Dial\ Position * \frac{SIGNAL\ IN\ Voltage }{5V}
 $$
 
 During AUX F.B. operation, the gain depends on how the optical to AUX signal
 conversion gain.
 
-### `INPUT SELECT`
+**`INPUT SELECT`: **
 Select the source of the reference voltage. SIG. IN selects
 the SIGNAL IN connector. OFF ties the reference voltage to 0 so that no
 current is driven through the load. DAC indicates that the onboard DAC should
 be used in concert with the integrated Teensy 3.2 to generate a reference
 voltage waveform.
 
-`COMP`: This LED indicates that overcurrent compensation is being performed
+**`COMP`: **
+This LED indicates that overcurrent compensation is being performed
 by the integrated microcontroller.
 
-`LED ON`: This LED indicates that the load is passing more than 10 mA. I
+**`LED ON`: **
+This LED indicates that the load is passing more than 10 mA. I
 
-`>1A`: This LED indicates that the load is passing more than 1A, a typical
+**`>1A`: **
+This LED indicates that the load is passing more than 1A, a typical
 upper limit for high power LEDs.
 
-### `POWER`
+![Cyclops panel defintions (Rev. 3.6).](./resources/device3.6_io-diagram.png){#fig-io}
+\FloatBarrier
+
+**`POWER`: **
 This LED indicates that the device has power.
 
-### `TRIG`
+**`TRIG`: **
 This input provides GPIO access to the onboard microcontroller. It
 can be used as an input or output depending on how the microcontroller is
 programmed. It has a bi-directional logic level converter. Output will be 5V
 logic high. 5V or 3.3V logic input can be used.
 
-### `AUX. IN`
+**`AUX. IN`: **
 Auxiliary feedback signal for use in auxiliary (e.g. optical)
 feedback mode. This pin is pulled high when not in use which protects the load
 if the user accidentally switches the device to AUX. feedback mode during
 operation.
 
-### `USB`
+**`USB`: **
 Programming and serial access to the onboard Teensy 3.2.
 
-### `EXPANSION A`
+**`EXPANSION A`: **
 0.1" pitch, IDC expansion header. Exposes several signals,
 power rails and LED outputs. This can be used to create and integrated load
 /photodiode amplifier, for instance.
 
-### `LED OUT`
+**`LED OUT`: **
 Main LED or laser diode output. Standard banana connectors are
 used.
 
-### `F.B. MODE`
+**`F.B. MODE`: **
 Slide switch used to toggle the device between constant current
 (CURR) and auxilary (AUX) feedback modes. See the next section for a detailed
 explaination.
 
-### `B.W. SELECT`
+**`B.W. SELECT`: **
 Bandwidth selection switch. When in the LIM position, the
 bandwidth of the device is limited and one can expect ~1 usec 1A rise and fall
 times. If long cables (> 0.5 m) are used between the device and the load, this
 option must be used to ensure device stability. When set to FULL, the device
 operates at full bandwidth with rise times in the 10s of nanoseconds.
 
-### `POWER`
+**`POWER`: **
 Power connector. Center positive, 15V supply with >2A current
 sourcing capabilities. Batteries can be used but must be capable of handing
 large load transients to maintain device stability.
@@ -514,51 +517,58 @@ behavior of each of these options is dependent on the feedback mode
 being used. The behavior of each input option is described in relation
 to the feedback mode of the driver.
 
-1.  ![Test button.](./resources/test_button_icon.png) The test button is
-    always available and will override all other input modes. Using the
-    `TEST` button the behavior of the circuit is:
-
--   ![Current feedback mode.](./resources/curr_switch_icon.png) Source
-    the current specified by the `MAX CURR.` dial.
--   ![Auxilary feedback mode.](./resources/aux_switch_icon.png) Generate
-    the optical power specified by the h \* mW level that is specified
-    by the `MAX POWER` dial. The intensity of the LED will be dependent
-    on the auxiliary feedback signal used which defines the
-    'h' parameter.
-
-2.  ![EXT mode.](./resources/ext_toggle_icon.png) External input mode is
-    engaged when the `SOURCE` switch is moved to the `EXT` position and
-    user supplied voltage waveforms are present at the `EXT` BNC input.
-    If the user attempts to supply more than 5V to the `EXT` input, the
-    circuit will clamp the input signal to 5V. Using `EXT` mode, the
-    behavior of the circuit is:
-
--   ![Current feedback mode.](./resources/curr_switch_icon.png) Source
-    the current specified by (EXT Voltage / 5V) \* MAX CURR.
--   ![Auxilary feedback mode.](./resources/aux_switch_icon.png) Generate
-    the optical power specified by (EXT Voltage/5V) \* h \* mW. The
-    intensity of the LED will be dependent on the auxiliary feedback
-    signal used which defines the 'h' parameter.
-
-3.  ![DAC mode.](./resources/dac_toggle_icon.png) The internal digital
-    to analog converter (DAC) is engaged when the `SOURCE` switch is
-    moved to the `DAC` position and can be used to generate
-    pre-programmed waveforms and waveform sequences triggered by a
-    digital pulse to the `TRIG` input. This feature relies on optional
-    Arduino installation and programming the device using its API. Using
-    the `DAC` mode, the behavior of the circuit is:
-
--   ![Current feedback mode.](./resources/curr_switch_icon.png) Source
-    the current specified by (DAC Voltage / 5V) \* MAX CURR.
--   ![Auxilary feedback mode.](./resources/aux_switch_icon.png) Generate
-    the optical power specified by (DAC Voltage/5V) \* h \* mW. The
-    intensity of the LED will be dependent on the auxiliary feedback
-    signal used which defines the 'h' parameter.
+1. ![Test button.](./resources/test_button_icon.png): The test button is
+   always available and will override all other input modes. Using the
+   `TEST` button the behavior of the circuit is:
+    - ![Current feedback mode.](./resources/curr_switch_icon.png): Source
+      the current specified by the `GAIN` dial.
+    - ![Auxilary feedback mode.](./resources/aux_switch_icon.png): Generate
+      the optical power specified by the _h_ \* mW level that is specified
+      by the `GAIN` dial. The intensity of the LED will be dependent
+      on the auxiliary feedback signal used which defines the
+      'h' parameter.
+2. ![EXT mode.](./resources/ext_toggle_icon.png): External input mode is
+   engaged when the `INPUT SELECT` switch is moved to the `EXT` position and
+   user supplied voltage waveforms are present at the `EXT` BNC input.
+   If the user attempts to supply more than 5V to the `EXT` input, the
+   circuit will clamp the input signal to 5V. Using `EXT` mode, the
+   behavior of the circuit is:
+    - ![Current feedback mode.](./resources/curr_switch_icon.png): Source
+      the current specified by: 
+      $$
+      Load\ Current = GAIN\ Position * \frac{SIGNAL\ IN\ Voltage }{5V}
+      $$
+    - ![Auxilary feedback mode.](./resources/aux_switch_icon.png): Generate
+      the optical power specified by:
+      $$
+      Power = GAIN\ Position * h * \frac{SIGNAL\ IN\ Voltage }{5V}
+      $$
+      The intensity of the LED will be dependent on the auxiliary feedback
+      gain which defines the _h_ parameter.
+3. ![DAC mode.](./resources/dac_toggle_icon.png): The internal digital
+   to analog converter (DAC) is engaged when the `INPUT SELECT` switch is
+   moved to the `DAC` position and can be used to generate
+   pre-programmed waveforms and waveform sequences triggered by a
+   digital pulse to the `TRIG` input. This feature relies on optional
+   Arduino installation and programming the device using the [API](#sec-api). Using
+   the `DAC` mode, the behavior of the circuit is:
+    - ![Current feedback mode.](./resources/curr_switch_icon.png) Source
+      the current specified by:
+      $$
+      Load\ Current = GAIN\ Position * \frac{DAC\ Voltage }{5V}
+      $$
+    - ![Auxilary feedback mode.](./resources/aux_switch_icon.png) Generate
+      the optical power specified by:
+      $$
+      Power = GAIN\ Position * h * \frac{DAC\ Voltage }{5V}
+      $$
+      The intensity of the LED will be dependent on the auxiliary feedback
+      signal used which defines the 'h' parameter.
 
 \FloatBarrier
 \newpage
 
-## Using the onboard microcontroller
+## Using the Onboard Microcontroller {#sec-api}
 Cyclops devices include an onboard, Arudino-compatible microcontroller board
 (Teensy 3.2) that can:
 
