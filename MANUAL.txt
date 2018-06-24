@@ -1,7 +1,7 @@
 ---
 title: Cyclops LED/Laser Diode Driver User Manual
 author:
-    - Jonathan P. Newman ([jonnew](http://www.mit.edu/~jpnewman/))
+    - Jonathan P. Newman (github [jonnew](http://www.mit.edu/~jpnewman/))
 date: \today{}
 geometry: margin=2cm
 header-includes:
@@ -18,6 +18,8 @@ reference-section-title: true
 
 \newpage
 
+![](./resources/cyclops_cartoon.png) \
+
 **Cyclops** is a high-power LED/laser diode driver that enables precise control
 of light power. The circuit was developed by Jon Newman while in Steve Potter's
 lab at Georgia Tech in order to complete his thesis work, which required the
@@ -28,8 +30,6 @@ circuit has been improved in terms of speed, precision, programmability, and
 ease of use. This document provides construction, usage, and performance
 documentation for the Cyclops LED driver. This document evolves with the
 repository. To view old revisions, checkout tags or old commits using their SHA.
-
-![](./resources/cyclops_cartoon.png) \
 
 \FloatBarrier
 \newpage
@@ -139,13 +139,16 @@ the 'lib' folder of this repository
 # Performance Specifications
 
 ## Dynamic Characteristics
-The following oscilloscope traces give indicates of the circuit's precision and
-speed. These traces are taken from Rev. 3.5c. Rev 3.6 provides considerable
+The following oscilloscope traces give indications of the circuit's precision
+and speed. These traces are taken from Rev. 3.5c. Rev 3.6 provides considerable
 improvements but I have not had time to update. Note that time series traces
 are **not** averaged - these traces display per-pulse temporal characteristics.
 Optical characteristics and optical feedback signal for the Cyclops driver were
 provided by a Thorlabs PDA36 amplified photodiode set to 0 dB of transimpedance
-gain. Measurements were performed a single Osram golden dragon LED.
+gain. Measurements were performed using a single blue Osram golden dragon LED.
+The current-feedback mode -3dB bandwidth was determined by applying a flat
+noise signal over 50 MHz with mean = 1.0V and Vpp = 500 mV into the `SIGNAL IN`
+port with maximal current gain. It occurs at around 2.3 MHz.
 
 ![Trigger (yellow), current (pink), and light power (blue) traces during
 pulsed operation in current feedback mode. Input waveform is a 1 kHz 0
@@ -159,6 +162,12 @@ image.](./resources/cyclops3.5A_performance-750mA-rise.png)
 ![Zoomed traces showing waveform 10-90% fall times. Optical fall time
 statistics are shown at the bottom of the
 image.](./resources/cyclops3.5A_performance_750mA-fall.png)
+
+![Optical bandwidth in current feedback mode. -3dBm occurs at \~2.3 MHz.
+Input signal was was noise, flat over 50 MHz, mean = 1.0V, Vpp = 500
+mV.](./resources/cyclops3.5A_performance-bw.png)
+
+\FloatBarrier
 
 The following traces are the same as the previous ones except that the
 amplified photodiode was used to provide optical feedback. The slowdown
@@ -177,14 +186,6 @@ image.](./resources/cyclops3.5A_performance-750mA-rise-optical-fb.png)
 ![Zoomed traces showing waveform 10-90% fall times in optical feedback
 mode. Optical fall time statistics are shown at the bottom of the
 image.](./resources/cyclops3.5A_performance_750mA-fall-optical-fb.png)
-
-The current-feedback mode -3dB bandwidth was determined by applying a
-flat noise signal over 50 MHz with mean = 1.0V and Vpp = 500 mV into the
-`EXT` port with maximal current gain. It occurs at around 2.5 MHz.
-
-![Optical bandwidth in current feedback mode. -3dBm occurs at \~2.4 MHz.
-Input signal was was noise, flat over 50 MHz, mean = 1.0V, Vpp = 500
-mV.](./resources/cyclops3.5A_performance-bw.png)
 
 \newpage
 
@@ -852,36 +853,30 @@ gerber files located in [./cyclops/device/stencil/](./cyclops/stencil/). If you
 plan to hand solder the board, or don't mind dispensing solder paste yourself,
 then you do not need to purchase these stencils.
 
-### TODO: PCB Bill of Materials
-TODO: Google doc update!
-
-*Note that these parts are for a single PCB without the enclosure, power
-supply, etc*. Also, this may be out of date.
+### PCB Bill of Materials
+The PCB bill of materials is availabe on [this google sheet](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit#gid=1630015426)
 
 ### Other Materials
 A complete device requires several additional components aside from the
-assembled PCB itself. These pre-populated Digikey cart. These can be found on
-the [device kit bill of
-materials](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit?usp=sharing).
-
--   An **extruded aluminum enclosure**, which houses the
-    completed board. The enclosure is recommended because the large
-    voltages and current transients used to drive high power LEDs can
-    cause capacitive and inductive interference with nearby
-    recording equipment. Acrylic front and rear panels can be purchased
-    from Ponoko using the links supplied in the BOM. The instructions
-    below show how these plastic pieces are modified to provide proper
-    electrical shielding.
--   **Custom heatsink**, a waterjet-cut aluminum heatsink. Designs can be found
-    in the [heatsink](heatsink/alu-heatsink.PDF) folder.
--   **Teensy 3.2 MCU**, a 32-bit microcontroller development board. Can be
-    purchased [here](https://www.pjrc.com/store/teensy32.html)
--   An **M8-4 connector** (Optional). This is a rather expensive connector that
-    allows cyclops to drive [Thorlabs LED
-    modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206)
-    or [Doric LED
-    modules](http://doriclenses.com/life-sciences/243-led-modules).
-
+assembled PCB itself. These pre-populated Digikey cart. These can be found
+following the PCB parts on [this google
+sheet](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit#gid=765977278).
+These parts include
+- An **extruded aluminum enclosure**, which houses the completed board. The
+  enclosure is recommended because the large voltages and current transients
+  used to drive high power LEDs can cause capacitive and inductive interference
+  with nearby recording equipment. Acrylic front and rear panels can be
+  purchased from Ponoko using the links supplied in the BOM. The instructions
+  below show how these plastic pieces are modified to provide proper electrical
+  shielding.
+- **Custom heatsink**, a waterjet-cut aluminum heatsink. Designs can be found
+  in the [heatsink](heatsink/alu-heatsink.PDF) folder.
+- **Teensy 3.2 MCU**, a 32-bit microcontroller development board. Can be
+  purchased [here](https://www.pjrc.com/store/teensy32.html)
+- An **M8-4 connector** (Optional). This is a rather expensive connector that
+  allows cyclops to drive [Thorlabs LED
+  modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206) or
+  [Doric LED modules](http://doriclenses.com/life-sciences/243-led-modules).
 
 ## Device Assembly Manual
 
@@ -920,33 +915,33 @@ Additionally, to use your device once it is assembled, you will need:
 
 1. An LED to drive [Required]
 
-  - See the [LED section](LED) for options.
+    - See the [LED section](LED) for options.
 
 1. A power supply [Required]
 
-  - Any wall-wart, battery pack, or bench-top power supply providing 15-20 VDC
-    that can source >=2A will work.
-  - The power jack is __center positive__ (but reversing this will not ruin the
-    device, it just wont turn on).
-  - Look around and see if you have a wall-wart laying around the lab that
-    meets the specs. They are pretty common and the jack is likely to fit.
-  - [Digikey part number
-    1470-3096-ND](http://www.digikey.com/product-search/en?keywords=1470-3096-ND)
-    or equivalent is a good option for those that need to buy a supply.
+    - Any wall-wart, battery pack, or bench-top power supply providing 15-20 VDC
+      that can source >=2A will work.
+    - The power jack is __center positive__ (but reversing this will not ruin the
+      device, it just wont turn on).
+    - Look around and see if you have a wall-wart laying around the lab that
+      meets the specs. They are pretty common and the jack is likely to fit.
+    - [Digikey part number
+      1470-3096-ND](http://www.digikey.com/product-search/en?keywords=1470-3096-ND)
+      or equivalent is a good option for those that need to buy a supply.
 
 1. An M8, 4-pin connector [Optional]
 
-  - An inexpensive, standard, non-insane, 2x5 header (`EXPANSION A`) provides
-    access to most of the internal signals on the Cyclops board, e.g. for
-    driving an LED or providing auxiliary feedback using an amplified
-    photodiode etc.
-  - An expensive, strange, moderately insane, M8 expansion connector that is
-    used by two major companies in the optics space (`EXPANSION B`) is left
-    unpopulated. You can populate this port if you wish to drive Thorlabs or
-    Doric LED modules using the Cyclops. For instructions, see this the
-    complete manual.
-
-    ![Cyclops device parts and tools](./resources/device-components-labeled.png)
+    - An inexpensive, standard, non-insane, 2x5 header (`EXPANSION A`) provides
+      access to most of the internal signals on the Cyclops board, e.g. for
+      driving an LED or providing auxiliary feedback using an amplified
+      photodiode etc.
+    - An expensive, strange, moderately insane, M8 expansion connector that is
+      used by two major companies in the optics space (`EXPANSION B`) is left
+      unpopulated. You can populate this port if you wish to drive Thorlabs or
+      Doric LED modules using the Cyclops. For instructions, see this the
+      complete manual.
+    
+      ![Cyclops device parts and tools](./resources/device-components-labeled.png)
 
 \FloatBarrier
 
@@ -956,120 +951,122 @@ Additionally, to use your device once it is assembled, you will need:
 
     ![Teensy MCU assembly](./resources/teensy-assembly-steps.png)
 
-  - Solder the surface mount, 2x7 pin header to the bottom of the teensy. It is
-    important to do this first because its very hard to get to after the other
-    headers are installed.
-  - Put the single row headers on the soldering jig (panel 2, above), followed by the Teensy (panel 3, above).
-    The microcontroller chip should be facing up.
-  - Solder the headers in place.
+    - Solder the surface mount, 2x7 pin header to the bottom of the teensy. It
+      is important to do this first because its very hard to get to after the
+      other headers are installed.
+    - Put the single row headers on the soldering jig (panel 2, above),
+      followed by the Teensy (panel 3, above).  The microcontroller chip should
+      be facing up.
+    - Solder the headers in place.
 
 2. Assemble the power switch
 
     ![Power switch assembly](./resources/switch-solder-steps.jpg)
 
-  - Strip about 1 cm of insulation from each end of the hookup wires
-  - Thread the stripped portion of the wire halfway through each of the
-    switch's solder terminals. Fold the wire back, so that the stripped part is
-    touching both sides of the terminal.
-  - Solder the hookup wire to the terminals. Make sure the solder flows between
-    the wires' copper braid and the switch terminals.
-  - Slide the heat shrink from the back of each wire, over the solder joints.
-    Hit then with a hot air gun or pass a lighter underneath them to shrink
-    them into place over the solder joints.
+    - Strip about 1 cm of insulation from each end of the hookup wires
+    - Thread the stripped portion of the wire halfway through each of the
+      switch's solder terminals. Fold the wire back, so that the stripped part
+      is touching both sides of the terminal.
+    - Solder the hookup wire to the terminals. Make sure the solder flows
+      between the wires' copper braid and the switch terminals.
+    - Slide the heat shrink from the back of each wire, over the solder joints.
+      Hit then with a hot air gun or pass a lighter underneath them to shrink
+      them into place over the solder joints.
 
 3. Prepare the back panel
 
     ![Power switch installation](./resources/switch-install-steps.jpg)
 
-  - Press the  power switch into position on the back panel. Orient the switch
-    so that the 'on' symbol (-) is toward the middle of the panel and the 'off'
-    symbol (o) is toward the outside. This will make the panel easier to mount
-    on the enclosure.
-  - The switch will snap into place.
+    - Press the  power switch into position on the back panel. Orient the
+      switch so that the 'on' symbol (-) is toward the middle of the panel and
+      the 'off' symbol (o) is toward the outside. This will make the panel
+      easier to mount on the enclosure.
+    - The switch will snap into place.
 
 4. Install the teensy on the cyclops
 
-  - Press the previously assembled teensy onto the 0.1" pitch male headers. It
-    should be _upside down_ on the bottom of the cyclops PCB.
+    - Press the previously assembled teensy onto the 0.1" pitch male headers. It
+      should be _upside down_ on the bottom of the cyclops PCB.
 
 5. Put thermally conductive tape on the heatsink
 
-  - Cut a square of thermal tape from the roll
-  - Peal off the backing and press the tape on the back of the heatsink.
-  - Poke holes through the tape to expose the bolt holes in the heatsink.
+    - Cut a square of thermal tape from the roll
+    - Peal off the backing and press the tape on the back of the heatsink.
+    - Poke holes through the tape to expose the bolt holes in the heatsink.
 
 6. Install the heatsink on the PCB
 
     ![Heatsink installation](./resources/heatsink-install.png)
 
-  - Flip the PCB so that the bottom is exposed.
-  - Locate the large white square surrounding the exposed copper pad indicating
-    the heatsink mounting location
-  - Apply an even layer of thermal paste to the area.
-  - Remove the paper backing from the tape on the heatsink to expose the adhesive surface
-  - Press the heatsink into place on the PCB
-  - Filp the PCB so the top is up and locate the three holes used to mount the
-    heatsink to the PCB. Thead three self-tapping screws through a nylon washer
-    and then into the heatsink itself. Hand tighten until the heat sink is
-    firmly head against the back of the PCB. You should see thermal compount
-    coming through the numerious vias in the PCB. This is disired because it
-    provides a low thermal resistance path between the PCB and the heatsink.
+    - Flip the PCB so that the bottom is exposed.
+    - Locate the large white square surrounding the exposed copper pad indicating
+      the heatsink mounting location
+    - Apply an even layer of thermal paste to the area.
+    - Remove the paper backing from the tape on the heatsink to expose the adhesive surface
+    - Press the heatsink into place on the PCB
+    - Filp the PCB so the top is up and locate the three holes used to mount the
+      heatsink to the PCB. Thead three self-tapping screws through a nylon washer
+      and then into the heatsink itself. Hand tighten until the heat sink is
+      firmly head against the back of the PCB. You should see thermal compount
+      coming through the numerious vias in the PCB. This is disired because it
+      provides a low thermal resistance path between the PCB and the heatsink.
 
 6. Solder the power switch to the PCB.
 
     ![Power switch soldering](./resources/power-switch-solder.jpg)
 
-  - Solder the power switch to the two indicated terminals on the PCB.
-  - Make sure you do this __after__ you have installed the switch in the rear
-    panel.
-  - The wires can be soldered to either solder point, orientation does not
-    matter since this is a SPST switch.
+    - Solder the power switch to the two indicated terminals on the PCB.
+    - Make sure you do this __after__ you have installed the switch in the rear
+      panel.
+    - The wires can be soldered to either solder point, orientation does not
+      matter since this is a SPST switch.
 
 7. Install the front panel on the enclosure
 
     ![Front panel installation](./resources/front-panel-install.jpg)
 
-  - Using 4 of the 11 self-trapping screws, install the front panel on the enclosure.
-  - __Note:__ The orientation of the enclosure matters. The top of the
-    enclosure is indicated by rows of decorative lines as indicated in the
-    above figure.
+    - Using 4 of the 11 self-trapping screws, install the front panel on the enclosure.
+    - __Note:__ The orientation of the enclosure matters. The top of the
+      enclosure is indicated by rows of decorative lines as indicated in the
+      above figure.
 
 8. Install the PCB in the enclosure.
 
     ![Front panel installation](./resources/pcb-install-steps.png)
 
-  - Slide the PCB into the box using the __middle__ mounting rail.
-  - __Note:__ The heatsink should be making firm contact with the bottom of
-    the enclosure. If it is not, you should add thermal paste to the bottom of
-    the heatsink to fill the gap. The heatsink must have a low thermal
-    resistance path to the enclosure to dissipate heat during operation.
-  - __Note:__ When the BNC connectors come through the front panel, you will
-    need to push them down a bit, slightly flexing the PCB to get the panel mount controls through the front panel.
+    - Slide the PCB into the box using the __middle__ mounting rail.
+    - __Note:__ The heatsink should be making firm contact with the bottom of
+      the enclosure. If it is not, you should add thermal paste to the bottom of
+      the heatsink to fill the gap. The heatsink must have a low thermal
+      resistance path to the enclosure to dissipate heat during operation.
+    - __Note:__ When the BNC connectors come through the front panel, you will
+      need to push them down a bit, slightly flexing the PCB to get the panel
+      mount controls through the front panel.
 
 9. Install the rear panel.
 
-  - Loop the two hook up wires and push them into the enclosure on top of the
-    PCB.
-  - Use the panel the push the remaining wire into the enclosure.
-  - Use the remaining 4 screws to install the rear panel.
+    - Loop the two hook up wires and push them into the enclosure on top of the
+      PCB.
+    - Use the panel the push the remaining wire into the enclosure.
+    - Use the remaining 4 screws to install the rear panel.
 
 10. Install gain knob and button cover.
 
     ![Gain knob installation](./resources/gain-knob-install-steps.png)
 
-  - Slip the toothed washer over the gain dial.
-  - Tighten the jam nut on the gain dial's threads until just past finger tight
-    using a pair of needle nose pliers.
-  - __Note:__ Do not over-tighten using a combination spanner or you will
-    strip the threads.
-  - Turn the dial on the front panel _fully counter-clockwise_.
-  - Slip the gain knob over the dial with the tick mark pointed slightly below
-    the 0 position.
-  - Tighten the set screw on the side of the knob to lock it into place using
-    an Allen key.
-  - When you turn the knob fully clockwise, the tick mark should be pointing
-    close to the 1.5A position.
-  - Press the red cover over the `TEST` switch until it snaps into place.
+    - Slip the toothed washer over the gain dial.
+    - Tighten the jam nut on the gain dial's threads until just past finger tight
+      using a pair of needle nose pliers.
+    - __Note:__ Do not over-tighten using a combination spanner or you will
+      strip the threads.
+    - Turn the dial on the front panel _fully counter-clockwise_.
+    - Slip the gain knob over the dial with the tick mark pointed slightly below
+      the 0 position.
+    - Tighten the set screw on the side of the knob to lock it into place using
+      an Allen key.
+    - When you turn the knob fully clockwise, the tick mark should be pointing
+      close to the 1.5A position.
+    - Press the red cover over the `TEST` switch until it snaps into place.
 
 This concludes device assembly. To begin using your device, please refer to the
 [usage](#usage) section above.
@@ -1082,46 +1079,46 @@ This concludes device assembly. To begin using your device, please refer to the
 ### Board Assembly Materials
 To assemble a Cyclops board, you will need the following materials
 
--   A soldering iron and, if possible, a hot-air reflow device.
-    -   At minimum, a soldering iron regulated to \~370 deg. c) will do
-        the job.
-    -   In addition to the iron, a hot-air rework tool or reflow oven
-        are recommended and the assembly instructions below assume you
-        are using one of these two options. A low cost, high-quality
-        hot-air rework station can be purchased from SparkFun
-        [here](https://www.sparkfun.com/products/10706).
+- A soldering iron and, if possible, a hot-air reflow device.
+    - At minimum, a soldering iron regulated to \~370 deg. c) will do
+      the job.
+    - In addition to the iron, a hot-air rework tool or reflow oven
+      are recommended and the assembly instructions below assume you
+      are using one of these two options. A low cost, high-quality
+      hot-air rework station can be purchased from SparkFun
+      [here](https://www.sparkfun.com/products/10706).
 
     ![A soldering iron can be used to assemble the PCB, but a hot air
     rework station makes things much easier. These can be purchased from
     [Sparkfun](https://www.sparkfun.com/products/10706).](./resources/HeatGun.jpg)
 
--   Copper braid ('solder wick') for solder removal (e.g
-    [this](https://www.sparkfun.com/products/9327))
--   Liquid flux (`no-clean` variants are easiest since they don't have
-    to be thoroughly removed after use)
--   Solder paste (e.g.
-    [this](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568))
+- Copper braid ('solder wick') for solder removal (e.g
+  [this](https://www.sparkfun.com/products/9327))
+- Liquid flux (`no-clean` variants are easiest since they don't have
+  to be thoroughly removed after use)
+- Solder paste (e.g.
+  [this](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568))
 
     ![Wire solder and an soldering iron can be used to construct the
     PCB, but solder paste combined with a hot air rework station or a
     reflow oven makes things much easier. We use [Chipquik
     291ax10](http://www.digikey.com/product-detail/en/SMD291AX10T5/SMD291AX10T5-ND/3972568).](./resources/SolderPaste.jpg)
 
--   Stereoscope or loupe (optional but nice for tracking down shorts.)
--   Isopropyl alcohol for cleaning flux off the board (e.g.
-    [this](http://amzn.com/B0047YB3OW); optional)
--   An anti-static mat (e.g. [this](http://amzn.com/B00009XT3H);
-    optional but recommended to protect your work...)
+- Stereoscope or loupe (optional but nice for tracking down shorts.)
+- Isopropyl alcohol for cleaning flux off the board (e.g.
+  [this](http://amzn.com/B0047YB3OW); optional)
+- An anti-static mat (e.g. [this](http://amzn.com/B00009XT3H);
+  optional but recommended to protect your work...)
 
 
 ### Board Assembly Instructions
 PCB component population and soldering is fairly straightforward and
 requires standard surface mount construction techniques.
 
--   A tutorial on hot-air soldering can be found
-    [here](https://youtu.be/1z0IiuQ35HU).
--   A great tutorial filled with general tips and tricks for surface
-    mount soldering can be found [here](https://youtu.be/pdGSFc7VjBE).
+- A tutorial on hot-air soldering can be found
+  [here](https://youtu.be/1z0IiuQ35HU).
+- A great tutorial filled with general tips and tricks for surface
+  mount soldering can be found [here](https://youtu.be/pdGSFc7VjBE).
 
 The following steps provide a visual guide to construct your own board.
 The goal is to create a fully populated PCB like this one:
@@ -1131,130 +1128,130 @@ The goal is to create a fully populated PCB like this one:
 *Following board construction, you should run through the electrical
 tests outlined in the next section before applying power.*
 
-1.  Place the bare PCB on a flat surface, preferably one that is static
-    dissipative or anti-static. Alternatively, the board can be mounted
-    in a PCB vice.
+1. Place the bare PCB on a flat surface, preferably one that is static
+   dissipative or anti-static. Alternatively, the board can be mounted
+   in a PCB vice.
 
-    ![Instead of populating components on a table, holding the PCB using
-    a PanaVise can be helpful.](./resources/Station.jpg)
+   ![Instead of populating components on a table, holding the PCB using
+   a PanaVise can be helpful.](./resources/Station.jpg)
 
-1.  The silkscreen layer on the PCB (white text) has almost all the
-    information you will need to properly populated the PCB. However,
-    its a good ideal to to open the [cyclops
-    design](./cyclops/cyclops_r3.brd) in
-    [EAGLE](http://www.cadsoftusa.com/eagle-pcb-design-software/). This
-    will allow you to get detailed information on components before
-    placing them on the board.
+2. The silkscreen layer on the PCB (white text) has almost all the
+   information you will need to properly populated the PCB. However,
+   its a good ideal to to open the [cyclops
+   design](./cyclops/cyclops_r3.brd) in
+   [EAGLE](http://www.cadsoftusa.com/eagle-pcb-design-software/). This
+   will allow you to get detailed information on components before
+   placing them on the board.
 
-    ![The cyclops PCB design in CadSoft EAGLE](./resources/Eagle.jpg)
+   ![The cyclops PCB design in CadSoft EAGLE](./resources/Eagle.jpg)
 
-    You can then the `information` tool to get detailed information on
-    each component, e.g. to ensure you are placing the correct value
-    resistor or capacitor.
+   You can then the `information` tool to get detailed information on
+   each component, e.g. to ensure you are placing the correct value
+   resistor or capacitor.
 
-    ![By selecting the information tool and clicking the cross at the
-    center of a component, you can pull up detailed info (e.g.
-    part number)](./resources/EagleInfo.jpg)
+   ![By selecting the information tool and clicking the cross at the
+   center of a component, you can pull up detailed info (e.g.
+   part number)](./resources/EagleInfo.jpg)
 
-3.  After cleaning the surface of the board with isopropyl acholhol or
-    similar, apply solder paste to each of the pads. For an excellent
-    series of tips on effective methods for dispensing solder paste, see
-    [Mike's video on the subject](https://youtu.be/pdGSFc7VjBE). Do not
-    apply solder paste to through-holes or the pads shown outlined in
-    red in the following image. These will be hand soldered later in the
-    assembly process.
+3. After cleaning the surface of the board with isopropyl acholhol or
+   similar, apply solder paste to each of the pads. For an excellent
+   series of tips on effective methods for dispensing solder paste, see
+   [Mike's video on the subject](https://youtu.be/pdGSFc7VjBE). Do not
+   apply solder paste to through-holes or the pads shown outlined in
+   red in the following image. These will be hand soldered later in the
+   assembly process.
 
-    The correct amount of solder paste to apply is \`enough'. Each
-    component contact should sit in a small amount of paste, but blobs
-    of paste that envelop the component pad or pin may later result in
-    a short. The following images show examples of good and bad
-    solder placement.
+   The correct amount of solder paste to apply is \`enough'. Each
+   component contact should sit in a small amount of paste, but blobs
+   of paste that envelop the component pad or pin may later result in
+   a short. The following images show examples of good and bad
+   solder placement.
 
-    ![Good solder placement.](./resources/SolderGoodExample.jpg)
+   ![Good solder placement.](./resources/SolderGoodExample.jpg)
 
-    ![Bad solder placement. Too much
-    paste!](./resources/SolderBadExample.jpg)
+   ![Bad solder placement. Too much
+   paste!](./resources/SolderBadExample.jpg)
 
-    If you need to pause at any point, you should store place the PCB in
-    the fridge to prevent the flux in the solder paste from
-    breaking down.
+   If you need to pause at any point, you should store place the PCB in
+   the fridge to prevent the flux in the solder paste from
+   breaking down.
 
-4.  Populate all **top-side surface mount** components on the board.
-    There is a single surface mount switch on the back of the board that
-    will be hand soldered later. Additionally, all through hole
-    components (e.g. power jack, BNC connectors, etc) will be
-    populated later. Start by placing the integrated circuits (ICs). Use
-    the stereoscope or loupe to ensure that pads are making contact with
-    the pins of the placed components. Precise component alignment is
-    not necessary. Components will self-align during the reflow process.
+4. Populate all **top-side surface mount** components on the board.
+   There is a single surface mount switch on the back of the board that
+   will be hand soldered later. Additionally, all through hole
+   components (e.g. power jack, BNC connectors, etc) will be
+   populated later. Start by placing the integrated circuits (ICs). Use
+   the stereoscope or loupe to ensure that pads are making contact with
+   the pins of the placed components. Precise component alignment is
+   not necessary. Components will self-align during the reflow process.
 
-    ![Integrated circuit population.](./resources/cyclops3.5A_IC.jpg)
+   ![Integrated circuit population.](./resources/cyclops3.5A_IC.jpg)
 
-    ![Zoomed view of integrated
-    circuit placement.](./resources/cyclops3.5A_IC2.jpg)
+   ![Zoomed view of integrated
+   circuit placement.](./resources/cyclops3.5A_IC2.jpg)
 
-5.  After placing the ICs, place the passive components (resistors,
-    capacitors, inductors, diodes, and ferrite chips).
+5. After placing the ICs, place the passive components (resistors,
+   capacitors, inductors, diodes, and ferrite chips).
 
-    ![Board following resistor and
-    capacitor population.](./resources/cyclops3.5A_RnC.jpg)
+   ![Board following resistor and
+   capacitor population.](./resources/cyclops3.5A_RnC.jpg)
 
-    ![Board with all top-side surface mount
-    components installed.](./resources/cyclops3.5A_otherPassives.jpg)
+   ![Board with all top-side surface mount
+   components installed.](./resources/cyclops3.5A_otherPassives.jpg)
 
-6.  Next, reflow solder the board. We use a homemade reflow oven constructed
-    from a toaster oven, Arduino board, [reflow oven control
-    shield](http://www.rocketscream.com/shop/reflow-oven-controller-shield-arduino-compatiblee),
-    and [mains relay](https://www.adafruit.com/products/268). You can make a
-    similar one, use a commercial reflow oven, or use the hot air station.
-    Reflow the solder paste on the board using your oven or hot air gun as
-    described in the links above.
+6. Next, reflow solder the board. We use a homemade reflow oven constructed
+   from a toaster oven, Arduino board, [reflow oven control
+   shield](http://www.rocketscream.com/shop/reflow-oven-controller-shield-arduino-compatiblee),
+   and [mains relay](https://www.adafruit.com/products/268). You can make a
+   similar one, use a commercial reflow oven, or use the hot air station.
+   Reflow the solder paste on the board using your oven or hot air gun as
+   described in the links above.
 
-    ![Homemade reflow oven with the populated
-    board inside.](./resources/ReflowOven.jpg)
+   ![Homemade reflow oven with the populated
+   board inside.](./resources/ReflowOven.jpg)
 
-    ![The board is shown after the reflow temperature has been reached.
-    Reflow will occur at different temperatures depending on the
-    specification of the solder paste you
-    are using.](./resources/ReflowOven4.jpg)
+   ![The board is shown after the reflow temperature has been reached.
+   Reflow will occur at different temperatures depending on the
+   specification of the solder paste you
+   are using.](./resources/ReflowOven4.jpg)
 
-7.  After the solder has cooled, examine solder pads using the
-    stereoscope of loupe for solder bridges between pins, solder that
-    has not melted, or pads lacking a decent solder joint. Fix any
-    issues using a standard soldering iron If there are solder bridges
-    present, get rid of them using some solder wick before moving on.
-    Solder through-hole components in place using a standard
-    soldering iron. A low cost reflow oven can be made from a toaster
-    oven as shown [here](http://whizoo.com/reflowoven).
+7. After the solder has cooled, examine solder pads using the
+   stereoscope of loupe for solder bridges between pins, solder that
+   has not melted, or pads lacking a decent solder joint. Fix any
+   issues using a standard soldering iron If there are solder bridges
+   present, get rid of them using some solder wick before moving on.
+   Solder through-hole components in place using a standard
+   soldering iron. A low cost reflow oven can be made from a toaster
+   oven as shown [here](http://whizoo.com/reflowoven).
 
-    ![Example of a short between IC pins. This must be resolved before
-    moving forward.](./resources/ShortExample.jpg)
+   ![Example of a short between IC pins. This must be resolved before
+   moving forward.](./resources/ShortExample.jpg)
 
-    ![Dipping the copper braid in flux will make the solder wick much
-    more redily.](./resources/ShortExample2.jpg)
+   ![Dipping the copper braid in flux will make the solder wick much
+   more redily.](./resources/ShortExample2.jpg)
 
-    ![Place the copper braid over the solder blob and then press with
-    the soldering iron. You should see the excess solder wick up the
-    copper braid.](./resources/ShortExample3.jpg)
+   ![Place the copper braid over the solder blob and then press with
+   the soldering iron. You should see the excess solder wick up the
+   copper braid.](./resources/ShortExample3.jpg)
 
-    ![Often you will not have to re-apply solder after this process
-    because there will be enough left over to maintain a good
-    electrical contact. Once you are satisfied the flux residue can be
-    cleaned using isopropyl alcohol](./resources/ShortExample4.jpg)
+   ![Often you will not have to re-apply solder after this process
+   because there will be enough left over to maintain a good
+   electrical contact. Once you are satisfied the flux residue can be
+   cleaned using isopropyl alcohol](./resources/ShortExample4.jpg)
 
-8.  Each board has an address (0 through 3) that is defined by two
-    solder jumpers and the location of a ferrite chip. This allows
-    cyclops boards to be stacked to share a power supply while being
-    driven by a common microcontroller. For each board that will share a
-    microcontroller, a unique address must be specified and the solder
-    jumpers and ferrite chip must be soldered in appropriate positions
-    to reflect this address. See the picture below to better understand
-    this addressing scheme.
+8. Each board has an address (0 through 3) that is defined by two
+   solder jumpers and the location of a ferrite chip. This allows
+   cyclops boards to be stacked to share a power supply while being
+   driven by a common microcontroller. For each board that will share a
+   microcontroller, a unique address must be specified and the solder
+   jumpers and ferrite chip must be soldered in appropriate positions
+   to reflect this address. See the picture below to better understand
+   this addressing scheme.
 
-    TODO: Pictures of circled 0 ohm jumpers
+   TODO: Pictures of circled 0 ohm jumpers
 
-9.  Flip the board over and install the final surface mount component,
-    the `AUX<>CURR` and `BW LIM` slide switches, by hand soldering.
+9. Flip the board over and install the final surface mount component,
+   the `AUX<>CURR` and `BW LIM` slide switches, by hand soldering.
 
 10. Next, populate all electromechanical components. This can be
     soldered in place with a standard soldering iron and a large
