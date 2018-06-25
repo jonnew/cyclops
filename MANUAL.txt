@@ -119,8 +119,8 @@ the 'lib' folder of this repository
 - Built-in waveform generation
 - Over-current protection
 - Modular
-    - Arduino compatible
-    - Accepts external analog, gate, or trigger inputs
+    - Arduino compatible: internal waveform generation
+    - Also, accepts external analog, gate, or trigger inputs
 
 ## Multiple stimulus generation options
 - External stimulus sequencer
@@ -301,17 +301,18 @@ commercial LED drivers.
 # Usage {#usage}
 
 The cyclops is a device that is capable of transforming voltage signals (e.g.
-sine waves, square pulses, etc.) into optical signals from high-power LEDs.
-Voltage signals to drive the device can be generated internally using an
-on-board digital to analog converter or can be delivered from an external
-source, such as a function generator or stimulus sequencer. The cyclops
-provides numerous measurements of circuit operation that can be recorded during
-an experiment such as LED current and stimulus reference voltages. The device
-can be controlled over a USB interface using its onboard, Arduino-compatible
-[Teensy 3.2](https://www.pjrc.com/teensy/teensy31.html#specs) microcontroller
-board in combination with the [Cyclops Arduino library](./lib/cyclops/).  The
-device also can be configured to drive commercially available LED modules from
-Thorlabs and Doric using its expansion ports.
+sine waves, square pulses, etc.) into optical signals from high-power LEDs or
+laser diodes.  Voltage signals to drive the device can be generated internally
+using an on-board digital to analog converter or can be delivered from an
+external source, such as a function generator or stimulus sequencer. The
+cyclops provides numerous measurements of circuit operation that can be
+recorded during an experiment such as LED current and stimulus reference
+voltages. The device can also be controlled over a USB interface using its
+onboard, Arduino-compatible [Teensy
+3.2](https://www.pjrc.com/teensy/teensy31.html#specs) microcontroller board in
+combination with the Cyclops Arduino library: `./lib/cyclops`. The device can
+be used to drive commercially available LED modules from Thorlabs and Doric
+using its expansion ports.
 
 Below we provide device control and input/output definitions, an explanation of
 the operational modes of the device, and the different ways it can be used to
@@ -323,65 +324,81 @@ device settings.
 Please refer to the [IO diagram](#fig-io) while reading these definitions.
 
 **`REF OUT`: **
-When the switch is set to SYNC, this output is set to 5V when the LED is on
-(>10 mA) and 0 volts when off. When the switch is set to V. REF, this output
-will copy the reference target signal that the current source is attempts to
-follow _after_ it has been subjected to the GAIN setting. In constant current
-mode, this means that the voltage at this pin specifies 1 A/V.
+This output operates in two modes depending on the position of the slide switch
+below the BNC connector:
+
+- When the switch is set to SYNC, this output is set to 5V when the LED is on
+  (>10 mA) and 0 volts when off. 
+- When the switch is set to V. REF, this output will copy the reference signal
+  that the current source attempts to follow _after_ it has been subjected to
+  the GAIN setting. In constant current mode, this means that the voltage at
+  this pin specifies 1 A/V. During successul operation in Current F.B. mode,
+  this signal will match that off `LED CURR`.  During successul operation in
+  `AUX F.B.` mode, this signal will match that of `AUX OUT`.
 
 **`LED CURR.`: **
-The voltage on this output reflects to the current passed by
-the load (LED or laser diode) at 1 V/A.
+The voltage on this output measures to the current passed by the load at 1 V/A.
 
 **`AUX. OUT`: **
 This output provides a buffered version of the signal at the
-AUX. IN connector.
+`AUX. IN` connector.
 
 **`SIGNAL IN`: **
-When the INPUT SELECT toggle switch is set to SIG. IN, and the
-local switch is set to the square, triangle, sine icon this input is can be
-used to provide a target voltage to drive current through the load. This
-voltage is always subject to the position of the GAIN dial. When the local
-switch is set to 5V CONT, 5V is generated internally and constantly as a
-reference to drive the load and, again, is subject to the GAIN setting.
+To use this input, the `INPUT SELECT` toggle switch must be set to `SIG. IN`.
+This input operates in two modes depending on the position of the verical slide
+switch below the BNC connector:
+
+- When the slide switch below the `SIGNAL IN` connector is set to the square,
+  triangle, sine icon, `SIGNAL IN` is used to provide an external target
+  voltage signal for the feedback circuit that drives the load. This voltage is
+  always subjected to the attenuation imposed by the `GAIN` dial. 
+- When the local switch is set to 5V CONT, 5V is generated internally and
+  constantly as a reference to drive the load and, again, is subject to the
+  GAIN setting.
 
 **`TEST`: **
-This push button can be used to temporarly tie the SIGNAL IN line to
-an internal 5V reference. This reference is then subject to the current GAIN
-setting.
+When this button is pressed, the `SIGNAL IN` line is temporarly disconnected
+from the BNC connector and tied to an internal internal 5V reference. This
+reference is then subject to the current `GAIN` setting as it would be if it
+was produced externally and passed to the `SIGNAL IN` BNC.
 
 **`GAIN`: **
-Specifies the transimpedance gain between the reference voltage at
-SIGNAL IN or produced by the DAC and the current sourced to the load. During
-constant current operation, the gain is given by:
+Specifies the transimpedance gain between the reference voltage at `SIGNAL IN`
+or produced by the DAC and currented to the load. During `CURR F.B.`, the gain
+is given by:
 
 $$
 Load\ Current = Dial\ Position * \frac{SIGNAL\ IN\ Voltage }{5V}
 $$
 
-During AUX F.B. operation, the gain depends on how the optical to AUX signal
+During `AUX F.B.` operation, the gain depends on how the optical to AUX signal
 conversion gain.
 
 **`INPUT SELECT`: **
-Select the source of the reference voltage. SIG. IN selects
-the SIGNAL IN connector. OFF ties the reference voltage to 0 so that no
-current is driven through the load. DAC indicates that the onboard DAC should
-be used in concert with the integrated Teensy 3.2 to generate a reference
-voltage waveform.
+Select the source of the reference voltage. `SIG. IN` selects the `SIGNAL IN`
+connector. `OFF` ties the reference voltage to 0 so that no current is driven
+through the load. `DAC` indicates that the onboard DAC should be used in
+concert with the integrated Teensy 3.2 to generate a reference voltage
+waveform. Refer to the [Programming the Onboard Microcontroller](#sec-mcu)
+section for details on how to do this.
+
+![Cyclops panel defintions (Rev. 3.6).](./resources/device3.6_io-diagram.png){#fig-io}
+
+\FloatBarrier
 
 **`COMP`: **
 This LED indicates that overcurrent compensation is being performed
-by the integrated microcontroller.
+by the integrated microcontroller. In this case, the load is toggled off to
+mainain an _average_ (~100's of milliseconds time constant) current below the
+maximimum specified by the firmware running on the Arduino.  This value
+defaults to 1A on devices purchased through the Open Ephys store.
 
 **`LED ON`: **
-This LED indicates that the load is passing more than 10 mA. I
+This LED indicates that the load is passing more than 10 mA.
 
 **`>1A`: **
 This LED indicates that the load is passing more than 1A, a typical
 upper limit for high power LEDs.
-
-![Cyclops panel defintions (Rev. 3.6).](./resources/device3.6_io-diagram.png){#fig-io}
-\FloatBarrier
 
 **`POWER`: **
 This LED indicates that the device has power.
@@ -411,23 +428,26 @@ Main LED or laser diode output. Standard banana connectors are
 used.
 
 **`F.B. MODE`: **
-Slide switch used to toggle the device between constant current
-(CURR) and auxilary (AUX) feedback modes. See the next section for a detailed
-explaination.
+Slide switch used to toggle the device between constant current (`CURR`) and
+auxilary (`AUX`) feedback modes. See the [Feedback Modes](#sec-fb-modes)
+section for a detailed explaination.
 
 **`B.W. SELECT`: **
-Bandwidth selection switch. When in the LIM position, the
-bandwidth of the device is limited and one can expect ~1 usec 1A rise and fall
-times. If long cables (> 0.5 m) are used between the device and the load, this
-option must be used to ensure device stability. When set to FULL, the device
-operates at full bandwidth with rise times in the 10s of nanoseconds.
+Bandwidth selection switch. When in the `LIM` position, the bandwidth of the
+device is limited and one can expect ~1 usec 1A rise and fall times. If long
+cables (> 0.5 m) are used between the device and the load, this option must be
+used to ensure device stability. When set to `FULL`, the device operates at
+full bandwidth with rise times in the 10s of nanoseconds. When operating a full
+bandwidth, the user takes steps to ensure circuit stability: short low
+inductance cabling to the load. See the [Bandwidth Selection](#sec-bw) section
+for details.
 
 **`POWER`: **
 Power connector. Center positive, 15V supply with >2A current
 sourcing capabilities. Batteries can be used but must be capable of handing
 large load transients to maintain device stability.
 
-## Feedback modes
+## Feedback modes {#sec-fb-modes}
 
 ### Current Feedback Mode
 To use current feedback mode, push the `F.B. MODE` slide switch to the `CURR`
@@ -472,7 +492,7 @@ the current/irradiance nonlinearities and temperature dependence.
 
 ![Optical feedback configuration.](./resources/optical_feedback_diagram.png)
 
-## Bandwidth Selection
+## Bandwidth Selection {#sec-bw}
 The Cyclops can be operated in two bandwidth modes: `FULL` and `LIM`. This
 provides user-selectable control over the speed at which the LED can be turned
 on/off.
@@ -578,12 +598,12 @@ Cyclops devices include an onboard, Arudino-compatible microcontroller board
 - Provide background over-current protection
 
 The Teensy can be programmed and uploaded to the device using the [Arduino
-IDE](https://www.arduino.cc/en/Main/Software) in combination with [Cyclops
-Arduino library](./lib/cyclops). _Note that you will need to add the
+IDE](https://www.arduino.cc/en/Main/Software) in combination with the Cyclops
+Arduino library: `./lib/cyclops`. _Note that you will need to add the
 [Teensyduino add-on](https://www.pjrc.com/teensy/teensyduino.html) to to the
 Arduino IDE to program the Teensy_. The Cyclops library contains several
 examples to help you get started. The relevant public programming interface is
-shown here:
+shown below. Functions are fully documented in the comments.
 
 ``` c++
 // Each 'channel' defines a board address. A single microcontroller supports up
@@ -709,7 +729,7 @@ void loop()
 \FloatBarrier
 \newpage
 
-# LEDs and Laser Diodes
+# LEDs and Laser Diodes {#sec-led}
 There are several things to consider when determining the type of LED or laser
 diode you wish to drive with the Cyclops:
 
@@ -748,7 +768,6 @@ in freely moving animals that works with the Cyclops driver:
 LED](https://github.com/andersjasp/cyclops/blob/master/resources/Open_source_fiber-coupled_bilateral_LED_for_in_vivo_applications.pdf)
 
 ### Thorlabs fiber-Coupled LED modules
-
 The cyclops can be used to drive [Thorlabs fiber-coupled LED
 modules](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=5206).
 You will need to install the [M8 4-position
@@ -760,7 +779,6 @@ installed the connector into the rear panel of the device.
 ![Thorlabs LED M8 connector pinout](./resources/thorlabs-m8-connections.png)
 
 ### Doric LED fiber-coupled modules
-
 The cyclops can be used to Drive [Doric fiber-coupled LED
 modules](http://doriclenses.com/life-sciences/home/783-connectorized-single-led.html).
 You will need to install the [M8 4-position
@@ -771,7 +789,6 @@ TODO: Pictures/instructions for M8 installation process in Doric
 configuration
 
 ## Microscope mounted LEDs
-
 The cyclops can be used to Drive [Thorlabs collimated
 LEDs](http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
 for microscope-based stimulation. You will need to install the [M8
@@ -779,7 +796,6 @@ for microscope-based stimulation. You will need to install the [M8
 connector](http://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2615&pn=CON8ML-4#5315)
 in expansion port B to drive these LEDs. See [Thorlab fiber-coupled LED
 instructions](#thorlabs-fieber-coupled-led) for instructions.
-
 
 ## Laser Diodes
 In addition to LEDs, cyclops can be used to drive laser diodes. This can be an
@@ -820,7 +836,7 @@ improving this device and its documentation!
 
 ## Components
 
-### PCB
+### PCB {#sec-pcb}
 Unpopulated Cyclops PCBs can be fabricated by uploading the [gerber
 files](./cyclops/pcb/gerber/) to the PCB fabrication service of your choice. I have
 had success with:
@@ -849,11 +865,11 @@ The layer of each gerber file is identified by its file extension:
 PCB stencils, which are useful for applying solder paste to the boards, can be
 purchased from a service like [Seeed
 Studio](http://www.seeedstudio.com/service/index.php?r=stencil) using the
-gerber files located in [./cyclops/device/stencil/](./cyclops/stencil/). If you
-plan to hand solder the board, or don't mind dispensing solder paste yourself,
-then you do not need to purchase these stencils.
+gerber files located in `/cyclops/device/stencil/` folder. If you plan to hand solder
+the board, or don't mind dispensing solder paste yourself, then you do not need
+to purchase these stencils.
 
-### PCB Bill of Materials
+### PCB Bill of Materials {#sec-pcb-bom}
 The PCB bill of materials is availabe on [this google sheet](https://docs.google.com/spreadsheets/d/1YQR_ujrZgILNx3XjomLKWgzDvirwKrKaRbVVzmBgk-s/edit#gid=1630015426)
 
 ### Other Materials
@@ -870,7 +886,7 @@ These parts include
   below show how these plastic pieces are modified to provide proper electrical
   shielding.
 - **Custom heatsink**, a waterjet-cut aluminum heatsink. Designs can be found
-  in the [heatsink](heatsink/alu-heatsink.PDF) folder.
+  in the `./device/heatsink` folder.
 - **Teensy 3.2 MCU**, a 32-bit microcontroller development board. Can be
   purchased [here](https://www.pjrc.com/store/teensy32.html)
 - An **M8-4 connector** (Optional). This is a rather expensive connector that
@@ -913,9 +929,9 @@ You will also need the following tools.
 
 Additionally, to use your device once it is assembled, you will need:
 
-1. An LED to drive [Required]
+1. An LED or laser diode to drive [Required]
 
-    - See the [LED section](LED) for options.
+    - See the [LED/laser diode section](#sec-led) for options.
 
 1. A power supply [Required]
 
@@ -1079,6 +1095,8 @@ This concludes device assembly. To begin using your device, please refer to the
 ### Board Assembly Materials
 To assemble a Cyclops board, you will need the following materials
 
+- Cyclops [PCB](#sec-pcb)
+- PCB [Bill of Materials](#sec-pcb-bom)
 - A soldering iron and, if possible, a hot-air reflow device.
     - At minimum, a soldering iron regulated to \~370 deg. c) will do
       the job.
