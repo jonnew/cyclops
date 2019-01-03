@@ -1,12 +1,47 @@
 ## Cyclops LED Driver
 Precision, wide-bandwidth current source with optional optical feedback mode
-for driving high-power LEDs and laser diodes.
+for driving high-power LEDs and laser diodes. Good for sneaking optogenetic
+stimuli between fast things (e.g. galvo flyback on a 2P system). Good for
+_really_ controlling the amount of light you deliver during 1P imaging or
+optogenetic stimulation.
+
+### Features
+- Ultra-precise
+- High power
+- Up to 1.5A per LED
+- Wide bandwidth
+    - \~2.5 MHz -3 dB bandwidth
+    - Maximum 100 ns 1.0A rise and fall times
+- Current and optical feedback modes
+- Built-in waveform generation
+- Over-current protection
+- Modular
+    - Arduino compatible: internal waveform generation
+    - Also, accepts external analog, gate, or trigger inputs
+
+### Stimulus generation options
+- External stimulus sequencer
+- External digital trigger
+    - TTL logic level
+- External analog waveform generator
+    - 0-5V analog signals
+- Internal 12-bit DAC
+    - Synchronized across up to 4 drivers
+    - Arduino library
+    - Programmable triggering logic
+    - Respond to USB input
+
+![](./resources/comparison.png)
+
+### Buying one
+You can purchase a fully assembled cyclops driver from the [open-ephys
+store](http://www.open-ephys.org/store/cyclops-led-driver). All profits go to
+the open-ephys initiative.
 
 ### Documentation
-Documentation and usage information are maintained within this repository in
-[MANUAL.pdf](./MANUAL.pdf). If you have questions concerning usage, performance,
-etc., please direct them toward the [Open Ephys
-forum](https://groups.google.com/forum/#!forum/open-ephys).
+Documentation and usage information are here: [MANUAL.pdf](./MANUAL.pdf). If you
+have questions concerning usage, performance, etc., please direct them toward
+the [Open Ephys forum](https://groups.google.com/forum/#!forum/open-ephys).
 
 ### Hardware Licensing
 Copyright Jonathan P. Newman 2017.
