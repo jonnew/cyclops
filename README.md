@@ -5,6 +5,9 @@ stimuli between fast things (e.g. galvo flyback on a 2P system). Good for
 _really_ controlling the amount of light you deliver during 1P imaging or
 optogenetic stimulation.
 
+If you have questions or comments, please come talk on the [open-ephys slack](http://open-ephys.slack.com) 
+in the #cyclops channel.
+
 ### Features
 - Ultra-precise
 - High power
