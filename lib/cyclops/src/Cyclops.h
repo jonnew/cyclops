@@ -131,13 +131,13 @@ public:
 
     // Attach/detach user provided interrupt function to TRIG pin
     // mode indicates the pin trasition state at which the function is called,
-    // RISING, FALLING or CHANGED
+    // RISING, FALLING or CHANGE
     //    user_func: User define function specifying action to take when the
     //               TRIG pin transtions according the the mode arguement. e.g.
     //               can be a function that generates a wavefomr using
     //               dac_load_voltage() or similar.
     //    mode: indicates the TRIG trasition state at which the user_func is
-    //          called. Can be either RISING, FALLING or CHANGED.
+    //          called. Can be either RISING, FALLING or CHANGE.
     void set_trigger(void (*user_func)(void), const int mode);
 
     // Call this static method after creating all cyclops channels to start the
