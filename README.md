@@ -38,8 +38,8 @@ in the #cyclops channel.
 
 ### Buying one
 You can purchase a fully assembled cyclops driver from the [open-ephys
-store](http://www.open-ephys.org/store/cyclops-led-driver). All profits go to
-the open-ephys initiative.
+store](https://open-ephys.org/cyclops-led-driver). All profits go towards continued
+operation of open-ephys.
 
 ### Documentation
 Documentation and usage information are here: [MANUAL.pdf](./MANUAL.pdf). If you
