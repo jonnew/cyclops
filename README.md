@@ -47,16 +47,10 @@ have questions concerning usage, performance, etc., please direct them toward
 the [Open Ephys forum](https://groups.google.com/forum/#!forum/open-ephys).
 
 ### Hardware Licensing
-Copyright Jonathan P. Newman 2017.
+Copyright Jonathan P. Newman 2020.
 
-This documentation describes Open Hardware and is licensed under the
-CERN OHL v. 1.2.
-
-You may redistribute and modify this documentation under the terms of the CERN
-OHL v.1.2. (http://ohwr.org/cernohl). This documentation is distributed WITHOUT
-ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY
-QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN OHL v.1.2 for
-applicable conditions
+This work is licensed under CC BY-NC-SA 4.0. To view a copy of this license,
+visit https://creativecommons.org/licenses/by-nc-sa/4.0
 
 __Note__: This license applies to hardware designs and documentation which reside
 in the 'device', 'experimental', 'resources' folders of this repository along

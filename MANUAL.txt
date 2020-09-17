@@ -70,23 +70,17 @@ Jon Newman MWL@MIT
 # License
 
 ## Hardware Licensing
-Copyright Jonathan P. Newman 2017.
+Copyright Jonathan P. Newman.
 
-This documentation describes Open Hardware and is licensed under the
-CERN OHL v. 1.2.
-
-You may redistribute and modify this documentation under the terms of the CERN
-OHL v.1.2. (http://ohwr.org/cernohl). This documentation is distributed WITHOUT
-ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY
-QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN OHL v.1.2 for
-applicable conditions
+This work is licensed under CC BY-NC-SA 4.0. To view a copy of this license,
+visit https://creativecommons.org/licenses/by-nc-sa/4.0
 
 __Note__: This license applies to hardware designs and documentation which reside
 in the 'device', 'experimental', 'resources' folders of this repository along
 with information in 'MANUAL.md' and 'MANUAL.pdf'
 
 ## Software Licensing
-Copyright (c) Jonathan P. Newman 2017. All right reserved.
+Copyright (c) Jonathan P. Newman. All right reserved.
 
 The code associated with the Cyclops project is free software: you can
 redistribute it and/or modify it under the terms of the GNU General Public
