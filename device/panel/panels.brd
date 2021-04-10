@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.2">
+<eagle version="9.5.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="dots" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -59,8 +59,8 @@
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="14" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="14" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -31228,10 +31228,14 @@ design rules under a new name.</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="0"/>
+<param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -31332,11 +31336,11 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="E$1" library="jonnew" package="OE-LOGO-14X10" value="" x="32.5" y="41.5"/>
+<element name="E$1" library="jonnew" package="OE-LOGO-14X10" value="" x="32.5" y="41.5" smashed="yes"/>
 </elements>
 <signals>
 <signal name="GND">
-<via x="5.921" y="65.66" extent="1-16" drill="3.3" diameter="5.5"/>
+<via x="5.921" y="65.66" extent="1-16" drill="3.3" diameter="4.316"/>
 <polygon width="0.254" layer="16">
 <vertex x="-2.2" y="-3"/>
 <vertex x="-2.2" y="72.8"/>
@@ -31349,16 +31353,29 @@ design rules under a new name.</description>
 <vertex x="137.8" y="73.3"/>
 <vertex x="137.8" y="-2.5"/>
 </polygon>
-<via x="5.921" y="40.67" extent="1-16" drill="3.3" diameter="5.5"/>
-<via x="126.921" y="40.67" extent="1-16" drill="3.3" diameter="5.5"/>
-<via x="126.921" y="65.66" extent="1-16" drill="3.3" diameter="5.5"/>
-<via x="5.921" y="30.66" extent="1-16" drill="3.3" diameter="5.5"/>
-<via x="5.921" y="5.67" extent="1-16" drill="3.3" diameter="5.5"/>
-<via x="126.921" y="5.67" extent="1-16" drill="3.3" diameter="5.5"/>
-<via x="126.921" y="30.66" extent="1-16" drill="3.3" diameter="5.5"/>
-<wire x1="5.921" y1="40.67" x2="5.921" y2="30.66" width="0" layer="19" extent="1-1"/>
+<via x="5.921" y="40.67" extent="1-16" drill="3.3" diameter="4.316"/>
+<via x="126.921" y="40.67" extent="1-16" drill="3.3" diameter="4.316"/>
+<via x="126.921" y="65.66" extent="1-16" drill="3.3" diameter="4.316"/>
+<via x="5.921" y="30.66" extent="1-16" drill="3.3" diameter="4.316"/>
+<via x="5.921" y="5.67" extent="1-16" drill="3.3" diameter="4.316"/>
+<via x="126.921" y="5.67" extent="1-16" drill="3.3" diameter="4.316"/>
+<via x="126.921" y="30.66" extent="1-16" drill="3.3" diameter="4.316"/>
+<wire x1="126.921" y1="40.67" x2="126.921" y2="65.66" width="0" layer="19" extent="1-1"/>
+<wire x1="126.921" y1="30.66" x2="126.921" y2="40.67" width="0" layer="19" extent="1-1"/>
+<wire x1="126.921" y1="5.67" x2="126.921" y2="30.66" width="0" layer="19" extent="1-1"/>
+<wire x1="5.921" y1="65.66" x2="126.921" y2="65.66" width="0" layer="19" extent="1-1"/>
+<wire x1="5.921" y1="40.67" x2="5.921" y2="65.66" width="0" layer="19" extent="1-1"/>
+<wire x1="5.921" y1="30.66" x2="5.921" y2="40.67" width="0" layer="19" extent="1-1"/>
+<wire x1="5.921" y1="5.67" x2="5.921" y2="30.66" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 </board>
 </drawing>
 </eagle>
