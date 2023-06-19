@@ -1,7 +1,7 @@
 {
     "Header": {
         "Comment": "All values are metric (mm)",
-        "CreationDate": "2021-04-10T10:04:49Z",
+        "CreationDate": "2023-06-19T12:03:30Z",
         "GenerationSoftware": {
             "Application": "EAGLE",
             "Vendor": "Autodesk",
@@ -15,7 +15,7 @@
         "Name": {
             "ProjectId": "panel_front"
         },
-        "Owner": "Jon Newman <jpnewman@mit.edu>",
+        "Owner": "Filipe Carvalho <filipe@oeps.tech>",
         "Size": {
             "X": 133,
             "Y": 35
