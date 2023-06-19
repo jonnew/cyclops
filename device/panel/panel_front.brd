@@ -16563,7 +16563,7 @@
 <rectangle x1="92.6118875" y1="3.440875" x2="94.73786875" y2="3.472625" layer="21" rot="R90"/>
 <rectangle x1="92.6436375" y1="3.440875" x2="94.64261875" y2="3.472625" layer="21" rot="R90"/>
 <wire x1="3" y1="35" x2="130" y2="35" width="0" layer="20"/>
-<hole x="84.98" y="20.98" drill="2"/>
+<hole x="84.98" y="20.98" drill="2.31"/>
 </plain>
 <libraries>
 </libraries>
